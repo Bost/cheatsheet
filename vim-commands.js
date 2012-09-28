@@ -37,6 +37,7 @@ ci" : Change the content inside a string
 ['30|',                                      '" jump to column 30'],
 [':r! command',                              '" execute command and read in its output'],
 ['.!sh',                                     '" execute current line in the shell'],
+[':%!column -t',                             '" format to columns'],
 ['`. / \'.',                                 '" last edit location (~ key)/ line (&auml; key)'],
 ['; ,',                                      '" jump cursor forward, backward'],
 ['zz zb zt / M L H',                         '" move window / jump cursor middle, bottom, top'],
@@ -82,7 +83,7 @@ ci" : Change the content inside a string
 
 ['&nbsp;',                                   '" &nbsp;'],
 
-[':diffthis',                                '" diff current two buffers'],
+[':diffthis / :windo diffthis',              '" diff current two buffers/windows'],
 [':vert diffsplit filename',                 '" diff current buffer with a filename'],
 ['gvim -d file1 file2 / vimdiff file1 file2','" &nbsp;'],
 [']c / [c',                                  '" jump to next / previous diff'],
