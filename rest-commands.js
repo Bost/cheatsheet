@@ -79,6 +79,7 @@ var jsonRest = [
 
 ['/usr/ucb/ps -auxww',                                                  '# solaris: full command line'],
 ['jar tf',                                                              '# list files in a jar-file'],
+['lsb_release -a',                                                      '# ubuntu version'],
 ['xfce4-session-logout',                                                '&nbsp;'],
 ['man -k abc',                                                          '# search man pages for abc'],
 ['$ssh-copy-id user@host',                                              '# Copy ssh keys to user@host to enable password-less ssh logins'],
