@@ -1,9 +1,9 @@
 var jsonRest = [
-['rm -r ~/.cache/sessions',                       '# execute this the title bar dissapears from xfwm4'],
+['rm -r ~/.cache/sessions',                       '# execute this when the title bar dissapears from xfwm4'],
 ['ls --format=single-column',                     '&nbsp;'],
 ['echo "ls -l" | at midnight',                    '# Execute a command at a given time'],
 ['wc cheatsheet.html',                            '# line count, word count'],
-['sudo !!',                                       '# Run the last command as root'],
+['sudo !!',                                       '# run the last command as root'],
 ['!$',                                            '# last parameter (argument) of the last command'],
 ['C-r, C-g',                                      '# bash history, abort history'],
 ['mv README.{text,txt} ; cp file{,.bak}',         '# mv README.text README.txt ; cp file file.bak'],
@@ -11,6 +11,7 @@ var jsonRest = [
 ['./command.sh 2&gt;&amp;1 | tee command.log',    '# print the output to log and to the stdout'],
 ['gvim $(find . -name "*fileToSearch*")',         '# find files and open them in gvim'],
 
+['curl -O http://...',                            '# download a file'],
 ['&nbsp;','&nbsp;'],
 
 ['find . -name "*fileToSearch*"',                 '&nbsp;'],
@@ -64,16 +65,6 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
-
-['\sr',                                                                 '# vimclojure: start REPL'],
-['\sR',                                                                 '# vimclojure: start interactive REPL initialized to have same namespace as current buffer'],
-['\si',                                                                 '# vimclojure: prompt for input and lookup with (source)'],
-['\fd',                                                                 '# vimclojure: prompt for input and lookup with (find-doc)'],
-['\el',                                                                 '# vimclojure: eval current line'],
-['\ef',                                                                 '# vimclojure: eval current file'],
-['\eb',                                                                 '# vimclojure: eval current current visual block selected'],
-['\et',                                                                 '# vimclojure: send a function to the REPL'],
-['\p',                                                                  '# vimclojure: close a window'],
 
 ['&nbsp;','&nbsp;'],
 

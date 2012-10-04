@@ -32,13 +32,13 @@ body {
 
 .desc, .rest {
 	float: left;
-	width: 50%;
+	width: 60%;
 /*	border:1px solid red;*/
 }
 
 .line {
 	float: left;
-	width: 90%;
+	width: 99%;
 /*	border:1px solid green;*/
 }
 
