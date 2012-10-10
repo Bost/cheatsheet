@@ -133,16 +133,5 @@ ci" : Change the content inside a string
 ['\\eb',                                     '" vimclojure: eval current current visual block selected'],
 ['\\et',                                     '" vimclojure: send a function to the REPL'],
 ['\\p',                                      '" vimclojure: close a window'],
-
-['\\sr',                                     '" vimclojure: start REPL'],
-['\\sR',                                     '" vimclojure: start interactive REPL initialized to have same namespace as current buffer'],
-['\\si',                                     '" vimclojure: prompt for input and lookup with (source)'],
-['\\fd',                                     '" vimclojure: prompt for input and lookup with (find-doc)'],
-['\\el',                                     '" vimclojure: eval current line'],
-['\\ef',                                     '" vimclojure: eval current file'],
-['\\eb',                                     '" vimclojure: eval current current visual block selected'],
-['\\et',                                     '" vimclojure: send a function to the REPL'],
-['\\p',                                      '" vimclojure: close a window'],
-
 ]
 
