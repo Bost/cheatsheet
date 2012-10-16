@@ -57,15 +57,15 @@ var jsonRest = [
 ['db2cmd -i -w db2clpsetcp',                                            '# db2: init envidonment'],
 ['echo %DB2CLP%',                                                       '&nbsp;'],
 ['db2 get connection state',                                            '&nbsp;'],
-['db2 CATALOG TCPIP NODE $NODE_NAME REMOTE $IP_ADDR server $PORT',      '&nbsp;'],
-['db2 CATALOG DATABASE $DATABASE_NAME AT NODE $NODE_NAME',              '&nbsp;'],
+['db2 CATALOG TCPIP NODE $node_name REMOTE $ip_addr SERVER $port',      '&nbsp;'],
+['db2 CATALOG DATABASE $database_name at NODE $node_name AUTHENTIFICATION SERVER', '&nbsp;'],
+['db2 UNCATALOG NODE $node_name',                                       '&nbsp;'],
+['db2 UNCATALOG DATABASE $database_name',                               '&nbsp;'],
 ['db2 TERMINATE',                                                       '&nbsp;'],
 ['db2 -vf script.sql -t',                                               '# db2: launch script on CLI'],
 
 
 ['&nbsp;','&nbsp;'],
-
-
 ['&nbsp;','&nbsp;'],
 
 ['/usr/ucb/ps -auxww',                                                  '# solaris: full command line'],

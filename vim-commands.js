@@ -22,7 +22,7 @@ ci" : Change the content inside a string
 [':messages',                                '" display error messages'],
 ['gq',                                       '" break lines according to :set textwidth. (see wrapmargin too)'],
 ['== / gg=G',                                '" format line / format file'],
-['qq .... q @q/@@',                          '" start/stop recording, play down the recording'],
+['qq .... q @q/@@',                          '" start/stop macro recording, play down recorded macro'],
 [':cw / :cwindow',                           '" open the quickfix window'],
 [':cclose',                                  '" close quickfix window'],
 [':wa',                                      '" write all buffers at once'],
