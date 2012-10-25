@@ -9,6 +9,8 @@ This is typically used with the 'd' or 'c' commands (delete, change), followed b
 ca{ : Delete a block of code delimited by curly braces.   {   }
 ci( : Change the content inside parenthesis.
 ci" : Change the content inside a string
+
+TODO: color command belonging together
 */
 [':bufdo %s/pattern/substit/ge | update',    '" substitute and <u>save</u> in all buffers'],
 [':bnext (or bn)/ bprev (or bp)',            '" go to next/previous buffer'],
@@ -29,7 +31,7 @@ ci" : Change the content inside a string
 [':marks, m',                                '" marks (for jumping etc); m - marks something?'],
 ['C-x C-k e',                                '" edit macro'],
 ['vim -p file1 file2',                       '" open vim with tabs'],
-[':! sort',                                  '" &nbsp;'],
+[':! sort',                                  '&nbsp;'],
 [':sort u',                                  '" filter out duplicate rows (unique rows only)'],
 ['78i-&lt;Esc&gt;',                          '" print 78 \'-\' chars at once'],
 ['gum gUm',                                  '" lowercase/uppercase of movement m'],
@@ -87,8 +89,10 @@ ci" : Change the content inside a string
 [':vert diffsplit filename',                 '" diff current buffer with a filename'],
 ['gvim -d file1 file2 / vimdiff file1 file2','" &nbsp;'],
 [']c / [c',                                  '" jump to next / previous diff'],
-['do :diffg :diffget',                       '" (diff obtain) replace a diff in the current viewport with that from the other viewport, use the :diffget command'],
-['dp',                                       '" (diff put) replace a diff in the other viewport with that from the current viewport, use the :diffput command'],
+['do :diffg :diffget',                       '" \'obtain\' difference under cursor from the other viewport'],
+['dp :diffput',                              '" \'put\' difference under cursor to the other viewport'],
+[':diffupdate',                              '&nbsp;'],
+
 ['&nbsp;',                                   '&nbsp;'],
 
 ['set fileformat=dos|unix|mac',              '&nbsp;'],
@@ -105,20 +109,28 @@ ci" : Change the content inside a string
 [':changes g; g,',                           '" move forth/back in the change list'],
 [':jumps / C-o / C-i',                       '" back/forth in the jump list (older/newer)'],
 
+[':scriptnames',                             '" list all plugins, _vimrcs loaded (super)'],
+[':verbose set history?',                    '" reveals value of history and where set'],
+[':function',                                '" list functions'],
+[':func SearchCompl',                        '" List particular function'],
+
 ['&nbsp;',                                   '&nbsp;'],
-['vim-fugitive',                             '&nbsp;'],
-['-',                                        'stage / unstage current file'],
-[':Gread',                                   'git checkout -- filename'],
-[':Gmove',                                   'git mv'],
-[':Gremove',                                 'git rm'],
+
+['-',                                        '" vim-fugitive: stage / unstage current file'],
+[':Gread',                                   '" vim-fugitive: git checkout -- filename'],
+[':Gmove',                                   '" vim-fugitive: git mv'],
+[':Gremove',                                 '" vim-fugitive: git rm'],
+
 ['&nbsp;',                                   '&nbsp;'],
-['NERDTree',                                 '&nbsp;'],
-[':NERDTree q:',                             '" change drive to q: under windows'],
-['i',                                        '" open split'],
-['cd',                                       '" change dir'],
-['r',                                        '" refresh'],
-['B',                                        '" bookmarks'],
+
+[':NERDTree q:',                             '" NERDTree: change drive to q: under windows'],
+['i',                                        '" NERDTree: open split'],
+['cd',                                       '" NERDTree: change dir'],
+['r',                                        '" NERDTree: refresh'],
+['B',                                        '" NERDTree: bookmarks'],
+
 ['&nbsp;',                                   '&nbsp;'],
+
 ['snipMate',                                 '" html tag completition'],
 ['fuzzyFinder',                              '" finds file, need L9 vim plugin (does not work somehow :('],
 
