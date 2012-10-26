@@ -14,6 +14,7 @@ var jsonRest = [
 ['curl -O http://...',                            '# download a file'],
 ['&nbsp;','&nbsp;'],
 
+['diff -rq dirA dirB | sort',                     '# recursively compare dirA with dirB; show only filenames: -q (quiet)'],
 ['find . -name "*fileToSearch*"',                 '&nbsp;'],
 ['find . -name *.properties -exec grep -lir ".*textToFind.*" \'{}\' \; -print',    '&nbsp;'],
 ['grep -lir "TextToFind" *',                      '# print only file-names'],

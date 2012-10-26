@@ -10,7 +10,7 @@ ca{ : Delete a block of code delimited by curly braces.   {   }
 ci( : Change the content inside parenthesis.
 ci" : Change the content inside a string
 
-TODO: color command belonging together
+TODO: color commands belonging together
 */
 [':bufdo %s/pattern/substit/ge | update',    '" substitute and <u>save</u> in all buffers'],
 [':bnext (or bn)/ bprev (or bp)',            '" go to next/previous buffer'],
@@ -21,6 +21,7 @@ TODO: color command belonging together
 ['["x]y{motion}',                            '" yank {motion} into register x'],
 ['"qY',                                      '" store curret line to register q'],
 ['"0P',                                      '" paste last yanked text'],
+['"+p / "+dd',                               '" paste from / cut line to system clipboard for X11; or try * instead of +'],
 [':messages',                                '" display error messages'],
 ['gq',                                       '" break lines according to :set textwidth. (see wrapmargin too)'],
 ['== / gg=G',                                '" format line / format file'],
@@ -79,7 +80,7 @@ TODO: color command belonging together
 ['xp',                                       '" swap chars'],
 ['C-n C-p',                                  '" word completition in insert mode'],
 ['C-x C-l',                                  '" line completition in insert mode'],
-['/C-r C-w',                                 '" pull &lt;cword&gt; onto search/command line'],
+['/C-r C-w',                                 '" pull &lt;cword&gt; (current word) onto search/command line'],
 ['C-x C-o',		                             '" complete function name (omni completition)'],
 
 
