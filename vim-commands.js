@@ -11,19 +11,22 @@ ci( : Change the content inside parenthesis.
 ci" : Change the content inside a string
 
 TODO: color commands belonging together
+TODO: C-r register, C-r C-o / C-r / C-p
+
 */
 [':bufdo %s/pattern/substit/ge | update',    '" substitute and <u>save</u> in all buffers'],
 [':bnext (or bn)/ bprev (or bp)',            '" go to next/previous buffer'],
 [':ball',                                    '" open all buffers'],
 [':let @m=\'\'  /  :let @m=@n',              '" clear register / copy register value'],
 ['v/abc',                                    '" mark everything from the cursor up to abc'],
-[':reg {arg}',                               '" display register number {arg}'],
+[':reg abc',                                 '" display registers a, b and c'],
 ['["x]y{motion}',                            '" yank {motion} into register x'],
 ['"qY',                                      '" store curret line to register q'],
 ['"0P',                                      '" paste last yanked text'],
-['"+p / "+dd',                               '" paste from / cut line to system clipboard for X11; or try * instead of +'],
+['"*p / "*dd / "+p / "+dd',                  '" paste from / cut line to system clipboard / system selection (X11)'],
 [':messages',                                '" display error messages'],
 ['gq',                                       '" break lines according to :set textwidth. (see wrapmargin too)'],
+['gj / gk',                                  '" move down / up when lines are wrapped'],
 ['== / gg=G',                                '" format line / format file'],
 ['qq .... q @q/@@',                          '" start/stop macro recording, play down recorded macro'],
 [':cw / :cwindow',                           '" open the quickfix window'],
@@ -47,6 +50,16 @@ TODO: color commands belonging together
 ['zc zo za / zC zO zA / zR',                 '" close, open, toggle current / all folds from cursor/ all folds'],
 [':set guifont=?',                           '" display current guifont'],
 [':set guifont=*',                           '" display guifont dialog window'],
+['"% / "#',                                  '" registers: current / alternate filename'],
+['"_ / ".',                                  '" registers: last small delete (? the blackhole register?) / last inserted text'],
+['"/ / ":',                                  '" registers: last search / last ex command'],
+
+
+['C-r % / C-r #',                            '" registers: insert name of the current / alternate file'],
+['C-r =',                                    '" calculator; can access every vim-function'],
+
+
+
 ['C-^ / C-6',                                '" switch to the alternate file (probably the one marked with %/")'],
 ['C-t / C-d',                                '" align text in insert mode'],
 ['vit / yit / cit / dit',                    '" mark/yank/change/delete \"innerHTML\"'],
@@ -79,12 +92,12 @@ TODO: color commands belonging together
 ['C-a / C-x',                                '" increment / decrement next number on the current line'],
 ['xp',                                       '" swap chars'],
 ['C-n C-p',                                  '" word completition in insert mode'],
-['C-x C-l',                                  '" line completition in insert mode'],
+['C-x C-l / C-x C-o',                        '" line completition / function name completition (omni completition)'],
 ['/C-r C-w',                                 '" pull &lt;cword&gt; (current word) onto search/command line'],
-['C-x C-o',		                             '" complete function name (omni completition)'],
+['C-o',                                      '" temporarily change the insert- for normal mode'],
 
 
-['&nbsp;',                                   '" &nbsp;'],
+['&nbsp;',                                   '&nbsp;'],
 
 [':diffthis / :windo diffthis',              '" diff current two buffers/windows'],
 [':vert diffsplit filename',                 '" diff current buffer with a filename'],
@@ -141,9 +154,7 @@ TODO: color commands belonging together
 ['\\sR',                                     '" vimclojure: start interactive REPL initialized to have same namespace as current buffer'],
 ['\\si',                                     '" vimclojure: prompt for input and lookup with (source)'],
 ['\\fd',                                     '" vimclojure: prompt for input and lookup with (find-doc)'],
-['\\el',                                     '" vimclojure: eval current line'],
-['\\ef',                                     '" vimclojure: eval current file'],
-['\\eb',                                     '" vimclojure: eval current current visual block selected'],
+['\\el / \\ef / \\eb',                       '" vimclojure: eval current line / file / current visual block selected'],
 ['\\et',                                     '" vimclojure: send a function to the REPL'],
 ['\\p',                                      '" vimclojure: close a window'],
 ]
