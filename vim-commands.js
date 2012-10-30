@@ -106,6 +106,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['do :diffg :diffget',                       '" \'obtain\' difference under cursor from the other viewport'],
 ['dp :diffput',                              '" \'put\' difference under cursor to the other viewport'],
 [':diffupdate',                              '&nbsp;'],
+[':diffoff',                                 '" switch off the diffmode for the current window'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
