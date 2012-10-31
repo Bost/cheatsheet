@@ -16,7 +16,6 @@ TODO: C-r register, C-r C-o / C-r / C-p
 */
 [':bufdo %s/pattern/substit/ge | update',    '" substitute and <u>save</u> in all buffers'],
 [':bnext (or bn)/ bprev (or bp)',            '" go to next/previous buffer'],
-[':ball',                                    '" open all buffers'],
 [':let @m=\'\'  /  :let @m=@n',              '" clear register / copy register value'],
 ['v/abc',                                    '" mark everything from the cursor up to abc'],
 [':reg abc',                                 '" display registers a, b and c'],
@@ -31,7 +30,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['qq .... q @q/@@',                          '" start/stop macro recording, play down recorded macro'],
 [':cw / :cwindow',                           '" open the quickfix window'],
 [':cclose',                                  '" close quickfix window'],
-[':wa',                                      '" write all buffers at once'],
+[':ba / :ball / :wa / :wall',                '" open / write all buffers at once'],
 [':marks, m',                                '" marks (for jumping etc); m - marks something?'],
 ['C-x C-k e',                                '" edit macro'],
 ['vim -p file1 file2',                       '" open vim with tabs'],
@@ -42,7 +41,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['R r ~',                                    '" replace mode, replace 1 char, replace char and move right'],
 ['30|',                                      '" jump to column 30'],
 [':r! command',                              '" execute command and read in its output'],
-['.!sh',                                     '" execute current line in the shell'],
+['.!sh / !!sh / <F8>',                       '" execute current line in the shell'],
 [':%!column -t',                             '" format to columns'],
 ['`. / \'.',                                 '" last edit location (~ key)/ line (&auml; key)'],
 ['; ,',                                      '" jump cursor forward, backward'],
@@ -57,7 +56,6 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['C-r % / C-r #',                            '" registers: insert name of the current / alternate file'],
 ['C-r =',                                    '" calculator; can access every vim-function'],
-
 
 
 ['C-^ / C-6',                                '" switch to the alternate file (probably the one marked with %/")'],
@@ -99,14 +97,13 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
-[':diffthis / :windo diffthis',              '" diff current two buffers/windows'],
+[':diffthis / :windo diffthis',              '" diff current two buffers / windows'],
 [':vert diffsplit filename',                 '" diff current buffer with a filename'],
 ['gvim -d file1 file2 / vimdiff file1 file2','" &nbsp;'],
 [']c / [c',                                  '" jump to next / previous diff'],
 ['do :diffg :diffget',                       '" \'obtain\' difference under cursor from the other viewport'],
 ['dp :diffput',                              '" \'put\' difference under cursor to the other viewport'],
-[':diffupdate',                              '&nbsp;'],
-[':diffoff',                                 '" switch off the diffmode for the current window'],
+[':diffupdate / :diffoff',                   '" update / switch off the diffmode for the current window'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
@@ -126,8 +123,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 [':scriptnames',                             '" list all plugins, _vimrcs loaded (super)'],
 [':verbose set history?',                    '" reveals value of history and where set'],
-[':function',                                '" list functions'],
-[':func SearchCompl',                        '" List particular function'],
+[':function / :func SearchCompl',            '" list functions / particular function'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
@@ -135,19 +131,17 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':Gread',                                   '" vim-fugitive: git checkout -- filename'],
 [':Gmove',                                   '" vim-fugitive: git mv'],
 [':Gremove',                                 '" vim-fugitive: git rm'],
+[':Gdiff',                                   '" vim-fugitive: perform vimdiff'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
 [':NERDTree q:',                             '" NERDTree: change drive to q: under windows'],
 ['i',                                        '" NERDTree: open split'],
-['cd',                                       '" NERDTree: change dir'],
-['r',                                        '" NERDTree: refresh'],
-['B',                                        '" NERDTree: bookmarks'],
+['cd / r / B',                               '" NERDTree: change dir / refresh / bookmarks'],
 
-['&nbsp;',                                   '&nbsp;'],
-
-['snipMate',                                 '" html tag completition'],
-['fuzzyFinder',                              '" finds file, need L9 vim plugin (does not work somehow :('],
+//['&nbsp;',                                   '&nbsp;'],
+//['snipMate',                                 '" code snippets'],
+//['fuzzyFinder',                              '" finds file, need L9 vim plugin (does not work somehow :('],
 
 ['&nbsp;',                                   '&nbsp;'],
 
