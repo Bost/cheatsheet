@@ -56,6 +56,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['C-r % / C-r #',                            '" registers: insert name of the current / alternate file'],
 ['C-r =',                                    '" calculator; can access every vim-function'],
+['yypVr=',                                   '" yank current line, paste it below, select copied line, replace every char with ='],
 
 
 ['C-^ / C-6',                                '" switch to the alternate file (probably the one marked with %/")'],
@@ -72,7 +73,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['3/joe/e+1',                                '" find 3rd joe cursor set to End of match plus 1 [C]'],
 ['5/joe/s-2',                                '" find 5th joe cursor set to Start of match minus 2'],
 ['/joe/+4',                                  '" find joe cursor and move 4 lines down'],
-['f/t F/T',                                  '" search forward / backward'],
+['f/t F/T',                                  '" find / till (until) forward / backward'],
 ['q: / q? / q/',                             '" open Ex command-line / search string'],
 ['c-f',                                      '" opens command-line history when editing search pattern'],
 ['* / "',                                    '" hightlight and search forwards/backwards'],
@@ -142,6 +143,12 @@ TODO: C-r register, C-r C-o / C-r / C-p
 //['&nbsp;',                                   '&nbsp;'],
 //['snipMate',                                 '" code snippets'],
 //['fuzzyFinder',                              '" finds file, need L9 vim plugin (does not work somehow :('],
+
+['&nbsp;',                                   '&nbsp;'],
+
+['\\be',                                     '" bufexplorer: :BufExplorer - in current window'],
+['\\bs / \\b',                               '" bufexplorer: :BufExplorerHorizontalSplit'],
+['\\bv',                                     '" bufexplorer: :BufExplorerVerticalSplit'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
