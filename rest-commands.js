@@ -27,6 +27,12 @@ var jsonRest = [
 
 ['git filter-branch -f --env-filter "GIT_AUTHOR_NAME=\'Bost\'; GIT_AUTHOR_EMAIL=\'thebost@gmail.com\'; GIT_COMMITTER_NAME=\'Bost\'; GIT_COMMITTER_EMAIL=\'thebost@gmail.com\';" HEAD', '# change the name and email in all commits'],
 ['&nbsp;','&nbsp;'],
+
+['git remote add upstream https://github.com/octocat/Spoon-Knife.git', '# Assigns the original repo to a remote called \'upstream\''],
+['git fetch upstream', ''],
+
+['&nbsp;','&nbsp;'],
+
 ['git branch -rd public/whatever',                '# delete a remote-tracking branch from local repository'],
 ['git diff --name-only master branch',            '# show files changed between two branches/commits'],
 ['git diff --word-diff',                          '# show particular changed word'],
