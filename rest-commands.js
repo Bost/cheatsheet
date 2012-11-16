@@ -81,6 +81,8 @@ var jsonRest = [
 ['db2 UNCATALOG DATABASE $database_name',                               '&nbsp;'],
 ['db2 TERMINATE',                                                       '&nbsp;'],
 ['db2 -vf script.sql -t',                                               '# db2: launch script on CLI'],
+['db2 list db directory &gt; db.txt | gvim db.txt',                     ''],
+['db2 list node directory &gt; node.txt | gvim node.txt',               ''],
 
 
 ['&nbsp;','&nbsp;'],
