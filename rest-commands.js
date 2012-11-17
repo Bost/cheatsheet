@@ -82,6 +82,11 @@ var jsonRest = [
 ['db2 TERMINATE',                                                       '&nbsp;'],
 ['db2 -vf script.sql -t',                                               '# db2: launch script on CLI'],
 
+['&nbsp;','&nbsp;'],
+
+['last',                                                                '# last logged-in users'],
+['lscpu',                                                               '# info about CPU architecture'],
+['renice',                                                              '# alter priority of running processes'],
 
 ['&nbsp;','&nbsp;'],
 ['&nbsp;','&nbsp;'],

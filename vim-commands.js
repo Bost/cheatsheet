@@ -77,11 +77,11 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['C-^ / C-6',                                '" switch to the alternate file (the one with #)'],
 ['C-t / C-d',                                '" align text to right / left in insert mode'],
-['vit / yit / cit / dit',                    '" mark/yank/change/delete the \"innerHTML\"'],
-['vat / yat / cat / dat',                    '" mark/yank/change/delete the whole html tag'],
 
-['ci{ / ci( / ci[ / ci"',                    '" change the content inside given parenthesis'],
-['da&lt; / dap / daw',                       '" delete html tag / current paragraph (f.e. a function) / word'],
+['vit / yit / cit / dit',                    '" surround: mark/yank/change/delete the \"innerHTML\"'],
+['vat / yat / cat / dat',                    '" surround: mark/yank/change/delete the whole html tag'],
+['ci{ / ci( / ci[ / ci"',                    '" surround: change the content inside given parenthesis'],
+['da&lt; / dap / daw',                       '" surround: delete html tag / current paragraph (f.e. a function) / word'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
@@ -150,15 +150,21 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['-',                                        '" vim-fugitive: stage / unstage current file'],
 [':Gread',                                   '" vim-fugitive: git checkout -- filename'],
-[':Gmove',                                   '" vim-fugitive: git mv'],
-[':Gremove',                                 '" vim-fugitive: git rm'],
+[':Gmove / :G remove',                       '" vim-fugitive: git mv / git rm'],
+[':Gstatus / :Gcommit ',                     '" vim-fugitive: git status / git commit'],
 [':Gdiff',                                   '" vim-fugitive: perform vimdiff'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
+['vit / yit / cit / dit',                    '" surround: mark/yank/change/delete the \"innerHTML\"'],
+['vat / yat / cat / dat',                    '" surround: mark/yank/change/delete the whole html tag'],
+['ci{ / ci( / ci[ / ci"',                    '" surround: change the content inside given parenthesis'],
+['da&lt; / dap / daw',                       '" surround: delete html tag / current paragraph (f.e. a function) / word'],
+
+['&nbsp;',                                   '&nbsp;'],
+
 [':NERDTree q:',                             '" NERDTree: change drive to q: under windows'],
-['i',                                        '" NERDTree: open split'],
-['cd / r / B',                               '" NERDTree: change dir / refresh / bookmarks'],
+['i / cd / r / B',                           '" NERDTree: open split / change dir / refresh / bookmarks'],
 
 //['&nbsp;',                                   '&nbsp;'],
 //['snipMate',                                 '" code snippets'],
@@ -167,16 +173,13 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['&nbsp;',                                   '&nbsp;'],
 
 ['\\be',                                     '" bufexplorer: :BufExplorer - in current window'],
-['\\bs / \\b',                               '" bufexplorer: :BufExplorerHorizontalSplit'],
-['\\bv',                                     '" bufexplorer: :BufExplorerVerticalSplit'],
+['\\bs / \\bv',                              '" bufexplorer: :BufExplorerHorizontalSplit / :BufExplorerVerticalSplit'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
 ['\\sr / \\sR',                              '" vimclojure: start REPL (with the namespace of the current buffer)'],
-['\\si',                                     '" vimclojure: prompt for input and lookup with (source)'],
-['\\fd',                                     '" vimclojure: prompt for input and lookup with (find-doc)'],
-['\\el / \\ef / \\eb',                       '" vimclojure: eval line / file / visual block'],
-['\\et',                                     '" vimclojure: send a function to the REPL'],
+['\\si / \\fd',                              '" vimclojure: prompt for input and lookup with (source) / (find-doc)'],
+['\\el / \\ef / \\eb / \\et',                '" vimclojure: evaluate: line / file / visual block / function'],
 ['\\p',                                      '" vimclojure: close a window'],
 ]
 
