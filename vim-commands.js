@@ -114,6 +114,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['C-a / C-x',                                '" increment / decrement next number on the current line'],
 ['C-n / C-p',                                '" word completition in insert mode (next / previous)'],
 ['C-x C-l / C-x C-o',                        '" line completition / function name completition (omni completition)'],
+['C-x C-f',                                  '" file completition'],
 ['/C-r C-w',                                 '" pull cword (current word) onto search/command line'],
 ['C-o',                                      '" temporarily change the insert- for normal mode'],
 
