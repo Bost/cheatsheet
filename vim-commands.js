@@ -37,6 +37,11 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
+[':redir @*',                                '" redirect messages to the clipboard'],
+[':messages',                                ''],
+[':redir END',                               ''],
+
+['&nbsp;',                                   '&nbsp;'],
 
 [':reg abc',                                 '" display registers a, b and c'],
 ['["x]y{motion}',                            '" yank {motion} into register x'],
@@ -68,6 +73,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['"% / "#',                                  '" registers: current / alternate filename'],
 ['"_ / ".',                                  '" registers: last small delete (? the blackhole register?) / last inserted text'],
 ['"/ / ":',                                  '" registers: last search / last ex command'],
+['( / { / [[',                               '" jump (backward): sentence / paragraph / section (keyword function)'],
 
 
 ['C-r % / C-r #',                            '" registers: insert name of the current / alternate file'],
