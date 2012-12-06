@@ -185,5 +185,12 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['\\el / \\ef / \\eb',                       '" vimclojure: eval line / file / visual block'],
 ['\\et',                                     '" vimclojure: send a function to the REPL'],
 ['\\p',                                      '" vimclojure: close a window'],
+
+['&nbsp;',                                   '&nbsp;'],
+
+[':BundleList',                              '" list configured bundles'],
+[':BundleInstall(!)',                        '" install(update) bundles'],
+[':BundleSearch(!) foo',                     '" search(or refresh cache first) for foo'],
+[':BundleClean(!)',                          '" confirm(or auto-approve) removal of unused bundles'],
 ]
 
