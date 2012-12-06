@@ -188,5 +188,12 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['\\si / \\fd',                              '" vimclojure: prompt for input and lookup with (source) / (find-doc)'],
 ['\\el / \\ef / \\eb / \\et',                '" vimclojure: evaluate: line / file / visual block / function'],
 ['\\p',                                      '" vimclojure: close a window'],
+
+['&nbsp;',                                   '&nbsp;'],
+
+[':BundleList',                              '" list configured bundles'],
+[':BundleInstall(!)',                        '" install(update) bundles'],
+[':BundleSearch(!) foo',                     '" search(or refresh cache first) for foo'],
+[':BundleClean(!)',                          '" confirm(or auto-approve) removal of unused bundles'],
 ]
 

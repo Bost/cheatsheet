@@ -34,6 +34,8 @@ var jsonRest = [
 ['&nbsp;','&nbsp;'],
 
 ['git branch -rd public/whatever',                '# delete a remote-tracking branch from local repository'],
+['git diff localbranch remotebranch filepath',    '# diff file against remote branch'],
+['git diff master branch filepath',               '# diff file between two branches'],
 ['git diff --name-only master branch',            '# show files changed between two branches/commits'],
 ['git diff --word-diff',                          '# show particular changed word'],
 ['git show --name-only',                          '# show files changed in last commit'],
@@ -103,4 +105,12 @@ var jsonRest = [
 
 ['ssh user@host cat /path/to/remotefile | diff /path/to/localfile -',   '# Compare a remote file with a local file'],
 ]
+/*
+// Search for a string in all revisions of entire git history
+git rev-list --all | (
+    while read revision; do
+        git grep -F 'Your search string' $revision
+    done
+)
 
+ */
