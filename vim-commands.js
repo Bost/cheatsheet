@@ -160,6 +160,8 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':Gmove / :G remove',                       '" vim-fugitive: git mv / git rm'],
 [':Gstatus / :Gcommit ',                     '" vim-fugitive: git status / git commit'],
 [':Gdiff',                                   '" vim-fugitive: perform vimdiff'],
+[':Glog [q / ]q / [Q / ]Q',                  '" vim-fugitive: load and move between versions :cprev / :cnext / :cfirst / :clast'],
+[':Gedit',                                   '" vim-fugitive: go back to "normal" file (working copy)'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
