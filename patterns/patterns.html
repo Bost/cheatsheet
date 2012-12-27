@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <link href="google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="google-code-prettify/prettify.js"></script>
+        <!--<link rel="icon" type="image/png" href="favicon.png" />-->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+        <title>Patterns</title>
+</head>
+<body onload="prettyPrint()">
+    <pre class="prettyprint lang-java">
+        // Demeter's law: Do not use:
+        a.getB().getC().doSomething();
+        // replace it with
+        myCollaborator.doSomething();
+    </pre>
+    <pre class="prettyprint lang-java">
+        void monad(String a0);
+        void dyad(String a0, String a1);
+        void triad(String a0, String a1, String a2);
+    </pre>
+</body>
+</html>
