@@ -10,16 +10,81 @@
         <title>Patterns</title>
 </head>
 <body onload="prettyPrint()">
+    <div class="pattern">
     <pre class="prettyprint lang-java">
         // Demeter's law: Do not use:
-        a.getB().getC().doSomething();
+        String outDir = context.getOptions().getScratchDir().getAbsolutePath();
+        String outFile = outDir + "/" + className.replace('.', '/') + ".class";
+        FileOutputStream fout = new FileOutputStream(outFile);
+        BufferedOutputStream bos = new BufferedOutputStream(fout);
+
         // replace it with
-        myCollaborator.doSomething();
+        BufferedOutputStream bos = context.createScratchFileStream(fout);
     </pre>
+    <div class="explanation">
+        Advantages: Objects should not know about internal structure of other objects
+                    Layering
+                    Narrow interfaces at the method level
+                    
+        Disadvantages: Wide (enlarged) interfaces at the class level (see aspect orientation)
+    </div>
+    </div>
     <pre class="prettyprint lang-java">
         void monad(String a0);
         void dyad(String a0, String a1);
         void triad(String a0, String a1, String a2);
     </pre>
+
+    <div class="explanation">
+        Objects:
+        add new property - easy
+        add new method - hard. This new method must be added to every derrived object.
+
+        Data Structures (DTOs):
+        add new method - easy
+        add new property - hard. This new property must be 'processed' by every method working with given DTO. 
+    </div>
+
+    1. create try-catch tests:
+    <pre class="prettyprint lang-java">
+        // step1
+        @Test(expected = StorageException.clsas)
+        public void retrieveSection_throwExceptionOnInvalidFileName() {
+            sectionStore.retrieveSection("invalid-file");
+        }
+
+        public List<RecordedGrip> retrieveSection(String sectionName) {
+            // return empty value until real implementation is done
+            return new ArrayList<RecordedGrip>();
+        }
+
+        // step2 - the real implementation
+        public List<RecordedGrip> retrieveSection(String sectionName) {
+            try {
+                FileInputStream stream = new FileInputStream(sectionName);
+            }
+            catch (Exception e) {
+                throw new StorageException("retrieval error", e);
+            }
+            return new ArrayList<RecordedGrip>();
+        }
+
+        // step3 - narrow down to FileNotFoundException
+        public List<RecordedGrip> retrieveSection(String sectionName) {
+            try {
+                FileInputStream stream = new FileInputStream(sectionName);
+                // the business logic may come here safely - we know here the stream 
+                // has been successfuly created
+                stream.close();
+            }
+            catch (FileNotFoundException e) {
+                throw new StorageException("retrieval error", e);
+            }
+            return new ArrayList<RecordedGrip>();
+        }
+    </pre>
+    <pre class="prettyprint lang-java">
+    </pre>
+
 </body>
 </html>
