@@ -57,8 +57,19 @@ var jsonRest = [
 ['&nbsp;','&nbsp;'],
 
 ['cvs diff -r RELEASE_1_0 -r RELEASE_1_1',        '&nbsp;'],
-['cvs update -C path/file.ext',                   '# get clean copy'],
+['cvs update -C path/to/file.ext',                '# get clean copy'],
 ['cvs checkout -r branchOrTag module',            '# checkout module from branch or tag'],
+['cvs log    -P -d path/to/file.ext',             '# update file'],
+
+['&nbsp;','&nbsp;'],
+
+['cvs tag    -d -r 1.17 NormalTag path/to/file.ext', '# delete NormalTag from file.ext in version 1.17'],
+['cvs tag -B -d -r 1.17 BranchTag path/to/file.ext', '# delete BranchTag from file.ext in version 1.17'],
+['cvs tag -B -F -r 1.19 BranchTag path/to/file.ext', '# move   BranchTag to   file.ext in version 1.19'],
+['cvs tag -b    -r 1.19 BranchTag path/to/file.ext', '# create BranchTag on   file.ext in version 1.19'],
+['cvs tag    -F -r 1.63 NormalTag path/to/file.ext', '# move   NormalTag to   file.ext in version 1.63'],
+
+['&nbsp;','&nbsp;'],
 
 ['ssh-keygen',                                    '&nbsp;'],
 ['cat ~/.ssh/id_rsa.pub',                         '# now copy-paste the ~/.ssh/id_rsa.pub to github under \'Add another public key\''],
@@ -102,8 +113,10 @@ var jsonRest = [
 ['man -k abc',                                                          '# search man pages for abc'],
 ['$ssh-copy-id user@host',                                              '# Copy ssh keys to user@host to enable password-less ssh logins'],
 ['sshfs name@server:/path/to/folder /path/to/mount/point',              '# Mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Will allow you to mount a folder security over a network.'],
+['> file.txt',                                                          '# empty the file.txt'],
 
 ['ssh user@host cat /path/to/remotefile | diff /path/to/localfile -',   '# Compare a remote file with a local file'],
+['net use',                                                             '# Windows: list mapped network drives'],
 ]
 /*
 // Search for a string in all revisions of entire git history
