@@ -18,6 +18,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':bnext (:bn) / :bprev (:bp)',              '" go to next / previous buffer'],
 [':let @m=\'\'  /  :let @m=@n',              '" clear / copy register value'],
 ['v/&lt;pattern&gt;',                        '" mark everything from the cursor up to &lt;pattern&gt;'],
+[':w !sudo tee %',                           '" save a file as a sudo'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
