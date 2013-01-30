@@ -106,7 +106,7 @@ var jsonRest = [
 ['&nbsp;','&nbsp;'],
 ['&nbsp;','&nbsp;'],
 
-['/usr/ucb/ps -auxww',                                                  '# solaris: full command line'],
+['/usr/ucb/ps -auxww',                                                  '# solaris: full command line (needs: sudo rootsh -i -u ... )'],
 ['jar tf',                                                              '# list files in a jar-file'],
 ['lsb_release -a',                                                      '# ubuntu version'],
 ['xfce4-session-logout',                                                '&nbsp;'],
