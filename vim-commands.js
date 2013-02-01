@@ -30,11 +30,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
-[':g//',                                     '" lists all lines with the last search pattern'],
 [':new',                                     '" create new window'],
-
-['&nbsp;',                                   '&nbsp;'],
-
 ['"0P',                                      '" paste last yanked text'],
 ['"*p / "*dd / "+p / "+dd',                  '" paste from / cut line to system clipboard / system selection (X11)'],
 ['gq',                                       '" break lines according to :set textwidth. (see wrapmargin too)'],
@@ -106,6 +102,17 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['5/joe/s-2',                                '" find 5th joe cursor set to start of match minus 2'],
 ['/joe/+4',                                  '" find joe cursor and move 4 lines down'],
 ['f/t F/T',                                  '" find / till (until) forward / backward'],
+[':g//',                                     '" lists all lines with the last search pattern'],
+
+['&nbsp;',                                   '&nbsp;'],
+
+['\\{-}',                                    '" lazy matching'],
+['\\{min,max\\}',                            '" min, max occurences'],
+['\\+',                                      '" min 1 occurence'],
+['\\?',                                      '" max 1 occurence'],
+
+['&nbsp;',                                   '&nbsp;'],
+
 ['q: / q? / q/',                             '" open Ex command-line / search string'],
 ['c-f',                                      '" opens command-line history when editing search pattern'],
 ['* / "',                                    '" hightlight and search forwards/backwards'],
