@@ -27,7 +27,7 @@
         Advantages: Objects should not know about internal structure of other objects
                     Layering
                     Narrow interfaces at the method level
-                    
+
         Disadvantages: Wide (enlarged) interfaces at the class level (see aspect orientation)
     </div>
     </div>
@@ -44,7 +44,7 @@
 
         Data Structures (DTOs):
         add new method - easy
-        add new property - hard. This new property must be 'processed' by every method working with given DTO. 
+        add new property - hard. This new property must be 'processed' by every method working with given DTO.
     </div>
 
     1. create try-catch tests:
@@ -75,7 +75,7 @@
     public List<RecordedGrip> retrieveSection(String sectionName) {
         try {
             FileInputStream stream = new FileInputStream(sectionName);
-            // the business logic may come here safely - we know here the stream 
+            // the business logic may come here safely - we know here the stream
             // has been successfuly created
             stream.close();
         }
@@ -86,8 +86,9 @@
     } </pre>
 
     <div>
-        Interface Border exploration - use it to test new releases of a new 3th party package realese: 
-    <pre class="prettyprint lang-java">
+        Interface Border exploration - use it to test new releases of a new 3th party package realese:
+    <script type="text/java" src="LogTest.java"></script>
+        <pre class="prettyprint lang-java">
     // TODO include LogTest.java as an external file
     public class LogTest {
         private Logger logger;
@@ -119,15 +120,41 @@
                 new PatternLayout("%p %t %m%n")));
             logger.info("addAppenderWithoutStream");
         }
-    }
-    </pre>
+    }</pre>
     </div>
+
     <div>
         Dependency Injection - a variant of IoC (Inversion of Control)
-    <pre class="prettyprint lang-java">
-    // partial implementation of DI: 
-    MyService myService = (MyService) jndiContext.lookup("MyServiceName");
-    </pre>
-        </div>
+        <pre class="prettyprint lang-java">
+    // partial implementation of DI:
+    MyService myService = (MyService) jndiContext.lookup("MyServiceName");</pre>
+    </div>
+
+    <div>
+        <pre class="prettyprint lang-java">
+    // original code:
+    Complex c = new Complex(-1, 0);
+
+    public class Complex {
+        public static Complex fromCartesianFactory(double real, double imaginary) {
+            return new Complex(real, imaginary);
+        }
+        public static Complex fromPolarFactory(double modulus, double angle) {
+            return new Complex(modulus * cos(angle), modulus * sin(angle));
+        }
+        /** we want to make the default constructor invisibe - thus private or protected
+         * Disadvantages:
+         * - every(!) original 'new Complex(x, y)' must be replaced by fromCartesianFactory or fromPolarFactory
+         * - the subclass must provide its own re-implementation of all factory methods with exactly the same
+         *   signatures. For example, if class StrangeComplex extends Complex, then unless StrangeComplex
+         *   provides its own version of all factory methods, the call.
+         */
+        private Complex(double a, double b) {
+            //...
+        }
+    }
+
+    Complex c = Complex.fromCartesianFactory(-1, 0);</pre>
+    </div>
 </body>
 </html>

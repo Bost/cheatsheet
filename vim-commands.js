@@ -188,7 +188,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['\\sr / \\sR',                              '" vimclojure: start REPL (with the namespace of the current buffer)'],
 ['\\si / \\fd',                              '" vimclojure: prompt for input and lookup with (source) / (find-doc)'],
-['\\el / \\ef / \\eb / \\et',                '" vimclojure: evaluate: line / file / visual block / function'],
+['\\el / \\ef / \\ep / \\eb / \\et',         '" vimclojure: evaluate: line / file / paragraph / visual block (in visual mode) / function'],
 ['\\p',                                      '" vimclojure: close a window'],
 
 ['&nbsp;',                                   '&nbsp;'],
