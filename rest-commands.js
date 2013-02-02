@@ -1,90 +1,103 @@
 var jsonRest = [
-['rm -r ~/.cache/sessions',                       '# execute this when the title bar dissapears from xfwm4'],
-['ls --format=single-column',                     '&nbsp;'],
-['echo "ls -l" | at midnight',                    '# Execute a command at a given time'],
+['ls --format=single-column',                     '# ls: '],
+['ls -d1 */',                                     '# ls: list only directories, 1 entry per line'],
+['echo "ls -l" | at midnight',                    '# execute a command at a given time'],
 ['wc cheatsheet.html',                            '# line count, word count'],
 ['sudo !!',                                       '# run the last command as root'],
 ['!$',                                            '# last parameter (argument) of the last command'],
-['C-r, C-g',                                      '# bash history, abort history'],
 ['mv README.{text,txt} ; cp file{,.bak}',         '# mv README.text README.txt ; cp file file.bak'],
-['ls -d1 */',                                     '# list only directories, 1 entry per line'],
 ['./command.sh 2&gt;&amp;1 | tee command.log',    '# print the output to log and to the stdout'],
 ['gvim $(find . -name "*fileToSearch*")',         '# find files and open them in gvim'],
 
 ['curl -O http://...',                            '# download a file'],
+
 ['&nbsp;','&nbsp;'],
 
 ['diff -rq dirA dirB | sort',                     '# recursively compare dirA with dirB; show only filenames: -q (quiet)'],
-['find . -name "*fileToSearch*"',                 '&nbsp;'],
-['find . -name *.properties -exec grep -lir ".*textToFind.*" \'{}\' \; -print',    '&nbsp;'],
-['grep -lir "TextToFind" *',                      '# print only file-names'],
-['grep sometext * | cut -f1 -d:',                 '# print only filenames of the files containing \'sometext\''],
-['grep -i -n "TextToSearch" *',                   '# print line numbers'],
-['grep --exclude=.git',                           '&nbsp;'],
-['grep --exclude=.git -lir \'something\' *.cpp',  '&nbsp;'],
+
+['find . -name "*fileToSearch*"',                                               '# find: '],
+['find . -name *.properties -exec grep -lir ".*textToFind.*" \'{}\' \; -print', '# find: '],
+['grep -lir "TextToFind" *',                      '# grep: print only file-names'],
+['grep sometext * | cut -f1 -d:',                 '# grep: print only filenames of the files containing \'sometext\''],
+['grep -i -n "TextToSearch" *',                   '# grep: print line numbers'],
+['grep --exclude=.git',                           '# grep: '],
+['grep --exclude=.git -lir \'something\' *.cpp',  '# grep: '],
 
 ['&nbsp;','&nbsp;'],
 
-['git filter-branch -f --env-filter "GIT_AUTHOR_NAME=\'Bost\'; GIT_AUTHOR_EMAIL=\'thebost@gmail.com\'; GIT_COMMITTER_NAME=\'Bost\'; GIT_COMMITTER_EMAIL=\'thebost@gmail.com\';" HEAD', '# change the name and email in all commits'],
+['git filter-branch -f --env-filter "GIT_AUTHOR_NAME=\'Bost\'; GIT_AUTHOR_EMAIL=\'thebost@gmail.com\'; GIT_COMMITTER_NAME=\'Bost\'; GIT_COMMITTER_EMAIL=\'thebost@gmail.com\';" HEAD', '# git: change the name and email in all commits'],
 ['&nbsp;','&nbsp;'],
 
-['git remote add upstream https://github.com/octocat/Spoon-Knife.git', '# Assigns the original repo to a remote called \'upstream\''],
+['git remote add upstream https://github.com/octocat/Spoon-Knife.git', '# assigns the original repo to a remote called \'upstream\''],
 ['git fetch upstream', ''],
 
 ['&nbsp;','&nbsp;'],
 
-['git branch -rd public/whatever',                '# delete a remote-tracking branch from local repository'],
-['git diff localbranch remotebranch filepath',    '# diff file against remote branch'],
-['git diff master branch filepath',               '# diff file between two branches'],
-['git diff --name-only master branch',            '# show files changed between two branches/commits'],
-['git diff --word-diff',                          '# show particular changed word'],
-['git show --name-only',                          '# show files changed in last commit'],
-['git show :/query',                              '# search through the gitlog'],
-['git checkout BRANCH -- /path/file.txt',         '# copy file from a BRANCH to /path/file.txt'],
-['git status -sb',                                '# --show --branch: show current branch and changes made since last commit'],
-['git add -p',                                    '# --patch: interactively choose hunks of patch; see \'--interactive\''],
-['git reflog',                                    '# a kind of \'git history\''],
-['git config --global help.autocorrect 1',        '# help with typos like \'git comit\''],
-['git config --global rerere.enabled 1',          '# remember actions on a particular commit - in case of repeating conflicts when rebasing; long running branches'],
-['git log -S\'text-to-search\'',                  '# search entire commit history'],
-['git log --pretty=format:\'%h %s\'',             '# show formated commit logs'],
-['git log --oneline --graph',                     '# a kind of \'gitk --all\''],
-['git log --oneline --grep="pattern"',            '&nbsp;'],
-['--git-dir=../all/.git --work-tree=.',           '# set git base directory and working tree'],
+['git branch -rd public/whatever',                '# git: delete a remote-tracking branch from local repository'],
+['git diff localbranch remotebranch filepath',    '# git: diff file against remote branch'],
+['git diff master branch filepath',               '# git: diff file between two branches'],
+['git diff --name-only master branch',            '# git: show files changed between two branches/commits'],
+['git diff --word-diff',                          '# git: show particular changed word'],
+['git show --name-only',                          '# git: show files changed in last commit'],
+['git show :/query',                              '# git: search through the gitlog'],
+['git checkout BRANCH -- /path/file.txt',         '# git: copy file from a BRANCH to /path/file.txt'],
+['git status -sb',                                '# git: --show --branch: show current branch and changes made since last commit'],
+['git add -p',                                    '# git: --patch: interactively choose hunks of patch; see \'--interactive\''],
+['git reflog',                                    '# git: a kind of \'git history\''],
+['git config --global help.autocorrect 1',        '# git: help with typos like \'git comit\''],
+['git config --global rerere.enabled 1',          '# git: remember actions on a particular commit - in case of repeating conflicts when rebasing; long running branches'],
+['git log -S\'text-to-search\'',                  '# git: search entire commit history'],
+['git log --pretty=format:\'%h %s\'',             '# git: show formated commit logs'],
+['git log --oneline --graph',                     '# git: a kind of \'gitk --all\''],
+['git log --oneline --grep="pattern"',            '# git: &nbsp;'],
+['--git-dir=../all/.git --work-tree=.',           '# git: set git base directory and working tree'],
 
 
-['d() { date; }',                                 '# ? define function in bash ?'],
+['d() { date; }',                                 '# bash: ? define function in bash ?'],
+['C-r, C-g',                                      '# bash: bash history, abort history'],
+
 ['&nbsp;','&nbsp;'],
 
-['cvs diff -r RELEASE_1_0 -r RELEASE_1_1',        '&nbsp;'],
-['cvs update -C path/file.ext',                   '# get clean copy'],
-['cvs checkout -r branchOrTag module',            '# checkout module from branch or tag'],
+['cvs diff -r RELEASE_1_0 -r RELEASE_1_1',        '# cvs: '],
+['cvs update -C path/to/file.ext',                '# cvs: get clean copy'],
+['cvs checkout -r branchOrTag module',            '# cvs: checkout module from branch or tag'],
+['cvs log    -P -d path/to/file.ext',             '# cvs: update file'],
+
+['&nbsp;','&nbsp;'],
+
+['cvs tag    -d -r 1.17 NormalTag path/to/file.ext', '# cvs: delete NormalTag from file.ext in version 1.17'],
+['cvs tag -B -d -r 1.17 BranchTag path/to/file.ext', '# cvs: delete BranchTag from file.ext in version 1.17'],
+['cvs tag -B -F -r 1.19 BranchTag path/to/file.ext', '# cvs: move   BranchTag to   file.ext in version 1.19'],
+['cvs tag -b    -r 1.19 BranchTag path/to/file.ext', '# cvs: create BranchTag on   file.ext in version 1.19'],
+['cvs tag    -F -r 1.63 NormalTag path/to/file.ext', '# cvs: move   NormalTag to   file.ext in version 1.63'],
+
+['&nbsp;','&nbsp;'],
 
 ['ssh-keygen',                                    '&nbsp;'],
 ['cat ~/.ssh/id_rsa.pub',                         '# now copy-paste the ~/.ssh/id_rsa.pub to github under \'Add another public key\''],
 
-['METADA_CORE=.metadata/.plugins/org.eclipse.jdt.core;',                '&nbsp;'],
+['METADA_CORE=.metadata/.plugins/org.eclipse.jdt.core;',                '# eclipse: clean metadata'],
 ['rm -rf .metadata/.plugins/org.eclipse.core.resources/.history;',      '&nbsp;'],
 ['rm $METADA_CORE/*.index $METADA_CORE/savedIndexNames.txt;',           '&nbsp;'],
-
-['&nbsp;','&nbsp;'],
-
 ['[\t ]+$',                                                             '# eclipse: remove trailing whitespaces'],
 
+['&nbsp;','&nbsp;'],
+
+
 
 ['&nbsp;','&nbsp;'],
 
-['db2cmd -i -w db2clpsetcp',                                            '# db2: init envidonment'],
-['echo %DB2CLP%',                                                       '&nbsp;'],
-['db2 get connection state',                                            '&nbsp;'],
-['db2 CATALOG TCPIP NODE $node_name REMOTE $ip_addr SERVER $port',      '&nbsp;'],
-['db2 CATALOG DATABASE $database_name at NODE $node_name AUTHENTIFICATION SERVER', '&nbsp;'],
-['db2 UNCATALOG NODE $node_name',                                       '&nbsp;'],
-['db2 UNCATALOG DATABASE $database_name',                               '&nbsp;'],
-['db2 TERMINATE',                                                       '&nbsp;'],
-['db2 -vf script.sql -t',                                               '# db2: launch script on CLI'],
-['db2 list db directory &gt; db.txt | gvim db.txt',                     ''],
-['db2 list node directory &gt; node.txt | gvim node.txt',               ''],
+['db2cmd -i -w db2clpsetcp',                                                       '# db2: init envidonment'],
+['echo %DB2CLP%',                                                                  '# db2: '],
+['db2 get connection state',                                                       '# db2: '],
+['db2 CATALOG TCPIP NODE $node_name REMOTE $ip_addr SERVER $port',                 '# db2: '],
+['db2 CATALOG DATABASE $database_name at NODE $node_name AUTHENTIFICATION SERVER', '# db2: '],
+['db2 UNCATALOG NODE $node_name',                                                  '# db2: '],
+['db2 UNCATALOG DATABASE $database_name',                                          '# db2: '],
+['db2 TERMINATE',                                                                  '# db2: '],
+['db2 list db directory &gt; db.txt | gvim db.txt',                                '# db2: '],
+['db2 list node directory &gt; node.txt | gvim node.txt',                          '# db2: '],
+['db2 -vf script.sql -t',                                                          '# db2: launch script on CLI'],
 
 ['&nbsp;','&nbsp;'],
 
@@ -95,22 +108,16 @@ var jsonRest = [
 ['&nbsp;','&nbsp;'],
 ['&nbsp;','&nbsp;'],
 
-['/usr/ucb/ps -auxww',                                                  '# solaris: full command line'],
+['/usr/ucb/ps -auxww',                                                  '# solaris: full command line (needs: sudo rootsh -i -u ... )'],
 ['jar tf',                                                              '# list files in a jar-file'],
 ['lsb_release -a',                                                      '# ubuntu version'],
-['xfce4-session-logout',                                                '&nbsp;'],
+['xfce4-session-logout',                                                '# xfce: &nbsp;'],
+['rm -r ~/.cache/sessions',                                             '# xfce: execute this when the title bar dissapears from xfwm4'],
 ['man -k abc',                                                          '# search man pages for abc'],
-['$ssh-copy-id user@host',                                              '# Copy ssh keys to user@host to enable password-less ssh logins'],
-['sshfs name@server:/path/to/folder /path/to/mount/point',              '# Mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Will allow you to mount a folder security over a network.'],
+['ssh user@host cat /path/to/remotefile | diff /path/to/localfile -',   '# ssh: compare a remote file with a local file'],
+['$ssh-copy-id user@host',                                              '# ssh: copy ssh keys to user@host to enable password-less ssh logins'],
+['sshfs name@server:/path/to/folder /path/to/mount/point',              '# ssh: mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Will allow you to mount a folder security over a network.'],
+['> file.txt',                                                          '# empty the file.txt'],
 
-['ssh user@host cat /path/to/remotefile | diff /path/to/localfile -',   '# Compare a remote file with a local file'],
+['net use',                                                             '# windows: list mapped network drives'],
 ]
-/*
-// Search for a string in all revisions of entire git history
-git rev-list --all | (
-    while read revision; do
-        git grep -F 'Your search string' $revision
-    done
-)
-
- */

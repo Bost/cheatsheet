@@ -18,37 +18,21 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':bnext (:bn) / :bprev (:bp)',              '" go to next / previous buffer'],
 [':let @m=\'\'  /  :let @m=@n',              '" clear / copy register value'],
 ['v/&lt;pattern&gt;',                        '" mark everything from the cursor up to &lt;pattern&gt;'],
+[':w !sudo tee %',                           '" save a file as a sudo'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
 [':[range]g/&lt;pattern&gt;/cmd',                  ''],
 [':g/&lt;pattern&gt;/d  /  :g!/&lt;pattern&gt;/d',       '" delete all lines matching / not matching a pattern'],
 [':g/&lt;pattern&gt;/t$',                    '" copy all lines matching a pattern to end of file'],
-['0"ay0:g/&lt;pattern&gt;/y A',              '" yank all lines matching a pattern to register \'a\''],
+['0"ay0:g/&lt;pattern&gt;/y A',              '" registers: yank all lines matching a pattern to register \'a\''],
 [':g/regexp/p',                              '" grep'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
-[':redir @a',                                '" redirect output to register a'],
-[':g//',                                     '" lists all lines with the last search pattern'],
-[':redir END',                               '" end redirection'],
 [':new',                                     '" create new window'],
-[':put! a',                                  '" paste register a into new window'],
-
-['&nbsp;',                                   '&nbsp;'],
-
-[':redir @*',                                '" redirect messages to the clipboard'],
-[':messages',                                ''],
-[':redir END',                               ''],
-
-['&nbsp;',                                   '&nbsp;'],
-
-[':reg abc',                                 '" display registers a, b and c'],
-['["x]y{motion}',                            '" yank {motion} into register x'],
-['"qY',                                      '" store curret line to register q'],
 ['"0P',                                      '" paste last yanked text'],
 ['"*p / "*dd / "+p / "+dd',                  '" paste from / cut line to system clipboard / system selection (X11)'],
-[':messages',                                '" display error messages'],
 ['gq',                                       '" break lines according to :set textwidth. (see wrapmargin too)'],
 ['gj / gk',                                  '" move down / up when lines are wrapped'],
 ['== / gg=G',                                '" format line / file'],
@@ -70,13 +54,28 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['zz zb zt / M L H',                         '" move window / jump cursor middle, bottom, top'],
 ['zc zo za / zC zO zA / zR',                 '" close, open, toggle current / all folds from cursor/ all folds'],
 [':set guifont=? / :set guifont=*',          '" display current guifont / guifond dialog window'],
+
+['&nbsp;',                                   '&nbsp;'],
+
+[':redir @*',                                '" registers: redirect messages to the clipboard (system register)'],
+[':messages',                                '" display / print (error) messages'],
+[':redir END',                               '" terminate redirection'],
+
+['&nbsp;',                                   '&nbsp;'],
+
+[':redir @a',                                '" registers: redirect output to register a'],
+[':put! a',                                  '" registers: paste register a into new window'],
+[':reg *0abc',                               '" registers: display registers: system, default, a, b, c'],
+['["x]y{motion}',                            '" registers: yank {motion} into register x'],
+['"qY',                                      '" registers: store curret line to register q'],
 ['"% / "#',                                  '" registers: current / alternate filename'],
 ['"_ / ".',                                  '" registers: last small delete (? the blackhole register?) / last inserted text'],
 ['"/ / ":',                                  '" registers: last search / last ex command'],
-['( / { / [[',                               '" jump (backward): sentence / paragraph / section (keyword function)'],
-
-
 ['C-r % / C-r #',                            '" registers: insert name of the current / alternate file'],
+
+['&nbsp;',                                   '&nbsp;'],
+
+['( / { / [[',                               '" jump (backward): sentence / paragraph / section (keyword function)'],
 ['C-r =',                                    '" calculator; can access every vim-function'],
 ['yypVr=',                                   '" yank current line, paste it below, select copied line, replace every char with ='],
 
@@ -103,6 +102,17 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['5/joe/s-2',                                '" find 5th joe cursor set to start of match minus 2'],
 ['/joe/+4',                                  '" find joe cursor and move 4 lines down'],
 ['f/t F/T',                                  '" find / till (until) forward / backward'],
+[':g//',                                     '" lists all lines with the last search pattern'],
+
+['&nbsp;',                                   '&nbsp;'],
+
+['\\{-}',                                    '" lazy matching'],
+['\\{min,max\\}',                            '" min, max occurences'],
+['\\+',                                      '" min 1 occurence'],
+['\\?',                                      '" max 1 occurence'],
+
+['&nbsp;',                                   '&nbsp;'],
+
 ['q: / q? / q/',                             '" open Ex command-line / search string'],
 ['c-f',                                      '" opens command-line history when editing search pattern'],
 ['* / "',                                    '" hightlight and search forwards/backwards'],
@@ -118,9 +128,9 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['gf',                                       '" open file under cursor (goto file)'],
 ['C-w f',                                    '" open file under cursor in a new window'],
 ['C-a / C-x',                                '" increment / decrement next number on the current line'],
-['C-n / C-p',                                '" word completition in insert mode (next / previous)'],
-['C-x C-l / C-x C-o',                        '" line completition / function name completition (omni completition)'],
-['C-x C-f',                                  '" file completition'],
+['C-n / C-p',                                '" completition: word completition in insert mode (next / previous)'],
+['C-x C-l / C-x C-o',                        '" completition: line completition / function name completition (omni completition)'],
+['C-x C-f',                                  '" completition: file completition'],
 ['/C-r C-w',                                 '" pull cword (current word) onto search/command line'],
 ['C-o',                                      '" temporarily change the insert- for normal mode'],
 
@@ -193,9 +203,9 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
-[':BundleList',                              '" list configured bundles'],
-[':BundleInstall(!)',                        '" install(update) bundles'],
-[':BundleSearch(!) foo',                     '" search(or refresh cache first) for foo'],
-[':BundleClean(!)',                          '" confirm(or auto-approve) removal of unused bundles'],
+[':BundleList',                              '" vundle: list configured bundles'],
+[':BundleInstall(!)',                        '" vundle: install(update) bundles'],
+[':BundleSearch(!) foo',                     '" vundle: search(or refresh cache first) for foo'],
+[':BundleClean(!)',                          '" vundle: confirm(or auto-approve) removal of unused bundles'],
 ]
 
