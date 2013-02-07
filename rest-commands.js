@@ -7,7 +7,6 @@ var jsonRest = [
 ['!$',                                            '# last parameter (argument) of the last command'],
 ['mv README.{text,txt} ; cp file{,.bak}',         '# mv README.text README.txt ; cp file file.bak'],
 ['./command.sh 2&gt;&amp;1 | tee command.log',    '# print the output to log and to the stdout'],
-['gvim $(find . -name "*fileToSearch*")',         '# find files and open them in gvim'],
 
 ['curl -O http://...',                            '# download a file'],
 
@@ -15,8 +14,11 @@ var jsonRest = [
 
 ['diff -rq dirA dirB | sort',                     '# recursively compare dirA with dirB; show only filenames: -q (quiet)'],
 
+['gvim $(find . -name "*fileToSearch*")',                                       '# find: find files and open them in gvim'],
 ['find . -name "*fileToSearch*"',                                               '# find: '],
 ['find . -name *.properties -exec grep -lir ".*textToFind.*" \'{}\' \; -print', '# find: '],
+['find . ... -print -quit',                                                   , '# find: quit search after finding first match'],
+
 ['grep -lir "TextToFind" *',                      '# grep: print only file-names'],
 ['grep sometext * | cut -f1 -d:',                 '# grep: print only filenames of the files containing \'sometext\''],
 ['grep -i -n "TextToSearch" *',                   '# grep: print line numbers'],
@@ -55,9 +57,14 @@ var jsonRest = [
 
 ['d() { date; }',                                 '# bash: ? define function in bash ?'],
 ['C-r, C-g',                                      '# bash: bash history, abort history'],
-
+['#!/bin/bash -e',                                '# bash: stop the script after any error (shebang line)'],
 ['&nbsp;','&nbsp;'],
-
+/* TODO add this:
+#!/bin/sh
+ls -lh &&
+# This is a comment
+echo 'Wicked, it works!'
+*/
 ['cvs diff -r RELEASE_1_0 -r RELEASE_1_1',        '# cvs: '],
 ['cvs update -C path/to/file.ext',                '# cvs: get clean copy'],
 ['cvs checkout -r branchOrTag module',            '# cvs: checkout module from branch or tag'],
