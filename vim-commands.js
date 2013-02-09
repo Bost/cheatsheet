@@ -22,7 +22,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
-[':[range]g/&lt;pattern&gt;/cmd',                  ''],
+[':[range]g/&lt;pattern&gt;/cmd',            '" '],
 [':g/&lt;pattern&gt;/d  /  :g!/&lt;pattern&gt;/d',       '" delete all lines matching / not matching a pattern'],
 [':g/&lt;pattern&gt;/t$',                    '" copy all lines matching a pattern to end of file'],
 ['0"ay0:g/&lt;pattern&gt;/y A',              '" registers: yank all lines matching a pattern to register \'a\''],
@@ -48,7 +48,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['R r ~',                                    '" replace mode, replace 1 char, replace char and move right'],
 ['30|',                                      '" jump to column 30'],
 [':r! command',                              '" execute command and read in its output'],
-['.!sh / !!sh / &lt;F8&gt;',                 '" execute current line in the shell'],
+['.!sh / !!sh',                              '" execute current line in the shell'],
 ['`. / \'.',                                 '" last edit location (~ key)/ line (&auml; key)'],
 ['; ,',                                      '" jump cursor forward, backward'],
 ['zz zb zt / M L H',                         '" move window / jump cursor middle, bottom, top'],
@@ -83,20 +83,18 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['C-^ / C-6',                                '" switch to the alternate file (the one with #)'],
 ['C-t / C-d',                                '" align text to right / left in insert mode'],
 
-['vit / yit / cit / dit',                    '" surround: mark/yank/change/delete the \"innerHTML\"'],
-['vat / yat / cat / dat',                    '" surround: mark/yank/change/delete the whole html tag'],
-['ci{ / ci( / ci[ / ci"',                    '" surround: change the content inside given parenthesis'],
-['da&lt; / dap / daw',                       '" surround: delete html tag / current paragraph (f.e. a function) / word'],
+['&nbsp;',                                   '&nbsp;'],
+
+['78i-&lt;Esc&gt;',                          '" print (insert) 78 "-" chars at once'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
-['78i-&lt;Esc&gt;',                          '" print (insert) 78 \'-\' chars at once'],
-['I{string}&lt;Esc&gt; / A{string}&lt;Esc&gt;',                '" insert / append {string} to the visual block'],
+['I{string}&lt;Esc&gt; / A{string}&lt;Esc&gt;',                '" visual: insert / append {string} to the visual block'],
+['o',                                        '" visual: change the marking direction in visual mode'],
+['gv',                                       '" visual: re-select last visual block'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
-['o',                                        '" change the marking direction in visual mode'],
-['gv',                                       '" re-select last visual block'],
 ['xp',                                       '" swap chars'],
 ['3/joe/e+1',                                '" find 3rd joe cursor set to end of match plus 1 [C]'],
 ['5/joe/s-2',                                '" find 5th joe cursor set to start of match minus 2'],
@@ -106,10 +104,10 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
-['\\{-}',                                    '" lazy matching'],
-['\\{min,max\\}',                            '" min, max occurences'],
-['\\+',                                      '" min 1 occurence'],
-['\\?',                                      '" max 1 occurence'],
+['\\{-}',                                    '" matching: lazy matching'],
+['\\{min,max\\}',                            '" matching: min, max occurences'],
+['\\+',                                      '" matching: min 1 occurence'],
+['\\?',                                      '" matching: max 1 occurence'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
@@ -120,7 +118,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':[range]s/bacon/lettuce/[ciInp] [count]',  '" confirm, ignore case, case sensitive, number of matches; print lines'],
 [':s/foo/bar/g10',                           '" replace only next 10 lines'],
 [':[range]s//baz/...',                       '" use previous search pattern'],
-[':%s/~/qux/igc',                            '" : substitute your last replacement string'],
+[':%s/~/qux/igc',                            '" substitute last replacement string'],
 [':changes / g; / g,',                       '" changelist: go forth / back in the insert mode change list'],
 [':jumps / C-o / C-i',                       '" jumplist: go back / forth (older / newer locations)'],
 ['s / S (or cc) / C',                        '" substitute char / line / to the end of line'],
@@ -141,14 +139,14 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':diffthis / :windo diffthis',              '" diff current two buffers / windows'],
 [':vert diffsplit filename',                 '" diff current buffer with a filename'],
 [']c / [c',                                  '" jump to next / previous diff'],
-['do :diffg :diffget',                       '" \'obtain\' difference under cursor from the other viewport'],
-['dp :diffput',                              '" \'put\' difference under cursor to the other viewport'],
+['do :diffg :diffget',                       '" "obtain" difference under cursor from the other viewport'],
+['dp :diffput',                              '" "put" difference under cursor to the other viewport'],
 [':diffupdate / :diffoff',                   '" update / switch off the diffmode for the current window'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
-['set fileformat=dos|unix|mac',              '&nbsp;'],
-['set filetype=html|xml|...',                '&nbsp;'],
+['set fileformat=dos|unix|mac',              '" '],
+['set filetype=html|xml|...',                '" '],
 ['C-w 5&lt; / C-w 5&gt; / C-w 5- / C-w 5+',  '" resize vertical viewport 5 chars to the left / right / bottom / top'],
 ['C-w C-w',                                  '" move around split viewports'],
 ['C-w h/j/k/l',                              '" move around viewports according to given direction'],
@@ -165,9 +163,9 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
-['-',                                        '" vim-fugitive: stage / unstage current file'],
+['-',                                        '" vim-fugitive: stage / unstage given file in Gstatus / Gcommit viewport'],
 [':Gread',                                   '" vim-fugitive: git checkout -- filename'],
-[':Gmove / :G remove',                       '" vim-fugitive: git mv / git rm'],
+[':Gmove / :Gremove',                        '" vim-fugitive: git mv / git rm'],
 [':Gstatus / :Gcommit ',                     '" vim-fugitive: git status / git commit'],
 [':Gdiff',                                   '" vim-fugitive: perform vimdiff'],
 [':Glog [q / ]q / [Q / ]Q',                  '" vim-fugitive: load and move between versions :cprev / :cnext / :cfirst / :clast'],
@@ -175,9 +173,9 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
-['vit / yit / cit / dit',                    '" surround: mark/yank/change/delete the \"innerHTML\"'],
-['vat / yat / cat / dat',                    '" surround: mark/yank/change/delete the whole html tag'],
-['ci{ / ci( / ci[ / ci"',                    '" surround: change the content inside given parenthesis'],
+['vit / yit / cit / dit',                    '" surround: mark / yank / change / delete the "innerHTML"'],
+['vat / yat / cat / dat',                    '" surround: mark / yank / change / delete the whole html tag'],
+['ci{ / ci( / ci[ / ci"',                    '" surround: change content inside given parenthesis'],
 ['da&lt; / dap / daw',                       '" surround: delete html tag / current paragraph (f.e. a function) / word'],
 
 ['&nbsp;',                                   '&nbsp;'],
