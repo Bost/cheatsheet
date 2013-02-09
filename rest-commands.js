@@ -9,7 +9,7 @@ var jsonRest = [
 ['d() { date; }',                                 '# bash: ? define function in bash ?'],
 ['C-r, C-g',                                      '# bash: bash history, abort history'],
 ['#!/bin/bash -e',                                '# bash: stop the script after any error (shebang line)'],
-['mkdir -p path/dirname.0{1,2,3}',                '# bash: create 4 directories at once']
+['mkdir -p path/dirname.0{1,2,3}',                '# bash: create 4 directories at once'],
 ['mv README.{text,txt} ; cp file{,.bak}',         '# bash: mv README.text README.txt ; cp file file.bak'],
 ['./command.sh 2&gt;&amp;1 | tee command.log',    '# bash: print the output to log and to the stdout'],
 
