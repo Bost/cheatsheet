@@ -128,4 +128,6 @@ echo 'Wicked, it works!'
 ['sshfs name@server:/path/to/folder /path/to/mount/point',              '# ssh: mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Will allow you to mount a folder security over a network.'],
 
 ['net use',                                                             '# windows: list mapped network drives'],
+['xmllint',  '# xml: command line XML tool (formating)'],
 ]
+
