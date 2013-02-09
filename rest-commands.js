@@ -1,18 +1,23 @@
 var jsonRest = [
 ['ls --format=single-column',                     '# ls: '],
 ['ls -d1 */',                                     '# ls: list only directories, 1 entry per line'],
-['echo "ls -l" | at midnight',                    '# execute a command at a given time'],
-['wc cheatsheet.html',                            '# line count, word count'],
-['sudo !!',                                       '# run the last command as root'],
-['!$',                                            '# last parameter (argument) of the last command'],
-['mv README.{text,txt} ; cp file{,.bak}',         '# mv README.text README.txt ; cp file file.bak'],
-['./command.sh 2&gt;&amp;1 | tee command.log',    '# print the output to log and to the stdout'],
+['echo "ls -l" | at midnight',                    '# at: execute a command at a given time'],
+['wc cheatsheet.html',                            '# wc: line count, word count'],
+['sudo !!',                                       '# bash: run the last command as root'],
+['!$',                                            '# bash: last argument of the last command'],
+['> file.txt',                                    '# bash: empty the file.txt'],
+['d() { date; }',                                 '# bash: ? define function in bash ?'],
+['C-r, C-g',                                      '# bash: bash history, abort history'],
+['#!/bin/bash -e',                                '# bash: stop the script after any error (shebang line)'],
+['mkdir -p path/dirname.0{1,2,3}',                '# bash: create 4 directories at once']
+['mv README.{text,txt} ; cp file{,.bak}',         '# bash: mv README.text README.txt ; cp file file.bak'],
+['./command.sh 2&gt;&amp;1 | tee command.log',    '# bash: print the output to log and to the stdout'],
 
-['curl -O http://...',                            '# download a file'],
+['curl -O http://...',                            '# curl: download a file'],
 
 ['&nbsp;','&nbsp;'],
 
-['diff -rq dirA dirB | sort',                     '# recursively compare dirA with dirB; show only filenames: -q (quiet)'],
+['diff -rq dirA dirB | sort',                     '# diff: recursively compare dirA with dirB; show only filenames: -q (quiet)'],
 
 ['gvim $(find . -name "*fileToSearch*")',                                       '# find: find files and open them in gvim'],
 ['find . -name "*fileToSearch*"',                                               '# find: '],
@@ -51,13 +56,10 @@ var jsonRest = [
 ['git log -S\'text-to-search\'',                  '# git: search entire commit history'],
 ['git log --pretty=format:\'%h %s\'',             '# git: show formated commit logs'],
 ['git log --oneline --graph',                     '# git: a kind of \'gitk --all\''],
-['git log --oneline --grep="pattern"',            '# git: &nbsp;'],
+['git log --oneline --grep="pattern"',            '# git: '],
 ['--git-dir=../all/.git --work-tree=.',           '# git: set git base directory and working tree'],
 
 
-['d() { date; }',                                 '# bash: ? define function in bash ?'],
-['C-r, C-g',                                      '# bash: bash history, abort history'],
-['#!/bin/bash -e',                                '# bash: stop the script after any error (shebang line)'],
 ['&nbsp;','&nbsp;'],
 /* TODO add this:
 #!/bin/sh
@@ -80,12 +82,12 @@ echo 'Wicked, it works!'
 
 ['&nbsp;','&nbsp;'],
 
-['ssh-keygen',                                    '&nbsp;'],
-['cat ~/.ssh/id_rsa.pub',                         '# now copy-paste the ~/.ssh/id_rsa.pub to github under \'Add another public key\''],
+['ssh-keygen',                                    '# github: ssh: '],
+['cat ~/.ssh/id_rsa.pub',                         '# github: now copy-paste the ~/.ssh/id_rsa.pub to github under \'Add another public key\''],
 
 ['METADA_CORE=.metadata/.plugins/org.eclipse.jdt.core;',                '# eclipse: clean metadata'],
-['rm -rf .metadata/.plugins/org.eclipse.core.resources/.history;',      '&nbsp;'],
-['rm $METADA_CORE/*.index $METADA_CORE/savedIndexNames.txt;',           '&nbsp;'],
+['rm -rf .metadata/.plugins/org.eclipse.core.resources/.history;',      '# eclipse: '],
+['rm $METADA_CORE/*.index $METADA_CORE/savedIndexNames.txt;',           '# eclipse: '],
 ['[\t ]+$',                                                             '# eclipse: remove trailing whitespaces'],
 
 ['&nbsp;','&nbsp;'],
@@ -108,23 +110,22 @@ echo 'Wicked, it works!'
 
 ['&nbsp;','&nbsp;'],
 
-['last',                                                                '# last logged-in users'],
-['lscpu',                                                               '# info about CPU architecture'],
-['renice',                                                              '# alter priority of running processes'],
+['last',                                                                '# linux: last logged-in users'],
+['lscpu',                                                               '# linux: info about CPU architecture'],
+['renice',                                                              '# linux: alter priority of running processes'],
+['lsb_release -a',                                                      '# linux: show (ubuntu) version'],
 
 ['&nbsp;','&nbsp;'],
 ['&nbsp;','&nbsp;'],
 
 ['/usr/ucb/ps -auxww',                                                  '# solaris: full command line (needs: sudo rootsh -i -u ... )'],
-['jar tf',                                                              '# list files in a jar-file'],
-['lsb_release -a',                                                      '# ubuntu version'],
+['jar tf',                                                              '# jar: list files in a jar-file'],
 ['xfce4-session-logout',                                                '# xfce: &nbsp;'],
 ['rm -r ~/.cache/sessions',                                             '# xfce: execute this when the title bar dissapears from xfwm4'],
 ['man -k abc',                                                          '# search man pages for abc'],
 ['ssh user@host cat /path/to/remotefile | diff /path/to/localfile -',   '# ssh: compare a remote file with a local file'],
 ['$ssh-copy-id user@host',                                              '# ssh: copy ssh keys to user@host to enable password-less ssh logins'],
 ['sshfs name@server:/path/to/folder /path/to/mount/point',              '# ssh: mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Will allow you to mount a folder security over a network.'],
-['> file.txt',                                                          '# empty the file.txt'],
 
 ['net use',                                                             '# windows: list mapped network drives'],
 ]
