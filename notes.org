@@ -2,6 +2,7 @@
 clojure
     mongodb, datomic
     JVM on root.cz
+    Crossroad controll (3 semaphors)
 
 http://www.zdrojak.cz/clanky/tvorba-moderniho-e-shopu-dokonceni-uzivatelske-casti/
 
