@@ -59,6 +59,9 @@ var jsonRest = [
 ['git log --oneline --grep="pattern"',            '# git: '],
 ['git --git-dir=path/to/.git --work-tree=path/to/ ...',   '# git: set git base directory and working tree'],
 
+['git config branch.master.remote origin', '# git: Use it in case of "You asked me to pull without telling me which branch ..."'],
+['git config branch.master.merge refs/heads/master', '# git: '],
+
 
 ['&nbsp;','&nbsp;'],
 /* TODO add this:
