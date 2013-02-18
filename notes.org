@@ -3,6 +3,9 @@ clojure
     mongodb, datomic
     JVM on root.cz
     Crossroad controll (3 semaphors)
+    leiningen offline
+
+chess + languages + ...
 
 http://www.zdrojak.cz/clanky/tvorba-moderniho-e-shopu-dokonceni-uzivatelske-casti/
 
@@ -23,7 +26,8 @@ Thomas:
 
 Michael:
     http://www.ted.com/talks/matt_ridley_when_ideas_have_sex.html
-    fluidui - odporucit Michaelovi
+    fluidui
+    www.landoflisp.com
 
 - 3:30
     http://www.youtube.com/watch?v=H07pbDhBgXg
