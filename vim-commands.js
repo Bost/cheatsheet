@@ -26,6 +26,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':g/&lt;pattern&gt;/d  /  :g!/&lt;pattern&gt;/d',       '" delete all lines matching / not matching a pattern'],
 [':g/&lt;pattern&gt;/t$',                    '" copy all lines matching a pattern to end of file'],
 ['0"ay0:g/&lt;pattern&gt;/y A',              '" registers: yank all lines matching a pattern to register \'a\''],
+['%s/&lt;C-R&gt;a/bar/g',                    '" registers: place the contents of register \'a\' in the search, and replace it with \'bar\''],
 [':g/regexp/p',                              '" grep'],
 
 ['&nbsp;',                                   '&nbsp;'],
@@ -57,6 +58,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
+[':lcd %:p:h',                               '" change to the directory of the current file'],
 [':redir @*',                                '" registers: redirect messages to the clipboard (system register)'],
 [':messages',                                '" display / print (error) messages'],
 [':redir END',                               '" terminate redirection'],
@@ -92,15 +94,15 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['I{string}&lt;Esc&gt; / A{string}&lt;Esc&gt;',                '" visual: insert / append {string} to the visual block'],
 ['o',                                        '" visual: change the marking direction in visual mode'],
 ['gv',                                       '" visual: re-select last visual block'],
+['f/t F/T',                                  '" find / till (until) forward / backward'],
+[':g//',                                     '" lists all lines with the last search pattern'],
+['xp',                                       '" swap chars'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
-['xp',                                       '" swap chars'],
 ['3/joe/e+1',                                '" find 3rd joe cursor set to end of match plus 1 [C]'],
-['5/joe/s-2',                                '" find 5th joe cursor set to start of match minus 2'],
+['5/joe/s-2  or   5/joe/b-2',                '" find 5th joe cursor set to start of match minus 2'],
 ['/joe/+4',                                  '" find joe cursor and move 4 lines down'],
-['f/t F/T',                                  '" find / till (until) forward / backward'],
-[':g//',                                     '" lists all lines with the last search pattern'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
