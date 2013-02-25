@@ -4,12 +4,6 @@ Text Object (type :h text-objects in vim for a complete description)
 
 This feature allows to operate on a block of text where the cursor is.
 
-This is typically used with the 'd' or 'c' commands (delete, change), followed by 'i' or 'a' (inside a block or a whole block) and ended by a block description.
-
-ca{ : Delete a block of code delimited by curly braces.   {   }
-ci( : Change the content inside parenthesis.
-ci" : Change the content inside a string
-
 TODO: color commands belonging together
 TODO: C-r register, C-r C-o / C-r / C-p
 
@@ -169,7 +163,6 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':Gread',                                   '" vim-fugitive: git checkout -- filename'],
 [':Gmove / :Gremove',                        '" vim-fugitive: git mv / git rm'],
 [':Gstatus / :Gcommit ',                     '" vim-fugitive: git status / git commit; p - Interactively choose hunks of patch (git add -p)'],
-[''],
 [':Gdiff',                                   '" vim-fugitive: perform vimdiff'],
 [':Glog [q / ]q / [Q / ]Q',                  '" vim-fugitive: load and move between versions :cprev / :cnext / :cfirst / :clast'],
 [':Gedit',                                   '" vim-fugitive: go back to "normal" file (working copy)'],
@@ -178,7 +171,8 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['vit / yit / cit / dit',                    '" surround: mark / yank / change / delete the "innerHTML"'],
 ['vat / yat / cat / dat',                    '" surround: mark / yank / change / delete the whole html tag'],
-['ci{ / ci( / ci[ / ci"',                    '" surround: change content inside given parenthesis'],
+['ci" / ci\' / ci{ / ci( / ci[',             '" surround: change content inside of "" / \'\' / {} / () / []'],
+['ca" / ca\' / ca{ / ca( / ca[',             '" surround: change content including and inside of "" / \'\' / {} / () / []'],
 ['da&lt; / dap / daw',                       '" surround: delete html tag / current paragraph (f.e. a function) / word'],
 
 ['&nbsp;',                                   '&nbsp;'],
@@ -205,8 +199,8 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['&nbsp;',                                   '&nbsp;'],
 
 [':BundleList',                              '" vundle: list configured bundles'],
-[':BundleInstall(!)',                        '" vundle: install(update) bundles'],
-[':BundleSearch(!) foo',                     '" vundle: search(or refresh cache first) for foo'],
-[':BundleClean(!)',                          '" vundle: confirm(or auto-approve) removal of unused bundles'],
+[':BundleInstall(!)',                        '" vundle: install (or update) bundles'],
+[':BundleSearch(!) plugin',                  '" vundle: search (or refresh cache first) plugin'],
+[':BundleClean(!)',                          '" vundle: confirm (or auto-approve) removal of unused bundles'],
 ]
 
