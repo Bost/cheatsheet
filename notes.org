@@ -10,10 +10,21 @@ slime-connect
 ** Clojure persistency
    mongodb, datomic, google app engine
 
-** JVM 
-   + root.cz
-   + scala
+* JVM 
+  + root.cz
+  + stack based
+  + statically typed instruction set
 
+* scala
+  + xml - first class support
+  + default get/set methods & constructor
+  + function & imperative
+  + staticlly typed
+  + traits (multiple inheritance)
+
+* math
+  + dependency tree
+  
 ** leiningen offline
 
 * source lighttable
@@ -68,7 +79,11 @@ slime-connect
 * TODOs
     + franina - svajciarske magaziny
     + Crossroad controll (3 semaphors)                                                      :clojure-script:
-    + vim:: instant insert: line up / down
+    + vim:: 
+        - instant insert: line up / down
+        - fix <C-Bs> (on windows)
+        - LLVM (c to java)
+
     + BTC
         - save from bitcoin.de, backup on paper
         - Michael - ask about his article at ?                                              :Michael:
