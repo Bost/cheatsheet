@@ -11,7 +11,7 @@ slime-connect
    mongodb, datomic, google app engine
 
 * JVM 
-  + root.cz
+  + see articles on root.cz
   + stack based
   + statically typed instruction set
 
