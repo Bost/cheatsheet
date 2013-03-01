@@ -166,6 +166,9 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':Gdiff',                                   '" vim-fugitive: perform vimdiff'],
 [':Glog [q / ]q / [Q / ]Q',                  '" vim-fugitive: load and move between versions :cprev / :cnext / :cfirst / :clast'],
 [':Gedit',                                   '" vim-fugitive: go back to "normal" file (working copy)'],
+[':Gbrowse',                                 '" vim-fugitive: open the current file on GitHub'],
+[':Git!',                                    '" vim-fugitive: open output of a command in a temp file'],
+[':Git',                                     '" vim-fugitive: execute any git commands'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
@@ -202,5 +205,11 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':BundleInstall(!)',                        '" vundle: install (or update) bundles'],
 [':BundleSearch(!) plugin',                  '" vundle: search (or refresh cache first) plugin'],
 [':BundleClean(!)',                          '" vundle: confirm (or auto-approve) removal of unused bundles'],
+
+['&nbsp;',                                   '&nbsp;'],
+
+['\\sa / \\si',                              '" orgmode: insert active / inactive date'],
+
+['&nbsp;',                                   '&nbsp;'],
 ]
 
