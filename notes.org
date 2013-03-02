@@ -40,6 +40,9 @@ slime-connect
   + vytvorit gulu/gule s menami funkcii
 
 * People
+  + Susanne
+  - http://www.ted.com/talks/patricia_kuhl_the_linguistic_genius_of_babies.html?fb_ref=talk
+
   + Jan::
   - bike tour!
 
@@ -72,7 +75,23 @@ slime-connect
 * Tuva or Bust
   + Richard Feynmann:: http://research.microsoft.com/apps/tools/tuva/
 
+* Rick Hickey:
+  + TBD (To Better Do)
+  - User interfaces on top of programatic interfaces
+  - use composable services
+  - abstractions; no bespoke protocols and formats
+
+
+* CoffeeKup
+  html ->
+    head ->
+        body ->
+
 * TODOs
+  + TED conference stuff
+  + shackspace - docpad
+  + stuff stuff to datomic - ?git has no services? http://www.youtube.com/watch?v=ROor6_NGIWU 58:00
+  + watch apache.org
   + lighttable:: there is no source code published yet <2013-02-28 Do>
   + franina - svajciarske magaziny
   + Crossroad controll (3 semaphors)                                                      :clojure-script:
