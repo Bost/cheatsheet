@@ -118,6 +118,7 @@ echo 'Wicked, it works!'
 
 ['/usr/ucb/ps -auxww',                                                  '# solaris: full command line (needs: sudo rootsh -i -u ... )'],
 ['jar tf file.jar',                                                     '# jar: list files in file.jar'],
+['jar xf file.jar path/inside.txt && cat path/inside.txt',              '# jar: show content of a file inside a jar file'],
 ['xfce4-session-logout',                                                '# xfce: logout'],
 ['rm -r ~/.cache/sessions',                                             '# xfce: execute this when the title bar dissapears from xfwm4'],
 ['man -k abc',                                                          '# man: search man pages for abc'],
