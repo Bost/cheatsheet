@@ -70,6 +70,7 @@ ls -lh &&
 # This is a comment
 echo 'Wicked, it works!'
 */
+['rsync -av --exclude=CVS src dest',              '# cvs: copy files from src to desc excluding everything in CVS directories'],
 ['cvs diff -r tagX -r tagY',                      '# cvs: diff tagX tagY'],
 ['cvs update -C path/to/file.ext',                '# cvs: get clean copy'],
 ['cvs checkout -r branchOrTag module',            '# cvs: checkout module from branch or tag'],
@@ -132,6 +133,6 @@ echo 'Wicked, it works!'
 ['[the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]',          '# lein: try to put it to project.clj in case of \'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath\''],
 
 ['dpkg --get-selections',                                               '# dpkg: show installed packages'],
-]
+ ]
 
 
