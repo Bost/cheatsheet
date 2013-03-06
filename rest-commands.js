@@ -26,11 +26,12 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
-['grep -lir "TextToFind" *',                      '# grep: print only file-names'],
+['grep -lir "textToFind" *',                      '# grep: print only file-names'],
 ['grep sometext * | cut -f1 -d:',                 '# grep: print only filenames of the files containing \'sometext\''],
-['grep -i -n "TextToSearch" *',                   '# grep: print line numbers'],
+['grep -i -n "textToFind" *',                     '# grep: print line numbers'],
 ['grep --exclude=.git',                           '# grep: '],
-['grep --exclude=.git -lir \'something\' *.cpp',  '# grep: '],
+['grep --exclude=.git -lir \'textToFind\' *.properties',  '# grep: '],
+['grep -lir "textToFind" `find . -name *.properties`',    '# grep: find: '],
 
 ['&nbsp;','&nbsp;'],
 
