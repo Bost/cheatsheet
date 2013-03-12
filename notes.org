@@ -1,3 +1,7 @@
+* offer help
+  what people need, use, interconnect them, survey
+
+
 * bootstrap-css
 
 * Java & Clojure
@@ -9,8 +13,14 @@ slime-connect
   (swank.core/break))
 #+END_SRC
 
-* Clojure persistency
-  + mongodb, datomic, google app engine
+* Clojure
+  ** persistency
+    mongodb, datomic, google app engine
+  ** AI
+    nuroko.com
+  ** recursion
+    Clojure Tail Call Optimizer https://github.com/cjfrisz/clojure-tco
+  ** Koans
 
 * JVM
   + see articles on root.cz

@@ -12,6 +12,7 @@ var jsonRest = [
 ['mkdir -p path/dirname.0{1,2,3}',                '# bash: create 4 directories at once'],
 ['mv README.{text,txt} ; cp file{,.bak}',         '# bash: mv README.text README.txt ; cp file file.bak'],
 ['./command.sh 2&gt;&amp;1 | tee command.log',    '# bash: print the output to log and to the stdout'],
+['date +"%Y-%m-%d_%H-%M-%S"',                     '# bash: get date (timestamp) in a given format'],
 
 ['curl -O http://server/fileX.txt > path/to/fileY.txt',  '# curl: download fileX.txt and save it under different location / name'],
 
@@ -26,11 +27,12 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
-['grep -lir "TextToFind" *',                      '# grep: print only file-names'],
+['grep -lir "textToFind" *',                      '# grep: print only file-names'],
 ['grep sometext * | cut -f1 -d:',                 '# grep: print only filenames of the files containing \'sometext\''],
-['grep -i -n "TextToSearch" *',                   '# grep: print line numbers'],
+['grep -i -n "textToFind" *',                     '# grep: print line numbers'],
 ['grep --exclude=.git',                           '# grep: '],
-['grep --exclude=.git -lir \'something\' *.cpp',  '# grep: '],
+['grep --exclude=.git -lir \'textToFind\' *.properties',  '# grep: '],
+['grep -lir "textToFind" `find . -name *.properties`',    '# grep: find: '],
 
 ['&nbsp;','&nbsp;'],
 
@@ -51,6 +53,8 @@ var jsonRest = [
 ['git status -sb',                                '# git: --show --branch: show current branch and changes made since last commit'],
 ['git add -p',                                    '# git: --patch: interactively choose hunks of patch; see \'--interactive\''],
 ['git reflog',                                    '# git: a kind of \'git history\''],
+['git config --global user.name "Bost"',          '# git: '],
+['git config --global user.email thebost@gmail.com','# git: '],
 ['git config --global help.autocorrect 1',        '# git: help with typos like \'git comit\''],
 ['git config --global rerere.enabled 1',          '# git: rebase: remember actions on a particular commit - in case of repeating conflicts when rebasing; long running branches'],
 ['git log -S\'text-to-search\'',                  '# git: search entire commit history'],
@@ -87,7 +91,7 @@ echo 'Wicked, it works!'
 ['&nbsp;','&nbsp;'],
 
 ['ssh-keygen',                                    '# github: ssh: '],
-['cat ~/.ssh/id_rsa.pub',                         '# github: now copy-paste the ~/.ssh/id_rsa.pub to github under \'Add another public key\''],
+['cat ~/.ssh/id_rsa.pub',                         '# github: now copy-paste the ~/.ssh/id_rsa.pub to github under "Account settings / SSH keys / Add another public key"'],
 
 ['METADA_CORE=.metadata/.plugins/org.eclipse.jdt.core;',                '# eclipse: '],
 ['rm -rf .metadata/.plugins/org.eclipse.core.resources/.history;',      '# eclipse: clean history'],
@@ -133,6 +137,66 @@ echo 'Wicked, it works!'
 ['[the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]',          '# lein: try to put it to project.clj in case of \'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath\''],
 
 ['dpkg --get-selections',                                               '# dpkg: show installed packages'],
+
+/* TODO add bash file tests to the list
+FILE1 -ot FILE2
+              FILE1 is older than FILE2
+
+       -b FILE
+              FILE exists and is block special
+
+       -c FILE
+              FILE exists and is character special
+
+       -d FILE
+              FILE exists and is a directory
+
+       -e FILE
+              FILE exists
+
+       -f FILE
+              FILE exists and is a regular file
+
+       -g FILE
+              FILE exists and is set-group-ID
+
+       -G FILE
+              FILE exists and is owned by the effective group ID
+
+       -h FILE
+              FILE exists and is a symbolic link (same as -L)
+
+       -k FILE
+              FILE exists and has its sticky bit set
+
+       -L FILE
+              FILE exists and is a symbolic link (same as -h)
+
+       -O FILE
+              FILE exists and is owned by the effective user ID
+
+       -p FILE
+              FILE exists and is a named pipe
+
+       -r FILE
+              FILE exists and read permission is granted
+       -s FILE
+              FILE exists and has a size greater than zero
+
+       -S FILE
+              FILE exists and is a socket
+
+       -t FD  file descriptor FD is opened on a terminal
+
+       -u FILE
+              FILE exists and its set-user-ID bit is set
+
+       -w FILE
+              FILE exists and write permission is granted
+
+       -x FILE
+              FILE exists and execute (or search) permission is granted
+*/
  ]
 
 
