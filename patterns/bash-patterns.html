@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <link href="google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="google-code-prettify/pretty.js"></script>
+        <!--<link rel="icon" type="image/png" href="favicon.png" />-->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+        <title>Bash patterns</title>
+    </head>
+<body onload="prettyPrint()" style="font-size: 11px">
+    <pre class="prettyprint lang-bash">
+#!/usr/bin/bash
+# The script works both with #!/bin/sh and with #!/usr/bin/bash
+
+###
+javaBinary=`which java`
+
+XmxMemSize=512M
+#XmxMemSize=1024M
+
+classpathFiles=(
+    /path/to/file0.jar
+    /path/to/file1.jar
+)
+
+mainClass=org.name.package.MainClassName
+###
+
+# predefined ip addresses
+ipProd=$PROD_IP_ADDR
+ipTest=$TEST_IP_ADDR
+ipIntg=$INTG_IP_ADDR
+
+# predefined port numbers
+portProd=$PROD_PORT_NR
+portTest=$TEST_PORT_NR
+portIntg=$INTG_PORT_NR
+
+# predefined environments names 
+envProd=$PROD_ENV_NAME
+envTest=$TEST_ENV_NAME
+envIntg=$INTG_ENV_NAME
+
+# possible actions
+actStart=start
+actStop=stop
+actRestart=restart
+actStatus=status
+# actStopStart is used for restart
+actStopStart=stopStart
+
+# define order of parameters
+envName="$1"
+actName="$2"
+
+# function getServerPID uses global in-out variables; retvals: serverPID, pidLockFile
+getServerPID () {
+    if [ ! -e $pidFile ]; then
+        msg="File does not exist"
+    elif [ ! -r $pidFile ]; then
+        msg="File does not have read permission the user: $USER"
+    elif [ -s $pidFile ]; then
+        log "INFO: Reading pidFile:
+                   pidLockFile=\`cat $pidFile\`"
+                   pidLockFile=`cat  $pidFile`
+        log "INFO: Looking for server process:\
+                   serverPID=\`ps -ef | grep $pidLockFile | grep -v grep | grep java | awk '{print \$2}'\`"
+                   serverPID=`ps -ef | grep $pidLockFile | grep -v grep | grep java | awk '{print  $2}'`
+        if [ "$serverPID" = "" ]; then
+            msg="Server process not found. pidLockFile: $pidLockFile"
+        else
+            msg="Server process found. serverPID: $serverPID"
+        fi
+    else
+        msg="File size is zero"
+    fi
+    log "INFO: $msg. pidFile: $pidFile"
+}
+
+log () {
+    # echo -e: do not ignore the '\n'
+    # on solaris 'date' does not have a formating opperand for milliseconds %N
+    echo -e $(date +%Y-%m-%d_%H:%M:%S) $1
+}
+
+# script exit code
+retCode_errCLASSPATH=3
+retCode_errWrongParams=2
+retCode_errExecution=1
+retCode_success=0
+
+usage () {
+    echo "Usage: $0 [[ $envProd | $envTest | $envIntg ] [ $actStart | $actStop | $actRestart | $actStatus ]] | [ -h | --help ]"
+    echo "Return codes: $retCode_errCLASSPATH - Java CLASSPATH problem; \
+                        $retCode_errWrongParams - Wrong parameters; \
+                        $retCode_errExecution - Execution error; \
+                        $retCode_success - Success"
+    echo ""
+    echo "Examples:"
+    echo "    $0 $envProd $actRestart"
+    echo "    $0 $envTest $actRestart"
+    echo "    $0 $envIntg $actRestart"
+    echo ""
+    exit $retCode_errWrongParams
+}
+
+case $envName in
+    $envProd)
+        ipAddr=$ipProd
+        port=$portProd
+        ;;
+    $envTest)
+        ipAddr=$ipTest
+        port=$portTest
+        ;;
+    $envIntg)
+        ipAddr=$ipIntg
+        port=$portIntg
+        ;;
+    *)
+        log "ERROR: Unknown environment: $envName"
+        usage
+esac
+
+scriptHomeDir=$(dirname $0)
+envDir=$scriptHomeDir/home-dir-$envName
+
+# on solaris 'date' does not have a formating opperand for milliseconds %N
+now=$(date +"%Y-%m-%d_%H-%M-%S")
+
+if [ ! -d "$envDir" ]; then
+    log "ERROR: Directory does not exist: $envDir"
+    exit $retCode_errExecution
+fi
+
+# run.lock contains process id under which the task was started
+pidFile=$envDir/run-$envName.lock
+
+case $actName in
+    $actStart)
+        # function getServerPID uses global in-out variables; retvals: serverPID, pidLockFile
+        getServerPID
+        if [ -s $pidFile ]; then
+            log "WARN: File size is not zero. pidFile: $pidFile"
+            if [ "$serverPID" != "" ]; then
+                log "ERROR: The server process: $pidLockFile exists already. Stop it and delete the pidFile: $pidFile"
+                exit $retCode_errExecution
+            fi
+
+            log "INFO: Saving pidFile for further analysis:\
+                       mv $pidFile $pidFile.$now"
+                       mv $pidFile $pidFile.$now
+            log "INFO: Server process $pidLockFile does not exist. A new server process may be started."
+        fi
+
+        cp=''
+        log "INFO: Checking CLASSPATH files... "
+        for f in "${classpathFiles[@]}"
+        do
+            if [ ! -e $f ]; then
+                log "ERROR: CLASSPATH file does not exist: $f"
+                exit $retCode_errCLASSPATH
+            fi
+            if [ ! -r $f ]; then
+                log "ERROR: CLASSPATH file does not have read permission (for this user): $f"
+                exit $retCode_errCLASSPATH
+            fi
+            cp=$cp:$f
+        done
+
+        log "INFO: All files on CLASSPATH are readable."
+
+        log "INFO: $javaBinary -version"
+                   $javaBinary -version
+
+
+        # CreditReport output files
+        outFile=$envDir/nohup-$envName.out
+        savFile=$envDir/nohup-archive-dir/nohup-$envName.$now.sav
+        mkdir -p $(dirname $savFile)
+
+        log "INFO: Backing up the outFile:\
+                   mv -f $outFile $savFile"
+                   mv -f $outFile $savFile
+        log "INFO: touch $outFile"
+                   touch $outFile
+        log "INFO: chmod 0744 $outFile"
+                   chmod 0744 $outFile
+
+        log "INFO: Starting sever process..."
+
+        log "INFO:\n$javaBinary -Xmx$XmxMemSize -cp $cp $mainClass $port $ipAddr > $outFile &"
+                    $javaBinary -Xmx$XmxMemSize -cp $cp $mainClass $port $ipAddr > $outFile &
+
+        echo $! > $pidFile
+
+        log "INFO: Server process started. PID: `cat $pidFile`. See output in: $pidFile"
+        log "INFO: Use following command to analyze any 'Could not listen on port: $port' problem:\n\
+                   ptree | grep -E '$port|.*$envName'"
+
+        ;;
+    $actStop|$actStopStart)
+        # function getServerPID uses global in-out variables; retvals: serverPID, pidLockFile
+        getServerPID
+        if [ $actName = $actStopStart ]; then
+            logLevel=WARN
+        else
+            logLevel=ERROR
+        fi
+
+        if [ -s $pidFile ]; then
+            if [ "$serverPID" = "" ]; then
+                log "$logLevel: Nothing stopped. No server process with PID: $pidLockFile found."
+                exit $retCode_errExecution
+            fi
+
+            log "INFO: Terminating server process:\
+                       kill $serverPID"
+                       kill $serverPID
+
+            # Wait a while if the kill does not wait until the process is really killed (which is apparently the case)
+            stopDelay=2
+            log "INFO: sleep $stopDelay"
+                       sleep $stopDelay
+
+            # Test if the server process has been killed
+            isServerKilled=`ps -ef | grep $pidLockFile | grep -v grep | grep java | awk '{print $2}'`
+            if [ $isServerKilled ]; then
+                log "$logLevel: Couldn't stop the server process. PID: $serverPID"
+                exit $retCode_errExecution
+            fi
+            log "INFO: Server process stopped. PID: $serverPID"
+            log "INFO: Deleting pidFile:\
+                       rm -f $pidFile"
+                       rm -f $pidFile
+
+        else
+            log "$logLevel: Couldn't stop any server process. File size is zero. pidFile: $pidFile"
+            exit $retCode_errExecution
+        fi
+        ;;
+    $actStatus)
+        # just print what you find
+        # function getServerPID uses global in-out variables; retvals: serverPID, pidLockFile
+        getServerPID
+        ;;
+    $actRestart)
+        $0 $envName $actStopStart
+        echo ""
+        $0 $envName $actStart
+        ;;
+    *)
+        usage
+esac
+
+exit $retCode_success
+
+    </pre>
+</body>
+</html>
