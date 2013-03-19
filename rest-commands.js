@@ -33,6 +33,7 @@ var jsonRest = [
 ['grep --exclude=.git',                           '# grep: '],
 ['grep --exclude=.git -lir \'textToFind\' *.properties',  '# grep: '],
 ['grep -lir "textToFind" `find . -name *.properties`',    '# grep: find: '],
+['grep -lir "textToFind" `find . -name *.properties -and -not -name .git/`',    '# grep: find: do not search in the .git directory'],
 
 ['&nbsp;','&nbsp;'],
 
