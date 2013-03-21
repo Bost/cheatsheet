@@ -141,6 +141,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
+['set nomodifiable',                         '" set current buffer to readonly mode'],
 ['set fileformat=dos|unix|mac',              '" '],
 ['set filetype=html|xml|...',                '" '],
 ['C-w 5&lt; / C-w 5&gt; / C-w 5- / C-w 5+',  '" resize vertical viewport 5 chars to the left / right / bottom / top'],

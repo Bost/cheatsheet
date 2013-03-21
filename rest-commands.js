@@ -3,6 +3,7 @@ var jsonRest = [
 ['ls -d1 */',                                     '# ls: list only directories, 1 entry per line'],
 ['echo "ls -l" | at midnight',                    '# at: execute a command at a given time'],
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
+['set -o vi',                                     '# bash: set vi bindings'],
 ['sudo !!',                                       '# bash: run the last command as root'],
 ['!$',                                            '# bash: last argument of the last command'],
 ['> file.txt',                                    '# bash: empty the file.txt'],
