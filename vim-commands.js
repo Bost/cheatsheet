@@ -107,8 +107,8 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
-['q: / q? / q/',                             '" open Ex command-line / search string'],
-['c-f',                                      '" opens command-line history when editing search pattern'],
+['q: / q/ / q?',                             '" open command-line history window in edit mode / forward / backward search. Exit CTRL-C'],
+['c-f',                                      '" open command-line history when editing search pattern'],
 ['* / "',                                    '" hightlight and search forwards/backwards'],
 ['g* / g"',                                  '" hightlight and search for parts of a word'],
 [':[range]s/bacon/lettuce/[ciInp] [count]',  '" confirm, ignore case, case sensitive, number of matches; print lines'],
