@@ -28,6 +28,8 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
+['grep --before-context=2 --after-context=4 textToFind', '# grep: search for textToFind and print 2/4 lines before/after matching line'],
+['grep -B 2 -A 4 textToFind',                            '# grep: search for textToFind and print 2/4 lines before/after matching line'],
 ['grep -lir "textToFind" *',                      '# grep: print only file-names'],
 ['grep sometext * | cut -f1 -d:',                 '# grep: print only filenames of the files containing \'sometext\''],
 ['grep -i -n "textToFind" *',                     '# grep: print line numbers'],
@@ -79,6 +81,7 @@ echo 'Wicked, it works!'
 ['rsync -av --exclude=CVS src dest',              '# cvs: copy files from src to desc excluding everything in CVS directories'],
 ['cvs diff -r tagX -r tagY',                      '# cvs: diff tagX tagY'],
 ['cvs update -C path/to/file.ext',                '# cvs: get clean copy'],
+['cvs update -P -C -r 1.11 path/to/file.ext',     '# cvs: get revision 1.11'],
 ['cvs checkout -r branchOrTag module',            '# cvs: checkout module from branch or tag'],
 ['cvs log    -P -d path/to/file.ext',             '# cvs: update file'],
 
