@@ -142,7 +142,8 @@ echo 'Wicked, it works!'
 ['[the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]',          '# lein: try to put it to project.clj in case of \'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath\''],
 
 ['dpkg --get-selections',                                               '# dpkg: show installed packages'],
-
+['cygpath -w filename',                                                 '# cygwin: bash: print windows form of filename'],
+['cygpath -u filename',                                                 '# cygwin: bash: print unix form of filename'],
 /* TODO add bash file tests to the list
 FILE1 -ot FILE2
               FILE1 is older than FILE2
