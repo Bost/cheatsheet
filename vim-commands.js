@@ -8,6 +8,7 @@ TODO: color commands belonging together
 TODO: C-r register, C-r C-o / C-r / C-p
 
 */
+
 [':bufdo %s/&lt;pattern&gt;/&lt;substit&gt;/ge | update',    '" substitute and save in all buffers'],
 [':bnext (:bn) / :bprev (:bp)',              '" go to next / previous buffer'],
 [':let @m=\'\'  /  :let @m=@n',              '" clear / copy register value'],
@@ -56,6 +57,9 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':redir @*',                                '" registers: redirect messages to the clipboard (system register)'],
 [':messages',                                '" display / print (error) messages'],
 [':redir END',                               '" terminate redirection'],
+[':earlier 15m / :later',                    '" reverts the document back to how it was 15 minutes ago / reverse the :earlier command'],
+[':verbose set cindent?',                    '" figure out where cindent got set/unset (for debuging)'],
+
 
 ['&nbsp;',                                   '&nbsp;'],
 
@@ -153,7 +157,11 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':sp filename / :vsp filename',             '" horizontal / vertical viewport split'],
 ['&gt; / &lt; / =',                          '" shift text right / left / align text'],
 ['C-] / C-t',                                '" vim help: follow link / go back'],
+[':cd %:h',                                  '" change to the dir of current file (probably)'],
+[':for i in range(1,255) | .put=\'10.0.0.\'.i | endfor', '" place increasing 10.0.0.1, 10.0.0.2, etc.'],
+[':setlocal autoread',                       '" like tail -f'],
 
+[':Explore',                                 '" show files adjacent to the one edited one; :Explore move up one directory'],
 [':scriptnames',                             '" list all plugins, _vimrcs loaded (super)'],
 [':verbose set history?',                    '" reveals value of history and where set'],
 [':function / :func SearchCompl',            '" list functions / particular function'],
