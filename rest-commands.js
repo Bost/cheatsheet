@@ -1,12 +1,18 @@
 var jsonRest = [
 ['ls --format=single-column',                     '# ls: '],
 ['ls -d1 */',                                     '# ls: list only directories, 1 entry per line'],
-['echo "ls -l" | at midnight',                    '# at: execute a command at a given time'],
+['echo "ls -l" | at midnight',                    '# bash: at: execute a command at a given time'],
+['at -f script.sh now + 1 hour',                  '# bash: at: run script.sh 1 hour from now'],
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
 ['set -o vi',                                     '# bash: set vi bindings'],
 ['sudo !!',                                       '# bash: run the last command as root'],
 ['!$',                                            '# bash: last argument of the last command'],
+['!*',                                            '# bash: all arguments of the last command'],
 ['> file.txt',                                    '# bash: empty the file.txt'],
+['tr \'[A-Z]\' \'[a-z]\' < fileName.txt > fileNameNew.txt', '# bash:  insert contents of fileName.txt into input of tr and output results to fileNameNew.txt'],
+['mmv \\*.JPG \\#1.jpg',                          '# bash: mass move/copy/rename'],
+['cal 2 2004 / cal -y 2004',                      '# bash: visual calender for februar 2004 / whole year 2004'],
+['renice +20 2222',                               '# bash: change the priority of process 2222 to +20 (minimum prio)'],
 ['d() { date; }',                                 '# bash: ? define function in bash ?'],
 ['C-r, C-g',                                      '# bash: bash history, abort history'],
 ['#!/bin/bash -e',                                '# bash: stop the script after any error (shebang line)'],
@@ -20,9 +26,10 @@ var jsonRest = [
 ['&nbsp;','&nbsp;'],
 
 ['diff -rq dirA dirB | sort',                     '# diff: recursively compare dirA with dirB; show only filenames: -q (quiet)'],
+['sdiff file1 file0',                             '# diff: outputs the files in two columns, side by side, separated by spaces'],
 
 ['gvim $(find . -name "*fileToSearch*")',                                       '# find: find files and open them in gvim'],
-['find . -name "*fileToSearch*"',                                               '# find: '],
+['find ./ foo/ bar/ -name "*fileToSearch*"',                                    '# find: search for *fileToSearch* in multiple directories'],
 ['find . -name *.properties -exec grep -lir ".*textToFind.*" \'{}\' \; -print', '# find: '],
 ['find . ... -print -quit',                                                     '# find: quit search after finding first match'],
 
@@ -127,6 +134,7 @@ echo 'Wicked, it works!'
 ['&nbsp;','&nbsp;'],
 
 ['/usr/ucb/ps -auxww',                                                  '# solaris: full command line (needs: sudo rootsh -i -u ... )'],
+['psrinfo',                                                             '# solaris: displays information about processors'],
 ['jar tf file.jar',                                                     '# jar: list files in file.jar'],
 ['jar xf file.jar path/inside.txt && cat path/inside.txt',              '# jar: show content of a file inside a jar file'],
 ['xfce4-session-logout',                                                '# xfce: logout'],
