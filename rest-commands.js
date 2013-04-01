@@ -12,7 +12,8 @@ var jsonRest = [
 ['tr \'[A-Z]\' \'[a-z]\' < fileName.txt > fileNameNew.txt', '# bash:  insert contents of fileName.txt into input of tr and output results to fileNameNew.txt'],
 ['mmv \\*.JPG \\#1.jpg',                          '# bash: mass move/copy/rename'],
 ['cal 2 2004 / cal -y 2004',                      '# bash: visual calender for februar 2004 / whole year 2004'],
-['renice +20 2222',                               '# bash: change the priority of process 2222 to +20 (minimum prio)'],
+['renice +20 2222',                               '# bash: change the priority of process 2222 to minimum (-19 max, +20 min prio)'],
+['ps -o pid,user,command,nice -p 7695',           '# bash: show statistics for a process nr. 7695'],
 ['d() { date; }',                                 '# bash: ? define function in bash ?'],
 ['C-r, C-g',                                      '# bash: bash history, abort history'],
 ['#!/bin/bash -e',                                '# bash: stop the script after any error (shebang line)'],
@@ -35,14 +36,14 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
-['grep --before-context=2 --after-context=4 textToFind', '# grep: search for textToFind and print 2/4 lines before/after matching line'],
-['grep -B 2 -A 4 textToFind',                            '# grep: search for textToFind and print 2/4 lines before/after matching line'],
-['grep -lir "textToFind" *',                      '# grep: print only file-names'],
-['grep sometext * | cut -f1 -d:',                 '# grep: print only filenames of the files containing \'sometext\''],
-['grep -i -n "textToFind" *',                     '# grep: print line numbers'],
-['grep --exclude=.git',                           '# grep: '],
-['grep --exclude=.git -lir \'textToFind\' *.properties',  '# grep: '],
-['grep -lir "textToFind" `find . -name *.properties`',    '# grep: find: '],
+['grep --before-context=2 --after-context=4 textToFind',                        '# grep: search for textToFind and print 2/4 lines before/after matching line'],
+['grep -B 2 -A 4 textToFind',                                                   '# grep: search for textToFind and print 2/4 lines before/after matching line'],
+['grep -lir "textToFind" *',                                                    '# grep: print only file-names'],
+['grep sometext * | cut -f1 -d:',                                               '# grep: print only filenames of the files containing \'sometext\''],
+['grep -i -n "textToFind" *',                                                   '# grep: print line numbers'],
+['grep --exclude=.git',                                                         '# grep: '],
+['grep --exclude=.git -lir \'textToFind\' *.properties',                        '# grep: '],
+['grep -lir "textToFind" `find . -name *.properties`',                          '# grep: find: '],
 ['grep -lir "textToFind" `find . -name *.properties -and -not -name .git/`',    '# grep: find: do not search in the .git directory'],
 
 ['&nbsp;','&nbsp;'],
@@ -77,14 +78,8 @@ var jsonRest = [
 ['git config branch.master.remote origin', '# git: Use it in case of "You asked me to pull without telling me which branch ..."'],
 ['git config branch.master.merge refs/heads/master', '# git: '],
 
-
 ['&nbsp;','&nbsp;'],
-/* TODO add this:
-#!/bin/sh
-ls -lh &&
-# This is a comment
-echo 'Wicked, it works!'
-*/
+
 ['rsync -av --exclude=CVS src dest',              '# cvs: copy files from src to desc excluding everything in CVS directories'],
 ['cvs diff -r tagX -r tagY',                      '# cvs: diff tagX tagY'],
 ['cvs update -C path/to/file.ext',                '# cvs: get clean copy'],
@@ -152,7 +147,14 @@ echo 'Wicked, it works!'
 ['dpkg --get-selections',                                               '# dpkg: show installed packages'],
 ['cygpath -w filename',                                                 '# cygwin: bash: print windows form of filename'],
 ['cygpath -u filename',                                                 '# cygwin: bash: print unix form of filename'],
-/* TODO add bash file tests to the list
+/*
+* TODO add this:
+#!/bin/sh
+ls -lh &&
+# This is a comment
+echo 'Wicked, it works!'
+
+* TODO add bash file tests to the list
 FILE1 -ot FILE2
               FILE1 is older than FILE2
 
@@ -212,5 +214,4 @@ FILE1 -ot FILE2
               FILE exists and execute (or search) permission is granted
 */
  ]
-
 
