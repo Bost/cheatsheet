@@ -36,18 +36,22 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['qq .... q @q/@@',                          '" start / stop macro recording, play down recorded macro'],
 [':cwindow (:cw) / :cclose',                 '" open / close the quickfix window'],
 [':ba / :ball / :wa / :wall',                '" open / write all buffers at once'],
-[':marks, m',                                '" marks (for jumping etc); m - marks something?'],
 ['C-x C-k e',                                '" edit macro'],
 [':! sort',                                  '" call sort command from shell'],
 [':sort u',                                  '" filter out duplicate rows (unique rows only)'],
 ['gum / gUm',                                '" lower / upper of movement m'],
 ['R r ~',                                    '" replace mode, replace 1 char, replace char and move right'],
-['30|',                                      '" jump to column 30'],
 [':r! command',                              '" execute command and read in its output'],
 ['.!sh / !!sh',                              '" execute current line in the shell'],
 ['`. / \'.',                                 '" last edit location (~ key)/ line (&auml; key)'],
-['; ,',                                      '" jump cursor forward, backward'],
-['zz zb zt / M L H',                         '" move window / jump cursor middle, bottom, top'],
+['`` / \'\'',                                '" jump: to last cursor location / last cursor line'],
+[':jumps / C-o / C-i',                       '" jump: go back / forth (older / newer locations)'],
+[']c / [c',                                  '" jump: to next / previous diff'],
+[':marks, m',                                '" jump: marks (for jumping etc); m - marks something?'],
+['30|',                                      '" jump: to column 30'],
+['; / ,',                                    '" jump: cursor forward / backward'],
+['zz zb zt / M L H',                         '" jump: move window / jump cursor to the middle, bottom, top'],
+['( / { / [[',                               '" jump: (backward): sentence / paragraph / section (keyword function)'],
 ['zc zo za / zC zO zA / zR',                 '" close, open, toggle current / all folds from cursor/ all folds'],
 [':set guifont=? / :set guifont=*',          '" display current guifont / guifond dialog window'],
 
@@ -75,7 +79,6 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
-['( / { / [[',                               '" jump (backward): sentence / paragraph / section (keyword function)'],
 ['C-r =',                                    '" calculator; can access every vim-function'],
 ['yypVr=',                                   '" yank current line, paste it below, select copied line, replace every char with ='],
 
@@ -95,6 +98,8 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['f/t F/T',                                  '" find / till (until) forward / backward'],
 [':g//',                                     '" lists all lines with the last search pattern'],
 ['xp',                                       '" swap chars'],
+[':functions',                               '" list user-defined functions (names and argument lists but not the full code)'],
+[':function Foo',                            '" list user-defined function Foo() (full code list)'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
@@ -120,7 +125,6 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':[range]s//baz/...',                       '" use previous search pattern'],
 [':%s/~/qux/igc',                            '" substitute last replacement string'],
 [':changes / g; / g,',                       '" changelist: go forth / back in the insert mode change list'],
-[':jumps / C-o / C-i',                       '" jumplist: go back / forth (older / newer locations)'],
 ['s / S (or cc) / C',                        '" substitute char / line / to the end of line'],
 
 ['gf',                                       '" open file under cursor (goto file)'],
@@ -138,7 +142,6 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['gvim -d file1 file2 / vimdiff file1 file2','" gvim / vim in diffmode'],
 [':diffthis / :windo diffthis',              '" diff current two buffers / windows'],
 [':vert diffsplit filename',                 '" diff current buffer with a filename'],
-[']c / [c',                                  '" jump to next / previous diff'],
 ['do :diffg :diffget',                       '" "obtain" difference under cursor from the other viewport'],
 ['dp :diffput',                              '" "put" difference under cursor to the other viewport'],
 [':diffupdate / :diffoff',                   '" update / switch off the diffmode for the current window'],
