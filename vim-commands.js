@@ -11,7 +11,6 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 [':bufdo %s/&lt;pattern&gt;/&lt;substit&gt;/ge | update',    '" substitute and save in all buffers'],
 [':bnext (:bn) / :bprev (:bp)',              '" go to next / previous buffer'],
-[':let @m=\'\'  /  :let @m=@n',              '" clear / copy register value'],
 ['v/&lt;pattern&gt;',                        '" mark everything from the cursor up to &lt;pattern&gt;'],
 [':w !sudo tee %',                           '" save a file as a sudo'],
 
@@ -67,6 +66,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
+[':let @m=\'\'  /  :let @m=@n',              '" registers: clear / copy register val: m &lt;- \'\' / m &lt;- n'],
 [':redir @a',                                '" registers: redirect output to register a'],
 [':put! a',                                  '" registers: paste register a into new window'],
 [':reg *0abc',                               '" registers: display registers: system, default, a, b, c'],
