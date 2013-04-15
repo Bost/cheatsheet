@@ -21,6 +21,7 @@ var jsonRest = [
 ['mv README.{text,txt} ; cp file{,.bak}',         '# bash: mv README.text README.txt ; cp file file.bak'],
 ['./command.sh 2&gt;&amp;1 | tee command.log',    '# bash: print the output to log and to the stdout'],
 ['date +"%Y-%m-%d_%H-%M-%S"',                     '# bash: get date (timestamp) in a given format'],
+['du -h --exclude=patten /path/to/dir',           '# bash: size of /path/to/dir with subdirectories, excluding files with given pattern'],
 
 ['curl -O http://server/fileX.txt > path/to/fileY.txt',  '# curl: download fileX.txt and save it under different location / name'],
 
@@ -145,6 +146,7 @@ var jsonRest = [
 ['[the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]',          '# lein: try to put it to project.clj in case of \'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath\''],
 
 ['dpkg --get-selections',                                               '# dpkg: show installed packages'],
+['dpkg -L packageName',                                                 '# dpkg: list of installed files from a packageName (dpkg-query -L works too)'],
 ['cygpath -w filename',                                                 '# cygwin: bash: print windows form of filename'],
 ['cygpath -u filename',                                                 '# cygwin: bash: print unix form of filename'],
 /*
