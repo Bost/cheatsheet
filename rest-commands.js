@@ -129,6 +129,7 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
+['/usr/sfw/bin/wget',                                                   '# solaris: wget'],
 ['/usr/ucb/ps -auxww',                                                  '# solaris: full command line (needs: sudo rootsh -i -u ... )'],
 ['psrinfo',                                                             '# solaris: displays information about processors'],
 ['jar tf file.jar',                                                     '# jar: list files in file.jar'],

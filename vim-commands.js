@@ -127,6 +127,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':changes / g; / g,',                       '" changelist: go forth / back in the insert mode change list'],
 ['s / S (or cc) / C',                        '" substitute char / line / to the end of line'],
 
+[':e /path/to/file / :e',                    '" edit /path/to/file / refresh the file'],
 ['gf',                                       '" open file under cursor (goto file)'],
 ['C-w f',                                    '" open file under cursor in a new window'],
 ['C-a / C-x',                                '" increment / decrement next number on the current line'],
