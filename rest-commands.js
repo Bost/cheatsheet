@@ -151,6 +151,10 @@ var jsonRest = [
 ['dpkg -L packageName',                                                 '# dpkg: list of installed files from a packageName (dpkg-query -L works too)'],
 ['cygpath -w filename',                                                 '# cygwin: bash: print windows form of filename'],
 ['cygpath -u filename',                                                 '# cygwin: bash: print unix form of filename'],
+['zip -r /path/to/file.zip /path/to/dir',                               '# zip: zip content of /path/to/dir to /path/to/file.zip'],
+['unzip /path/to/file.zip -d /path/to/extract-dir',                     '# zip: unzip: '],
+['tar czf /path/to/tarfile.gz file0 file1',                             '# tar: '],
+['tar xzf /path/to/tarfile.gz',                                         '# tar: untar: '],
 /*
 * TODO add this:
 #!/bin/sh
