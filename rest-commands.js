@@ -1,9 +1,10 @@
 var jsonRest = [
 ['ls --format=single-column',                     '# ls: '],
 ['ls -d1 */',                                     '# ls: list only directories, 1 entry per line'],
+['ls -1 /path/to/dir | wc -l',                    '# wc: ls: count of files in /path/to/dir'],
+['wc cheatsheet.html',                            '# wc: line count, word count'],
 ['echo "ls -l" | at midnight',                    '# bash: at: execute a command at a given time'],
 ['at -f script.sh now + 1 hour',                  '# bash: at: run script.sh 1 hour from now'],
-['wc cheatsheet.html',                            '# wc: line count, word count'],
 ['set -o vi',                                     '# bash: set vi bindings'],
 ['sudo !!',                                       '# bash: run the last command as root'],
 ['!$',                                            '# bash: last argument of the last command'],
