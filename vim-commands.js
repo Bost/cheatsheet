@@ -1,25 +1,22 @@
 jsonVim = [
 /*
 Text Object (type :h text-objects in vim for a complete description)
-
 This feature allows to operate on a block of text where the cursor is.
-
 TODO: color commands belonging together
 TODO: C-r register, C-r C-o / C-r / C-p
-
 */
 
-[':bufdo %s/&lt;pattern&gt;/&lt;substit&gt;/ge | update',    '" substitute and save in all buffers'],
+[':bufdo %s/pattern/replacement/ge | update','" substitute (replace) pattern and save changes in all buffers'],
 [':bnext (:bn) / :bprev (:bp)',              '" go to next / previous buffer'],
-['v/&lt;pattern&gt;',                        '" mark everything from the cursor up to &lt;pattern&gt;'],
+['v/pattern',                                '" mark everything from the cursor up to &lt;pattern&gt;'],
 [':w !sudo tee %',                           '" save a file as a sudo'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
-[':[range]g/&lt;pattern&gt;/cmd',            '" '],
-[':g/&lt;pattern&gt;/d  /  :g!/&lt;pattern&gt;/d',       '" delete all lines matching / not matching a pattern'],
-[':g/&lt;pattern&gt;/t$',                    '" copy all lines matching a pattern to end of file'],
-['0"ay0:g/&lt;pattern&gt;/y A',              '" registers: yank all lines matching a pattern to register \'a\''],
+[':[range]g/pattern/cmd',                    '" '],
+[':g/pattern/d  /  :g!/pattern/d',           '" delete all lines matching / not matching a pattern'],
+[':g/pattern/t$',                            '" copy all lines matching a pattern to end of file'],
+['0"ay0:g/pattern/y A',                      '" registers: yank all lines matching a pattern to register \'a\''],
 ['%s/&lt;C-R&gt;a/bar/g',                    '" registers: place the contents of register \'a\' in the search, and replace it with \'bar\''],
 [':g/regexp/p',                              '" grep'],
 
@@ -98,8 +95,6 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['f/t F/T',                                  '" find / till (until) forward / backward'],
 [':g//',                                     '" lists all lines with the last search pattern'],
 ['xp',                                       '" swap chars'],
-[':functions',                               '" list user-defined functions (names and argument lists but not the full code)'],
-[':function Foo',                            '" list user-defined function Foo() (full code list)'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
@@ -139,36 +134,42 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
-['gvim -p file1 file2',                      '" gvim with tabs'],
-['gvim -d file1 file2 / vimdiff file1 file2','" gvim / vim in diffmode'],
-[':diffthis / :windo diffthis',              '" diff current two buffers / windows'],
-[':vert diffsplit filename',                 '" diff current buffer with a filename'],
-['do :diffg :diffget',                       '" "obtain" difference under cursor from the other viewport'],
-['dp :diffput',                              '" "put" difference under cursor to the other viewport'],
-[':diffupdate / :diffoff',                   '" update / switch off the diffmode for the current window'],
+['gvim -p file1 file2',                      '" vimdiff: gvim with tabs'],
+['gvim -d file1 file2 / vimdiff file1 file2','" vimdiff: gvim / vim in diffmode'],
+[':diffthis / :windo diffthis',              '" vimdiff: diff current two buffers / windows'],
+[':vert diffsplit filename',                 '" vimdiff: diff current buffer with a filename'],
+['do :diffg :diffget',                       '" vimdiff: obtain difference under cursor from the other viewport'],
+['dp :diffput',                              '" vimdiff: put difference under cursor to the other viewport'],
+[':diffupdate / :diffoff',                   '" vimdiff: update / switch off the diffmode for the current window'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
 ['set nomodifiable',                         '" set current buffer to readonly mode'],
 ['set fileformat=dos|unix|mac',              '" '],
 ['set filetype=html|xml|...',                '" '],
-['C-w 5&lt; / C-w 5&gt; / C-w 5- / C-w 5+',  '" resize vertical viewport 5 chars to the left / right / bottom / top'],
-['C-w C-w',                                  '" move around split viewports'],
-['C-w h/j/k/l',                              '" move around viewports according to given direction'],
-['C-w r / R',                                '" rotate window down-&gt;right / up-&gt;left'],
-['C-w o / :on',                              '" close other windows'],
-['C-w |  /  C-w _',                          '" maximize vertically / horizontally'],
-[':sp filename / :vsp filename',             '" horizontal / vertical viewport split'],
+['C-w 5&lt; / C-w 5&gt; / C-w 5- / C-w 5+',  '" splits: resize vertical viewport 5 chars to the left / right / bottom / top'],
+['C-w C-w',                                  '" splits: move around split viewports'],
+['C-w h/j/k/l',                              '" splits: move around viewports according to given direction'],
+['C-w r / R',                                '" splits: rotate window down-&gt;right / up-&gt;left'],
+['C-w o / :on',                              '" splits: close other windows'],
+['C-W T',                                    '" splits: tabs: break out current window into a new tabview'],
+['C-W R',                                    '" splits: swap top/bottom or left/right split'],
+['C-w |  /  C-w _',                          '" splits: maximize vertically / horizontally'],
+[':sp filename / :vsp filename',             '" splits: horizontal / vertical viewport split'],
+[':vsplit ./:vsplit./:vsp ./:sp./:split.',   '" splits: open the file browser in a new window split'],
+[':10sp',                                    '" splits: open horizontal viewport 10 lines higt (good for notes)'],
+['vim . / gvim .',                           '" open vim / gvim from the command line as a file browser'],
 ['&gt; / &lt; / =',                          '" shift text right / left / align text'],
-['C-] / C-t',                                '" vim help: follow link / go back'],
+['C-] / C-t',                                '" help: follow link / go back'],
 [':cd %:h',                                  '" change to the dir of current file (probably)'],
 [':for i in range(1,255) | .put=\'10.0.0.\'.i | endfor', '" place increasing 10.0.0.1, 10.0.0.2, etc.'],
 [':setlocal autoread',                       '" like tail -f'],
 
 [':Explore',                                 '" show files adjacent to the one edited one; :Explore move up one directory'],
-[':scriptnames',                             '" list all plugins, _vimrcs loaded (super)'],
+[':scriptnames',                             '" plugin: list all plugins, _vimrcs loaded (super)'],
+
+[':function / :function Foo',                '" plugin: list all user-defined functions (just names & args) / full code of function Foo'],
 [':verbose set history?',                    '" reveals value of history and where set'],
-[':function / :func SearchCompl',            '" list functions / particular function'],
 
 ['&nbsp;',                                   '&nbsp;'],
 
