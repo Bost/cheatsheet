@@ -158,6 +158,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 [':sp filename / :vsp filename',             '" splits: horizontal / vertical viewport split'],
 [':vsplit ./:vsplit./:vsp ./:sp./:split.',   '" splits: open the file browser in a new window split'],
 [':10sp',                                    '" splits: open horizontal viewport 10 lines higt (good for notes)'],
+['vim -p file0 file1 / gvim -p file0 file1', '" open vim / gvim from the command line with file0, file1 in separate tabs'],
 ['vim . / gvim .',                           '" open vim / gvim from the command line as a file browser'],
 ['&gt; / &lt; / =',                          '" shift text right / left / align text'],
 ['C-] / C-t',                                '" help: follow link / go back'],
