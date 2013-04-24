@@ -155,6 +155,12 @@ var jsonRest = [
 ['unzip /path/to/file.zip -d /path/to/extract-dir',                     '# zip: unzip: '],
 ['tar czf /path/to/tarfile.gz file0 file1',                             '# tar: '],
 ['tar xzf /path/to/tarfile.gz',                                         '# tar: untar: '],
+
+['&nbsp;','&nbsp;'],
+
+['View > Layout > Columns:2',                                           '# sublime: vertical split'],
+['Tools > SublimeREPL > Clojure > Clojure',                             '# sublime: open clojure REPL'],
+['C-,s / C-,f / C-,l / C-,b',                                           '# sublime: evaluate selection / file / line / block in REPL'],
 /*
 * TODO add this:
 #!/bin/sh
