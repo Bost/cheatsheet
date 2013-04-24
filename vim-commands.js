@@ -208,6 +208,11 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['\\bs / \\bv',                              '" bufexplorer: :BufExplorerHorizontalSplit / :BufExplorerVerticalSplit'],
 
 ['&nbsp;',                                   '&nbsp;'],
+[':set spell',                               '" spellcheck: switch on'],
+[']s / [s',                                  '" spellcheck: next / previous mistake'],
+['z= / 1z=',                                 '" spellcheck: spelling suggestions / auto replace with 1st suggestion'],
+[':windo set spelllang=en_us / :bufdo set spelllang=en_us', '" spelllang: ally spell language to viewport / buffer'],
+['zg / zG',                                  '" spellcheck: add word under cursor to spellfile / editing session'],
 
 ['\\sr / \\sR',                              '" vimclojure: start REPL (with the namespace of the current buffer)'],
 ['\\si / \\fd',                              '" vimclojure: prompt for input and lookup with (source) / (find-doc)'],
