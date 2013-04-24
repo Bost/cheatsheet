@@ -5,9 +5,9 @@ var jsonEmacs = [
 ['C-x ^ or C-x { or } ',            '# enlarge-window, shrink-window horizontally / vertically'],
 ['C-u C-x v =',                     '# diff against any chosen revision'],
 ['C-x v u',                         '# discard changes'],
-['C-x v ~',                         '# checkout any version: master~3   last 3th version'],
+['C-x v ~',                         '# checkout any version: master~3 - last 3th version'],
 ['C-x v l',                         '# commit log: f - view revision; d - view diff'],
-['C-x o',                           '# switch window/frame'],
+['C-x o',                           '# switch window / frame'],
 ['C-x v i',                         '# add to version control system'],
 ['C-x r RET',                       '# add to version control system'],
 ['C-x C-f / C-v',                   '# find file / find alternate file '],
@@ -116,13 +116,5 @@ var jsonEmacs = [
 ['C-w C-w',                         '# move around split viewports'],
 ['C-x C-o',                         '# complete function name (omni completition)'],
 
-['/usr/ucb/ps -auxww',              '# solaris: full command line'],
-['jar tf',                          '# list files in a jar-file'],
-['xfce4-session-logout',            '&nbsp;'],
-['man -k abc',                      '# search man pages for abc'],
-['$ssh-copy-id user@host',          '# Copy ssh keys to user@host to enable password-less ssh logins'],
-['sshfs name@server:/path/to/folder /path/to/mount/point',            '# Mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Will allow you to mount a folder security over a network.'],
-
-['ssh user@host cat /path/to/remotefile | diff /path/to/localfile -', '# Compare a remote file with a local file'],
 ]
 
