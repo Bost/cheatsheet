@@ -127,6 +127,8 @@ var jsonRest = [
 ['lscpu',                                                               '# linux: info about CPU architecture'],
 ['renice',                                                              '# linux: alter priority of running processes'],
 ['lsb_release -a',                                                      '# linux: show (ubuntu) version'],
+['sudo apt-get update && sudo apt-get upgrade',                         '# linux: ubuntu: command line upgrade part 1.'],
+['sudo do-release-upgrade',                                             '# linux: ubuntu: command line upgrade part 2.'],
 
 ['&nbsp;','&nbsp;'],
 
