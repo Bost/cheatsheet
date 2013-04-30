@@ -3,14 +3,25 @@ var jsonRest = [
 ['ls -d1 */',                                     '# ls: list only directories, 1 entry per line'],
 ['ls -1 /path/to/dir | wc -l',                    '# wc: ls: count of files in /path/to/dir'],
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
+
+['history -d',                                    '# bash: remove a line from shell history (i.e. a line with password)'],
+['echo "rm -rf /unwanted-but-large/folder" | batch', '# bash: run a cmd only when load average is below a certain threshold (default is 0.8)'],
+['bind -P',                                       '# bash: show all bash shortcuts'],
+['chmod --reference file0 file1',                 '# bash: set mod of file1 according to file0'],
+['rm -f !(survivior.txt)',                        '# bash: remove all files except survivior.txt'],
+['Esc *',                                         '# bash: insert autocompletition result (use together with other progs)'],
+['\\\[command\]',                                 '# bash: alias: escape command aliases'],
+['Alt-. / Esc-.',                                 '# bash: get the argument of the last command'],
 ['echo "ls -l" | at midnight',                    '# bash: at: execute a command at a given time'],
 ['at -f script.sh now + 1 hour',                  '# bash: at: run script.sh 1 hour from now'],
 ['set -o vi',                                     '# bash: set vi bindings'],
-['sudo !!',                                       '# bash: run the last command as root'],
-['!$',                                            '# bash: last argument of the last command'],
-['!*',                                            '# bash: all arguments of the last command'],
+['sudo !!',                                       '# bash: args: run the last command as root'],
+['!$',                                            '# bash: args: last argument of the last command'],
+['!*',                                            '# bash: args: all arguments of the last command'],
+['!:-',                                           '# bash: args: last command without the last argument'],
+['$*',                                            '# bash: args: function arguments'],
 ['> file.txt',                                    '# bash: empty the file.txt'],
-['tr \'[A-Z]\' \'[a-z]\' < fileName.txt > fileNameNew.txt', '# bash:  insert contents of fileName.txt into input of tr and output results to fileNameNew.txt'],
+['tr \'[A-Z]\' \'[a-z]\' < fileName.txt > fileNameNew.txt', '# bash: insert contents of fileName.txt into input of tr and output results to fileNameNew.txt'],
 ['mmv \\*.JPG \\#1.jpg',                          '# bash: mass move/copy/rename'],
 ['cal 2 2004 / cal -y 2004',                      '# bash: visual calender for februar 2004 / whole year 2004'],
 ['renice +20 2222',                               '# bash: change the priority of process 2222 to minimum (-19 max, +20 min prio)'],
@@ -23,8 +34,15 @@ var jsonRest = [
 ['./command.sh 2&gt;&amp;1 | tee command.log',    '# bash: print the output to log and to the stdout'],
 ['date +"%Y-%m-%d_%H-%M-%S"',                     '# bash: get date (timestamp) in a given format'],
 ['du -h --exclude=patten /path/to/dir',           '# bash: size of /path/to/dir with subdirectories, excluding files with given pattern'],
+['(cd /path/to/dir && ls)',                       '# bash: jump to /path/to/dir execute command and jump back'],
+['time read',                                     '# bash: stop-watch; ctrl-d to stop'],
+['Ctrl-u ... Ctrl-y',                             '# bash: type partial cmd, kill this cmd, check something you forgot, yank the cmd, resume typing'],
+['Ctrl-\] Enter quit Enter',                      '# telnet: terminate session'],
+['echo "The date is: $(date +%D)"',               '# bash: avoid backticks'],
+['echo "!!" > foo.sh',                            '# bash: create a script from last executed cmd'],
 
 ['curl -O http://server/fileX.txt > path/to/fileY.txt',  '# curl: download fileX.txt and save it under different location / name'],
+['curl ifconfig.me/ip/host/ua/port/',             '# curl: net: ask http://ifconfig.me about myself (ua: User Agent)'],
 
 ['&nbsp;','&nbsp;'],
 
@@ -38,6 +56,7 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
+['grep -Fx -f file1 file2',                                                     '# grep: intersection between two files'],
 ['grep --before-context=2 --after-context=4 textToFind',                        '# grep: search for textToFind and print 2/4 lines before/after matching line'],
 ['grep -B 2 -A 4 textToFind',                                                   '# grep: search for textToFind and print 2/4 lines before/after matching line'],
 ['grep -lir "textToFind" *',                                                    '# grep: print only file-names'],
@@ -129,7 +148,8 @@ var jsonRest = [
 ['lsb_release -a',                                                      '# linux: show (ubuntu) version'],
 ['sudo apt-get update && sudo apt-get upgrade',                         '# linux: ubuntu: command line upgrade part 1.'],
 ['sudo do-release-upgrade',                                             '# linux: ubuntu: command line upgrade part 2.'],
-
+['sudo restart lightdm / gdm / kdm',                                    '# linux: ubuntu: (ubuntu 11.10 or later), gnome or KDE'],
+['sudo touch /forcefsck',                                               '# linux: run fsck on next reboot'],
 ['&nbsp;','&nbsp;'],
 
 ['/usr/sfw/bin/wget',                                                   '# solaris: wget'],
@@ -138,6 +158,7 @@ var jsonRest = [
 ['jar tf file.jar',                                                     '# jar: list files in file.jar'],
 ['jar xf file.jar path/inside.txt && cat path/inside.txt',              '# jar: show content of a file inside a jar file'],
 ['xfce4-session-logout',                                                '# xfce: logout'],
+['gnome-session-quit / ',                                               '# linux: gnome: logout from CLI']
 ['rm -r ~/.cache/sessions',                                             '# xfce: execute this when the title bar dissapears from xfwm4'],
 ['man -k abc',                                                          '# man: search man pages for abc'],
 ['ssh user@host cat /path/to/remotefile | diff /path/to/localfile -',   '# ssh: compare a remote file with a local file'],
@@ -163,8 +184,16 @@ var jsonRest = [
 ['View > Layout > Columns:2',                                           '# sublime: vertical split'],
 ['Tools > SublimeREPL > Clojure > Clojure',                             '# sublime: open clojure REPL'],
 ['C-,s / C-,f / C-,l / C-,b',                                           '# sublime: evaluate selection / file / line / block in REPL'],
+['mtr google.com',                                                      '# ping: traceroute: '],
+['dig +short txt keyword.wp.dg.cx',                                     '# bash: query wikipedia for keyword'],
+['netstat -tlnp',                                                       '# net: listening ports and PIDs of associated processes'],
+
 /*
 * TODO add this:
+
+
+git remote add --track develop upstream https://github.com/Lokaltog/powerline.git
+
 #!/bin/sh
 ls -lh &&
 # This is a comment
