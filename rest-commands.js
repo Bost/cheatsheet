@@ -187,6 +187,7 @@ var jsonRest = [
 ['mtr google.com',                                                      '# ping: traceroute: '],
 ['dig +short txt keyword.wp.dg.cx',                                     '# bash: query wikipedia for keyword'],
 ['netstat -tlnp',                                                       '# net: listening ports and PIDs of associated processes'],
+['crontab -e / crontab -l',                                             '# edit / view crontab entries'],
 
 /*
 * TODO add this:
