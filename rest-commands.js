@@ -31,7 +31,7 @@ var jsonRest = [
 ['#!/bin/bash -e',                                '# bash: stop the script after any error (shebang line)'],
 ['mkdir -p path/dirname.0{1,2,3}',                '# bash: create 4 directories at once'],
 ['mv README.{text,txt} ; cp file{,.bak}',         '# bash: mv README.text README.txt ; cp file file.bak'],
-['./command.sh 2&gt;&amp;1 | tee command.log',    '# bash: print the output to log and to the stdout'],
+['./command.sh 2&gt;&amp;1 | tee command.log',    '# bash: redirect stderr (2) to stdout (1) and save it to command.log'],
 ['date +"%Y-%m-%d_%H-%M-%S"',                     '# bash: get date (timestamp) in a given format'],
 ['du -h --exclude=patten /path/to/dir',           '# bash: size of /path/to/dir with subdirectories, excluding files with given pattern'],
 ['(cd /path/to/dir && ls)',                       '# bash: jump to /path/to/dir execute command and jump back'],
