@@ -76,7 +76,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 
 ['&nbsp;',                                   '&nbsp;'],
 
-['C-r =',                                    '" calculator; can access every vim-function'],
+['C-r =',                                    '" calculator; (accessible from insert mode; can access every vim-function)'],
 ['yypVr=',                                   '" yank current line, paste it below, select copied line, replace every char with ='],
 
 
