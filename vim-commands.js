@@ -208,7 +208,7 @@ TODO: C-r register, C-r C-o / C-r / C-p
 ['\\bs / \\bv',                              '" bufexplorer: :BufExplorerHorizontalSplit / :BufExplorerVerticalSplit'],
 
 ['&nbsp;',                                   '&nbsp;'],
-[':set spell',                               '" spellcheck: switch on'],
+[':set spell / :set nospell',                '" spellcheck: switch on / off'],
 [']s / [s',                                  '" spellcheck: next / previous mistake'],
 ['z= / 1z=',                                 '" spellcheck: spelling suggestions / auto replace with 1st suggestion'],
 [':windo set spelllang=en_us / :bufdo set spelllang=en_us', '" spelllang: ally spell language to viewport / buffer'],
