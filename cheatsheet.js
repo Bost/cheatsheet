@@ -86,10 +86,9 @@ $(function() {
 });
 
 function addElems(data, id) {
-    var ni = document.getElementById(id);
-    //var ni = $(id);
+    var ni = $('#'+id)[0];
     if (!ni) {
-        console.warn('document.getElementById(',ni,') == null')
+        console.warn("$('#"+id+"')[0] == null");
         return;
     }
     //var numi = document.getElementById('theValue');
@@ -105,5 +104,5 @@ function addElems(data, id) {
         newdiv.innerHTML = '<div class="line"><div class="cmd">'+cmd+'</div><div class="desc">'+desc+'</div></div>';
         ni.appendChild(newdiv);
     }
-    console.log('elems added: ',i)
+    console.log('id: '+id+'; elems added: ',i)
 }
