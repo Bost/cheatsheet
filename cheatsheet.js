@@ -91,7 +91,6 @@ function addElems(data, id) {
         console.warn('document.getElementById(',ni,') == null')
         return;
     }
-    console.log('ni: ',ni)
     //var numi = document.getElementById('theValue');
     //var num = (document.getElementById('theValue').value -1)+ 2;
     //numi.value = num;
