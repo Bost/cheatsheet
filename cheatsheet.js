@@ -87,6 +87,7 @@ $(function() {
 
 function addElems(data, id) {
     var ni = document.getElementById(id);
+    //var ni = $(id);
     if (!ni) {
         console.warn('document.getElementById(',ni,') == null')
         return;
