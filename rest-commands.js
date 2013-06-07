@@ -189,7 +189,7 @@ var jsonRest = [
 ['dig +short txt keyword.wp.dg.cx',                                     '# bash: query wikipedia for keyword'],
 ['netstat -tlnp',                                                       '# net: listening ports and PIDs of associated processes'],
 ['crontab -e / crontab -l',                                             '# edit / view crontab entries'],
-
+['acpi -V',                                                             '# linux: show everything (battery info etc)'],
 /*
 * TODO add this:
 
