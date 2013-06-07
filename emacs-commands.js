@@ -132,5 +132,7 @@ var jsonEmacs = [
 ['M-x ispell-region',               '; region: check a small region'],
 ['C-x 1 / C-x 2 / C-x 3',           '; split: show only buffer / horizontal / vertical split'],
 
+['M-x magit-status / s / c / P',    '; git: status / stage / commit / push'],
+
 ]
 
