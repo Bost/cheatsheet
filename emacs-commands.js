@@ -1,5 +1,4 @@
 var jsonEmacs = [
-['C-h b',                           '; key bindings applicaple on current buffer'],
 ['C-h m',                           '; describe current mode'],
 ['C-h k key / C-h f function',      '; describe-key / describe-function'],
 ['M-x package-list-packages',       '; install new packages'],
@@ -20,16 +19,18 @@ var jsonEmacs = [
 ['C-x r RET',                       '; add to version control system'],
 ['C-x C-f / C-v',                   '; find file / find alternate file '],
 ['C-x 4 f / C-x 4 b',               '; find-file-other window / switch-to-buffer-other-window'],
-['C-x C-s / C-w',                   '; save file / save as'],
+['C-x C-s / C-x C-w',               '; save file / save as'],
 ['C-x s',                           '; save-some-buffers'],
-['',                                '; eshell: ifconfig &gt; #<buffer interfaces>'],
+['&nbsp;',                          '; eshell: ifconfig &gt; #<buffer interfaces>'],
 ['M-x global-linum-mode',           '; show line number or put(line-number-mode 1) to ~/.emacs'],
 ['&nbsp;',                          '; cssh ? ssh shell ? (somehow strange)'],
 ['&nbsp;',                          '; color-theme-calm-forest ? does not work?'],
 ['&nbsp;',                          '; yasnippet - yet another snippets'],
 ['&nbsp;',                          '; elpa - emacs lisp package archive'],
 ['C-x 1',                           '; delete-other-windows'],
-['C-x k',                           '; kill-buffer'],
+['C-x k',                           '; buffers: kill-buffer'],
+['C-h b',                           '; buffers: key bindings applicaple on current buffer'],
+['C-x C-b / C-x b',                 '; buffers: M-x list-buffers / M-x ido-switch-buffer'],
 ['M-x kill-whole-line',             '; &nbsp;'],
 ['C-S-Backspace',                   '; delete 1 whole line'],
 ['M-!',                             '; shell-command'],
@@ -132,7 +133,6 @@ var jsonEmacs = [
 ['M-x ispell-region',               '; region: check a small region'],
 ['C-x 1 / C-x 2 / C-x 3',           '; split: show only buffer / horizontal / vertical split'],
 
-['M-x magit-status / s / c / P',    '; git: status / stage / commit / push'],
-
+['M-x magit-status / s / c / P / d','; git: status / stage / commit / push / diff'],
+['M-x menu-bar-mode',               '; gui: toggle menu-bar'],
 ]
-
