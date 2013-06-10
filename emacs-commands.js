@@ -131,7 +131,7 @@ var jsonEmacs = [
 ['C-Spc',                           '; region: set mark (start region)'],
 ['C-x r k',                         '; region: kill selected region'],
 ['M-x ispell-region',               '; region: check a small region'],
-['C-x 1 / C-x 2 / C-x 3',           '; split: show only buffer / horizontal / vertical split'],
+['C-x 0 / C-x 1 / C-x 2 / C-x 3',   '; splits: close / only one buffer / horizontal / vertical'],
 
 ['M-x magit-status / s / c / P / d','; git: status / stage / commit / push / diff'],
 ['M-x menu-bar-mode',               '; gui: toggle menu-bar'],
