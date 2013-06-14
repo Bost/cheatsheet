@@ -81,6 +81,7 @@ var jsonEmacs = [
 ['C-t / M-t / C-x C-t',             '; transpose chars/words/lines'],
 ['C-l',                             '; center the screen'],
 ['M-x shell / eshell ',             '; start a bash command line'],
+['M-x eshell; cmd; db2init; c46; \[f12\]', '; sql: db2: execute script.sql'],
 ['C-x C-f ENTER',                   '; enters the dired mode (see menu)'],
 ['M-q',                             '; rewrap the line in auto-fill-mode'],
 ['C-u',                             '; parameter key'],
