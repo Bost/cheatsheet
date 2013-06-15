@@ -1,10 +1,10 @@
 var jsonEmacs = [
+['C-z',                             '; evil: toggle (evil-mode 0) / (evil-mode 1)'],
 ['C-h m',                           '; describe current mode'],
 ['C-h k key / C-h f function',      '; describe-key / describe-function'],
 ['M-x package-list-packages',       '; install new packages'],
-['M-d',                             '; delete word'],
-['C-k',                             '; delete line from cursor'],
-['C-x f',                           '; find file'],
+['M-d / C-k',                       '; delete word / line from cursor'],
+['C-x C-f',                         '; find file'],
 ['M-x goto-line',                   '; goto-line'],
 ['M-` / F10',                       '; menu'],
 ['C-u C-SPC',                       '; jump back to the last mark (there is a mark-ring)'],
