@@ -1,5 +1,5 @@
 var jsonEmacs = [
-['M-x quail-set-keyboard-layout'    '; keyboard: does not work on cygwin'],
+['M-x quail-set-keyboard-layout',   '; keyboard: does not work on cygwin'],
 ['M-x quail-show-key',              '; keyboard: show layout'],
 ['M-x toggle-scroll-bar',           '; toggle vertical scroll bar (there is no vertical scroll bar)'],
 ['C-x < / C-x >',                   '; scroll left / right'],
@@ -8,7 +8,6 @@ var jsonEmacs = [
 ['C-h k key / C-h f function',      '; describe-key / describe-function'],
 ['M-x package-list-packages',       '; install new packages'],
 ['M-d / C-k',                       '; delete word / line from cursor'],
-['C-x C-f',                         '; find file'],
 ['M-x goto-line',                   '; goto-line'],
 ['M-` / F10',                       '; menu'],
 ['C-u C-SPC',                       '; jump back to the last mark (there is a mark-ring)'],
@@ -21,7 +20,7 @@ var jsonEmacs = [
 ['C-x o',                           '; switch window / frame'],
 ['C-x v i',                         '; add to version control system'],
 ['C-x r RET',                       '; add to version control system'],
-['C-x C-f / C-v',                   '; find file / find alternate file '],
+['C-x C-f / C-x C-v',               '; find file / find alternate file (reload file)'],
 ['C-x 4 f / C-x 4 b',               '; find-file-other window / switch-to-buffer-other-window'],
 ['C-x C-s / C-x C-w',               '; save file / save as'],
 ['C-x s',                           '; save-some-buffers'],
@@ -140,4 +139,5 @@ var jsonEmacs = [
 
 ['M-x magit-status / s / c / P / d / k','; git: status / stage / commit / push / diff / discard changes'],
 ['M-x menu-bar-mode',               '; gui: toggle menu-bar'],
+
 ]
