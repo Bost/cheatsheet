@@ -1,4 +1,8 @@
 var jsonEmacs = [
+['M-x quail-set-keyboard-layout'    '; keyboard: does not work on cygwin'],
+['M-x quail-show-key',              '; keyboard: show layout'],
+['M-x toggle-scroll-bar',           '; toggle vertical scroll bar (there is no vertical scroll bar)'],
+['C-x < / C-x >',                   '; scroll left / right'],
 ['C-z',                             '; evil: toggle (evil-mode 0) / (evil-mode 1)'],
 ['C-h m',                           '; describe current mode'],
 ['C-h k key / C-h f function',      '; describe-key / describe-function'],
