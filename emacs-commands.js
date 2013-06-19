@@ -1,4 +1,5 @@
 var jsonEmacs = [
+['emacs -q',                        '; skip ~/.emacs (if messed up)'],
 ['M-x quail-set-keyboard-layout',   '; keyboard: does not work on cygwin'],
 ['M-x quail-show-key',              '; keyboard: show layout'],
 ['M-x toggle-scroll-bar',           '; toggle vertical scroll bar (there is no vertical scroll bar)'],
@@ -58,8 +59,9 @@ var jsonEmacs = [
 ['M-x ispell-region',               '; check a small region'],
 ['M-x ispell-buffer',               ';'],
 
-['F3 or C-x ( / F4 or C-x e',       '; start macro, stop/play macro'],
-['M-5 F4 or C-x e',                 '; repeat macro 5 times'],
+['C-x ( / C-x ) / C-x e',           '; macro: start / stop / execute (e - execute again)'],
+['F3 or C-x ( / F4 or C-x e',       '; marco: start macro, stop/play macro'],
+['M-5 F4 or C-x e',                 '; macro: repeat macro 5 times'],
 ['C-u n',                           '; repeat n times following command'],
 ['C-_ / C-/ / C-x u',               '; undo'],
 ['C-f C-_',                         '; redo'],
@@ -139,5 +141,6 @@ var jsonEmacs = [
 
 ['M-x magit-status / s / c / P / d / k','; git: status / stage / commit / push / diff / discard changes'],
 ['M-x menu-bar-mode',               '; gui: toggle menu-bar'],
+
 
 ]
