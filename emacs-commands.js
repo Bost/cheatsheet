@@ -1,5 +1,6 @@
 var jsonEmacs = [
 ['emacs -q',                        '; skip ~/.emacs (if messed up)'],
+['M-x byte-compile-file',           '; byte-compile an *.el file'],
 ['M-x quail-set-keyboard-layout',   '; keyboard: does not work on cygwin'],
 ['M-x quail-show-key',              '; keyboard: show layout'],
 ['M-x toggle-scroll-bar',           '; toggle vertical scroll bar (there is no vertical scroll bar)'],
