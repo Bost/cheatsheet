@@ -1,4 +1,5 @@
 var jsonRest = [
+['javaws start.jnlp',                             '# launch start.jnlp'],
 ['ls --format=single-column',                     '# ls: '],
 ['ls -d1 */',                                     '# ls: list only directories, 1 entry per line'],
 ['ls -1 /path/to/dir | wc -l',                    '# wc: ls: count of files in /path/to/dir'],
