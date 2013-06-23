@@ -1,4 +1,6 @@
 var jsonEmacs = [
+// ['', ''],
+['C-c 1 / C-c 2 / ...',             '; winner-mode: jump between window config'],
 ['emacs -q',                        '; skip ~/.emacs (if messed up)'],
 ['M-x browse-url-at-point',         '; '],
 ['M-x byte-compile-file',           '; byte-compile an *.el file'],
