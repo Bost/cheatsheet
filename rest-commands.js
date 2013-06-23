@@ -5,6 +5,7 @@ var jsonRest = [
 ['ls -1 /path/to/dir | wc -l',                    '# wc: ls: count of files in /path/to/dir'],
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
 
+['$@ / $#',                                       '# bash: all / count of arguments' ],
 ['history -d',                                    '# bash: remove a line from shell history (i.e. a line with password)'],
 ['echo "rm -rf /unwanted-but-large/folder" | batch', '# bash: run a cmd only when load average is below a certain threshold (default is 0.8)'],
 ['bind -P',                                       '# bash: show all bash shortcuts'],

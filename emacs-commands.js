@@ -1,5 +1,7 @@
 var jsonEmacs = [
 // ['', ''],
+['M-x linum-relative-toggle',       '; toggle relative / absolute line numbers'],
+['C-c M-j',                         '; M-x nrepl-jack-in'],
 ['C-c 1 / C-c 2 / ...',             '; winner-mode: jump between window config'],
 ['emacs -q',                        '; skip ~/.emacs (if messed up)'],
 ['M-x browse-url-at-point',         '; '],
