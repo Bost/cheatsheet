@@ -14,13 +14,12 @@ var jsonEmacs = [
 ['C-x < / C-x >',                   '; scroll left / right'],
 ['C-z',                             '; evil: toggle (evil-mode 0) / (evil-mode 1)'],
 ['C-h m',                           '; describe current mode'],
-['C-h k key / C-h f function',      '; describe-key / describe-function'],
+['C-h k / C-h f / C-h v / C-h b',   '; describe-key / -function / -variable / -binding'],
 ['M-x package-list-packages',       '; install new packages'],
 ['M-d / C-k',                       '; delete word / line from cursor'],
 ['M-x goto-line',                   '; goto-line'],
 ['M-` / F10',                       '; menu'],
 ['C-u C-SPC',                       '; jump back to the last mark (there is a mark-ring)'],
-['C-h v',                           '; describe variable'],
 ['C-x ^ or C-x { or } ',            '; enlarge-window, shrink-window horizontally / vertically'],
 ['C-u C-x v =',                     '; diff against any chosen revision'],
 ['C-x v u',                         '; discard changes'],
@@ -41,7 +40,6 @@ var jsonEmacs = [
 ['&nbsp;',                          '; elpa - emacs lisp package archive'],
 ['C-x 1',                           '; delete-other-windows'],
 ['C-x k',                           '; buffers: kill-buffer'],
-['C-h b',                           '; buffers: key bindings applicaple on current buffer'],
 ['C-x C-b / C-x b',                 '; buffers: M-x list-buffers / M-x ido-switch-buffer'],
 ['M-x kill-whole-line',             '; &nbsp;'],
 ['C-S-Backspace',                   '; delete 1 whole line'],
@@ -51,7 +49,7 @@ var jsonEmacs = [
 ['C-x z',                           '; M-x repeat'],
 ['C-x m',                           '; email'],
 ['C-x i',                           '; insert file'],
-['C-c C-C',                         '; end of git commit message (under emacs)'],
+['C-c C-c',                         '; magit; end of git commit message'],
 
 ['M-x command',                     '; execute command'],
 ['C-x e',                           '; evaluate lisp s-expression - see M-x eval-current-buffer'],
@@ -59,11 +57,9 @@ var jsonEmacs = [
 ['C-M-x',                           '; immediate eval'],
 ['C-M-\'',                          '; auto indent block'],
 ['<a href="http://lpn.rnbhq.org/tools/xemacs/emacs_ref.html" >emacs command list</a>','; emacs command list'],
-['M-%',                             '; query-replace'],
+['M-%',                             '; M-x query-replace'],
 ['M-x replace-string',              ';'],
-['M-u',                             '; upper case for next word'],
-['M-l',                             '; lower case'],
-['M-c capitalize',                  '; (1st letter is upper case)'],
+['M-u / M-l / M-c',                 '; M-x upcase-word / downcase-word / capitalize-word'],
 ['M-x ispell-region',               '; check a small region'],
 ['M-x ispell-buffer',               ';'],
 
@@ -149,6 +145,4 @@ var jsonEmacs = [
 
 ['M-x magit-status / s / c / P / d / k','; git: status / stage / commit / push / diff / discard changes'],
 ['M-x menu-bar-mode',               '; gui: toggle menu-bar'],
-
-
 ]
