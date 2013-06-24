@@ -1,4 +1,10 @@
 var jsonRest = [
+//['', '# '],
+
+['ps2pdf',                                        '# ps2pdf: '],
+['xmodmap',                                       '# xserver: modifying keymaps and pointer button mappings in X'],
+['xkbprint :0',                                   '# xserver: print an XKB keyboard description to a file in ps-format'],
+
 ['javaws start.jnlp',                             '# launch start.jnlp'],
 ['ls --format=single-column',                     '# ls: '],
 ['ls -d1 */',                                     '# ls: list only directories, 1 entry per line'],
