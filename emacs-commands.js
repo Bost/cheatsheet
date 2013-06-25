@@ -1,6 +1,7 @@
 var jsonEmacs = [
 // ['', ';'],
 
+['M-x hs-minor-mode, C-c @ C-c',    '; folding: enable folding, fold / unfold'],
 ['C-x RET f',                       '; file format'],
 ['M-x linum-relative-toggle',       '; toggle relative / absolute line numbers'],
 ['C-c M-j',                         '; M-x nrepl-jack-in'],
@@ -25,7 +26,7 @@ var jsonEmacs = [
 ['C-x v u',                         '; discard changes'],
 ['C-x v ~',                         '; checkout any version: master~3 - last 3th version'],
 ['C-x v l',                         '; commit log: f - view revision; d - view diff'],
-['C-x o',                           '; switch window / frame'],
+['C-x o',                           '; switch window / frame (o = other)'],
 ['C-x v i',                         '; add to version control system'],
 ['C-x r RET',                       '; add to version control system'],
 ['C-x C-f / C-x C-v',               '; find file / find alternate file (reload file)'],
@@ -52,13 +53,12 @@ var jsonEmacs = [
 ['C-c C-c',                         '; magit; end of git commit message'],
 
 ['M-x command',                     '; execute command'],
-['C-x e',                           '; evaluate lisp s-expression - see M-x eval-current-buffer'],
+['C-x C-e',                         '; M-x eval-last-sexp. See M-x eval-current-buffer'],
 ['C-M-f / C-M-b',                   '; jump forward / backward to matching brace; cursor may need to be behind closing \')\''],
 ['C-M-x',                           '; immediate eval'],
 ['C-M-\'',                          '; auto indent block'],
 ['<a href="http://lpn.rnbhq.org/tools/xemacs/emacs_ref.html" >emacs command list</a>','; emacs command list'],
 ['M-%',                             '; M-x query-replace'],
-['M-x replace-string',              ';'],
 ['M-u / M-l / M-c',                 '; M-x upcase-word / downcase-word / capitalize-word'],
 ['M-x ispell-region',               '; check a small region'],
 ['M-x ispell-buffer',               ';'],
