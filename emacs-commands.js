@@ -6,7 +6,7 @@ var jsonEmacs = [
 ['C-c M-j',                         '; M-x nrepl-jack-in'],
 ['C-c 1 / C-c 2 / ...',             '; winner-mode: jump between window config'],
 ['emacs -q',                        '; skip ~/.emacs (if messed up)'],
-['M-x browse-url-at-point',         '; '],
+['M-x browse-url-at-point',         '; open web browser'],
 ['M-x byte-compile-file',           '; byte-compile an *.el file'],
 ['M-x quail-set-keyboard-layout',   '; keyboard: does not work on cygwin'],
 ['M-x quail-show-key',              '; keyboard: show layout'],
