@@ -1,18 +1,16 @@
-* Nic, Julia
-  prazdniny, aky rytmus
-  ucebnice, pozadovane ucivo
-  akou formou to prebieha, kolko hodin
-  kam dat inzeraty. (skola, zastavka, obchody, lud. skola, kniznice)
-  co dat do inzeratu. (trojuholnik: a^2 + b^2 = c^2, tel. nr., email, QR code?)
-  cena
-  aky ludia? (typ rodicov, soc. postavenie) by mali zaujem
-  khanacademy - spomenut?
+* Skola
+** Nik a Julia, Denise, Thomas
+** doucovanie
+   prazdniny, aky rytmus
+   ucebnice, pozadovane ucivo
+   akou formou to prebieha, kolko hodin
+   kam dat inzeraty. (skola, zastavka, obchody, lud. skola, kniznice)
+   co dat do inzeratu. (trojuholnik: a^2 + b^2 = c^2, tel. nr., email, QR code?)
+   cena
+   aky ludia? (typ rodicov, soc. postavenie) by mali zaujem
+   khanacademy, coursera - spomenut?
+** ludia - anketa: co potrebuju, pouzivaju, ich prepojenie
 
-* offer help
-  what people need, use, interconnect them, survey
-
-
-* bootstrap-css
 
 * Java & Clojure
 ** clojure in emacs
@@ -23,166 +21,146 @@ slime-connect
   (swank.core/break))
 #+END_SRC
 
+
 * Clojure
-  ** persistency
-    mongodb, datomic, google app engine
-  ** AI
-    nuroko.com
-  ** recursion
-    Clojure Tail Call Optimizer https://github.com/cjfrisz/clojure-tco
-  ** Koans
+** persistency
+   mongodb, datomic, google app engine
+** AI
+   nuroko.com
+** recursion
+   Clojure Tail Call Optimizer https://github.com/cjfrisz/clojure-tco
+  
+** Clojure Koans
 
 * JVM
-  + see articles on root.cz
-  + is based on stack-based processor
-  + statically typed instruction set
-  + http://www.root.cz/clanky/pohled-pod-kapotu-jvm-5-cast-popis-virtualniho-stroje-javy/
+** see articles on root.cz
+** is based on stack-based processor
+** statically typed instruction set
+** http://www.root.cz/clanky/pohled-pod-kapotu-jvm-5-cast-popis-virtualniho-stroje-javy/
 
 * scala
-  + xml - first class support
-  + default get/set methods & constructor
-  + function & imperative
-  + staticlly typed
-  + traits (multiple inheritance)
+** xml - first class support
+** default get/set methods & constructor
+** function & imperative
+** staticlly typed
+** traits (multiple inheritance)
 
 * math
-  + dependency tree
-
-* eclipse
-  + plugin market::  vrapper (vim-plugin) <2013-02-28 Do>
-
-* technology
-  + http://www.zdrojak.cz/clanky/tvorba-moderniho-e-shopu-dokonceni-uzivatelske-casti/
-
-* Schatzsuche (geocaching), BTCs, Sequence of QR Codes/ graphical elements (pyramide, cube, sphere, toroid, etc)
+** dependency tree
+** game theory
+** fractals
 
 * Kickstart - money
 
-* three.js
-  + vytvorit gulu/gule s menami funkcii
+* Technology
+** http://www.zdrojak.cz/clanky/tvorba-moderniho-e-shopu-dokonceni-uzivatelske-casti/
+** Schatzsuche (geocaching), BTCs, Sequence of QR Codes/ graphical elements (pyramide, cube, sphere, toroid, etc)
+** BTC - save from bitcoin.de, backup on paper
+** eclipse - plugin market::  vrapper (vim-plugin) <2013-02-28 Do>
+** three.js -  vytvorit gulu/gule s menami funkcii
+** bootstrap-css
+** CoffeeKup
+   html ->
+     head ->
+       body ->
+
 
 * People
-  + Susanne
-  - http://www.ted.com/talks/patricia_kuhl_the_linguistic_genius_of_babies.html?fb_ref=talk
+** Susanne
+   http://www.heise.de/newsticker/meldung/Junge-Akademiker-beklagen-prekaere-Arbeitsbedingungen-an-den-Unis-1922708.html
+   http://www.ted.com/talks/patricia_kuhl_the_linguistic_genius_of_babies.html?fb_ref=talk
+   
+   Learning pronounciation
+   How much of a language is silent? What does it look like when you take the silence out? (Video 2 Min)
+   http://www.theverge.com/2012/7/1/3129227/silenc-project-silent-letters
+   http://golancourses.net/ciid/19/silenc/
 
-    Learning pronounciation
-    How much of a language is silent? What does it look like when you take the silence out? (Video 2 Min)
-    http://www.theverge.com/2012/7/1/3129227/silenc-project-silent-letters
-    http://golancourses.net/ciid/19/silenc/
+** Jan - bike tour, premiera
 
-  + Jan::
-  - bike tour!
-
-  + Volker::
+** Volker::
   - http://de.wikipedia.org/wiki/Open_Source_Ecology
 
-  + Thomas::
+** Thomas::
   - http://www.ted.com/talks/ayah_bdeir_building_blocks_that_blink_beep_and_teach.html
   - bicycle clickies - Thomas
 
-  + Michael::
+** Michael::
   - http://www.ted.com/talks/matt_ridley_when_ideas_have_sex.html
   - fluidui
   - www.landoflisp.com
 
 * youtube
-  + TEDxDUBLIN - Josh Klein - Hacking Work:: http://www.youtube.com/watch?v=H07pbDhBgXg
-  + Fake Science:: http://fakescience.tumblr.com/post/1292427190/high-fructose-corn-syrup
-  + Good links:: http://www.youtube.com/watch?v=i8t53Ak_yrQ
-
+** TEDxDUBLIN - Josh Klein - Hacking Work:: http://www.youtube.com/watch?v=H07pbDhBgXg
+** Fake Science:: http://fakescience.tumblr.com/post/1292427190/high-fructose-corn-syrup
+** Good links:: http://www.youtube.com/watch?v=i8t53Ak_yrQ
+    
 * Fun
-  + Yoda green power: http://what-if.xkcd.com/3/
+** Yoda green power: http://what-if.xkcd.com/3/
 
 * Physics:
-  + high school : http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html
-  + http://www.sixtysymbols.com/
-  + http://www.youtube.com/user/1veritasium
+** high school : http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html
+** http://www.sixtysymbols.com/
+** http://www.youtube.com/user/1veritasium
 
-
-* Tuva or Bust
-  + Richard Feynmann:: http://research.microsoft.com/apps/tools/tuva/
 
 * Rick Hickey:
-  + TBD (To Better Do)
+** TBD (To Better Do)
   - User interfaces on top of programatic interfaces
   - use composable services
   - abstractions; no bespoke protocols and formats
 
 
-* CoffeeKup
-  html ->
-    head ->
-        body ->
-
 * TODOs
-  + TED conference stuff
-  + shackspace - docpad
-  + stuff stuff to datomic - ?git has no services? http://www.youtube.com/watch?v=ROor6_NGIWU 58:00
-  + watch apache.org
-  + lighttable:: there is no source code published yet <2013-02-28 Do>
-  + franina - svajciarske magaziny
-  + Crossroad controll (3 semaphors)                                                      :clojure-script:
-  + vim::
+** TED conference stuff
+** shackspace - docpad
+** stuff to datomic - ?git has no services? http://www.youtube.com/watch?v=ROor6_NGIWU 58:00
+** watch apache.org
+** lighttable:: there is no source code published yet <2013-02-28 Do>
+** franina - svajciarske magaziny
+** Crossroad controll (3 semaphors)                                                      :clojure-script:
+** vim::
   - fix <C-Bs> (on windows)
   - LLVM (c to java)
-  - nailgun + vim
+  - nailgun ** vim
   - vim scripts on JVM:: http://www.root.cz/clanky/podpora-skriptovacich-jazyku-v-jdk6-a-openjdk6/
 
 
-  + BTC
-  - save from bitcoin.de, backup on paper
-  - Michael - ask about his article at ?                                              :Michael:
-
-  + Pohnojit kvety
-  + Find a cafe with Inet
-  + Create experience dbase
-  + android app:: picture comparision
-  + put together:: chess + languages + ...
-  + zamerat sa na problemy tazke pre comp, lahke pre cloveka (arimaa, etc.)
-  + better diff - rozdiel oproti idealnemu stavu, Abstract Syntax Tree (code must be compiled for every commit)
-  + check if there is offline leiningen
-  + check changes in vundle <2013-02-28 Do>
-  + orgmode:
+** Pohnojit kvety
+** Find a cafe with Inet
+** Create experience dbase
+** android app:: picture comparision
+** put together:: chess ** languages ** ...
+** zamerat sa na problemy tazke pre comp, lahke pre cloveka (arimaa, etc.)
+** better diff - rozdiel oproti idealnemu stavu, Abstract Syntax Tree (code must be compiled for every commit)
+** check changes in vundle <2013-02-28 Do>
+** orgmode:
   - cheatsheet as orgmode document
-  - formating with +/-/* etc.
+  - formating with **/-/* etc.
 
-  + take a look at how to read "instance of" (see the notes from training)
+** take a look at how to read "instance of" (see the notes from training)
 
-
-* prachy
-
-* ubuntu dell notebook (video Mark Shuttlework)
-
-* fractals
-
-* google summer of code - prilis orientovane na konkretne projekty
+* reddit, kickstarter
+* time bank
 
 * hierarchical data format
-  + orgmode may be it?
+** orgmode may be it?
 
 * sync files across computers:
-  + sugar sync
-  + dropbox
-  + ubuntu one doesn't work well
-
-* time bank
+** sugar sync, dropbox, ubuntu one (problem with .git)
 
 * http://www.sme.sk/c/6414188/oprav-mi-bicykel-a-ja-ta-naucim-tancovat.html
 
-* facebook: upload fotos
-
-* reddit, kickstarter
+* Peter Norvig / Stuart Russell: Artificial Intelligence: A Modern Approach
 
 * emacs
-  + folding
-  + org-mode: Kurt Schwer - RT 3 - emacs part 3 - org-mode and babel
-  + install anything
-  + linum relative numbers
-  + M-1 3 C-n - scroll down 13 lines
-  + macros
-  + email: inbox too big
-  + magit: username, password
-
+** folding
+** org-mode: Kurt Schwer - RT 3 - emacs part 3 - org-mode and babel
+** install anything
+** linum relative numbers
+** M-1 3 C-n - scroll down 13 lines
+** macros
+** email: inbox too big
+** magit: username, password
 
 * dokaz identity bez udania mena
 
@@ -224,4 +202,3 @@ private int returnCountOfDifferentPixels(String pic1, String pic2) {
         return count;
     }
 #+END_SRC
-
