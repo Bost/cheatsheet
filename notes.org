@@ -154,9 +154,16 @@ slime-connect
 
 * emacs
 ** folding
-** org-mode: Kurt Schwer - RT 3 - emacs part 3 - org-mode and babel
-** install anything
-** linum relative numbers
+** look at:
+   org-mode: Kurt Schwer - RT 3 - emacs part 3 - org-mode and babel
+   emacsrocks
+   TRAMP (Transparent Remote Access, Multiple Protocols)
+   use helm (former anything)
+   key-chord, key-combo
+   litable
+   paredit
+   ace-jump-mode, ace-jump-buffer
+
 ** M-1 3 C-n - scroll down 13 lines
 ** macros
 ** email: inbox too big
