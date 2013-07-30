@@ -193,6 +193,19 @@ return "Hello from python"
 #+RESULTS:
 : Hello from python
 
+#+BEGIN_SRC clojure
+(defproject my-project "0.1.0"
+  :description "My great Clojure project"
+  :dependencies [[org.clojure/clojure "1.1.0-alpha-SNAPSHOT"]
+		 [org.clojure/clojure-contrib "1.0-SNAPSHOT"]]
+  :dev-dependencies [[leiningen/lein-swank "1.0.0-SNAPSHOT"]])
+
+(println "Hello from clojure")
+#+END_SRC
+
+#+RESULTS:
+: Hello from python
+
 ** compare 2 bitmaps
 #+BEGIN_SRC
 // http://stackoverflow.com/questions/10487152/comparing-two-images-for-motion-detecting-purposes

@@ -67,7 +67,7 @@ var jsonEmacs = [
 ['F3 or C-x ( / F4 or C-x e',       '; marco: start macro, stop/play macro'],
 ['M-5 F4 or C-x e',                 '; macro: repeat macro 5 times'],
 ['C-u n',                           '; repeat n times following command'],
-['C-_ / C-/ / C-x u',               '; undo'],
+['C-x u / C-_ or C-/',              '; M-x undo-tree-visualize / undo'],
 ['C-f C-_',                         '; redo'],
 ['M-x erc',                         '; start irc inside of emacs'],
 ['M-a / M-e',                       '; forward / backward one sentence'],
@@ -145,4 +145,5 @@ var jsonEmacs = [
 
 ['M-x magit-status / s / c / P / d / k','; git: status / stage / commit / push / diff / discard changes'],
 ['M-x menu-bar-mode',               '; gui: toggle menu-bar'],
+['M-x align-regexp',                '; align at the given regexp'],
 ]
