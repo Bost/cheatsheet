@@ -48,6 +48,7 @@ slime-connect
 * math
 ** dependency tree
 ** game theory
+** Markov chain - Market transitions http://youtu.be/o-jdJxXL_W4?t=7m3s
 ** fractals
 
 * Kickstart - money
@@ -118,11 +119,26 @@ slime-connect
 ** lighttable:: there is no source code published yet <2013-02-28 Do>
 ** franina - svajciarske magaziny
 ** Crossroad controll (3 semaphors)                                                      :clojure-script:
+
+* Editors
 ** vim::
   - fix <C-Bs> (on windows)
   - LLVM (c to java)
-  - nailgun ** vim
+  - nailgun + vim
   - vim scripts on JVM:: http://www.root.cz/clanky/podpora-skriptovacich-jazyku-v-jdk6-a-openjdk6/
+
+** emacs
+*** email: inbox too big
+*** folding
+*** look at:
+   org-mode: Kurt Schwer - RT 3 - emacs part 3 - org-mode and babel
+   emacsrocks
+   TRAMP (Transparent Remote Access, Multiple Protocols)
+   use helm (former anything)
+   key-chord, key-combo
+   litable
+   paredit
+   ace-jump-mode, ace-jump-buffer
 
 
 ** Pohnojit kvety
@@ -139,6 +155,10 @@ slime-connect
 
 ** take a look at how to read "instance of" (see the notes from training)
 
+** M-1 3 C-n - scroll down 13 lines
+** macros
+** magit: username, password
+
 * reddit, kickstarter
 * time bank
 
@@ -151,23 +171,6 @@ slime-connect
 * http://www.sme.sk/c/6414188/oprav-mi-bicykel-a-ja-ta-naucim-tancovat.html
 
 * Peter Norvig / Stuart Russell: Artificial Intelligence: A Modern Approach
-
-* emacs
-** folding
-** look at:
-   org-mode: Kurt Schwer - RT 3 - emacs part 3 - org-mode and babel
-   emacsrocks
-   TRAMP (Transparent Remote Access, Multiple Protocols)
-   use helm (former anything)
-   key-chord, key-combo
-   litable
-   paredit
-   ace-jump-mode, ace-jump-buffer
-
-** M-1 3 C-n - scroll down 13 lines
-** macros
-** email: inbox too big
-** magit: username, password
 
 * dokaz identity bez udania mena
 
