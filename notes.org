@@ -1,5 +1,5 @@
 * Skola
-** Nik a Julia, Denise, Thomas
+** Nik a Julia, Denise, Thomas (Laboration)
 ** doucovanie
    prazdniny, aky rytmus
    ucebnice, pozadovane ucivo
@@ -112,6 +112,7 @@ slime-connect
 
 
 * TODOs
+** google lab tags http://www.chromeweblab.com/en-GB/lab-tag-explorer
 ** TED conference stuff
 ** shackspace - docpad
 ** stuff to datomic - ?git has no services? http://www.youtube.com/watch?v=ROor6_NGIWU 58:00
