@@ -150,6 +150,10 @@ var jsonRest = [
 ['db2 list db directory &gt; db.txt | gvim db.txt',                                '# db2: '],
 ['db2 list node directory &gt; node.txt | gvim node.txt',                          '# db2: '],
 ['db2 -vf script.sql -t',                                                          '# db2: launch script on CLI'],
+['db2 select * from DBASE.TABLE fetch first 2 rows only',                          '# db2: '],
+
+['mysql select * from mantis.state_mantis_id limit 10',                            '# mysql: '],
+
 
 ['&nbsp;','&nbsp;'],
 
