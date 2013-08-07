@@ -12,6 +12,7 @@
 ** ludia - anketa: co potrebuju, pouzivaju, ich prepojenie
 
 
+
 * Java & Clojure
 ** clojure in emacs
 #+BEGIN_SRC clojure
@@ -20,7 +21,6 @@ slime-connect
 (let [x 1]
   (swank.core/break))
 #+END_SRC
-
 
 * Clojure
 ** persistency
@@ -45,6 +45,8 @@ slime-connect
 ** staticlly typed
 ** traits (multiple inheritance)
 
+
+
 * math
 ** dependency tree
 ** game theory
@@ -53,8 +55,8 @@ slime-connect
    http://blog.sciencevsmagic.net/science/fractal-machine/
 
 
-
 * Kickstart - money
+
 
 
 * Technology
@@ -68,6 +70,7 @@ slime-connect
    html ->
      head ->
        body ->
+
 
 
 * People
@@ -113,11 +116,13 @@ slime-connect
 
 
 
+
 * Rick Hickey:
 ** TBD (To Better Do)
   - User interfaces on top of programatic interfaces
   - use composable services
   - abstractions; no bespoke protocols and formats
+
 
 
 
@@ -130,6 +135,7 @@ slime-connect
 ** lighttable:: there is no source code published yet <2013-02-28 Do>
 ** franina - svajciarske magaziny
 ** Crossroad controll (3 semaphors)                                                      :clojure-script:
+
 
 
 
