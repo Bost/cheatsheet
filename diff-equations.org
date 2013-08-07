@@ -1,1 +1,15 @@
 - solution of a Differential Equations (DE) is a function, not value.
+
+
+http://www.gametheory.net/
+
+* Nash Equilibrum (NE):
+- each players best response to the others
+- nobody has an incentive to deviate from their actions if an equilibrum is played
+
+* TODO
+1. write down action profiles for everyone (the matrix) and calculate optimal mixed strategies for everyone in order to get NE
+2. Calculate maxmin strategy and maxmin value (i.e. when the other guys do max harm the i-guy)
+** games beyond 2x2 (See the 2-4 Hardness lecture):
+   Linear Complementarity formulation
+   Support Enumeration Method
