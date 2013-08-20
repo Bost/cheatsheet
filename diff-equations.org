@@ -13,3 +13,13 @@ http://www.gametheory.net/
 ** games beyond 2x2 (See the 2-4 Hardness lecture):
    Linear Complementarity formulation
    Support Enumeration Method
+
+
+
+Goldbach conjencture: Every even integer >=2 is a sum of two primes
+Riemann hypothesis: The real part of every non-trivila zero of the Zeta function is 1/2
+Poincare conjencture: Every simply connected, closed 3-manifold is homeomorfic to the 3-sphere (Donuts)
+P vs. NP: Every problem whose solution can be quickly verified by a computer can also be quickly solved by a computer?
+Fermant's Last Thm: For all n>=2 there's no x,y,z that x^n + y^n = z^n
+
+Every even integer greater than 2 can be expressed as the sum of two primes
