@@ -144,20 +144,37 @@ slime-connect
   - vim scripts on JVM:: http://www.root.cz/clanky/podpora-skriptovacich-jazyku-v-jdk6-a-openjdk6/
 
 ** emacs
+   debugging: start with -debut-init
+ -- Variable: evil-flash-delay
+     The number of seconds to flash search matches when pressing `n'
+     and `N'.
+
 *** email: inbox too big
 *** folding
 *** look at:
-   org-mode: Kurt Schwer - RT 3 - emacs part 3 - org-mode and babel
-   emacsrocks
-   TRAMP (Transparent Remote Access, Multiple Protocols)
-   use helm (former anything)
-   key-chord, key-combo
-   litable
-   paredit
-   ace-jump-mode, ace-jump-buffer
+    org-mode: Kurt Schwer - RT 3 - emacs part 3 - org-mode and babel
+    emacsrocks
+    TRAMP (Transparent Remote Access, Multiple Protocols)
+    use helm (former anything)
+    key-chord, key-combo
+    litable
+    paredit
+    ace-jump-mode, ace-jump-buffer
 *** orgmode:
+    what is: David Allen's GTD system
     cheatsheet as orgmode document
     formating with **/-/* etc.
+
+** This is a headline
+    Still outside the drawer
+    :DRAWERNAME:
+    This is inside the drawer.
+    :END:
+    After the drawer.
+:ABC:
+stuff
+:END:
+
 *** magit: username, password
 
 
