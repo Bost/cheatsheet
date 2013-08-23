@@ -1,5 +1,7 @@
 var jsonEmacs = [
 // ['', ';'],
+['M-x describe-char',               '; unicode: describe char at the point'],
+['M-x ucs-insert RET 2211',         '; unicode: insert unicode char U+2211 ∑'],
 
 ['M-x hs-minor-mode, C-c @ C-c',    '; folding: enable folding, fold / unfold'],
 ['C-x RET f',                       '; file format'],
