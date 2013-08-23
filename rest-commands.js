@@ -1,5 +1,6 @@
 var jsonRest = [
-  //['', '# '],
+//['', '# '],
+['] / backspace / [',                             '# mplayer: increase / reset / decrease playback speed by 10%'],
 
 ['ps2pdf',                                        '# ps2pdf: '],
 ['xmodmap',                                       '# xserver: modifying keymaps and pointer button mappings in X'],
