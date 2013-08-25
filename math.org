@@ -13,6 +13,8 @@ http://www.gametheory.net/
 ** games beyond 2x2 (See the 2-4 Hardness lecture):
    Linear Complementarity formulation
    Support Enumeration Method
+* Go over the book from the Prof. from Karlsruhe
+* Higher order logic
 
 
 * Hypotheses, Conjectures & Theorems:
@@ -21,20 +23,90 @@ http://www.gametheory.net/
 ** Poincare conjencture: ∀ (Every) simply connected, closed 3-manifold is homeomorfic to the 3-sphere (Donuts)
 ** P vs. NP: ∀ problem whose solution can be quickly verified by a computer can also be quickly solved by a computer
 ** Fermant's Last Theorem: ∀ (For all) n ≧ 2 ∉ (there's no) x,y,z such that xⁿ + yⁿ = zⁿ
-   
+** Continuum Hypothesis: There is no set whose cardinality is strictly between that of the integers and that of the real numbers.
+   Notes: R surj P(N) (Power series - Mocninovy rad)
+** Fundamental Theorem of Arithmetics: Every positive integer n can be written in a unique way as a product of primes.
+
+* Morphisms:
+
 
 * Mappings: X -> Y (Zobrazenia):
-** Injective: distinct Xs -> distinc Ys (? one-to-one ?)
-** Surjection: every elem in Y is "used" (onto)
-** Bijection: exact pairing between X, Y (vzajomne jednoznacne zobrazenie):
+** Surjection: every elem in Y is "used";                           |X| ≥ |Y| (onto; "at least as big")
+** Injective:  distinct Xs -> distinc Ys;                           |X| ≤ |Y| (? one-to-one ?)
+** Bijection:  exact pairing between X, Y;                          |X| = |Y| (vzajomne jednoznacne zobrazenie, "same size")
+** Strict:     Surjection from X to Y but no bijection from Y to X; |X| < |Y| (? double usage of some Ys ?, "strictly bigger")
+
+
+* Probability:
+** Probability rules:
+Difference Rule: P(B − A) = P(B) - P(A ∩ B)
+Inclusion-Exclusion: P(A ∪ B) = P(A) + P(B) − P(A ∩ B)
+Boole’s Inequality: P(A ∪ B) <= P(A) + P(B)
+Monotonicity: If A ⊆ B then P(A) <= P(B)
+
+** Ordinary conditional probability P(A ∣ B) = P(A ∩ B) / P(B):
+
+| Objective Health | Objective Health | Test result  | Test result | Outcome probability | Event T ∩ H:                      |
+| ill / healthy    |      probability |              | probability |            P(T ∩ H) | P(T ∣ H ) =                       |
+| H                |             P(H) | T            |        P(T) |       (* P(H) P(T)) | (/ P(T ∩ H) P(H))                 |
+|------------------+------------------+--------------+-------------+---------------------+-----------------------------------|
+| really-ill       |              0.1 | test-ill     |         0.9 |                0.09 | (/ 0.09 (+ 0.09 0.27)) = 0.25     |
+| really-ill       |              0.1 | test-healthy |         0.1 |                0.01 | (/ 0.01 (+ 0.01 0.63)) = 0.015625 |
+| really-healthy   |              0.9 | test-ill     |         0.3 |                0.27 | (/ 0.27 (+ 0.09 0.27)) = 0.75     |
+| really-healthy   |              0.9 | test-healthy |         0.7 |                0.63 | (/ 0.63 (+ 0.01 0.63)) = 0.984375 |
+
+- Generall test correctness: 0.09 + 0.63 = 0.72 (i.e. proper results for ill + proper results for healthy persons)
+- Just guessing "everybody's healthy" gives 90% "generall test correctness" because the test is wrong only for ill patients and they make up 10% of the population.
+
+
+# ----------------------------------------
+#		       test positive
+#                   +---- 0.9            0.1 * 0.9 = 0.09
+#          ill      |
+#    +---- 0.1 -----+
+#    |              |  test negative
+#    |              +---- 0.1            0.1 * 0.1 = 0.01
+#    |
+#    |
+#  ---+                test positive
+#    |              +---- 0.3            0.9 * 0.3 = 0.27
+#    |              |
+#    +--- 0.9 ------+
+#       healthy     |
+#                   |  test negative
+#                   +---- 0.7            0.9 * 0.7 = 0.63
+
+;; test is negative i.e. says "you're healthy" and the patient is really ill (has the condition)
+(/ 0.01 (+ 0.01 0.63)) = 0.015625
+
+;; test is positive i.e. says "you're ill" and the patient is really ill (has the condition)
+(/ 0.09 (+ 0.09 0.27)) = 0.25
+
+;; test is negative i.e. says "you're healthy" and the patient is really health (doesn't have the condition)y
+(/ 0.63 (+ 0.01 0.63)) = 0.984375
+
+;; test is posivite i.e. says "you're ill" and the patient is really healthy (doesn't have the condition)
+(/ 0.27 (+ 0.09 0.27)) = 0.75
+
+** A posteriori conditional probability P(B ∣ A) = P(A ∩ B) / P(B):
+   if event B precedes event A in time. Example: The probability it was cloudy this morning, given that it rained in the afternoon.
+
+
+
 
 * unicode utf-8:
+  (defun ucs-insert-char ()
+  (interactive)
+  (insert "∣"))
 
- 	0	1	2	3	4	5	6	7	8	9	A	B	C	D	E	F
-U+00Bx	 	 	x²	x³	 	 	 	 	 	x¹	 	 	 	 	 	 
-U+207x	x⁰	xⁱ	 	 	x⁴	x⁵	x⁶	x⁷	x⁸	x⁹	x⁺	x⁻	x⁼	x⁽	x⁾	xⁿ
-U+208x	x₀	x₁	x₂	x₃	x₄	x₅	x₆	x₇	x₈	x₉	x₊	x₋	x₌	x₍	x₎	 
-U+209x	xₐ	xₑ	xₒ	xₓ	xₔ	xₕ	xₖ	xₗ	xₘ	xₙ	xₚ	xₛ	xₜ	 	 	 
+  (global-set-key [f10] 'ucs-insert-char)
+
+
+	0x00	0x01	0x02	0x03	0x04	0x05	0x06	0x07	0x08	0x09	0x0A	0x0B	0x0C	0x0D	0x0E	0x0F
+U+00Bx			x²	x³						x¹
+U+207x	x⁰	xⁱ			x⁴	x⁵	x⁶	x⁷	x⁸	x⁹	x⁺	x⁻	x⁼	x⁽	x⁾	xⁿ
+U+208x	x₀	x₁	x₂	x₃	x₄	x₅	x₆	x₇	x₈	x₉	x₊	x₋	x₌	x₍	x₎
+U+209x	xₐ	xₑ	xₒ	xₓ	xₔ	xₕ	xₖ	xₗ	xₘ	xₙ	xₚ	xₛ	xₜ
 
 	0x00	0x01	0x02	0x03	0x04	0x05	0x06	0x07	0x08	0x09	0x0A	0x0B	0x0C	0x0D	0x0E	0x0F
 0x2190	←	↑	→	↓	↔	↕	↖	↗	↘	↙	↚	↛	↜	↝	↞	↟
@@ -46,7 +118,7 @@ U+209x	xₐ	xₑ	xₒ	xₓ	xₔ	xₕ	xₖ	xₗ	xₘ	xₙ	xₚ	xₛ	xₜ
 0x21f0	⇰	⇱	⇲	⇳	⇴	⇵	⇶	⇷	⇸	⇹	⇺	⇻	⇼	⇽	⇾	⇿
 
 
- 	0	1	2	3	4	5	6	7	8	9	A	B	C	D	E	F
+	0x00	0x01	0x02	0x03	0x04	0x05	0x06	0x07	0x08	0x09	0x0A	0x0B	0x0C	0x0D	0x0E	0x0F
 U+220x	∀	∁	∂	∃	∄	∅	∆	∇	∈	∉	∊	∋	∌	∍	∎	∏
 U+221x	∐	∑	−	∓	∔	∕	∖	∗	∘	∙	√	∛	∜	∝	∞	∟
 U+222x	∠	∡	∢	∣	∤	∥	∦	∧	∨	∩	∪	∫	∬	∭	∮	∯
@@ -65,8 +137,8 @@ U+22Ex	⋠	⋡	⋢	⋣	⋤	⋥	⋦	⋧	⋨	⋩	⋪	⋫	⋬	⋭	⋮	⋯
 U+22Fx	⋰	⋱	⋲	⋳	⋴	⋵	⋶	⋷	⋸	⋹	⋺	⋻	⋼	⋽	⋾	⋿
 
 
- 	0	1	2	3	4	5	6	7	8	9	A	B	C	D	E	F
-U+037x	Ͱ	ͱ	Ͳ	ͳ	ʹ	͵	Ͷ	ͷ			ͺ	ͻ	ͼ	ͽ	;	
+	0x00	0x01	0x02	0x03	0x04	0x05	0x06	0x07	0x08	0x09	0x0A	0x0B	0x0C	0x0D	0x0E	0x0F
+U+037x	Ͱ	ͱ	Ͳ	ͳ	ʹ	͵	Ͷ	ͷ			ͺ	ͻ	ͼ	ͽ	;
 U+038x					΄	΅	Ά	·	Έ	Ή	Ί		Ό		Ύ	Ώ
 U+039x	ΐ	Α	Β	Γ	Δ	Ε	Ζ	Η	Θ	Ι	Κ	Λ	Μ	Ν	Ξ	Ο
 U+03Ax	Π	Ρ		Σ	Τ	Υ	Φ	Χ	Ψ	Ω	Ϊ	Ϋ	ά	έ	ή	ί
