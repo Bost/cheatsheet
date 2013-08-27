@@ -28,6 +28,23 @@ http://www.gametheory.net/
 ** Fundamental Theorem of Arithmetics: Every positive integer n can be written in a unique way as a product of primes.
 
 * Morphisms:
+** category: a collection of arrows/morphism that can be composed if they are adjacent.
+   categorize mathematical structures by packing structures of the same type (same category) and structure preserving mappings between them into a single whole structure.
+   - třídy objektů ob(C)
+   - třídy morfismů hom(C)
+   - skládání morfismů: hom(a, b) × hom(b, c) → hom(a, c): g o f
+
+**
+| Set theory                  | Category theory                          |
+|-----------------------------+------------------------------------------|
+| membership relation         | -                                        |
+| sets                        | categories                               |
+| elements                    | objects                                  |
+| -                           | morphisms (structure-preserving mapping) |
+| functions                   | functors                                 |
+| equations between elements  | isomorphisms between objects             |
+| equations between sets      | equivalences between categories          |
+| equations between functions | natural transformations between functors |
 
 
 * Mappings: X -> Y (Zobrazenia):
