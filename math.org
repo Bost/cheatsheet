@@ -47,6 +47,34 @@ http://www.gametheory.net/
 | equations between functions | natural transformations between functors |
 
 
+* Isomorphism f: X -> Y
+  ∃ a function g: Y -> X such that g ∘ f = idX and f ∘ g = idY
+  (f is invertible and g is the inverse of f)
+
+** Category theory - Modeling (new vocabulary)
+   | Hierarchies                | partial orders |
+   | symmetries                 | group elements |
+   | data models                | categories     |
+   | agent actions              | monoid actions |
+   | local-to-global principles | sheaves        |
+   | self-similarity            | operads        |
+   | context                    | monads         |
+
+
+** Catergory of sets (Set)
+
+Hom-Set(X, Y): the set of functions X -> Y
+
+** olog = ontology log
+
+Different branches of mathematics can be formalized
+into categories. These categories can then be connected together by functors. And the
+sense in which these functors provide powerful communication of ideas is that facts and
+theorems proven in one category can be transferred through a connecting functor to
+yield proofs of an analogous theorem in another category. A functor is like a conductor
+of mathematical truth.
+
+
 * Mappings: X -> Y (Zobrazenia):
 ** Surjection: every elem in Y is "used";                           |X| ≥ |Y| (onto; "at least as big")
 ** Injective:  distinct Xs -> distinc Ys;                           |X| ≤ |Y| (? one-to-one ?)
