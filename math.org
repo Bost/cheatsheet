@@ -1,7 +1,95 @@
 - solution of a Differential Equations (DE) is a function, not value.
 
+* Statistics:
+** Data:
+                Nominal Data                Interval / Ratio Data
+                ━━━━━━━━━━━━━━━━━━━━     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+               ┃  +-----------------+ ┃   ┃                                    +-------------------+ ┃
+               ┃  | Test for        | ┃   ┃                                    | Test for a mean   | ┃
+               ┃  | Proportion      | ┃   ┃                                    |                   | ┃
+               ┃  +-----------------+ ┃   ┃                                    +-------------------+ ┃
+               ┃                      ┃   ┃                                                          ┃
+               ┃  +-----------------+ ┃   ┃ +-------------------------+                              ┃
+               ┃  | Difference of   | ┃   ┃ | difference of two means |                              ┃
+               ┃  | two proportions | ┃   ┃ | (independent samples)   |                              ┃
+               ┃  +-----------------+ ┃   ┃ +-------------------------+                              ┃
+               ┃                      ┃   ┃                                                          ┃
+               ┃  +-----------------+ ┃   ┃ +-------------------------+        +-------------------+ ┃
+               ┃  | Chi-sq test for | ┃   ┃ | Regression analysis     |        | Difference of two | ┃
+               ┃  | independence    | ┃   ┃ |                         |        | means (paired)    | ┃
+               ┃  +-----------------+ ┃   ┃ +-------------------------+        +-------------------+ ┃
+                ━━━━━━━━━━━━━━━━━━━━     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+** Samples:
+                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ One           ┃  +-----------------+                                          +-------------------+ ┃
+ Sample        ┃  | Test for        |                                          | Test for a mean   | ┃
+               ┃  | Proportion      |                                          |                   | ┃
+               ┃  +-----------------+                                          +-------------------+ ┃
+                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Two           ┃  +-----------------+       +-------------------------+                              ┃
+ Samples       ┃  | Difference of   |       | difference of two means |                              ┃
+               ┃  | two proportions |       | (independent samples)   |                              ┃
+               ┃  +-----------------+       +-------------------------+                              ┃
+                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ One           ┃  +-----------------+       +-------------------------+        +-------------------+ ┃
+ Sample,       ┃  | Chi-sq test for |       | Regression analysis     |        | Difference of two | ┃
+ Two           ┃  | independence    |       |                         |        | means (paired)    | ┃
+ Measures      ┃  +-----------------+       +-------------------------+        +-------------------+ ┃
+                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+** Purpose:
+                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Testing      ┃  +-----------------+                                          +-------------------+ ┃
+  against      ┃  | Test for        |                                          | Test for a mean   | ┃
+  a value      ┃  | Proportion      |                                          |                   | ┃
+               ┃  +-----------------+                                          +-------------------+ ┃
+                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                         ┃
+                                                                            ┃                        ┃
+                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
+ Comparing     ┃  +-----------------+       +-------------------------+  ┃  ┃                        ┃
+  two          ┃  | Difference of   |       | difference of two means |  ┃  ┃                        ┃
+ statistics    ┃  | two proportions |       | (independent samples)   |  ┃  ┃                        ┃
+               ┃  +-----------------+       +-------------------------+  ┃  ┃                        ┃
+                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
+                                                                            ┃                        ┃
+                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
+ Looking       ┃  +-----------------+       +-------------------------+  ┃  ┃  +-------------------+ ┃
+ for           ┃  | Chi-sq test for |       | Regression analysis     |  ┃  ┃  | Difference of two | ┃
+ relationships ┃  | independence    |       |                         |  ┃  ┃  | means (paired)    | ┃
+               ┃  +-----------------+       +-------------------------+  ┃  ┃  +-------------------+ ┃
+                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+
+
+
+* hierarchy:
+** what is needed to understand X:
+   a big tree and paths through this tree
+** where leads understanding of X1, X2, .. Xn:
+   prospects, applications in other science fields, everyday life etc.
+** what's the next step:
+   why to study Z and not W after understanding X1, X2 .. Xn in dependency of the field of some interest
+* WebApp, Datomic/Keystore (timestamps)/ Clojurescript
+* Start with http://eu.ixl.com/
+* Take a look at
+** Knowledge Map: https://www.khanacademy.org/exercisedashboard
+
+
+
 
 http://www.gametheory.net/
+** http://www.reddit.com/r/math
+** Ask:
+   Andreas http://www.reddit.com/r/actuary
+   Christofer
+
 
 * Nash Equilibrum (NE):
 - each players best response to the others
@@ -192,3 +280,14 @@ U+03Cx	π	ρ	ς	σ	τ	υ	φ	χ	ψ	ω	ϊ	ϋ	ό	ύ	ώ	Ϗ
 U+03Dx	ϐ	ϑ	ϒ	ϓ	ϔ	ϕ	ϖ	ϗ	Ϙ	ϙ	Ϛ	ϛ	Ϝ	ϝ	Ϟ	ϟ
 U+03Ex	Ϡ	ϡ	Ϣ	ϣ	Ϥ	ϥ	Ϧ	ϧ	Ϩ	ϩ	Ϫ	ϫ	Ϭ	ϭ	Ϯ	ϯ
 U+03Fx	ϰ	ϱ	ϲ	ϳ	ϴ	ϵ	϶	Ϸ	ϸ	Ϲ	Ϻ	ϻ	ϼ	Ͻ	Ͼ	Ͽ
+
+
+	0x00	0x01	0x02	0x03	0x04	0x05	0x06	0x07	0x08	0x09	0x0A	0x0B	0x0C	0x0D	0x0E	0x0F
+U+250x	─	━	│	┃	┄	┅	┆	┇	┈	┉	┊	┋	┌	┍	┎	┏
+U+251x	┐	┑	┒	┓	└	┕	┖	┗	┘	┙	┚	┛	├	┝	┞	┟
+U+252x	┠	┡	┢	┣	┤	┥	┦	┧	┨	┩	┪	┫	┬	┭	┮	┯
+U+253x	┰	┱	┲	┳	┴	┵	┶	┷	┸	┹	┺	┻	┼	┽	┾	┿
+U+254x	╀	╁	╂	╃	╄	╅	╆	╇	╈	╉	╊	╋	╌	╍	╎	╏
+U+255x	═	║	╒	╓	╔	╕	╖	╗	╘	╙	╚	╛	╜	╝	╞	╟
+U+256x	╠	╡	╢	╣	╤	╥	╦	╧	╨	╩	╪	╫	╬	╭	╮	╯
+U+257x	╰	╱	╲	╳	╴	╵	╶	╷	╸	╹	╺	╻	╼	╽	╾	╿
