@@ -1,5 +1,7 @@
 var jsonRest = [
 //['', '# '],
+['hostname -i',                                   '# net: show or set the system\'s host name'],
+['ip addr show eth0',                             '# net: show / manipulate routing, devices, policy routing and tunnels'],
 ['] / backspace / [',                             '# mplayer: increase / reset / decrease playback speed by 10%'],
 
 ['ps2pdf',                                        '# ps2pdf: '],
@@ -280,4 +282,3 @@ FILE1 -ot FILE2
               FILE exists and execute (or search) permission is granted
 */
  ]
-
