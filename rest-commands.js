@@ -1,5 +1,6 @@
 var jsonRest = [
 //['', '# '],
+['df -i',                                         '# fs: nr of inodes; every file or directory requires one inode'],
 ['hostname -i',                                   '# net: show or set the system\'s host name'],
 ['ip addr show eth0',                             '# net: show / manipulate routing, devices, policy routing and tunnels'],
 ['] / backspace / [',                             '# mplayer: increase / reset / decrease playback speed by 10%'],
