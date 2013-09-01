@@ -12,6 +12,7 @@ var jsonRest = [
 ['ls -1 /path/to/dir | wc -l',                    '# wc: ls: count of files in /path/to/dir'],
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
 
+['find /src -iname \'*.xml\' -exec cp \\{\\} /dst/ \\;', '# bash: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file'],
 ['$@ / $#',                                       '# bash: all / count of arguments' ],
 ['history -d',                                    '# bash: remove a line from shell history (i.e. a line with password)'],
 ['echo "rm -rf /unwanted-but-large/folder" | batch', '# bash: run a cmd only when load average is below a certain threshold (default is 0.8)'],
@@ -207,7 +208,7 @@ var jsonRest = [
 ['dig +short txt keyword.wp.dg.cx',                                     '# bash: query wikipedia for keyword'],
 ['netstat -tlnp',                                                       '# net: listening ports and PIDs of associated processes'],
 ['crontab -e / crontab -l',                                             '# edit / view crontab entries'],
-['acpi -V',                                                             '# linux: show everything (battery info etc)'],
+['acpi -V',                                                             '# linux: show everything (battery info etc); Advanced Configuration and Power Interface'],
 /*
 * TODO add this:
 
