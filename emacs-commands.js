@@ -52,7 +52,6 @@ var jsonEmacs = [
 ['C-x z',                           '; M-x repeat'],
 ['C-x m',                           '; email'],
 ['C-x i',                           '; insert file'],
-['C-c C-c',                         '; magit; end of git commit message'],
 
 ['M-x command',                     '; execute command'],
 ['C-x C-e',                         '; M-x eval-last-sexp. See M-x eval-current-buffer'],
@@ -145,7 +144,8 @@ var jsonEmacs = [
 ['M-x ispell-region',               '; region: check a small region'],
 ['C-x 0 / C-x 1 / C-x 2 / C-x 3',   '; splits: close / only one buffer / horizontal / vertical'],
 
-['M-x magit-status / s / c / P / d / k','; git: status / stage / commit / push / diff / discard changes'],
+['M-x magit-status / s / c / P / d / k','; magit: status / stage / commit / push / diff / discard changes'],
+['C-c C-c',                         '; magit; end of git commit message'],
 ['M-x menu-bar-mode',               '; gui: toggle menu-bar'],
 ['M-x align-regexp',                '; align at the given regexp'],
 ]
