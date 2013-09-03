@@ -1,3 +1,5 @@
+exempli gratia: e.g.
+
 - solution of a Differential Equations (DE) is a function, not value.
 
 * Statistics:
@@ -91,9 +93,9 @@ http://www.gametheory.net/
    Christofer
 
 
-* Nash Equilibrum (NE):
-- each players best response to the others
-- nobody has an incentive to deviate from their actions if an equilibrum is played
+* Game Theory: Nash Equilibrum (NE):
+  Each players best response to the others
+  Nobody has an incentive to deviate from their actions if an equilibrum is played
 
 * TODO
 1. write down action profiles for everyone (the matrix) and calculate optimal mixed strategies for everyone in order to get NE
@@ -116,8 +118,19 @@ http://www.gametheory.net/
 ** Fundamental Theorem of Arithmetics: Every positive integer n can be written in a unique way as a product of primes.
 
 * Morphisms:
-** category: a collection of arrows/morphism that can be composed if they are adjacent.
-   categorize mathematical structures by packing structures of the same type (same category) and structure preserving mappings between them into a single whole structure.
+** Category is:
+*** A collection of arrows and morphism that can be composed if they are adjacent.
+*** A structure packing structures of the same type (same category) and structure preserving mappings between them.
+
+*** Quadruple: CAT = (O, hom, id, ◦) consisting of
+**** O  : class of CAT-objects: Ob(A); e.g. A,B are CAT-objects
+**** hom: set of CAT-morphisms: hom(A, B) = {f | f: A -> B } (e.g. arrows)
+     (class of all CAT-morphisms: Mor(CAT) = Union of all sets hom(A,B) in CAT)
+**** id : set of identity morphisms for every CAT-object
+**** ◦  : morphism composition: hom(a, b) × hom(b, c) → hom(a, c): g ◦ f; it's a partialy binary operation on Mor(CAT::)
+
+
+
    - třídy objektů ob(C)
    - třídy morfismů hom(C)
    - skládání morfismů: hom(a, b) × hom(b, c) → hom(a, c): g o f
