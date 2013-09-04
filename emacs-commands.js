@@ -73,6 +73,7 @@ var jsonEmacs = [
 ['M-x erc',                         '; start irc inside of emacs'],
 ['M-a / M-e',                       '; forward / backward one sentence'],
 ['C-x h / M-h',                     '; mark whole buffer / mark paragraph'],
+['M-} / <C-down> / M-{ / <C-up>',   '; M-x forward-paragraph / backward-paragraph'],
 ['C-x `',                           '; jump to the next (compilation error(s), grep results etc.)'],
 ['M-x compile',                     '; compile using given program'],
 ['M-x speedbar',                    '; (by default shows only python scripts)'],
