@@ -16,6 +16,7 @@ var jsonRest = [
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
 
 ['find /src -iname \'*.xml\' -exec cp \\{\\} /dst/ \\;', '# bash: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file'],
+['cat file &gt; /dev/clip / cat /dev/clip',       '# bash: pipe to / from clipboard'],
 ['$@ / $#',                                       '# bash: all / count of arguments' ],
 ['history -d',                                    '# bash: remove a line from shell history (i.e. a line with password)'],
 ['echo "rm -rf /unwanted-but-large/folder" | batch', '# bash: run a cmd only when load average is below a certain threshold (default is 0.8)'],
