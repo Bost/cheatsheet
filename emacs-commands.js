@@ -1,5 +1,6 @@
 var jsonEmacs = [
 // ['', ';'],
+['C-u -4 C-x TAB',                  '; indent: move text left by four spaces (M-x indent-rigidly is C-x TAB)'],
 ['\#',                              '; regexp: increment the number found'],
 ['M-x describe-char',               '; unicode: describe char at the point'],
 ['M-x ucs-insert RET 2211',         '; unicode: insert unicode char U+2211 ∑'],
