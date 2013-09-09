@@ -41,7 +41,8 @@ var jsonRest = [
 ['mmv \\*.JPG \\#1.jpg',                          '# bash: mass move/copy/rename'],
 ['cal 2 2004 / cal -y 2004',                      '# bash: visual calender for februar 2004 / whole year 2004'],
 ['renice +20 2222',                               '# bash: change the priority of process 2222 to minimum (-19 max, +20 min prio)'],
-['ps -o pid,user,command,nice -p 7695',           '# bash: show statistics for a process nr. 7695'],
+['ps -o pid,user,command,nice -p 7695',           '# bash: ps: show statistics for a process nr. 7695'],
+['ps --windows',                                  '# cygwin: ps: show windows as well as cygwin processes (-W)'],
 ['pidof programName',                             '# bash: find the process ID of a running programm'],
 ['d() { date; }',                                 '# bash: ? define function in bash ?'],
 ['C-r, C-g',                                      '# bash: bash history, abort history'],
@@ -175,7 +176,7 @@ var jsonRest = [
 ['&nbsp;','&nbsp;'],
 
 ['/usr/sfw/bin/wget',                                                   '# solaris: wget'],
-['/usr/ucb/ps -auxww',                                                  '# solaris: full command line (needs: sudo rootsh -i -u ... )'],
+['/usr/ucb/ps -auxww',                                                  '# solaris: ps: full command line (needs: sudo rootsh -i -u ... )'],
 ['psrinfo',                                                             '# solaris: displays information about processors'],
 ['jar tf file.jar',                                                     '# jar: list files in file.jar'],
 ['jar xf file.jar path/inside.txt && cat path/inside.txt',              '# jar: show content of a file inside a jar file'],
