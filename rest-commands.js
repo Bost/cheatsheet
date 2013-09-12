@@ -193,6 +193,9 @@ var jsonRest = [
 ['xmllint',                                                             '# xml: command line XML tool (formating)'],
 ['lein deps :tree',                                                     '# lein: show leiningen dependency tree'],
 ['[the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]',          '# lein: try to put it to project.clj in case of \'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath\''],
+['(keys (ns-publics \'ws.core))',                                       '# clj: show objects in the namespace'],
+['(load-file "src/ws/core.clj")',                                       '# clj:'],
+['(clojure.repl/doc something)',                                        '# clj: documentation of something'],
 
 ['dpkg --get-selections',                                               '# dpkg: show installed packages'],
 ['dpkg -L packageName',                                                 '# dpkg: list of installed files from a packageName (dpkg-query -L works too)'],
@@ -213,7 +216,7 @@ var jsonRest = [
 ['C-,s / C-,f / C-,l / C-,b',                                           '# sublime: evaluate selection / file / line / block in REPL'],
 ['mtr google.com',                                                      '# ping: traceroute: '],
 ['dig +short txt keyword.wp.dg.cx',                                     '# bash: query wikipedia for keyword'],
-['netstat -tlnp',                                                       '# net: listening ports and PIDs of associated processes'],
+['netstat -tulnp',                                                      '# net: listening ports and PIDs of associated processes. tcp (-t) udp (-u)'],
 ['crontab -e / crontab -l',                                             '# edit / view crontab entries'],
 ['acpi -V',                                                             '# linux: show everything (battery info etc); Advanced Configuration and Power Interface'],
 /*
