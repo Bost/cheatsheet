@@ -3,7 +3,8 @@ var jsonRest = [
 ['df -i',                                         '# fs: nr of inodes; every file or directory requires one inode'],
 ['hostname -i',                                   '# net: show or set the system\'s host name'],
 ['ip addr show eth0',                             '# net: show / manipulate routing, devices, policy routing and tunnels'],
-['] / backspace / [',                             '# mplayer: increase / reset / decrease playback speed by 10%'],
+['] / [ / backspace / o',                         '# mplayer: inc / dec/ reset speed by 10% / toggle OSD states'],
+['* / "/"',                                       '# mplayer: inc / dec volume'],
 
 ['ps2pdf',                                        '# ps2pdf: '],
 ['xmodmap',                                       '# xserver: modifying keymaps and pointer button mappings in X'],
@@ -194,6 +195,7 @@ var jsonRest = [
 ['lein deps :tree',                                                     '# lein: show leiningen dependency tree'],
 ['[the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]',          '# lein: try to put it to project.clj in case of \'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath\''],
 ['(keys (ns-publics \'ws.core))',                                       '# clj: show objects in the namespace'],
+['(map #(ns-unmap *ns* %) (keys (ns-interns *ns*)))',                   '# clj: clean the repl'],
 ['(load-file "src/ws/core.clj")',                                       '# clj:'],
 ['(clojure.repl/doc something)',                                        '# clj: documentation of something'],
 
