@@ -1,8 +1,9 @@
 var jsonEmacs = [
 // ['', ';'],
+['M-x paredit-wrap-square',         '; paredit: wrap square brackets around sexp'],
 ['C-k',                             '; paredit: kill the rest in the sexp'],
-['M-( / M-r / M-<up>',              '; paredit: wrap brackets around sexp / raise sexp (replace entire parent with the child) / remove everything before in the current sexp'],
-['C-<right> / C-<left>',            '; paredit: slurp (vcucni) / barf (vygrcaj) sexp'],
+['M-( / M-r / M-&lt;up&gt;',        '; paredit: wrap brackets around sexp / raise sexp (replace entire parent with the child) / remove everything before in the current sexp'],
+['C-&lt;right&gt; / C-&lt;left&gt;','; paredit: slurp (vcucni) / barf (vygrcaj) sexp'],
 ['M-r',                             '; paredit: replace parent with the child'],
 ['C-u -4 C-x TAB',                  '; indent: move text left by four spaces (M-x indent-rigidly is C-x TAB)'],
 ['\#',                              '; regexp: increment the number found'],
