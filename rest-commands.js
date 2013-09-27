@@ -172,6 +172,7 @@ var jsonRest = [
 ['lsb_release -a',                                                      '# linux: show (ubuntu) version'],
 ['sudo apt-get update && sudo apt-get upgrade',                         '# linux: ubuntu: command line upgrade part 1.'],
 ['sudo do-release-upgrade',                                             '# linux: ubuntu: command line upgrade part 2.'],
+['',                                                                    '# linux: ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade'],
 ['sudo restart lightdm / gdm / kdm',                                    '# linux: ubuntu: (ubuntu 11.10 or later), gnome or KDE'],
 ['sudo touch /forcefsck',                                               '# linux: run fsck on next reboot'],
 ['&nbsp;','&nbsp;'],
