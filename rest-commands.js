@@ -162,6 +162,7 @@ var jsonRest = [
 ['db2 select * from DBASE.TABLE fetch first 2 rows only',                          '# db2: '],
 
 ['mysql select * from mantis.state_mantis_id limit 10',                            '# mysql: '],
+['@C:\\path\\to\\script.sql',                                                      '# sql: oracle: execute script.sql'],
 
 
 ['&nbsp;','&nbsp;'],
