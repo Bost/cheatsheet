@@ -148,6 +148,11 @@ http://www.gametheory.net/
 
 *** Contract == Object
 
+
+*** Product: examples:
+    Objects   - numbers
+    Morphisms - functions 'less/greater or equal than'
+
 * Isomorphism f: X -> Y
   ∃ a function g: Y -> X such that g ∘ f = idX and f ∘ g = idY
   (f is invertible and g is the inverse of f)
