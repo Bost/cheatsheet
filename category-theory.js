@@ -3,7 +3,7 @@
 
 var console = skewer;
 
-// object: A contract that alows only string
+// object: guarding function - contract that alows only string
 var str = function (s) {
     var typeName = 'string';
     if (typeof s !== typeName) {
@@ -13,7 +13,23 @@ var str = function (s) {
     }
 };
 
-// object: A contract that allows anything
+// object: guarding function - (contract) asserts n is a signed 32-bit number
+var int32 = function (n) {
+    if ((n | 0) !== n) {
+	throw new TypeError("Expected a 32-bit integer.");
+    }
+    return n;
+};
+
+// object: guarding function - Natural number (int32 and nonnegative)
+var nat32 = function (n) {
+    if ((n | 0) !== n || n < 0) {
+	throw new TypeError("Expected a 32-bit natural.");
+    }
+    return n;
+};
+
+// object: guarding function - a contract that allows anything
 var any = function (x) { return x; };
 
 // morphism - i.e. a changes applied to s-value
@@ -38,13 +54,12 @@ var bool  = typeOf("boolean");
 var num   = typeOf("number");
 var obj   = typeOf("object");
 var undef = typeOf("undefined");
+var func  = typeOf("function");
 
 var inc = function(x) {
     x = num(x);         // input itself must be a number
     return num(x + 1);  // return value must be a number
 };
-
-// sdfa sdf \dd  afdasfda sf
 
 var arr = function(a) {
     var typeName = "[object Array]";
@@ -53,7 +68,7 @@ var arr = function(a) {
     // {}.toString.call(a) - invoke the call property of the toString method;
     //                       defined in function.prototype;
     //                       the call-property exists for every function; use the a-value as the this-binden
-    //                       when toString-function uses this-object, then this-object refers to a-object 
+    //                       when toString-function uses this-object, then this-object refers to a-object
     if ({}.toString.call(a) !== typeName) {
 	throw new TypeError("typeof a: "+(typeof a)+ " must be "+typeName+ " (i.e. array)");
     } else {
@@ -66,7 +81,7 @@ var arr = function(a) {
 
 // functor does mapping between categories:
 // - can act on both the objects and the morphisms of the given category
-// - produces new objects and new morphisms; i.e. given a c-contract it returns an array of contracts 
+// - produces new objects and new morphisms; i.e. given a c-contract it returns an array of contracts
 //   every elem of a-array is checked againt c-contract
 var arrOf = function (c) {
     return function (a) {
@@ -74,6 +89,20 @@ var arrOf = function (c) {
 	return a.map(c);  // map c-contract over every item of the a-array
     };
 };
+
+// // Creates a contract for an object whose
+// // enumerable properties all satisfy the c-contract
+// var objOf = function (c) {
+//     func(c);        // check if c is a function
+//     return function (o) {
+//	obj(o);     // check if o is an object
+//	var result = create(gpo(o));
+//	for (i in o) {
+//             result[i] = c(o[i]);
+//	}
+//	return result;
+//     };
+// };
 
 var Maybe = function () {};  // constructor for data type to inherit from
 var None = function () {};   // constructor for data type to inherit from
@@ -104,7 +133,7 @@ var maybe = function (c) {
 
 // var instanceOf_None_or_Some = maybe(repeat);
 // console.log(instanceOf_None_or_Some);
-//console.log('' + maybe(repeat)(none));  // map repeat-function over zero element array 
+//console.log('' + maybe(repeat)(none));  // map repeat-function over zero element array
 //console.log('' + maybe(repeat)(some("joe")));
 
 Maybe.prototype.getOrElse = function (x) {
@@ -130,7 +159,7 @@ var twice = function (functor) {
 var once = function (functor) {
     // this is the same as the line below
     // return function (c) {
-    // 	return functor(c);
+    //	return functor(c);
     // };
     return functor;
 };
@@ -153,7 +182,7 @@ var arrOfUnit = function (c) {
 
 // Array.unit = function (c) {
 //     if (c === void 0) {  // synonym for undefined (for earlier javascript versions)
-// 	c = any;
+//	c = any;
 //     }
 // };
 
@@ -185,7 +214,7 @@ var arrOfFlatten = function (c) {
 
 Array.prototype.flatten = function (c) {
     if (c === void 0) {
-	c = any; 
+	c = any;
     }
     return arrOfFlatten(c)(this);
 };
@@ -208,7 +237,7 @@ var maybeFlatten = function (c) {
 
 Maybe.prototype.flatten = function (c) {
     if (c === void 0) {
-    	c = any;
+	c = any;
     }
     return maybeFlatten(c)(this);
 };
@@ -220,12 +249,17 @@ Maybe.prototype.flatten = function (c) {
 // console.log(none.flatten());
 // console.log(some(some(4)));
 
+// 1. check if c-contract is typeof Maybe and
+// 2. execute it over this-Object. I.e. do: c(this)
 Maybe.prototype.map = function (c) {
     return maybe(c)(this);  // this is the current Maybe-object
 };
 
 // It's sufficient to have mapFlatten and unit to get a Monad
 var Monad = function () {};
+// 1. check if c-contract is typeof Maybe and
+// 2. execute it over this-Object and
+// 3. flatten the structure
 Monad.prototype.flatMap = function (c) {
     return this.map(c).flatten();
 };
@@ -234,19 +268,108 @@ Monad.prototype.flatMap = function (c) {
 Array.prototype.__proto__ = Monad.prototype;
 Maybe.prototype.__proto__ = Monad.prototype;
 
-// var xs = [1,2,3], ys = [4,5,6], zs = [5];
+var xs = [1,2,3], ys = [4,5,6], zs = [5];
 // var xs = some(4), ys = some(5), zs = some(5);
-var xs = some(4), ys = none, zs = some(5);
+// var xs = some(4), ys = none, zs = some(5);
 
+/*
 console.log(
-    // each possible choice of x from xs
-    xs.flatMap(function (x) {
-	// each possible choice of y from ys
-	return ys.flatMap(function (y) {
-	    // each possible choice of z from zs
-	    return zs.map(function (z) {
+    // 1. check if function (x) {..} is typeof Maybe and
+    // 2. execute it over every element of xs-array and
+    // 3. flatten the structure
+    xs.flatMap(function (x) {               // each possible choice of x from xs
+	return ys.flatMap(function (y) {    // each possible choice of y from ys
+	    return zs.map(function (z) {    // each possible choice of z from zs
 		return (x * y) + z;
 	    });
 	});
     })
 );
+*/
+
+// Given an array of contracts, creates a contract for an array whose elems
+// satisfy the respective contract
+// prod-n - indexed by numbers
+var prodn = function (cs) {
+    arrOf(func)(cs);     // check if cs is an array of contracts
+    var len = cs.length;
+    return function (args) {
+	arr(args);         // check if args is an array
+	if (len != args.length) {
+	    throw new TypeError("Length of cs and args must be the same");
+	}
+	var result = [];
+	for (var i = 0; i < len; i++) {
+	    // apply each contract to the corresponding argument
+	    result[i] = cs[i](args[i]);
+	};
+	return result;
+    };
+};
+
+var int32str = prodn([int32, str]);
+// console.log(int32str([5, function () {} ])); // this fails
+// console.log(int32str([5, "joe"]));
+
+var objOf = function (c) {
+    return function (x) {
+	var result = {};
+	for (var i in x) {
+	    result[i] = c(x[i]);
+	}
+	return result;
+    };
+};
+
+// prod-s - indexed by strings
+var prods = function (cs) {
+    // cs is a hashmap of contracts
+    // - keys can be only strings (javascript hashmap limitation)
+    // - values are functions
+    objOf(func)(cs);                   // check if
+    return function (args) {           // cs and args contains the same keys
+	obj(args);
+	var result = {};
+	for (var i in args) {          // iterage over keys
+	    // cs[i] - contract at key i applied at the key args[i]
+	    result[i] = cs[i](args[i]);
+	}
+	return result;
+    };
+};
+
+var int32str2 = prods({i: int32, s: str});
+// console.log(int32str2({i: 5, s: "Jane"}));   // Object
+// console.log(int32str2({i: 5, s: false}));    // TypeError: typeof s: boolean must be string
+// console.log(int32str2({i: 5, s: "false"}));  // Object
+
+// Example:
+// input:  [contract_0, .. , contract_i, .. , contract_n] mapped over two-elem array [choice_0, choice_1]
+// output: [contract_i = cs[choice_0], contract_i(choice_1)] i.e. choice_1 satisfies constract_i
+var coprodn = function (cs) {
+    arrOf(func)(cs);               // cs must be an array of constain-functions
+    var len = cs.length;
+    return function (choice) {
+	arr(choice);               // choice-parameter is an array ..
+	if (choice.length != 2) {  // .. of two elements where ..
+	    throw new TypeError("Expected an array size of 2 instead of: "+choice.length);
+	}
+	var ch0 = choice[0], ch1 = choice[1];
+	nat32(ch0);          // .. the first element is a natural number and ..
+	if (ch0 >= len) {    // .. its value is an index to the cs-array of contracts
+	    throw new TypeError("Tag choice[0]: "+ch0+" must be < cs.length: "+len);
+	};
+	// .. which choses which contracts satisfies the 2nd element of the choice-parameter
+	return [ch0, cs[ch0](ch1)];    // return a pair-array [contract, 2nd-elem-of-choice-param]
+    };
+};
+
+var fnCoprodn = coprodn([int32, nat32, str]); // three options available: fnCoprod-param can be an array where:
+console.log(fnCoprodn([0, -5]));              // 1st elem is 0 and 2nd elem is a positive or negative number
+console.log(fnCoprodn([1, 8]));               // 1st elem is 1 and 2nd elem is positive number
+console.log(fnCoprodn([2, "feri"]));          // 1st elem is 2 and 2nd elem is a string
+					      // any other combination is catched by an exception:
+// console.log(fnCoprodn([1, "jack"]));       // TypeError: Expected a 32-bit natural.
+// console.log(fnCoprodn([4, "jack"]));       // Uncaught TypeError: Tag choice[0]: 4 must be < cs.length: 3
+
+// TODO see the end of video #10 - coprods and empty list of constrains
