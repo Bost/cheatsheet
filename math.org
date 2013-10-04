@@ -117,36 +117,36 @@ http://www.gametheory.net/
    Notes: R surj P(N) (Power series - Mocninovy rad)
 ** Fundamental Theorem of Arithmetics: Every positive integer n can be written in a unique way as a product of primes.
 
+
 * Morphisms:
 ** Category is:
-*** A collection of arrows and morphism that can be composed if they are adjacent.
-*** A structure packing structures of the same type (same category) and structure preserving mappings between them.
+    A collection of arrows and morphism that can be composed if they are adjacent.
+    A structure packing structures of the same type (same category) and structure preserving mappings between them.
 
 *** Quadruple: CAT = (O, hom, id, ◦) consisting of
-**** O  : class of CAT-objects: Ob(A); e.g. A,B are CAT-objects
-**** hom: set of CAT-morphisms: hom(A, B) = {f | f: A -> B } (e.g. arrows)
-     (class of all CAT-morphisms: Mor(CAT) = Union of all sets hom(A,B) in CAT)
-**** id : set of identity morphisms for every CAT-object
-**** ◦  : morphism composition: hom(a, b) × hom(b, c) → hom(a, c): g ◦ f; it's a partialy binary operation on Mor(CAT::)
+    O  : class of CAT-objects: Ob(A); e.g. A,B are CAT-objects
+    hom: set (?or class?) of CAT-morphisms: hom(A, B) = {f | f: A -> B } (e.g. arrows)
+    (class of all CAT-morphisms: Mor(CAT) = Union of all sets hom(A,B) in CAT)
+    id : set of identity morphisms for every CAT-obj   ct
+    ◦  : morphism composition: hom(a, b) × hom(b, c) → hom(a, c): g ◦ f; it's a partialy binary operation on Mor(CAT::)
 
-
-
-   - třídy objektů ob(C)
-   - třídy morfismů hom(C)
-   - skládání morfismů: hom(a, b) × hom(b, c) → hom(a, c): g o f
+*** JavaScript & Category Theory
+**** Category ==  Contracts + Functions guarded by contracts
 
 **
-| Set theory                  | Category theory                          |
-|-----------------------------+------------------------------------------|
-| membership relation         | -                                        |
-| sets                        | categories                               |
-| elements                    | objects                                  |
-| -                           | morphisms (structure-preserving mapping) |
-| functions                   | functors                                 |
-| equations between elements  | isomorphisms between objects             |
-| equations between sets      | equivalences between categories          |
-| equations between functions | natural transformations between functors |
+| Set theory                  | Category theory                                          | JavaScript                     |
+|-----------------------------+----------------------------------------------------------+--------------------------------|
+| membership relation         | -                                                        |                                |
+| sets                        | categories                                               |                                |
+| elements                    | objects                                                  | contracts                      |
+| -                           | morphisms (structure-preserving mapping between objects) | functions guarded by contracts |
+| functions                   | functors  (maps between categories)                      |                                |
+| equations between elements  | isomorphisms between objects                             |                                |
+| equations between sets      | equivalences between categories                          |                                |
+| equations begween functions | natural transformations between functors                 |                                |
 
+
+*** Contract == Object
 
 * Isomorphism f: X -> Y
   ∃ a function g: Y -> X such that g ∘ f = idX and f ∘ g = idY
