@@ -106,7 +106,7 @@ var jsonEmacs = [
 ['M-x fill-region',                 '; reflow all the paragraphs in the area'],
 ['M-o M-s',                         '; center for given line width'],
 ['C-M-s',                           '; isearch-forward-regexp'],
-['C-s',                             '; incremental search'],
+['C-s / C-r',                       '; incremental search forward / backward'],
 ['C-M-%',                           '; query-replace-regexp'],
 ['C-u M-! command',                 '; execute command and read-in its output'],
 ['M-x gdb',                         '; debugger'],
