@@ -89,7 +89,6 @@ exempli gratia: e.g.
 http://www.gametheory.net/
 ** http://www.reddit.com/r/math
 ** Ask:
-   Andreas http://www.reddit.com/r/actuary
    Christofer
 
 
@@ -122,12 +121,35 @@ http://www.gametheory.net/
 ** Category is:
     A collection of arrows and morphism that can be composed if they are adjacent.
     A structure packing structures of the same type (same category) and structure preserving mappings between them.
+*** Homomorphism: structure-preserving map between 2 algebraic structures (e.g. groups, rings, vector spaces).
+    Functor: homomorphism between 2 categories
+
+    Individual monoids themselves give category
+    Monoids with homomorphisms give category
+
+    TODO Pointed Sets and Pointed Functions
+
+    Curry - Howard Isomorphism (1-to-1 and keeps all properties):
+
+    | Logic            =>                    | <= Type Theory                                                       |
+    |----------------------------------------+----------------------------------------------------------------------|
+    | proposition                            | contract                                                             |
+    | (somethins is true)                    | (pics out a set of values that passes the contract)                  |
+    | proof                                  | guarded fn                                                           |
+    |----------------------------------------+----------------------------------------------------------------------|
+    | P implies Q: P -> Q (i.e. there ∃ one) | paricular fn of fn of P-contract to guarded fn of Q-contract: P -> Q |
+    | → is constructive implication          | → is function from-to                                                |
+    | false → false (implies)                | {}  → {}  no values (empty set); contract cannot be satisfied        |
+    | false → true                           | {}  → {.} (one element set)                                          |
+    | true  → true                           | {.} → {.} (identity function)                                        |
+    | true  ↛ false (does not implie)        | {.} ↛ {}                                                             |
+
 
 *** Quadruple: CAT = (O, hom, id, ◦) consisting of
     O  : class of CAT-objects: Ob(A); e.g. A,B are CAT-objects
     hom: set (?or class?) of CAT-morphisms: hom(A, B) = {f | f: A -> B } (e.g. arrows)
     (class of all CAT-morphisms: Mor(CAT) = Union of all sets hom(A,B) in CAT)
-    id : set of identity morphisms for every CAT-obj   ct
+    id : set of identity morphisms for every CAT-obj
     ◦  : morphism composition: hom(a, b) × hom(b, c) → hom(a, c): g ◦ f; it's a partialy binary operation on Mor(CAT::)
 
 *** JavaScript & Category Theory
@@ -137,14 +159,22 @@ http://www.gametheory.net/
 | Set theory                  | Category theory                                          | JavaScript                     |
 |-----------------------------+----------------------------------------------------------+--------------------------------|
 | membership relation         | -                                                        |                                |
-| sets                        | categories                                               |                                |
 | elements                    | objects                                                  | contracts                      |
+| sets                        | categories                                               |                                |
 | -                           | morphisms (structure-preserving mapping between objects) | functions guarded by contracts |
 | functions                   | functors  (maps between categories)                      |                                |
 | equations between elements  | isomorphisms between objects                             |                                |
 | equations between sets      | equivalences between categories                          |                                |
-| equations begween functions | natural transformations between functors                 |                                |
+| equations between functions | natural transformations (maps between functors)          |                                |
 
+Categorification: process of weakening structure, weakening equalities down to natural isomorphisms and then adding-in rules
+that these natural isomorphisms have to follow (so it behaves well)
+Counting number of elements in sets is decategorification; from category we get set or from set we get a number
+
+Monoid homomorphisms: a function between the sets of monoid elements that preserved the monoid structure
+Monoidal functors:    a functor between categories that preserves the monoidal structure (should preserve multiplication)
+                      from functor(prodn([x, y, ..])) to prodn([functor(x), functor(y), ..])
+Monoidal monad:       ???
 
 *** Contract == Object
 
@@ -153,32 +183,31 @@ http://www.gametheory.net/
     Objects   - numbers
     Morphisms - functions 'less/greater or equal than'
 
+* Tensor: most general bilinear operation; Notation ⊗
 * Isomorphism f: X -> Y
-  ∃ a function g: Y -> X such that g ∘ f = idX and f ∘ g = idY
+  ∃ fn g: Y → X such that g ∘ f = idX and f ∘ g = idY
   (f is invertible and g is the inverse of f)
 
 ** Category theory - Modeling (new vocabulary)
-   | Hierarchies                | partial orders |
-   | symmetries                 | group elements |
-   | data models                | categories     |
-   | agent actions              | monoid actions |
-   | local-to-global principles | sheaves        |
-   | self-similarity            | operads        |
-   | context                    | monads         |
+   | hierarchies                | partial orders     |
+   | symmetries                 | group elements ?   |
+   | data models                | categories         |
+   | agent actions              | monoid actions     |
+   | local-to-global principles | sheaves (lanovica) |
+   | self-similarity            | operads            |
+   | context                    | monads             |
 
 
 ** Catergory of sets (Set)
-
-Hom-Set(X, Y): the set of functions X -> Y
+   Hom-Set(X, Y): the set of functions X -> Y
 
 ** olog = ontology log
-
-Different branches of mathematics can be formalized
-into categories. These categories can then be connected together by functors. And the
-sense in which these functors provide powerful communication of ideas is that facts and
-theorems proven in one category can be transferred through a connecting functor to
-yield proofs of an analogous theorem in another category. A functor is like a conductor
-of mathematical truth.
+   Different branches of mathematics can be formalized
+   into categories. These categories can then be connected together by functors. And the
+   sense in which these functors provide powerful communication of ideas is that facts and
+   theorems proven in one category can be transferred through a connecting functor to
+   yield proofs of an analogous theorem in another category. A functor is like a conductor
+   of mathematical truth.
 
 
 * Mappings: X -> Y (Zobrazenia):
@@ -241,71 +270,3 @@ Monotonicity: If A ⊆ B then P(A) <= P(B)
 
 ** A posteriori conditional probability P(B ∣ A) = P(A ∩ B) / P(B):
    if event B precedes event A in time. Example: The probability it was cloudy this morning, given that it rained in the afternoon.
-
-
-
-
-* unicode utf-8:
-  (defun ucs-insert-char ()
-  (interactive)
-  (insert "∣"))
-
-  (global-set-key [f10] 'ucs-insert-char)
-
-
-	0x00	0x01	0x02	0x03	0x04	0x05	0x06	0x07	0x08	0x09	0x0A	0x0B	0x0C	0x0D	0x0E	0x0F
-U+00Bx			x²	x³						x¹
-U+207x	x⁰	xⁱ			x⁴	x⁵	x⁶	x⁷	x⁸	x⁹	x⁺	x⁻	x⁼	x⁽	x⁾	xⁿ
-U+208x	x₀	x₁	x₂	x₃	x₄	x₅	x₆	x₇	x₈	x₉	x₊	x₋	x₌	x₍	x₎
-U+209x	xₐ	xₑ	xₒ	xₓ	xₔ	xₕ	xₖ	xₗ	xₘ	xₙ	xₚ	xₛ	xₜ
-
-	0x00	0x01	0x02	0x03	0x04	0x05	0x06	0x07	0x08	0x09	0x0A	0x0B	0x0C	0x0D	0x0E	0x0F
-0x2190	←	↑	→	↓	↔	↕	↖	↗	↘	↙	↚	↛	↜	↝	↞	↟
-0x21a0	↠	↡	↢	↣	↤	↥	↦	↧	↨	↩	↪	↫	↬	↭	↮	↯
-0x21b0	↰	↱	↲	↳	↴	↵	↶	↷	↸	↹	↺	↻	↼	↽	↾	↿
-0x21c0	⇀	⇁	⇂	⇃	⇄	⇅	⇆	⇇	⇈	⇉	⇊	⇋	⇌	⇍	⇎	⇏
-0x21d0	⇐	⇑	⇒	⇓	⇔	⇕	⇖	⇗	⇘	⇙	⇚	⇛	⇜	⇝	⇞	⇟
-0x21e0	⇠	⇡	⇢	⇣	⇤	⇥	⇦	⇧	⇨	⇩	⇪	⇫	⇬	⇭	⇮	⇯
-0x21f0	⇰	⇱	⇲	⇳	⇴	⇵	⇶	⇷	⇸	⇹	⇺	⇻	⇼	⇽	⇾	⇿
-
-
-	0x00	0x01	0x02	0x03	0x04	0x05	0x06	0x07	0x08	0x09	0x0A	0x0B	0x0C	0x0D	0x0E	0x0F
-U+220x	∀	∁	∂	∃	∄	∅	∆	∇	∈	∉	∊	∋	∌	∍	∎	∏
-U+221x	∐	∑	−	∓	∔	∕	∖	∗	∘	∙	√	∛	∜	∝	∞	∟
-U+222x	∠	∡	∢	∣	∤	∥	∦	∧	∨	∩	∪	∫	∬	∭	∮	∯
-U+223x	∰	∱	∲	∳	∴	∵	∶	∷	∸	∹	∺	∻	∼	∽	∾	∿
-U+224x	≀	≁	≂	≃	≄	≅	≆	≇	≈	≉	≊	≋	≌	≍	≎	≏
-U+225x	≐	≑	≒	≓	≔	≕	≖	≗	≘	≙	≚	≛	≜	≝	≞	≟
-U+226x	≠	≡	≢	≣	≤	≥	≦	≧	≨	≩	≪	≫	≬	≭	≮	≯
-U+227x	≰	≱	≲	≳	≴	≵	≶	≷	≸	≹	≺	≻	≼	≽	≾	≿
-U+228x	⊀	⊁	⊂	⊃	⊄	⊅	⊆	⊇	⊈	⊉	⊊	⊋	⊌	⊍	⊎	⊏
-U+229x	⊐	⊑	⊒	⊓	⊔	⊕	⊖	⊗	⊘	⊙	⊚	⊛	⊜	⊝	⊞	⊟
-U+22Ax	⊠	⊡	⊢	⊣	⊤	⊥	⊦	⊧	⊨	⊩	⊪	⊫	⊬	⊭	⊮	⊯
-U+22Bx	⊰	⊱	⊲	⊳	⊴	⊵	⊶	⊷	⊸	⊹	⊺	⊻	⊼	⊽	⊾	⊿
-U+22Cx	⋀	⋁	⋂	⋃	⋄	⋅	⋆	⋇	⋈	⋉	⋊	⋋	⋌	⋍	⋎	⋏
-U+22Dx	⋐	⋑	⋒	⋓	⋔	⋕	⋖	⋗	⋘	⋙	⋚	⋛	⋜	⋝	⋞	⋟
-U+22Ex	⋠	⋡	⋢	⋣	⋤	⋥	⋦	⋧	⋨	⋩	⋪	⋫	⋬	⋭	⋮	⋯
-U+22Fx	⋰	⋱	⋲	⋳	⋴	⋵	⋶	⋷	⋸	⋹	⋺	⋻	⋼	⋽	⋾	⋿
-
-
-	0x00	0x01	0x02	0x03	0x04	0x05	0x06	0x07	0x08	0x09	0x0A	0x0B	0x0C	0x0D	0x0E	0x0F
-U+037x	Ͱ	ͱ	Ͳ	ͳ	ʹ	͵	Ͷ	ͷ			ͺ	ͻ	ͼ	ͽ	;
-U+038x					΄	΅	Ά	·	Έ	Ή	Ί		Ό		Ύ	Ώ
-U+039x	ΐ	Α	Β	Γ	Δ	Ε	Ζ	Η	Θ	Ι	Κ	Λ	Μ	Ν	Ξ	Ο
-U+03Ax	Π	Ρ		Σ	Τ	Υ	Φ	Χ	Ψ	Ω	Ϊ	Ϋ	ά	έ	ή	ί
-U+03Bx	ΰ	α	β	γ	δ	ε	ζ	η	θ	ι	κ	λ	μ	ν	ξ	ο
-U+03Cx	π	ρ	ς	σ	τ	υ	φ	χ	ψ	ω	ϊ	ϋ	ό	ύ	ώ	Ϗ
-U+03Dx	ϐ	ϑ	ϒ	ϓ	ϔ	ϕ	ϖ	ϗ	Ϙ	ϙ	Ϛ	ϛ	Ϝ	ϝ	Ϟ	ϟ
-U+03Ex	Ϡ	ϡ	Ϣ	ϣ	Ϥ	ϥ	Ϧ	ϧ	Ϩ	ϩ	Ϫ	ϫ	Ϭ	ϭ	Ϯ	ϯ
-U+03Fx	ϰ	ϱ	ϲ	ϳ	ϴ	ϵ	϶	Ϸ	ϸ	Ϲ	Ϻ	ϻ	ϼ	Ͻ	Ͼ	Ͽ
-
-
-	0x00	0x01	0x02	0x03	0x04	0x05	0x06	0x07	0x08	0x09	0x0A	0x0B	0x0C	0x0D	0x0E	0x0F
-U+250x	─	━	│	┃	┄	┅	┆	┇	┈	┉	┊	┋	┌	┍	┎	┏
-U+251x	┐	┑	┒	┓	└	┕	┖	┗	┘	┙	┚	┛	├	┝	┞	┟
-U+252x	┠	┡	┢	┣	┤	┥	┦	┧	┨	┩	┪	┫	┬	┭	┮	┯
-U+253x	┰	┱	┲	┳	┴	┵	┶	┷	┸	┹	┺	┻	┼	┽	┾	┿
-U+254x	╀	╁	╂	╃	╄	╅	╆	╇	╈	╉	╊	╋	╌	╍	╎	╏
-U+255x	═	║	╒	╓	╔	╕	╖	╗	╘	╙	╚	╛	╜	╝	╞	╟
-U+256x	╠	╡	╢	╣	╤	╥	╦	╧	╨	╩	╪	╫	╬	╭	╮	╯
-U+257x	╰	╱	╲	╳	╴	╵	╶	╷	╸	╹	╺	╻	╼	╽	╾	╿

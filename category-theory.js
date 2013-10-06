@@ -118,7 +118,7 @@ Some.prototype.toString = function () { return "Some("+this.x+")"; };
 var some = function (x) { return new Some(x); }; // we don't have to type 'new' all the time
 
 
-// can be used for try-catch stuff
+// can be used for try-catch stuff; redeclared below
 var maybe = function (c) {
     return function (m) {
 	if (m instanceof None) {
@@ -343,6 +343,11 @@ var int32str2 = prods({i: int32, s: str});
 // console.log(int32str2({i: 5, s: false}));    // TypeError: typeof s: boolean must be string
 // console.log(int32str2({i: 5, s: "false"}));  // Object
 
+
+// Product:           "give me everything in the list of cs-constrains"
+// Coproduct: choice: "give me any one thing in the list of cs-constrains"
+
+
 // Example:
 // input:  [contract_0, .. , contract_i, .. , contract_n] mapped over two-elem array [choice_0, choice_1]
 // output: [contract_i = cs[choice_0], contract_i(choice_1)] i.e. choice_1 satisfies constract_i
@@ -372,4 +377,69 @@ console.log(fnCoprodn([2, "feri"]));          // 1st elem is 2 and 2nd elem is a
 // console.log(fnCoprodn([1, "jack"]));       // TypeError: Expected a 32-bit natural.
 // console.log(fnCoprodn([4, "jack"]));       // Uncaught TypeError: Tag choice[0]: 4 must be < cs.length: 3
 
-// TODO see the end of video #10 - coprods and empty list of constrains
+// [{'left', int23}, {'right', str}]
+var coprods = function (cs) {
+    objOf(func)(cs);               // cs must be an array of constain-functions
+    var len = cs.length;
+    return function (choice) {
+	arr(choice);               // choice-parameter is an array ..
+	if (choice.length != 2) {  // .. of two elements where ..
+	    throw new TypeError("Expected an array size of 2 instead of: "+choice.length);
+	}
+	var ch0 = choice[0], ch1 = choice[1];
+	str(ch0);            // .. the first element is a string and ..
+	if (!cs.hasOwnProperty(ch0)) {  // hasOwnProperty(..) is provided
+	    throw new TypeError("Unknown tag choice[0]: "+ch0);
+	}
+	// .. which choses which contracts satisfies the 2nd element of the choice-parameter
+	return [ch0, cs[ch0](ch1)];    // return a pair-array [contract, 2nd-elem-of-choice-param]
+    };
+};
+
+var fnCoprods = coprods({left: int32, right: str}); // three options available: fnCoprod-param can be an array where:
+// console.log(fnCoprods(['left', -5]));               // ["left", -5]
+// console.log(fnCoprods(['right', 'foo']));           // ["right", "foo"]
+
+
+var maybeCoprods = function (c) {
+    return coprods({
+	none: prodn([]),
+	some: c
+    });
+};
+
+var fnCoprodsMaybe = maybeCoprods(int32); // equivalent to coprods({none: prodn([]), some: int32});
+// console.log(fnCoprodsMaybe(['none', s]));      // Uncaught ReferenceError: s is not defined
+// console.log(fnCoprodsMaybe(['some', 'bar']));  // TypeError: Expected a 32-bit integer.
+// console.log(fnCoprodsMaybe(['none', 5]));      // TypeError: typeof a: number must be [object Array] (i.e. array)
+// console.log(fnCoprodsMaybe(['none', [5]]));    // TypeError: Length of cs and args must be the same
+// console.log(fnCoprodsMaybe(['none', []]));     // ["none", []]
+// console.log(fnCoprodsMaybe(['some', 5]));      // ["some", 5]
+
+// Pullback: a tupple
+// Given an array of functions, returns a contract for those arrays where the elements
+// all map to the same value under given functions, e.g. given [f, g] we get a contract
+// for those [x, y] for which f(x) === g(y).
+var pbn = function (fs) {  // fs is an array of functions
+    var c = prodn(fs);     // create a constraint i.e. a product of those functions
+    var len = fs.length;
+    return function (args) {
+	arr(args);
+	var result = c(args);  // apply f to x, g to y etc. (i.e. compute f(x), g(y) etc.)
+	for (var i = 1; i < len; ++i) { // i strarts from 1
+	    if (result[i] !== result[i - 1]) {
+		throw new TypeError("Failed to match pullback constraint");
+	    }
+	}
+	return result; // an array [f(x), g(y), ...]
+    };
+};
+
+// domain   codomain   domain    codomain
+//   S ---f---> T        T ---g---> U         these are composable
+//   S ---f---> T        R ---g---> U         these are not composable
+// Pullback is needed to check that everything gives the same answer in the tupple.
+// E.g. when multiplying matrixes: multiply rows with columns
+
+// TODO from video 12 inclusive
+var hom = function () {};
