@@ -287,8 +287,8 @@ console.log(
 );
 */
 
-// Given an array of contracts, creates a contract for an array whose elems
-// satisfy the respective contract
+// Given an array of contracts, it creates a contract for an array whose each
+// element satisfies coressponding contract.
 // prod-n - indexed by numbers
 var prodn = function (cs) {
     arrOf(func)(cs);     // check if cs is an array of contracts
@@ -296,11 +296,11 @@ var prodn = function (cs) {
     return function (args) {
 	arr(args);         // check if args is an array
 	if (len != args.length) {
-	    throw new TypeError("Length of cs and args must be the same");
+	    throw new TypeError("Arrays cs and args must have equal length. cs.length: "+len+", args.length: "+args.length);
 	}
 	var result = [];
+	// check that every argument passed the corresponding contract
 	for (var i = 0; i < len; i++) {
-	    // apply each contract to the corresponding argument
 	    result[i] = cs[i](args[i]);
 	};
 	return result;
@@ -441,5 +441,49 @@ var pbn = function (fs) {  // fs is an array of functions
 // Pullback is needed to check that everything gives the same answer in the tupple.
 // E.g. when multiplying matrixes: multiply rows with columns
 
-// TODO from video 12 inclusive
-var hom = function () {};
+var unboundSlice = Array.prototype.slice;
+var slice = Function.prototype.call.bind(unboundSlice);
+
+// Homomorphism
+// Creates a contract for function whose inputs and outputs satisfy the given contracts.
+// in1, .., inN, out-arguments do not have to be contracts. They can be also guarded functions.
+var hom = function (/* in1, .., inN, out */) { // arbitrary-sized argument-array
+    var argLen = arguments.length;
+    // arguments is a special javascript stuff. It's an array-like Object (Arguments-Object)
+    // It isn't standart object, but has nummeric indices like an array
+    var inArgs = slice(arguments, 0, argLen-1); // first n-1 args are input args; create an array from them
+    var inFns = arrOf(func)(inArgs);            // check that inArgs is an array of functions
+    var inFnsProd = prodn(inFns);               // create an inFnsProd-contract for an array where each elem is a functions
+    var outFn = func(arguments[argLen-1]);      // check that out-argument is a function, too
+
+    // outContractComment behaves like middle - higher order contracts
+    var outContractCommented = function (middle) {// result is a contract expecting guarded middle-function
+	var outContract = function xfn(varArgs) {
+	    var xfnProd = inFnsProd(slice(arguments));// check xfn-arguments against inFns-product-contract
+	    var middleResult = middle.apply(this, xfnProd);// apply middle-function on arguments in xfnProd-array
+	    return outFn(middleResult);         // check result of middle(..) against outContract (last hom-argument)
+	};
+
+	// add some comment to the source code of outContract-function for debugging purposes. I.e.:
+	outContract.toString = (function (srcCode) {// create a function with a srcCode returning
+	    return function () {                    // another function, where the another
+		return srcCode + '/* guarded */';   // function adds some comment to the srcCode
+	    };
+	})('' + middle);                        // middle-function source code
+	// apply out-function to product of middle-function
+	return outContract;
+    };
+    return outContractCommented;
+};
+
+// fnBefore and fnAfter get applied before and after the middle-function.
+// (see Aspect-Oriented Programming). They can be any functions (see definition), not just contracts
+var fnBefore = int32, fnAfter = str;
+var repeat = hom(fnBefore, fnAfter)(function middle(i) {
+    return (''+ i + i);
+});
+
+var one = hom(int32)(function () {  // no input params, int32 is output-contract
+    return;
+});
+// TODO from video 13 inclusive
