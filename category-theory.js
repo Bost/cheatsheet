@@ -370,9 +370,9 @@ var coprodn = function (cs) {
 };
 
 var fnCoprodn = coprodn([int32, nat32, str]); // three options available: fnCoprod-param can be an array where:
-console.log(fnCoprodn([0, -5]));              // 1st elem is 0 and 2nd elem is a positive or negative number
-console.log(fnCoprodn([1, 8]));               // 1st elem is 1 and 2nd elem is positive number
-console.log(fnCoprodn([2, "feri"]));          // 1st elem is 2 and 2nd elem is a string
+// console.log(fnCoprodn([0, -5]));              // 1st elem is 0 and 2nd elem is a positive or negative number
+// console.log(fnCoprodn([1, 8]));               // 1st elem is 1 and 2nd elem is positive number
+// console.log(fnCoprodn([2, "feri"]));          // 1st elem is 2 and 2nd elem is a string
 					      // any other combination is catched by an exception:
 // console.log(fnCoprodn([1, "jack"]));       // TypeError: Expected a 32-bit natural.
 // console.log(fnCoprodn([4, "jack"]));       // Uncaught TypeError: Tag choice[0]: 4 must be < cs.length: 3
@@ -444,7 +444,7 @@ var pbn = function (fs) {  // fs is an array of functions
 var unboundSlice = Array.prototype.slice;
 var slice = Function.prototype.call.bind(unboundSlice);
 
-// Homomorphism
+// Homomorphism - allows us to write function without mentioning any contract in the body
 // Creates a contract for function whose inputs and outputs satisfy the given contracts.
 // in1, .., inN, out-arguments do not have to be contracts. They can be also guarded functions.
 var hom = function (/* in1, .., inN, out */) { // arbitrary-sized argument-array
@@ -486,4 +486,51 @@ var repeat = hom(fnBefore, fnAfter)(function middle(i) {
 var one = hom(int32)(function () {  // no input params, int32 is output-contract
     return;
 });
-// TODO from video 13 inclusive
+
+// Monoid Examples: concatenation - associative (order doesnt matter, not commutative)
+//                                - unital (has identity element: '' empty string)
+//                  addition      - associative (and also commutative)
+//                                - unital; identity element is 0
+
+// Monoid example:
+var compose = function (f, g) {
+    return function (x) {
+	return f(g(x));
+    };
+};
+
+var compositionIdentity = function (x) {
+    return x;
+};
+
+compose(compose(f, g), h) === compose(f, compose(g, h));
+// var f = function (x) { return x+1; };
+// var g = function (x) { return x+3; };
+// console.log(g(1));
+// console.log(f(1));
+// console.log(compose(f, g)(1));
+
+var monoid = function (set,      // a set of elements
+		       times,    // associative binary operation
+		       ident) {  // identity element
+    return prods({               // product-contract indexed by string
+	t: func,
+	'*': hom(set, set, set), //
+	1: hom(set)
+    })({                         // prods-contract
+	t: set,
+	'*': times,
+	1: ident
+    });
+};
+
+var strMonoid = monoid (
+    str,
+    function (x, y) { return x + y; },
+    function () { return ''; }
+);
+
+// strMonoid['*'] fetches the concatenation function
+console.log(strMonoid['*']("Hello, ", "world!"));
+
+// TODO from video #13 13:35
