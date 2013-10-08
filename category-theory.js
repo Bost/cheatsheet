@@ -503,20 +503,21 @@ var compositionIdentity = function (x) {
     return x;
 };
 
-compose(compose(f, g), h) === compose(f, compose(g, h));
+// compose(compose(f, g), h) === compose(f, compose(g, h));
 // var f = function (x) { return x+1; };
 // var g = function (x) { return x+3; };
 // console.log(g(1));
 // console.log(f(1));
 // console.log(compose(f, g)(1));
 
-var monoid = function (set,      // a set of elements
-		       times,    // associative binary operation
-		       ident) {  // identity element
+// monoid: any set with associative unital binary operation and the identity element
+var monoid = function (set,      // contract for a set of elements (values)
+		       times,    // associative binary (unital) operation
+		       ident) {  // identity element (noary operation)
     return prods({               // product-contract indexed by string
 	t: func,
-	'*': hom(set, set, set), //
-	1: hom(set)
+	'*': hom(set, set, set), // note: we can't really verify associativity of '*'
+	1: hom(set)              // and identity of 1; we can write test for small cases
     })({                         // prods-contract
 	t: set,
 	'*': times,
@@ -524,13 +525,79 @@ var monoid = function (set,      // a set of elements
     });
 };
 
-var strMonoid = monoid (
+var testAssoc = function (mon, a, b, c) {
+    a = mon.t(a);
+    b = mon.t(b);
+    c = mon.t(c);
+    var op = mon['*'];
+    // (a * b) * c === a * (b * c);
+    if (op(op(a, b), c) !== op(a, (op(b, c)))) {
+	throw new TypeError("The operation is not assoctiative: "+op);
+    }
+};
+
+var concat = monoid (
     str,
     function (x, y) { return x + y; },
     function () { return ''; }
 );
 
-// strMonoid['*'] fetches the concatenation function
-console.log(strMonoid['*']("Hello, ", "world!"));
+var addition = monoid (
+    num,
+    function (x, y) { return x + y; },
+    function () { return 0; }
+);
 
-// TODO from video #13 13:35
+// strMonoid['*'] fetches the concatenation function
+// console.log(concat['*']("Hello, ", "world!"));
+
+
+// monad: monoid object in a endofunctor category
+// a monad is a monoid in a category whos objects are functors and
+// whose morhisms are natural transformations (maps between functors)
+var monad = function(ftor,
+		     times,
+		     ident) {
+    return function (t) {
+	func(t);
+	return prods({
+	    t: func,
+	    '*': hom(ftor(ftor(t)), ftor(t)), // tensor product
+	    1: hom(any(t), ftor(t))
+	})({
+	    t: ftor(t),
+	    '*': times(t),
+	    1: ident(t)
+	});
+    };
+};
+
+var arrOfMonad = monad(arrOf, arrOfFlatten, arrOfUnit);
+var arrInt32 = arrOfMonad(int32);
+// arrInt32[1] is the ident function: ftor(int32) and that is arrOf(int32) and that creates
+// an array from 5: [5]
+// console.log(arrInt32[1](5));
+
+// arrInt32['*'] is the hom function: ftor(ftor(t)) --> ftor(t) and that is
+// arrOf(arrOf(int32)) --> arrOf(int32) and that is arrOfFlatten(int32) --> arrOf(int32)
+// create an array from 5: [5]
+// console.log(arrInt32['*']([[1,2,3], [4,5]]));
+
+// that is ftor(t) and that if a check of contract: arrOf(int32)([1,2,3]);
+// console.log(arrInt32.t([1,2,3]));
+
+
+// takes a list of functions and returns a function of one input
+var equalizer = var function(fs) {
+    var len = fs.length;
+    return function (x) {
+	var tuple = [];
+	for (var i = 0; i < len; ++i) {
+	    tuple[i] = x;
+	}
+	return pbn(fs)(tuple)[0]; // [0] returns that answer
+    };
+};
+
+// video #15 skipped
+// TODO from video #16
