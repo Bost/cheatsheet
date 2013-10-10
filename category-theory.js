@@ -1,3 +1,28 @@
+/*
+Impedance mismatch in data programming (has many manifestation):
+Way to access collection of data is too strongly dependent on the details of the collection
+Accessing data:
+- relational dbase - you need to know that it collection of square tables, foreign keys etc.
+		   - own thing
+- objects in memory - graph of objects with referencies to each other and possibly in a cyclic form
+		    - edge labeled graph
+- xml - node labeled tree
+
+Generalisation of all kinds of collections? Monad or monoid == Collection of things. There are a handfull of operations that matter on collections of things.
+Common for all of those, it's realization is a standart query operators in LINQ.
+Appropriate mathematical generalization of Set, Tree, Stack, Queue, Deck, Try, Parity/Priority Queue, Relation is a Monoid.
+Monoid is a collection of thing with a way of putting things together (independent of what the things are).
+Operations:
+- Put the thing toggether
+- Figure out what's in the monoid
+are closed in the monoid.
+
+Take one thing that's in the monoid, take another thing that's in the monoid, use the combination operator you get 3rd thing that's in the monoid.
+
+"Don't leave the monoid". Typical realization of monoid is monad.
+
+*/
+
 // M-x console-repl
 // console.log("Hello World");
 
@@ -588,16 +613,26 @@ var arrInt32 = arrOfMonad(int32);
 
 
 // takes a list of functions and returns a function of one input
-var equalizer = var function(fs) {
+var equalizer = function(fs) {
     var len = fs.length;
     return function (x) {
 	var tuple = [];
 	for (var i = 0; i < len; ++i) {
 	    tuple[i] = x;
 	}
+	// apply each function to the same input and check they all
+	// get the same answer
 	return pbn(fs)(tuple)[0]; // [0] returns that answer
     };
 };
 
-// video #15 skipped
-// TODO from video #16
+// video #15 - Comprehension (Important!!!) - the mathematical way of quering monads
+
+// monadic operators:
+// where: filter
+// select: map
+// select many: bind (fold; right handed fold)
+// order by:
+// group by:
+
+// TODO from video #16 03:10
