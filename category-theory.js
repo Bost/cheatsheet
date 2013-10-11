@@ -612,21 +612,77 @@ var arrInt32 = arrOfMonad(int32);
 // console.log(arrInt32.t([1,2,3]));
 
 
+var M = function () {
+    var pairs = [];
+    this.for = function (v, e) {    // just store theory v,e pair in the pairs
+	pairs.push({e: e, v: v});
+	return this;
+    };
+    this.yield = function (body) {  // yield computes a string
+	var p1 = pairs.map(
+	       function (pair, index) {
+		   var mapFunc = (index === pairs.length - 1) ? 'map' : 'flatMap';
+		   return '(' + pair.e + ').'+mapFunc+'(function(' + pair.v + ') { return ';
+	       }
+	);
+	var p2 = '(' + body + ');';
+	var p3 = pairs.map(function () { return '});';});
+	var desugared = p1.join('') + p2 + p3.join('');
+	pairs = [];
+	return desugared;
+    };
+};
+
+M.for = function (v, e) {
+    return (new M).for(v, e);
+};
+
+
+var upto = hom(int32, arrOf(int32))(function (x) {
+  var r = [];
+  for (var i = 0; i < x; ++i) {
+    r.push(i);
+  }
+  return r;
+});
+
+// "(x).flatMap(function(x) { return (tys).map(function(y) { return (x * y);});});"
+// console.log(M.for('x', 'txs').for('y','tys').yield('x * y'));
+
+// For x in xs an for y in ys yield x * y: [5, 6, 7, 10, 12, 14, 15, 18, 21]
+// take an element in x and for each element in ys yield x * y and flatten the array
+//console.log(eval(M.for('x', 'xs').for('y','ys').yield('x * y')));
+//console.log(eval(M.for('x', 'upto(5)').for('y','ys').yield('x * y')));
+
 // takes a list of functions and returns a function of one input
 var equalizer = function(fs) {
     var len = fs.length;
+    if (len < 1) {
+	throw new TypeError('fs.lenght must be > 0');
+    }
     return function (x) {
 	var tuple = [];
 	for (var i = 0; i < len; ++i) {
 	    tuple[i] = x;
 	}
-	// apply each function to the same input and check they all
+	// pbn: pullback apply each function to the same input and check they all
 	// get the same answer
 	return pbn(fs)(tuple)[0]; // [0] returns that answer
     };
 };
 
-// video #15 - Comprehension (Important!!!) - the mathematical way of quering monads
+// Return n-th Fibbonaci number
+var fib = hom(nat32, nat32)(function (n) {
+    return ([0,1,1,2,3,5,8,13,21,34,55,89,144,233,337])[n];
+});
+
+var square = hom(nat32, nat32)(function (n) {
+    return n * n;
+});
+
+// check if n-th number of Fibbonaci sequence is equal to its squared value:
+// 12th Fibbonaci number is 144 == 12 * 12
+console.log(equalizer([fib, square])(12));
 
 // monadic operators:
 // where: filter
@@ -634,5 +690,47 @@ var equalizer = function(fs) {
 // select many: bind (fold; right handed fold)
 // order by:
 // group by:
+
+
+// monoid homomorphisms: (function between homomorphisms but it's also a special
+// guarded function, it preserves the structure of a monoid
+
+var bit = function (b) {
+    if (b !== 0 || b !== 1) {
+	throw new TypeError('Expected 0 or 1 instead of: '+b);
+    }
+    return b;
+};
+
+// Constant function returning a function of x:
+// Signature is: give me function of any kind and I return a function that
+// takes no input and returns that thing
+var K = hom(any, hom(any))(function (x) { return function () { return x; }; });
+
+var xor = hom(bit, bit, bit)function (x, y) { return x ^ y; };
+var xorMonoid = hom(int32, xor, K(0));
+
+var add = hom(int32, int32, int32)function (x, y) { return x + y; };
+var addMonoid = hom(int32, add, K(0));
+
+// Monoid homomorphism: conversion from int32 to bit
+var parity = hom(int32, bit)function (n) { return n % 2; };
+
+// monoid function
+var monFunc = function (m1, m2, f) {
+    return {
+	// monoid type of monFunc is a function f with signature: m1.t --> m2.t
+	t: hom(m1.t, m2.t)(f),
+	'*': equalizer([
+	    function (x, y) { return f(m1['*'](x, y)); },
+	    function (x, y) { return m2['*'](f(x), f(y)); }
+	]),
+	1: equalizer([
+	    function () { return f(m1[1]()); },
+	    m2[1]
+	])
+    };
+};
+
 
 // TODO from video #16 03:10
