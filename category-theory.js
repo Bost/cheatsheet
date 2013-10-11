@@ -682,7 +682,7 @@ var square = hom(nat32, nat32)(function (n) {
 
 // check if n-th number of Fibbonaci sequence is equal to its squared value:
 // 12th Fibbonaci number is 144 == 12 * 12
-console.log(equalizer([fib, square])(12));
+// console.log(equalizer([fib, square])(12));
 
 // monadic operators:
 // where: filter
@@ -696,7 +696,7 @@ console.log(equalizer([fib, square])(12));
 // guarded function, it preserves the structure of a monoid
 
 var bit = function (b) {
-    if (b !== 0 || b !== 1) {
+    if (b !== 0 && b !== 1) {
 	throw new TypeError('Expected 0 or 1 instead of: '+b);
     }
     return b;
@@ -705,32 +705,48 @@ var bit = function (b) {
 // Constant function returning a function of x:
 // Signature is: give me function of any kind and I return a function that
 // takes no input and returns that thing
-var K = hom(any, hom(any))(function (x) { return function () { return x; }; });
+var K = hom(any, hom(any))(function (x) {
+    return function () {
+	return x;
+    };
+});
 
-var xor = hom(bit, bit, bit)function (x, y) { return x ^ y; };
-var xorMonoid = hom(int32, xor, K(0));
+var xor = hom(bit, bit, bit)(function (x, y) { return x ^ y; });
+var xorMonoid = monoid(int32, xor, K(0));
 
-var add = hom(int32, int32, int32)function (x, y) { return x + y; };
-var addMonoid = hom(int32, add, K(0));
+var add = hom(int32, int32, int32)(function (x, y) { return x + y; });
+var addMonoid = monoid(int32, add, K(0));
+console.log(addMonoid[1]());
 
 // Monoid homomorphism: conversion from int32 to bit
-var parity = hom(int32, bit)function (n) { return n % 2; };
+var parity = hom(int32, bit)(function (n) { return n % 2; });
 
-// monoid function
+// Monoidal function
+// Inputs:
+//     m1 - source monoid
+//     m2 - target monoid
+//     f - transition function: m1 → m2
+// Outputs:
+//     {..} object
 var monFunc = function (m1, m2, f) {
     return {
-	// monoid type of monFunc is a function f with signature: m1.t --> m2.t
-	t: hom(m1.t, m2.t)(f),
-	'*': equalizer([
+	// monoid type of monFunc is a function f with signature: m1.t → m2.t
+	t: hom(m1.t, m2.t)(f), // function between contracts
+	'*': equalizer([ // equalizer returns 0th function from its input array
 	    function (x, y) { return f(m1['*'](x, y)); },
 	    function (x, y) { return m2['*'](f(x), f(y)); }
 	]),
 	1: equalizer([
+	    // this function returned
+	    // m1[1] is a guarded function returning returning 0;
+	    // m1[1]() is its application - i.e. 0-value
+	    // f(0) is a transformation of a function returning 0-element
 	    function () { return f(m1[1]()); },
+	    // function returning 0-element
 	    m2[1]
 	])
     };
 };
 
 
-// TODO from video #16 03:10
+// TODO from video #17
