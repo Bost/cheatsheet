@@ -28,10 +28,15 @@ Take one thing that's in the monoid, take another thing that's in the monoid, us
 
 var console = skewer;
 
+function stackTrace() {
+    var err = new Error();
+    return err.stack;
+}
 // object: guarding function - contract that alows only string
 var str = function (s) {
     var typeName = 'string';
     if (typeof s !== typeName) {
+	console.log(stackTrace());
 	throw new TypeError("typeof s: "+(typeof s)+ " must be "+typeName);
     } else {
 	return s;
@@ -41,6 +46,7 @@ var str = function (s) {
 // object: guarding function - (contract) asserts n is a signed 32-bit number
 var int32 = function (n) {
     if ((n | 0) !== n) {
+	console.log(stackTrace());
 	throw new TypeError("Expected a 32-bit integer.");
     }
     return n;
@@ -49,6 +55,7 @@ var int32 = function (n) {
 // object: guarding function - Natural number (int32 and nonnegative)
 var nat32 = function (n) {
     if ((n | 0) !== n || n < 0) {
+	console.log(stackTrace());
 	throw new TypeError("Expected a 32-bit natural.");
     }
     return n;
@@ -57,8 +64,9 @@ var nat32 = function (n) {
 // object: guarding function - a contract that allows anything
 var any = function (x) { return x; };
 
+var repeat;
 // morphism - i.e. a changes applied to s-value
-var repeat = function (s) {
+repeat = function (s) {
     s = str(s);
     return str(s+s);
 };
@@ -67,6 +75,7 @@ var typeOf = function (typeName) {
     typeName = str(typeName); // typeName itself must be a string
     return function(p) {
 	if (typeof p !== typeName) {
+	    console.log(stackTrace());
 	    throw new TypeError("typeof p: "+(typeof p)+ " must be "+typeName);
 	} else {
 	    return p;
@@ -95,6 +104,7 @@ var arr = function(a) {
     //                       the call-property exists for every function; use the a-value as the this-binden
     //                       when toString-function uses this-object, then this-object refers to a-object
     if ({}.toString.call(a) !== typeName) {
+	console.log(stackTrace());
 	throw new TypeError("typeof a: "+(typeof a)+ " must be "+typeName+ " (i.e. array)");
     } else {
 	return a;
@@ -151,6 +161,7 @@ var maybe = function (c) {
 	} else if (m instanceof Some) {
 	    return some(c(m.x)); // check if m.x is according to the c-contract and return a new Some-object
 	} else {
+	    console.log(stackTrace());
 	    throw new TypeError("Expected None or Some(value): "+ m); // TODO print the instace of m
 	}
     };
@@ -171,7 +182,6 @@ Maybe.prototype.getOrElse = function (x) {
 
 // console.log(maybe(repeat)(some("joe")).getOrElse("jane"));
 // console.log(maybe(repeat)(none).getOrElse("jane"));
-
 
 // functor does mapping between categories
 var twice = function (functor) {
@@ -321,6 +331,7 @@ var prodn = function (cs) {
     return function (args) {
 	arr(args);         // check if args is an array
 	if (len != args.length) {
+	    console.log(stackTrace());
 	    throw new TypeError("Arrays cs and args must have equal length. cs.length: "+len+", args.length: "+args.length);
 	}
 	var result = [];
@@ -382,11 +393,13 @@ var coprodn = function (cs) {
     return function (choice) {
 	arr(choice);               // choice-parameter is an array ..
 	if (choice.length != 2) {  // .. of two elements where ..
+	    console.log(stackTrace());
 	    throw new TypeError("Expected an array size of 2 instead of: "+choice.length);
 	}
 	var ch0 = choice[0], ch1 = choice[1];
 	nat32(ch0);          // .. the first element is a natural number and ..
 	if (ch0 >= len) {    // .. its value is an index to the cs-array of contracts
+	    console.log(stackTrace());
 	    throw new TypeError("Tag choice[0]: "+ch0+" must be < cs.length: "+len);
 	};
 	// .. which choses which contracts satisfies the 2nd element of the choice-parameter
@@ -409,11 +422,13 @@ var coprods = function (cs) {
     return function (choice) {
 	arr(choice);               // choice-parameter is an array ..
 	if (choice.length != 2) {  // .. of two elements where ..
+	    console.log(stackTrace());
 	    throw new TypeError("Expected an array size of 2 instead of: "+choice.length);
 	}
 	var ch0 = choice[0], ch1 = choice[1];
 	str(ch0);            // .. the first element is a string and ..
 	if (!cs.hasOwnProperty(ch0)) {  // hasOwnProperty(..) is provided
+	    console.log(stackTrace());
 	    throw new TypeError("Unknown tag choice[0]: "+ch0);
 	}
 	// .. which choses which contracts satisfies the 2nd element of the choice-parameter
@@ -453,6 +468,7 @@ var pbn = function (fs) {  // fs is an array of functions
 	var result = c(args);  // apply f to x, g to y etc. (i.e. compute f(x), g(y) etc.)
 	for (var i = 1; i < len; ++i) { // i strarts from 1
 	    if (result[i] !== result[i - 1]) {
+		console.log(stackTrace());
 		throw new TypeError("Failed to match pullback constraint");
 	    }
 	}
@@ -472,7 +488,8 @@ var slice = Function.prototype.call.bind(unboundSlice);
 // Homomorphism - allows us to write function without mentioning any contract in the body
 // Creates a contract for function whose inputs and outputs satisfy the given contracts.
 // in1, .., inN, out-arguments do not have to be contracts. They can be also guarded functions.
-var hom = function (/* in1, .., inN, out */) { // arbitrary-sized argument-array
+var hom;
+hom = function (/* in1, .., inN, out */) { // arbitrary-sized argument-array
     var argLen = arguments.length;
     // arguments is a special javascript stuff. It's an array-like Object (Arguments-Object)
     // It isn't standart object, but has nummeric indices like an array
@@ -501,14 +518,40 @@ var hom = function (/* in1, .., inN, out */) { // arbitrary-sized argument-array
     return outContractCommented;
 };
 
+hom = function (/* input1, .. inputN, out */) {
+    var argLen = arguments.length;
+    var before = prodn(arrOf(func)(slice(arguments, 0, argLen - 1)));
+    var after = func(arguments[argLen - 1]);
+    var result = function (middle) {
+	var result = function(varArgs) {
+	    // console.log("va:"+varArgs);
+	    // if (args.length !== argLen - 1 ) {
+	    //	console.log(stackTrace());
+	    //	throw new TypeError('args.length !== argLen - 1: '+args.length+' !== '+(argLen-1));
+	    // }
+	    return after(                             // 4. check result of step 3. against after contract
+		middle.apply(this,                    // 3. calculate this.middle(varArgs)
+			     before(                  // 2. check the array-object against the before-contract
+				 slice(arguments)))); // 1. create an array-object
+	};
+	result.toString = (function (str) {   // result.toString is a function with one str-argument
+	    return function () {              // that returns a function
+		return str + '/* guarded */'; // returning str + comment
+	    };
+	})('' + middle);
+	return result;
+    };
+    return result;
+};
+
 // fnBefore and fnAfter get applied before and after the middle-function.
 // (see Aspect-Oriented Programming). They can be any functions (see definition), not just contracts
 var fnBefore = int32, fnAfter = str;
-var repeat = hom(fnBefore, fnAfter)(function middle(i) {
+repeat = hom(fnBefore, fnAfter)(function middle(i) {
     return (''+ i + i);
 });
 
-var one = hom(int32)(function () {  // no input params, int32 is output-contract
+var one = hom(int32)(function () { // no input params, int32 is output-contract
     return;
 });
 
@@ -557,6 +600,7 @@ var testAssoc = function (mon, a, b, c) {
     var op = mon['*'];
     // (a * b) * c === a * (b * c);
     if (op(op(a, b), c) !== op(a, (op(b, c)))) {
+	console.log(stackTrace());
 	throw new TypeError("The operation is not assoctiative: "+op);
     }
 };
@@ -658,6 +702,7 @@ var upto = hom(int32, arrOf(int32))(function (x) {
 var equalizer = function(fs) {
     var len = fs.length;
     if (len < 1) {
+	console.log(stackTrace());
 	throw new TypeError('fs.lenght must be > 0');
     }
     return function (x) {
@@ -697,6 +742,7 @@ var square = hom(nat32, nat32)(function (n) {
 
 var bit = function (b) {
     if (b !== 0 && b !== 1) {
+	console.log(stackTrace());
 	throw new TypeError('Expected 0 or 1 instead of: '+b);
     }
     return b;
@@ -716,9 +762,9 @@ var xorMonoid = monoid(int32, xor, K(0));
 
 var add = hom(int32, int32, int32)(function (x, y) { return x + y; });
 var addMonoid = monoid(int32, add, K(0));
-console.log(addMonoid[1]());
+// console.log(addMonoid[1]());
 
-// Monoid homomorphism: conversion from int32 to bit
+// Monoid homomorphism: conversion from int32 to bit; a guarded function between two set of values
 var parity = hom(int32, bit)(function (n) { return n % 2; });
 
 // Monoidal function
@@ -728,6 +774,8 @@ var parity = hom(int32, bit)(function (n) { return n % 2; });
 //     f - transition function: m1 → m2
 // Outputs:
 //     {..} object
+// nomFunc can act as a guarded function between monoids
+// or as a monoid if f is an identity function
 var monFunc = function (m1, m2, f) {
     return {
 	// monoid type of monFunc is a function f with signature: m1.t → m2.t
@@ -748,5 +796,134 @@ var monFunc = function (m1, m2, f) {
     };
 };
 
+var monHom = function (before,  after) {
+    // monHom return a new guarded function between before- and after-monoid (i.e. contracts)
+    return function (middle) {
+	return {
+	    t: hom(before.t, after.t)(middle.t),
+	    '*': hom(before.t, before.t, after.t)(middle['*']),
+	    1: hom(after.t)(middle[1])
+	};
+    };
+};
 
-// TODO from video #17
+var leq = function (pair) {
+    prodn([num, num])(pair);         // check that pair is an array of two numbers
+    var x = pair[0], y = pair[1];
+    if (x > y) {
+	throw new TypeError('' + x + ' must be less or equal than '+ y);
+    }
+    return pair;
+};
+
+// Any partial order can be turned into a category: Examples with leq and div
+// It's a category where there is at most one morphism between any two objects
+
+// leqHom compose the less-or-equal statements
+var leqHom = function (before, after) {
+    leq(before); leq(after); // check that before and after are pairs
+    return function (middle) {
+	leq(middle);
+	if (before[1] !== middle[0]) {
+	    throw new TypeError('Expected '+middle[0]);
+	}
+	if (middle[1] !== after[0]) {
+	    throw new TypeError('Expected '+after[1]);
+	}
+	return [before[0], after[1]];
+    };
+};
+
+// console.log(leqHom([3,5], [7,9])([5,7]));  // 3 ≤ 5 ≤ 7 ≤ 9
+
+var div = function (pair) {
+    prodn([nat32, nat32])(pair);
+    // var x = pair[0], y = pair[1];
+    if ((y / x) % 1 !== 0) {
+	throw new TypeError(x + ' does not divide ' + y);
+    }
+    return pair;
+};
+
+var divHom = function (before, after) {
+    div(before); div(after);
+    return function (middle) {
+	div(middle);
+	if (before[1] !== middle[0]) {
+	    throw new TypeError('Expected '+middle[0]);
+	}
+	if (middle[1] !== after[0]) {
+	    throw new TypeError('Expected '+after[0]);
+	}
+	return [before[0], after[1]];
+    };
+};
+// console.log(divHom([3,6], [12,24])([6,12]));  // 3 | 6 | 12 | 24 ⇒ 3 | 24
+
+// Category takes a c-contract for the morphisms
+// No loss of informations - we can think of the objects as the identity morphisms
+// all we need to know what a morphism is and how to compose morphisms
+var category = function (c, cHom) {
+    return prods({
+	// c is a contract-function
+	c: func,
+	// cHom takes before-contract, after-contract and returns a function
+	// that expects a middle and produces a composition of it
+	cHom: hom(c, c, hom(c, c))
+    })({
+	c: c,
+	cHom: cHom
+    });
+};
+
+var LEQ = category(leq, leqHom);
+var DIV = category(div, divHom);
+
+var guard = function (triple) {
+    return prodn([func, func, hom(triple[0], triple[1])])(triple);
+    //             |     |    +-- function going from input contract to output contract
+    //             |     +------- input contract
+    //             +------------- output contract
+};
+
+// casting contract and guarded functions in this form
+var guardHom = function (triple) {
+    before = guardFunc(before);
+    after = guardFund(after);
+    return function (middle) {
+	middle = guardFunc(middle);
+	return function (x) {
+	    return [before[0],
+		    after[1],
+		    after[2](                // 3. apply after[2] on result of 2.
+			middle[2](           // 2. apply middle[2] on result of 1.
+			    before[2](x)))   // 1. apply before[x] on x
+	    ];
+	};
+    };
+};
+
+var GUARD = category(guardFunc, guardHom);
+
+var repeat = function (n) {
+    return '' + n + n;
+};
+
+var len = function (a) {
+    return a.Length;
+};
+
+var half = function (s) {
+    return s.length/4;
+};
+
+var gLen = guard([arr, int32, len]);
+var gRepeat = guard([int32, str, repeat]);
+var gHalf = guard([str, int32, half]);
+
+// gLen: arr → int32          // before
+// gRepeat: int32 → str       // middle
+// gQuarter: str → int32      // after
+guardHom(gLen, gQuarter)(gRepeat);
+
+// TODO from video #18
