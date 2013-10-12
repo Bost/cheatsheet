@@ -129,25 +129,31 @@ http://www.gametheory.net/
 
     TODO Pointed Sets and Pointed Functions
 
-    Curry - Howard Isomorphism (1-to-1 and keeps all properties):
-
-    | Logic            =>                    | <= Type Theory                                                       |
-    |----------------------------------------+----------------------------------------------------------------------|
-    | proposition                            | contract                                                             |
-    | (somethins is true)                    | (pics out a set of values that passes the contract)                  |
-    | proof                                  | guarded fn                                                           |
-    |----------------------------------------+----------------------------------------------------------------------|
-    | P implies Q: P -> Q (i.e. there ∃ one) | paricular fn of fn of P-contract to guarded fn of Q-contract: P -> Q |
-    | → is constructive implication          | → is function from-to                                                |
-    | false → false (implies)                | {}  → {}  no values (empty set); contract cannot be satisfied        |
-    | false → true                           | {}  → {.} (one element set)                                          |
-    | true  → true                           | {.} → {.} (identity function)                                        |
-    | true  ↛ false (does not implie)        | {.} ↛ {}                                                             |
+* Curry-Howard Isomorphism: Logic ⇔ Type Theory (1-to-1 and keeps all properties):
+  Direct relationship between computer programs and mathematical proofs;
+  Link between Computation and Logic;
+  Proofs-as-programs and propositions- or formulae-as-types interpretation;
+  Proofs can be run;
+  Typed lambda calculi derived from the Curry–Howard paradigm led to software like Coq;
+  Curry-Howard correspondence might lead to unification between mathematical logic and foundational computer science;
+  Popular approach: use monads to segregate provably terminating from potentially non-terminating code
+    | Logic                             ⇒   | ⇐                          Type Theory                             |
+    |---------------------------------------+----------------------------------------------------------------------|
+    | proposition                           | contract                                                             |
+    | (somethins is true)                   | (pics out a set of values that passes the contract)                  |
+    | proof                                 | guarded fn                                                           |
+    |---------------------------------------+----------------------------------------------------------------------|
+    | P implies Q: P → Q (i.e. there ∃ one) | paricular fn of fn of P-contract to guarded fn of Q-contract: P -> Q |
+    | → is constructive implication         | → is function from-to                                                |
+    | false → false (implies)               | {}  → {}  no values (empty set); contract cannot be satisfied        |
+    | false → true                          | {}  → {.} (one element set)                                          |
+    | true  → true                          | {.} → {.} (identity function)                                        |
+    | true  ↛ false (does not imply)        | {.} ↛ {}                                                             |
 
 
 *** Quadruple: CAT = (O, hom, id, ◦) consisting of
     O  : class of CAT-objects: Ob(A); e.g. A,B are CAT-objects
-    hom: set (?or class?) of CAT-morphisms: hom(A, B) = {f | f: A -> B } (e.g. arrows)
+    hom: set (?or class?) of CAT-morphisms: hom(A, B) = {f | f: A → B } (e.g. arrows)
     (class of all CAT-morphisms: Mor(CAT) = Union of all sets hom(A,B) in CAT)
     id : set of identity morphisms for every CAT-obj
     ◦  : morphism composition: hom(a, b) × hom(b, c) → hom(a, c): g ◦ f; it's a partialy binary operation on Mor(CAT::)
@@ -177,7 +183,6 @@ Monoidal functors:    a functor between categories that preserves the monoidal s
 Monoidal monad:       ???
 
 *** Contract == Object
-
 
 *** Product: examples:
     Objects   - numbers
@@ -210,12 +215,12 @@ Monoidal monad:       ???
    of mathematical truth.
 
 
+
 * Mappings: X -> Y (Zobrazenia):
 ** Surjection: every elem in Y is "used";                           |X| ≥ |Y| (onto; "at least as big")
 ** Injective:  distinct Xs -> distinc Ys;                           |X| ≤ |Y| (? one-to-one ?)
 ** Bijection:  exact pairing between X, Y;                          |X| = |Y| (vzajomne jednoznacne zobrazenie, "same size")
 ** Strict:     Surjection from X to Y but no bijection from Y to X; |X| < |Y| (? double usage of some Ys ?, "strictly bigger")
-
 
 * Probability:
 ** Probability rules:
