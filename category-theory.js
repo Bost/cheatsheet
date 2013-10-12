@@ -593,6 +593,17 @@ var monoid = function (set,      // contract for a set of elements (values)
     });
 };
 
+// Categorification:
+// process of weakening structure (weakening equalities down to natural isomorphisms)
+// is categorification
+// var monX = monoid(  // it's almost a monoid
+//    // elements of this monoid would be contracts; We went: element → object
+//     func,
+//     // functions → functors
+//     function (x, y) { return prodn([x, y]); }, // this is not associative
+//     function () { return prodn([]); }
+// );
+
 var testAssoc = function (mon, a, b, c) {
     a = mon.t(a);
     b = mon.t(b);
