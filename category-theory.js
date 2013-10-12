@@ -876,27 +876,29 @@ var category = function (c, cHom) {
     });
 };
 
-var LEQ = category(leq, leqHom);
-var DIV = category(div, divHom);
+var LEQ = category(leq, leqHom); // LEQ is a category
+var DIV = category(div, divHom); // DIV is a category
 
-var guard = function (triple) {
+// guardFunc is a contract
+var guardFunc = function (triple) {
     return prodn([func, func, hom(triple[0], triple[1])])(triple);
-    //             |     |    +-- function going from input contract to output contract
+    //             |     |    +-- function going from input contract to output contract (guarded function mapping)
     //             |     +------- input contract
     //             +------------- output contract
 };
 
 // casting contract and guarded functions in this form
-var guardHom = function (triple) {
+var guardHom = function (before, after) {
     before = guardFunc(before);
-    after = guardFund(after);
+    after = guardFunc(after);
     return function (middle) {
 	middle = guardFunc(middle);
 	return function (x) {
-	    return [before[0],
-		    after[1],
-		    after[2](                // 3. apply after[2] on result of 2.
-			middle[2](           // 2. apply middle[2] on result of 1.
+	    return [
+		before[0],
+		after[1],
+		after[2](                // 3. apply after[2] on result of 2.
+		    middle[2](           // 2. apply middle[2] on result of 1.
 			    before[2](x)))   // 1. apply before[x] on x
 	    ];
 	};
@@ -913,17 +915,87 @@ var len = function (a) {
     return a.Length;
 };
 
-var half = function (s) {
+var quarter = function (s) {
     return s.length/4;
 };
 
-var gLen = guard([arr, int32, len]);
-var gRepeat = guard([int32, str, repeat]);
-var gHalf = guard([str, int32, half]);
+var gLen = guardFunc([arr, int32, len]);
+var gRepeat = guardFunc([int32, str, repeat]);
+var gQuarter = guardFunc([str, int32, half]);
 
 // gLen: arr → int32          // before
 // gRepeat: int32 → str       // middle
 // gQuarter: str → int32      // after
 guardHom(gLen, gQuarter)(gRepeat);
 
+// monoid-contract for monoid homomorphisms
+var monFunc = function (triple) {
+    var msrc = prods({
+	t: func,
+	'*': hom(triple[0].t, triple[0].t, triple[0].t),
+	1: hom(triple[0].t)
+    })(triple[0]);
+    var mtgt = prods({
+	t: func,
+	'*': hom(triple[1].t, triple[1].t, triple[1].t),
+	1: hom(triple[1].t)
+    })(triple[1]);
+    var mh = hom(triple[0].t, triple[1].t)(triple[2]);
+    return [msrc, mtgt, mh];
+};
+
+var monHom = function (before, after) {
+    before = monFunc(before);
+    after = monFunc(after);
+    return function (middle) {
+	middle = monFunc(middle);
+	return function (x) {
+	    return [
+		before[0],
+		after[1],
+		after[2](            // 3.
+		    middle[2](       // 2.
+			before[2]))  // 1.
+	    ];
+	};
+    };
+};
+
+var MON = category(monFunc, monHom); // monoids with monoid homomorphism between them
+
+// individual monoids themselves give category
+var addHom = function (before, after) {
+    before = num(before);
+    after = num(after);
+    return function (middle) {
+	middle = num(middle);
+	return after + middle + before;
+    };
+};
+var ADD = category(num, addHom);
+
+var multHom = function (before, after) {
+    before = num(before);
+    after = num(after);
+    return function (middle) {
+	middle = num(middle);
+	return after * middle * before;
+    };
+};
+var MULT = category(num, multHom);
+
+var fromMonoid = function (m) { // create category form m-monoid
+    return category(
+	m.t,
+	function (before, after) {
+	    before = m.t(before);
+	    after = m.t(after);
+	    return function (middle) {
+		middle = m.t(middle);
+		return m['*'](after, (m['*'](middle, before)));
+	    };
+	};
+    );
+};
+console.log('Compiled & executed');
 // TODO from video #18
