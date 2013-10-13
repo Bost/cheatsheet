@@ -1049,14 +1049,69 @@ var lazyFlatten = function (lazyLazyX) {
 // in fact lazyMon is a monoidal monad
 var lazyMon = monad(lazy, lazyLift, lazyFlatten);
 
+var ex = function (v) {
+    return str('------'+v+'------'); // eats up a lot of memory
+};
+var ey = function (v) {
+    return int32(1000 * v);  // takes a long time
+};
 // lazy(prodn([x, y, .. ])) → prodn([lazy(x), lazy(y), .. ])
-var lazyPhi = function (lazyProd) {
-    // Invoke the lazy prod to get theactual pro d, then delay each element
-    return arr(lazyProd()).map(lazyLift);
+
+var lazyProd = function (arrLazyC) {
+    // Invoke the lazy prod to get the actual prod, then delay each element
+    arrLazyC = arr(arrLazyC);   // execute lazyProd and check that the result is an array
+    return function (args) {
+	var result = [];
+	for (var i = 0; i < arrLazyC.length; i++) {
+	    result[i] = arrLazyC[i]()(args[i]);
+	}
+	return result;
+    }
+
+    //return arr(lazyProd()).map(lazyLift);
     // return arr(lazyProd()).mapClean(lazyLift);
 };
+// console.log(prodn([ex, ey])(['joe', 4]));
+// console.log(lazyPhi([lazy(ex), lazy(ey)])(['joe', 4]));
 
+
+// console.log(ex('foo'));             // computes & prints: '------foo------'
+// console.log(ey(2));                 // computes & prints: 2000
+// console.log(''+lazyLift(ex('bar')));    // prints a guarded function that works with param: 3; does no computation
+// console.log(''+lazyLift(ey(3)));        // prints a guarded function that works with param: 'bar': does no computation
+// console.log(''+lazyLift(ex('bar'))()); // computes & prints: '------bar------'
+// console.log(''+lazyLift(ey(3))());     // computes & prints: 3000
+
+// console.log(''+lazyLift(prodn([ex, ey])(['joe', 4])));
+// console.log(''+prodn([lazyLift, lazyLift])([ex('zee'), ey(4)]));
+// console.log(''+lazyProd(prodn([lazyLift, lazyLift])([ex('zee'), ey(4)]))());
+// console.log(''+lazyProd([   lazyLift(ex('zee')), lazyLift(ey(4)) ]));
+console.log(''+lazyProd([lazyLift(ex), lazyLift(ey)])  (['zee', 4])  );
+// console.log(''+prodn([lazyLift(ex('zee')), lazyLift(ey(4))]));
+
+// console.log(prodn([ex, ey])(['joe', 4]));  // computes & prints: ["------joe------", 4000]
+
+// prints guarded function that works with two params: "joe,4/* guarded */"
+// console.log(''+lazy(prodn([ex, ey]))(['joe', 4]));
+
+// prints two guarded functions: "joe/* guarded */,4/* guarded */"
+// console.log(''+prodn([lazy(ex), lazy(ey)])(['joe', 4]));
+
+// lazy(prodn([x, y, .. ])) → prodn([lazy(x), lazy(y), .. ])
+// console.log(lazyLift(prodn([ex, ey])));    // returns a lazyLifted product-function; does not execute anything
+// console.log(lazyLift(prodn([ex, ey])(['joe', 4])));    // returns a lazyLifted product-function; does not execute anything
+// console.log(lazyLift(prodn([ex, ey])(['joe', 4]))());  // applies lazyLifted product-function i.e. executes expensive computations
+// console.log(prodn([ex, ey])(['joe', 4]));
+// console.log(prodn([lazy(ex), lazy(ey)])(['joe', 4])); // [joe/* guarded */, 4/* guarded */]
+// console.log(lazy(prodn([ex, ey]))(['joe', 4]));       // joe,4/* guarded */
+// console.log(lazyLift(prodn([ex, ey])(['joe', 4])));
+
+// console.log(lazyPhi(lazy(prodn([ex, ey]))(['joe', 4])));
+
+
+
+// console.log(        lazyPhi(lazyLift(prodn([ex, ey])))      );    // returns a function; does not execute anything
 
 // lazy together with lazyPhi get a monoidal functor
-console.log('Compiled & executed');
+// console.log('Compiled & executed');
 // TODO lazy stuff - video #24 - monoidal functors
