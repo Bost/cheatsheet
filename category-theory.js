@@ -932,7 +932,7 @@ var quarter = function (s) {
 
 var gLen = guardFunc([arr, int32, len]);
 var gRepeat = guardFunc([int32, str, repeat]);
-var gQuarter = guardFunc([str, int32, half]);
+var gQuarter = guardFunc([str, int32, quarter]);
 
 // gLen: arr → int32          // before
 // gRepeat: int32 → str       // middle
@@ -1005,8 +1005,58 @@ var fromMonoid = function (m) { // create category form m-monoid
 		middle = m.t(middle);
 		return m['*'](after, (m['*'](middle, before)));
 	    };
-	};
+	}
     );
 };
+
+// functor definition: c-contract goes in and a contract-function is returned
+var functor = function (c) {
+    return function (x) {
+	// do something involving x and c
+	return x;
+    };
+};
+
+
+// monoidal functor should preserve the multiplication
+
+// Natural isomorphism:
+//    functor(prodn([x, y, .. ])) → prodn([functor(x), functor(y), .. ])
+//    1. multiply, 2. apply functor → 1. apply functor, 2. multiply
+// these two application are not (absolutely) equal;
+// they are equal in monoid homomorphism
+
+
+// Example of a monoidal functor, the "points" functor.
+var lazy = function (c) {
+    // Restrict hom to a single argumet, i.e.: terminal → c
+    // return a function that expects no input and passes the c-contract
+    // hom(c) is called points-of-c; if c is a set then the set of functions from
+    // the one element set into c is isomorphic to c itself
+    return hom(c);
+};
+
+
+// K is a constant function returning a function of x:
+var lazyLift = K;   // also called unit
+
+var lazyFlatten = function (lazyLazyX) {
+    return lazyLazyX();
+};
+// lazyMon is a monad because:
+// - objects are functors
+// - morphism is a natural transformation. i.e. maps between functors
+// in fact lazyMon is a monoidal monad
+var lazyMon = monad(lazy, lazyLift, lazyFlatten);
+
+// lazy(prodn([x, y, .. ])) → prodn([lazy(x), lazy(y), .. ])
+var lazyPhi = function (lazyProd) {
+    // Invoke the lazy prod to get theactual pro d, then delay each element
+    return arr(lazyProd()).map(lazyLift);
+    // return arr(lazyProd()).mapClean(lazyLift);
+};
+
+
+// lazy together with lazyPhi get a monoidal functor
 console.log('Compiled & executed');
-// TODO from video #18
+// TODO lazy stuff - video #24 - monoidal functors
