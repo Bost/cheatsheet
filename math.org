@@ -275,3 +275,19 @@ Monotonicity: If A ⊆ B then P(A) <= P(B)
 
 ** A posteriori conditional probability P(B ∣ A) = P(A ∩ B) / P(B):
    if event B precedes event A in time. Example: The probability it was cloudy this morning, given that it rained in the afternoon.
+
+
+#+begin_src clojure
+(defn x[] (+ 1 2)
+(x)
+#+end_src
+
+Bodil Stokke
+* presentation in emacs
+* building own lisp (own unicode chars
+* instaparse by Mark Engelbers (project.clj - clojars; )
+  - :require instaparse.core as insta ...
+(def p (insta/parser ""))
+
+  - vsadepritomne ako regexps
+    EBNF extended BNF (Backchus Naur Format)`
