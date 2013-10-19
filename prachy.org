@@ -1,0 +1,24 @@
+Debt
+    Bond - Verzinsliches Wertpapier - Dlhopis
+
+Asset - Vermoegen
+Liability - Verbindlichkeit - Pasiva
+
+Equity - Eigenkapital
+    Stock
+    Stock price = Share price (kurz cenneho papiera)
+
+Share - Aktie
+    E / S = Share price
+Market cap(italization) - Marktkapitalisierung - Trzna hodnota
+
+EPS - Earnings Per Share
+
+ROA - Return On Asset = PreTax / Asset
+
+ROE - Return on Equity = NetIncome / Equity
+
+Book Value per Share = ... / Equity
+Market Value per Share = ... / Equity
+
+P/E = Price / Earnings
