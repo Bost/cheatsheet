@@ -117,6 +117,7 @@ http://www.gametheory.net/
 ** Fundamental Theorem of Arithmetics: Every positive integer n can be written in a unique way as a product of primes.
 
 
+Russells paradox - Barbiers dilema
 * Morphisms:
 ** Category is:
     A collection of arrows and morphism that can be composed if they are adjacent.
