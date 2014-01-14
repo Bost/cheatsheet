@@ -278,10 +278,12 @@ Monotonicity: If A ⊆ B then P(A) <= P(B)
    if event B precedes event A in time. Example: The probability it was cloudy this morning, given that it rained in the afternoon.
 
 
-#+begin_src clojure
-(defn x[] (+ 1 2)
+#+BEGIN_SRC clojure
+(defn x[] (+ 1 2))
 (x)
-#+end_src
+#+END_SRC
+
+#(reduce * (range 1 (inc %)))
 
 Bodil Stokke
 * presentation in emacs
