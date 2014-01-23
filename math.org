@@ -294,3 +294,10 @@ Bodil Stokke
 
   - vsadepritomne ako regexps
     EBNF extended BNF (Backchus Naur Format)`
+
+* Group = set of elements with an operation (formalization of symetry concept) multiplication with properties:
+  neutral element: e - identity
+  inverse element: x-inverse (dual obj) x * x-inverse = x-inverse * x = e
+  associativity: (x * y) * z = x * ( y * z)
+  closure: a and b and a*b must be membembers of the same group
+  comutativity is not a part of the group definition: x * y = y * x
