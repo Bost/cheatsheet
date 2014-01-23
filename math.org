@@ -191,7 +191,7 @@ Monoidal monad:       ???
 
 * Tensor: most general bilinear operation; Notation ⊗
 * Isomorphism f: X -> Y
-  ∃ fn g: Y → X such that g ∘ f = idX and f ∘ g = idY
+  ∃ fn g: Y → X such that g ∘ f = idX and f ∘ g = idY; idX, idY are identity morphisms of X, Y
   (f is invertible and g is the inverse of f)
 
 ** Category theory - Modeling (new vocabulary)
@@ -301,3 +301,5 @@ Bodil Stokke
   associativity: (x * y) * z = x * ( y * z)
   closure: a and b and a*b must be membembers of the same group
   comutativity is not a part of the group definition: x * y = y * x
+
+Simplices - analogs of triangles in higher dimensions
