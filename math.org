@@ -303,3 +303,8 @@ Bodil Stokke
   comutativity is not a part of the group definition: x * y = y * x
 
 Simplices - analogs of triangles in higher dimensions
+
+* Homology - higher dimensional analogues for studying loops = (alternative to) Homotopy groups
+* Fundamental group π₂ - "loops of loops" (loops around sphere - captuers 2-dimensional hole in the sphere)
+  πₙ(S-k-upper-index) Homotopy group exists even if n > k; measuring higher dimensional holes in k dimensional sphere
+  "Patri" - containment relation
