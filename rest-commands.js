@@ -148,6 +148,8 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
+['netstat -a | find "LISTENING"',                                                  '# windows: open ports'],
+['netstat -lnptu',                                                                 '# linux: open ports'],
 ['db2cmd -i -w db2clpsetcp',                                                       '# db2: init environment'],
 ['echo %DB2CLP%',                                                                  '# db2: windows: '],
 ['db2 get connection state',                                                       '# db2: '],

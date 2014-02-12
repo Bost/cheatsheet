@@ -6,7 +6,7 @@ var jsonEmacs = [
 ['C-&lt;right&gt; / C-&lt;left&gt;','; paredit: slurp (vcucni) / barf (vygrcaj) sexp'],
 ['M-r',                             '; paredit: replace parent with the child'],
 ['C-u -4 C-x TAB',                  '; indent: move text left by four spaces (M-x indent-rigidly is C-x TAB)'],
-['\#',                              '; regexp: increment the number found'],
+['\\#',                             '; regexp: increment the number found'],
 ['M-x describe-char',               '; unicode: describe char at the point'],
 ['M-x ucs-insert RET 2211',         '; unicode: insert unicode char U+2211 ∑'],
 ['M-x hs-minor-mode, C-c @ C-c',    '; folding: enable folding, fold / unfold'],
@@ -126,19 +126,16 @@ var jsonEmacs = [
 ['C-x C-e',                         '; repeat last command'],
 ['M-p',                             '; reprint last command to the REPL'],
 
-['\sr',                             '; start REPL'],
-['\sR',                             '; start interactive REPL initialized to have same namespace as current buffer'],
+['\\sr',                            '; start REPL'],
+['\\sR',                            '; start interactive REPL initialized to have same namespace as current buffer'],
 
-['\si',                             '; prompt for input and lookup with (source)'],
-['\fd',                             '; prompt for input and lookup with (find-doc)'],
+['\\si',                            '; prompt for input and lookup with (source)'],
+['\\fd',                            '; prompt for input and lookup with (find-doc)'],
 
 ['&nbsp;','&nbsp;'],
 
-['\el',                             '; eval current line'],
-['\ef',                             '; eval current file'],
-['\eb',                             '; eval current current visual block selected'],
-['\et',                             '; send a function to the REPL'],
-['\p',                              '; close a window'],
+['\\el / \\ef / \\eb / \\et',       '; eval current line / file / selected visual block / function'],
+['\\p',                             '; close a window'],
 
 ['&nbsp;','&nbsp;'],
 
