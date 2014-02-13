@@ -167,7 +167,7 @@ var jsonRest = [
 ['mysql show tables in dbaseName',                                                 '# mysql: '],
 ['mysql show columns in tableName',                                                '# mysql: describe table'],
 ['/usr/bin/mysqld_safe &amp;',                                                     '# mysql: cygwin: server start'],
-['@C:\\path\\to\\script.sql',                                                      '# sql: oracle: execute script.sql'],
+['@C:\\path\\to\\script.sql',                                                      '# oracle: execute script.sql'],
 
 
 ['&nbsp;','&nbsp;'],
