@@ -165,6 +165,7 @@ var jsonRest = [
 
 ['mysql select * from mantis.state_mantis_id limit 10',                            '# mysql: '],
 ['mysql show tables in dbaseName',                                                 '# mysql: '],
+['mysql show columns in tableName',                                                '# mysql: describe table'],
 ['/usr/bin/mysqld_safe &amp;',                                                     '# mysql: cygwin: server start'],
 ['@C:\\path\\to\\script.sql',                                                      '# sql: oracle: execute script.sql'],
 
