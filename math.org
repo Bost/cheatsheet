@@ -96,13 +96,21 @@ http://www.gametheory.net/
   Each players best response to the others
   Nobody has an incentive to deviate from their actions if an equilibrum is played
 
+  Pareto Efficiency - whenever all agents agree on ordering of outcomes the social welfare function selects that ordering
+  Independence of Irrelevant Alternatives - if the selected ordering between two outcomes depends only on the relative ordering they are given by the agents
+  Dictator - single agent whose preferencies always determine the social ordering
+  Arrows Theorem - any social welfare function that is pareto efficient and independent of irrelevant alternatives is dictatorial
+
 * TODO
 1. write down action profiles for everyone (the matrix) and calculate optimal mixed strategies for everyone in order to get NE
 2. Calculate maxmin strategy and maxmin value (i.e. when the other guys do max harm the i-guy)
+
 ** games beyond 2x2 (See the 2-4 Hardness lecture):
    Linear Complementarity formulation
    Support Enumeration Method
+
 * Go over the book from the Prof. from Karlsruhe
+
 * Higher order logic
 
 
@@ -295,6 +303,7 @@ Bodil Stokke
   - vsadepritomne ako regexps
     EBNF extended BNF (Backchus Naur Format)`
 
+
 * Group = set of elements with an operation (formalization of symetry concept) multiplication with properties:
   neutral element: e - identity
   inverse element: x-inverse (dual obj) x * x-inverse = x-inverse * x = e
@@ -302,9 +311,27 @@ Bodil Stokke
   closure: a and b and a*b must be membembers of the same group
   comutativity is not a part of the group definition: x * y = y * x
 
+* TODO definitions
+** Poset (Partialy Ordered Set)
+** Top (Topological Space)
+** eval, exponent in Category Theory
+** Propositional Logic
+
+
 Simplices - analogs of triangles in higher dimensions
 
 * Homology - higher dimensional analogues for studying loops = (alternative to) Homotopy groups
 * Fundamental group π₂ - "loops of loops" (loops around sphere - captuers 2-dimensional hole in the sphere)
   πₙ(S-k-upper-index) Homotopy group exists even if n > k; measuring higher dimensional holes in k dimensional sphere
   "Patri" - containment relation
+
+* Cartesian Closed Category CCC:
+** it has products for any pair of objects: A x B
+** it has exponentials for any pair of objects B^A
+** it has terminal object 1 (Exists unique map A -> 1) (dual is initial object)
+   i.e. any one-element set (= singleton) is terminal 
+   DTTO for poset 1 is such an object that any other object is below it
+
+* Universal Mapping Property - UMP
+
+* Beta Etha reduction
