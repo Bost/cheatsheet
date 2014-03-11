@@ -137,6 +137,9 @@ var jsonRest = [
 ['cvs tag -b    -r 1.19 BranchTag path/to/file.ext', '# cvs: create BranchTag on   file.ext in version 1.19'],
 ['cvs tag    -F -r 1.63 NormalTag path/to/file.ext', '# cvs: move   NormalTag to   file.ext in version 1.63'],
 
+['cvs log file.java',                             '# cvs: version and tags'],
+['cvs status -v file.java',                       '# cvs: version and tags'],
+
 ['&nbsp;','&nbsp;'],
 
 ['ssh-keygen',                                    '# github: ssh: '],
@@ -149,6 +152,9 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
+['net use',                                                                        '# windows: net: list mapped network drives'],
+['net use P: \\\\server\\path',                                                    '# windows: net: map P: as a network drive for \\\\sever\\path'],
+['net use P: /delete',                                                             '# windows: net: unmap P:'],
 ['netstat -a | find "LISTENING"',                                                  '# windows: open ports'],
 ['netstat -lnptu',                                                                 '# linux: open ports'],
 ['db2cmd -i -w db2clpsetcp',                                                       '# db2: init environment'],
@@ -183,13 +189,17 @@ var jsonRest = [
 ['',                                                                    '# linux: ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade'],
 ['sudo restart lightdm / gdm / kdm',                                    '# linux: ubuntu: (ubuntu 11.10 or later), gnome or KDE'],
 ['sudo touch /forcefsck',                                               '# linux: run fsck on next reboot'],
+
 ['&nbsp;','&nbsp;'],
 
+['sha1sum -c file.sha1',                                                '# sha1: read SHA1 sums from the file.sha1 and check them'],
+['/usr/bin/digest -a sha1',                                             '# solaris: sha1 checksum'],
 ['/usr/sfw/bin/wget',                                                   '# solaris: wget'],
 ['/usr/ucb/ps -auxww',                                                  '# solaris: ps: full command line (needs: sudo rootsh -i -u ... )'],
 ['psrinfo',                                                             '# solaris: displays information about processors'],
 ['jar tf file.jar',                                                     '# jar: list files in file.jar'],
-['jar xf file.jar path/inside.txt && cat path/inside.txt',              '# jar: show content of a file inside a jar file'],
+['jar xf file.jar path/inside.txt && cat path/inside.txt',              '# jar: extract inside.txt from file.jar and show its content. inside.txt stays extracted'],
+['unzip -p file.jar path/inside.txt',                                   '# jar: unzip: show content of a file inside a file.jar'],
 ['xfce4-session-logout',                                                '# xfce: logout'],
 ['xfce4-keyboard-settings' ,                                            '# xfce: keyboard'],
 ['gnome-session-quit / ',                                               '# linux: gnome: logout from CLI'],
@@ -199,7 +209,6 @@ var jsonRest = [
 ['$ssh-copy-id user@host',                                              '# ssh: copy ssh keys to user@host to enable password-less ssh logins'],
 ['sshfs name@server:/path/to/folder /path/to/mount/point',              '# ssh: mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Will allow you to mount a folder security over a network'],
 
-['net use',                                                             '# windows: list mapped network drives'],
 ['xmllint',                                                             '# xml: command line XML tool (formating)'],
 ['lein deps :tree',                                                     '# lein: show leiningen dependency tree'],
 ['[the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]',          '# lein: try to put it to project.clj in case of \'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath\''],
