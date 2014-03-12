@@ -161,7 +161,7 @@ var jsonRest = [
 ['echo %DB2CLP%',                                                                  '# db2: windows: '],
 ['db2 get connection state',                                                       '# db2: '],
 ['db2 CATALOG TCPIP NODE $node_name REMOTE $ip_addr SERVER $port',                 '# db2: '],
-['db2 CATALOG DATABASE $database_name at NODE $node_name AUTHENTIFICATION SERVER', '# db2: '],
+['db2 CATALOG DATABASE $database_name AT NODE $node_name AUTHENTICATION server',   '# db2: '],
 ['db2 UNCATALOG NODE $node_name',                                                  '# db2: '],
 ['db2 UNCATALOG DATABASE $database_name',                                          '# db2: '],
 ['db2 TERMINATE',                                                                  '# db2: '],
