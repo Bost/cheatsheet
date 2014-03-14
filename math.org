@@ -4,67 +4,67 @@ exempli gratia: e.g.
 
 * Statistics:
 ** Data:
-                Nominal Data                Interval / Ratio Data
-                ━━━━━━━━━━━━━━━━━━━━     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-               ┃  +-----------------+ ┃   ┃                                    +-------------------+ ┃
-               ┃  | Test for        | ┃   ┃                                    | Test for a mean   | ┃
-               ┃  | Proportion      | ┃   ┃                                    |                   | ┃
-               ┃  +-----------------+ ┃   ┃                                    +-------------------+ ┃
-               ┃                      ┃   ┃                                                          ┃
-               ┃  +-----------------+ ┃   ┃ +-------------------------+                              ┃
-               ┃  | Difference of   | ┃   ┃ | difference of two means |                              ┃
-               ┃  | two proportions | ┃   ┃ | (independent samples)   |                              ┃
-               ┃  +-----------------+ ┃   ┃ +-------------------------+                              ┃
-               ┃                      ┃   ┃                                                          ┃
-               ┃  +-----------------+ ┃   ┃ +-------------------------+        +-------------------+ ┃
-               ┃  | Chi-sq test for | ┃   ┃ | Regression analysis     |        | Difference of two | ┃
-               ┃  | independence    | ┃   ┃ |                         |        | means (paired)    | ┃
-               ┃  +-----------------+ ┃   ┃ +-------------------------+        +-------------------+ ┃
-                ━━━━━━━━━━━━━━━━━━━━     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+		Nominal Data                Interval / Ratio Data
+		━━━━━━━━━━━━━━━━━━━━     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+	       ┃  +-----------------+ ┃   ┃                                    +-------------------+ ┃
+	       ┃  | Test for        | ┃   ┃                                    | Test for a mean   | ┃
+	       ┃  | Proportion      | ┃   ┃                                    |                   | ┃
+	       ┃  +-----------------+ ┃   ┃                                    +-------------------+ ┃
+	       ┃                      ┃   ┃                                                          ┃
+	       ┃  +-----------------+ ┃   ┃ +-------------------------+                              ┃
+	       ┃  | Difference of   | ┃   ┃ | difference of two means |                              ┃
+	       ┃  | two proportions | ┃   ┃ | (independent samples)   |                              ┃
+	       ┃  +-----------------+ ┃   ┃ +-------------------------+                              ┃
+	       ┃                      ┃   ┃                                                          ┃
+	       ┃  +-----------------+ ┃   ┃ +-------------------------+        +-------------------+ ┃
+	       ┃  | Chi-sq test for | ┃   ┃ | Regression analysis     |        | Difference of two | ┃
+	       ┃  | independence    | ┃   ┃ |                         |        | means (paired)    | ┃
+	       ┃  +-----------------+ ┃   ┃ +-------------------------+        +-------------------+ ┃
+		━━━━━━━━━━━━━━━━━━━━     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ** Samples:
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  One           ┃  +-----------------+                                          +-------------------+ ┃
  Sample        ┃  | Test for        |                                          | Test for a mean   | ┃
-               ┃  | Proportion      |                                          |                   | ┃
-               ┃  +-----------------+                                          +-------------------+ ┃
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+	       ┃  | Proportion      |                                          |                   | ┃
+	       ┃  +-----------------+                                          +-------------------+ ┃
+		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Two           ┃  +-----------------+       +-------------------------+                              ┃
  Samples       ┃  | Difference of   |       | difference of two means |                              ┃
-               ┃  | two proportions |       | (independent samples)   |                              ┃
-               ┃  +-----------------+       +-------------------------+                              ┃
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+	       ┃  | two proportions |       | (independent samples)   |                              ┃
+	       ┃  +-----------------+       +-------------------------+                              ┃
+		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  One           ┃  +-----------------+       +-------------------------+        +-------------------+ ┃
  Sample,       ┃  | Chi-sq test for |       | Regression analysis     |        | Difference of two | ┃
  Two           ┃  | independence    |       |                         |        | means (paired)    | ┃
  Measures      ┃  +-----------------+       +-------------------------+        +-------------------+ ┃
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ** Purpose:
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   Testing      ┃  +-----------------+                                          +-------------------+ ┃
   against      ┃  | Test for        |                                          | Test for a mean   | ┃
   a value      ┃  | Proportion      |                                          |                   | ┃
-               ┃  +-----------------+                                          +-------------------+ ┃
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                         ┃
-                                                                            ┃                        ┃
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
+	       ┃  +-----------------+                                          +-------------------+ ┃
+		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                         ┃
+									    ┃                        ┃
+		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
  Comparing     ┃  +-----------------+       +-------------------------+  ┃  ┃                        ┃
   two          ┃  | Difference of   |       | difference of two means |  ┃  ┃                        ┃
  statistics    ┃  | two proportions |       | (independent samples)   |  ┃  ┃                        ┃
-               ┃  +-----------------+       +-------------------------+  ┃  ┃                        ┃
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
-                                                                            ┃                        ┃
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
+	       ┃  +-----------------+       +-------------------------+  ┃  ┃                        ┃
+		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
+									    ┃                        ┃
+		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
  Looking       ┃  +-----------------+       +-------------------------+  ┃  ┃  +-------------------+ ┃
  for           ┃  | Chi-sq test for |       | Regression analysis     |  ┃  ┃  | Difference of two | ┃
  relationships ┃  | independence    |       |                         |  ┃  ┃  | means (paired)    | ┃
-               ┃  +-----------------+       +-------------------------+  ┃  ┃  +-------------------+ ┃
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ━━━━━━━━━━━━━━━━━━━━━━
+	       ┃  +-----------------+       +-------------------------+  ┃  ┃  +-------------------+ ┃
+		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ━━━━━━━━━━━━━━━━━━━━━━
 
 
 
@@ -126,17 +126,35 @@ http://www.gametheory.net/
 
 
 Russells paradox - Barbiers dilema
+
+
 * Morphisms:
-** Category is:
+* Lambda Calculus: formal calculus for manipulating functions
+* Category Theory: abstract algebra of abstract functions: "The Arrows Count"
+** Category ℂ = (Obj, hom, ◦, id)
+    Obj - Class of Objects: A, B, C, ...
+    hom - Morphisms (arrows): f, g, h, ...
+    ◦ - function c for composing morphisms: associative
+    ◦ - morphism composition: hom(A, B) × hom(B, C) → hom(A, C): g ◦ f; it's a partialy binary operation on Mor(CAT::)
     A collection of arrows and morphism that can be composed if they are adjacent.
     A structure packing structures of the same type (same category) and structure preserving mappings between them.
-*** Homomorphism: structure-preserving map between 2 algebraic structures (e.g. groups, rings, vector spaces).
+    id - identity morphism on object A: id(A)
+    Small Category: all objects create a set and all morphisms create a set
+    Localy Small Category: ∀ A,B: Hom(A, B) is a set
+
+** Homset Definition
+   Homℂ(A, B) = {f: A → B} - set of all morphisms from A to B in category ℂ (Objects of ℂ do not need to be sets)
+
+** Representable Functor of A: (from an arbitrary category into the category of sets)
+   fix A: Homℂ(A, -): Homℂ(A, X) → Homℂ(A, Y)
+				X → Y
+
+*** Homomorphism f: structure-preserving mapping between 2 algebraic structures (e.g. groups, rings, vector spaces).
+    f(m * n) = f(m) * f(n)
     Functor: homomorphism between 2 categories
 
     Individual monoids themselves give category
     Monoids with homomorphisms give category
-
-    TODO Pointed Sets and Pointed Functions
 
 * Curry-Howard Isomorphism: Logic ⇔ Type Theory (1-to-1 and keeps all properties):
   Direct relationship between computer programs and mathematical proofs;
@@ -152,20 +170,13 @@ Russells paradox - Barbiers dilema
     | (somethins is true)                   | (pics out a set of values that passes the contract)                  |
     | proof                                 | guarded fn                                                           |
     |---------------------------------------+----------------------------------------------------------------------|
-    | P implies Q: P → Q (i.e. there ∃ one) | paricular fn of fn of P-contract to guarded fn of Q-contract: P -> Q |
+    | P implies Q: P → Q (i.e. there ∃ one) | paricular fn of fn of P-contract to guarded fn of Q-contract: P → Q |
     | → is constructive implication         | → is function from-to                                                |
     | false → false (implies)               | {}  → {}  no values (empty set); contract cannot be satisfied        |
     | false → true                          | {}  → {.} (one element set)                                          |
     | true  → true                          | {.} → {.} (identity function)                                        |
     | true  ↛ false (does not imply)        | {.} ↛ {}                                                             |
 
-
-*** Quadruple: CAT = (O, hom, id, ◦) consisting of
-    O  : class of CAT-objects: Ob(A); e.g. A,B are CAT-objects
-    hom: set (?or class?) of CAT-morphisms: hom(A, B) = {f | f: A → B } (e.g. arrows)
-    (class of all CAT-morphisms: Mor(CAT) = Union of all sets hom(A,B) in CAT)
-    id : set of identity morphisms for every CAT-obj
-    ◦  : morphism composition: hom(a, b) × hom(b, c) → hom(a, c): g ◦ f; it's a partialy binary operation on Mor(CAT::)
 
 *** JavaScript & Category Theory
 **** Category ==  Contracts + Functions guarded by contracts
@@ -188,17 +199,21 @@ Counting number of elements in sets is decategorification; from category we get 
 
 Monoid homomorphisms: a function between the sets of monoid elements that preserved the monoid structure
 Monoidal functors:    a functor between categories that preserves the monoidal structure (should preserve multiplication)
-                      from functor(prodn([x, y, ..])) to prodn([functor(x), functor(y), ..])
+		      from functor(prodn([x, y, ..])) to prodn([functor(x), functor(y), ..])
 Monoidal monad:       ???
 
-*** Contract == Object
+Functor:
+"forget the indexing (domain functor)"
+
+
+*** Contract = Object
 
 *** Product: examples:
     Objects   - numbers
     Morphisms - functions 'less/greater or equal than'
 
 * Tensor: most general bilinear operation; Notation ⊗
-* Isomorphism f: X -> Y
+* Isomorphism f: X → Y (bijection of set)
   ∃ fn g: Y → X such that g ∘ f = idX and f ∘ g = idY; idX, idY are identity morphisms of X, Y
   (f is invertible and g is the inverse of f)
 
@@ -213,7 +228,7 @@ Monoidal monad:       ???
 
 
 ** Catergory of sets (Set)
-   Hom-Set(X, Y): the set of functions X -> Y
+   Hom-Set(X, Y): the set of functions X → Y
 
 ** olog = ontology log
    Different branches of mathematics can be formalized
@@ -225,9 +240,9 @@ Monoidal monad:       ???
 
 
 
-* Mappings: X -> Y (Zobrazenia):
+* Mappings: X → Y (Zobrazenia):
 ** Surjection: every elem in Y is "used";                           |X| ≥ |Y| (onto; "at least as big")
-** Injective:  distinct Xs -> distinc Ys;                           |X| ≤ |Y| (? one-to-one ?)
+** Injective:  distinct Xs → distinc Ys;                           |X| ≤ |Y| (? one-to-one ?)
 ** Bijection:  exact pairing between X, Y;                          |X| = |Y| (vzajomne jednoznacne zobrazenie, "same size")
 ** Strict:     Surjection from X to Y but no bijection from Y to X; |X| < |Y| (? double usage of some Ys ?, "strictly bigger")
 
@@ -304,18 +319,40 @@ Bodil Stokke
     EBNF extended BNF (Backchus Naur Format)`
 
 
-* Group = set of elements with an operation (formalization of symetry concept) multiplication with properties:
-  neutral element: e - identity
-  inverse element: x-inverse (dual obj) x * x-inverse = x-inverse * x = e
-  associativity: (x * y) * z = x * ( y * z)
-  closure: a and b and a*b must be membembers of the same group
-  comutativity is not a part of the group definition: x * y = y * x
+* Structures
+** Monoid (M, *, e); Also a Category 'many' morphisms and 'few' (only one) object M
+  (like Group withouth inverse elements)
+  M - non-empty set
+  * - associative operation: (x * y) * z = x * (y * z)
+  e - neutral element of M (identity)
 
-* TODO definitions
-** Poset (Partialy Ordered Set)
-** Top (Topological Space)
+** Group (G, *, e): One set G of elements with a 'multiplication' operation (formalization of symetry concept)
+  like Monoid; plus every element has its inverse: x-inverse (dual obj): x * x-inverse = x-inverse * x = e
+  (i.e. a Category with one object; every morphism is an isomorphism)
+  closure: a and b and a*b must be membembers of the same group
+  commutativity is not a part of the group definition: x * y = y * x
+
+** TODO Ring
+
+** PreOrder (A, ≤)
+   A - nonempty set
+   ≤ - pre-ordering relation: must be
+			       - reflexive: a ≤ a
+			       - transitive: a ≤ b and b ≤ c then a ≤ c
+
+** PoSet - Partialy Ordered Set (A, ≤); Also a Category with 'few' (only one) morphisms between any two objects and many objects
+   A - no-nempty set
+   ≤ - relation: must be
+			       - reflexive: a ≤ a
+			       - transitive: a ≤ b and b ≤ c then a ≤ c
+			       - aymetric: a ≤ b and b ≤ a then a = b
+** TODO Pointed Set
+** TODO Pointed Function
+
+** TODO Top (Topological Space)
 ** eval, exponent in Category Theory
 ** Propositional Logic
+* TODO definitions
 
 
 Simplices - analogs of triangles in higher dimensions
@@ -325,13 +362,15 @@ Simplices - analogs of triangles in higher dimensions
   πₙ(S-k-upper-index) Homotopy group exists even if n > k; measuring higher dimensional holes in k dimensional sphere
   "Patri" - containment relation
 
+
 * Cartesian Closed Category CCC:
 ** it has products for any pair of objects: A x B
 ** it has exponentials for any pair of objects B^A
-** it has terminal object 1 (Exists unique map A -> 1) (dual is initial object)
-   i.e. any one-element set (= singleton) is terminal 
+** it has terminal object 1 (Exists unique map A → 1) (dual is initial object)
+   i.e. any one-element set (= singleton) is terminal
    DTTO for poset 1 is such an object that any other object is below it
 
 * Universal Mapping Property - UMP
+  The 'double' triangle of Product
 
 * Beta Etha reduction
