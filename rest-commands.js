@@ -217,6 +217,8 @@ var jsonRest = [
 ['(load-file "src/ws/core.clj")',                                       '# clj:'],
 ['(clojure.repl/doc something)',                                        '# clj: documentation of something'],
 
+['ldd -v $(which vim)',                                                 '# linux: shared library dependencies'],
+['readelf -v $(which vim)',                                             '# linux: info about ELF files'],
 ['dpkg --get-selections',                                               '# dpkg: show installed packages'],
 ['dpkg -L packageName',                                                 '# dpkg: list of installed files from a packageName (dpkg-query -L works too)'],
 ['dpkg --install / --remove package.deb',                               '# dpkg: install / remove package.deb'],
