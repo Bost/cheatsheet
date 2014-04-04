@@ -184,9 +184,11 @@ var jsonRest = [
 ['lscpu',                                                               '# linux: info about CPU architecture'],
 ['renice',                                                              '# linux: alter priority of running processes'],
 ['lsb_release -a',                                                      '# linux: show (ubuntu) version'],
+
 ['sudo apt-get update && sudo apt-get upgrade',                         '# linux: ubuntu: command line upgrade part 1.'],
 ['sudo do-release-upgrade',                                             '# linux: ubuntu: command line upgrade part 2.'],
 ['',                                                                    '# linux: ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade'],
+
 ['sudo restart lightdm / gdm / kdm',                                    '# linux: ubuntu: (ubuntu 11.10 or later), gnome or KDE'],
 ['sudo touch /forcefsck',                                               '# linux: run fsck on next reboot'],
 
@@ -224,6 +226,9 @@ var jsonRest = [
 ['dpkg --install / --remove package.deb',                               '# dpkg: install / remove package.deb'],
 ['apt-cache search ^packageName$',                                      '# dpkg: apt: show description for packageName'],
 ['aptitude show packageName',                                           '# dpkg: apt: show description for packageName'],
+['software-properties-gtk' ,                                            '# linux: ubuntu: apt: Software Sources List editors; TODO see y-ppa-manager, http://repogen.simplylinux.ch/'],
+['dpkg --get-selections | grep -v deinstall',                           '# dpkg: list of installed packages; no sudo needed; TODO see --clear-selection --set-selection'],
+['aptitude search \'~i!~M\'',                                           '# aptitude: list of packages expressly installed (not just installed as dependencies)'],
 
 ['&nbsp;','&nbsp;'],
 
@@ -236,7 +241,7 @@ var jsonRest = [
 ['unzip /path/to/file.zip -d /path/to/extract-dir',                     '# zip: unzip: '],
 ['tar czf /path/to/tarfile.gz file0 file1',                             '# tar: '],
 ['tar xzf /path/to/tarfile.gz',                                         '# tar: untar: '],
-['gzip -l file.gz',                                                     '# gzip: list compressed, uncompressed size, compression ration etc.'],
+['gzip -l file.gz',                                                     '# gzip: list compressed, uncompressed size, compression ratio etc.'],
 
 ['&nbsp;','&nbsp;'],
 
@@ -248,6 +253,7 @@ var jsonRest = [
 ['netstat -tulnp',                                                      '# net: listening ports and PIDs of associated processes. tcp (-t) udp (-u)'],
 ['crontab -e / crontab -l',                                             '# edit / view crontab entries'],
 ['acpi -V',                                                             '# linux: show everything (battery info etc); Advanced Configuration and Power Interface'],
+['gpsbabel -i kml -f in.kml -o gpx -F out.gpx',                         '# gps: convert kml to gps'],
 /*
 * TODO add this:
 
