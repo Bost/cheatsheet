@@ -156,6 +156,8 @@ var jsonRest = [
 ['net use P: \\\\server\\path',                                                    '# windows: net: map P: as a network drive for \\\\sever\\path'],
 ['net use P: /delete',                                                             '# windows: net: unmap P:'],
 ['netstat -a | find "LISTENING"',                                                  '# windows: open ports'],
+['setx NAME value /m',                                                             '# widows: set system variable system-wide'],
+
 ['netstat -lnptu',                                                                 '# linux: open ports'],
 ['db2cmd -i -w db2clpsetcp',                                                       '# db2: init environment'],
 ['echo %DB2CLP%',                                                                  '# db2: windows: '],
