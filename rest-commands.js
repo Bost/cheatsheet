@@ -17,7 +17,6 @@ var jsonRest = [
 ['ls -lrt -d -1 $PWD/{*,.*}',                     '# ls: show full paths (alias lff)'],
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
 
-['find /src -iname \'*.xml\' -exec cp \\{\\} /dst/ \\;', '# bash: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file'],
 ['cat file &gt; /dev/clip / cat /dev/clip',       '# bash: clipboard: pipe to / from clipboard'],
 ['xclip -loops 10 -verbose file.ext',             '# bash: clipboard: wait for 10 pastings of the content file.ext and quit'],
 ['echo test | clip / xclip -o > file.ext',        '# bash: clipboard: put "test" to clipboard / put clipboard content to file.ext'],
@@ -62,8 +61,9 @@ var jsonRest = [
 ['echo "The date is: $(date +%D)"',               '# bash: avoid backticks'],
 ['echo "!!" > foo.sh',                            '# bash: create a script from last executed cmd'],
 
-['curl -O http://server/fileX.txt > path/to/fileY.txt',  '# curl: download fileX.txt and save it under different location / name'],
-['curl ifconfig.me/ip/host/ua/port/',             '# curl: net: ask http://ifconfig.me about myself (ua: User Agent)'],
+['wget http://server/fileX.ext -O path/to/fileY.ext',   '# wget: download fileX.txt and save it under different location / name'],
+['curl -O http://server/fileX.txt > path/to/fileY.txt', '# curl: download fileX.txt and save it under different location / name'],
+['curl ifconfig.me/ip/host/ua/port/',                   '# curl: net: ask http://ifconfig.me about myself (ua: User Agent)'],
 
 ['&nbsp;','&nbsp;'],
 
@@ -74,6 +74,8 @@ var jsonRest = [
 ['find ./ foo/ bar/ -name "*fileToSearch*"',                                    '# find: search for *fileToSearch* in multiple directories'],
 ['find . -name *.properties -exec grep -lir ".*textToFind.*" \'{}\' \; -print', '# find: '],
 ['find . ... -print -quit',                                                     '# find: quit search after finding first match'],
+['find /src -iname \'*.xml\' -exec cp \\{\\} /dst/ \\;', '# bash: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file'],
+['find . -type d -name "dirname"',                                              '# bash: find: directories called dirname'],
 
 ['&nbsp;','&nbsp;'],
 
