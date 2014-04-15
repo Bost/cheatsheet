@@ -83,12 +83,12 @@ var jsonRest = [
 ['grep --before-context=2 --after-context=4 textToFind',                        '# grep: search for textToFind and print 2/4 lines before/after matching line'],
 ['grep -B 2 -A 4 textToFind',                                                   '# grep: search for textToFind and print 2/4 lines before/after matching line'],
 ['grep -lir "textToFind" *',                                                    '# grep: print only file-names'],
-['grep sometext * | cut -f1 -d:',                                               '# grep: print only filenames of the files containing \'sometext\''],
+['grep textToFind * | cut -f1 -d:',                                             '# grep: print only filenames of the files containing \'textToFind\''],
 ['grep -i -n "textToFind" *',                                                   '# grep: print line numbers'],
 ['grep --exclude=.git',                                                         '# grep: '],
 ['grep --exclude=.git -lir \'textToFind\' *.properties',                        '# grep: '],
-['grep -lir "textToFind" `find . -name *.properties`',                          '# grep: find: '],
-['grep -lir "textToFind" `find . -name *.properties -and -not -name .git/`',    '# grep: find: do not search in the .git directory'],
+['grep -lir "textToFind" $(find . -name *.properties)',                         '# grep: find: '],
+['grep -lir "textToFind" $(find . -name *.properties -and -not -name .git/)',   '# grep: find: do not search in the .git directory'],
 
 ['&nbsp;','&nbsp;'],
 
@@ -96,8 +96,10 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
-['git remote add upstream https://github.com/octocat/Spoon-Knife.git', '# git: assigns the original repo to a remote called \'upstream\''],
+['git remote add upstream https://github.com/octocat/Spoon-Knife.git', '# git: assigns the original repo to a remote repo called \'upstream\''],
+['git remote show upstream',                      '# git: show upstream branches and other info'],
 ['git fetch upstream',                            '# git: '],
+['git fetch upstream branch1 branch2',            '# git: '],
 ['git branch -rd public/whatever',                '# git: delete a remote-tracking branch from local repository'],
 ['git diff localbranch remotebranch filepath',    '# git: diff file against remote branch'],
 ['git diff master branch filepath',               '# git: diff file between two branches'],
@@ -108,6 +110,7 @@ var jsonRest = [
 ['git checkout BRANCH -- /path/file.txt',         '# git: copy file from a BRANCH to /path/file.txt'],
 ['git status -sb',                                '# git: --show --branch: show current branch and changes made since last commit'],
 ['git add -p',                                    '# git: --patch: interactively choose hunks of patch; see \'--interactive\''],
+['git commit --amend --no-edit',                  '# git: amend commit; reuse commit message'],
 ['git reflog',                                    '# git: a kind of \'git history\''],
 ['git config --global user.name "Bost"',          '# git: '],
 ['git config --global user.email thebost@gmail.com','# git: '],
@@ -119,8 +122,9 @@ var jsonRest = [
 ['git log --oneline --grep="pattern"',            '# git: '],
 ['git --git-dir=path/to/.git --work-tree=path/to/ ...',   '# git: set git base directory and working tree'],
 
-['git config branch.master.remote origin', '# git: Use it in case of "You asked me to pull without telling me which branch ..."'],
+['git config branch.master.remote origin',           '# git: Use it in case of "You asked me to pull without telling me which branch ..."'],
 ['git config branch.master.merge refs/heads/master', '# git: '],
+['git config core.fileMode false',                   '# git: cygwin: ignore chmod changes'],
 
 ['&nbsp;','&nbsp;'],
 
@@ -246,6 +250,8 @@ var jsonRest = [
 ['tar czf /path/to/tarfile.gz file0 file1',                             '# tar: '],
 ['tar xzf /path/to/tarfile.gz',                                         '# tar: untar: '],
 ['gzip -l file.gz',                                                     '# gzip: list compressed, uncompressed size, compression ratio etc.'],
+
+['uniq',                                                                '# bash: report or omit repeated lines'],
 
 ['&nbsp;','&nbsp;'],
 
