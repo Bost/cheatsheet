@@ -221,6 +221,7 @@ var jsonRest = [
 
 ['xmllint',                                                             '# xml: command line XML tool (formating)'],
 ['lein deps :tree',                                                     '# lein: show leiningen dependency tree'],
+['cd $LIGHTTABLE/deploy/plugins/ && lein new lt-plugin my-plugin',      '# lein: create lighttable plugin'],
 ['[the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]',          '# lein: try to put it to project.clj in case of \'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath\''],
 ['(keys (ns-publics \'ws.core))',                                       '# clj: show objects in the namespace'],
 ['(map #(ns-unmap *ns* %) (keys (ns-interns *ns*)))',                   '# clj: clean the repl'],
