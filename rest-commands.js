@@ -101,6 +101,7 @@ var jsonRest = [
 ['git fetch upstream',                            '# git: '],
 ['git fetch upstream branch1 branch2',            '# git: '],
 ['git branch -rd public/whatever',                '# git: delete a remote-tracking branch from local repository'],
+['git push origin --delete BranchName',           '# git: delete a remote branch'],
 ['git diff localbranch remotebranch filepath',    '# git: diff file against remote branch'],
 ['git diff master branch filepath',               '# git: diff file between two branches'],
 ['git diff --name-only master branch',            '# git: show files changed between two branches/commits'],
