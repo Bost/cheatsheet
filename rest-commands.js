@@ -212,6 +212,7 @@ var jsonRest = [
 ['jar tf file.jar',                                                     '# jar: list files in file.jar'],
 ['jar xf file.jar path/inside.txt && cat path/inside.txt',              '# jar: extract inside.txt from file.jar and show its content. inside.txt stays extracted'],
 ['unzip -p file.jar path/inside.txt',                                   '# jar: unzip: show content of a file inside a file.jar'],
+['notify-send "Hello World"' ,                                          '# xfce: ubuntu: desktop notification'],
 ['xfce4-session-logout',                                                '# xfce: logout'],
 ['xfce4-keyboard-settings' ,                                            '# xfce: keyboard'],
 ['gnome-session-quit / ',                                               '# linux: gnome: logout from CLI'],
