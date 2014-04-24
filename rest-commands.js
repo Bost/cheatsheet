@@ -18,6 +18,7 @@ var jsonRest = [
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
 
 ['fdupes -r .',                                   '# bash: find duplicate files'],
+['xsel --clipboard',                              '# bash: clipboard: show clipboard content'],
 ['cat file &gt; /dev/clip / cat /dev/clip',       '# bash: clipboard: pipe to / from clipboard'],
 ['xclip -loops 10 -verbose file.ext',             '# bash: clipboard: wait for 10 pastings of the content file.ext and quit'],
 ['echo test | clip / xclip -o > file.ext',        '# bash: clipboard: put "test" to clipboard / put clipboard content to file.ext'],
