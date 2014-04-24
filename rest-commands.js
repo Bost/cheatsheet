@@ -17,6 +17,7 @@ var jsonRest = [
 ['ls -lrt -d -1 $PWD/{*,.*}',                     '# ls: show full paths (alias lff)'],
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
 
+['fdupes -r .',                                   '# bash: find duplicate files'],
 ['cat file &gt; /dev/clip / cat /dev/clip',       '# bash: clipboard: pipe to / from clipboard'],
 ['xclip -loops 10 -verbose file.ext',             '# bash: clipboard: wait for 10 pastings of the content file.ext and quit'],
 ['echo test | clip / xclip -o > file.ext',        '# bash: clipboard: put "test" to clipboard / put clipboard content to file.ext'],
@@ -265,6 +266,8 @@ var jsonRest = [
 ['netstat -tulnp',                                                      '# net: listening ports and PIDs of associated processes. tcp (-t) udp (-u)'],
 ['crontab -e / crontab -l',                                             '# edit / view crontab entries'],
 ['acpi -V',                                                             '# linux: show everything (battery info etc); Advanced Configuration and Power Interface'],
+['xbacklight -set 10 / -inc 10 / -dec 10',                              '# linux: set / increase / decrease display brightness'],
+['sudo powertop',                                                       '# linux: power consumption / management diagnosis tool'],
 ['gpsbabel -i kml -f in.kml -o gpx -F out.gpx',                         '# gps: convert kml to gps'],
 /*
 * TODO add this:
