@@ -271,9 +271,9 @@ var jsonRest = [
 ['sudo powertop',                                                       '# linux: power consumption / management diagnosis tool'],
 ['gpsbabel -i kml -f in.kml -o gpx -F out.gpx',                         '# gps: convert kml to gps'],
 /*
+* TODO disable mysql daemon from autostart
+
 * TODO add this:
-
-
 git remote add --track develop upstream https://github.com/Lokaltog/powerline.git
 
 #!/bin/sh
