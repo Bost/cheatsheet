@@ -49,6 +49,7 @@ var jsonRest = [
 ['d() { date; }',                                 '# bash: ? define function in bash ?'],
 ['C-r, C-g',                                      '# bash: bash history, abort history'],
 ['#!/bin/bash -e',                                '# bash: stop the script after any error (shebang line)'],
+['bash -x script',                                '# bash: debug script'],
 ['mkdir -p path/dirname.0{1,2,3}',                '# bash: create 4 directories at once'],
 ['cp --parents -p some/path/from.ext another/path/to.ext', '# bash: automatically create "another/path" and do --preserve=mode,ownership,timestamps'],
 ['mv README.{text,txt} ; cp file{,.bak}',         '# bash: mv README.text README.txt ; cp file file.bak'],
