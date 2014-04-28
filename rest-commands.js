@@ -63,6 +63,7 @@ var jsonRest = [
 ['Ctrl-\] Enter quit Enter',                      '# telnet: terminate session'],
 ['echo "The date is: $(date +%D)"',               '# bash: avoid backticks'],
 ['echo "!!" > foo.sh',                            '# bash: create a script from last executed cmd'],
+['kill $(pidof process-name)',                    '# bash: kill process-name'],
 
 ['wget http://server/fileX.ext -O path/to/fileY.ext',   '# wget: download fileX.txt and save it under different location / name'],
 ['curl -O http://server/fileX.txt > path/to/fileY.txt', '# curl: download fileX.txt and save it under different location / name'],
