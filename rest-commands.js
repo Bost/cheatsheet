@@ -19,10 +19,10 @@ var jsonRest = [
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
 
 ['fdupes -r .',                                   '# bash: find duplicate files'],
-['xsel --clipboard',                              '# bash: clipboard: show clipboard content'],
+['xsel --clipboard',                              '# bash: clipboard: show normal clipboard content'],
 ['cat file &gt; /dev/clip / cat /dev/clip',       '# bash: clipboard: pipe to / from clipboard'],
-['xclip -loops 10 -verbose file.ext',             '# bash: clipboard: wait for 10 pastings of the content file.ext and quit'],
-['echo test | clip / xclip -o > file.ext',        '# bash: clipboard: put "test" to clipboard / put clipboard content to file.ext'],
+['xclip -loops 10 -verbose file.ext',             '# bash: clipboard: wait for 10 pastings of the content file.ext to x-clipboard and quit'],
+['echo "test" | xclip / xclip -o > file.ext',     '# bash: clipboard: put "test" to x-clipboard / put x-clipboard content to file.ext'],
 ['$@ / $#',                                       '# bash: all / count of arguments' ],
 ['history -d',                                    '# bash: remove a line from shell history (i.e. a line with password)'],
 ['echo "rm -rf /unwanted-but-large/folder" | batch', '# bash: run a cmd only when load average is below a certain threshold (default is 0.8)'],
