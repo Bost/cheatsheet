@@ -150,6 +150,8 @@ var jsonEmacs = [
 
 ['M-x magit-status / s / c / P / d / k','; magit: status / stage / commit / push / diff / discard changes'],
 ['C-c C-c',                         '; magit; end of git commit message'],
+['+ / - / select hunk',             '; magit; split hunk'],
+['C',                               '; magit; commit'],
 ['M-x menu-bar-mode',               '; gui: toggle menu-bar'],
 ['M-x align-regexp',                '; align at the given regexp'],
 ]
