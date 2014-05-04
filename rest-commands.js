@@ -103,7 +103,6 @@ var jsonRest = [
 
 ['git remote add upstream https://github.com/octocat/Spoon-Knife.git', '# git: assigns the original repo to a remote repo called \'upstream\''],
 ['git remote show upstream',                      '# git: show upstream branches and other info'],
-['git fetch upstream',                            '# git: '],
 ['git fetch upstream branch1 branch2',            '# git: '],
 ['git branch -rd public/whatever',                '# git: delete a remote-tracking branch from local repository'],
 ['git push origin --delete BranchName',           '# git: delete a remote branch'],
@@ -113,6 +112,8 @@ var jsonRest = [
 ['git diff --word-diff',                          '# git: show particular changed word'],
 ['git show --name-only',                          '# git: show files changed in last commit'],
 ['git show :/query',                              '# git: search through the gitlog'],
+['git show ff0011:file.txt',                      '# git: show content of file.txt in commit ff0011'],
+['git show :0:file / :1:file / :2:file / :3:file','# git: show content of file in stage area (index) / common ancestor / target on the current branch where I am / the one I am bringing in'],
 ['git checkout BRANCH -- /path/file.txt',         '# git: copy file from a BRANCH to /path/file.txt'],
 ['git status -sb',                                '# git: --show --branch: show current branch and changes made since last commit'],
 ['git add -p',                                    '# git: --patch: interactively choose hunks of patch; see \'--interactive\''],
