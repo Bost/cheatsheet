@@ -132,6 +132,8 @@ var jsonRest = [
 ['git config branch.master.remote origin',           '# git: Use it in case of "You asked me to pull without telling me which branch ..."'],
 ['git config branch.master.merge refs/heads/master', '# git: '],
 ['git config core.fileMode false',                   '# git: cygwin: ignore chmod changes'],
+['git ls-tree branchName path/to/file',              '# git: list the contents of a tree object; like ls -a'],
+['git ls-files --cached / --deleted / --modified / --ignored / --stage', '# git: show info about files in the index and the working tree'],
 
 ['&nbsp;','&nbsp;'],
 
