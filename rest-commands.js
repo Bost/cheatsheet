@@ -119,6 +119,7 @@ var jsonRest = [
 ['git add -p',                                    '# git: --patch: interactively choose hunks of patch; see \'--interactive\''],
 ['git commit --amend --no-edit',                  '# git: amend commit; reuse commit message'],
 ['git reflog',                                    '# git: a kind of \'git history\''],
+['git shortlog -s -n',                            '# git: list contibutors'],
 ['git config --global user.name "Bost"',          '# git: '],
 ['git config --global user.email thebost@gmail.com','# git: '],
 ['git config --global help.autocorrect 1',        '# git: help with typos like \'git comit\''],
