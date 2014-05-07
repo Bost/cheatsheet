@@ -127,7 +127,8 @@ var jsonRest = [
 ['git log --pretty=format:\'%h %s\'',             '# git: show formated commit logs'],
 ['git log --oneline --graph',                     '# git: a kind of \'gitk --all\''],
 ['git log --oneline --grep="pattern"',            '# git: '],
-['git --git-dir=path/to/.git --work-tree=path/to/ ...',   '# git: set git base directory and working tree'],
+['git log --follow --name-only --format=\'%H\' -- path/to/file', '# git: list all commits for a specific file'],
+['git --git-dir=path/to/.git --work-tree=path/to/ ...',          '# git: set git base directory and working tree'],
 
 ['git config branch.master.remote origin',           '# git: Use it in case of "You asked me to pull without telling me which branch ..."'],
 ['git config branch.master.merge refs/heads/master', '# git: '],
