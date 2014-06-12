@@ -199,6 +199,7 @@ var jsonRest = [
 ['db2 -vf script.sql -t',                                                          '# db2: launch script on CLI'],
 ['db2 select * from DBASE.TABLE fetch first 2 rows only',                          '# db2: '],
 
+['mysql -u root -t < script.sql',                                                  '# mysql: load script.sql'],
 ['mysql select * from mantis.state_mantis_id limit 10',                            '# mysql: '],
 ['mysql show tables in dbaseName',                                                 '# mysql: '],
 ['mysql show columns in tableName',                                                '# mysql: describe table'],
