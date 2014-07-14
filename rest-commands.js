@@ -275,6 +275,7 @@ var jsonRest = [
 ['gzip -l file.gz',                                                     '# gzip: list compressed, uncompressed size, compression ratio etc.'],
 
 ['uniq',                                                                '# bash: report or omit repeated lines'],
+['sort myfile.txt | uniq',                                              '# bash: sort and remove duplicate lines']
 
 ['&nbsp;','&nbsp;'],
 
