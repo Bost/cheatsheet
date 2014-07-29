@@ -196,7 +196,7 @@ var jsonRest = [
 ['db2 list db directory &gt; db.txt | gvim db.txt',                                '# db2: '],
 ['db2 list node directory &gt; node.txt | gvim node.txt',                          '# db2: '],
 ['db2 list tables',                                                                '# db2: '],
-['db2 -vf script.sql -t',                                                          '# db2: execute script.sql'],
+['db2 -vf script.sql -t / !db2 -vf script.sql -t;',                                '# db2: execute script.sql from normal / command line processor (=>) shell'],
 ['db2 select * from DBASE.TABLE fetch first 2 rows only',                          '# db2: in mysql: limit N'],
 
 ['mysql -u root -t < script.sql',                                                  '# mysql: execute script.sql as the root user'],
