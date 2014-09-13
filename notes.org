@@ -261,3 +261,7 @@ private int returnCountOfDifferentPixels(String pic1, String pic2) {
         return count;
     }
 #+END_SRC
+
+* clojuredocs - graficka reprezentacia prikladov
+
+  
