@@ -35,6 +35,7 @@ var jsonRest = [
 ['at -f script.sh now + 1 hour',                  '# bash: at: run script.sh 1 hour from now'],
 ['set -o vi',                                     '# bash: set vi bindings'],
 ['sudo !!',                                       '# bash: args: run the last command as root'],
+['id user',                                       '# bash: real and effective user and group IDs'],
 
 ['$*',                                            '# bash: args: function arguments'],
 ['!*',                                            '# bash: args: all arguments of the last command'],
