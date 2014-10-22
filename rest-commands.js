@@ -23,7 +23,7 @@ var jsonRest = [
 ['cat file &gt; /dev/clip / cat /dev/clip',       '# bash: clipboard: pipe to / from clipboard'],
 ['xclip -loops 10 -verbose file.ext',             '# bash: clipboard: wait for 10 pastings of the content file.ext to x-clipboard and quit'],
 ['echo "test" | xclip / xclip -o > file.ext',     '# bash: clipboard: put "test" to x-clipboard / put x-clipboard content to file.ext'],
-['history -d',                                    '# bash: remove a line from shell history (i.e. a line with password)'],
+['history -d',                                    '# bash: remove a line from shell history (i.e. a line with password); edit ~/.bash_history'],
 ['echo "rm -rf /unwanted-but-large/folder" | batch', '# bash: run a cmd only when load average is below a certain threshold (default is 0.8)'],
 ['bind -P',                                       '# bash: show all bash shortcuts'],
 ['chmod --reference file0 file1',                 '# bash: set mod of file1 according to file0'],
