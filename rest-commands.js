@@ -179,6 +179,7 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
+['shutdown /l /f',                                                                 '# windows: command line: logoff and force'],
 ['net use',                                                                        '# windows: net: list mapped network drives'],
 ['net use P: \\\\server\\path',                                                    '# windows: net: map P: as a network drive for \\\\sever\\path'],
 ['net use P: /delete',                                                             '# windows: net: unmap P:'],
@@ -241,6 +242,7 @@ var jsonRest = [
 ['ssh user@host cat /path/to/remotefile | diff /path/to/localfile -',   '# ssh: compare a remote file with a local file'],
 ['$ssh-copy-id user@host',                                              '# ssh: copy ssh keys to user@host to enable password-less ssh logins'],
 ['sshfs name@server:/path/to/folder /path/to/mount/point',              '# ssh: mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Will allow you to mount a folder security over a network'],
+['sudo mount -t vboxsf share /home/username/share/',                    '# virtualbox: mount shared folder'],
 
 ['xmllint',                                                             '# xml: command line XML tool (formating)'],
 ['lein deps :tree',                                                     '# lein: show leiningen dependency tree'],
