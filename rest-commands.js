@@ -90,6 +90,7 @@ var jsonRest = [
 ['find . ... -print -quit',                                                     '# find: quit search after finding first match'],
 ['find /src -iname \'*.xml\' -exec cp \\{\\} /dst/ \\;', '# bash: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file'],
 ['find . -type d -name "dirname"',                                              '# bash: find: directories called dirname'],
+['find . -not -path \'*/\.*\'',                                                 '# find: skip hidden files and dirs'],
 
 ['&nbsp;','&nbsp;'],
 
@@ -120,6 +121,7 @@ var jsonRest = [
 ['git diff --name-only master branch',            '# git: show files changed between two branches/commits'],
 ['git diff --word-diff',                          '# git: show particular changed word'],
 ['git show --name-only',                          '# git: show files changed in last commit'],
+['git diff --cached',                             '# git: show staged changes'],
 ['git show :/query',                              '# git: search through the gitlog'],
 ['git show ff0011:file.txt',                      '# git: show content of file.txt in commit ff0011'],
 ['git show :0:file / :1:file / :2:file / :3:file','# git: show content of file in stage area (index) / common ancestor / target on the current branch where I am / the one I am bringing in'],
