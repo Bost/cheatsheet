@@ -88,9 +88,10 @@ var jsonRest = [
 ['find ./ foo/ bar/ -name "*fileToSearch*"',                                    '# find: search for *fileToSearch* in multiple directories'],
 ['find . -name *.properties -exec grep -lir ".*textToFind.*" \'{}\' \; -print', '# find: '],
 ['find . ... -print -quit',                                                     '# find: quit search after finding first match'],
-['find /src -iname \'*.xml\' -exec cp \\{\\} /dst/ \\;', '# bash: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file'],
+['find /src -iname \'*.xml\' -exec cp \\{\\} /dst/ \\;',                        '# bash: find: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file'],
 ['find . -type d -name "dirname"',                                              '# bash: find: directories called dirname'],
 ['find . -not -path \'*/\.*\'',                                                 '# find: skip hidden files and dirs'],
+['find . -type f \( -name "*.xml" -or -name "*.txt" \)',                        '# find: files filtered by multiple extensions'],
 
 ['&nbsp;','&nbsp;'],
 
