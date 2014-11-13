@@ -136,6 +136,7 @@ var jsonRest = [
 ['git config --global user.email thebost@gmail.com','# git: '],
 ['git config --global help.autocorrect 1',        '# git: help with typos like \'git comit\''],
 ['git config --global rerere.enabled 1',          '# git: rebase: remember actions on a particular commit - in case of repeating conflicts when rebasing; long running branches'],
+['.git/config: url = https://Bost@github.com/Bost/dotfiles.git', '# git: github: do not ask for username'],
 ['git log -S\'text-to-search\'',                  '# git: search entire commit history'],
 ['git log --pretty=format:\'%h %s\'',             '# git: show formated commit logs'],
 ['git log --oneline --graph',                     '# git: a kind of \'gitk --all\''],
