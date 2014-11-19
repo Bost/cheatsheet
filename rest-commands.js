@@ -92,6 +92,7 @@ var jsonRest = [
 ['find . -type d -name "dirname"',                                              '# bash: find: directories called dirname'],
 ['find . -not -path \'*/\.*\'',                                                 '# find: skip hidden files and dirs'],
 ['find . -type f \( -name "*.xml" -or -name "*.txt" \)',                        '# find: files filtered by multiple extensions'],
+['find . -executable -type f',                                                  '# find: find executable files'],
 
 ['&nbsp;','&nbsp;'],
 
