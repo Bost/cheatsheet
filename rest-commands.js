@@ -18,6 +18,7 @@ var jsonRest = [
 ['ls -lrt -d -1 $PWD/{*,.*}',                     '# ls: show full paths (alias lff)'],
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
 
+['seq 0 2 10',                                    '# bash: sequence from 0 to 10 (both included) increment by 2'],
 ['fdupes -r .',                                   '# bash: find duplicate files'],
 ['xsel --clipboard',                              '# bash: clipboard: show normal clipboard content'],
 ['cat file &gt; /dev/clip / cat /dev/clip',       '# bash: clipboard: pipe to / from clipboard'],
