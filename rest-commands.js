@@ -285,7 +285,7 @@ var jsonRest = [
 ['gzip -l file.gz',                                                     '# gzip: list compressed, uncompressed size, compression ratio etc.'],
 
 ['uniq',                                                                '# bash: report or omit repeated lines'],
-['sort myfile.txt | uniq',                                              '# bash: sort and remove duplicate lines']
+['sort myfile.txt | uniq',                                              '# bash: sort and remove duplicate lines'],
 
 ['&nbsp;','&nbsp;'],
 
@@ -300,6 +300,13 @@ var jsonRest = [
 ['xbacklight -set 10 / -inc 10 / -dec 10',                              '# linux: set / increase / decrease display brightness'],
 ['sudo powertop',                                                       '# linux: power consumption / management diagnosis tool'],
 ['gpsbabel -i kml -f in.kml -o gpx -F out.gpx',                         '# gps: convert kml to gps'],
+
+['&nbsp;','&nbsp;'],
+
+['iconv -f IBM-1047 -t ISO8859-1 ebcdic.file &gt; ascii.file',          '# IBM USS OS/390: ebcdic / ascii conversion'],
+['iconv -f ISO8859-1 -t IBM-1047 ascii.file &gt; ebcdic.file',          '# IBM USS OS/390: ebcdic / ascii conversion'],
+['iconv -l',                                                            '# IBM USS OS/390: ebcdic / ascii conversion: list all code pages'],
+
 /*
 * TODO disable mysql daemon from autostart
 
