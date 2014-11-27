@@ -1,5 +1,9 @@
 var jsonRest = [
 //['', '# '],
+
+['wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg && gpg --import gnu-keyring.gpg', '# gpg: download and import gnu-keyring'],
+['gpg --verify file.sig file',                    '# gpg: verify file'],
+
 ['df -i',                                         '# fs: nr of inodes; every file or directory requires one inode'],
 ['hostname -i',                                   '# net: show or set the system\'s host name'],
 ['ip addr show eth0',                             '# net: show / manipulate routing, devices, policy routing and tunnels'],
