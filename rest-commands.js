@@ -1,6 +1,6 @@
 var jsonRest = [
 //['', '# '],
-
+['sudo nethogs wlan0',                            '# net: grouping bandwidth per process; "net top"'],
 ['wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg && gpg --import gnu-keyring.gpg', '# gpg: download and import gnu-keyring'],
 ['gpg --verify file.sig file',                    '# gpg: verify file'],
 
