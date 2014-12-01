@@ -75,12 +75,12 @@ var jsonRest = [
 ['(cd /path/to/dir && ls)',                       '# bash: jump to /path/to/dir execute command and jump back'],
 ['time read',                                     '# bash: stop-watch; ctrl-d to stop'],
 ['Ctrl-u ... Ctrl-y',                             '# bash: type partial cmd, kill this cmd, check something you forgot, yank the cmd, resume typing'],
-['Ctrl-\] Enter quit Enter',                      '# telnet: terminate session'],
 ['echo "Date is: $(date +%D)"',                   '# bash: avoid backticks'],
 ['echo "!!" > foo.sh',                            '# bash: create a script from last executed cmd'],
 ['pidof process-name',                            '# bash: find process-IDs belonging to processName'],
 ['kill $(pidof processName)',                     '# bash: find and kill processIDs belonging processName'],
 
+['Ctrl-\] Enter quit Enter',                      '# telnet: terminate session'],
 ['wget http://server/fileX.ext -O path/to/fileY.ext',   '# wget: download fileX.txt and save it under different location / name'],
 ['curl -O http://server/fileX.txt > path/to/fileY.txt', '# curl: download fileX.txt and save it under different location / name'],
 ['curl ifconfig.me/ip/host/ua/port/',                   '# curl: net: ask http://ifconfig.me about myself (ua: User Agent)'],
