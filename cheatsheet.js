@@ -79,9 +79,15 @@ $(function() {
         // TODO scroll down to the emacs section and open it if closed
         return false;
     });
-    $("#goto_rest").click(function(){
+    $("#goto_git").click(function(){
         collapseAll();
         runEffect("head2");
+        // TODO scroll down to the emacs section and open it if closed
+        return false;
+    });
+    $("#goto_rest").click(function(){
+        collapseAll();
+        runEffect("head3");
         // TODO scroll down to the emacs section and open it if closed
         return false;
     });
