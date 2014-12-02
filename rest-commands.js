@@ -97,7 +97,7 @@ var jsonRest = [
 ['find /src -iname \'*.xml\' -exec cp \\{\\} /dst/ \\;',                        '# bash: find: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file'],
 ['find . -type d -name "dirname"',                                              '# bash: find: directories called dirname'],
 ['find . -not -path \'*/\.*\'',                                                 '# find: skip hidden files and dirs'],
-['find . -type f \( -name "*.xml" -or -name "*.txt" \)',                        '# find: files filtered by multiple extensions'],
+['find . -type f -name "*.xml" -or -name "*.txt"',                              '# find: files filtered by multiple extensions'],
 ['find . -executable -type f',                                                  '# find: find executable files'],
 
 ['&nbsp;','&nbsp;'],
