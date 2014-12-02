@@ -37,7 +37,7 @@ var jsonRest = [
 ['\\\[command\]',                                 '# bash: alias: escape command aliases'],
 ['Alt-. / Esc-.',                                 '# bash: get the argument of the last command. see: bind -P'],
 ['echo "ls -l" | at midnight',                    '# bash: at: execute a command at a given time'],
-['at -f script.sh now + 1 hour',                  '# bash: at: run script.sh 1 hour from now'],
+['at -f script.sh now + 1 hour / 30 min',         '# bash: at: run script.sh 1 hour / 30 minutes from now'],
 ['set -o vi',                                     '# bash: set vi bindings'],
 ['sudo !!',                                       '# bash: args: run the last command as root'],
 ['id user',                                       '# bash: real and effective user and group IDs'],
