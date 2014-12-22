@@ -140,6 +140,8 @@ var jsonEmacs = [
 
 ['&nbsp;','&nbsp;'],
 
+['M-x menu-bar-mode',               '; gui: toggle menu-bar'],
+['M-x align-regexp',                '; align at the given regexp'],
 ['C-n',                             '; auto completition'],
 ['C-w C-w',                         '; move around split viewports'],
 ['C-x C-o',                         '; complete function name (omni completition)'],
@@ -149,10 +151,12 @@ var jsonEmacs = [
 ['M-x ispell-region',               '; region: check a small region'],
 ['C-x 0 / C-x 1 / C-x 2 / C-x 3',   '; splits: close / only one buffer / horizontal / vertical'],
 
-['M-x magit-status / s / c / P / d / k','; magit: status / stage / commit / push / diff / discard changes'],
-['C-c C-c',                         '; magit; end of git commit message'],
-['+ / - / select hunk',             '; magit; split hunk'],
-['C',                               '; magit; commit'],
-['M-x menu-bar-mode',               '; gui: toggle menu-bar'],
-['M-x align-regexp',                '; align at the given regexp'],
+// TODO magit doc: http://magit.github.io/master/magit.html
+['P / d / k / z / a (A)',           '; M-x magit-status: push / diff / discard (kill) / stash / cherry pick apply (and discard) stash changes'],
+['s (S) / u (U) / c (C) / x (X)',   '; M-x magit-status: stage (all) / unstage (all) / commit (with template) / reset (discard all uncommited) changes'],
+['C-c C-c',                         '; M-x magit-commit; end of git commit message'],
+['+ / - / select hunk',             '; M-x magit-status; split hunk'],
+['M / l / b / B / d / f / m / r',   '; M-x magit-status; remoting / log / branching / bisecting / diff / fetch / merge / rewrite'],
+['SPACE / ENTER / C-w / x ',        '; M-x magit-log; show commit details and stay in log / jump to details / put sha1 to clipboard / reset HEAD to given commit'],
+['$',                               '; M-x magit-process: show *magit-process* buffer'],
 ]
