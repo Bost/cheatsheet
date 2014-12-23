@@ -204,6 +204,7 @@ var jsonRest = [
 ['xfce4-keyboard-settings' ,                                            '# xfce: keyboard'],
 ['gnome-session-quit / xfce4-session-logout',                           '# xfce: gnome: logout'],
 ['rm -r ~/.cache/sessions',                                             '# xfce: execute this when the title bar dissapears from xfwm4'],
+['bash -i -c /path/to/emacs',                                           '# xfce: launcher: emacs uses bash variables; -i interactive shell, -c read following command'],
 ['man -k abc',                                                          '# man: search man pages for abc'],
 ['ssh user@host cat /path/to/remotefile | diff /path/to/localfile -',   '# ssh: compare a remote file with a local file'],
 ['$ssh-copy-id user@host',                                              '# ssh: copy ssh keys to user@host to enable password-less ssh logins'],
@@ -265,7 +266,8 @@ var jsonRest = [
 ['iconv -f IBM-1047 -t ISO8859-1 ebcdic.file &gt; ascii.file',          '# IBM USS OS/390: ebcdic / ascii conversion'],
 ['iconv -f ISO8859-1 -t IBM-1047 ascii.file &gt; ebcdic.file',          '# IBM USS OS/390: ebcdic / ascii conversion'],
 ['iconv -l',                                                            '# IBM USS OS/390: ebcdic / ascii conversion: list all code pages'],
-
+['cat /proc/cpuinfo | grep processor | wc -l',                          '# number of processors'],
+['lscpu',                                                               '# display information on CPU architecture'],
 /*
 * TODO disable mysql daemon from autostart
 
