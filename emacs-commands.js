@@ -165,5 +165,6 @@ var jsonEmacs = [
 ['C-x 4',                           '; M-x magit-commit: write to ChangeLog ?'],
 ['M-p / M-n / C-c C-k / C-c C-t / C-c C-s', '; M-x magit-commit: log-edit-commit-ring / Kill commit / Tested / Signed-off by'],
 ['R / E',                           '; M-x magit-status: rebase / ineractive-rebase'],
+['s / c / r',                       '; M-x magit-ineractive-rebase: squash / pick / reword']
 ['x (X)',                           '; M-x magit-status: reset (discard all uncommited) changes - working tree unchanged'],
 ]
