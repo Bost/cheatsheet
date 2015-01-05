@@ -150,6 +150,10 @@ var jsonEmacs = [
 ['C-x r k',                         '; region: kill selected region'],
 ['M-x ispell-region',               '; region: check a small region'],
 ['C-x 0 / C-x 1 / C-x 2 / C-x 3',   '; splits: close / only one buffer / horizontal / vertical'],
+['M-x clean-buffer-list',           '; does not work'],
+['C-M-i',                           '; minibuffer: helm: minibuffer-force-complete'],
+
+['&nbsp;','&nbsp;'],
 
 // TODO magit doc: http://magit.github.io/master/magit.html
 ['P / d / k / z / a (A)',           '; M-x magit-status: push / diff / discard (kill) / stash / cherry pick apply (and discard) stash changes'],
