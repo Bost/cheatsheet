@@ -90,6 +90,7 @@ var jsonRest = [
 ['diff -rq dirA dirB | sort',                     '# diff: recursively compare dirA with dirB; show only filenames: -q (quiet)'],
 ['sdiff file1 file0',                             '# diff: outputs the files in two columns, side by side, separated by spaces'],
 
+['find . -empty -type f -delete / find . -empty -type d -delete',               '# find: find and delete empty files / dirs'],
 ['gvim $(find . -name "*fileToSearch*")',                                       '# find: find files and open them in gvim'],
 ['find ./ foo/ bar/ -name "*fileToSearch*"',                                    '# find: search for *fileToSearch* in multiple directories'],
 ['find . -name *.properties -exec grep -lir ".*textToFind.*" \'{}\' \; -print', '# find: '],
