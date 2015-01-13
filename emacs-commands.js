@@ -130,6 +130,7 @@ var jsonEmacs = [
 ['M-x ispell-region',               '; region: check a small region'],
 ['C-x 0 / C-x 1 / C-x 2 / C-x 3',   '; splits: close / only one buffer / horizontal / vertical'],
 ['M-x clean-buffer-list',           '; does not work'],
+['M-x byte-recompile-directory',    '; use when "newer than byte-compiled file"'],
 
 
 ['C-M-i',                           '; helm: minibuffer: minibuffer-force-complete'],
