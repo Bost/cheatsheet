@@ -269,6 +269,8 @@ var jsonRest = [
 ['iconv -l',                                                            '# IBM USS OS/390: ebcdic / ascii conversion: list all code pages'],
 ['cat /proc/cpuinfo | grep processor | wc -l',                          '# number of processors'],
 ['lscpu',                                                               '# display information on CPU architecture'],
+['lsof',                                                                '# lsof: list open files'],
+['lsof -i:[ADDR] -t',                                                   '# lsof: list open files whose inet address matches ADDR; -t: terse output'],
 /*
 * TODO disable mysql daemon from autostart
 
