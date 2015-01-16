@@ -84,8 +84,12 @@ var jsonEmacs = [
 ['C-l',                             '; center the screen'],
 ['M-x shell / eshell ',             '; start a bash command line'],
 ['M-x eshell; cmd; db2init; c46; \[f12\]', '; sql: db2: execute script.sql'],
+
+['&nbsp;',                          '; dired: <a href="http://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf">http://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf</a>'],
 ['C-x C-f ENTER',                   '; dired: enters the dired mode (see menu)'],
+['m / u (U) / t',                   '; dired: mark / unmark (all) / toggle marking'],
 ['~ / #',                           '; dired: markup all backup / auto-save files'],
+['* / * * / * s (.) / * c',         '; dired: markup all dirs / executables / files (with extention) / change all marks'],
 ['M-q',                             '; rewrap the line in auto-fill-mode'],
 ['C-u',                             '; parameter key'],
 ['C-u 40 C-x f',                    '; sets the line wrap to 40 characters, M-q # activate the wrap'],
