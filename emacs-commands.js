@@ -159,4 +159,5 @@ var jsonEmacs = [
 ['R / E',                           '; M-x magit-status: rebase / ineractive-rebase'],
 ['s / c / r',                       '; M-x magit-ineractive-rebase: squash / pick / reword'],
 ['x (X)',                           '; M-x magit-status: reset (discard all uncommited) changes - working tree unchanged'],
+['M-x info / info-emacs-manual / info-display-manual' , '; info: manual:'],
 ]
