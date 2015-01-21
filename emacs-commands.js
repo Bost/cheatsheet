@@ -139,6 +139,10 @@ var jsonEmacs = [
 
 
 ['C-M-i',                           '; helm: minibuffer: minibuffer-force-complete'],
+['C-t',                             '; M-x vertical helm-toggle-resplit-and-swap-windows: toggle horizontal / vertical'],
+['C-SPC / C-c C-i',                 '; M-x helm-toggle-visible-mark / M-x helm-copy-to-buffer'],
+['C-c ?',                           '; helm: manual'],
+['&nbsp;',                          '; M-x helm-top / M-x helm-register'],
 ['&nbsp;',                          '; helm: <a href="http://tuhdo.github.io/helm-intro.html">http://tuhdo.github.io/helm-intro.html</a>'],
 
 ['&nbsp;','&nbsp;'],
