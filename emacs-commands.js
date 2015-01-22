@@ -38,6 +38,7 @@ var jsonEmacs = [
 ['C-x v i',                         '; add to version control system'],
 ['C-x r RET',                       '; add to version control system'],
 ['C-x C-f / C-x C-v',               '; files: find file / find alternate file (reload file)'],
+['C-x C-f /method:user@remotehost:filename', '; remote file editing: Transparent Remote (file) Access, Multiple Protocol (TRAMP); method can be: ssh'],
 ['C-x 4 f / C-x 4 b',               '; files: find-file-other window / switch-to-buffer-other-window'],
 ['C-x C-s / C-x s / C-x C-w ',      '; files: save file / save all /save as'],
 ['C-x s',                           '; files: save-some-buffers'],
@@ -49,7 +50,7 @@ var jsonEmacs = [
 ['C-x C-b / C-x b',                 '; files: buffers: M-x list-buffers / M-x ido-switch-buffer'],
 ['M-x kill-whole-line',             '; &nbsp;'],
 ['C-S-Backspace',                   '; delete 1 whole line'],
-['M-! / ; / / /',                   '; shell-command /  toggle comment / code completition'],
+['M-! / M-x; / M-/ /',              '; M-x shell-command / evilnc-comment-or-uncomment-lines / dabbrev-expand (code completition)'],
 ['C-x m / i / z',                   '; email / insert file / repeat'],
 
 ['C-x C-e',                         '; M-x eval-last-sexp. See M-x eval-current-buffer'],
@@ -145,6 +146,8 @@ var jsonEmacs = [
 ['&nbsp;',                          '; M-x helm-top / M-x helm-register'],
 ['&nbsp;',                          '; helm: <a href="http://tuhdo.github.io/helm-intro.html">http://tuhdo.github.io/helm-intro.html</a>'],
 
+['M-x hi-lock-mode / highlight-regexp;', '; highlighting'],
+// ['&nbsp;','&nbsp;'],
 ['&nbsp;','&nbsp;'],
 
 ['&nbsp;',                          '; magit: <a href="http://magit.github.io/master/magit.html">http://magit.github.io/master/magit.html</a>'],
