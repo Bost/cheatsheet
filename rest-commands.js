@@ -275,6 +275,7 @@ var jsonRest = [
 ['nproc',                                                               '# nproc: print the number of processing units available'],
 ['test',                                                                '# test: check file types and compare values'],
 ['expand / unexpand',                                                   '# tabs: convert spaces &lt;-&gt; tabs'],
+['zenity, whiptail',                                                    '# linux: simple GUIs'],
 /*
 * TODO disable mysql daemon from autostart
 
