@@ -277,6 +277,7 @@ var jsonRest = [
 ['expand / unexpand',                                                   '# tabs: convert spaces &lt;-&gt; tabs'],
 ['zenity, whiptail',                                                    '# linux: simple GUIs'],
 ['strace -f -e trace=file,network -s 10000 -o outfile.log PROCESS ARGS','# strace: monitor file and network activities of a PROCESS, max printed string size 10000'],
+['ptrace / ltrace',                                                     '# trace: process / library'],
 /*
 * TODO disable mysql daemon from autostart
 
