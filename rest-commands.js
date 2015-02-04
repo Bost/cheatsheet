@@ -254,7 +254,8 @@ var jsonRest = [
 ['View > Layout > Columns:2',                                           '# sublime: vertical split'],
 ['Tools > SublimeREPL > Clojure > Clojure',                             '# sublime: open clojure REPL'],
 ['C-,s / C-,f / C-,l / C-,b',                                           '# sublime: evaluate selection / file / line / block in REPL'],
-['mtr google.com',                                                      '# ping: traceroute: '],
+['mtr google.com',                                                      '# networking: ping: traceroute:'],
+['host google.com',                                                     '# networking: DNS lookup'],
 ['dig +short txt keyword.wp.dg.cx',                                     '# bash: query wikipedia for keyword'],
 ['netstat -tulnp',                                                      '# net: listening ports and PIDs of associated processes. tcp (-t) udp (-u)'],
 ['crontab -e / crontab -l',                                             '# crontab: edit / view entries'],
@@ -278,6 +279,7 @@ var jsonRest = [
 ['zenity, whiptail',                                                    '# linux: simple GUIs'],
 ['strace -f -e trace=file,network -s 10000 -o outfile.log PROCESS ARGS','# strace: monitor file and network activities of a PROCESS, max printed string size 10000'],
 ['ptrace / ltrace',                                                     '# trace: process / library'],
+['sudo service tomcat7 stop',                                           '# tomcat:'],
 /*
 * TODO disable mysql daemon from autostart
 
