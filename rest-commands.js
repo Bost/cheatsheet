@@ -39,6 +39,8 @@ var jsonRest = [
 ['echo "ls -l" | at midnight',                    '# bash: at: execute a command at a given time'],
 ['at -f script.sh now + 1 hour / 30 min',         '# bash: at: run script.sh 1 hour / 30 minutes from now'],
 ['set -o vi',                                     '# bash: set vi bindings'],
+['set -f / -v / -x',                              '# bash: set -o noglob (disable pathname expansion - globbing) / set -o verbose / set -o xtrace'],
+['import shutil',                                 '# bash: python: high-level file operations'],
 ['sudo !!',                                       '# bash: args: run the last command as root'],
 ['id user',                                       '# bash: real and effective user and group IDs'],
 
@@ -280,7 +282,14 @@ var jsonRest = [
 ['strace -f -e trace=file,network -s 10000 -o outfile.log PROCESS ARGS','# strace: monitor file and network activities of a PROCESS, max printed string size 10000'],
 ['ptrace / ltrace',                                                     '# trace: process / library'],
 ['sudo service tomcat7 stop',                                           '# tomcat:'],
+
+['&nbsp;','&nbsp;'],
+
+['wireshark',                                     '# net: packet analyser'],
+['get',                                           '# ftp:'],
+['sysinfo',                                       '# System Information Extraction Program:'],
 /*
+['',                                           '# :'],
 * TODO disable mysql daemon from autostart
 
 * TODO add this:

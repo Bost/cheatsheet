@@ -14,6 +14,7 @@
                 addElems(jsonEmacs, 'emacs');
                 addElems(jsonGit, 'git');
                 addElems(jsonRest, 'rest');
+                addElems(jsonHost, 'host');
             }
         </script>
         <script src="jquery/js/jquery-ui-1.8.20.custom.min.js"></script>
@@ -21,6 +22,7 @@
         <script type="text/javascript" src="emacs-commands.js"></script>
         <script type="text/javascript" src="git-commands.js"></script>
         <script type="text/javascript" src="rest-commands.js"></script>
+        <script type="text/javascript" src="host-commands.js"></script>
 
         <script type="text/javascript" src="cheatsheet.js"></script>
         <link rel="stylesheet" href="jquery/css/custom-theme/jquery-ui-1.8.20.custom.css" type="text/css" media="screen" charset="utf-8" />
@@ -39,6 +41,7 @@
         <button id="goto_vim">goto vim</button>
         <button id="goto_git">goto git</button>
         <button id="goto_rest">goto rest</button>
+        <button id="goto_host">goto host</button>
     </div>
     <div>
         <ul id="sortable" class="ui-sortable">
@@ -67,6 +70,10 @@
                 <div id="rest" class="effect ui-corner-all"/>
             </li>
 
+            <li id="acc4" class="acc ui-corner-all resizable draggable"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+                <div id="head4" class="head ui-widget-header ui-corner-all">host:</div>
+                <div id="host" class="effect ui-corner-all"/>
+            </li>
         </ul>
     </div>
 </body>

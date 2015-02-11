@@ -91,6 +91,12 @@ $(function() {
         // TODO scroll down to the emacs section and open it if closed
         return false;
     });
+    $("#goto_host").click(function(){
+        collapseAll();
+        runEffect("head4");
+        // TODO scroll down to the emacs section and open it if closed
+        return false;
+    });
     $("#collapse_all").click(function(){
         collapseAll();
         return false;
