@@ -242,7 +242,7 @@ var jsonRest = [
 ['apt-cyg --mirror http://ftp-stud.hs-esslingen.de/pub/Mirrors/sources.redhat.com/cygwin/x86', '# cygwin: command-line installer'],
 ['cygpath -u filename',                                                                        '# cygwin: bash: print unix form of filename'],
 
-['zip -r /path/to/file.zip /path/to/dir',                               '# zip: zip content of /path/to/dir to /path/to/file.zip'],
+['zip --recurse-paths --encrypt /path/to/file.zip /path/to/dir',        '# zip: zip content of /path/to/dir to /path/to/file.zip; --recurse-paths is -r'],
 ['unzip /path/to/file.zip -d /path/to/extract-dir',                     '# zip: unzip: '],
 ['tar czf /path/to/tarfile.gz file0 file1',                             '# tar: '],
 ['tar xzf /path/to/tarfile.gz',                                         '# tar: untar: '],
