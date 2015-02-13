@@ -194,6 +194,8 @@ var jsonRest = [
 ['sudo touch /forcefsck',                                               '# linux: run fsck on next reboot'],
 ['sudo apt-get remove --purge $(dpkg -l \'linux-image-*\' | sed \'/^ii/!d;/\'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"\'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d\')',
                                                                         '# linux: remove old kernels'],
+['sed \'s/foo/FOO/\' &lt;file.old &gt;file.new; mv file.{old,new}',     '# sed: replace \'foo\' in file.old; must be done in 2 steps with the mv; otherwise the file.old is empty'],
+
 ['&nbsp;','&nbsp;'],
 
 ['sha1sum -c file.sha1',                                                '# sha1: read SHA1 sums from the file.sha1 and check them'],
