@@ -54,6 +54,7 @@ var jsonRest = [
 ['!$',                                            '# bash: args: last argument of the last command'],
 ['$!',                                            '# bash: process ID of the most recently executed background process'],
 ['$$',                                            '# bash: process ID of the shell'],
+['echo $[22 + 33]',                               '# bash: eval expression'],
 ['!:-',                                           '# bash: args: last command without the last argument'],
 
 ['> file.txt',                                    '# bash: empty file.txt'],
@@ -250,9 +251,6 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
-['View > Layout > Columns:2',                                           '# sublime: vertical split'],
-['Tools > SublimeREPL > Clojure > Clojure',                             '# sublime: open clojure REPL'],
-['C-,s / C-,f / C-,l / C-,b',                                           '# sublime: evaluate selection / file / line / block in REPL'],
 ['mtr google.com',                                                      '# networking: ping: traceroute:'],
 ['host google.com',                                                     '# networking: DNS lookup'],
 ['dig +short txt keyword.wp.dg.cx',                                     '# bash: query wikipedia for keyword'],
