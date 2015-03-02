@@ -160,6 +160,7 @@ var jsonRest = [
 
 ['netstat -lnptu',                                                                 '# linux: open ports'],
 ['db2cmd -i -w db2clpsetcp',                                                       '# db2: init environment'],
+['db2licm -l / db2licm -a db2conpe.lic',                                           '# db2: license info / add license'],
 ['echo %DB2CLP%',                                                                  '# db2: windows: '],
 ['db2 get connection state',                                                       '# db2: '],
 ['db2 CATALOG TCPIP NODE $node_name REMOTE $ip_addr SERVER $port',                 '# db2: '],
