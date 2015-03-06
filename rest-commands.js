@@ -172,7 +172,9 @@ var jsonRest = [
 ['db2 list node directory &gt; node.txt | gvim node.txt',                          '# db2: '],
 ['db2 list tables',                                                                '# db2: '],
 ['db2 -vf script.sql -t / !db2 -vf script.sql -t;',                                '# db2: execute script.sql from normal / command line processor (=>) shell'],
+['db2 -td; -v -f script.sql',                                                      '# db2: execute script.sql from normal shell (Befehlsfenster)'],
 ['db2 select * from DBASE.TABLE fetch first 2 rows only',                          '# db2: in mysql: limit N'],
+['db2 ? sql302',                                                                   '# db2: error description for sqlcode=-302'],
 
 ['mysql -u root -t < script.sql',                                                  '# mysql: execute script.sql as the root user'],
 ['mysql select * from mantis.state_mantis_id limit 10',                            '# mysql: in db2 fetch first N rows only'],
@@ -206,6 +208,7 @@ var jsonRest = [
 ['/usr/sfw/bin/wget',                                                   '# solaris: wget'],
 ['/usr/ucb/ps -auxww',                                                  '# solaris: ps: full command line (needs: sudo rootsh -i -u ... )'],
 ['psrinfo',                                                             '# solaris: displays information about processors'],
+['/usr/sbin/ifconfig -a',                                               '# solaris: net: ipconfig'],
 ['jar tf file.jar',                                                     '# jar: list files in file.jar'],
 ['jar xf file.jar path/inside.txt && cat path/inside.txt',              '# jar: extract inside.txt from file.jar and show its content. inside.txt stays extracted'],
 ['unzip -p file.jar path/inside.txt',                                   '# jar: unzip: show content of a file inside a file.jar'],
