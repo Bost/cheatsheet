@@ -88,6 +88,7 @@ var jsonRest = [
 ['wget http://server/fileX.ext -O path/to/fileY.ext',   '# wget: download fileX.txt and save it under different location / name'],
 ['curl -O http://server/fileX.txt > path/to/fileY.txt', '# curl: download fileX.txt and save it under different location / name'],
 ['curl ifconfig.me/ip/host/ua/port/',                   '# curl: net: ask http://ifconfig.me about myself (ua: User Agent)'],
+['curl -v URL',                                         '# curl: show request/response headers'],
 
 ['&nbsp;','&nbsp;'],
 
