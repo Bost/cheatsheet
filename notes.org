@@ -55,10 +55,6 @@ slime-connect
    http://blog.sciencevsmagic.net/science/fractal-machine/
 
 
-* Kickstart - money
-
-
-
 * Technology
 ** http://www.zdrojak.cz/clanky/tvorba-moderniho-e-shopu-dokonceni-uzivatelske-casti/
 ** Schatzsuche (geocaching), BTCs, Sequence of QR Codes/ graphical elements (pyramide, cube, sphere, toroid, etc)
@@ -132,7 +128,6 @@ slime-connect
 ** shackspace - docpad
 ** stuff to datomic - ?git has no services? http://www.youtube.com/watch?v=ROor6_NGIWU 58:00
 ** watch apache.org
-** lighttable:: there is no source code published yet <2013-02-28 Do>
 ** franina - svajciarske magaziny
 ** Crossroad controll (3 semaphors)                                                      :clojure-script:
 
@@ -143,14 +138,7 @@ slime-connect
 
 
 * Editors
-** vim::
-  - fix <C-Bs> (on windows)
-  - LLVM (c to java)
-  - nailgun + vim
-  - vim scripts on JVM:: http://www.root.cz/clanky/podpora-skriptovacich-jazyku-v-jdk6-a-openjdk6/
-
 ** emacs
-   debugging: start with -debut-init
  -- Variable: evil-flash-delay
      The number of seconds to flash search matches when pressing `n'
      and `N'.
@@ -161,7 +149,6 @@ slime-connect
     org-mode: Kurt Schwer - RT 3 - emacs part 3 - org-mode and babel
     emacsrocks
     TRAMP (Transparent Remote Access, Multiple Protocols)
-    use helm (former anything)
     key-chord, key-combo
     litable
     paredit
@@ -198,7 +185,6 @@ stuff
 ** M-1 3 C-n - scroll down 13 lines
 ** macros
 
-* reddit, kickstarter
 * time bank
 
 * sync files across computers:

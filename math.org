@@ -1,5 +1,3 @@
-exempli gratia: e.g.
-
 - solution of a Differential Equations (DE) is a function, not value.
 
 * Statistics:
