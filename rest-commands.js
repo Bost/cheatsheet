@@ -5,7 +5,7 @@ var jsonRest = [
 ['wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg && gpg --import gnu-keyring.gpg', '# gpg: download and import gnu-keyring'],
 ['gpg --verify file.sig file',                    '# gpg: verify file'],
 
-['df -i',                                         '# fs: nr of inodes; every file or directory requires one inode'],
+['df -i',                                         '# fs: number of inodes; every file or directory requires 1 inode'],
 ['hostname -i',                                   '# net: show or set the system\'s host name'],
 ['ip addr show eth0',                             '# net: show / manipulate routing, devices, policy routing and tunnels'],
 ['backspace / ] / [ / o',                         '# mplayer: reset/+/- speed by 10% / toggle OSD states'],
@@ -291,6 +291,10 @@ var jsonRest = [
 ['get',                                           '# ftp:'],
 ['site',                                          '# ftp: sends site specific commands to remote server'],
 ['sysinfo',                                       '# System Information Extraction Program:'],
+['getfattr',                                      '# fs: get extended attributes of filesystem objects (inst attr)'],
+['attr',                                          '# extended attributes on XFS filesystem objects'],
+['HMAC',                                          '# : hash message authentication code'],
+['ecryptfs',                                      '# enterprise cryptographic filesystem for Linu'],
 /*
 ['',                                           '# :'],
 * TODO add this:
