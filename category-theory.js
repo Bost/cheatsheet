@@ -1,25 +1,25 @@
 /*
-Impedance mismatch in data programming (has many manifestation):
-Way to access collection of data is too strongly dependent on the details of the collection
-Accessing data:
-- relational dbase - you need to know that it collection of square tables, foreign keys etc.
-		   - own thing
-- objects in memory - graph of objects with referencies to each other and possibly in a cyclic form
-		    - edge labeled graph
-- xml - node labeled tree
+  Impedance mismatch in data programming (has many manifestation):
+  Way to access collection of data is too strongly dependent on the details of the collection
+  Accessing data:
+  - relational dbase - you need to know that it collection of square tables, foreign keys etc.
+                     - own thing
+  - objects in memory - graph of objects with referencies to each other and possibly in a cyclic form
+                      - edge labeled graph
+  - xml - node labeled tree
 
-Generalisation of all kinds of collections? Monad or monoid == Collection of things. There are a handfull of operations that matter on collections of things.
-Common for all of those, it's realization is a standart query operators in LINQ.
-Appropriate mathematical generalization of Set, Tree, Stack, Queue, Deck, Try, Parity/Priority Queue, Relation is a Monoid.
-Monoid is a collection of thing with a way of putting things together (independent of what the things are).
-Operations:
-- Put the thing toggether
-- Figure out what's in the monoid
-are closed in the monoid.
+  Generalisation of all kinds of collections? Monad or monoid == Collection of things. There are a handfull of operations that matter on collections of things.
+  Common for all of those, it's realization is a standart query operators in LINQ.
+  Appropriate mathematical generalization of Set, Tree, Stack, Queue, Deck, Try, Parity/Priority Queue, Relation is a Monoid.
+  Monoid is a collection of thing with a way of putting things together (independent of what the things are).
+  Operations:
+  - Put the thing toggether
+  - Figure out what's in the monoid
+  are closed in the monoid.
 
-Take one thing that's in the monoid, take another thing that's in the monoid, use the combination operator you get 3rd thing that's in the monoid.
+  Take one thing that's in the monoid, take another thing that's in the monoid, use the combination operator you get 3rd thing that's in the monoid.
 
-"Don't leave the monoid". Typical realization of monoid is monad.
+  "Don't leave the monoid". Typical realization of monoid is monad.
 
 */
 
@@ -36,18 +36,19 @@ function stackTrace() {
 var str = function (s) {
     var typeName = 'string';
     if (typeof s !== typeName) {
-	console.log(stackTrace());
-	throw new TypeError("typeof s: "+(typeof s)+ " must be "+typeName);
-    } else {
-	return s;
+        console.log(stackTrace());
+        throw new TypeError("typeof s: "+(typeof s)+ " must be "+typeName);
+    }
+    else {
+        return s;
     }
 };
 
 // object: guarding function - (contract) asserts n is a signed 32-bit number
 var int32 = function (n) {
     if ((n | 0) !== n) {
-	console.log(stackTrace());
-	throw new TypeError("Expected a 32-bit integer.");
+        console.log(stackTrace());
+        throw new TypeError("Expected a 32-bit integer.");
     }
     return n;
 };
@@ -55,8 +56,8 @@ var int32 = function (n) {
 // object: guarding function - Natural number (int32 and nonnegative)
 var nat32 = function (n) {
     if ((n | 0) !== n || n < 0) {
-	console.log(stackTrace());
-	throw new TypeError("Expected a 32-bit natural.");
+        console.log(stackTrace());
+        throw new TypeError("Expected a 32-bit natural.");
     }
     return n;
 };
@@ -64,22 +65,22 @@ var nat32 = function (n) {
 // object: guarding function - a contract that allows anything
 var any = function (x) { return x; };
 
-var repeat;
 // morphism - i.e. a changes applied to s-value
-repeat = function (s) {
+var repeat = function (s) {
     s = str(s);
     return str(s+s);
 };
 
 var typeOf = function (typeName) {
     typeName = str(typeName); // typeName itself must be a string
-    return function(p) {
-	if (typeof p !== typeName) {
-	    console.log(stackTrace());
-	    throw new TypeError("typeof p: "+(typeof p)+ " must be "+typeName);
-	} else {
-	    return p;
-	}
+    return function (p) {
+        if (typeof p !== typeName) {
+            console.log(stackTrace());
+            throw new TypeError("typeof p: "+(typeof p)+ " must be "+typeName);
+        }
+        else {
+            return p;
+        }
     };
 };
 
@@ -104,10 +105,11 @@ var arr = function(a) {
     //                       the call-property exists for every function; use the a-value as the this-binden
     //                       when toString-function uses this-object, then this-object refers to a-object
     if ({}.toString.call(a) !== typeName) {
-	console.log(stackTrace());
-	throw new TypeError("typeof a: "+(typeof a)+ " must be "+typeName+ " (i.e. array)");
-    } else {
-	return a;
+        console.log(stackTrace());
+        throw new TypeError("typeof a: "+(typeof a)+ " must be "+typeName+ " (i.e. array)");
+    }
+    else {
+        return a;
     }
 };
 
@@ -120,8 +122,8 @@ var arr = function(a) {
 //   every elem of a-array is checked againt c-contract
 var arrOf = function (c) {
     return function (a) {
-	a = arr(a);       // check if a is an array
-	return a.map(c);  // map c-contract over every item of the a-array
+        a = arr(a);       // check if a is an array
+        return a.map(c);  // map c-contract over every item of the a-array
     };
 };
 
@@ -156,14 +158,16 @@ var some = function (x) { return new Some(x); }; // we don't have to type 'new' 
 // can be used for try-catch stuff; redeclared below
 var maybe = function (c) {
     return function (m) {
-	if (m instanceof None) {
-	    return m;
-	} else if (m instanceof Some) {
-	    return some(c(m.x)); // check if m.x is according to the c-contract and return a new Some-object
-	} else {
-	    console.log(stackTrace());
-	    throw new TypeError("Expected None or Some(value): "+ m); // TODO print the instace of m
-	}
+        if (m instanceof None) {
+            return m;
+        }
+        else if (m instanceof Some) {
+            return some(c(m.x)); // check if m.x is according to the c-contract and return a new Some-object
+        }
+        else {
+            console.log(stackTrace());
+            throw new TypeError("Expected None or Some(value): "+ m); // TODO print the instace of m
+        }
     };
 };
 
@@ -174,9 +178,10 @@ var maybe = function (c) {
 
 Maybe.prototype.getOrElse = function (x) {
     if (this instanceof Some) {
-	return this.x;
-    } else {
-	return x;
+        return this.x;
+    }
+    else {
+        return x;
     }
 };
 
@@ -186,7 +191,7 @@ Maybe.prototype.getOrElse = function (x) {
 // functor does mapping between categories
 var twice = function (functor) {
     return function (c) {
-	return functor(functor(c));
+        return functor(functor(c));
     };
 };
 
@@ -202,15 +207,15 @@ var once = function (functor) {
 // functor does mapping between categories
 var noTimes = function (functor) {
     return function (c) {
-	return c;
+        return c;
     };
 };
 
 // x wrapped in [] is called unit
 var arrOfUnit = function (c) {
     return function (x) {
-	x = noTimes(arrOf)(c)(x);             // apply an array of no times to c ???
-	return once(arrOf)(c)([x]); // apply once to c ???
+        x = noTimes(arrOf)(c)(x);             // apply an array of no times to c ???
+        return once(arrOf)(c)([x]); // apply once to c ???
     };
 };
 
@@ -227,8 +232,8 @@ Array.unit = function (x) {
 
 var maybeUnit = function (c) {
     return function (x) {
-	x = noTimes(maybe)(c)(x);
-	return once(maybe)(c)(some(x));
+        x = noTimes(maybe)(c)(x);
+        return once(maybe)(c)(some(x));
     };
 };
 
@@ -238,18 +243,18 @@ Maybe.unit = some;
 
 var arrOfFlatten = function (c) {
     return function (aax) {
-	aax = twice(arrOf)(c)(aax); // aax is an array of arrays: [[1,2,3],[4,5]]
-	var result = [], len = aax.length;
-	for (var i = 0; i < len; ++i) {
-	    result = result.concat(aax[i]);
-	}
-	return once(arrOf)(c)(result);
+        aax = twice(arrOf)(c)(aax); // aax is an array of arrays: [[1,2,3],[4,5]]
+        var result = [], len = aax.length;
+        for (var i = 0; i < len; ++i) {
+            result = result.concat(aax[i]);
+        }
+        return once(arrOf)(c)(result);
     };
 };
 
 Array.prototype.flatten = function (c) {
     if (c === void 0) {
-	c = any;
+        c = any;
     }
     return arrOfFlatten(c)(this);
 };
@@ -257,22 +262,22 @@ Array.prototype.flatten = function (c) {
 // unwrapp one level. I.e. maybe-maybe-x  -->  maybe-x
 var maybeFlatten = function (c) {
     return function (mmx) {
-	// 3 cases are possible: 1. None 2. Some-None 3. Some-Some-int32
-	mmx = twice(maybe)(c)(mmx);
-	var result = mmx;
-	if (result instanceof Some) {
-	    result = result.x;    // unwrapping one level
-	} /* else if (result instanceof None) {   // this is not neccessary
-	    result = result;      // return None
-	} */
-	return once(maybe)(c)(result);
+        // 3 cases are possible: 1. None 2. Some-None 3. Some-Some-int32
+        mmx = twice(maybe)(c)(mmx);
+        var result = mmx;
+        if (result instanceof Some) {
+            result = result.x;    // unwrapping one level
+        } /* else if (result instanceof None) {   // this is not neccessary
+             result = result;      // return None
+             } */
+        return once(maybe)(c)(result);
     };
 };
 
 
 Maybe.prototype.flatten = function (c) {
     if (c === void 0) {
-	c = any;
+        c = any;
     }
     return maybeFlatten(c)(this);
 };
@@ -308,18 +313,18 @@ var xs = [1,2,3], ys = [4,5,6], zs = [5];
 // var xs = some(4), ys = none, zs = some(5);
 
 /*
-console.log(
-    // 1. check if function (x) {..} is typeof Maybe and
-    // 2. execute it over every element of xs-array and
-    // 3. flatten the structure
-    xs.flatMap(function (x) {               // each possible choice of x from xs
-	return ys.flatMap(function (y) {    // each possible choice of y from ys
-	    return zs.map(function (z) {    // each possible choice of z from zs
-		return (x * y) + z;
-	    });
-	});
-    })
-);
+  console.log(
+  // 1. check if function (x) {..} is typeof Maybe and
+  // 2. execute it over every element of xs-array and
+  // 3. flatten the structure
+  xs.flatMap(function (x) {               // each possible choice of x from xs
+  return ys.flatMap(function (y) {    // each possible choice of y from ys
+  return zs.map(function (z) {    // each possible choice of z from zs
+  return (x * y) + z;
+  });
+  });
+  })
+  );
 */
 
 // Given an array of contracts, it creates a contract for an array whose each
@@ -329,17 +334,17 @@ var prodn = function (cs) {
     arrOf(func)(cs);     // check if cs is an array of contracts
     var len = cs.length;
     return function (args) {
-	arr(args);         // check if args is an array
-	if (len != args.length) {
-	    console.log(stackTrace());
-	    throw new TypeError("Arrays cs and args must have equal length. cs.length: "+len+", args.length: "+args.length);
-	}
-	var result = [];
-	// check that every argument passed the corresponding contract
-	for (var i = 0; i < len; i++) {
-	    result[i] = cs[i](args[i]);
-	};
-	return result;
+        arr(args);         // check if args is an array
+        if (len != args.length) {
+            console.log(stackTrace());
+            throw new TypeError("Arrays cs and args must have equal length. cs.length: "+len+", args.length: "+args.length);
+        }
+        var result = [];
+        // check that every argument passed the corresponding contract
+        for (var i = 0; i < len; i++) {
+            result[i] = cs[i](args[i]);
+        };
+        return result;
     };
 };
 
@@ -349,11 +354,11 @@ var int32str = prodn([int32, str]);
 
 var objOf = function (c) {
     return function (x) {
-	var result = {};
-	for (var i in x) {
-	    result[i] = c(x[i]);
-	}
-	return result;
+        var result = {};
+        for (var i in x) {
+            result[i] = c(x[i]);
+        }
+        return result;
     };
 };
 
@@ -364,13 +369,13 @@ var prods = function (cs) {
     // - values are functions
     objOf(func)(cs);                   // check if
     return function (args) {           // cs and args contains the same keys
-	obj(args);
-	var result = {};
-	for (var i in args) {          // iterage over keys
-	    // cs[i] - contract at key i applied at the key args[i]
-	    result[i] = cs[i](args[i]);
-	}
-	return result;
+        obj(args);
+        var result = {};
+        for (var i in args) {          // iterage over keys
+            // cs[i] - contract at key i applied at the key args[i]
+            result[i] = cs[i](args[i]);
+        }
+        return result;
     };
 };
 
@@ -391,19 +396,19 @@ var coprodn = function (cs) {
     arrOf(func)(cs);               // cs must be an array of constain-functions
     var len = cs.length;
     return function (choice) {
-	arr(choice);               // choice-parameter is an array ..
-	if (choice.length != 2) {  // .. of two elements where ..
-	    console.log(stackTrace());
-	    throw new TypeError("Expected an array size of 2 instead of: "+choice.length);
-	}
-	var ch0 = choice[0], ch1 = choice[1];
-	nat32(ch0);          // .. the first element is a natural number and ..
-	if (ch0 >= len) {    // .. its value is an index to the cs-array of contracts
-	    console.log(stackTrace());
-	    throw new TypeError("Tag choice[0]: "+ch0+" must be < cs.length: "+len);
-	};
-	// .. which choses which contracts satisfies the 2nd element of the choice-parameter
-	return [ch0, cs[ch0](ch1)];    // return a pair-array [contract, 2nd-elem-of-choice-param]
+        arr(choice);               // choice-parameter is an array ..
+        if (choice.length != 2) {  // .. of two elements where ..
+            console.log(stackTrace());
+            throw new TypeError("Expected an array size of 2 instead of: "+choice.length);
+        }
+        var ch0 = choice[0], ch1 = choice[1];
+        nat32(ch0);          // .. the first element is a natural number and ..
+        if (ch0 >= len) {    // .. its value is an index to the cs-array of contracts
+            console.log(stackTrace());
+            throw new TypeError("Tag choice[0]: "+ch0+" must be < cs.length: "+len);
+        };
+        // .. which choses which contracts satisfies the 2nd element of the choice-parameter
+        return [ch0, cs[ch0](ch1)];    // return a pair-array [contract, 2nd-elem-of-choice-param]
     };
 };
 
@@ -411,7 +416,7 @@ var fnCoprodn = coprodn([int32, nat32, str]); // three options available: fnCopr
 // console.log(fnCoprodn([0, -5]));              // 1st elem is 0 and 2nd elem is a positive or negative number
 // console.log(fnCoprodn([1, 8]));               // 1st elem is 1 and 2nd elem is positive number
 // console.log(fnCoprodn([2, "feri"]));          // 1st elem is 2 and 2nd elem is a string
-					      // any other combination is catched by an exception:
+// any other combination is catched by an exception:
 // console.log(fnCoprodn([1, "jack"]));       // TypeError: Expected a 32-bit natural.
 // console.log(fnCoprodn([4, "jack"]));       // Uncaught TypeError: Tag choice[0]: 4 must be < cs.length: 3
 
@@ -420,19 +425,19 @@ var coprods = function (cs) {
     objOf(func)(cs);               // cs must be an array of constain-functions
     var len = cs.length;
     return function (choice) {
-	arr(choice);               // choice-parameter is an array ..
-	if (choice.length != 2) {  // .. of two elements where ..
-	    console.log(stackTrace());
-	    throw new TypeError("Expected an array size of 2 instead of: "+choice.length);
-	}
-	var ch0 = choice[0], ch1 = choice[1];
-	str(ch0);            // .. the first element is a string and ..
-	if (!cs.hasOwnProperty(ch0)) {  // hasOwnProperty(..) is provided
-	    console.log(stackTrace());
-	    throw new TypeError("Unknown tag choice[0]: "+ch0);
-	}
-	// .. which choses which contracts satisfies the 2nd element of the choice-parameter
-	return [ch0, cs[ch0](ch1)];    // return a pair-array [contract, 2nd-elem-of-choice-param]
+        arr(choice);               // choice-parameter is an array ..
+        if (choice.length != 2) {  // .. of two elements where ..
+            console.log(stackTrace());
+            throw new TypeError("Expected an array size of 2 instead of: "+choice.length);
+        }
+        var ch0 = choice[0], ch1 = choice[1];
+        str(ch0);            // .. the first element is a string and ..
+        if (!cs.hasOwnProperty(ch0)) {  // hasOwnProperty(..) is provided
+            console.log(stackTrace());
+            throw new TypeError("Unknown tag choice[0]: "+ch0);
+        }
+        // .. which choses which contracts satisfies the 2nd element of the choice-parameter
+        return [ch0, cs[ch0](ch1)];    // return a pair-array [contract, 2nd-elem-of-choice-param]
     };
 };
 
@@ -443,8 +448,8 @@ var fnCoprods = coprods({left: int32, right: str}); // three options available: 
 
 var maybeCoprods = function (c) {
     return coprods({
-	none: prodn([]),
-	some: c
+        none: prodn([]),
+        some: c
     });
 };
 
@@ -464,15 +469,15 @@ var pbn = function (fs) {  // fs is an array of functions
     var c = prodn(fs);     // create a constraint i.e. a product of those functions
     var len = fs.length;
     return function (args) {
-	arr(args);
-	var result = c(args);  // apply f to x, g to y etc. (i.e. compute f(x), g(y) etc.)
-	for (var i = 1; i < len; ++i) { // i strarts from 1
-	    if (result[i] !== result[i - 1]) {
-		console.log(stackTrace());
-		throw new TypeError("Failed to match pullback constraint");
-	    }
-	}
-	return result; // an array [f(x), g(y), ...]
+        arr(args);
+        var result = c(args);  // apply f to x, g to y etc. (i.e. compute f(x), g(y) etc.)
+        for (var i = 1; i < len; ++i) { // i strarts from 1
+            if (result[i] !== result[i - 1]) {
+                console.log(stackTrace());
+                throw new TypeError("Failed to match pullback constraint");
+            }
+        }
+        return result; // an array [f(x), g(y), ...]
     };
 };
 
@@ -500,20 +505,20 @@ hom = function (/* in1, .., inN, out */) { // arbitrary-sized argument-array
 
     // outContractComment behaves like middle - higher order contracts
     var outContractCommented = function (middle) {// result is a contract expecting guarded middle-function
-	var outContract = function xfn(varArgs) {
-	    var xfnProd = inFnsProd(slice(arguments));// check xfn-arguments against inFns-product-contract
-	    var middleResult = middle.apply(this, xfnProd);// apply middle-function on arguments in xfnProd-array
-	    return outFn(middleResult);         // check result of middle(..) against outContract (last hom-argument)
-	};
+        var outContract = function xfn(varArgs) {
+            var xfnProd = inFnsProd(slice(arguments));// check xfn-arguments against inFns-product-contract
+            var middleResult = middle.apply(this, xfnProd);// apply middle-function on arguments in xfnProd-array
+            return outFn(middleResult);         // check result of middle(..) against outContract (last hom-argument)
+        };
 
-	// add some comment to the source code of outContract-function for debugging purposes. I.e.:
-	outContract.toString = (function (srcCode) {// create a function with a srcCode returning
-	    return function () {                    // another function, where the another
-		return srcCode + '/* guarded */';   // function adds some comment to the srcCode
-	    };
-	})('' + middle);                        // middle-function source code
-	// apply out-function to product of middle-function
-	return outContract;
+        // add some comment to the source code of outContract-function for debugging purposes. I.e.:
+        outContract.toString = (function (srcCode) {// create a function with a srcCode returning
+            return function () {                    // another function, where the another
+                return srcCode + '/* guarded */';   // function adds some comment to the srcCode
+            };
+        })('' + middle);                        // middle-function source code
+        // apply out-function to product of middle-function
+        return outContract;
     };
     return outContractCommented;
 };
@@ -523,23 +528,23 @@ hom = function (/* input1, .. inputN, out */) {
     var before = prodn(arrOf(func)(slice(arguments, 0, argLen - 1)));
     var after = func(arguments[argLen - 1]);
     var result = function (middle) {
-	var result = function(varArgs) {
-	    // console.log("va:"+varArgs);
-	    // if (args.length !== argLen - 1 ) {
-	    //	console.log(stackTrace());
-	    //	throw new TypeError('args.length !== argLen - 1: '+args.length+' !== '+(argLen-1));
-	    // }
-	    return after(                             // 4. check result of step 3. against after contract
-		middle.apply(this,                    // 3. calculate this.middle(varArgs)
-			     before(                  // 2. check the array-object against the before-contract
-				 slice(arguments)))); // 1. create an array-object
-	};
-	result.toString = (function (str) {   // result.toString is a function with one str-argument
-	    return function () {              // that returns a function
-		return str + '/* guarded */'; // returning str + comment
-	    };
-	})('' + middle);
-	return result;
+        var result = function(varArgs) {
+            // console.log("va:"+varArgs);
+            // if (args.length !== argLen - 1 ) {
+            //	console.log(stackTrace());
+            //	throw new TypeError('args.length !== argLen - 1: '+args.length+' !== '+(argLen-1));
+            // }
+            return after(                             // 4. check result of step 3. against after contract
+                middle.apply(this,                    // 3. calculate this.middle(varArgs)
+                             before(                  // 2. check the array-object against the before-contract
+                                 slice(arguments)))); // 1. create an array-object
+        };
+        result.toString = (function (str) {   // result.toString is a function with one str-argument
+            return function () {              // that returns a function
+                return str + '/* guarded */'; // returning str + comment
+            };
+        })('' + middle);
+        return result;
     };
     return result;
 };
@@ -563,7 +568,7 @@ var one = hom(int32)(function () { // no input params, int32 is output-contract
 // Monoid example:
 var compose = function (f, g) {
     return function (x) {
-	return f(g(x));
+        return f(g(x));
     };
 };
 
@@ -580,16 +585,16 @@ var compositionIdentity = function (x) {
 
 // monoid: any set with associative unital binary operation and the identity element
 var monoid = function (set,      // contract for a set of elements (values)
-		       times,    // associative binary (unital) operation
-		       ident) {  // identity element (noary operation)
+                       times,    // associative binary (unital) operation
+                       ident) {  // identity element (noary operation)
     return prods({               // product-contract indexed by string
-	t: func,
-	'*': hom(set, set, set), // note: we can't really verify associativity of '*'
-	1: hom(set)              // and identity of 1; we can write test for small cases
+        t: func,
+        '*': hom(set, set, set), // note: we can't really verify associativity of '*'
+        1: hom(set)              // and identity of 1; we can write test for small cases
     })({                         // prods-contract
-	t: set,
-	'*': times,
-	1: ident
+        t: set,
+        '*': times,
+        1: ident
     });
 };
 
@@ -611,8 +616,8 @@ var testAssoc = function (mon, a, b, c) {
     var op = mon['*'];
     // (a * b) * c === a * (b * c);
     if (op(op(a, b), c) !== op(a, (op(b, c)))) {
-	console.log(stackTrace());
-	throw new TypeError("The operation is not assoctiative: "+op);
+        console.log(stackTrace());
+        throw new TypeError("The operation is not assoctiative: "+op);
     }
 };
 
@@ -636,19 +641,19 @@ var addition = monoid (
 // a monad is a monoid in a category whos objects are functors and
 // whose morhisms are natural transformations (maps between functors)
 var monad = function(ftor,
-		     times,
-		     ident) {
+                     times,
+                     ident) {
     return function (t) {
-	func(t);
-	return prods({
-	    t: func,
-	    '*': hom(ftor(ftor(t)), ftor(t)), // tensor product
-	    1: hom(any(t), ftor(t))
-	})({
-	    t: ftor(t),
-	    '*': times(t),
-	    1: ident(t)
-	});
+        func(t);
+        return prods({
+            t: func,
+            '*': hom(ftor(ftor(t)), ftor(t)), // tensor product
+            1: hom(any(t), ftor(t))
+        })({
+            t: ftor(t),
+            '*': times(t),
+            1: ident(t)
+        });
     };
 };
 
@@ -670,21 +675,21 @@ var arrInt32 = arrOfMonad(int32);
 var M = function () {
     var pairs = [];
     this.for = function (v, e) {    // just store theory v,e pair in the pairs
-	pairs.push({e: e, v: v});
-	return this;
+        pairs.push({e: e, v: v});
+        return this;
     };
     this.yield = function (body) {  // yield computes a string
-	var p1 = pairs.map(
-	       function (pair, index) {
-		   var mapFunc = (index === pairs.length - 1) ? 'map' : 'flatMap';
-		   return '(' + pair.e + ').'+mapFunc+'(function(' + pair.v + ') { return ';
-	       }
-	);
-	var p2 = '(' + body + ');';
-	var p3 = pairs.map(function () { return '});';});
-	var desugared = p1.join('') + p2 + p3.join('');
-	pairs = [];
-	return desugared;
+        var p1 = pairs.map(
+            function (pair, index) {
+                var mapFunc = (index === pairs.length - 1) ? 'map' : 'flatMap';
+                return '(' + pair.e + ').'+mapFunc+'(function(' + pair.v + ') { return ';
+            }
+        );
+        var p2 = '(' + body + ');';
+        var p3 = pairs.map(function () { return '});';});
+        var desugared = p1.join('') + p2 + p3.join('');
+        pairs = [];
+        return desugared;
     };
 };
 
@@ -694,11 +699,11 @@ M.for = function (v, e) {
 
 
 var upto = hom(int32, arrOf(int32))(function (x) {
-  var r = [];
-  for (var i = 0; i < x; ++i) {
-    r.push(i);
-  }
-  return r;
+    var r = [];
+    for (var i = 0; i < x; ++i) {
+        r.push(i);
+    }
+    return r;
 });
 
 // "(x).flatMap(function(x) { return (tys).map(function(y) { return (x * y);});});"
@@ -713,17 +718,17 @@ var upto = hom(int32, arrOf(int32))(function (x) {
 var equalizer = function(fs) {
     var len = fs.length;
     if (len < 1) {
-	console.log(stackTrace());
-	throw new TypeError('fs.lenght must be > 0');
+        console.log(stackTrace());
+        throw new TypeError('fs.lenght must be > 0');
     }
     return function (x) {
-	var tuple = [];
-	for (var i = 0; i < len; ++i) {
-	    tuple[i] = x;
-	}
-	// pbn: pullback apply each function to the same input and check they all
-	// get the same answer
-	return pbn(fs)(tuple)[0]; // [0] returns that answer
+        var tuple = [];
+        for (var i = 0; i < len; ++i) {
+            tuple[i] = x;
+        }
+        // pbn: pullback apply each function to the same input and check they all
+        // get the same answer
+        return pbn(fs)(tuple)[0]; // [0] returns that answer
     };
 };
 
@@ -753,8 +758,8 @@ var square = hom(nat32, nat32)(function (n) {
 
 var bit = function (b) {
     if (b !== 0 && b !== 1) {
-	console.log(stackTrace());
-	throw new TypeError('Expected 0 or 1 instead of: '+b);
+        console.log(stackTrace());
+        throw new TypeError('Expected 0 or 1 instead of: '+b);
     }
     return b;
 };
@@ -764,7 +769,7 @@ var bit = function (b) {
 // takes no input and returns that thing
 var K = hom(any, hom(any))(function (x) {
     return function () {
-	return x;
+        return x;
     };
 });
 
@@ -789,32 +794,32 @@ var parity = hom(int32, bit)(function (n) { return n % 2; });
 // or as a monoid if f is an identity function
 var monFunc = function (m1, m2, f) {
     return {
-	// monoid type of monFunc is a function f with signature: m1.t → m2.t
-	t: hom(m1.t, m2.t)(f), // function between contracts
-	'*': equalizer([ // equalizer returns 0th function from its input array
-	    function (x, y) { return f(m1['*'](x, y)); },
-	    function (x, y) { return m2['*'](f(x), f(y)); }
-	]),
-	1: equalizer([
-	    // this function returned
-	    // m1[1] is a guarded function returning returning 0;
-	    // m1[1]() is its application - i.e. 0-value
-	    // f(0) is a transformation of a function returning 0-element
-	    function () { return f(m1[1]()); },
-	    // function returning 0-element
-	    m2[1]
-	])
+        // monoid type of monFunc is a function f with signature: m1.t → m2.t
+        t: hom(m1.t, m2.t)(f), // function between contracts
+        '*': equalizer([ // equalizer returns 0th function from its input array
+            function (x, y) { return f(m1['*'](x, y)); },
+            function (x, y) { return m2['*'](f(x), f(y)); }
+        ]),
+        1: equalizer([
+            // this function returned
+            // m1[1] is a guarded function returning returning 0;
+            // m1[1]() is its application - i.e. 0-value
+            // f(0) is a transformation of a function returning 0-element
+            function () { return f(m1[1]()); },
+            // function returning 0-element
+            m2[1]
+        ])
     };
 };
 
 var monHom = function (before,  after) {
     // monHom return a new guarded function between before- and after-monoid (i.e. contracts)
     return function (middle) {
-	return {
-	    t: hom(before.t, after.t)(middle.t),
-	    '*': hom(before.t, before.t, after.t)(middle['*']),
-	    1: hom(after.t)(middle[1])
-	};
+        return {
+            t: hom(before.t, after.t)(middle.t),
+            '*': hom(before.t, before.t, after.t)(middle['*']),
+            1: hom(after.t)(middle[1])
+        };
     };
 };
 
@@ -822,7 +827,7 @@ var leq = function (pair) {
     prodn([num, num])(pair);         // check that pair is an array of two numbers
     var x = pair[0], y = pair[1];
     if (x > y) {
-	throw new TypeError('' + x + ' must be less or equal than '+ y);
+        throw new TypeError('' + x + ' must be less or equal than '+ y);
     }
     return pair;
 };
@@ -834,14 +839,14 @@ var leq = function (pair) {
 var leqHom = function (before, after) {
     leq(before); leq(after); // check that before and after are pairs
     return function (middle) {
-	leq(middle);
-	if (before[1] !== middle[0]) {
-	    throw new TypeError('Expected '+middle[0]);
-	}
-	if (middle[1] !== after[0]) {
-	    throw new TypeError('Expected '+after[1]);
-	}
-	return [before[0], after[1]];
+        leq(middle);
+        if (before[1] !== middle[0]) {
+            throw new TypeError('Expected '+middle[0]);
+        }
+        if (middle[1] !== after[0]) {
+            throw new TypeError('Expected '+after[1]);
+        }
+        return [before[0], after[1]];
     };
 };
 
@@ -851,7 +856,7 @@ var div = function (pair) {
     prodn([nat32, nat32])(pair);
     // var x = pair[0], y = pair[1];
     if ((y / x) % 1 !== 0) {
-	throw new TypeError(x + ' does not divide ' + y);
+        throw new TypeError(x + ' does not divide ' + y);
     }
     return pair;
 };
@@ -859,14 +864,14 @@ var div = function (pair) {
 var divHom = function (before, after) {
     div(before); div(after);
     return function (middle) {
-	div(middle);
-	if (before[1] !== middle[0]) {
-	    throw new TypeError('Expected '+middle[0]);
-	}
-	if (middle[1] !== after[0]) {
-	    throw new TypeError('Expected '+after[0]);
-	}
-	return [before[0], after[1]];
+        div(middle);
+        if (before[1] !== middle[0]) {
+            throw new TypeError('Expected '+middle[0]);
+        }
+        if (middle[1] !== after[0]) {
+            throw new TypeError('Expected '+after[0]);
+        }
+        return [before[0], after[1]];
     };
 };
 // console.log(divHom([3,6], [12,24])([6,12]));  // 3 | 6 | 12 | 24 ⇒ 3 | 24
@@ -876,14 +881,14 @@ var divHom = function (before, after) {
 // all we need to know what a morphism is and how to compose morphisms
 var category = function (c, cHom) {
     return prods({
-	// c is a contract-function
-	c: func,
-	// cHom takes before-contract, after-contract and returns a function
-	// that expects a middle and produces a composition of it
-	cHom: hom(c, c, hom(c, c))
+        // c is a contract-function
+        c: func,
+        // cHom takes before-contract, after-contract and returns a function
+        // that expects a middle and produces a composition of it
+        cHom: hom(c, c, hom(c, c))
     })({
-	c: c,
-	cHom: cHom
+        c: c,
+        cHom: cHom
     });
 };
 
@@ -903,16 +908,16 @@ var guardHom = function (before, after) {
     before = guardFunc(before);
     after = guardFunc(after);
     return function (middle) {
-	middle = guardFunc(middle);
-	return function (x) {
-	    return [
-		before[0],
-		after[1],
-		after[2](                // 3. apply after[2] on result of 2.
-		    middle[2](           // 2. apply middle[2] on result of 1.
-			    before[2](x)))   // 1. apply before[x] on x
-	    ];
-	};
+        middle = guardFunc(middle);
+        return function (x) {
+            return [
+                before[0],
+                after[1],
+                after[2](                // 3. apply after[2] on result of 2.
+                    middle[2](           // 2. apply middle[2] on result of 1.
+                        before[2](x)))   // 1. apply before[x] on x
+            ];
+        };
     };
 };
 
@@ -942,14 +947,14 @@ guardHom(gLen, gQuarter)(gRepeat);
 // monoid-contract for monoid homomorphisms
 var monFunc = function (triple) {
     var msrc = prods({
-	t: func,
-	'*': hom(triple[0].t, triple[0].t, triple[0].t),
-	1: hom(triple[0].t)
+        t: func,
+        '*': hom(triple[0].t, triple[0].t, triple[0].t),
+        1: hom(triple[0].t)
     })(triple[0]);
     var mtgt = prods({
-	t: func,
-	'*': hom(triple[1].t, triple[1].t, triple[1].t),
-	1: hom(triple[1].t)
+        t: func,
+        '*': hom(triple[1].t, triple[1].t, triple[1].t),
+        1: hom(triple[1].t)
     })(triple[1]);
     var mh = hom(triple[0].t, triple[1].t)(triple[2]);
     return [msrc, mtgt, mh];
@@ -959,16 +964,16 @@ var monHom = function (before, after) {
     before = monFunc(before);
     after = monFunc(after);
     return function (middle) {
-	middle = monFunc(middle);
-	return function (x) {
-	    return [
-		before[0],
-		after[1],
-		after[2](            // 3.
-		    middle[2](       // 2.
-			before[2]))  // 1.
-	    ];
-	};
+        middle = monFunc(middle);
+        return function (x) {
+            return [
+                before[0],
+                after[1],
+                after[2](            // 3.
+                    middle[2](       // 2.
+                        before[2]))  // 1.
+            ];
+        };
     };
 };
 
@@ -979,8 +984,8 @@ var addHom = function (before, after) {
     before = num(before);
     after = num(after);
     return function (middle) {
-	middle = num(middle);
-	return after + middle + before;
+        middle = num(middle);
+        return after + middle + before;
     };
 };
 var ADD = category(num, addHom);
@@ -989,31 +994,31 @@ var multHom = function (before, after) {
     before = num(before);
     after = num(after);
     return function (middle) {
-	middle = num(middle);
-	return after * middle * before;
+        middle = num(middle);
+        return after * middle * before;
     };
 };
 var MULT = category(num, multHom);
 
 var fromMonoid = function (m) { // create category form m-monoid
     return category(
-	m.t,
-	function (before, after) {
-	    before = m.t(before);
-	    after = m.t(after);
-	    return function (middle) {
-		middle = m.t(middle);
-		return m['*'](after, (m['*'](middle, before)));
-	    };
-	}
+        m.t,
+        function (before, after) {
+            before = m.t(before);
+            after = m.t(after);
+            return function (middle) {
+                middle = m.t(middle);
+                return m['*'](after, (m['*'](middle, before)));
+            };
+        }
     );
 };
 
 // functor definition: c-contract goes in and a contract-function is returned
 var functor = function (c) {
     return function (x) {
-	// do something involving x and c
-	return x;
+        // do something involving x and c
+        return x;
     };
 };
 
@@ -1061,11 +1066,11 @@ var lazyProd = function (arrLazyC) {
     // Invoke the lazy prod to get the actual prod, then delay each element
     arrLazyC = arr(arrLazyC);   // execute lazyProd and check that the result is an array
     return function (args) {
-	var result = [];
-	for (var i = 0; i < arrLazyC.length; i++) {
-	    result[i] = arrLazyC[i]()(args[i]);
-	}
-	return result;
+        var result = [];
+        for (var i = 0; i < arrLazyC.length; i++) {
+            result[i] = arrLazyC[i]()(args[i]);
+        }
+        return result;
     }
 
     //return arr(lazyProd()).map(lazyLift);
