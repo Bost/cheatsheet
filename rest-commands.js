@@ -114,12 +114,13 @@ var jsonRest = [
 ['grep -lir "textToFind" *',                                                    '# grep: print only file-names'],
 ['grep textToFind * | cut -f1 -d:',                                             '# grep: print only filenames of the files containing \'textToFind\''],
 ['grep -i -n "textToFind" *',                                                   '# grep: print line numbers'],
+['grep -r "String" --include=*.java .',                                         '# grep: search for "String" in java files'],
+['find . -name "*.java" -print0 | xargs -0 grep -l "String"',                   '# grep: find: search for "String" in java files (with spaces in filenames)'],
 ['grep --exclude=.git',                                                         '# grep: '],
 ['grep --exclude=.git -lir \'textToFind\' *.properties',                        '# grep: '],
 ['grep -lir "textToFind" $(find . -name *.properties)',                         '# grep: find: '],
 ['grep -lir "textToFind" $(find . -name *.properties -and -not -name .git/)',   '# grep: find: do not search in the .git directory'],
 ['zgrep foo myfile.gz / zgrep \'GET /blog\' access_log.gz',                     '# zgrep: search possibly compressed files for a regular expression'],
-
 ['&nbsp;','&nbsp;'],
 
 ['rsync -av --exclude=CVS src dest',              '# cvs: copy files from src to desc excluding everything in CVS directories'],
