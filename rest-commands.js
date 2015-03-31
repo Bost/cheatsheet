@@ -22,7 +22,6 @@ var jsonRest = [
 ['ls -1 /path/to/dir | wc -l',                    '# ls: wc: count of files in /path/to/dir'],
 ['ls -lrt -d -1 $PWD/{*,.*}',                     '# ls: show full paths (alias lff)'],
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
-
 ['seq 0 2 10',                                    '# bash: sequence from 0 to 10 (both included) increment by 2'],
 ['fdupes -r .',                                   '# bash: find duplicate files'],
 ['xsel --clipboard',                              '# bash: clipboard: show normal clipboard content'],
@@ -121,6 +120,7 @@ var jsonRest = [
 ['grep -lir "textToFind" $(find . -name *.properties)',                         '# grep: find: '],
 ['grep -lir "textToFind" $(find . -name *.properties -and -not -name .git/)',   '# grep: find: do not search in the .git directory'],
 ['zgrep foo myfile.gz / zgrep \'GET /blog\' access_log.gz',                     '# zgrep: search possibly compressed files for a regular expression'],
+
 ['&nbsp;','&nbsp;'],
 
 ['rsync -av --exclude=CVS src dest',              '# cvs: copy files from src to desc excluding everything in CVS directories'],
@@ -195,7 +195,7 @@ var jsonRest = [
 
 ['sudo apt-get update && sudo apt-get upgrade',                         '# linux: ubuntu: command line upgrade part 1.'],
 ['sudo do-release-upgrade',                                             '# linux: ubuntu: command line upgrade part 2.'],
-['',                                                                    '# linux: ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade'],
+['&nbsp;',                                                              '# linux: ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade'],
 
 ['sudo restart lightdm / gdm / kdm',                                    '# linux: ubuntu: (ubuntu 11.10 or later), gnome or KDE'],
 ['sudo touch /forcefsck',                                               '# linux: run fsck on next reboot'],
@@ -236,7 +236,7 @@ var jsonRest = [
 ['dpkg --install / --remove package.deb',                               '# dpkg: install / remove package.deb'],
 ['apt-cache search ^packageName$',                                      '# dpkg: apt: show description for packageName'],
 ['aptitude show packageName',                                           '# dpkg: apt: show description for packageName'],
-['sudo rm -rf /var/lib/apt/lists; sudo mkdir -p /var/lib/apt/lists/partial; sudo apt-get clean'                 '# dpkg: apt: solution for Hash sum mismatch error'],
+['sudo rm -rf /var/lib/apt/lists; sudo mkdir -p /var/lib/apt/lists/partial; sudo apt-get clean', '# dpkg: apt: solution for Hash sum mismatch error'],
 ['software-properties-gtk' ,                                            '# linux: ubuntu: apt: Software Sources List editors; TODO see y-ppa-manager, http://repogen.simplylinux.ch/'],
 ['dpkg --get-selections | grep -v deinstall',                           '# dpkg: list installed packages; no sudo needed; TODO see --clear-selection --set-selection'],
 ['aptitude search \'~i!~M\'',                                           '# aptitude: list expressly installed packages (not just installed as dependencies)'],
