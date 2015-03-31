@@ -1,6 +1,10 @@
 var jsonHost = [
-    ['', ''],
-    ['', ''],
+    ['col / res', 'spufi: browse commands: columns / reset: toggle column numbers'],
+    [';;; F3', 'spufi: toggle: edit SQL command / view results'],
+    ['COBOL + / standalone / DB2 / VSAM / DB2 + VSAM', 'batch programs'],
+    ['COBOL + / standalone / CICS / DB2 + CICS / VSAM + CICS / DB2 + VSAM + CICS', 'online programs'],
+    ['Librarion / Changeman / Endevor / Penvalent', 'Version Control Tools; like MVS'],
+    ['XPEDITOR / INTERTEST', 'Debuggers'],
     ['', ''],
     ['', ''],
     ['ERP', 'Enterprise Resource Planning'],
@@ -26,8 +30,8 @@ var jsonHost = [
     ['SCSI', 'Small Computer System Interface'],
     ['SPUFI', 'SQL Processing File Input '],
     ['SDF', 'Screen Definition Facility'],
-    ['', ''],
-    ['', ''],
+    ['SSID', 'Storage Subsystem ID'],
+    ['CU:LDEV', 'Control Unit: ?'],
     ['', ''],
     ['PSA', 'Prefixed Save Area: Low Core'],
     ['', ''],
@@ -45,7 +49,7 @@ var jsonHost = [
     ['zIIPs', 'speciality engine: dedicated z/OS Integrated Information Processors: PUs for accelerated DB2 performance'],
     ['zDD', 'z Developer Discount'],
     ['ADCD', 'Application Development Controlled Distribution'],
-    
+
     ['RAM', 'main storage; inside the CPC cage; up to 384GB'],
     ['channel', 'independent data and control path: between I/O devices and  Memory'],
     ['CTC', 'Channel To Channel: SCP communicates with another SCP'],
@@ -139,7 +143,7 @@ var jsonHost = [
     ['', ''],
     ['ß', 'is like ~ (i.e. $HOME) on unix'],
     ['TSO TMP', 'TSO Terminal Monitor Program'],
-    
+
     ['tso vmv s', 'von Manfred; VM Vorabauslieferung von Sourcen'],
     ['tso udlist', 'z/OS Unix directory list'],
     ['tso tutor', ''],
@@ -155,7 +159,7 @@ var jsonHost = [
     ['tso rvary', 'change status of RACF dbase: switch, (de)activate (without IPL operation)'],
     ['tso rvary list', ''],
     ['LISTDSI', '?'],
-    
+
     ['F3 / x / logoff', 'ispf: exit'],
     ['PDS', 'Partitioned Dataset: some kind of folder; contains other datasets (members); sequential datasets; part == members'],
     ['Member Selection List', 'ispf: members of ispf library or tso partitioned dataset; displayed for: edit, browse, view, foreground, batch, and several utilities'],
@@ -173,10 +177,17 @@ var jsonHost = [
     ['', ''],
     ['', ''],
     ['', ''],
+    ['COBOL', 'Common Business Oriented Language: PC based (from MF - Microfocus, MS) / Real Mainframe (VS - Visualize)'],
+    ['Identification / Environment / Data / Procedure', 'COBOL program divisions - subdivided to section, sections to paragraphs, paragraphs to sentencies, sentencies to stmts / cmds / instructions / verbs'],
+    ['COBOL Data', 'permanent / temp - only during program execution'],
+    ['COBOL data types', 'num - 9 / alphabets - A / alphanumeric - X / sign + or - - S / decimal - V or P'],
+    ['picture clause', 'COBOL'],
+    ['level numbers', 'COBOL: organize datanames in memory'],
+    ['', ''],
     ['Dataset', 'kind of a file (when not partitioned) ; Block, Track, Cylinder'],
     ['Dataset types', 'CNTL / CLIST / ASM / PLI / COBOL / OBJ / LOAD / LIST / OUTLIST / LINKLIST / SCRIPT / DATA'],
     ['Dataset Record', 'like one line; there is no CR+LF concept; fixed / variable length'],
-    ['CICS', 'online system: middleware product; Customer Information Control System'],
+    ['CICS', 'online system: middleware product; Customer Information Control System (command level language); only executes online programs'],
     ['IMS', 'online system: middleware product'],
     ['DB2', 'middleware product'],
     ['DLBL', 'Disc Label'],
@@ -188,7 +199,7 @@ var jsonHost = [
     ['MVS/ESA', 'Multiple Virtual Storage/Enterprise System Architecture'],
     ['MGFA', 'Multiple Group Factor Analysis'],
     ['RSCS', 'Remote Spooling Communication Subsystem'],
-    
+
     ['z/VM', 'Virtual Machine: components: CP (Control Program) + CMS (Conversational Monitor System); can be used as a general terminal interface for z/VSE app development and system management'],
     ['z/VSE', 'Virtual Storage Extended: smaller, less complex base for batch and transaction processing; probably contains z/VM'],
     ['z/VSE/AF', 'Virtual Storage Extended/Advanced Functions'],
@@ -200,7 +211,7 @@ var jsonHost = [
 
     ['CIU', 'Customer Initiated Upgrade'],
     ['CUD', 'Capacity Upgrade on Demand'],
-    
+
     ['TOR', 'CICS Terminal Owning Region'],
     ['TPX', 'Terminal Productivity Executive: multiple session manager in z/OS'],
     ['CEMT', 'cics: invoke all the master terminal functions (dynamic user control for CICS)'],
@@ -209,7 +220,7 @@ var jsonHost = [
     ['CEST', 'cics: Supervisory Terminal'],
     ['CECI', 'cics: Command Interpreter'],
     ['CESF', 'cics: Transaction to Sign Off from CICS'],
-    
+
     ['PLT', 'Program List Tables'],
     ['PLTPI / PLTSD', 'Program List Table Post Initialisation (? initial Process ?) - starting CISC Configuration Manager / Shutdown'],
     ['SIT', 'System Initialisation Table'],
@@ -221,12 +232,12 @@ var jsonHost = [
     ['SRB', 'Service Request Block: request for system service - input for SCHEDULE macro'],
     ['RTF', 'Recovery Termination Manager'],
     ['APF', 'Authorized Program Facility: for z/OS cross-memory (XM) services'],
-    
+
     ['zArchitecture', 'IBM architecture for mainframe computers and peripherals'],
     ['SCP', 'System Control Program'],
     ['IPL', 'Initial Program Loading operation'],
     ['ASI', 'Automatic System Initialisation'],
-    ['JCL', 'Job Control Language'],
+    ['JCL', 'Job Control Language: compile batch and online programs; execute batch programs'],
     ['JCS', 'Job Control Statement'],
     ['JCC', 'Job Control Command'],
     ['JCP', 'Job Control Procedure'],
@@ -271,7 +282,7 @@ var jsonHost = [
     ['VTOC', 'Volume Table of Content: structure with metadata for Basic shared DASD'],
     ['VOLSER', 'Volume Serial: Disk volume (pack) identification'],
 
-    
+
     ['DATE(\'E\')', 'rexx: '],
     ['say \'C1 81\'x', 'rexx: hexadecimal'],
     ['pull varname', 'rexx: read user input'],
@@ -382,7 +393,7 @@ var jsonHost = [
     ['', ''],
     ['', ''],
     ['', ''],
-    
+
     ['Kennzeichen', 'Auskunft Objekte in Bearbeitung'],
     ['0',   'F1: Kennzeichen: Das Objekt wurde geholt mit Sperre'],
     ['1',   'F1: Kennzeichen: Das Objekt wurde an PROD übergeben'],
