@@ -289,7 +289,9 @@ var jsonRest = [
 ['&nbsp;','&nbsp;'],
 
 ['wireshark',                                     '# net: packet analyser'],
-['get',                                           '# ftp:'],
+['! / exit',                                      '# ftp: toggle bash / ftp'],
+['open ipaddress ENTER user username',            '# ftp: connect to ipaddress and login with username'],
+['get file / mget file',                          '# ftp: get file from remote computer'],
 ['site',                                          '# ftp: sends site specific commands to remote server'],
 ['sysinfo',                                       '# System Information Extraction Program:'],
 ['getfattr',                                      '# fs: get extended attributes of filesystem objects (inst attr)'],

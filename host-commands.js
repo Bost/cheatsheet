@@ -119,7 +119,7 @@ var jsonHost = [
     ['start sdsf', 'launched from the ISPF-GUI'],
     ['ISPF/PDF', 'Interactive System Productivity Facility / Program Development Facility'],
     ['PF', 'Program Function (keys): F1 to F24 keys'],
-    ['F2 / F7 / F8 / F9 / F10 / F11', 'Program Function Keys: split screen / up / down / swap screen / left / right'],
+    ['F2 / F5 / F7 / F8 / F9 / F10 / F11 / F12', 'Program Function Keys: split screen / (repeat)find / up / down / swap screen / left / right / history'],
     ['PA1 / PA2 / PA3', 'Program Access (? not Attention ?) Keys'],
     ['PA1', 'Program Access Key for ATTENTION; Left Alt-1'],
     ['PA2', 'Program Access Key for RESHOW'],
