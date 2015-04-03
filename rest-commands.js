@@ -193,6 +193,7 @@ var jsonRest = [
 ['renice',                                                              '# linux: alter priority of running processes'],
 ['lsb_release -a',                                                      '# linux: show (ubuntu) version'],
 
+['sudo update-grub',                                                    '# linux: ubuntu: when "you may need to re-run your boot" appears'],
 ['sudo apt-get update && sudo apt-get upgrade',                         '# linux: ubuntu: command line upgrade part 1.'],
 ['sudo do-release-upgrade',                                             '# linux: ubuntu: command line upgrade part 2.'],
 ['&nbsp;',                                                              '# linux: ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade'],
