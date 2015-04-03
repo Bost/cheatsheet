@@ -22,6 +22,8 @@ var jsonRest = [
 ['ls -1 /path/to/dir | wc -l',                    '# ls: wc: count of files in /path/to/dir'],
 ['ls -lrt -d -1 $PWD/{*,.*}',                     '# ls: show full paths (alias lff)'],
 ['wc cheatsheet.html',                            '# wc: line count, word count'],
+['head -n 5 file / tail -n 5 file',               '# bash: fist / last 5 lines from file'],
+['cat /etc/shells',                               '# bash: linux: available shells'],
 ['seq 0 2 10',                                    '# bash: sequence from 0 to 10 (both included) increment by 2'],
 ['fdupes -r .',                                   '# bash: find duplicate files'],
 ['xsel --clipboard',                              '# bash: clipboard: show normal clipboard content'],
@@ -48,12 +50,13 @@ var jsonRest = [
 ['!*',                                            '# bash: args: all arguments of the last command'],
 ['$@',                                            '# bash: args: all arguments' ],
 ['$#',                                            '# bash: args: count of arguments' ],
-['$?',                                            '# bash: exit status of the most recently executed command'],
+['$?',                                            '# bash: exit code of the last command (0: success) e.g. adduser joe; echo $?'],
 ['$-',                                            '# bash: build-in commands'],
 ['$_',                                            '# bash: last argument of the previous command. At the shell startup, it gives the absolute filename of the shell script being executed'],
 ['!$',                                            '# bash: args: last argument of the last command'],
 ['$!',                                            '# bash: process ID of the most recently executed background process'],
 ['$$',                                            '# bash: process ID of the shell'],
+['(echo x; echo y) | cmd',                        '# bash: the cmd takes x and y as if they were pressed during its execution'],
 ['echo $[22 + 33]',                               '# bash: eval expression'],
 ['!:-',                                           '# bash: args: last command without the last argument'],
 
@@ -72,6 +75,9 @@ var jsonRest = [
 ['cp --parents -p some/path/from.ext another/path/to.ext', '# bash: automatically create "another/path" and do --preserve=mode,ownership,timestamps'],
 ['mv README.{text,txt} ; cp file{,.bak}',         '# bash: mv README.text README.txt ; cp file file.bak'],
 ['./command.sh 2&gt;&amp;1 | tee command.log',    '# bash: redirect stderr (2) to stdout (1) and save it to command.log'],
+['head -n 5 file / tail -n 5 file',               '# bash: fist / last 5 lines from file'],
+['./command.sh 1&gt;str.out 2&gt;str.err / ./command.sh &amp;&gt;combined.out', '# bash: find: redirect: separate / combine sdterr and stdout; does not work with the tee command'],
+['cat &gt;&gt;EOF',                               '# bash: redirect: type in stuff and wait unit EOF gets typed'],
 ['date +"%Y-%m-%d_%H-%M-%S"',                     '# bash: get date (timestamp) in a given format'],
 ['du -h --exclude=patten /path/to/dir',           '# bash: du: size of /path/to/dir with subdirectories, excluding files with given pattern'],
 ['du -s',                                         '# bash: du: summarize size'],
@@ -92,6 +98,7 @@ var jsonRest = [
 ['&nbsp;','&nbsp;'],
 
 ['diff -rq dirA dirB | sort',                     '# diff: recursively compare dirA with dirB; show only filenames: -q (quiet)'],
+['sort -k2 file.csv',                             '# bash: sort via 2nd key (?column?)'],
 ['sdiff file1 file0',                             '# diff: outputs the files in two columns, side by side, separated by spaces'],
 
 ['find . -empty -type f -delete / find . -empty -type d -delete',               '# find: find and delete empty files / dirs'],
@@ -107,6 +114,7 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
+['grep "[[:upper:]]" file',                                                     '# grep: lines containing any upper character'],
 ['grep -Fx -f file1 file2',                                                     '# grep: intersection between two files'],
 ['grep --before-context=2 --after-context=4 textToFind',                        '# grep: search for textToFind and print 2/4 lines before/after matching line'],
 ['grep -B 2 -A 4 textToFind',                                                   '# grep: search for textToFind and print 2/4 lines before/after matching line'],
