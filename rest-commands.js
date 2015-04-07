@@ -287,7 +287,7 @@ var jsonRest = [
 ['lscpu',                                                               '# display information on CPU architecture'],
 ['lsof',                                                                '# lsof: list open files'],
 ['lsof -i:[ADDR] -t',                                                   '# lsof: list open files whose inet address matches ADDR; -t: terse output'],
-['nproc',                                                               '# nproc: print the number of processing units available'],
+['nproc',                                                               '# nproc: processsor: cpu: core: cores: print the number of processing units available'],
 ['test',                                                                '# test: check file types and compare values'],
 ['expand / unexpand',                                                   '# tabs: convert spaces &lt;-&gt; tabs'],
 ['zenity, whiptail',                                                    '# linux: simple GUIs'],
