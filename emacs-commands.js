@@ -91,6 +91,7 @@ var jsonEmacs = [
 ['m / u (U) / t',                   '; dired: mark / unmark (all) / toggle marking'],
 ['~ / #',                           '; dired: markup all backup / auto-save files'],
 ['* / * * / * s (.) / * c',         '; dired: markup all dirs / executables / files (with extention) / change all marks'],
+['+ ',                              '; dired: new dir'],
 ['M-x dired-toggle-read-only / M-x wdired-finish-edit', '; dired: writable - perform operations by editing dired buffer'],
 ['M-q',                             '; rewrap the line in auto-fill-mode'],
 ['C-u',                             '; parameter key'],
