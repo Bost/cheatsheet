@@ -10,7 +10,7 @@ var jsonHost = [
     ['ERP', 'Enterprise Resource Planning'],
     ['IOP', 'Input Output Processor'],
     ['LIC', 'Licensed Internal Code'],
-    ['SMS', 'System Managed Storage'],
+    ['SMS', 'System Managed Storage / Storage Management Subsystem'],
     ['CU', 'Control Unit'],
     ['PU', 'Processing Unit: brain - executes instructions; inside CPC cage(frame)'],
     ['CP', 'Customer Processor: normal processor'],
