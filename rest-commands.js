@@ -302,16 +302,18 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
-['wireshark',                                     '# net: packet analyser'],
-['! / exit',                                      '# ftp: toggle bash / ftp'],
-['open ipaddress ENTER user username',            '# ftp: connect to ipaddress and login with username'],
-['get file / mget file',                          '# ftp: get file from remote computer'],
-['site',                                          '# ftp: sends site specific commands to remote server'],
-['sysinfo',                                       '# System Information Extraction Program:'],
-['getfattr',                                      '# fs: get extended attributes of filesystem objects (inst attr)'],
-['attr',                                          '# extended attributes on XFS filesystem objects'],
-['HMAC',                                          '# : hash message authentication code'],
-['ecryptfs',                                      '# enterprise cryptographic filesystem for Linu'],
+['wireshark',                           '# net: packet analyser'],
+['! / exit',                            '# ftp: toggle bash / ftp'],
+['open ipaddress ENTER user username',  '# ftp: connect to ipaddress and login with username'],
+['get file / mget file',                '# ftp: get file from remote computer'],
+['site',                                '# ftp: sends site specific commands to remote server'],
+['sysinfo',                             '# System Information Extraction Program:'],
+['getfattr',                            '# fs: get extended attributes of filesystem objects (inst attr)'],
+['attr',                                '# extended attributes on XFS filesystem objects'],
+['HMAC',                                '# : hash message authentication code'],
+['ecryptfs',                            '# enterprise cryptographic filesystem for Linu'],
+['dpigs',                               '# debian-goodies: show installed packages occupying the most space'],
+['sudo checkrestart',                   '# debian-goodies: check which processes need to be restarted after an upgrade'],
 /*
 ['',                                           '# :'],
 * TODO add this:
