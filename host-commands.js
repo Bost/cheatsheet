@@ -348,7 +348,7 @@ var jsonHost = [
     ['RECFM=V', 'Record Format: Variable; one logical record in one physical block: RDW<Data>'],
     ['RECFM=VB', 'Record Format:'],
     ['RDW / BDW', 'Record / Block Descriptor Word: for RECFM=VB'],
-    ['RECFM=FBA / RECFM=FBM', 'Record Format: fixed blocked record containing ANSI control chars / Machine code control chars'],
+    ['RECFM=FBA / RECFM=FBM', 'Record Format: fixed blocked record; control chars: ANSI / Machine code'],
     ['CALL', 'Rexx instruction (routine) / control of traps'],
     ['LOAD', 'DB2 utility: control statement; loading vals into a table'],
     ['STEPLIB', 'TSO/E cm; specify private load libs: add / remove / acti- / deactivate / display '],
