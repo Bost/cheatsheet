@@ -5,4 +5,5 @@ var jsonRest = [
 ['(load-file "src/ws/core.clj")',                     '; clj: read and eval swc/ws/core.clj'],
 ['(in-ns \'full.namespace)',                          '; clj: switch to full.namespace'],
 ['(clojure.repl/doc full.namespace/objname)',         '; clj: objname documentation'],
+['#_(foo 1 2)/ (comment foo 1 2)',                    '; clj: block comment; NOTE: (comment) returns null'],
  ]
