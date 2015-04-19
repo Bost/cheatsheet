@@ -170,4 +170,5 @@ var jsonEmacs = [
 ['x (X)',                           '; M-x magit-status: reset (discard all uncommited) changes - working tree unchanged'],
 ['M-x info / info-emacs-manual / info-display-manual' , '; info: manual:'],
 ['macros',                          '; 1. M-x kmacro-name-last-macro, 2. M-x insert-kbd-macro, 3. M-x kmacro-bind-to-key'], 
+['$dev/emacs/src/emacs --eval \'(message "uhu")\'', '; launch emacs and eval string; does not work well with my bash function LaunchEmacs'],
 ]
