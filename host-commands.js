@@ -448,4 +448,9 @@ var jsonHost = [
     ['VM',  'F1: Kommandos: Anzeige aller VMs, in deren Zusammenhang das Objekt bearbeitet wurde'],
     ['U',   'F1: Kommandos: Änderung der Kurzbeschreibung'],
     ['CP',  'F1: Kommandos: Compilieren des Objekts aus MSV heraus'],
+    ['cp unixfile.txt "//\'stuff.x\'"', 'Copy a text file to a text file'],
+    ['cp "//\'stuff.x\'" "//\'stuff.y\'"', 'Copy a text file to a text file'],
+    ['cp -T source_file "//\'hlq.desti(nation)\'"', 'Copy a text file to a sequential dataset'],
+    ['cp –B source_file "//\'hlq.desti(nation)\'"', 'Copy a binary file to a sequential dataset'],
+    ['cp –X source_pgm "//\'hlq.desti(nation)\'"', 'Copy an executable binary (a program object) to a PDS/E'],
  ]
