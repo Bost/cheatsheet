@@ -448,6 +448,7 @@ var jsonHost = [
     ['VM',  'F1: Kommandos: Anzeige aller VMs, in deren Zusammenhang das Objekt bearbeitet wurde'],
     ['U',   'F1: Kommandos: Änderung der Kurzbeschreibung'],
     ['CP',  'F1: Kommandos: Compilieren des Objekts aus MSV heraus'],
+    ['oedit unixfile.txt', 'uss: edit unixfile.txt from under the host editor'],
     ['cp unixfile.txt "//\'stuff.x\'"', 'Copy a text file to a text file'],
     ['cp "//\'stuff.x\'" "//\'stuff.y\'"', 'Copy a text file to a text file'],
     ['cp -T source_file "//\'hlq.desti(nation)\'"', 'Copy a text file to a sequential dataset'],
