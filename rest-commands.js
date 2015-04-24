@@ -172,6 +172,9 @@ var jsonRest = [
 ['net use P: /delete',                                                             '# windows: net: unmap P:'],
 ['netstat -a | find "LISTENING"',                                                  '# windows: open ports'],
 ['setx NAME value /m',                                                             '# windows: set system variable system-wide'],
+['msinfo32 /report msinfo32.txt',                                                  '# windows: save system info'],
+['systeminfo /s srvmain /u maindom\hiropln /p p@ssW23 /fo table',                  '# windows: save system info'],
+['wmic /?',                                                                        '# windows: Windows Management Instrumentation Command-Line (WMIC)'],
 
 ['netstat -lnptu',                                                                 '# linux: open ports'],
 ['db2cmd -i -w db2clpsetcp',                                                       '# db2: init environment'],
