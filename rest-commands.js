@@ -203,7 +203,9 @@ var jsonRest = [
 
 
 ['&nbsp;','&nbsp;'],
-
+['pkexec',                                                              '# linux: Execute a command as another user'],
+['systemctl',                                                           '# linux: systemd: Control the systemd system and service manager'],
+['loginctl',                                                            '# linux: systemd: Control the systemd login manager'],
 ['last',                                                                '# linux: last logged-in users'],
 ['lscpu',                                                               '# linux: info about CPU architecture'],
 ['renice',                                                              '# linux: alter priority of running processes'],
