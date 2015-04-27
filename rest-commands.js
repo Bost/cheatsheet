@@ -47,7 +47,7 @@ var jsonRest = [
 ['import shutil',                                 '# bash: python: high-level file operations'],
 ['sudo !!',                                       '# bash: args: run the last command as root'],
 ['id user',                                       '# bash: real and effective user and group IDs'],
-
+['nslookup www.google.com | tail -2 | head -1 | awk "{print $2}"', '# bash: get ip address from domain'],
 ['$*',                                            '# bash: args: function arguments'],
 ['!*',                                            '# bash: args: all arguments of the last command'],
 ['$@',                                            '# bash: args: all arguments' ],
