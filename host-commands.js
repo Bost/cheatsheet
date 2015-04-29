@@ -40,7 +40,7 @@ var jsonHost = [
     ['', ''],
     ['PSA', 'Prefixed Save Area: Low Core'],
     ['', ''],
-    ['', ''],
+    ['hilite jcl / cobol / rexx / off / pascal', 'editor: highlighting'],
     ['catalog', 'dataset with info about attributes and volumes of other datasets. Less info about storage setup needed (no changes in JCL DD statesments) when a catalogized dataset is moved between devices'],
     ['Multiprocessor', 'CPC physically partitioned to 2 operating processor complexes'],
     ['ICP', 'Integrated Coupling Unit'],
@@ -106,7 +106,7 @@ var jsonHost = [
     ['', ''],
     ['', ''],
     ['VM', 'Virtual Machine: contains minidiscs (Platten)'],
-    ['DB/DC', 'Data Base / Data Communication Systems'],
+    ['DB / DC', 'Data Base / Data Communication Systems'],
     ['APL', 'for mathematical problems'],
     ['CLIST', 'Command List: procedural programming language'],
     ['ISPF', 'Interactive System Productivity Facility: (GUI) interface for 3270 TSO Terminals; file browser, editor, made of \'panels\''],
@@ -122,9 +122,9 @@ var jsonHost = [
 
     ['HFS', 'Hierarchical File Manager'],
     ['start sdsf', 'launched from the ISPF-GUI'],
-    ['ISPF/PDF', 'Interactive System Productivity Facility / Program Development Facility'],
+    ['ISPF / PDF', 'Interactive System Productivity Facility / Program Development Facility'],
     ['PF', 'Program Function (keys): F1 to F24 keys'],
-    ['F2 / F5 / F7 / F8 / F9 / F10 / F11 / F12', 'Program Function Keys: split screen / (repeat)find / up / down / swap screen / left / right / history'],
+    ['F2 / F5 / (m)F7 / (m)F8 / F9 / F10 / F11 / F12', 'Program Function Keys: split screen / (repeat)find / (BEF)up / (EOF)down / swap screen / left / right / history'],
     ['PA1 / PA2 / PA3', 'Program Access (? not Attention ?) Keys'],
     ['PA1', 'Program Access Key for ATTENTION; Left Alt-1'],
     ['PA2', 'Program Access Key for RESHOW'],
@@ -152,11 +152,13 @@ var jsonHost = [
     ['tso vmv s', 'von Manfred; VM Vorabauslieferung von Sourcen'],
     ['tso udlist', 'z/OS Unix directory list'],
     ['tso tutor', ''],
+    ['tso tabdok', ''],
+    ['tso msvc52t / msvc52a', 'mass compile / CICS compile'],
     ['tso help something', ''],
     ['tso cancel something', ''],
     ['tso status', 'list jobs on output queue'],
     ['tso listcat', 'list catalogs'],
-    ["tso listds 'ADN0035.*'", 'List Dataset ADN0035'].
+    ["tso listds 'ADN0035.*' / tso dl 'ADN0035.*'", 'List Dataset ADN0035'].
     ['tso netstat home', ''],
     ['tso omvs', 'gives /bin/sh'],
     ['tso msv', 'MSV: start MBS Source Verwaltung - based on TSO, ISPF und DB2'],
@@ -167,7 +169,7 @@ var jsonHost = [
     ["tso submit 'ADN0035.RACFBK.CNTL(HELLOW)'", "tso: submit jcl job: ADN0035.RACFBK.CNTL(HELLOW)"],
     ['DCB', 'jcl: data access: Data Control Block'],
     ['COND', 'jcl: Contition Codes: 0: Normal, 4: Warn, 8: Error, 12: Severe Error, 16: Terminal Error'],
- 
+
     ['LISTDSI', '?'],
 
     ['F3 / x / logoff', 'ispf: exit'],
@@ -230,7 +232,11 @@ var jsonHost = [
 
     ['TOR', 'CICS Terminal Owning Region'],
     ['TPX', 'Terminal Productivity Executive: multiple session manager in z/OS'],
+
     ['CEMT', 'cics: invoke all the master terminal functions (dynamic user control for CICS)'],
+    ['CEMT S PROG(SDxxx01) new', 'compile to LOADLIB'],
+    ['CEMT I TRAN(MBS) new', 'Inquiry transaction'],
+
     ['CESN', 'cics: sign on to CICS using a password as authorization from non-3270 terminals with the CESN transaction'],
     ['CEDA', 'cics: define resources (programs, transactions, files etc.) for the CICS region (system) white the CICS is running'],
     ['CEST', 'cics: Supervisory Terminal'],
