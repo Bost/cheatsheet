@@ -6,7 +6,7 @@ var jsonRest = [
 ['gpg --verify file.sig file',                    '# gpg: verify file'],
 
 ['df -i',                                         '# fs: number of inodes; every file or directory requires 1 inode'],
-['hostname -i',                                   '# net: show or set the system\'s host name'],
+['hostname -i',                                   '# net: linux: windows: show or set the system\'s host name'],
 ['ip addr show eth0',                             '# net: show / manipulate routing, devices, policy routing and tunnels'],
 ['backspace / ] / [ / o',                         '# mplayer: reset/+/- speed by 10% / toggle OSD states'],
 ['* / "/"',                                       '# mplayer: volume +/-'],
