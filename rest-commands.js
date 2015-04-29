@@ -52,7 +52,7 @@ var jsonRest = [
 ['!*',                                            '# bash: args: all arguments of the last command'],
 ['$@',                                            '# bash: args: all arguments' ],
 ['$#',                                            '# bash: args: count of arguments'],
-['$?',                                            '# bash: exit code (return value) of the last command (0: success) e.g. adduser joe; echo $?'],
+['$?',                                            '# bash: exit code (return value / retcode) of the last command (0: success) e.g. adduser joe; echo $?'],
 ['$-',                                            '# bash: build-in commands'],
 ['$_',                                            '# bash: last argument of the previous command. At the shell startup, it gives the absolute filename of the shell script being executed'],
 ['!$',                                            '# bash: args: last argument of the last command'],
