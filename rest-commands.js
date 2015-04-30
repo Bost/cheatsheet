@@ -100,6 +100,10 @@ var jsonRest = [
 ['curl ifconfig.me/ip/host/ua/port/',                   '# curl: net: ask http://ifconfig.me about myself (ua: User Agent)'],
 ['curl -v URL',                                         '# curl: show request/response headers'],
 
+['ip address','net: ip: like ifconfig. state of network interfaces'],
+['ip route', '# net: ip: routing table'],
+['ip neighbour', '# net: ip: Address Resolution Protocol table'],
+
 ['&nbsp;','&nbsp;'],
 
 ['diff -rq dirA dirB | sort',                     '# diff: recursively compare dirA with dirB; show only filenames: -q (quiet)'],
