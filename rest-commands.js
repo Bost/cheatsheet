@@ -307,6 +307,7 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
+['snmp',                                '# net: linux: Simple Network Management Protocol'],
 ['wireshark',                           '# net: packet analyser'],
 ['! / exit',                            '# ftp: toggle bash / ftp'],
 ['open ipaddress ENTER user username',  '# ftp: connect to ipaddress and login with username'],
