@@ -180,7 +180,6 @@ var jsonRest = [
 ['systeminfo /s srvmain /u maindom\hiropln /p p@ssW23 /fo table',                  '# windows: save system info'],
 ['wmic /?',                                                                        '# windows: Windows Management Instrumentation Command-Line (WMIC)'],
 
-['netstat -lnptu',                                                                 '# linux: open ports'],
 ['db2cmd -i -w db2clpsetcp',                                                       '# db2: init environment'],
 ['db2licm -l / db2licm -a db2conpe.lic',                                           '# db2: license info / add license'],
 ['echo %DB2CLP%',                                                                  '# db2: windows: '],
@@ -286,6 +285,7 @@ var jsonRest = [
 ['host google.com',                                                     '# networking: DNS lookup'],
 ['dig +short txt keyword.wp.dg.cx',                                     '# bash: query wikipedia for keyword'],
 ['netstat -tulnp',                                                      '# net: listening ports and PIDs of associated processes. tcp (-t) udp (-u)'],
+['ss -lp',                                                              '# net: linux: socket statistics; netstat replacement'],
 ['crontab -e / crontab -l',                                             '# crontab: edit / view entries'],
 ['acpi -V',                                                             '# linux: show everything (battery info etc); Advanced Configuration and Power Interface'],
 ['xbacklight -set 10 / -inc 10 / -dec 10',                              '# linux: set / increase / decrease display brightness'],
