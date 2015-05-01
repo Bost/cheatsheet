@@ -65,7 +65,6 @@ var jsonRest = [
 ['> file.txt',                                    '# bash: empty file.txt'],
 ['tr \'[A-Z]\' \'[a-z]\' < file.txt > fileNew.txt', '# bash: insert contents of file.txt into input of tr and output results to fileNew.txt'],
 ['mmv \\*.JPG \\#1.jpg',                          '# bash: mass move/copy/rename'],
-['rsync --archive --remove-source-files backup/ backupArchives/ ', '# bash: mv: move content of a directory within another directory with the same folders'],
 ['cal 2 2004 / cal -y 2004',                      '# bash: visual calender for februar 2004 / whole year 2004'],
 ['renice +20 2222',                               '# bash: change the priority of process 2222 to minimum (-19 max, +20 min prio)'],
 ['ps -o pid,user,command,nice -p 7695',           '# bash: ps: show statistics for a process nr. 7695'],
@@ -117,7 +116,8 @@ var jsonRest = [
 ['find . ... -print -quit',                                                     '# find: quit search after finding 1st match'],
 ['find /src -iname \'*.xml\' -exec cp \\{\\} /dst/ \\;',                        '# bash: find: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file'],
 ['find . -type d -name "dirname"',                                              '# bash: find: directories called dirname'],
-['find . -not -path \'*/\.*\'',                                                 '# find: skip hidden files and dirs'],
+['find . -not -path "*/\.*"',                                                   '# find: skip / exclude hidden files and dirs'],
+['find . -not -path "*path/to/exclude*"',                                       '# find: skip / do not search in "*path/to/exclude*"'],
 ['find . -type f -name "*.xml" -or -name "*.txt"',                              '# find: files filtered by multiple extensions'],
 ['find . -executable -type f',                                                  '# find: find executable files'],
 
@@ -140,7 +140,8 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
-['rsync -av --exclude=CVS src dest',              '# cvs: copy files from src to desc excluding everything in CVS directories'],
+['rsync --archive --remove-source-files backup/ backupArchives/ ', '# bash: mv: move content of a directory within another directory with the same folders'],
+['rsync --archive --verbose --exclude=CVS src dest',               '# bash: cvs: copy files from src to desc excluding everything in CVS directories'],
 ['cvs diff -r tagX -r tagY',                      '# cvs: diff tagX tagY'],
 ['cvs update -C path/to/file.ext',                '# cvs: get clean copy'],
 ['cvs update -P -C -r 1.11 path/to/file.ext',     '# cvs: get revision 1.11'],
