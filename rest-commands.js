@@ -85,7 +85,7 @@ var jsonRest = [
 ['cat &gt;&gt;EOF',                               '# bash: redirect: type in stuff and wait unit EOF gets typed'],
 ['date +"%Y-%m-%d_%H-%M-%S"',                     '# bash: get date (timestamp) in a given format'],
 ['du -h --exclude=patten /path/to/dir',           '# bash: du: size of /path/to/dir with subdirectories, excluding files with given pattern'],
-['du -s',                                         '# bash: du: summarize size'],
+['du -s dir / du -sh dir',                        '# bash: du: summarize size of dir'],
 ['(cd /path/to/dir && ls)',                       '# bash: jump to /path/to/dir execute command and jump back'],
 ['time read',                                     '# bash: stop-watch; ctrl-d to stop'],
 ['Ctrl-u ... Ctrl-y',                             '# bash: type partial cmd, kill this cmd, check something you forgot, yank the cmd, resume typing'],
@@ -259,7 +259,7 @@ var jsonRest = [
 ['apt-cache search ^packageName$',                                      '# dpkg: apt: show description for packageName'],
 ['aptitude show packageName',                                           '# dpkg: apt: show description for packageName'],
 ['sudo rm -rf /var/lib/apt/lists; sudo mkdir -p /var/lib/apt/lists/partial; sudo apt-get clean', '# dpkg: apt: solution for Hash sum mismatch error'],
-['software-properties-gtk' ,                                            '# linux: ubuntu: apt: Software Sources List editors; TODO see y-ppa-manager, http://repogen.simplylinux.ch/'],
+['software-properties-gtk - see /etc/apt/sources.list',                 '# linux: ubuntu: apt: Software Sources List editors; see y-ppa-manager, http://repogen.simplylinux.ch/'],
 ['dpkg --get-selections | grep -v deinstall',                           '# dpkg: list installed packages; no sudo needed; TODO see --clear-selection --set-selection'],
 ['aptitude search \'~i!~M\'',                                           '# aptitude: list expressly installed packages (not just installed as dependencies)'],
 
