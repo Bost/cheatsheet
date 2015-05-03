@@ -1,3 +1,10 @@
+- TODO: install scheme; see what Ambrose et. al have done
+- TODO use trace to analyse examples from "The Reasonable Schemer"
+- recursive calls - creates "triangle" on the stack
+- stack space constrains can be avoided by "registering" (functions params turned to registers)
+- meaning of call with continuations is important for type theory
+- complicated controll structure - implement at first with continuations and then traditionally
+
 - solution of a Differential Equations (DE) is a function, not value.
 
 * Statistics:
