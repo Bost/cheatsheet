@@ -1,5 +1,6 @@
 var jsonEmacs = [
 // ['', ';'],
+['M-x highlight-symbol-at-point',   '; e.g. visualisatin; for log analysis'],
 ['M-x paredit-wrap-square',         '; paredit: wrap square brackets around sexp'],
 ['C-k',                             '; paredit: kill the rest in the sexp'],
 ['M-( / M-r / M-&lt;up&gt;',        '; paredit: wrap brackets around sexp / raise sexp (replace entire parent with child) / remove everything before the current sexp'],
