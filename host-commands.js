@@ -380,7 +380,7 @@ var jsonHost = [
     ['SQA', 'System Queue Area'],
     ['CSA', 'Common Storage Area'],
     ['PARMLIB', 'Parameter Library: secondary subsystem'],
-    ['CSR / PAGE', 'Cursor / Page'],
+    ['scroll CSR / PAGE', 'Cursor / Page'],
     ['', ''],
     ['', ''],
     ['DSORG=PS / DSORG=PO / DSORG=DA', 'Dataset (Storage) Organisation: Physical Sequential / Partitioned Organized / Direct'],
