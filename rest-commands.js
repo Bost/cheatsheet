@@ -7,7 +7,6 @@ var jsonRest = [
 
 ['df -i',                                         '# fs: number of inodes; every file or directory requires 1 inode'],
 ['hostname -i',                                   '# net: linux: windows: show or set the system\'s host name'],
-['ip addr show eth0',                             '# net: show / manipulate routing, devices, policy routing and tunnels'],
 ['backspace / ] / [ / o',                         '# mplayer: reset/+/- speed by 10% / toggle OSD states'],
 ['* / "/"',                                       '# mplayer: volume +/-'],
 
@@ -100,6 +99,7 @@ var jsonRest = [
 ['curl -v URL',                                         '# show request/response headers'],
 
 ['ip address',                                    '# net: like ifconfig. state of network interfaces'],
+['ip address show eth0',                          '# net: show / manipulate routing, devices, policy routing and tunnels'],
 ['ip route',                                      '# net: routing table'],
 ['ip neighbour',                                  '# net: Address Resolution Protocol table'],
 
