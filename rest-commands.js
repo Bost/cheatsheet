@@ -33,7 +33,7 @@ var jsonRest = [
 ['echo "test" | xclip / xclip -o > file.ext',     '# bash: clipboard: put "test" to x-clipboard / put x-clipboard content to file.ext'],
 ['history -d',                                    '# bash: remove a line from shell history (i.e. password); edit ~/.bash_history'],
 ['echo "rm -rf /unwanted-large/folder" | batch',  '# bash: run a cmd only when load average is below a certain threshold (default is 0.8)'],
-['bind -P',                                       '# bash: show all bash shortcuts'],
+['bind -P',                                       '# show bash shortcuts (including Ctrl+L, Ctrl+R); \e - ESC, \C-y - Ctrl+y'],
 ['chmod --reference file0 file1',                 '# bash: set mod of file1 according to file0'],
 ['rm -f !(survivor.txt)',                         '# bash: remove all files except survivor.txt'],
 ['Esc *',                                         '# bash: insert autocompletition result (use together with other progs)'],
@@ -75,6 +75,7 @@ var jsonRest = [
 ['mknod',                                         '# bash: make block or character special files'],
 
 ['mkdir -p path/dirname.0{1,2,3}',                '# bash: create 4 directories at once'],
+['mkdir -p work/{d1,d2}/{src,bin,bak}',           '# bash: create directory tree'],
 ['cp --parents -p some/path/from.ext another/path/to.ext', '# bash: automatically create "another/path" and do --preserve=mode,ownership,timestamps'],
 ['mv README.{text,txt} ; cp file{,.bak}',         '# bash: mv README.text README.txt ; cp file file.bak'],
 ['./command.sh 2&gt;&amp;1 | tee command.log',    '# bash: redirect stderr (2) to stdout (1) and save it to command.log'],
@@ -102,6 +103,7 @@ var jsonRest = [
 ['ip address show eth0',                          '# net: show / manipulate routing, devices, policy routing and tunnels'],
 ['ip route',                                      '# net: routing table'],
 ['ip neighbour',                                  '# net: Address Resolution Protocol table'],
+['curl ifconfig.me',                              '# net: what is my IP'],
 
 ['&nbsp;','&nbsp;'],
 
@@ -123,6 +125,7 @@ var jsonRest = [
 
 ['&nbsp;','&nbsp;'],
 
+['grep --color=always pattern file | less -R',                                  '# colorize grep in less'],
 ['grep "[[:upper:]]" file',                                                     '# lines containing any upper character'],
 ['grep -Fx -f file1 file2',                                                     '# intersection between two files'],
 ['grep --before-context=2 --after-context=4 textToFind',                        '# search for textToFind and print 2/4 lines before/after matching line'],
@@ -148,6 +151,7 @@ var jsonRest = [
 ['cvs checkout -r branchOrTag module',            '# checkout module from branch or tag'],
 ['cvs log    -P -d path/to/file.ext',             '# update file'],
 
+['leave +15 / leave 1355',                        '# remi'],
 ['&nbsp;','&nbsp;'],
 
 ['cvs tag    -d -r 1.17 NormalTag path/to/file.ext', '# delete NormalTag from file.ext in version 1.17'],
@@ -224,7 +228,11 @@ var jsonRest = [
 ['sudo touch /forcefsck',                                               '# linux: run fsck on next reboot'],
 ['sudo apt-get remove --purge $(dpkg -l \'linux-image-*\' | sed \'/^ii/!d;/\'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"\'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d\')',
                                                                         '# linux: remove old kernels'],
-['sed \'s/foo/FOO/\' &lt;file.old &gt;file.new; mv file.{old,new}',     '# sed: replace \'foo\' in file.old; must be done in 2 steps with the mv; otherwise the file.old is empty'],
+
+['sed -n "10,20p" file / sed -n 5p file',                               '# print file content between lines 10 and 20 / print 5th line '],
+['sed \'s/foo/FOO/\' &lt;file.old &gt;file.new; mv file.{old,new}',     '# replace "foo" in file.old; must be done in 2 steps with the mv; otherwise the file.old is empty'],
+
+['for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done', "# Show numerical values for each of the 256 colors in ndbash/"],
 
 ['&nbsp;','&nbsp;'],
 
@@ -247,6 +255,7 @@ var jsonRest = [
 ['$ssh-copy-id user@host',                                              '# ssh: copy ssh keys to user@host to enable password-less ssh logins'],
 ['sshfs name@server:/path/to/folder /path/to/mount/point',              '# ssh: mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Will allow you to mount a folder security over a network'],
 ['sudo mount -t vboxsf share /home/username/share/',                    '# virtualbox: mount shared folder'],
+['mount | column -t', '# mounted filesystems - nice layout'],
 
 ['xmllint',                                                             '# xml: command line XML tool (formating)'],
 ['lein deps :tree',                                                     '# lein: show leiningen dependency tree'],
@@ -275,6 +284,8 @@ var jsonRest = [
 ['unzip /path/to/file.zip -d /path/to/extract-dir',                     '# zip: unzip: '],
 ['tar czf /path/to/tarfile.gz file0 file1',                             '# tar: '],
 ['tar xzf /path/to/tarfile.gz',                                         '# tar: untar: '],
+['tar -tf file.tar.gz | xargs rm -r',                                   '# Remove all files previously extracted from a tar(.gz) file'],
+
 ['gzip -l file.gz',                                                     '# gzip: list compressed, uncompressed size, compression ratio etc.'],
 
 ['uniq',                                                                '# bash: report or omit repeated lines'],
@@ -300,15 +311,17 @@ var jsonRest = [
 ['iconv -l',                                                            '# IBM USS OS/390: ebcdic / ascii conversion: list all code pages'],
 ['cat /proc/cpuinfo | grep processor | wc -l',                          '# number of processors'],
 ['lscpu',                                                               '# display information on CPU architecture'],
-['lsof',                                                                '# lsof: list open files'],
-['lsof -i:[ADDR] -t',                                                   '# lsof: list open files whose inet address matches ADDR; -t: terse output'],
-['nproc',                                                               '# nproc: processsor: cpu: core: cores: print the number of processing units available'],
-['test',                                                                '# test: check file types and compare values'],
-['expand / unexpand',                                                   '# tabs: convert spaces &lt;-&gt; tabs'],
+
+['lsof -P -i -n | cut -f 1 -d " "| uniq | tail -n +2',                  '# net: apps currently using inet'],
+['lsof',                                                                '# list open files'],
+['lsof -i:[ADDR] -t',                                                   '# list open files whose inet address matches ADDR; -t: terse output'],
+['nproc',                                                               '# processsor: cpu: core: cores: print the number of processing units available'],
+['test',                                                                '# check file types and compare values'],
+['expand / unexpand',                                                   '# tabs: convert spaces to tabs / tabs to spaces'],
 ['zenity, whiptail',                                                    '# linux: simple GUIs'],
-['strace -f -e trace=file,network -s 10000 -o outfile.log PROCESS ARGS','# strace: monitor file and network activities of a PROCESS, max printed string size 10000'],
-['ptrace / ltrace',                                                     '# trace: process / library'],
-['sudo service tomcat7 stop',                                           '# tomcat:'],
+['strace -f -e trace=file,network -s 10000 -o outfile.log PROCESS ARGS','# monitor file and network activities of a PROCESS, max printed string size 10000'],
+['ptrace / ltrace',                                                     '# trace process / library'],
+['sudo service tomcat7 stop',                                           '# '],
 
 ['&nbsp;','&nbsp;'],
 
@@ -325,6 +338,8 @@ var jsonRest = [
 ['ecryptfs',                            '# enterprise cryptographic filesystem for Linu'],
 ['dpigs',                               '# debian-goodies: show installed packages occupying the most space'],
 ['sudo checkrestart',                   '# debian-goodies: check which processes need to be restarted after an upgrade'],
+['timeout 5s COMMAND',                  '# start COMMAND and kill it if it is running still after 5 sec'],
+
 /*
 ['',                                           '# :'],
 * TODO add this:
