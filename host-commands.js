@@ -35,6 +35,7 @@ var jsonHost = [
     ['HA', 'Host Adapter'],
     ['SCSI', 'Small Computer System Interface'],
     ['SPUFI', 'SQL Processing File Input '],
+    ['tso db2ei', 'spufi: start SPUFI from Apps'],
     ['SDF', 'Screen Definition Facility'],
     ['SSID', 'Storage Subsystem ID'],
     ['CU:LDEV', 'Control Unit: ?'],
@@ -115,7 +116,7 @@ var jsonHost = [
     ['IDFT', 'ISPF support: Interactive Data Transmission Facility'],
     ['c3270 / x3270', 'curses-based IBM host access tool / IBM host access tool'],
     ['', ''],
-    ['', ''],
+    ["IND$FILE GET 'ADN0035.OUT' ASCII CRLF", 'ftp: transfer ADN0035.OUT: Host -> PC'],
     ['data entry / menu / list / edit panel', 'predefined display image that fills the screen'],
     ['DSLIST', 'ispf: display list of datasets'],
 
