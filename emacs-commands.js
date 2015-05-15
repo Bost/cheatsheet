@@ -139,7 +139,7 @@ var jsonEmacs = [
 ['M-x ispell-region',               '; region: check a small region'],
 ['C-x 0 / C-x 1 / C-x 2 / C-x 3',   '; splits: close / only one buffer / horizontal / vertical'],
 ['M-x clean-buffer-list',           '; does not work'],
-['M-x byte-recompile-directory',    '; use when "newer than byte-compiled file"'],
+['M-x byte-recompile-directory',    '; agains "newer than byte-compiled file" / cd $dev/emacs/lisp && make autoloads'],
 
 
 ['C-M-i',                           '; helm: minibuffer: minibuffer-force-complete'],
@@ -170,6 +170,6 @@ var jsonEmacs = [
 ['s / c / r',                       '; M-x magit-ineractive-rebase: squash / pick / reword'],
 ['x (X)',                           '; M-x magit-status: reset (discard all uncommited) changes - working tree unchanged'],
 ['M-x info / info-emacs-manual / info-display-manual' , '; info: manual:'],
-['macros',                          '; 1. M-x kmacro-name-last-macro, 2. M-x insert-kbd-macro, 3. M-x kmacro-bind-to-key'], 
+['macros',                          '; 1. M-x kmacro-name-last-macro, 2. M-x insert-kbd-macro, 3. M-x kmacro-bind-to-key'],
 ['$dev/emacs/src/emacs --eval \'(message "uhu")\'', '; launch emacs and eval string; does not work well with my bash function LaunchEmacs'],
 ]
