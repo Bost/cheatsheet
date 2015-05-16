@@ -11,12 +11,12 @@ var jsonRest = [
 ['backspace / ] / [ / o',                         '# mplayer: reset/+/- speed by 10% / toggle OSD states'],
 ['* / "/"',                                       '# mplayer: volume +/-'],
 
-['ps2pdf',                                        '# ps2pdf: '],
+['ps2pdf',                                        '# '],
 ['xmodmap',                                       '# xserver: modifying keymaps and pointer button mappings in X'],
-['xkbprint :0',                                   '# xserver: print an XKB keyboard description to a file in ps-format'],
+['xkbprint :0',                                   '# xserver: print XKB keyboard description to file in ps-format'],
 
-['javaws start.jnlp',                             '# java: launch start.jnlp'],
-['javap file.class',                              '# java: disassemble file.class'],
+['javaws start.jnlp',                             '# '],
+['javap file.class / javap -p -s file.class',     '# disassemble file.class (bytecode)'],
 ['ls --format=single-column',                     '# '],
 ['ls -d1 */',                                     '# list only directories, 1 entry per line'],
 ['ls -1 /path/to/dir | wc -l',                    '# count of files in /path/to/dir'],
