@@ -247,6 +247,7 @@ var jsonRest = [
 ['jar tf file.jar',                                                     '# list files in file.jar'],
 ['jar xf file.jar path/inside.txt && cat path/inside.txt',              '# extract inside.txt from file.jar and show its content. inside.txt stays extracted'],
 ['unzip -p file.jar path/inside.txt',                                   '# jar: unzip: show content of a file inside a file.jar'],
+['find . -name "*.jar" | xargs grep File.class',                        '# search for File.class in jar files'],
 ['notify-send "Hello World"' ,                                          '# xfce: ubuntu: desktop notification'],
 ['xfce4-keyboard-settings' ,                                            '# xfce: keyboard'],
 ['gnome-session-quit / xfce4-session-logout',                           '# xfce: gnome: logout'],
