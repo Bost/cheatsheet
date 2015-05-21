@@ -261,9 +261,6 @@ var jsonRest = [
 ['mount | column -t', '# mounted filesystems - nice layout'],
 
 ['xmllint',                                                             '# xml: command line XML tool (formating)'],
-['lein deps :tree',                                                     '# lein: show leiningen dependency tree'],
-['cd $LIGHTTABLE/deploy/plugins/ && lein new lt-plugin my-plugin',      '# lein: create lighttable plugin'],
-['[the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]',          '# lein: try to put it to project.clj in case of \'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath\''],
 ['ldd -v $(which vim)',                                                 '# linux: shared library dependencies'],
 ['readelf -v $(which vim)',                                             '# linux: info about ELF files'],
 ['dpkg --get-selections',                                               '# show installed packages'],
