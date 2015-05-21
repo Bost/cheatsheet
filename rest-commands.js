@@ -111,6 +111,7 @@ var jsonRest = [
 ['sort -k2 file.csv',                             '# bash: sort via 2nd key (?column?)'],
 ['sdiff file1 file0',                             '# diff: outputs the files in two columns, side by side, separated by spaces'],
 
+['find . -type f ! -name "*~" -exec grep -nH -e "SearchText" {} +',             '# emacs find - exclude backup files'],
 ['find . -empty -type f -delete / find . -empty -type d -delete',               '# find and delete empty files / dirs'],
 ['gvim $(find . -name "*fileToSearch*")',                                       '# find files and open them in gvim'],
 ['find ./ foo/ bar/ -name "*fileToSearch*"',                                    '# search for *fileToSearch* in multiple directories'],
