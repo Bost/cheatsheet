@@ -161,8 +161,9 @@ var jsonRest = [
 ['cvs tag -b    -r 1.19 BranchTag path/to/file.ext', '# create BranchTag on   file.ext in version 1.19'],
 ['cvs tag    -F -r 1.63 NormalTag path/to/file.ext', '# move   NormalTag to   file.ext in version 1.63'],
 
-['cvs log file.java',                             '#version and tags'],
-['cvs status -v file.java',                       '#version and tags'],
+['cvs log file.java',                             '# version and tags'],
+['cvs status -v file.java',                       '# version and tags'],
+['cvs -d cvs -t -d :pserver:faizal@localhost:/myrepos ci -m "test" -l "src/foo/Foo.java"', '# debug and trace info'],
 
 ['&nbsp;','&nbsp;'],
 
@@ -224,6 +225,7 @@ var jsonRest = [
 
 ['sudo update-grub',                                                    '# linux: ubuntu: when "you may need to re-run your boot" appears'],
 ['apt-get source PACKAGE',                                              '# withouth "sudo", download source PACKAGE to current directory'],
+['sudo apt-get install --reinstall PACKAGE',                            '#'],
 ['sudo apt-get update && sudo apt-get upgrade',                         '# linux: ubuntu: command line upgrade part 1.'],
 ['sudo do-release-upgrade',                                             '# linux: ubuntu: command line upgrade part 2.'],
 ['&nbsp;',                                                              '# linux: ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade'],
