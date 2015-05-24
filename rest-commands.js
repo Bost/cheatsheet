@@ -344,6 +344,11 @@ var jsonRest = [
 ['sudo checkrestart',                   '# debian-goodies: check which processes need to be restarted after an upgrade'],
 ['timeout 5s COMMAND',                  '# start COMMAND and kill it if it is running still after 5 sec'],
 
+['nmcli general', "# net: NetworkManager's general status and operations"],
+['nm-online --exit; echo "retcode: $?"', '# net: 1 - online; else offline'],
+['nm-applet / man nmcli-examples',       '# net:'],
+['nmcli device disconnect wlan0',                                     '# net:'],
+['nmcli device wifi connect GAULOISES_LIBERTE_TOUJOURS ifname wlan0', '# net:'],
 /*
 ['',                                           '# :'],
 * TODO add this:
