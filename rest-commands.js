@@ -17,6 +17,7 @@ var jsonRest = [
 
 ['javaws start.jnlp',                             '# '],
 ['javap file.class / javap -p -s file.class',     '# disassemble file.class (bytecode)'],
+['sudo update-alternatives --config java',        '# ubuntu: change default java environment'],
 ['ls --format=single-column',                     '# '],
 ['ls -d1 */',                                     '# list only directories, 1 entry per line'],
 ['ls -1 /path/to/dir | wc -l',                    '# count of files in /path/to/dir'],
