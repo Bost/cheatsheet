@@ -35,7 +35,7 @@ var jsonRest = [
 ['echo "test" | xclip / xclip -o > file.ext',     '# clipboard: put "test" to x-clipboard / put x-clipboard content to file.ext'],
 ['history -d',                                    '# remove a line from shell history (i.e. password); edit ~/.bash_history'],
 ['echo "rm -rf /unwanted-large/folder" | batch',  '# run a cmd only when load average is below a certain threshold (default is 0.8)'],
-['bind -P',                                       '# show bash shortcuts (including Ctrl+L, Ctrl+R); \e - ESC, \C-y - Ctrl+y'],
+['bind -P / help bind',                           '# show bash shortcuts (including Ctrl+L, Ctrl+R); \e - ESC, \C-y - Ctrl+y'],
 ['chmod --reference file0 file1',                 '# set mod of file1 according to file0'],
 ['rm -f !(survivor.txt)',                         '# remove all files except survivor.txt'],
 ['Esc *',                                         '# insert autocompletition result (use together with other progs)'],
