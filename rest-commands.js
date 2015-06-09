@@ -144,6 +144,7 @@ var jsonRest = [
 
 ['rsync --archive --remove-source-files backup/ backupArchives/ ', '# bash: mv: move content of a directory within another directory with the same folders'],
 ['rsync --archive --verbose --exclude=CVS src dest',               '# bash: cvs: copy files from src to desc excluding everything in CVS directories'],
+['sudo /etc/init.d/cvsd restart / start / stop / status', ''],
 ['cvs diff -r tagX -r tagY',                      '# diff tagX tagY'],
 ['cvs update -C path/to/file.ext',                '# get clean copy'],
 ['cvs update -P -C -r 1.11 path/to/file.ext',     '# get revision 1.11'],
