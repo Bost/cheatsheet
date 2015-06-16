@@ -213,6 +213,7 @@ var jsonRest = [
 ['loginctl',                                                            '# linux: systemd: Control the systemd login manager'],
 ['last',                                                                '# linux: last logged-in users'],
 ['lscpu',                                                               '# linux: info about CPU architecture'],
+['getconf LONG_BIT',                                                    '# linux: CPU architecture 32/64 bit'],
 ['ionice -c3 find . -name "*.jar" -or -name "*.class" -delete',         '# find and delete *.jar and *.class when idling'],
 ['renice +20 2222',                                                     '# linux: change the priority of process 2222 to minimum (-19 max, +20 min prio)'],
 ['ps -o pid,user,command,nice -p 7695',                                 '# linux: ps: show statistics for a process nr. 7695'],
