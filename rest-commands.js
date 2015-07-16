@@ -248,7 +248,7 @@ var jsonRest = [
 ['unzip -p file.jar path/inside.txt',                                   '# jar: unzip: show content of a file inside a file.jar'],
 ['unzip -lv file.zip',                                                  '# list content of file.zip'],
 ['find . -name "*.jar" | xargs grep File.class',                        '# search for File.class in jar files'],
-['notify-send "Hello World"' ,                                          '# xfce: ubuntu: desktop notification'],
+['notify-send "Hello World"' ,                                          '# xfce: ubuntu: popup: message: desktop notification'],
 ['xfce4-keyboard-settings' ,                                            '# xfce: keyboard'],
 ['gnome-session-quit / xfce4-session-logout',                           '# xfce: gnome: logout'],
 ['rm -r ~/.cache/sessions',                                             '# xfce: execute this when the title bar dissapears from xfwm4'],

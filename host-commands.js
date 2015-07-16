@@ -42,7 +42,7 @@ var jsonHost = [
     ['', ''],
     ['PSA', 'Prefixed Save Area: Low Core'],
     ['', ''],
-    ['hilite jcl / cobol / rexx / off / pascal', 'editor: highlighting'],
+    ['hilite jcl / cobol / rexx / off / pascal', 'editor: highlighting; works for Selection'],
     ['catalog', 'dataset with info about attributes and volumes of other datasets. Less info about storage setup needed (no changes in JCL DD statesments) when a catalogized dataset is moved between devices'],
     ['Multiprocessor', 'CPC physically partitioned to 2 operating processor complexes'],
     ['ICP', 'Integrated Coupling Unit'],
