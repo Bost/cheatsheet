@@ -156,7 +156,7 @@ var jsonEmacs = [
 ['&nbsp;',                          '; magit: <a href="http://magit.github.io/master/magit.html">http://magit.github.io/master/magit.html</a>'],
 ['P / d / k / z / a (A)',           '; M-x magit-status: push / diff / discard (kill) / stash / cherry pick apply (and discard) stash changes'],
 ['s (S) / u (U) / c (C) / x (X)',   '; M-x magit-status: stage (all) / unstage (all) / commit (with template) / reset (discard all uncommited) changes'],
-['C-c C-c',                         '; M-x magit-commit; end of git commit message'],
+['C-c C-c / C-c C-k / C-x k',       '; M-x magit-commit; end of git commit message / with-editor-cancel / with-editor-cancel'],
 ['+ / - / 0 / select hunk / i / I', '; M-x magit-status; inc / dec / reset hunk size / split hunk / add to .gitignore / add to .git/info/exclude'],
 ['M / l / b / B / d / f / m / r',   '; M-x magit-status; remoting / log / branching / bisecting / diff / fetch / merge / rewrite'],
 ['SPC / RET / C-w / x',             '; M-x magit-log; show commit details and stay in log / jump to details / put sha1 to clipboard / reset HEAD to given commit'],
