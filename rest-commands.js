@@ -164,7 +164,8 @@ var jsonRest = [
 ['cvs -d cvs -t -d :pserver:faizal@localhost:/myrepos ci -m "test" -l "src/foo/Foo.java"', '# debug and trace info'],
 
 
-['ssh-keygen',                                    '# github: ssh: '],
+['uname -a',                                      '# linux: system information (kernel version etc.)'],
+['ssh-keygen',                                    '# github: ssh:'],
 ['cat ~/.ssh/id_rsa.pub',                         '# github: now copy-paste the ~/.ssh/id_rsa.pub to github under "Account settings / SSH keys / Add another public key"'],
 
 ['METADA_CORE=.metadata/.plugins/org.eclipse.jdt.core;',                '# eclipse: '],
