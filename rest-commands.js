@@ -135,7 +135,7 @@ var jsonRest = [
 ['grep textToFind * | cut -f1 -d:',                                             '# print only filenames of the files containing \'textToFind\''],
 ['grep -i -n "textToFind" *',                                                   '# print line numbers'],
 ['grep -r "String" --include=*.java .',                                         '# find: search for "String" in java files'],
-['find . -name "*.java" -print0 | xargs -0 grep -l "String"',                   '# search for "String" in java files (with spaces in filenames)'],
+['find . -type f -name "*.java" -print0 | xargs -0 grep -l "String"',           '# search for "String" in java files (with spaces in filenames)'],
 ['grep --exclude=.git',                                                         '# '],
 ['grep --exclude=.git -lir \'textToFind\' *.properties',                        '# '],
 ['grep -lir "textToFind" $(find . -name *.properties)',                         '# '],
