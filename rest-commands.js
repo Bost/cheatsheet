@@ -271,6 +271,7 @@ var jsonRest = [
 ['apt-cache show PACKAGE / aptitude show PACKAGE',                      '# dpkg: apt: description of PACKAGE'],
 ['sudo rm -rf /var/lib/apt/lists; sudo mkdir -p /var/lib/apt/lists/partial; sudo apt-get clean', '# dpkg: apt: solution for Hash sum mismatch error'],
 ['software-properties-gtk - see /etc/apt/sources.list',                 '# linux: ubuntu: apt: Software Sources List editors; see y-ppa-manager, http://repogen.simplylinux.ch/'],
+['sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update', '# dpkg:'],
 ['dpkg --get-selections | grep -v deinstall',                           '# list installed packages; no sudo needed; TODO see --clear-selection --set-selection'],
 ['aptitude search \'~i!~M\'',                                           '# aptitude: list expressly installed packages (not just installed as dependencies)'],
 
