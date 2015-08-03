@@ -12,7 +12,7 @@ var jsonHost = [
     ['XPEDITOR / INTERTEST', 'Debuggers'],
     ['', ''],
     ['java -Djava.library.path=/usr/lib/java_runtime64 -jar /usr/include/java_classes/isfjcall.jar', 'SDSF from java'],
-    ['', ''],
+    ['?', 'sdsf: show extra info about jobs'],
     ['ERP', 'Enterprise Resource Planning'],
     ['IOP', 'Input Output Processor'],
     ['LIC', 'Licensed Internal Code'],
