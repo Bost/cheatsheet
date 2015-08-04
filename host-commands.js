@@ -267,7 +267,7 @@ var jsonHost = [
     ['JCP', 'Job Control Procedure'],
     ['SPOOL', 'Simultaneous Peripheral Operations Online: Queue'],
     ['SDSF', 'Spooler (System) Display and Search Facility: look at batch output logpool'],
-    ['s,v / ? / q', 'SDSF: output (Browse) / datasets / output descriptors'],
+    ['s,v / ? / q /  //p ... //', 'SDSF: output (Browse) / datasets / output descriptors / block delete'],
     ['DA', 'SDSF: Menu entry: Display Active (Users)'],
     ['sort ?', 'sdsf: show sort popup'],
     ['sj', 'sdsf: edit (and possibly resubmit) the JCL for a given job'],
