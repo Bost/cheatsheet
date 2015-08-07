@@ -4,6 +4,7 @@ var jsonRest = [
 ['service network-manager restart',               '# net:'];
 ['sudo nethogs wlan0',                            '# net: grouping bandwidth per process; "net top"'],
 ['wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg && gpg --import gnu-keyring.gpg', '# download and import gnu-keyring'],
+['wget --limit-rate=20k http://www-ftp.lip6.fr/pub/linux/distributions/Ubuntu/releases/15.04/ubuntu-15.04-desktop-amd64.iso', 'wget'],
 ['gpg --verify file.sig file',                    '# verify file'],
 
 ['df -i',                                         '# fs: number of inodes; every file or directory requires 1 inode'],
@@ -234,8 +235,9 @@ var jsonRest = [
                                                                         '# linux: remove old kernels'],
 
 ['awk',                                                                 '# for tabular data'],
-['sed -n "10,20p" file / sed -n 5p file',                               '# print file content between lines 10 and 20 / print 5th line '],
-['sed \'s/foo/FOO/\' <file.old >file.new; mv file.{old,new}',           '# replace "foo" in file.old; must be done in 2 steps with the mv; otherwise the file.old is empty'],
+['sed -n "10,20p" file / sed -n 5p file',                               '# sed: print file content between lines 10 and 20 / print 5th line '],
+['sed "s/foo/FOO/" <file.old >file.new; mv file.{old,new}',             '# sed: replace 1 occurence of "foo" in file.old; must be done in 2 steps with the mv; otherwise the file.old is empty'],
+['sed "s/\x85/\n/g" <log.txt >log.nl.txt; sed "s/\x85/\n/g" <log.nl.txt >log.nl.00.txt',  '# sed: ascii: ebcdic: fix new lines and empty chars; \x85 - hexadecimal char'],
 
 ['for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done', "# Show numerical values for each of the 256 colors in ndbash/"],
 
