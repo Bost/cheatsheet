@@ -225,7 +225,7 @@ var jsonRest = [
 ['sudo update-grub',                                                    '# linux: ubuntu: when "you may need to re-run your boot" appears'],
 ['apt-get source PACKAGE',                                              '# withouth "sudo", download source PACKAGE to current directory'],
 ['sudo apt-get install --reinstall PACKAGE',                            '#'],
-['sudo apt-get update && sudo apt-get upgrade',                         '# linux: ubuntu: command line upgrade part 1.'],
+['sudo apt-get update && sudo apt-get upgrade',                         '# linux: ubuntu: command line upgrade part 1. (CLI alternative to update-manager)'],
 ['sudo do-release-upgrade',                                             '# linux: ubuntu: command line upgrade part 2.'],
 ['',                                                                    '# linux: ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade'],
 
