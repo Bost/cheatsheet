@@ -94,17 +94,11 @@ slime-connect
 ** google lab tags http://www.chromeweblab.com/en-GB/lab-tag-explorer
 ** stuff to datomic - ?git has no services? http://www.youtube.com/watch?v=ROor6_NGIWU 58:00
 ** watch apache.org
-** francais - les journales swiss
+** français - les journales swiss
    utiliser claviatur avec tout les accents
    dictionaire et conjugueuer hors line
 
 ** Crossroad controll (3 semaphors)                                                      :clojure-script:
-
-
-
-
-
-
 
 * Editors
 ** emacs
