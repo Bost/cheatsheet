@@ -172,4 +172,5 @@ var jsonEmacs = [
 ['M-x info / info-emacs-manual / info-display-manual' , '; info: manual:'],
 ['macros',                          '; 1. M-x kmacro-name-last-macro, 2. M-x insert-kbd-macro, 3. M-x kmacro-bind-to-key'],
 ['$dev/emacs/src/emacs --eval \'(message "uhu")\'', '; launch emacs and eval string; does not work well with my bash function LaunchEmacs'],
+['M-! RET top -c -n -1 -b -w 200',  '; M-x shell-command: top: capture top output from stdout'],
 ]
