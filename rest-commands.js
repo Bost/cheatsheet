@@ -342,6 +342,7 @@ var jsonRest = [
 ['nm-applet / man nmcli-examples',       '# net:'],
 ['nmcli device disconnect wlan0',                                     '# net:'],
 ['nmcli device wifi connect GAULOISES_LIBERTE_TOUJOURS ifname wlan0', '# net:'],
+['rpm -qa',                              '# rpm: display installed packages'],
 /*
 ['',                                           '# :'],
 * TODO add this:
