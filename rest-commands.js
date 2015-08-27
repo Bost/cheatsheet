@@ -247,6 +247,8 @@ var jsonRest = [
 ['/usr/ucb/ps -auxww',                                                  '# solaris: ps: full command line (needs: sudo rootsh -i -u ... )'],
 ['psrinfo',                                                             '# solaris: displays information about processors'],
 ['/usr/sbin/ifconfig -a',                                               '# solaris: net: ipconfig'],
+['jarsigner -storepass PASSW -keystore ~/.keystore FILE mykey',         '# jar: jarsigner: keytool: jnlp: javaws:'],
+['keytool -genkeypair / keytool -list',                                 '# jar: jarsigner: keytool: jnlp: javaws:'],
 ['jar tf file.jar',                                                     '# list files in file.jar'],
 ['jar xf file.jar path/inside.txt && cat path/inside.txt',              '# extract inside.txt from file.jar and show its content. inside.txt stays extracted'],
 ['unzip -p file.jar path/inside.txt',                                   '# jar: unzip: show content of a file inside a file.jar'],
