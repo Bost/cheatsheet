@@ -15,4 +15,5 @@ var jsonRest = [
 ['C-c C-d C-d',        'clj: M-x cider-doc'],
 ['C-c C-p',            'clj: M-x cider-pprint-eval-last-sexp']
 ['C-c C-f',            'clj: M-x cider-pprint-eval-defun-at-point']
+['C-c C-x',            'clj: M-x cider-refresh']
  ]
