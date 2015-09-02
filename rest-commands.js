@@ -44,9 +44,9 @@ var jsonRest = [
 ['Esc *',                                         '# insert autocompletition result (use together with other progs)'],
 ['\\\[command\]',                                 '# alias: escape command aliases'],
 ['Alt-. / Esc-.',                                 '# get the argument of the last command. see: bind -P'],
-['echo "ls -l" | at midnight',                    '# at: execute a command at a given time'],
+['echo "ls -l" | at midnight',                    '# at: batch: execute a command at a given time'],
 [' printf "Line: %05d %15.3f Result: %+15d\n" 1071 3,14156295 32589', '# echo with formating'];
-['at -f script.sh now + 1 hour / 30 min',         '# at: run script.sh 1 hour / 30 minutes from now'],
+['at -f script.sh now + 1 hour / 30 min',         '# at: batch: run script.sh 1 hour / 30 minutes from now'],
 ['set -o vi',                                     '# set vi bindings'],
 ['set -f / -v / -x',                              '# set -o noglob (disable pathname expansion - globbing) / set -o verbose / set -o xtrace'],
 ['import shutil',                                 '# python: high-level file operations'],
