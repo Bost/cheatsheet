@@ -31,7 +31,7 @@ var jsonRest = [
 ['head -n 5 file / tail -n 5 file',               '# fist / last 5 lines from file'],
 ['cat /etc/shells',                               '# available shells'],
 ['seq 0 2 10',                                    '# sequence from 0 to 10 (both included) increment by 2'],
-['fdupes -r .',                                   '# find duplicate files'],
+['fdupes -r .',                                   '# duplicate files in a given set of directories'],
 ['xsel --clipboard',                              '# clipboard: show normal clipboard content'],
 ['cat file > /dev/clip / cat /dev/clip',          '# clipboard: pipe to / from clipboard'],
 ['xclip -loops 10 -verbose file.ext',             '# clipboard: wait for 10 pastings of the content file.ext to x-clipboard and quit'],
@@ -97,7 +97,7 @@ var jsonRest = [
 ['Ctrl-u ... Ctrl-y',                             '# type partial cmd, kill this cmd, check something you forgot, yank the cmd, resume typing'],
 ['echo "Date is: $(date +%D)"',                   '# avoid backticks'],
 ['echo "!!" > foo.sh',                            '# create a script from last executed cmd'],
-['pidof process-name',                            '# find process-IDs belonging to processName'],
+['pidof process-name',                            '# process ID of a running program'],
 ['kill $(pidof processName)',                     '# find and kill processIDs belonging processName'],
 
 ['Ctrl-\] Enter quit Enter',                      '# telnet: terminate session'],
@@ -345,6 +345,12 @@ var jsonRest = [
 ['nmcli device disconnect wlan0',                                     '# net:'],
 ['nmcli device wifi connect GAULOISES_LIBERTE_TOUJOURS ifname wlan0', '# net:'],
 ['rpm -qa',                              '# rpm: display installed packages'],
+
+
+['sudo apt-get install android-tools-adb android-tools-fastboot', '# android: '],
+['groups - check plugdev membership',             '# android: '],
+['adb devices; dmesg; adb logcat; adb shell',     '# android: '],
+['adb push SRC DST',                              '# android: '],
 /*
 ['',                                           '# :'],
 * TODO add this:
