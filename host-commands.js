@@ -239,6 +239,7 @@ var jsonHost = [
 
     ['CEMT', 'cics: invoke all the master terminal functions (dynamic user control for CICS)'],
     ['CEMT S PROG(SDxxx01) new', 'compile to LOADLIB'],
+    ['CEMT S PROG(OBJX OBJY) PHA', ' compile online programs'],
     ['CEMT I TRAN(MBS) new', 'Inquiry transaction'],
 
     ['CESN', 'cics: sign on to CICS using a password as authorization from non-3270 terminals with the CESN transaction'],
@@ -246,6 +247,7 @@ var jsonHost = [
     ['CEST', 'cics: Supervisory Terminal'],
     ['CECI', 'cics: Command Interpreter'],
     ['CESF', 'cics: Transaction to Sign Off from CICS'],
+    ['CESF logoff', 'cics: Transaction to Sign Off from CICS'],
 
     ['PLT', 'Program List Tables'],
     ['PLTPI / PLTSD', 'Program List Table Post Initialisation (? initial Process ?) - starting CISC Configuration Manager / Shutdown'],
