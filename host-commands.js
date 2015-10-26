@@ -1,4 +1,5 @@
 var jsonHost = [
+    ['OPSS', '? Automated testing ?'],
     ['PTF', 'Program Temporary Fix'],
     ['DBCS', 'double-byte character set'],
     ['col / res', 'spufi: browse commands: columns / reset: toggle column numbers'],
