@@ -2,6 +2,7 @@ var jsonRest = [
 //['', '# '],
 ['evince file.pdf',                               '# pdf: view file.pdf'],
 ['service network-manager restart',               '# net:'];
+['/etc/environment',                              '# net: ubuntu: proxy definition'];
 ['sudo nethogs wlan0',                            '# net: grouping bandwidth per process; "net top"'],
 ['wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg && gpg --import gnu-keyring.gpg', '# download and import gnu-keyring'],
 ['wget --limit-rate=20k http://www-ftp.lip6.fr/pub/linux/distributions/Ubuntu/releases/15.04/ubuntu-15.04-desktop-amd64.iso', 'wget'],
