@@ -15,6 +15,6 @@ var jsonRest = [
 ['C-c C-d C-d',        'clj: M-x cider-doc'],
 ['C-c C-p',            'clj: M-x cider-pprint-eval-last-sexp']
 ['C-c C-f',            'clj: M-x cider-pprint-eval-defun-at-point']
-['C-c C-x',            'clj: M-x cider-refresh'],
+['C-c C-x',            'clj: M-x cider-refresh: reload all modified Clojure files on the classpath'],
 ['(def A [[1 2] [3 4]]) (apply map vector A)', 'clj: Transpose a matrix']
  ]
