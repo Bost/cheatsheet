@@ -146,7 +146,8 @@ var jsonEmacs = [
 ['C-t',                             '; M-x vertical helm-toggle-resplit-and-swap-windows: toggle horizontal / vertical'],
 ['C-SPC / C-c C-i',                 '; M-x helm-toggle-visible-mark / M-x helm-copy-to-buffer'],
 ['C-c ?',                           '; helm: manual'],
-['&nbsp;',                          '; M-x helm-top / M-x helm-register'],
+['M-x helm-top',                    '; helm: htop: top: linux:'],
+['M-x helm-register',               '; helm: clipboard: registers:'],
 ['&nbsp;',                          '; helm: <a href="http://tuhdo.github.io/helm-intro.html">http://tuhdo.github.io/helm-intro.html</a>'],
 
 ['M-x hi-lock-mode / highlight-regexp;', '; highlighting'],
