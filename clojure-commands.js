@@ -4,6 +4,7 @@ var jsonRest = [
 ['(map #(ns-unmap *ns* %) (keys (ns-interns *ns*)))', '; clj: should clean the repl; use cider-refresh'],
 ['(load-file "src/ws/core.clj")',                     '; clj: read and eval swc/ws/core.clj'],
 ['(in-ns \'full.namespace)',                          '; clj: switch to full.namespace'],
+['(all-ns)',                                          '; clj: Returns a sequence of all namespaces.'],
 ['(clojure.repl/doc full.namespace/objname)',         '; clj: objname documentation / M-x cider-doc (C-c C-d C-d) / M-x cider-javadoc'],
 ['#_(foo 1 2)/ (comment foo 1 2)',                    '; clj: block comment; NOTE: (comment) returns null'],
 ['rlwrap lein deps :tree',                                              '; clj: show leiningen dependency tree'],
