@@ -21,6 +21,7 @@ var jsonEmacs = [
 ['M-x quail-set-keyboard-layout',   '; keyboard: does not work on cygwin'],
 ['M-x quail-show-key',              '; keyboard: show layout'],
 ['C-x < / C-x >',                   '; scroll left / right'],
+['M-e',                             '; evil: Edit the search string in the minibuffer. (isearch-edit-string)'],
 ['C-z',                             '; evil: toggle (evil-mode 0) / (evil-mode 1)'],
 ['C-h i m emacs',                   '; help: ? emacs manual?'],
 ['C-h m',                           '; help: describe current mode'],
