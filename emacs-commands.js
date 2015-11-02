@@ -150,7 +150,9 @@ var jsonEmacs = [
 ['C-SPC / C-c C-i',                 '; M-x helm-toggle-visible-mark / M-x helm-copy-to-buffer'],
 ['C-c ?',                           '; helm: manual'],
 ['M-x helm-top',                    '; helm: htop: top: linux:'],
+['M-x helm-apt',                    '; helm: apt:'],
 ['M-x helm-register',               '; helm: clipboard: registers:'],
+['M-x locate',                      '; locate:'],
 ['&nbsp;',                          '; helm: <a href="http://tuhdo.github.io/helm-intro.html">http://tuhdo.github.io/helm-intro.html</a>'],
 
 ['M-x hi-lock-mode / highlight-regexp;', '; highlighting'],
