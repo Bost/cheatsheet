@@ -28,6 +28,7 @@ var jsonEmacs = [
 ['C-h k / C-h f / C-h v / C-h b',   '; help: describe-key / -function / -variable / -binding'],
 ['C-h v package-activated-list',    '; help: show content of the variable containing installed packages'],
 ['M-x package-list-packages',       '; install new packages'],
+['M-x finder-by-keyword',           '; packages grouped by keyword'],
 ['M-d / C-k',                       '; delete word / line from cursor'],
 ['M-x goto-line',                   '; goto-line'],
 ['M-` / F10',                       '; menu'],
