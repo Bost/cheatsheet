@@ -7,7 +7,7 @@ evince file.pdf
 # net:'];
 service network-manager restart
 
-# net: ubuntu: proxy definition'];
+# net: ubuntu: proxy definition
 /etc/environment
 
 # net: grouping bandwidth per process; "net top"
@@ -166,8 +166,8 @@ $*
 # args: all arguments
 $@
 
-#                                            # args: count of arguments
-$
+# args: count of arguments
+$$
 
 # exit code (return value / retcode) of the last command (0: success) e.g. adduser joe; echo $?
 $?
@@ -202,8 +202,8 @@ echo $[22 + 33]
 # bash: insert contents of file.txt into input of tr and output results to fileNew.txt
 tr \'[A-Z]\' \'[a-z]\' < file.txt > fileNew.txt
 
-#1.jpg                          # bash: mass move/copy/rename
-mmv \\*.JPG \\
+# bash: mass move/copy/rename
+mmv \*.JPG \#1.jpc
 
 # bash: visual calender for februar 2004 / whole year 2004
 cal 2 2004 / cal -y 2004
@@ -215,11 +215,9 @@ d() { date; }
 C-r, C-g
 
 # bash: shebang: stop the script after any error
-
 #!/bin/bash -e
 
 # bash: shebang: debugging: set -x; stop on error: set -e
-
 #!/usr/bin/env bash
 
 # bash: debug script
@@ -483,8 +481,8 @@ shutdown /l /f
 # windows: net: list mapped network drives
 net use
 
-# windows: net: map P: as a network drive for \\\\sever\\path
-net use P: \\\\server\\path
+# windows: net: map P: as a network drive for \\sever\path
+net use P: \\server\path
 
 # windows: net: unmap P:
 net use P: /delete
@@ -571,7 +569,7 @@ mysql show columns in tableName
 /usr/bin/mysqld_safe &
 
 # oracle: execute script.sql
-@C:\\path\\to\\script.sql
+@C:\path\to\script.sql
 
 # linux: Execute a command as another user
 pkexec
@@ -620,14 +618,14 @@ sudo do-release-upgrade
 
 # linux: ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade
 
-
 # linux: ubuntu: (ubuntu 11.10 or later), gnome or KDE
 sudo restart lightdm / gdm / kdm
 
 # linux: run fsck on next reboot
 sudo touch /forcefsck
-sudo apt-get remove --purge $(dpkg -l \'linux-image-*\' | sed \'/^ii/!d;/\'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"\'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d\')',
-                                                                      '# linux: remove old kernels
+
+# linux: remove old kernels
+sudo apt-get remove --purge $(dpkg -l \'linux-image-*\' | sed \'/^ii/!d;/\'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"\'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d\')
 
 # for tabular data
 awk
@@ -893,7 +891,7 @@ getfattr
 # extended attributes on XFS filesystem objects
 attr
 
-# : hash message authentication code
+# hash message authentication code
 HMAC
 
 # enterprise cryptographic filesystem for Linu
