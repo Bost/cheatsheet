@@ -325,7 +325,7 @@ APL
 # Command List: procedural programming language
 CLIST
 
-# Interactive System Productivity Facility: (GUI) interface for 3270 TSO Terminals; file browser, editor, made of \'panels\'
+# Interactive System Productivity Facility: (GUI) interface for 3270 TSO Terminals; file browser, editor, made of 'panels'
 ISPF
 
 # Interactive Storage Management Facility
@@ -883,10 +883,10 @@ VTOC
 VOLSER
 
 # rexx: 
-DATE(\'E\')
+DATE('E')
 
 # rexx: hexadecimal
-say \'C1 81\'x
+say 'C1 81'x
 
 # rexx: read user input
 pull varname
@@ -912,7 +912,7 @@ TPF
 # Boundary
 BNDS
 
-# Master Console: kind of root; \'SPECIAL\'
+# Master Console: kind of root; 'SPECIAL'
 
 # Processor Resource/Systems Manager - part of LPAR hypervisor
 PR/SM (PRSM)
@@ -1230,16 +1230,19 @@ CP
 oedit unixfile.txt
 
 # Copy a text file to a text file
-cp unixfile.txt "//\'stuff.x\'"
+cp unixfile.txt "//'stuff.x'"
 
 # Copy a text file to a text file
-cp "//\'stuff.x\'" "//\'stuff.y\'"
+cp "//'stuff.x'" "//'stuff.y'"
 
 # Copy a text file to a sequential dataset
-cp -T source_file "//\'hlq.desti(nation)\'"
+cp -T source_file "//'hlq.desti(nation)'"
 
 # Copy a binary file to a sequential dataset
-cp –B source_file "//\'hlq.desti(nation)\'"
+cp –B source_file "//'hlq.desti(nation)'"
 
 # Copy an executable binary (a program object) to a PDS/E
-cp –X source_pgm "//\'hlq.desti(nation)\'"
+cp –X source_pgm "//'hlq.desti(nation)'"
+
+# Reliability, Availability and Serviceability
+RAS
