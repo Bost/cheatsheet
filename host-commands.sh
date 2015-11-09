@@ -454,10 +454,18 @@ tso listcat
 
 # List Dataset ADN0035
 tso listds 'ADN0035.*' / tso dl 'ADN0035.*'
-tso netstat home # 
-tso omvs # gives /bin/sh
-tso msv # MSV: start MBS Source Verwaltung - based on TSO, ISPF und DB2
-tso rvary # change status of RACF dbase: switch, (de)activate (without IPL operation)
+
+# network info
+tso netstat home
+
+# gives /bin/sh; USS
+tso omvs
+
+# MSV: start MBS Source Verwaltung - based on TSO, ISPF und DB2
+tso msv
+
+# change status of RACF dbase: switch, (de)activate (without IPL operation)
+tso rvary
 
 # 
 tso rvary list
