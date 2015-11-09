@@ -52,5 +52,8 @@
 ;; clj: M-x cider-refresh: reload all modified Clojure files on the classpath
 ;; C-c C-x
 
+;; clj: C-M-x cider-eval-defun-at-point
+;; C-u C-M-x cider-debug
+
 ;; clj: Transpose a matrix
 (def A [[1 2] [3 4]]) (apply map vector A)
