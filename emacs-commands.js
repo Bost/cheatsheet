@@ -140,7 +140,7 @@ var jsonEmacs = [
 ['M-x locate',                      '; locate:'],
 ['',                                '; helm: <a href="http://tuhdo.github.io/helm-intro.html">http://tuhdo.github.io/helm-intro.html</a>'],
 ['M-x hi-lock-mode / highlight-regexp;', '; highlighting'],
-['',                                '; magit: <a href="http://magit.github.io/master/magit.html">http://magit.github.io/master/magit.html</a>'],
+['',                                '; magit: http://magit.github.io/master/magit.html'],
 ['P / d / k / z / a (A)',           '; M-x magit-status: push / diff / discard (kill) / stash / cherry pick apply (and discard) stash changes'],
 ['s (S) / u (U) / c (C) / x (X)',   '; M-x magit-status: stage (all) / unstage (all) / commit (with template) / reset (discard all uncommited) changes'],
 ['C-c C-c / C-c C-k / C-x k',       '; M-x magit-commit; end of git commit message / with-editor-cancel / with-editor-cancel'],
