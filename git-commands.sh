@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1 # avoid execution
 
+# git: pull and rebase latest of all submodules
+git submodule foreach git pull --rebase origin master
+
 # git: change the name and email in all commits
 git filter-branch -f --env-filter "GIT_AUTHOR_NAME=\'Bost\'; GIT_AUTHOR_EMAIL=\'thebost@gmail.com\'; GIT_COMMITTER_NAME=\'Bost\'; GIT_COMMITTER_EMAIL=\'thebost@gmail.com\';" HEAD
 
