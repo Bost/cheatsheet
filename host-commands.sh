@@ -473,6 +473,9 @@ tso rvary list
 # sdsf: start and jump to Status of Jobs (ST) panel
 tso sdsf / (start) sdsf / (start) sdsf;st
 
+# sdsf: ds: Active users
+SIO - total system start I/O rate
+
 # tso: execute dataset: ADN0035.REXX(TEST1)
 tso exec 'ADN0035.REXX(TEST1)'
 
