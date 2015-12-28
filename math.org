@@ -9,67 +9,67 @@
 
 * Statistics:
 ** Data:
-		Nominal Data                Interval / Ratio Data
-		━━━━━━━━━━━━━━━━━━━━     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-	       ┃  +-----------------+ ┃   ┃                                    +-------------------+ ┃
-	       ┃  | Test for        | ┃   ┃                                    | Test for a mean   | ┃
-	       ┃  | Proportion      | ┃   ┃                                    |                   | ┃
-	       ┃  +-----------------+ ┃   ┃                                    +-------------------+ ┃
-	       ┃                      ┃   ┃                                                          ┃
-	       ┃  +-----------------+ ┃   ┃ +-------------------------+                              ┃
-	       ┃  | Difference of   | ┃   ┃ | difference of two means |                              ┃
-	       ┃  | two proportions | ┃   ┃ | (independent samples)   |                              ┃
-	       ┃  +-----------------+ ┃   ┃ +-------------------------+                              ┃
-	       ┃                      ┃   ┃                                                          ┃
-	       ┃  +-----------------+ ┃   ┃ +-------------------------+        +-------------------+ ┃
-	       ┃  | Chi-sq test for | ┃   ┃ | Regression analysis     |        | Difference of two | ┃
-	       ┃  | independence    | ┃   ┃ |                         |        | means (paired)    | ┃
-	       ┃  +-----------------+ ┃   ┃ +-------------------------+        +-------------------+ ┃
-		━━━━━━━━━━━━━━━━━━━━     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        Nominal Data                Interval / Ratio Data
+        ━━━━━━━━━━━━━━━━━━━━     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           ┃  +-----------------+ ┃   ┃                                    +-------------------+ ┃
+           ┃  | Test for        | ┃   ┃                                    | Test for a mean   | ┃
+           ┃  | Proportion      | ┃   ┃                                    |                   | ┃
+           ┃  +-----------------+ ┃   ┃                                    +-------------------+ ┃
+           ┃                      ┃   ┃                                                          ┃
+           ┃  +-----------------+ ┃   ┃ +-------------------------+                              ┃
+           ┃  | Difference of   | ┃   ┃ | difference of two means |                              ┃
+           ┃  | two proportions | ┃   ┃ | (independent samples)   |                              ┃
+           ┃  +-----------------+ ┃   ┃ +-------------------------+                              ┃
+           ┃                      ┃   ┃                                                          ┃
+           ┃  +-----------------+ ┃   ┃ +-------------------------+        +-------------------+ ┃
+           ┃  | Chi-sq test for | ┃   ┃ | Regression analysis     |        | Difference of two | ┃
+           ┃  | independence    | ┃   ┃ |                         |        | means (paired)    | ┃
+           ┃  +-----------------+ ┃   ┃ +-------------------------+        +-------------------+ ┃
+        ━━━━━━━━━━━━━━━━━━━━     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ** Samples:
-		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  One           ┃  +-----------------+                                          +-------------------+ ┃
  Sample        ┃  | Test for        |                                          | Test for a mean   | ┃
-	       ┃  | Proportion      |                                          |                   | ┃
-	       ┃  +-----------------+                                          +-------------------+ ┃
-		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           ┃  | Proportion      |                                          |                   | ┃
+           ┃  +-----------------+                                          +-------------------+ ┃
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Two           ┃  +-----------------+       +-------------------------+                              ┃
  Samples       ┃  | Difference of   |       | difference of two means |                              ┃
-	       ┃  | two proportions |       | (independent samples)   |                              ┃
-	       ┃  +-----------------+       +-------------------------+                              ┃
-		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           ┃  | two proportions |       | (independent samples)   |                              ┃
+           ┃  +-----------------+       +-------------------------+                              ┃
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  One           ┃  +-----------------+       +-------------------------+        +-------------------+ ┃
  Sample,       ┃  | Chi-sq test for |       | Regression analysis     |        | Difference of two | ┃
  Two           ┃  | independence    |       |                         |        | means (paired)    | ┃
  Measures      ┃  +-----------------+       +-------------------------+        +-------------------+ ┃
-		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ** Purpose:
-		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   Testing      ┃  +-----------------+                                          +-------------------+ ┃
   against      ┃  | Test for        |                                          | Test for a mean   | ┃
   a value      ┃  | Proportion      |                                          |                   | ┃
-	       ┃  +-----------------+                                          +-------------------+ ┃
-		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                         ┃
-									    ┃                        ┃
-		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
+           ┃  +-----------------+                                          +-------------------+ ┃
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                         ┃
+                                        ┃                        ┃
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
  Comparing     ┃  +-----------------+       +-------------------------+  ┃  ┃                        ┃
   two          ┃  | Difference of   |       | difference of two means |  ┃  ┃                        ┃
  statistics    ┃  | two proportions |       | (independent samples)   |  ┃  ┃                        ┃
-	       ┃  +-----------------+       +-------------------------+  ┃  ┃                        ┃
-		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
-									    ┃                        ┃
-		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
+           ┃  +-----------------+       +-------------------------+  ┃  ┃                        ┃
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
+                                        ┃                        ┃
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ┃                        ┃
  Looking       ┃  +-----------------+       +-------------------------+  ┃  ┃  +-------------------+ ┃
  for           ┃  | Chi-sq test for |       | Regression analysis     |  ┃  ┃  | Difference of two | ┃
  relationships ┃  | independence    |       |                         |  ┃  ┃  | means (paired)    | ┃
-	       ┃  +-----------------+       +-------------------------+  ┃  ┃  +-------------------+ ┃
-		━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ━━━━━━━━━━━━━━━━━━━━━━
+           ┃  +-----------------+       +-------------------------+  ┃  ┃  +-------------------+ ┃
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ━━━━━━━━━━━━━━━━━━━━━━
 
 
 
@@ -117,8 +117,6 @@ http://www.gametheory.net/
 * Go over the book from the Prof. from Karlsruhe
 
 * Higher order logic
-
-
 * Hypotheses, Conjectures & Theorems:
 ** Goldbach conjencture: ∀ (Every) even integer ≧ 2 is a ∑ of two primes
 ** Riemann hypothesis: The real part of every non-trivila zero of the Zeta function is 1/2 (prime numbers)
@@ -131,7 +129,6 @@ http://www.gametheory.net/
 
 
 Russells paradox - Barbiers dilema
-
 
 * Morphisms:
 * Lambda Calculus: formal calculus for manipulating functions
@@ -152,7 +149,7 @@ Russells paradox - Barbiers dilema
 
 ** Representable Functor of A: (from an arbitrary category into the category of sets)
    fix A: Homℂ(A, -): Homℂ(A, X) → Homℂ(A, Y)
-				X → Y
+                X → Y
 
 *** Homomorphism f: structure-preserving mapping between 2 algebraic structures (e.g. groups, rings, vector spaces).
     f(m * n) = f(m) * f(n)
@@ -169,18 +166,19 @@ Russells paradox - Barbiers dilema
   Typed lambda calculi derived from the Curry–Howard paradigm led to software like Coq;
   Curry-Howard correspondence might lead to unification between mathematical logic and foundational computer science;
   Popular approach: use monads to segregate provably terminating from potentially non-terminating code
-    | Logic                             ⇒   | ⇐                          Type Theory                             |
-    |---------------------------------------+----------------------------------------------------------------------|
-    | proposition                           | contract                                                             |
-    | (somethins is true)                   | (pics out a set of values that passes the contract)                  |
-    | proof                                 | guarded fn                                                           |
-    |---------------------------------------+----------------------------------------------------------------------|
-    | P implies Q: P → Q (i.e. there ∃ one) | paricular fn of fn of P-contract to guarded fn of Q-contract: P → Q |
-    | → is constructive implication         | → is function from-to                                                |
-    | false → false (implies)               | {}  → {}  no values (empty set); contract cannot be satisfied        |
-    | false → true                          | {}  → {.} (one element set)                                          |
-    | true  → true                          | {.} → {.} (identity function)                                        |
-    | true  ↛ false (does not imply)        | {.} ↛ {}                                                             |
+
+    | LOGIC                                    =>    | <=     TYPE THEORY                                                   |
+    |------------------------------------------------+----------------------------------------------------------------------|
+    | Proposition of some type - (something is true) | Type (contract - a set of values that passes the contract)           |
+    | Proof of some type                             | Term (A program - guarded fn)                                        |
+    | Normalisation (Proof equality)                 | Computation                                                          |
+    |------------------------------------------------+----------------------------------------------------------------------|
+    | P implies Q: P -> Q (i.e. there exists one)    | paricular fn of fn of P-contract to guarded fn of Q-contract: P -> Q |
+    | -> is constructive implication                 | -> is function from-to                                               |
+    | false      -> false (implies)                  | {}       ->  {}  no values (empty set); contract cannot be satisfied |
+    | false      -> true                             | {}       ->  {.} (one element set)                                   |
+    | true       -> true                             | {.}      ->  {.} (identity function)                                 |
+    | true  (not ->) false (does not imply)          | {.} (not ->) {}                                                      |
 
 
 *** JavaScript & Category Theory
@@ -204,15 +202,13 @@ Counting number of elements in sets is decategorification; from category we get 
 
 Monoid homomorphisms: a function between the sets of monoid elements that preserved the monoid structure
 Monoidal functors:    a functor between categories that preserves the monoidal structure (should preserve multiplication)
-		      from functor(prodn([x, y, ..])) to prodn([functor(x), functor(y), ..])
+              from functor(prodn([x, y, ..])) to prodn([functor(x), functor(y), ..])
 Monoidal monad:       ???
 
 Functor:
 "forget the indexing (domain functor)"
 
-
 *** Contract = Object
-
 *** Product: examples:
     Objects   - numbers
     Morphisms - functions 'less/greater or equal than'
@@ -274,7 +270,7 @@ Monotonicity: If A ⊆ B then P(A) <= P(B)
 
 
 # ----------------------------------------
-#		       test positive
+#              test positive
 #                   +---- 0.9            0.1 * 0.9 = 0.09
 #          ill      |
 #    +---- 0.1 -----+
@@ -314,8 +310,6 @@ Monotonicity: If A ⊆ B then P(A) <= P(B)
 #(reduce * (range 1 (inc %)))
 
 Bodil Stokke
-* presentation in emacs
-* building own lisp (own unicode chars
 * instaparse by Mark Engelbers (project.clj - clojars; )
   - :require instaparse.core as insta ...
 (def p (insta/parser ""))
@@ -342,15 +336,15 @@ Bodil Stokke
 ** PreOrder (A, ≤)
    A - nonempty set
    ≤ - pre-ordering relation: must be
-			       - reflexive: a ≤ a
-			       - transitive: a ≤ b and b ≤ c then a ≤ c
+                   - reflexive: a ≤ a
+                   - transitive: a ≤ b and b ≤ c then a ≤ c
 
 ** PoSet - Partialy Ordered Set (A, ≤); Also a Category with 'few' (only one) morphisms between any two objects and many objects
    A - no-nempty set
    ≤ - relation: must be
-			       - reflexive: a ≤ a
-			       - transitive: a ≤ b and b ≤ c then a ≤ c
-			       - aymetric: a ≤ b and b ≤ a then a = b
+                   - reflexive: a ≤ a
+                   - transitive: a ≤ b and b ≤ c then a ≤ c
+                   - aymetric: a ≤ b and b ≤ a then a = b
 ** TODO Pointed Set
 ** TODO Pointed Function
 
@@ -367,6 +361,7 @@ Simplices - analogs of triangles in higher dimensions
   πₙ(S-k-upper-index) Homotopy group exists even if n > k; measuring higher dimensional holes in k dimensional sphere
   "Patri" - containment relation
 
+* Homotopy theory -  the indea of paths in a space
 
 * Cartesian Closed Category CCC:
 ** it has products for any pair of objects: A x B
@@ -379,3 +374,30 @@ Simplices - analogs of triangles in higher dimensions
   The 'double' triangle of Product
 
 * Beta Etha reduction
+* Beta reduction - computation
+  replace formal parameters with terms
+  - it simplifies proofs - (proof trees) 23:39
+
+* Type Theory
+** ITT Inentional Type Theory
+** OTT Observational Type Theory
+Type of a Variable - a set(?) of possible values of that type
+From context Gamma a M can be derrived such that x:A.B
+Context Gamma, x:A, y:Bx (e.g. x be a number with property Bx, y is a variable for the proof of type Bx)
+What's the point of having a number? Well we can count up to that number.
+Depandent type theory is the master theory of all programming languages. If you understand dependent type theory then you understand everything (every programming language)
+
+Maybe Type: A or B (e.g. A or Fail, A or AirMessage)
+
+* Intuitionistic Logic a.k.a Constructive Logic
+counts on endless resources - does not need any constructor or destructor.
+
+* Linear Logic
+has the notion of Limited resources - has operations of Construction and Descruction
+
+* Axiom of Choice - see "Type Theory Foundations, Lecture 3-wJLTE8rnqH0.mp4"
+"the greatest intelectual achievement???"
+
+predicate = vyrok = tvrdenie
+
+  (Banach Tarsky Paradox: Slice up an object with a volume into parts with no volume, and by putting it together get 2 same objects - "create an object for free")
