@@ -171,7 +171,7 @@ Russells paradox - Barbiers dilema
     |------------------------------------------------+----------------------------------------------------------------------|
     | Proposition of some type - (something is true) | Type (contract - a set of values that passes the contract)           |
     | Proof of some type                             | Term (A program - guarded fn)                                        |
-    | Normalisation (Proof equality)                 | Computation                                                          |
+    | Normalisation (Proof equality)                 | Computation (substitute variable with value)                     |
     |------------------------------------------------+----------------------------------------------------------------------|
     | P implies Q: P -> Q (i.e. there exists one)    | paricular fn of fn of P-contract to guarded fn of Q-contract: P -> Q |
     | -> is constructive implication                 | -> is function from-to                                               |
@@ -400,4 +400,23 @@ has the notion of Limited resources - has operations of Construction and Descruc
 
 predicate = vyrok = tvrdenie
 
-  (Banach Tarsky Paradox: Slice up an object with a volume into parts with no volume, and by putting it together get 2 same objects - "create an object for free")
+(Banach Tarsky Paradox: Slice up an object with a volume into parts with no volume, and by putting it together get 2 same objects - "create an object for free")
+
+
+* Haskell  vs. Agda
+
+| Haskell                                                                    | Agda                                                                  |
+|                                                                            | full higher order logic with existential and universal quantification |
+| Unsound type system                                                        | Sound type system                                                     |
+| (arbitrary properties can be prooven, i.e. every single type is inhabited) |                                                                       |
+| (loop : A, loop = loop)                                                  |                                                                       |
+
+
+* Modus pones: applications of a function to an argument
+
+Agda, Coq, Isabelle
+
+
+* Goedel's Incompleteness Theorem:
+ Every principle is either (A) too restrictive or (leaves out a good programm) or (B) not restrictive enough (allows some bad programs).
+* Full employment Theorem: take (A) and search for a new class to add in order to improve the language withouth allowing bad programs.
