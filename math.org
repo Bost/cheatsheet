@@ -162,7 +162,7 @@ Russells paradox - Barbiers dilema
   Direct relationship between computer programs and mathematical proofs;
   Link between Computation and Logic;
   Proofs-as-programs and propositions- or formulae-as-types interpretation;
-  Proofs can be run;
+  Proofs (= Programs) can be executed;
   Typed lambda calculi derived from the Curry–Howard paradigm led to software like Coq;
   Curry-Howard correspondence might lead to unification between mathematical logic and foundational computer science;
   Popular approach: use monads to segregate provably terminating from potentially non-terminating code
@@ -171,7 +171,7 @@ Russells paradox - Barbiers dilema
     |------------------------------------------------+----------------------------------------------------------------------|
     | Proposition of some type - (something is true) | Type (contract - a set of values that passes the contract)           |
     | Proof of some type                             | Term (A program - guarded fn)                                        |
-    | Normalisation (Proof equality)                 | Computation (substitute variable with value)                     |
+    | Normalisation (Proof equality)                 | Computation (substitute variable with value)                         |
     |------------------------------------------------+----------------------------------------------------------------------|
     | P implies Q: P -> Q (i.e. there exists one)    | paricular fn of fn of P-contract to guarded fn of Q-contract: P -> Q |
     | -> is constructive implication                 | -> is function from-to                                               |
@@ -238,8 +238,6 @@ Functor:
    theorems proven in one category can be transferred through a connecting functor to
    yield proofs of an analogous theorem in another category. A functor is like a conductor
    of mathematical truth.
-
-
 
 * Mappings: X → Y (Zobrazenia):
 ** Surjection: every elem in Y is "used";                           |X| ≥ |Y| (onto; "at least as big")
@@ -332,7 +330,6 @@ Bodil Stokke
   commutativity is not a part of the group definition: x * y = y * x
 
 ** TODO Ring
-
 ** PreOrder (A, ≤)
    A - nonempty set
    ≤ - pre-ordering relation: must be
@@ -366,17 +363,20 @@ Simplices - analogs of triangles in higher dimensions
 * Cartesian Closed Category CCC:
 ** it has products for any pair of objects: A x B
 ** it has exponentials for any pair of objects B^A
-** it has terminal object 1 (Exists unique map A → 1) (dual is initial object)
+** it has terminal object 1 (Exists unique map A → 1) (dual is initial object; Top and Bottom Objects)
    i.e. any one-element set (= singleton) is terminal
    DTTO for poset 1 is such an object that any other object is below it
 
 * Universal Mapping Property - UMP
   The 'double' triangle of Product
+* Beta Etha reduction (equivalence)
+  fst<Alpha, Beta> = Alpha
+  snd<Alpha, Beta> = Beta
+  (lambda x.Beta)Alpha = [Alpha/x]Beta
+  (lambda x.f)x = f
 
-* Beta Etha reduction
 * Beta reduction - computation
-  replace formal parameters with terms
-  - it simplifies proofs - (proof trees) 23:39
+  Replace formal params with terms so the proof (proof tree) gets simplified.
 
 * Type Theory
 ** ITT Inentional Type Theory
@@ -391,17 +391,14 @@ Maybe Type: A or B (e.g. A or Fail, A or AirMessage)
 
 * Intuitionistic Logic a.k.a Constructive Logic
 counts on endless resources - does not need any constructor or destructor.
-
 * Linear Logic
 has the notion of Limited resources - has operations of Construction and Descruction
-
 * Axiom of Choice - see "Type Theory Foundations, Lecture 3-wJLTE8rnqH0.mp4"
 "the greatest intelectual achievement???"
 
 predicate = vyrok = tvrdenie
 
 (Banach Tarsky Paradox: Slice up an object with a volume into parts with no volume, and by putting it together get 2 same objects - "create an object for free")
-
 
 * Haskell  vs. Agda
 
@@ -411,12 +408,30 @@ predicate = vyrok = tvrdenie
 | (arbitrary properties can be prooven, i.e. every single type is inhabited) |                                                                       |
 | (loop : A, loop = loop)                                                  |                                                                       |
 
-
 * Modus pones: applications of a function to an argument
-
 Agda, Coq, Isabelle
 
 
 * Goedel's Incompleteness Theorem:
  Every principle is either (A) too restrictive or (leaves out a good programm) or (B) not restrictive enough (allows some bad programs).
 * Full employment Theorem: take (A) and search for a new class to add in order to improve the language withouth allowing bad programs.
+* Clojure:
+** Namespace is a Type
+   Namespace contains fns returning values of the same Type. I.e. it is a set of Proofs of a given Proposition (i.e. of a given Type).
+** Use morphism from "complicated" Types (i.e. Products consisting of many Types. E.g. maps each having many keys) to subsets of (if possible natural) numbers.
+   These subsets should be in fact monads
+
+
+inl(...) - injection to the left
+inr(...) - injection to the right
+
+(A * B) and (A + B) could be seen as a product (e.g. join) and coproduct (e.g. disjoint union) of A and B
+
+
+* Category of Types (a.k.a Category of Proofs)
+
+
+* Theory of Reflexive Domain
+
+
+1:21 Video 2
