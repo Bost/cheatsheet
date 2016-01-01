@@ -714,6 +714,9 @@ sshfs name@server:/path/to/folder /path/to/mount/point
 # virtualbox: mount shared folder
 sudo mount -t vboxsf share /home/username/share/
 
+# youtube-dl: Requested formats are incompatible for merge and will be merged into mkv.
+youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] URL
+
 # mounted filesystems - nice layout
 mount | column -t
 
