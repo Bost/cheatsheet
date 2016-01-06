@@ -369,7 +369,7 @@ Simplices - analogs of triangles in higher dimensions
 
 * Universal Mapping Property - UMP
   The 'double' triangle of Product
-* Beta Etha reduction (equivalence)
+* Beta β reduction (computational) / Etha η extentionality principle
   fst<Alpha, Beta> = Alpha
   snd<Alpha, Beta> = Beta
   (lambda x.Beta)Alpha = [Alpha/x]Beta
