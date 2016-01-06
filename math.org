@@ -437,10 +437,10 @@ inr(...) - injection to the right
 1:21 Video 2
 
 * Logic examples:
-  | Logical Judgement   | Branch of Logic | Computation phenomenon                     |
-  |---------------------+-----------------+--------------------------------------------|
-  | K knows A           | Epistemic Logic | Distributed Computing                      |
-  | A is true at time t | Temporal Logic  | Reactive Programming (partial evaluation)  |
-  | A is a resource     | Linear Logic    | Concurrent Computation                     |
-  | A is possible       | Lax Logic       | Generic effects (monads, state, exception) |
-  | A is valid          | Modal Logic     | Runtime code generation                    |
+  | Logical Judgement   | Branch of Logic   | Computation phenomenon                     |
+  |---------------------+-------------------+--------------------------------------------|
+  | K knows A           | Epistemic Logic   | Distributed Computing                      |
+  | A is true at time t | Temporal Logic    | Reactive Programming (partial evaluation)  |
+  | A is a resource     | Linear Logic      | Concurrent Computation                     |
+  | A is possible       | Monadic Lax Logic | Generic effects (monads, state, exception) |
+  | A is valid          | Modal Logic       | Runtime code generation                    |
