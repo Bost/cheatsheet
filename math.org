@@ -158,27 +158,27 @@ Russells paradox - Barbiers dilema
     Individual monoids themselves give category
     Monoids with homomorphisms give category
 
-* Curry-Howard Isomorphism: Logic ⇔ Type Theory (1-to-1 and keeps all properties):
+* Curry-Howard-Lambek correspondence: Logic <-> Type Theory <-> Category Theory:
   Direct relationship between computer programs and mathematical proofs;
   Link between Computation and Logic;
   Proofs-as-programs and propositions- or formulae-as-types interpretation;
   Proofs (= Programs) can be executed;
-  Typed lambda calculi derived from the Curry–Howard paradigm led to software like Coq;
-  Curry-Howard correspondence might lead to unification between mathematical logic and foundational computer science;
+  Typed lambda calculi derived from the Curry–Howard-Lambek paradigm led to software like Coq;
+  Curry-Howard-Lambek correspondence might lead to unification between mathematical logic and foundational computer science;
   Popular approach: use monads to segregate provably terminating from potentially non-terminating code
 
-    | LOGIC                                    =>    | <=     TYPE THEORY                                                   |
-    |------------------------------------------------+----------------------------------------------------------------------|
-    | Proposition of some type - (something is true) | Type (contract - a set of values that passes the contract)           |
-    | Proof of some type                             | Term (A program - guarded fn)                                        |
-    | Normalisation (Proof equality)                 | Computation (substitute variable with value)                         |
-    |------------------------------------------------+----------------------------------------------------------------------|
-    | P implies Q: P -> Q (i.e. there exists one)    | paricular fn of fn of P-contract to guarded fn of Q-contract: P -> Q |
-    | -> is constructive implication                 | -> is function from-to                                               |
-    | false      -> false (implies)                  | {}       ->  {}  no values (empty set); contract cannot be satisfied |
-    | false      -> true                             | {}       ->  {.} (one element set)                                   |
-    | true       -> true                             | {.}      ->  {.} (identity function)                                 |
-    | true  (not ->) false (does not imply)          | {.} (not ->) {}                                                      |
+    | LOGIC (Howard)                                 | TYPE THEORY (Curry)                                                  | CATEGORY THEORY (Lambek) |
+    |------------------------------------------------+----------------------------------------------------------------------+--------------------------|
+    | Proposition of some type - (something is true) | Type (contract - a set of values that passes the contract)           |                          |
+    | Proof of some type                             | Term (A program - guarded fn)                                        |                          |
+    | Normalisation (Proof equality)                 | Computation (substitute variable with value)                         |                          |
+    |------------------------------------------------+----------------------------------------------------------------------+--------------------------|
+    | P implies Q: P -> Q (i.e. there exists one)    | paricular fn of fn of P-contract to guarded fn of Q-contract: P -> Q |                          |
+    | -> is constructive implication                 | -> is function from-to                                               |                          |
+    | false      -> false (implies)                  | {}       ->  {}  no values (empty set); contract cannot be satisfied |                          |
+    | false      -> true                             | {}       ->  {.} (one element set)                                   |                          |
+    | true       -> true                             | {.}      ->  {.} (identity function)                                 |                          |
+    | true  (not ->) false (does not imply)          | {.} (not ->) {}                                                      |                          |
 
 
 *** JavaScript & Category Theory
