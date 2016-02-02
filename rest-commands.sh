@@ -690,8 +690,8 @@ xfce4-keyboard-settings
 # xfce: gnome: logout
 gnome-session-quit / xfce4-session-logout
 
-# xfce: execute this when the title bar dissapears from xfwm4
-rm -r ~/.cache/sessions
+# restart xfce when the title bar dissapears from xfwm4; or rm -r ~/.cache/sessions
+pkill -KILL -u yourusername
 
 # xfce: launcher: emacs uses bash variables; -i interactive shell, -c read following command
 bash -i -c /path/to/emacs
