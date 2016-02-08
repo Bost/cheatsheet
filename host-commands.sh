@@ -115,6 +115,9 @@ SCSI
 # SQL Processing File Input 
 SPUFI
 
+# tso MSV eXtended Information
+tso mxi
+
 # spufi: start SPUFI from Apps
 tso db2ei
 
@@ -496,6 +499,9 @@ F3 / x / logoff
 
 # Partitioned Dataset: some kind of folder; contains other datasets (members); sequential datasets; part == members
 PDS
+
+# tso: PDS: display PDS assigned to DDname SYSPROC, SYSEXEX, ISP*...
+tso isrddn
 
 # ispf: members of ispf library or tso partitioned dataset; displayed for: edit, browse, view, foreground, batch, and several utilities
 Member Selection List
