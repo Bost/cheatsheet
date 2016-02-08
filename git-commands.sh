@@ -37,6 +37,9 @@ git diff --word-diff / --cached
 # git: show files changed in last commit
 git show --name-only
 
+# git: count of files changed since ...
+git whatchanged -1 --format=oneline -p 25.0.90.2.. | wc -l
+
 # git: search through the gitlog
 git show :/query
 
