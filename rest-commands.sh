@@ -268,7 +268,7 @@ du -s dir / du -sh dir
 # jump to /path/to/dir execute command and jump back
 (cd /path/to/dir && ls)
 
-# stop-watch; ctrl-d to stop; measure execution time
+# stop-watch; ctrl-d to stop; measure execution time; or try to install stopwatch
 time read
 
 # type partial cmd, kill this cmd, check something you forgot, yank the cmd, resume typing
