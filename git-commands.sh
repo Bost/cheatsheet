@@ -67,7 +67,7 @@ git reflog
 # git: add all *.txt files under given path; must not be a bare repo
 git ls-files [path] | grep \'\.txt$\' | xargs git add
 
-# git: create bare repo in the gitDir
+# git: create bare (empty) repo in the gitDir
 git init gitDir
 
 # git: recursivelly add all *.txt files from src/ to a repo located in gitDir
@@ -76,10 +76,10 @@ git --git-dir=gitDir add "src/**/*.txt"
 # git: commit to a repo located in gitDir under given Name
 git --git-dir=gitDir commit --author="Name <noreply@example.com>" -m "commitMsg"
 
-# git: clone a repo from gitDir to a bareRepoDir (presumably located on a server)
+# git: clone a repo from gitDir to a bareRepoDir (empty) presumably located on a server
 git clone --bare gitDir bareRepoDir
 
-# git: workLocation must not be a bare repo
+# git: workLocation must not be a bare (empty) repo
 git add --work-tree=workLocation --git-dir=repoLocation
 
 # git: list contibutors; -s, --summary, -n, --numbered
