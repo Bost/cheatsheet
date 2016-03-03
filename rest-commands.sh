@@ -204,6 +204,7 @@ tr \'[A-Z]\' \'[a-z]\' < file.txt > fileNew.txt
 
 # bash: mass move/copy/rename
 mmv \*.JPG \#1.jpc
+mmv \* \#1.rexx
 
 # bash: visual calender for februar 2004 / whole year 2004
 cal 2 2004 / cal -y 2004
