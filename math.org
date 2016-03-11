@@ -360,15 +360,18 @@ Simplices - analogs of triangles in higher dimensions
 
 * Homotopy theory -  the indea of paths in a space
 
+* Localy Cartesian Closed Category CCC:
+  for every object X sliced category is a CCC
 * Cartesian Closed Category CCC:
-** it has products for any pair of objects: A x B
-** it has exponentials for any pair of objects B^A
+** it has products  A x B and exponentials B^A for any pair of objects A, B
 ** it has terminal object 1 (Exists unique map A → 1) (dual is initial object; Top and Bottom Objects)
    i.e. any one-element set (= singleton) is terminal
    DTTO for poset 1 is such an object that any other object is below it
 
 * Universal Mapping Property - UMP
-  The 'double' triangle of Product
+  Consists of Initial and Terminal mapping (morphism).
+  The 'double' triangle of Product;
+
 * Beta β reduction (computational) / Etha η extentionality principle
   fst<Alpha, Beta> = Alpha
   snd<Alpha, Beta> = Beta
