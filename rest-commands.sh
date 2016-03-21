@@ -396,6 +396,9 @@ grep --exclude=.git
 grep --exclude=.git -lir "String" *.properties
 
 # 
+grep --exclude-dir={dir1,dir2} /path/to/dir -lir "Text" "*.ext"
+
+# 
 grep -lir "String" $(find . -name *.properties)
 
 # do not search in the .git directory
