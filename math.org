@@ -372,7 +372,7 @@ Simplices - analogs of triangles in higher dimensions
   Consists of Initial and Terminal mapping (morphism).
   The 'double' triangle of Product;
 
-* Beta β reduction (computational) / Etha η extentionality principle
+* Beta β reduction (computational) / Eta η extentionality principle
   fst<Alpha, Beta> = Alpha
   snd<Alpha, Beta> = Beta
   (lambda x.Beta)Alpha = [Alpha/x]Beta
