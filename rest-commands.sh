@@ -934,6 +934,9 @@ rpm -qa
 # android: 
 sudo apt-get install android-tools-adb android-tools-fastboot
 
+# root login / root console / root prompt
+sudo -i
+
 # android: 
 groups - check plugdev membership
 
