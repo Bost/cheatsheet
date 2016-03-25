@@ -416,8 +416,9 @@ zgrep foo myfile.gz / zgrep \'GET /blog\' access_log.gz
 # bash: mv: move content of a directory within another directory with the same folders
 rsync --archive --remove-source-files backup/ backupArchives/
 
-# bash: cvs: copy files from src to desc excluding everything in CVS directories
+# bash: cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
 rsync --archive --verbose --exclude=CVS src dest
+rsync --progress --archive --verbose --exclude=CVS src dest
 
 #
 sudo /etc/init.d/cvsd restart / start / stop / status
