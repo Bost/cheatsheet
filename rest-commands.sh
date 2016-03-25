@@ -1,10 +1,16 @@
 #!/bin/bash
 exit 1
 
+# deb: apt: ppa: only 46bit packages
+deb [arch=amd64] http://...
+
+# usb: drive: drives: disc: discs: list block devices
+lsblk
+
 # pdf: view file.pdf
 evince file.pdf
 
-# net:'];
+# net:
 service network-manager restart
 
 # net: ubuntu: proxy definition
@@ -643,7 +649,7 @@ sed "s/foo/FOO/" <file.old >file.new; mv file.{old,new}
 # sed: ascii: ebcdic: fix new lines and empty chars; \x85 - hexadecimal char
 sed "s/\x85/\n/g" <log.txt >log.nl.txt; sed "s/\x85/\n/g" <log.nl.txt >log.nl.00.txt
 
-# Show numerical values for each of the 256 colors in ndbash/"],
+# Show numerical values for each of the 256 colors in ndbash
 for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done
 
 # sha1: read SHA1 sums from the file.sha1 and check them
