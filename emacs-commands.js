@@ -46,6 +46,7 @@ var jsonEmacs = [
 ['C-x C-s / C-x s / C-x C-w ',      '; files: save file / save all /save as'],
 ['C-x s',                           '; files: save-some-buffers'],
 ['',                                '; eshell: ifconfig > #<buffer interfaces>'],
+['message "hello world" | cut -f 1 -d \' \'', '; eshell: combing elisp functions (message) with OS programs (/usr/bin/cut) in eshell']
 ['',                                '; cssh ? ssh shell ? (somehow strange)'],
 ['',                                '; color-theme-calm-forest ? does not work?'],
 ['',                                '; yasnippet - yet another snippets'],
