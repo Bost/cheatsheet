@@ -43,7 +43,7 @@ backspace / \] / \[ / o
 # mplayer: volume +/-
 * / "/"
 
-# 
+#
 ps2pdf
 
 # xserver: modifying keymaps and pointer button mappings in X
@@ -52,7 +52,7 @@ xmodmap
 # xserver: print XKB keyboard description to file in ps-format
 xkbprint :0
 
-# 
+#
 javaws start.jnlp
 
 # disassemble file.class (bytecode)
@@ -67,7 +67,7 @@ sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update
 # java:
 sudo apt-get install openjdk-8-jdk / sudo apt-get install oracle-java8-set-default
 
-# 
+#
 ls --format=single-column
 
 # list only directories, 1 entry per line
@@ -347,7 +347,7 @@ gvim $(find . -name "*fileToSearch*")
 # search for *fileToSearch* in multiple directories
 find ./ foo/ bar/ -name "*fileToSearch*"
 
-# 
+#
 find . -name *.properties -exec grep -lir ".*String.*" \'{}\' \; -print
 
 # quit search after finding 1st match
@@ -398,16 +398,16 @@ grep -r "String" --include=*.txt .
 # search for "String" in *.txt files (with spaces in filenames)
 find . -type f -name "*.txt" -print0 | xargs -0 grep -l "String"
 
-# 
+#
 grep --exclude=.git
 
-# 
+#
 grep --exclude=.git -lir "String" *.properties
 
-# 
+#
 grep --exclude-dir={dir1,dir2} /path/to/dir -lir "Text" "*.ext"
 
-# 
+#
 grep -lir "String" $(find . -name *.properties)
 
 # do not search in the .git directory
@@ -477,7 +477,7 @@ ssh-keygen
 # github: now copy-paste the ~/.ssh/id_rsa.pub to github under "Account settings / SSH keys / Add another public key"
 cat ~/.ssh/id_rsa.pub
 
-# eclipse: 
+# eclipse:
 METADA_CORE=.metadata/.plugins/org.eclipse.jdt.core;
 
 # eclipse: clean history
@@ -525,34 +525,34 @@ db2cmd -i -w db2clpsetcp
 # license info / add license
 db2licm -l / db2licm -a db2conpe.lic
 
-# windows: 
+# windows:
 echo %DB2CLP%
 
-# 
+#
 db2 get connection state
 
-# 
+#
 db2 CATALOG TCPIP NODE $node_name REMOTE $ip_addr SERVER $port
 
-# 
+#
 db2 CATALOG DATABASE $database_name AT NODE $node_name AUTHENTICATION server
 
-# 
+#
 db2 UNCATALOG NODE $node_name
 
-# 
+#
 db2 UNCATALOG DATABASE $database_name
 
-# 
+#
 db2 TERMINATE
 
-# 
+#
 db2 list db directory > db.txt | gvim db.txt
 
-# 
+#
 db2 list node directory > node.txt | gvim node.txt
 
-# 
+#
 db2 list tables
 
 # execute script.sql from normal / command line processor (=>) shell
@@ -644,7 +644,7 @@ sudo apt-get remove --purge $(dpkg -l 'linux-image-*' | sed '/^ii/!d;/'"$(uname 
 # for tabular data
 awk
 
-# sed: print file content between lines 10 and 20 / print 5th line 
+# sed: print file content between lines 10 and 20 / print 5th line
 sed -n "10,20p" file / sed -n 5p file
 
 # sed: replace 1 occurence of "foo" in file.old; must be done in 2 steps with the mv; otherwise the file.old is empty
@@ -657,19 +657,19 @@ sed "s/\x85/\n/g" <log.txt >log.nl.txt; sed "s/\x85/\n/g" <log.nl.txt >log.nl.00
 for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done
 
 # sha1: read SHA1 sums from the file.sha1 and check them
-sha1sum -c file.sha1                                                
+sha1sum -c file.sha1
 
 # solaris: sha1 checksum
-/usr/bin/digest -a sha1                                             
+/usr/bin/digest -a sha1
 
 # solaris: wget
-/usr/sfw/bin/wget                                                   
+/usr/sfw/bin/wget
 
 # solaris: ps: full command line (needs: sudo rootsh -i -u ... )
-/usr/ucb/ps -auxww                                                  
+/usr/ucb/ps -auxww
 
 # solaris: displays information about processors
-psrinfo                                                             
+psrinfo
 
 # solaris: net: ipconfig
 /usr/sbin/ifconfig -a
@@ -785,13 +785,13 @@ cygpath -u filename
 # zip: zip content of /path/to/dir to /path/to/file.zip; --recurse-paths is -r
 zip --recurse-paths --encrypt /path/to/file.zip /path/to/dir
 
-# zip: unzip: 
+# zip: unzip:
 unzip /path/to/file.zip -d /path/to/extract-dir
 
-# tar: 
+# tar:
 tar czf /path/to/tarfile.gz file0 file1
 
-# tar: untar: 
+# tar: untar:
 tar xzf /path/to/tarfile.gz
 
 # Remove all files previously extracted from a tar(.gz) file
@@ -878,7 +878,7 @@ strace -f -e trace=file,network -s 10000 -o outfile.log PROCESS ARGS
 # trace process / library
 ptrace / ltrace
 
-# 
+#
 sudo service tomcat7 stop
 
 # net: linux: Simple Network Management Protocol
@@ -941,19 +941,19 @@ nmcli device wifi connect GAULOISES_LIBERTE_TOUJOURS ifname wlan0
 # rpm: display installed packages
 rpm -qa
 
-# android: 
+# android:
 sudo apt-get install android-tools-adb android-tools-fastboot
 
 # root login / root console / root prompt
 sudo -i
 
-# android: 
+# android:
 groups - check plugdev membership
 
-# android: 
+# android:
 adb devices; dmesg; adb logcat; adb shell
 
-# android: 
+# android:
 adb push SRC DST
 
 # * TODO add this:
