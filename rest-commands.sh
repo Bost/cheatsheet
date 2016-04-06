@@ -7,6 +7,9 @@ deb [arch=amd64] http://...
 # usb: drive: drives: disc: discs: list block devices
 lsblk
 
+# usb: drive:
+mount | grep gvfs; cd ...
+
 # pdf: view file.pdf
 evince file.pdf
 
