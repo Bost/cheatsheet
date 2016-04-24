@@ -956,6 +956,9 @@ adb devices; dmesg; adb logcat; adb shell
 # android:
 adb push SRC DST
 
+# packages; unsupported
+ubuntu-support-status --show-unsupported
+
 # * TODO add this:
 # git remote add --track develop upstream https://github.com/Lokaltog/powerline.git
 # * TODO add bash file tests to the list
