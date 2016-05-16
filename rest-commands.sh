@@ -1,7 +1,7 @@
 #!/bin/bash
 exit 1
 
-# deb: apt: ppa: only 46bit packages
+# deb: apt: ppa: only 64bit packages
 deb [arch=amd64] http://...
 
 # usb: drive: drives: disc: discs: list block devices
