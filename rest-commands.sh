@@ -806,8 +806,11 @@ uniq
 # bash: sort and remove duplicate lines
 sort myfile.txt | uniq
 
-# networking: ping: traceroute:
+# networking: ping: traceroute: - check connection
 mtr google.com
+ethtool eth0
+ip neigh show | grep REACHABLE
+ip link show
 
 # networking: DNS lookup
 host google.com
