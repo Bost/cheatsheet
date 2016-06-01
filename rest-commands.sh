@@ -489,6 +489,9 @@ rm $METADA_CORE/*.index $METADA_CORE/savedIndexNames.txt;
 # eclipse: use this in find-replace dialogue to remove trailing whitespaces
 [\\t ]+$
 
+# eclipse: Type syso/sysout and ctrl + space for System.out.println()
+syso/sysout
+
 # windows: command line: logoff and force
 shutdown /l /f
 
