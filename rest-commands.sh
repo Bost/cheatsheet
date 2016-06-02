@@ -631,7 +631,8 @@ apt-get source PACKAGE
 sudo apt-get install --reinstall PACKAGE
 
 # linux: ubuntu: command line upgrade part 1. (CLI alternative to update-manager)
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update; and sudo apt-get upgrade
+sudo apt update; and sudo apt upgrade
 
 # linux: ubuntu: command line upgrade part 2.
 sudo do-release-upgrade
