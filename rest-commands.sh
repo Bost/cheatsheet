@@ -525,11 +525,14 @@ wmic /?
 # init environment
 db2cmd -i -w db2clpsetcp
 
-# license info / add license
+# db2: license info / add license
 db2licm -l / db2licm -a db2conpe.lic
 
-# windows:
+# db2: windows:
 echo %DB2CLP%
+
+#
+db2 CONNECT TO database USER userID USING password
 
 #
 db2 get connection state
@@ -873,7 +876,7 @@ nproc
 test
 
 # tabs: convert spaces to tabs / tabs to spaces
-expand / unexpand
+expand / unexpand file.txt
 
 # linux: simple GUIs
 zenity, whiptail
