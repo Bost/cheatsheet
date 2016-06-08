@@ -696,6 +696,9 @@ jar xf file.jar path/inside.txt && cat path/inside.txt
 # jar: unzip: show content of a file inside a file.jar
 unzip -p file.jar path/inside.txt
 
+# jar: unzip: show content of META-INF/MANIFEST.MF
+unzip -p file.jar META-INF/MANIFEST.MF
+
 # list content of file.zip
 unzip -lv file.zip
 
