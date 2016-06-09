@@ -564,6 +564,9 @@ db2 list tables
 # execute script.sql from normal / command line processor (=>) shell
 db2 -vf script.sql -t / !db2 -vf script.sql -t;
 
+#
+db2 -tvf script.sql -z file.log
+
 # execute script.sql from normal shell (Befehlsfenster)
 db2 -td; -v -f script.sql
 
