@@ -103,13 +103,16 @@ git config --global rerere.enabled 1
 # git: search entire commit history
 git log -S\'text-to-search\'
 
+# git: ignore line ending changes
+git config --global core.autocrlf true
+
 # git: show formated commit logs
 git log --pretty=format:\'%h %s\'
 
 # git: a kind of \'gitk --all\'
 git log --oneline --graph
 
-# git: 
+# git:
 git log --oneline --grep="pattern"
 
 # git: list all commits for a specific file
