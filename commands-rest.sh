@@ -630,12 +630,18 @@ sudo update-grub
 # withouth "sudo", download source PACKAGE to current directory
 apt-get source PACKAGE
 
+# Advanced Package Tool
+apt
+
 #
 sudo apt-get install --reinstall PACKAGE
 
 # linux: ubuntu: command line upgrade part 1. (CLI alternative to update-manager)
 sudo apt-get update; and sudo apt-get upgrade
 sudo apt update; and sudo apt upgrade
+
+# update and upgrade the system by removing/installing/upgrading packages
+sudo apt update; and sudo apt full-upgrade
 
 # linux: ubuntu: command line upgrade part 2.
 sudo do-release-upgrade
