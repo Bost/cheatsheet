@@ -22,6 +22,9 @@
 
 #_(foo 1 2)/ (comment foo 1 2)
 
+;; print stack trace: (/ 1 0) (pst)
+(pst)
+
 ;; clj: show leiningen dependency tree
 ;; rlwrap lein deps :tree
 
