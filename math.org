@@ -148,6 +148,7 @@ Russells paradox - Barbiers dilema
    Homℂ(A, B) = {f: A → B} - set of all morphisms A → B in category ℂ (Objects of ℂ don't need to be sets)
 
 ** Representable Functor F: ℂ → Set 
+   "Representing objects and morphisms of C as sets and functions in Set"
    fix object A ∈ ℂ there is Homℂ(A, -): Homℂ(A, X) → Homℂ(A, Y) where there is a morphism X → Y
    e.g.:
    The forgetful functor Grp → Set on the category of groups (G, *, e) is represented by (Z, 1).
