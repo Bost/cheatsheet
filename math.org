@@ -144,12 +144,11 @@ Russells paradox - Barbiers dilema
     Small Category: all objects create a set and all morphisms create a set
     Localy Small Category: ∀ A,B: Hom(A, B) is a set
 
-** Homset Definition
-   Homℂ(A, B) = {f: A → B} - set of all morphisms from A to B in category ℂ (Objects of ℂ do not need to be sets)
+** Hom-Set(A, B) Definition
+   Homℂ(A, B) = {f: A → B} - set of all morphisms A → B in category ℂ (Objects of ℂ don't need to be sets)
 
 ** Representable Functor of A: (from an arbitrary category into the category of sets)
-   fix A: Homℂ(A, -): Homℂ(A, X) → Homℂ(A, Y)
-                X → Y
+   fix object A: Homℂ(A, -): Homℂ(A, X) → Homℂ(A, Y) where there is a mapping X → Y
 
 *** Homomorphism f: structure-preserving mapping between 2 algebraic structures (e.g. groups, rings, vector spaces).
     f(m * n) = f(m) * f(n)
@@ -214,8 +213,8 @@ Functor:
     Morphisms - functions 'less/greater or equal than'
 
 * Tensor: most general bilinear operation; Notation ⊗
-* Isomorphism f: X → Y (bijection of set)
-  ∃ fn g: Y → X such that g ∘ f = idX and f ∘ g = idY; idX, idY are identity morphisms of X, Y
+* Isomorphism (bijection of set):
+  ∀ f: X → Y  there ∃ g: Y → X such that g ∘ f = idX and f ∘ g = idY; idX, idY are identity morphisms on X, Y
   (f is invertible and g is the inverse of f)
 
 ** Category theory - Modeling (new vocabulary)
@@ -227,9 +226,6 @@ Functor:
    | self-similarity            | operads            |
    | context                    | monads             |
 
-
-** Catergory of sets (Set)
-   Hom-Set(X, Y): the set of functions X → Y
 
 ** olog = ontology log
    Different branches of mathematics can be formalized
