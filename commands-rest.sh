@@ -492,6 +492,9 @@ rm $METADA_CORE/*.index $METADA_CORE/savedIndexNames.txt;
 # eclipse: Type syso/sysout and ctrl + space for System.out.println()
 syso/sysout
 
+# eclipse: Jump to next error
+Ctrl-.
+
 # windows: command line: logoff and force
 shutdown /l /f
 
