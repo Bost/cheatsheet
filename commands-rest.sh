@@ -714,6 +714,9 @@ unzip -p file.jar META-INF/MANIFEST.MF
 # list content of file.zip
 unzip -lv file.zip
 
+# unzip: extract specific folder from a zip file to a given directory
+unzip file.zip 'folderToExtract/*' -d dest/path
+
 # search for File.class in jar files
 find . -name "*.jar" | xargs grep File.class
 
