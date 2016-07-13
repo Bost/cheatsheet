@@ -147,7 +147,7 @@ Russells paradox - Barbiers dilema
 ** Hom-Set(A, B):
    Homℂ(A, B) = {f: A → B} - set of all morphisms A → B in category ℂ (Objects of ℂ don't need to be sets)
 
-** Representable Functor F: ℂ → Set 
+** Representable Functor F: ℂ → Set
    "Representing objects and morphisms of C as sets and functions in Set"
    fix object A ∈ ℂ there is Homℂ(A, -): Homℂ(A, X) → Homℂ(A, Y) where there is a morphism X → Y
    e.g.:
@@ -156,6 +156,8 @@ Russells paradox - Barbiers dilema
    The forgetful functor Vect → Set on the category of real vector spaces is represented by (R, 1).
    The forgetful functor Top → Set on the category of topological spaces is represented by any singleton topological space with its unique element.
 
+** Naturality condition:
+    G f ∘ αa = αb ∘ F f
 
 *** Homomorphism f: structure-preserving mapping between 2 algebraic structures (e.g. groups, rings, vector spaces).
     f(m * n) = f(m) * f(n)
