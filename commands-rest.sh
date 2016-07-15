@@ -13,7 +13,7 @@ mount | grep gvfs; cd ...
 # pdf: view file.pdf
 evince file.pdf
 
-# net:
+# linux: systemd: net:
 service network-manager restart
 
 # net: ubuntu: proxy definition
