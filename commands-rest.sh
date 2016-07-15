@@ -681,6 +681,10 @@ sha1sum -c file.sha1
 # solaris: sha1 checksum
 /usr/bin/digest -a sha1
 
+# win: checksum [HashAlgorithm] must be uppercased
+CertUtil -hashfile fileName SHA1
+CertUtil -hashfile pathToFile [HashAlgorithm]
+
 # solaris: wget
 /usr/sfw/bin/wget
 
