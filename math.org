@@ -143,6 +143,8 @@ Russells paradox - Barbiers dilema
     id - identity morphism on object A: id(A)
     Small Category: all objects create a set and all morphisms create a set
     Localy Small Category: ∀ A,B: Hom(A, B) is a set
+    Sheaf (Garbe, Faisceau, zvazok)- tool for tracking locally defined data
+    Presheaf: Functor F: ℂop → Set
 
 ** Hom-Set(A, B):
    Homℂ(A, B) = {f: A → B} - set of all morphisms A → B in category ℂ (Objects of ℂ don't need to be sets)
@@ -334,7 +336,7 @@ Bodil Stokke
   closure: a and b and a*b must be membembers of the same group
   commutativity is not a part of the group definition: x * y = y * x
 
-** TODO Ring
+** Ring (M, +, *) - Okruh
 ** PreOrder (A, ≤)
    A - nonempty set
    ≤ - pre-ordering relation: must be
