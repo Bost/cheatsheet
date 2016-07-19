@@ -579,6 +579,9 @@ db2 select * from DBASE.TABLE fetch first 2 rows only
 # error description for sqlcode=-302
 db2 ? sql302
 
+# db2 version
+db2 SELECT GETVARIABLE('SYSIBM.VERSION') FROM SYSIBM.SYSDUMMY1
+
 # execute script.sql as the root user
 mysql -u root -t < script.sql
 
