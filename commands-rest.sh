@@ -582,6 +582,9 @@ db2 ? sql302
 # db2 version
 db2 SELECT GETVARIABLE('SYSIBM.VERSION') FROM SYSIBM.SYSDUMMY1
 
+# db2cc version
+java -cp path/to/db2jcc.jar com.ibm.db2.jcc.DB2Jcc -version
+
 # execute script.sql as the root user
 mysql -u root -t < script.sql
 
