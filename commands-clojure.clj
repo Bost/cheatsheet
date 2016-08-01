@@ -26,7 +26,10 @@
 (pst)
 
 ;; clj: show leiningen dependency tree
-;; rlwrap lein deps :tree
+;; lein deps :tree
+
+;; clj: Print the classpath of the current project.
+;; lein classpath
 
 ;; clj: create lighttable plugin
 ;; cd $LIGHTTABLE/deploy/plugins/ && lein new lt-plugin my-plugin
