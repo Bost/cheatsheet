@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1
 
+# split a file into pieces (with '.' at the end)
+split --bytes 1M --numeric-suffixes --suffix-length=3 foo.txt foo.
+
 # deb: apt: ppa: only 64bit packages
 deb [arch=amd64] http://...
 
