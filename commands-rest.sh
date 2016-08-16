@@ -395,8 +395,8 @@ grep "String" * | cut -f1 -d:
 # print line numbers
 grep -i -n "String" *
 
-# find: search for "String" in *.txt
-grep -r "String" --include="*.txt" .
+# find: search for "String" in *.txt (with '.' at the end)
+grep -r "String" --exclude-dir=".git" --include="*.txt" .
 
 # search for "String" in *.txt files (with spaces in filenames)
 find . -type f -name "*.txt" -print0 | xargs -0 grep -l "String"
