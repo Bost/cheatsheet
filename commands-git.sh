@@ -13,7 +13,7 @@ git remote add upstream https://github.com/octocat/Spoon-Knife.git
 # git: show upstream branches and other info
 git remote show upstream
 
-# git: 
+# git:
 git fetch upstream branch1 branch2
 
 # git: delete a remote-tracking branch from local repository; -r --remotes, -d --delete
@@ -115,8 +115,8 @@ git log --oneline --graph
 # git:
 git log --oneline --grep="pattern"
 
-# git: list all commits for a specific file
-git log --follow --name-only --format=\'%H\' -- path/to/file
+# git: find / list all commits for a specific file
+git log --follow --name-only --format='%H' -- path/to/file
 
 # git: set git base directory and working tree
 git --git-dir=path/to/.git --work-tree=path/to/ ...
@@ -127,7 +127,7 @@ git rm --cached path/to/file && echo "path/to/file" > .gitignore
 # git: Use it in case of "You asked me to pull without telling me which branch ..."
 git config branch.master.remote origin
 
-# git: 
+# git:
 git config branch.master.merge refs/heads/master
 
 # git: cygwin: ignore chmod changes
