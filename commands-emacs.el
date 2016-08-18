@@ -13,8 +13,8 @@ C-k
 ;; paredit: wrap brackets around sexp / raise sexp (replace entire parent with child) / remove everything before the current sexp
 M-( / M-r / M-<up>
 
-;; paredit: slurp (vcucni) / barf (vygrcaj) sexp
-C-<right> / C-<left>
+;; paredit-forward-slurp-sexp (vcucni) / paredit-forward-barf-sexp (vygrcaj)
+<M-s-right> / <M-s-left>
 
 ;; paredit: replace parent with the child
 M-r
@@ -59,7 +59,7 @@ M-x byte-compile-file
 M-x quail-set-keyboard-layout
 
 ;; keyboard: show layout
-M-x quail-show-key
+M-x quail-show-keyboar-layout
 
 ;; scroll left / right
 C-x < / C-x >
@@ -209,6 +209,9 @@ C-x u / C-_ or C-/
 ;; redo
 C-f C-_
 
+;; next-buffer / previous-buffer
+<XF86Forward>, C-x <C-right>, C-x <right> / <XF86Back>, C-x <C-left>, C-x <left>
+
 ;; forward / backward one sentence
 M-a / M-e
 
@@ -255,7 +258,7 @@ M-v / C-v
 C-t / M-t / C-x C-t
 
 ;; center the screen
-C-l
+C-l / zz
 
 ;; start a bash command line
 M-x shell / eshell 
@@ -314,7 +317,7 @@ C-M-%
 ;; execute command and read-in its output
 C-u M-! command
 
-;; 
+;;
 M-x dbg / ediff / compile / man / erc
 
 ;; read news, email, rss / grep / speedbar / Superior Lisp Interaction Mode for Emacs
@@ -335,29 +338,8 @@ C-u C-n
 ;; increase / decrease font size
 C-x C-+ / C-x C--
 
-;; repeat last command
-C-x C-e
-
 ;; slime: reprint last command to the REPL
 M-p
-
-;; start REPL
-\\sr
-
-;; start interactive REPL initialized to have same namespace as current buffer
-\\sR
-
-;; prompt for input and lookup with (source)
-\\si
-
-;; prompt for input and lookup with (find-doc)
-\\fd
-
-;; eval current line / file / selected visual block / function
-\\el / \\ef / \\eb / \\et
-
-;; close a window
-\\p
 
 ;; gui: toggle vertical scroll bar (vertical scroll bar does not exist in emacs)
 M-x toggle-scroll-bar
@@ -371,14 +353,8 @@ M-x align-regexp
 ;; auto completition
 C-n
 
-;; move around split viewports
-C-w C-w
-
-;; complete function name (omni completition)
-C-x C-o
-
 ;; region: set mark (start region)
-C-Spc
+C-SPC
 
 ;; region: kill selected region
 C-x r k
@@ -404,9 +380,6 @@ C-t
 ;; M-x helm-toggle-visible-mark / M-x helm-copy-to-buffer
 C-SPC / C-c C-i
 
-;; helm: manual
-C-c ?
-
 ;; helm: htop: top: linux:
 M-x helm-top / M-x proced
 
@@ -428,12 +401,6 @@ M-x hi-lock-mode / highlight-regexp
 ;; magit: http://magit.github.io/master/magit.html
 
 
-;; M-x magit-status: push / diff / discard (kill) / stash / cherry pick apply (and discard) stash changes
-P / d / k / z / a (A)
-
-;; M-x magit-status: stage (all) / unstage (all) / commit (with template) / reset (discard all uncommited) changes
-s (S) / u (U) / c (C) / x (X)
-
 ;; M-x magit-commit; end of git commit message / with-editor-cancel / with-editor-cancel
 C-c C-c / C-c C-k / C-x k
 
@@ -446,20 +413,11 @@ M / l / b / B / d / f / m / r
 ;; M-x magit-log; show commit details and stay in log / jump to details / put sha1 to clipboard / reset HEAD to given commit
 SPC / RET / C-w / x
 
-;; M-x magit-log; toggle (un)mark / unmark / diff marged with current commit / toggle margin
-. / C-u . / = / h
-
-;; M-x magit-process: show *magit-process* buffer
-$
-
 ;; M-x magit-status: section visibility
 (M-)1 / (M-)2 / (M-)3 / (M-)4
 
 ;; M-x magit-status: section visibility: hide (all) / show (all)
 M-h (H) / M-s (S)
-
-;; M-x magit-commit: write to ChangeLog ?
-C-x 4
 
 ;; M-x magit-commit: log-edit-commit-ring / Kill commit / Tested / Signed-off by
 M-p / M-n / C-c C-k / C-c C-t / C-c C-s
@@ -480,7 +438,7 @@ M-x info / info-emacs-manual / info-display-manual
 macros
 
 ;; launch emacs and eval string; does not work well with my bash function LaunchEmacs
-$ dev/emacs/src/emacs --eval '(message "uhu")'
+emacs --eval '(message "uhu")' / emacs -e configuration-layer/update-packages
 
 ;; M-x shell-command: top: capture top output from stdout
 M-! RET top -c -n -1 -b -w 200
