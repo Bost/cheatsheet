@@ -112,7 +112,7 @@ HA
 # Small Computer System Interface
 SCSI
 
-# SQL Processing File Input 
+# SQL Processing File Input
 SPUFI
 
 # tso MSV eXtended Information
@@ -169,10 +169,10 @@ SAP
 # speciality engine: dedicated z/OS Application Assist Processors: PUs for execution java GDPScodeGeographically Dispersed Parallel Sysplex: for DR
 zAAPs
 
-# 
+#
 TCB mode
 
-# 
+#
 z/OS XML System Services
 
 # speciality engine: dedicated z/OS Integrated Information Processors: PUs for accelerated DB2 performance
@@ -220,7 +220,7 @@ Basic shared DASD
 # High Level Qualifier: 1st part of dataset name
 HLQ
 
-# 
+#
 bytes/tracks/cylinders
 
 # variable (block ?) / fixed (block ?) lenght
@@ -250,13 +250,13 @@ zPDT
 # Virtual mainframe - on github
 Hercules.emulator
 
-# 
+#
 https://github.com/mainframed
 
 # Capacity Backup
 CBU
 
-# 
+#
 ESCON / FICON channels
 
 # Unit Control Block: for disk devices; small piece of virtual storage
@@ -339,121 +339,126 @@ IDFT
 
 # curses-based IBM host access tool / IBM host access tool
 c3270 / x3270
- 
+
 
 # ftp: transfer ADN0035.OUT: Host -> PC
 IND$FILE GET 'ADN0035.OUT' ASCII CRLF
+
+# ftp: Job-Output
+ftp> site filetype=jes
+200 SITE command was accepted
+ftp> dir
 
 # predefined display image that fills the screen
 data entry / menu / list / edit panel
 
 # ispf: display list of datasets
-DSLIST 
+DSLIST
 
 # ispf: display dataset: Command List
-DSLIST CLIST 
+DSLIST CLIST
 
 # Hierarchical File Manager
-HFS 
+HFS
 
 # launched from the ISPF-GUI
-start sdsf 
+start sdsf
 
 # Interactive System Productivity Facility / Program Development Facility
-ISPF / PDF 
+ISPF / PDF
 
 # Program Function (keys): F1 to F24 keys
-PF 
+PF
 
 # Program Function Keys: split screen / (repeat)find / (BEF)up / (EOF)down / swap screen / left / right / history
-F2 / F5 / (m)F7 / (m)F8 / F9 / F10 / F11 / F12 
+F2 / F5 / (m)F7 / (m)F8 / F9 / F10 / F11 / F12
 
 # Program Access (? not Attention ?) Keys
-PA1 / PA2 / PA3 
+PA1 / PA2 / PA3
 
 # Program Access Key for ATTENTION; Left Alt-1
-PA1 
+PA1
 
 # Program Access Key for RESHOW
-PA2 
+PA2
 
 # Structured Programming Facility
-SPF 
+SPF
 
 # Document Composition Facility
-DCF 
+DCF
 
 # Time Sharing Option (CLI Interface, multi user) - used to run ISPF
-TSO 
+TSO
 
 # Work Station
-WS 
+WS
 
 # Coupling Facility: enables multisystem data sharing in paralles sysplex; contains 1 or more mainframe processor anns special operating system
-CF 
+CF
 
 # Coupling Facility: a special LPAR; provides high speed caching, list processing and locking functions in a sysplex; (triangle)
-CF 
+CF
 
 # Intelligent Resource Director: Stage 2 of Parallel Sysplex
-IRD 
+IRD
 
 # z/OS Workload Manager: goal achievement, throughput, responsivenes; ? task scheduler ?
-WLM 
+WLM
 
 # Dynamic Channel-path Management: for IRD
-DCM 
+DCM
 
 # Channel Subsystem IO Priority Queueing
-CS IOPQ 
+CS IOPQ
 
 # Supervisor Call
-SVC 
+SVC
 
 # Geschäftsvorfall Neuanlage
-GV1 / GV 1 
+GV1 / GV 1
 
 # Geschäftsvorfall Änderung
-GV2 / GV 2 
+GV2 / GV 2
 
 # Geschäftsvorfall Auskunft
-GV3 / GV 3 
+GV3 / GV 3
 
 # User Help Desk
-UHD 
+UHD
 
 # should be like ~ (i.e. $HOME) on unix
-ß 
+ß
 
 # TSO Terminal Monitor Program
-TSO TMP 
+TSO TMP
 
 # von Manfred; VM Vorabauslieferung von Sourcen
-tso vmv s 
+tso vmv s
 
 # z/OS Unix directory list
-tso udlist 
+tso udlist
 
-# 
-tso tutor 
+#
+tso tutor
 
-# 
-tso tabdok 
+#
+tso tabdok
 
 # mass compile / CICS compile
-tso msvc52t / msvc52a 
+tso msvc52t / msvc52a
 
-# 
-tso help something 
+#
+tso help something
 
-# 
-tso cancel something 
+#
+tso cancel something
 
 # list jobs on output queue
-tso status 
+tso status
 
 # list catalogs
-tso listcat 
+tso listcat
 
 # List Dataset ADN0035
 tso listds 'ADN0035.*' / tso dl 'ADN0035.*'
@@ -470,7 +475,7 @@ tso msv
 # change status of RACF dbase: switch, (de)activate (without IPL operation)
 tso rvary
 
-# 
+#
 tso rvary list
 
 # sdsf: start and jump to Status of Jobs (ST) panel
@@ -529,7 +534,7 @@ VSAM
 # access methods: Queued Sequential Access Method
 QSAM
 
-# access methods: 
+# access methods:
 BSAM / ISAM
 
 # file system: Indexed Storage Access Method (clusters)
@@ -628,7 +633,7 @@ z/VSE/AF
 # Transaction Processing Facility: for high speend and high transaction volume; Airlines, Credit Cards
 z/TPF
 
-# 
+#
 zEnterprise
 
 # zEnterprise Unified Resource Manager
@@ -806,7 +811,7 @@ ICCF
 # Resource Access Control Facility: security system; access control and auditing, can be replaced by ACF2, TOPSecret; dbase referencing all the files on filesystem, with access rights
 RACF
 
-# 
+#
 PCF
 
 # RACF cmd: Definition des Schutzes
@@ -827,7 +832,7 @@ UACC
 # Query Management Facility: send SQL queries to IBM DB2
 QMF
 
-# 
+#
 ITR Ratio
 
 # Large System Performance Reference
@@ -899,7 +904,7 @@ VTOC
 # Volume Serial: Disk volume (pack) identification
 VOLSER
 
-# rexx: 
+# rexx:
 DATE('E')
 
 # rexx: hexadecimal
@@ -911,7 +916,7 @@ pull varname
 # rexx: line continuation
 ;
 
-# 
+#
 if ... then do ... end else do... end
 
 # Invokes z/OS Unix Shell, i.e. gives /bin/sh; root is in BPX.SUPERUSER
@@ -1000,7 +1005,7 @@ CALL
 # DB2 utility: control statement; loading vals into a table
 LOAD
 
-# TSO/E cm; specify private load libs: add / remove / acti- / deactivate / display 
+# TSO/E cm; specify private load libs: add / remove / acti- / deactivate / display
 STEPLIB
 
 # Simmetrical MultiProcessors; ? RISC systems ?
@@ -1066,10 +1071,10 @@ scroll CSR / PAGE
 # Dataset (Storage) Organisation: Physical Sequential / Partitioned Organized / Direct
 DSORG=PS / DSORG=PO / DSORG=DA
 
-# 
+#
 HOSTVARS / PROCVARS
 
-# 
+#
 DSNUPROC
 
 # DB2 subsystem library
@@ -1123,7 +1128,7 @@ PRINTL
 # recall previous commands to the command line
 RETRIEVE
 
-# member selection lists: 
+# member selection lists:
 FIND
 
 # member selection lists: repeat find
