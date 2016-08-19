@@ -209,7 +209,7 @@ C-f C-_
 ;; forward / backward one sentence
 M-a / M-e
 
-;; mark whole buffer / mark paragraph
+;; mark / hilite / highlight whole buffer / mark paragraph
 C-x h / M-h
 
 ;; M-x forward-paragraph / backward-paragraph

@@ -340,7 +340,6 @@ IDFT
 # curses-based IBM host access tool / IBM host access tool
 c3270 / x3270
 
-
 # ftp: transfer ADN0035.OUT: Host -> PC
 IND$FILE GET 'ADN0035.OUT' ASCII CRLF
 
