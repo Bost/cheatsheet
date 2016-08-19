@@ -345,7 +345,8 @@ c3270 / x3270
 IND$FILE GET 'ADN0035.OUT' ASCII CRLF
 
 # ftp: Job-Output
-ftp> site filetype=jes
+ftp> quote site filetype=jes
+ftp> quote site filetype=seq
 200 SITE command was accepted
 ftp> dir
 
