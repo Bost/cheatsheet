@@ -1,3 +1,6 @@
+;; open file and jump to line:column (jump to column doesn't work)
+emacs path/to/file +line:column
+
 ;; e.g. visualisatin; for log analysis
 M-x highlight-symbol-at-point
 

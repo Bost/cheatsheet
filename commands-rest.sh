@@ -796,7 +796,7 @@ apt-cache search ^packageName$
 # dpkg: apt: description of PACKAGE
 apt-cache show PACKAGE / aptitude show PACKAGE
 
-# dpkg: apt: solution for Hash sum mismatch error
+# dpkg: apt: fix the 'Hash sum mismatch error'
 sudo rm -rf /var/lib/apt/lists; sudo mkdir -p /var/lib/apt/lists/partial; sudo apt-get clean
 
 # linux: ubuntu: apt: Software Sources List editors; see y-ppa-manager, http://repogen.simplylinux.ch/
