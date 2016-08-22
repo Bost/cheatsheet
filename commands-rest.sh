@@ -64,6 +64,9 @@ javap file.class / javap -p -s file.class
 # ubuntu: change default java environment
 sudo update-alternatives --config java
 
+# ubuntu: change default www-browser
+sudo update-alternatives --config x-www-browser
+
 # dpkg:
 sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update
 
