@@ -389,29 +389,18 @@ grep -Fx -f file1 file2
 # search for "String" and print 2/4 lines before/after matching line
 grep -B 2 -A 4 "String" / grep --before-context=2 --after-context=4 "String"
 
-# print only file-names
-grep -lir "String" *
-
 # print only filenames of the files containing "String"
 grep "String" * | cut -f1 -d:
 
-# print line numbers
-grep -i -n "String" *
+# print line numbers / file-names
+grep -i -n "String" * / grep -lir "String" *
 
-# find: search for "String" in *.txt (with '.' at the end)
+# find: recursive search for "String" in *.txt (with '.' at the end)
 grep -r "String" --exclude-dir=".git" --include="*.txt" .
+grep --exclude-dir={dir1,dir2} /path/to/dir -lir "Text" "*.clj"
 
 # search for "String" in *.txt files (with spaces in filenames)
 find . -type f -name "*.txt" -print0 | xargs -0 grep -l "String"
-
-#
-grep --exclude=.git
-
-#
-grep --exclude=.git -lir "String" *.properties
-
-#
-grep --exclude-dir={dir1,dir2} /path/to/dir -lir "Text" "*.ext"
 
 #
 grep -lir "String" $(find . -name *.properties)
