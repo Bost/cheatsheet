@@ -19,8 +19,8 @@ evince file.pdf
 # linux: systemd: net:
 service network-manager restart
 
-# net: ubuntu: proxy definition
-/etc/environment
+# net: ubuntu: (edit) and re-read proxy definition
+source /etc/environment
 
 # net: grouping bandwidth per process; "net top"
 sudo nethogs wlan0
