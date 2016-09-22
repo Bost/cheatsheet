@@ -85,10 +85,10 @@ git add --work-tree=workLocation --git-dir=repoLocation
 # git: list contibutors; -s, --summary, -n, --numbered
 git shortlog -s -n
 
-# git: 
+# git:
 git config --global user.name "Bost"
 
-# git: 
+# git:
 git config --global user.email thebost@gmail.com
 
 # git: help with typos like git comit
@@ -101,7 +101,7 @@ git config --global rerere.enabled 1
 .git/config: url = https://Bost@github.com/Bost/dotfiles.git
 
 # git: search entire commit history
-git log -S\'text-to-search\'
+git log -S'textToSearch'
 
 # git: ignore line ending changes
 git config --global core.autocrlf true
