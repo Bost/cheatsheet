@@ -443,4 +443,5 @@ emacs --eval '(message "uhu")' / emacs -e configuration-layer/update-packages
 ;; M-x shell-command: top: capture top output from stdout
 M-! RET top -c -n -1 -b -w 200
 
-M-x git-timemachine
+;; M-x git-timemachine git:
+p prev / n next / w Copy abbreviated hash / W Copy full hash / g Goto nth rev / q Exit

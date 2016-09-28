@@ -770,6 +770,9 @@ xmllint
 # linux: shared library dependencies
 ldd -v $(which vim)
 
+# linux: library: find out if libgconf is installed
+ldconfig -p | grep libgconf
+
 # linux: info about ELF files
 readelf -v $(which vim)
 
