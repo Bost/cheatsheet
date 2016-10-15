@@ -855,7 +855,7 @@ host google.com
 dig +short txt keyword.wp.dg.cx
 
 # net: listening ports and PIDs of associated processes. tcp (-t) udp (-u)
-netstat -tulnp
+ss -tulnp  # socket statistics replaces obsolete netstat
 
 # net: linux: socket statistics; netstat replacement
 ss -lp
