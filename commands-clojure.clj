@@ -63,3 +63,6 @@
 
 ;; clj: Transpose a matrix
 (def A [[1 2] [3 4]]) (apply map vector A)
+
+;; clj: install boot
+sudo bash -c "cd /usr/local/bin && curl -fsSLo boot https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && chmod 755 boot"
