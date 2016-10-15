@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1 # avoid execution
 
+# git: clean TODO
+git clean -dxf
+
 # git: pull and rebase latest of all submodules
 git submodule foreach git pull --rebase origin master
 
@@ -138,3 +141,6 @@ git ls-tree branchName path/to/file
 
 # git: show info about files in the index and the working tree
 git ls-files --cached / --deleted / --modified / --ignored / --stage
+
+# git: Remove untracked files and dirs from the working tree
+git clean -dxf

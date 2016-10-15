@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1
 
+# help text that matches each argument
+http://explainshell.com/
+
 # split a file into pieces (with '.' at the end)
 split --bytes 1M --numeric-suffixes --suffix-length=3 foo.txt foo.
 

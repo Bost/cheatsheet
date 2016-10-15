@@ -101,7 +101,7 @@ M-` / F10
 C-u C-SPC
 
 ;; enlarge-window, shrink-window horizontally / vertically
-C-x ^ or C-x { or } 
+C-x ^ or C-x { or }
 
 ;; diff against any chosen revision
 C-u C-x v =
@@ -134,7 +134,7 @@ C-x C-f /method:user@remotehost:filename
 C-x 4 f / C-x 4 b
 
 ;; files: save file / save all /save as
-C-x C-s / C-x s / C-x C-w 
+C-x C-s / C-x s / C-x C-w
 
 ;; files: save-some-buffers
 C-x s
@@ -261,16 +261,15 @@ C-t / M-t / C-x C-t
 C-l / zz
 
 ;; start a bash command line
-M-x shell / eshell 
+M-x shell / eshell
 
 ;; sql: db2: execute script.sql
 M-x eshell; cmd; db2init; c46; \[f12\]
 
 ;; dired: <a href="http://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf">http://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf</a>
 
-
-;; dired: enters the dired mode (see menu)
-C-x C-f ENTER
+;; dired: start dired and create newfile
+C-x C-f ENTER / <newfile>
 
 ;; dired: mark / unmark (all) / toggle marking
 m / u (U) / t
