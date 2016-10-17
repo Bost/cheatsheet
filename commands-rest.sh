@@ -644,13 +644,18 @@ apt
 sudo apt-get install --reinstall PACKAGE
 
 # linux: ubuntu: command line upgrade part 1. (CLI alternative to update-manager)
+# set Prompt
+/etc/update-manager/release-upgrades
+Prompt=normal
+
+# linux: ubuntu: command line upgrade part 2.
 sudo apt-get update; and sudo apt-get upgrade
 sudo apt update; and sudo apt upgrade
 
 # update and upgrade the system by removing/installing/upgrading packages
 sudo apt update; and sudo apt full-upgrade
 
-# linux: ubuntu: command line upgrade part 2.
+# linux: ubuntu: command line upgrade part 3.
 sudo do-release-upgrade
 
 # linux: ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade
