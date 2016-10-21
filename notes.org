@@ -1,82 +1,72 @@
-* Java & Clojure
-** clojure in emacs
-#+BEGIN_SRC clojure
+* Java & Clojure: clojure in emacs
+** Clojure
+*** AI:  nuroko.com
+*** recursion - Clojure Tail Call Optimizer https://github.com/cjfrisz/clojure-tco
+
+** Java & JVM
+*** Lambdas
+*** How to read "instance of" (see the notes from training)
+*** Based on stack-based processor
+*** Statically typed instruction set
+*** http://www.root.cz/clanky/pohled-pod-kapotu-jvm-5-cast-popis-virtualniho-stroje-javy/
+** scala
+*** xml - first class support
+*** default get/set methods & constructor
+*** function & imperative
+*** staticaly typed
+*** traits (multiple inheritance)
+*** clojuredocs - graficka reprezentacia prikladov
+ #+BEGIN_SRC clojure
 lein swank-wrap 4005 webcli.server
 slime-connect
 (let [x 1]
   (swank.core/break))
 #+END_SRC
+*** Rick Hickey - TBD (To Better Do)
+  - User interfaces on top of programatic interfaces
+  - use composable services
+  - abstractions; no bespoke protocols and formats
 
-* Clojure
-** AI
-   nuroko.com
-** recursion
-   Clojure Tail Call Optimizer https://github.com/cjfrisz/clojure-tco
-
-* JVM
-** see articles on root.cz
-** is based on stack-based processor
-** statically typed instruction set
-** http://www.root.cz/clanky/pohled-pod-kapotu-jvm-5-cast-popis-virtualniho-stroje-javy/
-
-* scala
-** xml - first class support
-** default get/set methods & constructor
-** function & imperative
-** staticlly typed
-** traits (multiple inheritance)
-
-
-
-* math
+* Math
 ** dependency tree
 ** game theory
 ** Markov chain - Market transitions http://youtu.be/o-jdJxXL_W4?t=7m3s
 ** fractals
    http://blog.sciencevsmagic.net/science/fractal-machine/
 
-
 * Technology
 ** http://www.zdrojak.cz/clanky/tvorba-moderniho-e-shopu-dokonceni-uzivatelske-casti/
-** Schatzsuche (geocaching), BTCs, Sequence of QR Codes/ graphical elements (pyramide, cube, sphere, toroid, etc)
-** BTC - save from bitcoin.de, backup on paper
-** three.js -  vytvorit gulu/gule s menami funkcii
+** Sequence of QR Codes/ graphical elements (pyramide, cube, sphere, toroid, etc.)
+** BTC
+*** Backup on paper
+*** Curated resources https://github.com/McFrankline/Blockchain-stuff
 ** bootstrap-css
 ** CoffeeKup
    html ->
      head ->
        body ->
 
-
-
 * People
 ** Susanne
-   http://www.heise.de/newsticker/meldung/Junge-Akademiker-beklagen-prekaere-Arbeitsbedingungen-an-den-Unis-1922708.html
    http://www.ted.com/talks/patricia_kuhl_the_linguistic_genius_of_babies.html?fb_ref=talk
-
    Learning pronounciation
    How much of a language is silent? What does it look like when you take the silence out? (Video 2 Min)
    http://www.theverge.com/2012/7/1/3129227/silenc-project-silent-letters
    http://golancourses.net/ciid/19/silenc/
-
 ** Volker::
   - http://de.wikipedia.org/wiki/Open_Source_Ecology
-
 ** Thomas::
   - http://www.ted.com/talks/ayah_bdeir_building_blocks_that_blink_beep_and_teach.html
   - bicycle clickies - Thomas
-
 ** Michael::
   - http://www.ted.com/talks/matt_ridley_when_ideas_have_sex.html
   - fluidui
-  - www.landoflisp.com
   - repondre a l'email avec PyMath
 
-* youtube
+* Youtube
 ** TEDxDUBLIN - Josh Klein - Hacking Work:: http://www.youtube.com/watch?v=H07pbDhBgXg
 ** Fake Science:: http://fakescience.tumblr.com/post/1292427190/high-fructose-corn-syrup
 ** Good links:: http://www.youtube.com/watch?v=i8t53Ak_yrQ
-
 
 
 * Physics:
@@ -84,65 +74,8 @@ slime-connect
 ** http://www.sixtysymbols.com/
 ** http://www.youtube.com/user/1veritasium
 
-* Rick Hickey:
-** TBD (To Better Do)
-  - User interfaces on top of programatic interfaces
-  - use composable services
-  - abstractions; no bespoke protocols and formats
-
-* TODOs
-** google lab tags http://www.chromeweblab.com/en-GB/lab-tag-explorer
-** stuff to datomic - ?git has no services? http://www.youtube.com/watch?v=ROor6_NGIWU 58:00
-** watch apache.org
-** français - les journales swiss
-   utiliser claviatur avec tout les accents
-   dictionaire et conjugueuer hors line
-
-** Crossroad controll (3 semaphors)                                                      :clojure-script:
-
-* Editors
-*** email: inbox too big
-*** look at:
-    emacsrocks
-    TRAMP (Transparent Remote Access, Multiple Protocols)
-    key-chord, key-combo
-    litable
-*** orgmode:
-    what is: David Allen's GTD system
-    cheatsheet as orgmode document
-    formating with **/-/* etc.
-
-** This is a headline
-    Still outside the drawer
-    :DRAWERNAME:
-    This is inside the drawer.
-    :END:
-    After the drawer.
-:ABC:
-stuff
-:END:
-
-** Create experience dbase
-** android app:: picture comparision
-** put together:: chess ** languages ** ...
-** problemy tazke pre comp, lahke pre cloveka (arimaa, etc.)
-** java: how to read "instance of" (see the notes from training)
-
-** M-13 C-n - scroll down 13 lines
-** macros
-
-* time bank
-
-* sync files across computers:
-** sugar sync, dropbox, ubuntu one (problem with .git)
-
-* http://www.sme.sk/c/6414188/oprav-mi-bicykel-a-ja-ta-naucim-tancovat.html
-
-* Peter Norvig / Stuart Russell: Artificial Intelligence: A Modern Approach
-
-* dokaz identity bez udania mena
-
-* org mode - tagging                            :org:
+** orgmode:
+*** org mode - tagging                                                  :org:
 
 | col1    | col2          |
 |---------+---------------|
@@ -177,7 +110,7 @@ return "Hello from python"
 #+RESULTS:
 : Hello from python
 
-** compare 2 bitmaps
+*** compare 2 bitmaps
 #+BEGIN_SRC
 // http://stackoverflow.com/questions/10487152/comparing-two-images-for-motion-detecting-purposes
 private int returnCountOfDifferentPixels(String pic1, String pic2) {
@@ -193,11 +126,43 @@ private int returnCountOfDifferentPixels(String pic1, String pic2) {
         return count;
     }
 #+END_SRC
+*** Rest
+    what is: David Allen's GTD system
+    cheatsheet as orgmode document
+    formating with **/-/* etc.
+*** This is a headline
+    Still outside the drawer
+    :DRAWERNAME:
+    This is inside the drawer.
+    :END:
+    After the drawer.
+:ABC:
+stuff
+:END:
 
-* clojuredocs - graficka reprezentacia prikladov
+** Create experience dbase
+** android app:: picture comparision
+** put together:: chess ** languages **
+** problemy tazke pre comp, lahke pre cloveka (arimaa - until 2020, etc.)
+** macros
 
-* /usr/bin/fish:
-  findFile - ecrire un alias pour un lettre
-  'l *txt*' ne marche pas
+* Rest
+** time bank
+** sync files across computers:
+** sugar sync, dropbox, ubuntu one (problem with .git)
 
-* claviatur: utilisation du ibus versus xfce indicateur
+** Peter Norvig / Stuart Russell: Artificial Intelligence: A Modern Approach
+** dokaz identity bez udania mena
+** /usr/bin/fish findFile - ecrire un alias pour un lettre
+** google lab tags http://www.chromeweblab.com/en-GB/lab-tag-explorer
+** stuff to datomic - ?git has no services? http://www.youtube.com/watch?v=ROor6_NGIWU 58:00
+** watch apache.org
+
+* Lang
+idioms, link sur FB, idioms - traduction + correcture
+spelling glyphs
+context representation
+comprehension - facile, s'exprimer - difficile
+linguee.com - eu-texts
+le Svejk, l'Etrangeur - examples.
+AI
