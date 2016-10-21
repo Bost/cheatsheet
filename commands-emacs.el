@@ -444,3 +444,5 @@ M-! RET top -c -n -1 -b -w 200
 
 ;; M-x git-timemachine git:
 p prev / n next / w Copy abbreviated hash / W Copy full hash / g Goto nth rev / q Exit
+
+;; M-x profiler-start profiler-report profiler-stop
