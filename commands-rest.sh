@@ -745,6 +745,9 @@ gnome-session-quit / xfce4-session-logout
 # restart xfce when the title bar dissapears from xfwm4; or rm -r ~/.cache/sessions
 pkill -KILL -u yourusername
 
+# when emacs freezes or hangs
+killall -SIGUSR2 emacs
+
 # xfce: launcher: emacs uses bash variables; -i interactive shell, -c read following command
 bash -i -c /path/to/emacs
 
@@ -1002,6 +1005,9 @@ adb push SRC DST
 
 # packages; unsupported
 ubuntu-support-status --show-unsupported
+
+# maven:
+mvn package / clean / install
 
 # * TODO add this:
 # git remote add --track develop upstream https://github.com/Lokaltog/powerline.git
