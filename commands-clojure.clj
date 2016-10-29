@@ -61,8 +61,8 @@
 ;; clj: C-M-x cider-eval-defun-at-point
 ;; C-u C-M-x cider-debug
 
-;; clj: Transpose a matrix
-(def A [[1 2] [3 4]]) (apply map vector A)
+;; clj: Transpose matrix
+(apply map vector [[1 2] [3 4]]) ;;=> ([1 3] [2 4])
 
 ;; clj: install boot
 sudo bash -c "cd /usr/local/bin && curl -fsSLo boot https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && chmod 755 boot"
