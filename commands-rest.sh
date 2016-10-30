@@ -395,21 +395,11 @@ grep -B 2 -A 4 "String" / grep --before-context=2 --after-context=4 "String"
 # print only filenames of the files containing "String"
 grep "String" * | cut -f1 -d:
 
-# print line numbers / file-names
-grep -i -n "String" * / grep -lir "String" *
-
 # find: recursive search for "String" in *.txt (with '.' at the end)
-grep -r "String" --exclude-dir=".git" --include="*.txt" .
-grep --exclude-dir={dir1,dir2} /path/to/dir -lir "Text" "*.clj"
+grep /path/to/dir -nir "String" --exclude-dir={.git,CVS} --include=\*.{el,clj,txt}
 
 # search for "String" in *.txt files (with spaces in filenames)
 find . -type f -name "*.txt" -print0 | xargs -0 grep -l "String"
-
-#
-grep -lir "String" $(find . -name *.properties)
-
-# do not search in the .git directory
-grep -lir "String" $(find . -name *.properties -and -not -name .git/)
 
 # zgrep: search possibly compressed files for a regular expression
 zgrep foo myfile.gz / zgrep \'GET /blog\' access_log.gz
