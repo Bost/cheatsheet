@@ -49,7 +49,7 @@ backspace / \] / \[ / o
 # mplayer: volume +/-
 * / "/"
 
-#
+# postscript to pdf conversion
 ps2pdf
 
 # xserver: modifying keymaps and pointer button mappings in X
@@ -82,8 +82,8 @@ ls --format=single-column
 # list only directories, 1 entry per line
 ls -d1 */
 
-# count of files in /path/to/dir
-ls -1 /path/to/dir | wc -l
+# count of files in ./path/to/dir
+ls -1 ./path/to/dir | wc -l
 
 # show full paths (alias lff)
 ls -lrt -d -1 $PWD/{*,.*}
@@ -246,13 +246,13 @@ bash -x script
 mknod
 
 # bash: create 4 directories at once
-mkdir -p path/dirname.0{1,2,3}
+mkdir -p ./path/dir.0{1,2,3}
 
 # bash: create directory tree
 mkdir -p work/{d1,d2}/{src,bin,bak}
 
-# bash: automatically create "another/path" and do --preserve=mode,ownership,timestamps
-cp --parents -p some/path/from.ext another/path/to.ext
+# bash: automatically create "./path" and do --preserve=mode,ownership,timestamps
+cp --parents -p ./path/src.ext ./path/dst.ext
 
 # bash: mv README.text README.txt ; cp file file.bak
 mv README.{text,txt} ; cp file{,.bak}
@@ -278,14 +278,14 @@ free -h / stat FILE
 # join lines of two files on a common field
 join
 
-# size of /path/to/dir with subdirs, exclude files matching pattern
-du -h --exclude=pattern /path/to/dir
+# size of ./path/to/dir with subdirs, exclude files matching pattern
+du -h --exclude=pattern ./path/to/dir
 
 # summarize size of dir
 du -s dir / du -sh dir
 
-# jump to /path/to/dir execute command and jump back
-(cd /path/to/dir && ls)
+# jump to ./path/to/dir execute command and jump back
+(cd ./path/to/dir && ls)
 
 # stop-watch; ctrl-d to stop; measure execution time; or try to install stopwatch
 time read
@@ -309,10 +309,10 @@ kill $(pidof processName)
 Ctrl-\] Enter quit Enter
 
 # download fileX.txt and save it under different location / name
-wget http://server/fileX.ext -O path/to/fileY.ext
+wget http://server/fileX.ext -O ./path/to/fileY.ext
 
 # download fileX.txt and save it under different location / name
-curl -O http://server/fileX.txt > path/to/fileY.txt
+curl -O http://server/fileX.txt > ./path/to/fileY.txt
 
 # net: ask http://ifconfig.me about myself (ua: User Agent)
 curl ifconfig.me/ip/host/ua/port/
@@ -396,10 +396,10 @@ grep -B 2 -A 4 "String" / grep --before-context=2 --after-context=4 "String"
 grep "String" * | cut -f1 -d:
 
 # find: recursive search for "String" in *.txt (with '.' at the end)
-grep /path/to/dir -nir "String" --exclude-dir={.git,CVS} --include=\*.{el,clj,txt}
+grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{el,clj,txt} ./
 
 # search for "String" in *.txt files (with spaces in filenames)
-find . -type f -name "*.txt" -print0 | xargs -0 grep -l "String"
+find ./ -type f -name "*.txt" -print0 | xargs -0 grep -l "String"
 
 # zgrep: search possibly compressed files for a regular expression
 zgrep foo myfile.gz / zgrep \'GET /blog\' access_log.gz
@@ -411,41 +411,41 @@ rsync --archive --remove-source-files backup/ backupArchives/
 rsync --archive --verbose --exclude=CVS src dest
 rsync --progress --archive --verbose --exclude=CVS src dest
 
-#
+# restart cvs daemon
 sudo /etc/init.d/cvsd restart / start / stop / status
 
 # diff tagX tagY
 cvs diff -r tagX -r tagY
 
 # get clean copy
-cvs update -C path/to/file.ext
+cvs update -C ./path/to/file.ext
 
-# get revision 1.11
-cvs update -P -C -r 1.11 path/to/file.ext
+# cvs: get revision 1.11
+cvs update -P -C -r 1.11 ./path/to/file.ext
 
 # checkout module from branch or tag
 cvs checkout -r branchOrTag module
 
 # update file
-cvs log    -P -d path/to/file.ext
+cvs log    -P -d ./path/to/file.ext
 
 # reminder to leave in 15 minutes / at 13:55
 leave +15 / leave 1355
 
 # delete NormalTag from file.ext in version 1.17
-cvs tag    -d -r 1.17 NormalTag path/to/file.ext
+cvs tag    -d -r 1.17 NormalTag ./path/to/file.ext
 
 # delete BranchTag from file.ext in version 1.17
-cvs tag -B -d -r 1.17 BranchTag path/to/file.ext
+cvs tag -B -d -r 1.17 BranchTag ./path/to/file.ext
 
 # move   BranchTag to   file.ext in version 1.19
-cvs tag -B -F -r 1.19 BranchTag path/to/file.ext
+cvs tag -B -F -r 1.19 BranchTag ./path/to/file.ext
 
 # create BranchTag on   file.ext in version 1.19
-cvs tag -b    -r 1.19 BranchTag path/to/file.ext
+cvs tag -b    -r 1.19 BranchTag ./path/to/file.ext
 
 # move   NormalTag to   file.ext in version 1.63
-cvs tag    -F -r 1.63 NormalTag path/to/file.ext
+cvs tag    -F -r 1.63 NormalTag ./path/to/file.ext
 
 # version and tags
 cvs log file.ext
@@ -571,7 +571,7 @@ db2 ? sql302
 db2 SELECT GETVARIABLE('SYSIBM.VERSION') FROM SYSIBM.SYSDUMMY1
 
 # db2cc version
-java -cp path/to/db2jcc.jar com.ibm.db2.jcc.DB2Jcc -version
+java -cp ./path/to/db2jcc.jar com.ibm.db2.jcc.DB2Jcc -version
 
 # execute script.sql as the root user
 mysql -u root -t < script.sql
@@ -681,8 +681,8 @@ sha1sum -c file.sha1
 /usr/bin/digest -a sha1
 
 # win: checksum [HashAlgorithm] must be uppercased
-CertUtil -hashfile fileName SHA1
-CertUtil -hashfile pathToFile [HashAlgorithm]
+CertUtil -hashfile path\to\file SHA1
+CertUtil -hashfile path\to\file [HashAlgorithm]
 
 # solaris: wget
 /usr/sfw/bin/wget
@@ -706,10 +706,10 @@ keytool -genkeypair / keytool -list
 jar tf file.jar
 
 # extract inside.txt from file.jar and show its content. inside.txt stays extracted
-jar xf file.jar path/inside.txt && cat path/inside.txt
+jar xf file.jar ./path/inside.txt && cat ./path/inside.txt
 
 # jar: unzip: show content of a file inside a file.jar
-unzip -p file.jar path/inside.txt
+unzip -p file.jar ./path/inside.txt
 
 # jar: unzip: show content of META-INF/MANIFEST.MF
 unzip -p file.jar META-INF/MANIFEST.MF
@@ -718,7 +718,7 @@ unzip -p file.jar META-INF/MANIFEST.MF
 unzip -lv file.zip
 
 # unzip: extract specific folder from a zip file to a given directory
-unzip file.zip 'folderToExtract/*' -d dest/path
+unzip file.zip 'folderToExtract/*' -d ./dst/dir
 
 # search for File.class in jar files
 find . -name "*.jar" | xargs grep File.class
@@ -739,7 +739,7 @@ pkill -KILL -u yourusername
 killall -SIGUSR2 emacs
 
 # xfce: launcher: emacs uses bash variables; -i interactive shell, -c read following command
-bash -i -c /path/to/emacs
+bash -i -c ./path/to/emacs
 
 # search man pages for "topic"
 man -k topic / apropos -r topic
@@ -748,13 +748,13 @@ man -k topic / apropos -r topic
 whatis CMD / help
 
 # ssh: compare a remote file with a local file
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
+ssh user@host cat ./path/to/remotefile | diff ./path/to/localfile -
 
 # ssh: copy ssh keys to user@host to enable password-less ssh logins
 $ssh-copy-id user@host
 
 # ssh: mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Will allow you to mount a folder security over a network
-sshfs name@server:/path/to/folder /path/to/mount/point
+sshfs name@server:/path/to/folder ./path/to/mount/point
 
 # virtualbox: mount shared folder
 sudo mount -t vboxsf share /home/username/share/
@@ -784,7 +784,8 @@ dpkg --get-selections
 dpkg -L packageName
 
 # install / remove package.deb
-dpkg --install / --remove package.deb
+dpkg --install package.deb
+dpkg --remove  package.deb
 
 # dpkg: apt: show description for packageName
 apt-cache search ^packageName$
@@ -816,23 +817,21 @@ apt-cyg --mirror http://ftp-stud.hs-esslingen.de/pub/Mirrors/sources.redhat.com/
 # cygwin: bash: print unix form of filename
 cygpath -u filename
 
-# zip: zip content of /path/to/dir to /path/to/file.zip; --recurse-paths is -r
-zip --recurse-paths --encrypt /path/to/file.zip /path/to/dir
+# zip: zip content of ./path/to/dir to ./path/to/file.zip; --recurse-paths is -r
+zip --recurse-paths --encrypt ./path/to/file.zip ./path/to/dir
 
 # zip: unzip:
-unzip /path/to/file.zip -d /path/to/extract-dir
+unzip ./path/to/file.zip -d ./path/to/extract-dir
 
-# tar:
-tar czf /path/to/tarfile.gz file0 file1
-
-# tar: untar:
-tar xzf /path/to/tarfile.gz
+# tar / untar
+tar czf ./path/to/tarfile.gz file0 file1
+tar xzf ./path/to/tarfile.gz
 
 # Remove all files previously extracted from a tar(.gz) file
-tar -tf file.tar.gz | xargs rm -r
+tar -tf ./path/to/file.tar.gz | xargs rm -r
 
 # gzip: list compressed, uncompressed size, compression ratio etc.
-gzip -l file.gz
+gzip -l ./path/to/file.gz
 
 # bash: report or omit repeated lines
 uniq
@@ -960,20 +959,14 @@ sudo checkrestart
 # start COMMAND and kill it if it is running still after 5 sec
 timeout 5s COMMAND
 
-# net: NetworkManager's general status and operations
-nmcli general
-
 # net: 1 - online; else offline
 nm-online --exit; echo "retcode: $?"
-
-# net:
 nm-applet / man nmcli-examples
 
-# net:
+# net: NetworkManager
 nmcli device disconnect wlan0
-
-# net:
 nmcli device wifi connect GAULOISES_LIBERTE_TOUJOURS ifname wlan0
+nmcli general        # general status and operations
 
 # rpm: display installed packages
 rpm -qa
@@ -989,9 +982,7 @@ groups - check plugdev membership
 
 # android:
 adb devices; dmesg; adb logcat; adb shell
-
-# android:
-adb push SRC DST
+adb push src dst
 
 # packages; unsupported
 ubuntu-support-status --show-unsupported
