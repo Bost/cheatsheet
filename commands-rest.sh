@@ -465,6 +465,12 @@ ssh-keygen
 # github: now copy-paste the ~/.ssh/id_rsa.pub to github under "Account settings / SSH keys / Add another public key"
 cat ~/.ssh/id_rsa.pub
 
+# log in to remote systems using public key
+scp ~/.ssh/id_rsa.pub user@destmachine:/home/user/.ssh/
+ssh user@destmachine
+touch ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys; # rm ~/.ssh/id_rsa.pub
+
 # eclipse:
 METADA_CORE=.metadata/.plugins/org.eclipse.jdt.core;
 
