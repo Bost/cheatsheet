@@ -46,8 +46,8 @@ C-c M-j
 ;; winner-mode: jump between window config
 C-c 1 / C-c 2 / ...
 
-;; startup: skip ~/.emacs (if messed up)
-emacs -q
+;; startup: skip ~/.emacs (if messed up); Do not load an init file
+emacs -q / --no-init-file
 
 ;; open web browser
 M-x browse-url-at-point
