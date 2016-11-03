@@ -25,10 +25,10 @@ git branch -rd public/whatever
 # git: delete a remote branch
 git push origin --delete branchName
 
-# git: diff file against remote branch
+# git: changes file against remote branch
 git diff localBranch remoteBranch filepath
 
-# git: diff file between two branches
+# git: changes file between two branches
 git diff master branch filepath
 
 # git: show files changed between two branches/commits
