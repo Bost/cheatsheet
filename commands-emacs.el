@@ -272,7 +272,19 @@ M-x eshell; cmd; db2init; c46; \[f12\]
 C-x C-f ENTER / <newfile>
 
 ;; dired: mark / unmark (all) / toggle marking
-m / u (U) / t
+m / * / u (U) / t
+
+;; dired: mark all / toggle marking
+* s
+
+;; dired: mark all executables / files (with extention) / change all marks
+* *
+
+;; dired: mark all files (with extention) / change all marks
+* .
+
+;; dired: change all marks
+* c
 
 ;; dired: markup: all backup / auto-save files // refresh
 ~ / # // g
@@ -282,9 +294,6 @@ m / u (U) / t
 
 ;; dired: dir listing details M-x dired-details-toggle M-x dired-hide-details-mode
 )(
-
-;; dired: markup all dirs / executables / files (with extention) / change all marks
-* / * * / * s (.) / * c
 
 ;; dired: writable - perform operations by editing dired buffer
 M-x dired-toggle-read-only (C-x C-q) / M-x wdired-finish-edit

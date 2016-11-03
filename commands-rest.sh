@@ -211,8 +211,11 @@ $$
 # eval expression
 echo $[22 + 33]
 
-# args: last command without the last argument
+# bash: args: last command without the last argument
 !:-
+
+#bash: if; no-op, nope, empty operation
+:
 
 # bash: empty file.txt
 > file.txt
