@@ -347,6 +347,9 @@ sort -k2 file.csv
 # diff: outputs the files in two columns, side by side, separated by spaces
 sdiff file1 file0
 
+# output line-numbers
+diff --unchanged-line-format="" --old-line-format="" --new-line-format=":%dn: %L" fold fnew
+
 # emacs find - exclude backup files
 find . -type f ! -name "*~" -exec grep -nH -e "String" {} +
 
