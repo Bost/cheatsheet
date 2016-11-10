@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1 # avoid execution
 
+# number of lines changed between two commits
+git diff --stat <commit-ish> <commit-ish>
+
 # git: clean TODO
 git clean -dxf
 
