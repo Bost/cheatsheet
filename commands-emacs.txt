@@ -1,3 +1,6 @@
+;; spacemacs windows: toggle golden ratio for windows
+;; SPC t g
+
 ;; narrow-to-defun / widen
 M-x narrow-to-defun / M-x widen
 
@@ -407,13 +410,13 @@ M-x helm-register
 M-x locate
 
 ;; helm: <a href="http://tuhdo.github.io/helm-intro.html">http://tuhdo.github.io/helm-intro.html</a>
-
+;;
 
 ;; highlighting
 M-x hi-lock-mode / highlight-regexp
 
 ;; magit: http://magit.github.io/master/magit.html
-
+;;
 
 ;; M-x magit-commit; end of git commit message / with-editor-cancel / with-editor-cancel
 C-c C-c / C-c C-k / C-x k

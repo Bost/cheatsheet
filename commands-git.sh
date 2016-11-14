@@ -55,6 +55,9 @@ git show ff0011:file.txt
 # git: show content of file in stage area (index) / common ancestor / target on the current branch where I am / the one I am bringing in
 git show :0:file / :1:file / :2:file / :3:file
 
+# show older version of a file
+git show REVISION:path/to/file
+
 # git: copy file from a BRANCH to /path/file.txt
 git checkout BRANCH -- /path/file.txt
 
