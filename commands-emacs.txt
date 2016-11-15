@@ -1,6 +1,12 @@
 ;; spacemacs windows: toggle golden ratio for windows
 ;; SPC t g
 
+;; spacemacs M-x
+;; SPC SPC
+
+;; spacemacs version
+;; SPC f e v
+
 ;; narrow-to-defun / widen
 M-x narrow-to-defun / M-x widen
 
