@@ -1,6 +1,10 @@
 #!/bin/bash
 exit 1 # avoid execution
 
+# in case of: Your branch is behind 'origin/master' by .. commits, and can be fast-forwarded.
+git pull --rebase origin master
+git pull --rebase upstream master
+
 # number of lines changed between two commits
 git diff --stat <commit-ish> <commit-ish>
 
