@@ -10,8 +10,8 @@
 ;; spacemacs popup *Messages*
 ;; SPC w p m
 
-;; narrow-to-defun / widen
-M-x narrow-to-defun / M-x widen
+;;
+M-x narrow-to-defun (s-n) / M-x widen (s-N)
 
 ;; open file and jump to line:column (jump to column doesn't work)
 emacs path/to/file +line:column
