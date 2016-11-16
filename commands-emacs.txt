@@ -7,6 +7,9 @@
 ;; spacemacs version
 ;; SPC f e v
 
+;; spacemacs popup *Messages*
+;; SPC w p m
+
 ;; narrow-to-defun / widen
 M-x narrow-to-defun / M-x widen
 
