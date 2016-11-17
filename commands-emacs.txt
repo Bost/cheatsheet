@@ -260,6 +260,12 @@ C-w
 ;; copy-paste: kill ring save (copy) / yank (paste last killed entry)
 M-w / C-y
 
+;; magit: (magit-copy-section-value) i.e. current sha1 to clipboard
+y s
+
+;; magit: (magit-copy-buffer-revision) i.e. top sha1 to clipboard
+M-w
+
 ;; copy-paste: cycle back through previous entries in the kill ring
 M-y
 
