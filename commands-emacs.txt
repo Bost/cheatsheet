@@ -1,3 +1,9 @@
+;; spacemacs search
+;; SPC s
+
+;; spacemacs help-describe
+;; SPC h d
+
 ;; spacemacs windows: toggle golden ratio for windows
 ;; SPC t g
 
