@@ -1,6 +1,9 @@
 ;; spacemacs windows: toggle golden ratio for windows
 ;; SPC t g
 
+;; helm-spacemacs-help
+;; SPC h SPC <topic>
+
 ;; spacemacs M-x
 ;; SPC SPC
 
