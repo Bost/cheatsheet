@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1 # avoid execution
 
+# reset current branch to particular state
+git reset --hard <tag/branch/commit id (sha1)>
+
 # in case of: Your branch is behind 'origin/master' by .. commits, and can be fast-forwarded.
 git pull --rebase origin master
 git pull --rebase upstream master
