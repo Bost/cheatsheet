@@ -1,5 +1,8 @@
 (ns cheatsheet)
 
+;; clojure.spec - examples
+(clojure.spec/exercise [spec] [spec n] [spec n overrides])
+
 ;; clj: show objects in the namespace
 (sort (keys (ns-publics \'ws.core)))
 
