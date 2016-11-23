@@ -427,8 +427,11 @@ M-x helm-top / M-x proced
 ;; helm: apt:
 M-x helm-apt
 
-;; helm: clipboard: registers:
-M-x helm-register
+;; spacemacs: SPC r w; helm: clipboard: registers:
+M-x helm-register / :reg
+
+;; paste from register
+"<register>p
 
 ;; locate:
 M-x locate
