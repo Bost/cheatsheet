@@ -72,3 +72,6 @@ sudo bash -c "cd /usr/local/bin && curl -fsSLo boot https://github.com/boot-clj/
 
 ;; clojure.core.typed
 (t/check-ns)
+
+;;
+(clojure.core.memoize/memo-clear! f args)
