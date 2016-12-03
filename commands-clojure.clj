@@ -28,11 +28,8 @@
 ;; print stack trace: (/ 1 0) (pst)
 (pst)
 
-;; clj: show leiningen dependency tree
-;; lein deps :tree
-
-;; clj: Print the classpath of the current project.
-;; lein classpath
+;; clj: show leiningen dependency tree / classpath
+;; lein deps :tree / lein classpath
 
 ;; clj: create lighttable plugin
 ;; cd $LIGHTTABLE/deploy/plugins/ && lein new lt-plugin my-plugin
@@ -75,3 +72,13 @@ sudo bash -c "cd /usr/local/bin && curl -fsSLo boot https://github.com/boot-clj/
 
 ;;
 (clojure.core.memoize/memo-clear! f args)
+
+;; Type Hints: http://clojure.org/reference/java_interop#typehints
+(defn len2 [^String x] (.length x))
+
+;; Type Hints: http://clojure.org/reference/java_interop#typehints
+(set! *warn-on-reflection* true)
+(defn foo [^String s] (.charAt s 1)) ;; w/o "^String": call to charAt can't be resolved.
+
+;; Type Hints: http://clojure.org/reference/java_interop#typehints
+(defn hinted (^String []) (^Integer [a]) (^java.util.List [a & args])) ;; return vals

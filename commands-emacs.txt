@@ -106,6 +106,19 @@ C-h m
 ;; help: describe-key / -function / -variable / -binding
 C-h k / C-h f / C-h v / C-h b
 
+;; dynamic vs. lexical binding: https://www.emacswiki.org/emacs/LexicalBinding
+(setq lexical-binding t)
+
+;; dynamic vs. lexical binding: https://www.emacswiki.org/emacs/DynamicBindingVsLexicalBinding
+;; lexical binding is for closures
+;; -*- lexical-binding: t -*-
+
+;; dynamic vs. lexical binding:
+;; EmacsLisp: dynamic; Scheme, CommonLisp: lexical
+
+;; CLOS: Common Lisp Object System (CLOS)
+;; differs from OOP facilities found in C++ or Java
+
 ;; help: show content of the variable containing installed packages
 C-h v package-activated-list
 
