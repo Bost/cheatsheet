@@ -127,6 +127,9 @@ echo "test" | xclip / xclip -o > file.ext
 # remove a line from shell history (i.e. password); ~/.bash_history | ~/.config/fish/fish_history
 history -d
 
+# fish: retval: retcode: return code: exit code: (in bash $?)
+$status
+
 # run a cmd only when load average is below a certain threshold (default is 0.8)
 echo "rm -rf /unwanted-large/folder" | batch
 
