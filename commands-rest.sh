@@ -28,6 +28,9 @@ source /etc/environment
 # net: grouping bandwidth per process; "net top"
 sudo nethogs wlan0
 
+# top: htop: explained
+https://peteris.rocks/blog/htop/
+
 # download and import gnu-keyring
 wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg && gpg --import gnu-keyring.gpg
 
@@ -609,7 +612,7 @@ pkexec
 # linux: systemd: Control the systemd system and service manager
 systemctl
 
-# linux: systemd: Control the systemd login manager
+# linux: systemd: Control the systemd login manager - logging data
 loginctl
 
 # linux: last logged-in users
@@ -630,6 +633,9 @@ renice +20 2222
 # linux: ps: show statistics for a process nr. 7695
 ps -o pid,user,command,nice -p 7695
 
+# linux: ps: process tree / user's processes ; ps -aux / ps aux - are different
+ps f / ps fx / ps u
+
 # linux: show (ubuntu) version
 lsb_release -a
 
@@ -643,7 +649,7 @@ apt-get source PACKAGE
 apt
 
 #
-sudo apt-get install --reinstall PACKAGE
+sudo apt-get install --reinstall <PACKAGE>
 
 # linux: ubuntu: command line upgrade part 1. (CLI alternative to update-manager)
 # set Prompt
@@ -701,6 +707,15 @@ CertUtil -hashfile path\to\file [HashAlgorithm]
 
 # solaris: ps: full command line (needs: sudo rootsh -i -u ... )
 /usr/ucb/ps -auxww
+
+# ps: full command line; command is separated by the \0 byte
+tr '\0' ' ' < /proc/<pid>/cmdline
+
+# ps: top: htop: all info related to a process
+ls /proc/<pid>
+
+# ps: top: htop: currend working dir of <pid>
+cat /proc/<pid>/cwd
 
 # solaris: displays information about processors
 psrinfo
