@@ -518,3 +518,26 @@ M-x profiler-start profiler-report profiler-stop
 
 ;; M-x ielm - an alternative to Lisp Interactive mode
 Inferior Emacs Lisp Mode
+
+;; hyper - none of following works. See http://superuser.com/a/920967
+;; https://github.com/trishume/dotfiles/blob/master/emacs%2B/spacemacs.symlink
+;; C-x @ h 9 means H-9
+;; (setq mac-option-modifier 'hyper) ; sets the Option key as Hyper
+(define-key local-function-key-map (kbd "<rwindow>") 'event-apply-super-modifier)
+(define-key local-function-key-map (kbd "<rwindow>") 'event-apply-hyper-modifier)
+
+(defun enable-hyper-super-modifiers-linux-x ()
+  ;; on nowadays linux, <windows> key is usually configured to Super
+
+  ;; menu key as hyper (Note: for H-s, you need to release <menu> key before pressing 's')
+  (define-key key-translation-map [menu] 'event-apply-hyper-modifier) ;H-
+  (define-key key-translation-map [apps] 'event-apply-hyper-modifier)
+
+  ;; by default, Emacs bind <menu> to execute-extended-command (same as M-x)
+  ;; now <menu> defined as 'hyper, we need to press <menu> twice to get <H-menu>
+  (global-set-key (kbd "<H-menu>") 'execute-extended-command)
+  )
+;; (global-set-key [(hyper 9)] (lambda () (message "[(hyper 9)]")))
+;; (global-set-key (kbd "<rwindow>-9") (lambda () (message "(kbd context-menu-9)")))
+;; (global-set-key [(hyper 9)] (lambda () (message "[(hyper 9)]")))
+
