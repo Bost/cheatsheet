@@ -72,6 +72,10 @@ sudo update-alternatives --config java
 
 # ubuntu: change default www-browser
 sudo update-alternatives --config x-www-browser
+sudo update-alternatives --config gnome-www-browser
+
+# xfce: opens a file or URL in the user's preferred application
+/usr/bin/browse -> xdg-open
 
 # dpkg:
 sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update
