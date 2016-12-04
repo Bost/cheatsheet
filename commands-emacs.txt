@@ -49,6 +49,9 @@ M-r
 ;; indent: move text left by four spaces (M-x indent-rigidly is C-x TAB)
 C-u -4 C-x TAB
 
+;; regexp:
+https://www.emacswiki.org/emacs/RegularExpression#regexp
+
 ;; regexp: increment the number found
 \\#
 
