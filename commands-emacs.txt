@@ -515,3 +515,6 @@ M-x profiler-start profiler-report profiler-stop
 ;; evil: global search & replace, starting from the cursor position
 :,$s/BEFORE/AFTER/gc
 :,$s/BEFORE/AFTER/gc|1,''-&&
+
+;; M-x ielm - an alternative to Lisp Interactive mode
+Inferior Emacs Lisp Mode
