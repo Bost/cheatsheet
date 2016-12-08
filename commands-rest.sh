@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1
 
+# search for a file named exactly NAME (not *NAME*)
+locate -b '\NAME'
+
 # help text that matches each argument
 http://explainshell.com/
 
