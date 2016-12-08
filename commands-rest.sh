@@ -415,7 +415,8 @@ grep -B 2 -A 4 "String" / grep --before-context=2 --after-context=4 "String"
 grep "String" * | cut -f1 -d:
 
 # find: recursive search for "String" in *.txt (with '.' at the end)
-grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{el,clj,cljs,cljc,txt} ./
+grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{el,clj,cljs,cljc} ./
+grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{log,propeties,cfg,txt} ./
 
 # search for "String" in *.txt files (with spaces in filenames)
 find ./ -type f -name "*.txt" -print0 | xargs -0 grep -l "String"
