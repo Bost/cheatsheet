@@ -541,3 +541,5 @@ Inferior Emacs Lisp Mode
 ;; (global-set-key (kbd "<rwindow>-9") (lambda () (message "(kbd context-menu-9)")))
 ;; (global-set-key [(hyper 9)] (lambda () (message "[(hyper 9)]")))
 
+;; M-x delete-horizontal-space - delete whitespaces around point
+M-\
