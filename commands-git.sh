@@ -68,6 +68,9 @@ git show REVISION:path/to/file
 # git: copy file from a BRANCH to /path/file.txt
 git checkout BRANCH -- /path/file.txt
 
+# git: revert
+git checkout path/to/file
+
 # git: --show --branch: show current branch and changes made since last commit
 git status -sb
 
