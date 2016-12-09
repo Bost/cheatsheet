@@ -95,3 +95,12 @@ java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0-alpha14/clojure-1.9.0-al
 #!/usr/bin/env boot
 (println "Hello world!")
 
+;; om-next: inspect app-state
+(in-ns 'ufo.client)
+(require '[cljs.pprint :as pp])
+(def norm-data (om/tree->db RootView ufo.state/app-state true))
+(pp/pprint norm-data)
+
+;; om-next: inspect read method
+(def parser (om/parser {:read ufo.state/read}))
+(parser {:state (atom ufo.state/app-state)} '[:list/rec])
