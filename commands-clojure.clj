@@ -87,3 +87,11 @@ sudo bash -c "cd /usr/local/bin && curl -fsSLo boot https://github.com/boot-clj/
 '(+ x x) => (+ x x) ;; symbol-name quoted exctly
 `(+ x x) = > (clojure.core/+ user/x user/x) ;; symbol-name quoted with namespace
 `(+ ~'x x) => (clojure.core/+ x user/x) ;; when using ~ inside ` then the form is unquoted
+
+;; cli: script: repl from command line
+java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0-alpha14/clojure-1.9.0-alpha14.jar clojure.main
+
+;; cli: run as a script: ./hello.clj
+#!/usr/bin/env boot
+(println "Hello world!")
+
