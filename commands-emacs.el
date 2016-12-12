@@ -1,3 +1,5 @@
+;; -*- mode: emacs-lisp -*-
+
 ;; spacemacs search
 ;; SPC s
 
@@ -8,16 +10,16 @@
 ;; SPC t g
 
 ;; helm-spacemacs-help
-;; SPC h SPC <topic>
+SPC h SPC <topic>
 
 ;; spacemacs M-x
-;; SPC SPC
+SPC SPC
 
 ;; spacemacs version
-;; SPC f e v
+SPC f e v
 
 ;; spacemacs popup *Messages*
-;; SPC w p m
+SPC w p m
 
 ;;
 M-x narrow-to-defun (s-n) / M-x widen (s-N)
@@ -67,7 +69,7 @@ M-x ucs-insert RET 2211
 ;; folding: enable folding, fold / unfold
 M-x hs-minor-mode, C-c @ C-c
 
-;; folding: toggle / close / close all / , open, toggle current / all folds from cursor/ all folds
+;; folding: toggle/close/close all/ , open, toggle current / all folds from cursor/ all folds
 za(A) / zc(C) / zm / zo(O) / zC zO zA / zR
 
 ;; files: file format
@@ -120,10 +122,10 @@ C-h k / C-h f / C-h v / C-h b
 ;; -*- lexical-binding: t -*-
 
 ;; dynamic vs. lexical binding:
-;; EmacsLisp: dynamic; Scheme, CommonLisp: lexical
+EmacsLisp: dynamic; Scheme, CommonLisp: lexical
 
 ;; CLOS: Common Lisp Object System (CLOS)
-;; differs from OOP facilities found in C++ or Java
+differs from OOP facilities found in C++ or Java
 
 ;; help: show content of the variable containing installed packages
 C-h v package-activated-list
@@ -187,18 +189,19 @@ C-x s
 
 ;; eshell: ifconfig > #<buffer interfaces>
 
+;; cli: run emacs lisp file from command line: chmod +x ./hello.el; ./hello.el
+#!/bin/sh
+":"; exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-
+(message "Hello world")
 
 ;; eshell: combing elisp functions (message) with OS programs (/usr/bin/cut) in eshell']
 message "hello world" | cut -f 1 -d ' '
 
 ;; cssh ? ssh shell ? (somehow strange)
 
-
 ;; color-theme-calm-forest ? does not work?
 
-
 ;; yasnippet - yet another snippets
-
 
 ;; files: buffers: kill-buffer
 C-x k
@@ -206,7 +209,7 @@ C-x k
 ;; files: buffers: M-x list-buffers / M-x ido-switch-buffer
 C-x C-b / C-x b
 
-M-x kill-whole-line',             ';
+M-x kill-whole-line
 ;; delete 1 whole line
 C-S-Backspace
 
@@ -450,7 +453,7 @@ M-x helm-apt
 M-x helm-register / :reg
 
 ;; paste from register
-"<register>p
+;; "<register>p
 
 ;; locate:
 M-x locate
@@ -462,7 +465,7 @@ M-x locate
 M-x hi-lock-mode / highlight-regexp
 
 ;; magit: http://magit.github.io/master/magit.html
-;;
+
 
 ;; M-x magit-commit; end of git commit message / with-editor-cancel / with-editor-cancel
 C-c C-c / C-c C-k / C-x k
