@@ -101,6 +101,9 @@ java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0-alpha14/clojure-1.9.0-al
 (def norm-data (om/tree->db RootView ufo.state/app-state true))
 (pp/pprint norm-data)
 
-;; om-next: inspect read method
-(def parser (om/parser {:read ufo.state/read}))
+;; om-next: execute read & mutate methods
+(def parser (om/parser {:read ufo.state/read :mutate ufo.state/mutate}))
 (parser {:state (atom ufo.state/app-state)} '[:list/rec])
+(parser {:state (atom ufo.state/app-state)} '[(ufo.meth/'activate-rec! vms)])
+
+
