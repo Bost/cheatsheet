@@ -170,8 +170,14 @@ at -f script.sh now + 1 hour / 30 min
 # set vi bindings
 set -o vi
 
-# set -o noglob (disable pathname expansion - globbing) / set -o verbose / set -o xtrace
-set -f / -v / -x
+# bash: disable pathname expansion - globbing
+set -f / set -o noglob
+
+# bash: shell writes its input to standard error as it is read
+set -v / set -o verbose
+
+# bash: shell writes standard error a trace for each command
+set -x / set -o xtrace
 
 # python: high-level file operations
 import shutil
