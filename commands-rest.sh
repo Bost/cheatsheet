@@ -1,6 +1,10 @@
 #!/bin/bash
 exit 1
 
+# connecting to mysql a.k.a. login
+mysql --host=localhost --user=<name> --password=<password> <dbname>
+mysql --host=localhost --user=root --password=root employees
+
 # search for a file named exactly NAME (not *NAME*)
 locate -b '\NAME'
 
