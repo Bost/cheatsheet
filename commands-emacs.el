@@ -40,7 +40,7 @@ M-x paredit-wrap-square
 C-k
 
 ;; paredit: wrap brackets around sexp / raise sexp (replace entire parent with child) / remove everything before the current sexp
-M-( / M-r / M-<up>
+;; M-( / M-r / M-<up>
 
 ;; paredit-forward-slurp-sexp (vcucni) / paredit-forward-barf-sexp (vygrcaj)
 <M-s-right> / <M-s-left>
@@ -244,7 +244,7 @@ M-x ispell-region / ispell-buffer
 C-x ( / C-x ) / C-x e
 
 ;; marco: start macro, stop/play macro
-F3 or C-x ( / F4 or C-x e
+;; F3 or C-x ( / F4 or C-x e
 
 ;; macro: repeat macro 5 times
 M-5 F4 or C-x e
@@ -348,7 +348,7 @@ m / * / u (U) / t
 + / R
 
 ;; dired: dir listing details M-x dired-details-toggle M-x dired-hide-details-mode
-)(
+;; )(
 
 ;; dired: writable - perform operations by editing dired buffer
 M-x dired-toggle-read-only (C-x C-q) / M-x wdired-finish-edit
@@ -546,3 +546,6 @@ Inferior Emacs Lisp Mode
 
 ;; M-x delete-horizontal-space - delete whitespaces around point
 M-\
+
+# test yasnippet
+emacs -Q -L . -l yasnippet-tests.el -f ert &
