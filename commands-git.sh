@@ -104,6 +104,10 @@ git add --work-tree=workLocation --git-dir=repoLocation
 # git: list contibutors; -s, --summary, -n, --numbered
 git shortlog -s -n
 
+# show settings
+git config --global / --local --list
+git config --global / --local --get ...
+
 # git:
 git config --global user.name "Bost"
 

@@ -32,6 +32,12 @@ service network-manager restart
 # net: ubuntu: (edit) and re-read proxy definition
 source /etc/environment
 
+# apt: aptitute: proxy:
+/etc/apt/apt.conf
+
+# apt: without proxy
+sudo apt-get --option Acquire::http::proxy=false ...
+
 # net: grouping bandwidth per process; "net top"
 sudo nethogs wlan0
 
@@ -140,6 +146,9 @@ history -d
 
 # fish: retval: retcode: return code: exit code: (in bash $?)
 $status
+
+# unset fish shell variable
+set --erase myvar
 
 # run a cmd only when load average is below a certain threshold (default is 0.8)
 echo "rm -rf /unwanted-large/folder" | batch
@@ -844,7 +853,8 @@ apt-cache show PACKAGE / aptitude show PACKAGE
 # dpkg: apt: fix the 'Hash sum mismatch error'
 sudo rm -rf /var/lib/apt/lists; sudo mkdir -p /var/lib/apt/lists/partial; sudo apt-get clean
 
-# linux: ubuntu: apt: Software Sources List editors; see y-ppa-manager, http://repogen.simplylinux.ch/
+# linux: ubuntu: apt: mirror: distro: source:
+# Software Sources List editors; see y-ppa-manager, http://repogen.simplylinux.ch/
 software-properties-gtk - see /etc/apt/sources.list
 
 # list installed packages; no sudo needed; TODO see --clear-selection --set-selection
@@ -892,6 +902,9 @@ mtr google.com
 ethtool eth0
 ip neigh show | grep REACHABLE
 ip link show
+
+# networking: ping: traceroute: - check connection
+mtr --report www.google.com
 
 # networking: DNS lookup
 host google.com
