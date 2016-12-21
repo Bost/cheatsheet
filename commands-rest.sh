@@ -352,6 +352,9 @@ curl -O http://server/fileX.txt > ./path/to/fileY.txt
 # net: ask http://ifconfig.me about myself (ua: User Agent)
 curl ifconfig.me/ip/host/ua/port/
 
+# net: test connection with disabled proxy
+curl --noproxy "*" -X GET http://www.google.com
+
 # show request/response headers
 curl -v URL
 
