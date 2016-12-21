@@ -106,4 +106,7 @@ java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0-alpha14/clojure-1.9.0-al
 (parser {:state (atom ufo.state/app-state)} '[:list/rec])
 (parser {:state (atom ufo.state/app-state)} '[(ufo.meth/'activate-rec! vms)])
 
+# read / write hmap to from / file
+(spit "/tmp/data.edn" (with-out-str (print hmap)))
+(read-string (slurp "/tmp/data.edn"))
 
