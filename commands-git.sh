@@ -96,7 +96,8 @@ git --git-dir=gitDir add "src/**/*.txt"
 git --git-dir=gitDir commit --author="Name <noreply@example.com>" -m "commitMsg"
 
 # git: clone a repo from gitDir to a bareRepoDir (empty) presumably located on a server
-git clone --bare gitDir bareRepoDir
+git clone --bare origRepo bareRepoDir
+git clone origRepo newRepoName
 
 # git: workLocation must not be a bare (empty) repo
 git add --work-tree=workLocation --git-dir=repoLocation
