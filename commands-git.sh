@@ -120,6 +120,10 @@ git config --global help.autocorrect 1
 # git: rebase: remember actions on a particular commit - in case of repeating conflicts when rebasing; long running branches
 git config --global rerere.enabled 1
 
+# github add new repository: create a new repo on www.github.com, then:
+git remote add origin git@github.com:Bost/<newrepo>.git
+git push -u origin master
+
 # git: github: do not ask for username
 .git/config: url = https://Bost@github.com/Bost/dotfiles.git
 
