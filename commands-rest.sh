@@ -951,6 +951,10 @@ cat /proc/cpuinfo | grep processor | wc -l
 # display information on CPU architecture
 lscpu
 
+# show first/last 100 bytes
+tail -c 100 fileName
+head -c 100 fileName
+
 # net: apps currently using inet
 lsof -P -i -n | cut -f 1 -d " "| uniq | tail -n +2
 
