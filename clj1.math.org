@@ -1,0 +1,6 @@
+* Live-codint Mathematics
+** LaTTe proof assistant: https://github.com/latte-central
+** Type Theory and Formal Proof: an Introduction
+** type theory extention of lambda calculus with explicit types
+
+modus pones naturally generalizes to instationation of universal quantifiers

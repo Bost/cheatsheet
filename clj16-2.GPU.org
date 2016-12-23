@@ -1,0 +1,10 @@
+
+* Dragan Djuric: Clojure is Not Afraid of the GPU
+** parallelization suitability
+*** map: can be well parallelized :-)
+*** redure: difficult to parallelize :-(
+** ClojureCL / OpenCL - "Hello World" ~ 170 LoC
+** Bayadera (Bayesian) - very fast
+   Bayesian is hard to compute, multi model, many dimensional problem, complex hyperspace
+   Markov Chain Monte Carlo simulations (MCMC) - difficult to parallelize
+** JAGS/Stan (state-of-the-art bayesian C++ tools)

@@ -1,0 +1,49 @@
+* Simon Belak: Living with Spec
+** regexps for spec; desc language for data; composition is about decomposing (pull apart and name)
+** clojure.spec does a lot of things
+** paterns
+*** case (dispatch on tag)
+*** core.match - see D.Nolen
+** separate data description and transformation
+** Rust and Elm have better error messages than clj/cljs
+** Data macros
+*** ? TestDrivenD does not fit to REPL ?
+*** recursive transformations into canonical macros
+*** s/conformer
+*** do more without code macros 
+*** automated test generating
+*** property based tests (are harder than)
+*** example?
+   (where {(any-of :foo :bar) pos?
+          ...}
+          coll)
+** Spec:
+***  Limitations
+**** sequences with interlan structure - e.g. time series
+**** generic higher order fns
+*** uncover numerical instabilities
+*** s/excercise for mocking
+*** s/registry, s/form
+*** build a graph
+*** no inline docs :-(
+*** type system is a part of solution
+
+* Two schools of thinking
+** language paradigm - up front rigorous way (inventing)
+** system paradigm - build up of solutions as you go (discovering) - more lispy?
+*** look at the problem from different directions
+*** compose pieces into final solution
+    
+** API boundaries: contact point of library and domain code
+** Structured error
+** fail fast = more context
+** nil punning
+** multiple airities
+
+** pluggable explanations via s/*explain-out*
+** hints, capture common mistakes, 
+
+* GoOpti - company
+** ETL
+** risk-hedging
+** internal BI tools

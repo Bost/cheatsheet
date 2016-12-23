@@ -1,0 +1,34 @@
+* Eric Weinstein: Machine learning with Clojure and Apache Stark
+** Machine learning
+** Apache Spark:
+*** Supervised learning, Generalization
+*** Classification or regression, generalizing from labeled to unlabeled data
+*** cluster computing framework - ideal for large data sets
+**** RDD Resilient Distrib Dataset
+**** Datase: RDD + Spark SQL execution engine
+**** DataFrame: dataset ordanized into named columns
+
+* http://bit.ly/2f9jVwn - LA police stop data, 600.000
+* Decision Trees (binary classifier) robust in noise; good for binary
+* no free lunch - no universal approach
+
+* Racist data leads to racist machines - bias problem
+
+* What's Deep learning
+** neural networks - computational architecture modeled after brain
+*** many layers
+*** vanishing/exploding gradient problem
+** Vanishing && Exploding Gradients
+** Convolutional networks; stacks of feature maps
+** Max Pooling / Downsampling
+** Alternating Layers
+
+* Tale of two DSLs: Flambo vs. Sparkling
+** 1. Flambo
+** 2. Sparkling
+** DL4J - Deep Learning 4 Java
+
+
+* Bayesian vs. Machine Learning
+
+td;dpa - too long; didn't pay attention

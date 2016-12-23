@@ -1,0 +1,20 @@
+* Clj in Prod
+** enfocus: combines pure HTML with Cljs: for building interfaces in ClojureScrip 
+*** drop-in replaced by kioo
+** lein-doo: auto testing
+** browser-sync: auto page reload
+** reagent: wraps react to clj
+
+* Localisation:
+** PhraseApp + tower
+** cache busting - by custom script
+** deploy script - by ansible
+** error logging - by honeybadger
+** continuous integration - by travis 
+** cross browser - by ???
+
+** JavaScript tooling
+*** gulp - like lein but for node.js
+
+** app state on exception
+** repl driven test
