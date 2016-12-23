@@ -1056,7 +1056,8 @@ adb push src dst
 ubuntu-support-status --show-unsupported
 
 # maven:
-mvn package / clean / install
+mvn package
+# mvn install / mvn clean - mvn install seems not to be needed
 
 # * TODO add this:
 # git remote add --track develop upstream https://github.com/Lokaltog/powerline.git
