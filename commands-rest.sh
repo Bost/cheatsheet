@@ -201,6 +201,9 @@ sudo !!
 # real and effective user and group IDs
 id user
 
+# networking: DNS lookup: convert names <-> IP addresses
+host google.com
+
 # get ip address from domain
 nslookup www.google.com | tail -2 | head -1 | awk "{print $2}"
 
@@ -307,8 +310,17 @@ cat >>EOF
 # bash: get date (timestamp) in a given format
 date +"%Y-%m-%d_%H-%M-%S"
 
-# free and used memory in the system / file (filesystem) status
-free -h / stat FILE
+# free and used memory in the system
+free -h
+
+# file or filesystem status
+stat <fileName>
+
+# summary about used swap devices
+swapon --show
+
+# enable / disable devices and files for paging and swapping
+swapon / swapoff
 
 # join lines of two files on a common field
 join
@@ -316,7 +328,7 @@ join
 # size of ./path/to/dir with subdirs, exclude files matching pattern
 du -h --exclude=pattern ./path/to/dir
 
-# summarize size of dir
+# total / summarize size of dir
 du -s dir / du -sh dir
 
 # jump to ./path/to/dir execute command and jump back
@@ -908,9 +920,6 @@ ip link show
 
 # networking: ping: traceroute: - check connection
 mtr --report www.google.com
-
-# networking: DNS lookup
-host google.com
 
 # bash: query wikipedia for keyword
 dig +short txt keyword.wp.dg.cx
