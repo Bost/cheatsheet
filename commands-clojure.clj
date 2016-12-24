@@ -4,7 +4,7 @@
 (clojure.spec/exercise [spec] [spec n] [spec n overrides])
 
 ;; show objects in the namespace
-(sort (keys (ns-publics \'ws.core)))
+(sort (keys (ns-publics 'ws.core)))
 
 ;; should clean the repl; use cider-refresh
 (map #(ns-unmap *ns* %) (keys (ns-interns *ns*)))
@@ -37,7 +37,7 @@ lein -o
 ;; create lighttable plugin
 ;; cd $LIGHTTABLE/deploy/plugins/ && lein new lt-plugin my-plugin
 
-;; try to put it to project.clj in case of \'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath\'
+;; try to put it to project.clj in case of 'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath'
 ;; [the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]
 
 ;; M-x cljr-rename-symbol refactoring:
