@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1
 
+# net: linux: (open) ports listening for connection
+sudo nmap -sT -O localhost
+
 # connecting to mysql a.k.a. login
 mysql --host=localhost --user=<name> --password=<password> <dbname>
 mysql --host=localhost --user=root --password=root employees
