@@ -865,6 +865,12 @@ dpkg --remove  package.deb
 # dpkg: apt: show description for packageName
 apt-cache search ^packageName$
 
+# dpkg: apt: print names of all packages know to APT
+apt-cache pkgnames <packagePrefix>
+
+# dpkg: apt: list all installed packages matching regex
+dpkg --list | grep ii | grep -i <regex>
+
 # dpkg: apt: description of PACKAGE
 apt-cache show PACKAGE / aptitude show PACKAGE
 
