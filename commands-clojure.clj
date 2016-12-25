@@ -31,7 +31,7 @@
 ;; show leiningen dependency tree / classpath
 ;; lein deps :tree / lein classpath
 
-;; leiningen : Run a task offline.
+;; leiningen : Run a task offline
 lein -o
 
 ;; create lighttable plugin
@@ -106,7 +106,9 @@ java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0-alpha14/clojure-1.9.0-al
 (parser {:state (atom ufo.state/app-state)} '[:list/rec])
 (parser {:state (atom ufo.state/app-state)} '[(ufo.meth/'activate-rec! vms)])
 
-# read / write hmap to from / file
+;; read / write hmap to from / file
 (spit "/tmp/data.edn" (with-out-str (print hmap)))
 (read-string (slurp "/tmp/data.edn"))
 
+;; create / open remotelly accessible repl (nrepl)
+lein repl :headless :host 0.0.0.0 :port <portNr>
