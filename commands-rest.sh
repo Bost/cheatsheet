@@ -516,6 +516,10 @@ cvs -d cvs -t -d :pserver:faizal@localhost:/myrepos ci -m "test" -l "src/foo/Foo
 # linux: system information (kernel version etc.)
 uname -a
 
+# tail a (log)file over ssh;
+ssh -t user@hostname "tail -f /path/to/file"   # -t force pseudo-terminal allocation
+ssh -n user@hostname "tail -f /path/to/file" & # -n redirects stdin from /dev/null
+
 # github: ssh:
 ssh-keygen
 
