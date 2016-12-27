@@ -190,13 +190,20 @@ C-x s
 
 ;; eshell: ifconfig > #<buffer interfaces>
 
-;; cli: run emacs lisp file from command line: chmod +x ./hello.el; ./hello.el
+;; cli: batch: noninteractive run
+emacs --batch --eval '(message "Hello world")'
+
+;; cli: batch: run emacs lisp file from command line: chmod +x ./hello.el; ./hello.el
 #!/bin/sh
 ":"; exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-
 (message "Hello world")
 
+;; cli: batch: noninteractive run
+#!/usr/bin/emacs --script
+(message "Hello world")
+
 ;; eshell: combing elisp functions (message) with OS programs (/usr/bin/cut) in eshell']
-message "hello world" | cut -f 1 -d ' '
+message "Hello world" | cut -f 1 -d ' '
 
 ;; cssh ? ssh shell ? (somehow strange)
 
