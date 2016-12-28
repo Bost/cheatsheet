@@ -1,6 +1,12 @@
 #!/bin/bash
 exit 1
 
+# chrome extras
+chrome://flags
+chrome://net-internals
+chrome://quota-internals
+chrome://network-error/-106
+
 # net: linux: (open) ports listening for connection
 sudo nmap -sT -O localhost
 
@@ -38,7 +44,7 @@ source /etc/environment
 # apt: aptitute: proxy:
 /etc/apt/apt.conf
 
-# apt: without proxy
+# apt: aptitude: without proxy
 sudo apt-get --option Acquire::http::proxy=false ...
 
 # net: grouping bandwidth per process; "net top"
