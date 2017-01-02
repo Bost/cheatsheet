@@ -145,6 +145,9 @@ JBJS
 # editor: highlighting; works for Selection
 hilite jcl / cobol / rexx / off / pascal
 
+# editor:
+l <lineNumber> / f <searchString>
+
 # dataset with info about attributes and volumes of other datasets. Less info about storage setup needed (no changes in JCL DD statesments) when a catalogized dataset is moved between devices
 catalog
 
