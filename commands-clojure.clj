@@ -112,3 +112,10 @@ java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0-alpha14/clojure-1.9.0-al
 
 ;; create / open remotelly accessible repl (nrepl)
 lein repl :headless :host 0.0.0.0 :port <portNr>
+
+;; two dots: clojurescript interop
+(.. object -property -property method)
+(.. object -property -property -property)
+;; Instead of:
+(.method (.-property (.-property object)))
+(.-property (.-property (.-property object)))
