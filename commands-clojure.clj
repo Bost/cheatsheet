@@ -119,3 +119,6 @@ lein repl :headless :host 0.0.0.0 :port <portNr>
 ;; Instead of:
 (.method (.-property (.-property object)))
 (.-property (.-property (.-property object)))
+
+;; reader conditionals - for different platforms
+#?(:clj Double/NaN :cljs js/NaN :default nil)
