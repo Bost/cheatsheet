@@ -379,6 +379,9 @@ curl --noproxy "*" -X GET http://www.google.com
 # show request/response headers
 curl -v URL
 
+# in bash: (in fish it doesn't work)
+curl --request PUT "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=test"
+
 # net: like ifconfig. state of network interfaces
 ip address
 
