@@ -153,6 +153,9 @@ echo "test" | xclip / xclip -o > file.ext
 # remove a line from shell history (i.e. password); ~/.bash_history | ~/.config/fish/fish_history
 history -d
 
+# bash: secure (password) prompt; doesn't work in fish
+read -s
+
 # fish: retval: retcode: return code: exit code: (in bash $?)
 $status
 
@@ -839,7 +842,7 @@ whatis CMD / help
 ssh user@host cat ./path/to/remotefile | diff ./path/to/localfile -
 
 # ssh: copy ssh keys to user@host to enable password-less ssh logins
-$ssh-copy-id user@host
+ssh-copy-id user@host
 
 # ssh: mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Will allow you to mount a folder security over a network
 sshfs name@server:/path/to/folder ./path/to/mount/point
