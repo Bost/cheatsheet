@@ -123,13 +123,12 @@ lein repl :headless :host 0.0.0.0 :port <portNr>
 ;; reader conditionals - for different platforms
 #?(:clj Double/NaN :cljs js/NaN :default nil)
 
-;; Figwheel Controls:
-(stop-autobuild)            ;; stops Figwheel autobuilder
-(start-autobuild [id ...])  ;; starts autobuilder focused on optional ids
-(switch-to-build id ...)    ;; switches autobuilder to different build
-(reset-autobuild)           ;; stops, cleans, and starts autobuilder
-(reload-config)             ;; reloads build config and resets autobuild
-(build-once [id ...])       ;; builds source one time
-(clean-builds [id ..])      ;; deletes compiled cljs target files
-(print-config [id ...])     ;; prints out build configurations
-(fig-status)                ;; displays current state of system
+(stop-autobuild)           ; figwheel: stops autobuilder
+(start-autobuild [id ...]) ; figwheel: starts autobuilder focused on optional ids
+(switch-to-build id ...)   ; figwheel: switches autobuilder to different build
+(reset-autobuild)          ; figwheel: stops, cleans, and starts autobuilder
+(reload-config)            ; figwheel: reloads build config and resets autobuild
+(build-once [id ...])      ; figwheel: builds source one time
+(clean-builds [id ..])     ; figwheel: deletes compiled cljs target files
+(print-config [id ...])    ; figwheel: prints out build configurations
+(fig-status)               ; figwheel: displays current state of system
