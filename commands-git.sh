@@ -11,9 +11,6 @@ git pull --rebase upstream master
 # number of lines changed between two commits
 git diff --stat <commit-ish> <commit-ish>
 
-# clean TODO
-git clean -dxf
-
 # pull and rebase latest of all submodules
 git submodule foreach git pull --rebase origin master
 
