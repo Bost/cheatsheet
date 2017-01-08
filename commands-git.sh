@@ -140,8 +140,8 @@ git log --pretty=format:\'%h %s\'
 # a kind of \'gitk --all\'
 git log --oneline --graph
 
-# git:
-git log --oneline --grep="pattern"
+# show commit messages matching <pattern>
+git log --oneline --grep="<pattern>"
 
 # find / list all commits for a specific file
 git log --follow --name-only --format='%H' -- path/to/file
@@ -174,4 +174,5 @@ git clean -dxf
 git reset HEAD~
 
 # show aliases
+git config -l | grep alias | cut -c 7-
 git config --get-regexp alias
