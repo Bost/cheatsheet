@@ -173,3 +173,5 @@ git clean -dxf
 # split apart most recent commit: ... and edit the usual way
 git reset HEAD~
 
+# show aliases
+git config --get-regexp alias
