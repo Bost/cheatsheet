@@ -990,7 +990,10 @@ tail -c 100 fileName
 head -c 100 fileName
 
 # net: apps currently using inet
-lsof -P -i -n | cut -f 1 -d " "| uniq | tail -n +2
+lsof -P -i -n | cut --fields=1 --delimiter=" " | uniq | tail --lines=+2
+
+# remove sections from each line of files
+cut
 
 # list open files
 lsof

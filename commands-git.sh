@@ -173,3 +173,6 @@ git reset HEAD~
 # show aliases
 git config -l | grep alias | cut -c 7-
 git config --get-regexp alias
+
+# list all deleted files in the repo
+git log --diff-filter=D --summary
