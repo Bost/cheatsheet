@@ -132,9 +132,9 @@ git log -S'textToSearch'
 git config --global core.autocrlf true
 
 # show formated commit logs
-git log --pretty=format:\'%h %s\'
+git log --pretty=format:'%h %s'
 
-# a kind of \'gitk --all\'
+# a kind of 'gitk --all'
 git log --oneline --graph
 
 # show commit messages matching <pattern>
