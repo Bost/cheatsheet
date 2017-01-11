@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1
 
+# concatenate and print files in reverse (reversed lines)
+tac file.txt > reversed.txt
+
 # chrome extras
 chrome://flags
 chrome://net-internals
