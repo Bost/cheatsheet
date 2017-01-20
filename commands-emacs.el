@@ -512,7 +512,7 @@ M-x info / info-emacs-manual / info-display-manual
 macros
 
 ;; launch emacs and eval string; does not work well with my bash function LaunchEmacs
-emacs --eval '(message "uhu")' / emacs -e configuration-layer/update-packages
+emacs --eval '(message "ufo")' / emacs -e configuration-layer/update-packages
 
 ;; M-x shell-command: top: capture top output from stdout
 M-! RET top -c -n -1 -b -w 200
@@ -555,5 +555,22 @@ Inferior Emacs Lisp Mode
 ;; M-x delete-horizontal-space - delete whitespaces around point
 M-\
 
-# test yasnippet
+;; test yasnippet
 emacs -Q -L . -l yasnippet-tests.el -f ert &
+
+;; locate file
+SPC f L
+
+;; window transient mode - window management w/o using key binding - for layouts
+SPC w .
+
+;; workspaces a.k.a layouts
+;; layouts - 1. layout contains all buffers;
+;; layouts - 2., 3., ... layouts contain only selected buffers
+SPC l <nr>
+
+;; helm-persp-switch-project: create new layout
+SPC p l
+
+;; save / load layouts to/from a file
+SPC l s and SPC l L
