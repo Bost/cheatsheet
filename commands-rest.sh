@@ -568,13 +568,13 @@ Ctrl-.
 # windows: command line: logoff and force
 shutdown /l /f
 
-# windows: net: list mapped network drives
+# windows: net: drive: drives: list mapped drives
 net use
 
-# windows: net: map P: as a network drive for \\sever\path
+# windows: net: drive: drives: map \\sever\path under P:
 net use P: \\server\path
 
-# windows: net: unmap P:
+# windows: net: drive: drives: unmap P:
 net use P: /delete
 
 # windows: open ports
