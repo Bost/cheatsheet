@@ -460,6 +460,9 @@ M-x helm-apt
 ;; spacemacs: SPC r w; helm: clipboard: registers:
 M-x helm-register / :reg
 
+;; spacemacs: SPC r e; evil: clipboard: registers:
+M-x evil-show-registers
+
 ;; paste from register
 ;; "<register>p
 
@@ -574,3 +577,7 @@ SPC p l
 
 ;; save / load layouts to/from a file
 SPC l s and SPC l L
+
+;; M-s h l hilite lines e.g. log file evaluation; see:
+;; https://www.masteringemacs.org/article/highlighting-by-word-line-regexp
+M-x highlight-lines-matching-regexp
