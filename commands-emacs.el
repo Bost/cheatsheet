@@ -457,7 +457,7 @@ M-x helm-top / M-x proced
 ;; helm: apt:
 M-x helm-apt
 
-;; spacemacs: SPC r w; helm: clipboard: registers:
+;; spacemacs: SPC r r; helm: clipboard: registers:
 M-x helm-register / :reg
 
 ;; spacemacs: SPC r e; evil: clipboard: registers:
