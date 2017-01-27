@@ -176,3 +176,9 @@ git config --get-regexp alias
 
 # list all deleted files in the repo
 git log --diff-filter=D --summary
+
+# bisect: find the first GOOD commit
+# "Maybe you mistook good and bad revs" see http://stackoverflow.com/a/17153598
+git bisect start --term-new=fixed --term-old=unfixed
+git bisect fixed master
+git bisect unfixed <some-old-sha1>
