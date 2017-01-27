@@ -474,7 +474,13 @@ grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{log,propeties,cfg,txt}
 find ./ -type f -name "*.txt" -print0 | xargs -0 grep -l "String"
 
 # zgrep: search possibly compressed files for a regular expression
-zgrep foo myfile.gz / zgrep \'GET /blog\' access_log.gz
+zgrep "String" myfile.gz / zgrep 'GET /blog' access_log.gz
+
+# gzip: list compressed, uncompressed size, compression ratio etc.
+gzip -l ./path/to/file.gz
+
+# write output to stdout; zcat and gunzip -c are identical
+gunzip -c / zcat
 
 # bash: mv: move content of a directory within another directory with the same folders
 rsync --archive --remove-source-files backup/ backupArchives/
@@ -930,9 +936,6 @@ tar xzf ./path/to/tarfile.gz
 
 # Remove all files previously extracted from a tar(.gz) file
 tar -tf ./path/to/file.tar.gz | xargs rm -r
-
-# gzip: list compressed, uncompressed size, compression ratio etc.
-gzip -l ./path/to/file.gz
 
 # bash: report or omit repeated lines
 uniq
