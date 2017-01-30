@@ -820,6 +820,9 @@ unzip -lv file.zip
 # unzip: extract specific folder from a zip file to a given directory
 unzip file.zip 'folderToExtract/*' -d ./dst/dir
 
+# unzip: overwrite / don't overwrite
+unzip -o / -n
+
 # search for File.class in jar files
 find . -name "*.jar" | xargs grep File.class
 
