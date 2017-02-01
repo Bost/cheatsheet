@@ -10,7 +10,7 @@ chrome://net-internals
 chrome://quota-internals
 chrome://network-error/-106
 
-# net: linux: (open) ports listening for connection
+# net: linux: ports listening for connection (i.e. opened ports)
 sudo nmap -sT -O localhost
 
 # connecting to mysql a.k.a. login
