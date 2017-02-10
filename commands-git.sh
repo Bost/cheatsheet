@@ -182,3 +182,6 @@ git log --diff-filter=D --summary
 git bisect start --term-new=fixed --term-old=unfixed
 git bisect fixed master
 git bisect unfixed <some-old-sha1>
+
+# checkout as; older revision of a file under a new name
+git show HEAD^:main.cpp > old_main.cpp
