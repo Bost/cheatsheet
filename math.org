@@ -75,7 +75,6 @@
 
 
 
-
 * hierarchy:
 ** what is needed to understand X:
    a big tree and paths through this tree
@@ -96,7 +95,6 @@ http://www.gametheory.net/
 ** Ask:
    Christofer
 
-
 * Game Theory: Nash Equilibrum (NE):
   Each players best response to the others
   Nobody has an incentive to deviate from their actions if an equilibrum is played
@@ -115,7 +113,6 @@ http://www.gametheory.net/
    Support Enumeration Method
 
 * Go over the book from the Prof. from Karlsruhe
-
 * Higher order logic
 * Hypotheses, Conjectures & Theorems:
 ** Goldbach conjencture: ∀ (Every) even integer ≧ 2 is a ∑ of two primes
@@ -322,7 +319,6 @@ Bodil Stokke
   - vsadepritomne ako regexps
     EBNF extended BNF (Backchus Naur Format)`
 
-
 * Structures
 ** Monoid (M, *, e); Also a Category 'many' morphisms and 'few' (only one) object M
   (like Group withouth inverse elements)
@@ -421,7 +417,6 @@ predicate = vyrok = tvrdenie
 * Modus pones: applications of a function to an argument
 Agda, Coq, Isabelle
 
-
 * Goedel's Incompleteness Theorem:
  Every principle is either (A) too restrictive or (leaves out a good programm) or (B) not restrictive enough (allows some bad programs).
 * Full employment Theorem: take (A) and search for a new class to add in order to improve the language withouth allowing bad programs.
@@ -437,10 +432,7 @@ inr(...) - injection to the right
 
 (A * B) and (A + B) could be seen as a product (e.g. join) and coproduct (e.g. disjoint union) of A and B
 
-
 * Category of Types (a.k.a Category of Proofs)
-
-
 * Theory of Reflexive Domain
 
 
