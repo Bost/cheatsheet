@@ -486,8 +486,9 @@ gunzip -c / zcat
 rsync --archive --remove-source-files backup/ backupArchives/
 
 # bash: cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
-rsync --archive --verbose --exclude=CVS src dest
-rsync --progress --archive --verbose --exclude=CVS src dest
+rsync --archive --verbose --exclude=CVS src dst
+rsync --archive --verbose --exclude='dir' --exclude='*.jpg' src dst
+rsync --progress --archive --verbose --exclude=CVS src dst
 
 # restart cvs daemon
 sudo /etc/init.d/cvsd restart / start / stop / status
@@ -905,9 +906,12 @@ apt-cache show PACKAGE / aptitude show PACKAGE
 # dpkg: apt: fix the 'Hash sum mismatch error'
 sudo rm -rf /var/lib/apt/lists; sudo mkdir -p /var/lib/apt/lists/partial; sudo apt-get clean
 
-# linux: ubuntu: apt: mirror: distro: source:
+# linux: ubuntu: apt: dpkg: mirror: distro: source:
 # Software Sources List editors; see y-ppa-manager, http://repogen.simplylinux.ch/
 software-properties-gtk - see /etc/apt/sources.list
+
+# apt: dpkg: list of sources
+/etc/apt/sources.list.d
 
 # list installed packages; no sudo needed; TODO see --clear-selection --set-selection
 dpkg --get-selections | grep -v deinstall
