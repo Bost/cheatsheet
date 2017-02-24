@@ -166,7 +166,7 @@ Russells paradox - Barbiers dilema
     Monoids with homomorphisms give category
 
 * Curry-Howard-Lambek correspondence: Logic <-> Type Theory <-> Category Theory:
-  Direct relationship between computer programs and mathematical proofs;
+  Direct relationship between computer programs and mathematical proofs; from 1940-ties
   Link between Computation and Logic;
   Proofs-as-programs and propositions- or formulae-as-types interpretation;
   Proofs (= Programs) can be executed;
