@@ -172,7 +172,7 @@ C-x v i
 ;; add to version control system
 C-x r RET
 
-;; files: find file / find alternate file (reload file)
+;; files: find file / find alternate file (reload / refresh file)
 C-x C-f / C-x C-v
 
 ;; remote file editing: Transparent Remote (file) Access, Multiple Protocol (TRAMP); method can be: ssh
