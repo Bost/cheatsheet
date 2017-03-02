@@ -60,10 +60,10 @@ https://www.emacswiki.org/emacs/RegularExpression#regexp
 ;; regexp: whitespace
 \\s-
 
-;; unicode: describe char at the point
+;; utf8; unicode: describe char at the point
 M-x describe-char
 
-;; unicode: insert unicode char upper-case sigma U+2211 ∑
+;; utf8; unicode: insert unicode char upper-case sigma U+2211 ∑
 M-x ucs-insert RET 2211
 
 ;; folding: enable folding, fold / unfold
