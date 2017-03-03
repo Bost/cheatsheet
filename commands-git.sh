@@ -123,7 +123,7 @@ git remote add origin git@github.com:Bost/<newrepo>.git
 git push -u origin master
 
 # github: do not ask for username
-.git/config: url = https://Bost@github.com/Bost/dotfiles.git
+.git/config: url = https://Bost@github.com/Bost/reponame.git
 
 # search entire commit history
 git log -S'textToSearch'
