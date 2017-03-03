@@ -32,14 +32,8 @@ git branch -rd public/whatever
 # delete a remote branch
 git push origin --delete branchName
 
-# changes file against remote branch
-git diff localBranch remoteBranch filepath
-
-# changes file between two branches
-git diff master branch filepath
-
-# show files changed between two branches/commits
-git diff --name-only master branch
+# file changes against remote branch / between two branches
+git diff master branch filepath / git diff --name-only master branch
 
 # show particular changed word / staged changes
 git diff --word-diff / --cached
