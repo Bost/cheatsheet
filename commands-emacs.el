@@ -337,14 +337,11 @@ C-x C-f ENTER / <newfile>
 ;; dired: mark / unmark (all) / toggle marking
 m / * / u (U) / t
 
-;; dired: mark all / toggle marking
-* s
+;; dired: mark all: toggle marking / executables / files (with extention)
+* s / * * / * . <ext>
 
-;; dired: mark all executables / files (with extention) / change all marks
-* *
-
-;; dired: mark all files (with extention) / change all marks
-* .
+;; dired: mark & delete all files with extention
+* . <ext> D
 
 ;; dired: change all marks
 * c
