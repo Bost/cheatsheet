@@ -581,3 +581,9 @@ SPC l s and SPC l L
 ;; M-s h l hilite lines e.g. log file evaluation; see:
 ;; https://www.masteringemacs.org/article/highlighting-by-word-line-regexp
 M-x highlight-lines-matching-regexp
+
+;; Collapse every form of it when first opened - put the following block in the
+;; bottom of init.el:
+;; Local Variables:
+;; eval: (hs-hide-all)
+;; End:
