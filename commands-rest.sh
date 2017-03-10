@@ -5,16 +5,15 @@ exit 1
 tac file.txt > reversed.txt
 
 # chrome extras
-chrome://flags
-chrome://net-internals
-chrome://quota-internals
-chrome://network-error/-106
+chrome://flags | chrome://net-internals | chrome://quota-internals | chrome://network-error/-106
 
 # net: linux: ports listening for connection (i.e. opened ports)
 sudo nmap -sT -O localhost
 
 # connecting to mysql a.k.a. login
 mysql --host=localhost --user=<name> --password=<password> <dbname>
+
+# connecting to mysql a.k.a. login
 mysql --host=localhost --user=root --password=root employees
 
 # search for a file named exactly NAME (not *NAME*)
@@ -97,6 +96,8 @@ sudo update-alternatives --config java
 
 # ubuntu: change default www-browser
 sudo update-alternatives --config x-www-browser
+
+# ubuntu: change default www-browser
 sudo update-alternatives --config gnome-www-browser
 
 # xfce: opens a file or URL in the user's preferred application
@@ -228,14 +229,8 @@ local loc_variable=value
 # args: function arguments
 $*
 
-# args: all arguments of the last command
-!*
-
-# args: all arguments
-$@
-
-# args: count of arguments
-$$
+# args: all arguments / all arguments of the last command / count of arguments
+$@ / !* / $$
 
 # exit code (return value / retcode) of the last command (0: success) e.g. adduser joe; echo $?
 $?
@@ -249,11 +244,8 @@ $_
 # args: last argument of the last command
 !$
 
-# process ID of the most recently executed background process
-$!
-
-# process ID of the shell
-$$
+# process ID of the: shell / most recently executed background process
+$$ / $!
 
 # the cmd takes x and y as if they were pressed during its execution
 (echo x; echo y) | cmd
@@ -275,6 +267,8 @@ tr \'[A-Z]\' \'[a-z]\' < file.txt > fileNew.txt
 
 # bash: mass move/copy/rename
 mmv \*.JPG \#1.jpc
+
+# bash: mass move/copy/rename
 mmv \* \#1.rexx
 
 # bash: visual calender for februar 2004 / whole year 2004
@@ -451,26 +445,28 @@ find . -type f -name "*.xml" -or -name "*.txt"
 # find executable files
 find . -executable -type f
 
-# colorize grep in less
+# grep: colorize grep in less
 grep --color=always pattern file | less -R
 
-# lines containing any upper character
+# grep: lines containing any upper character
 grep "[[:upper:]]" file
 
-# intersection between two files
+# grep: intersection between two files
 grep -Fx -f file1 file2
 
-# search for "String" and print 2/4 lines before/after matching line
+# grep: search for "String" and print 2/4 lines before/after matching line
 grep -B 2 -A 4 "String" / grep --before-context=2 --after-context=4 "String"
 
-# print only filenames of the files containing "String"
+# grep: print only filenames of the files containing "String"
 grep "String" * | cut -f1 -d:
 
-# find: recursive search for "String" in *.txt (with '.' at the end)
+# grep: find: recursive search for "String" in ... (with '.' at the end)
 grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{el,clj,cljs,cljc} ./
+
+# grep: find: recursive search for "String" in ... (with '.' at the end)
 grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{log,propeties,cfg,txt} ./
 
-# search for "String" in *.txt files (with spaces in filenames)
+# grep: search for "String" in *.txt files (with spaces in filenames)
 find ./ -type f -name "*.txt" -print0 | xargs -0 grep -l "String"
 
 # zgrep: search possibly compressed files for a regular expression
@@ -487,7 +483,11 @@ rsync --archive --remove-source-files backup/ backupArchives/
 
 # bash: cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
 rsync --archive --verbose --exclude=CVS src dst
+
+# bash: cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
 rsync --archive --verbose --exclude='dir' --exclude='*.jpg' src dst
+
+# bash: cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
 rsync --progress --archive --verbose --exclude=CVS src dst
 
 # restart cvs daemon
@@ -538,8 +538,10 @@ cvs -d cvs -t -d :pserver:faizal@localhost:/myrepos ci -m "test" -l "src/foo/Foo
 # linux: system information (kernel version etc.)
 uname -a
 
-# tail a (log)file over ssh;
+# tail a (log)file over ssh
 ssh -t user@hostname "tail -f /path/to/file"   # -t force pseudo-terminal allocation
+
+# tail a (log)file over ssh
 ssh -n user@hostname "tail -f /path/to/file" & # -n redirects stdin from /dev/null
 
 # github: ssh:
