@@ -74,27 +74,14 @@
 
 
 
-
-* hierarchy:
+* Hierarchy:
 ** what is needed to understand X:
    a big tree and paths through this tree
 ** where leads understanding of X1, X2, .. Xn:
    prospects, applications in other science fields, everyday life etc.
 ** what's the next step:
    why to study Z and not W after understanding X1, X2 .. Xn in dependency of the field of some interest
-* WebApp, Datomic/Keystore (timestamps)/ Clojurescript
 * Instaparse - Build parsers in clojure: context-free grammars were as easy to use as regexs
-
-* Start with http://eu.ixl.com/
-* Take a look at
-** Knowledge Map: https://www.khanacademy.org/exercisedashboard
-
-
-
-
-http://www.gametheory.net/
-** http://www.reddit.com/r/math
-
 * Game Theory: Nash Equilibrum (NE):
   Each players best response to the others
   Nobody has an incentive to deviate from their actions if an equilibrum is played
@@ -387,8 +374,6 @@ Depandent type theory is the master theory of all programming languages. If you 
 
 Maybe Type: A or B (e.g. A or Fail, A or AirMessage)
 
-* Intuitionistic Logic a.k.a Constructive Logic
-counts on endless resources - does not need any constructor or destructor.
 * Linear Logic
 has the notion of Limited resources - has operations of Construction and Descruction
 * Axiom of Choice - see "Type Theory Foundations, Lecture 3-wJLTE8rnqH0.mp4"
@@ -425,8 +410,6 @@ inr(...) - injection to the right
 
 * Category of Types (a.k.a Category of Proofs)
 * Theory of Reflexive Domain
-
-
 1:21 Video 2
 
 * Logic examples:
@@ -438,5 +421,7 @@ inr(...) - injection to the right
   | A is possible       | Monadic Lax Logic | Generic effects (monads, state, exception) |
   | A is valid          | Modal Logic       | Runtime code generation                    |
 
+Intuitionistic (Constructive) Logic deals with endless resources and doesn't
+need any constructors/destructors
 
 * Impossibility of a perfect type-checker for a programming language
