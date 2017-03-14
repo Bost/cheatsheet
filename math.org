@@ -383,13 +383,17 @@ predicate = vyrok = tvrdenie
 
 (Banach Tarsky Paradox: Slice up an object with a volume into parts with no volume, and by putting it together get 2 same objects - "create an object for free")
 
-* Haskell  vs. Agda
+* Haskell / Agda comparison:
 
-| Haskell                                                                    | Agda                                                                  |
-|                                                                            | full higher order logic with existential and universal quantification |
-| Unsound type system                                                        | Sound type system                                                     |
-| (arbitrary properties can be prooven, i.e. every single type is inhabited) |                                                                       |
-| (loop : A, loop = loop)                                                  |                                                                       |
+|             | Haskell                              | Agda                                     |
+|-------------+--------------------------------------+------------------------------------------|
+|             |                                      | full higher order logic with existential |
+|             |                                      | and universal quantification             |
+|-------------+--------------------------------------+------------------------------------------|
+| Type system | Unsound                              | sound                                    |
+|             | (arbitrary properties can be prooven |                                          |
+|             | i.e. every single type is inhabited) |                                          |
+|             | (loop : A, loop = loop)              |                                          |
 
 * Modus pones: applications of a function to an argument
 Agda, Coq, Isabelle
