@@ -429,3 +429,29 @@ Intuitionistic (Constructive) Logic deals with endless resources and doesn't
 need any constructors/destructors
 
 * Impossibility of a perfect type-checker for a programming language
+It it’s impossible to have a procedure that figures out whether an arbitrary
+program halts, it’s easy to show that it’s impossible to have a procedure that
+is a perfect recognizer for any overall run time property.
+
+A program that type-checks is guaranteed not to cause a run-time type-error.
+But since it’s impossible to recognize perfectly when programs won’t cause
+type-errors, it follows that the type-checker must be rejecting programs that
+really wouldn’t cause a type-error. The conclusion is that no type-checker is
+perfect—you can always do better!
+* Krakatoa and Jessie: verification tools for Java and C programs
+Why3: platform for deductive program verification
+git clone https://scm.gforge.inria.fr/anonscm/git/why3/why3.git
+A user can write WhyML programs directly and get correct-by-construction OCaml programs through an automated extraction mechanism
+
+* Proof:
+- experiment, observation
+- sampling, counter examples
+- judge, jury, religion, boss, conviction "No bugs in my code!"
+- "I don't see why not": psycho (the oposing party must find argument)
+
+
+
+A mathematical proof is a verification of a proposition by a chain of logical deductions from a set of axioms
+
+Proposition is a statement that can be true or false.
+Predicate is a proposition whose truth depends on the values of variable(s).
