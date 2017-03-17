@@ -91,8 +91,8 @@ javaws start.jnlp
 # disassemble file.class (bytecode)
 javap file.class / javap -p -s file.class
 
-# ubuntu: change default java environment
-sudo update-alternatives --config java
+# ubuntu: change default java / javac environment
+sudo update-alternatives --config java / javac
 
 # ubuntu: change default www-browser
 sudo update-alternatives --config x-www-browser
@@ -711,6 +711,12 @@ ps -o pid,user,command,nice -p 7695
 
 # linux: ps: process tree / user's processes ; ps -aux / ps aux - are different
 ps f / ps fx / ps u
+
+# distro name and ver
+cat /etc/*-release
+
+# distro name and ver
+cat /proc/version
 
 # linux: show (ubuntu) version
 lsb_release -a
