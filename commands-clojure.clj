@@ -93,7 +93,7 @@ java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0-alpha14/clojure-1.9.0-al
 
 ;; cli: run as a script: ./hello.clj
 #!/usr/bin/env boot
-(println "Hello world!")
+(println "Hello world script via bash and boot!")
 
 ;; om-next: inspect app-state
 (in-ns 'ufo.client)
