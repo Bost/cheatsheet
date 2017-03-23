@@ -409,6 +409,9 @@ sdiff file1 file0
 # output line-numbers
 diff --unchanged-line-format="" --old-line-format="" --new-line-format=":%dn: %L" fold fnew
 
+# new line separator for each grep result sh script
+grep "pattern" /path/to/file | awk '{print $0,"\n"}'
+
 # emacs find - exclude backup files
 find . -type f ! -name "*~" -exec grep -nH -e "String" {} +
 
