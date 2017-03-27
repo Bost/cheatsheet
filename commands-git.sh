@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1 # avoid execution
 
+# compute sha1 for any file
+git hash-object path/to/file.ext
+
 # reset current branch to particular state
 git reset --hard <tag/branch/commit id (sha1)>
 
