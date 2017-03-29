@@ -1,5 +1,8 @@
 (ns cheatsheet)
 
+;; Common Lisp Object System
+CLOS
+
 ;; bug detection tool for Java
 https://opensource.google.com/projects/error-prone
 
