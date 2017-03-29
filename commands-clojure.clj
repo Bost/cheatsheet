@@ -1,5 +1,8 @@
 (ns cheatsheet)
 
+;; bug detection tool for Java
+https://opensource.google.com/projects/error-prone
+
 ;; clojure.spec - examples
 (clojure.spec/exercise [spec] [spec n] [spec n overrides])
 

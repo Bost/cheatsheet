@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1
 
+# finds bugs in shell scripts
+http://www.shellcheck.net/
+
 # concatenate and print files in reverse (reversed lines)
 tac file.txt > reversed.txt
 
