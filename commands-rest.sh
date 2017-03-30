@@ -112,7 +112,7 @@ sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update
 # java:
 sudo apt-get install openjdk-8-jdk / sudo apt-get install oracle-java8-set-default
 
-#
+# list only one column
 ls --format=single-column
 
 # list only directories, 1 entry per line
