@@ -166,7 +166,13 @@ read -s
 # fish: retval: retcode: return code: exit code: (in bash $?)
 $status
 
-# unset fish shell variable
+# fish: show content of foo fn / list fns
+type foo / functions foo / functions -n
+
+# fish: copy 'foo' fn to a new fn 'bar' / erase the 'bar'
+functions -c foo bar / functions -e bar
+
+# fish: unset shell variable
 set --erase myvar
 
 # run a cmd only when load average is below a certain threshold (default is 0.8)
