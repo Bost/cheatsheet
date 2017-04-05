@@ -439,6 +439,9 @@ find . -name *.properties -exec grep -lir ".*String.*" \'{}\' \; -print
 # quit search after finding 1st match
 find . ... -print -quit
 
+# find all files and dirs modified in the last 7 days
+find . ... -mtime -7
+
 # bash: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file
 find /src -iname \'*.xml\' -exec cp \\{\\} /dst/ \\;
 
