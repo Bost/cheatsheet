@@ -592,6 +592,9 @@ net use P: \\server\path
 # windows: net: drive: drives: unmap P:
 net use P: /delete
 
+# windows: user account information
+net user <username> /domain
+
 # windows: open ports
 netstat -a | find "LISTENING"
 
