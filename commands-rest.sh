@@ -1132,6 +1132,9 @@ ubuntu-support-status --show-unsupported
 mvn package
 # mvn install / mvn clean - mvn install seems not to be needed
 
+# SFTP / FTPS
+SSH File Transfer from the OpenSSH / FTP over SSL
+
 # * TODO add this:
 # git remote add --track develop upstream https://github.com/Lokaltog/powerline.git
 # * TODO add bash file tests to the list
