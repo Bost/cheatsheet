@@ -158,6 +158,7 @@ stuff
 ** stuff to datomic - ?git has no services? http://www.youtube.com/watch?v=ROor6_NGIWU 58:00
 ** watch apache.org
 
+leiningen: Retrieving from clojars
 * Lang
 Sentence structure changing - computer logs - subject at the end
 idioms, link sur FB, idioms - traduction + correcture

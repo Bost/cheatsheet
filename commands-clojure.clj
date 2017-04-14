@@ -40,6 +40,9 @@ https://opensource.google.com/projects/error-prone
 ;; leiningen : Run a task offline
 lein -o
 
+# upgrade prj dependencies
+lein ancient upgrade :check-clojure
+
 ;; create lighttable plugin
 ;; cd $LIGHTTABLE/deploy/plugins/ && lein new lt-plugin my-plugin
 

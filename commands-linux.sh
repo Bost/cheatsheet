@@ -40,7 +40,7 @@ mount | grep gvfs; cd ...
 # pdf: view file.pdf
 evince file.pdf
 
-# linux: systemd: net:
+# net: systemd:
 service network-manager restart
 
 # net: ubuntu: (edit) and re-read proxy definition
@@ -843,7 +843,7 @@ ssh user@host cat ./path/to/remotefile | diff ./path/to/localfile -
 # ssh: copy ssh keys to user@host to enable password-less ssh logins
 ssh-copy-id user@host
 
-# ssh: mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Will allow you to mount a folder security over a network
+# ssh: mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Mount a folder securely over a network
 sshfs name@server:/path/to/folder ./path/to/mount/point
 
 # virtualbox: mount shared folder
@@ -936,13 +936,13 @@ uniq
 # bash: sort and remove duplicate lines
 sort myfile.txt | uniq
 
-# networking: ping: traceroute: - check connection
+# net: ping: traceroute: - check connection
 mtr google.com
 ethtool eth0
 ip neigh show | grep REACHABLE
 ip link show
 
-# networking: ping: traceroute: - check connection
+# net: ping: traceroute: check connection
 mtr --report www.google.com
 
 # bash: query wikipedia for keyword
