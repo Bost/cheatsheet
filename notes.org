@@ -159,6 +159,7 @@ stuff
 ** watch apache.org
 
 * Lang
+Sentence structure changing - computer logs - subject at the end
 idioms, link sur FB, idioms - traduction + correcture
 spelling glyphs
 context representation
