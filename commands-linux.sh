@@ -70,7 +70,7 @@ gpg --verify file.sig file
 # fs: number of inodes; every file or directory requires 1 inode
 df -i
 
-# net: linux: windows: show or set the system\'s host name
+# net: linux: show host name
 hostname -i
 
 # mplayer: reset/+/- speed by 10% / toggle OSD states
@@ -589,47 +589,11 @@ syso/sysout
 # eclipse: Jump to next error
 Ctrl-.
 
-# windows: command line: logoff and force
-shutdown /l /f
-
-# windows: net: drive: drives: list mapped drives
-net use
-
-# windows: net: drive: drives: map \\sever\path under P:
-net use P: \\server\path
-
-# windows: net: drive: drives: unmap P:
-net use P: /delete
-
-# windows: user account information
-net user <username> /domain
-
-# windows: open ports
-netstat -a | find "LISTENING"
-
-# windows: set system variable system-wide
-setx NAME value /m
-
-# windows: save system info
-msinfo32 /report msinfo32.txt
-
-# windows: batch: line continuation
-^
-
-# windows: save system info
-systeminfo /s srvmain /u maindom\hiropln /p p@ssW23 /fo table
-
-# windows: Windows Management Instrumentation Command-Line (WMIC)
-wmic /?
-
 # init environment
 db2cmd -i -w db2clpsetcp
 
 # db2: license info / add license
 db2licm -l / db2licm -a db2conpe.lic
-
-# db2: windows:
-echo %DB2CLP%
 
 #
 db2 CONNECT TO database USER userID USING password
@@ -694,7 +658,7 @@ mysql show tables in dbaseName
 # describe table
 mysql show columns in tableName
 
-# mysql: cygwin: server start
+# mysql: server start
 /usr/bin/mysqld_safe &
 
 # oracle: execute script.sql
@@ -797,10 +761,6 @@ sha1sum -c file.sha1
 
 # solaris: sha1 checksum
 /usr/bin/digest -a sha1
-
-# win: checksum [HashAlgorithm] must be uppercased
-CertUtil -hashfile path\to\file SHA1
-CertUtil -hashfile path\to\file [HashAlgorithm]
 
 # solaris: wget
 /usr/sfw/bin/wget
