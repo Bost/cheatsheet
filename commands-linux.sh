@@ -1063,14 +1063,23 @@ sudo checkrestart
 # start COMMAND and kill it if it is running still after 5 sec
 timeout 5s COMMAND
 
-# net: 1 - online; else offline
+# net: retcode==1 - online; retcode!=1 offline
 nm-online --exit; echo "retcode: $?"
+
+# net: 1. connect
 nm-applet / man nmcli-examples
 
-# net: NetworkManager
-nmcli device disconnect wlan0
-nmcli device wifi connect GAULOISES_LIBERTE_TOUJOURS ifname wlan0
-nmcli general        # general status and operations
+# net: 1. connect
+nmcli --ask device wifi connect WIFIonICE
+
+# net: 2. wifi: general status and operations
+nmcli --ask device wifi list
+
+# net: 3. disconnect
+nmcli --ask device disconnect wlan0
+
+# net: general status and operations
+nmcli --ask general
 
 # rpm: display installed packages
 rpm -qa
