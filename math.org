@@ -452,9 +452,11 @@ A user can write WhyML programs directly and get correct-by-construction OCaml p
 - judge, jury, religion, boss, conviction "No bugs in my code!"
 - "I don't see why not": psycho (the oposing party must find argument)
 
-
-
 A mathematical proof is a verification of a proposition by a chain of logical deductions from a set of axioms
 
 Proposition is a statement that can be true or false.
 Predicate is a proposition whose truth depends on the values of variable(s).
+
+** Proof Theory
+   Proof of soundness, proof of completeness
+
