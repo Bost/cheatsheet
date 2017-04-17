@@ -118,18 +118,17 @@ Russells paradox - Barbiers dilema
 * Lambda Calculus: formal calculus for manipulating functions
 * Category Theory: abstract algebra of abstract functions: "The Arrows Count"
 ** Category ℂ = (Obj, hom, ◦, id)
-    Obj - Class of Objects: A, B, C, ...
-    hom - Morphisms (arrows): f, g, h, ...
-    ◦ - function c for composing morphisms: associative
-    ◦ - morphism composition: hom(A, B) × hom(B, C) → hom(A, C): g ◦ f; it's a partialy binary operation on Mor(CAT::)
-    A collection of arrows and morphism that can be composed if they are adjacent.
-    A structure packing structures of the same type (same category) and structure preserving mappings between them.
-    id - identity morphism on object A: id(A)
-    Small Category: all objects create a set and all morphisms create a set
-    Localy Small Category: ∀ A,B: Hom(A, B) is a set
-    Sheaf (Garbe, Faisceau, zvazok)- tool for tracking locally defined data
-    Presheaf: Functor F: ℂop → Set
-
+   Obj - Class of Objects: A, B, C, ... (Objs are in fact Types / Propositions)
+   hom - Morphisms (arrows): f, g, h, ... (morphisms are Computation / Proofs)
+   ◦ - function c for composing morphisms: associative
+   ◦ - morphism composition: hom(A, B) × hom(B, C) → hom(A, C): g ◦ f; it's a partialy binary operation on Mor(CAT::)
+   A collection of arrows and morphism that can be composed if they are adjacent.
+   A structure packing structures of the same type (same category) and structure preserving mappings between them.
+   id - identity morphism on object A: id(A)
+   Small Category: all objs and morphisms are sets
+   Localy Small Category: ∀ A,B: Hom(A, B) is a set
+   Sheaf (Garbe, Faisceau, zvazok)- tool for tracking locally defined data
+   Presheaf: Functor F: ℂop → Set
 ** Hom-Set(A, B):
    Homℂ(A, B) = {f: A → B} - set of all morphisms A → B in category ℂ (Objects of ℂ don't need to be sets)
 
@@ -151,6 +150,7 @@ Russells paradox - Barbiers dilema
 
     Individual monoids themselves give category
     Monoids with homomorphisms give category
+
 
 * Curry-Howard-Lambek correspondence: Logic <-> Type Theory <-> Category Theory:
   Function A -> B is a proof of logical implication A => B
@@ -396,6 +396,8 @@ predicate = vyrok = tvrdenie
 |             | (arbitrary properties can be prooven |                                          |
 |             | i.e. every single type is inhabited) |                                          |
 |             | (loop : A, loop = loop)              |                                          |
+|-------------+--------------------------------------+------------------------------------------|
+|             |                                      | ? Always terminates ?                    |
 
 * Modus pones: applications of a function to an argument
 Agda, Coq, Isabelle
@@ -414,7 +416,6 @@ inr(...) - injection to the right
 
 (A * B) and (A + B) could be seen as a product (e.g. join) and coproduct (e.g. disjoint union) of A and B
 
-* Category of Types (a.k.a Category of Proofs)
 * Theory of Reflexive Domain
 1:21 Video 2
 
