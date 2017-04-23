@@ -1069,11 +1069,11 @@ nm-online --exit; echo "retcode: $?"
 # net: 1. connect
 nm-applet / man nmcli-examples
 
-# net: 1. connect
-nmcli --ask device wifi connect WIFIonICE
-
-# net: 2. wifi: general status and operations
+# net: 1. wifi: general status and operations
 nmcli --ask device wifi list
+
+# net: 2. connect
+nmcli --ask device wifi connect WIFIonICE
 
 # net: 3. disconnect
 nmcli --ask device disconnect wlan0
