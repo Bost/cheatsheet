@@ -27,8 +27,7 @@ https://opensource.google.com/projects/error-prone
 ;; objname documentation / M-x cider-doc (C-c C-d C-d) / M-x cider-javadoc
 (clojure.repl/doc full.namespace/objname)
 
-;; block comment; NOTE: (comment) returns null
-
+;; sexp / block comment; the block comments sexp returns nil
 #_(foo 1 2)/ (comment foo 1 2)
 
 ;; print stack trace: (/ 1 0) (pst)
@@ -40,8 +39,8 @@ https://opensource.google.com/projects/error-prone
 ;; leiningen : Run a task offline
 lein -o
 
-# upgrade prj dependencies
-lein ancient upgrade :check-clojure
+;; upgrade prj dependencies in shell
+lein ancient upgrade :interactive :check-clojure :no-tests
 
 ;; create lighttable plugin
 ;; cd $LIGHTTABLE/deploy/plugins/ && lein new lt-plugin my-plugin
