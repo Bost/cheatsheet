@@ -478,7 +478,7 @@ grep "String" * | cut -f1 -d:
 # grep: find: recursive search for "String" in ... (with '.' at the end)
 grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{el,clj,cljs,cljc} ./
 
-# grep: find: recursive search for "String" in ... (with '.' at the end)
+# grep: find: grep-help: recursive search for "String" in ... (with '.' at the end)
 grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{log,propeties,cfg,txt} ./
 
 # grep: search for "String" in *.txt files (with spaces in filenames)
