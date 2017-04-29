@@ -89,9 +89,10 @@
   Dictator - single agent whose preferencies always determine the social ordering
   Arrows Theorem - any social welfare function that is pareto efficient and independent of irrelevant alternatives is dictatorial
 
-* TODO
-1. write down action profiles for everyone (the matrix) and calculate optimal mixed strategies for everyone in order to get NE
-2. Calculate maxmin strategy and maxmin value (i.e. when the other guys do max harm the i-guy)
+* TODO Nash Equilibrum
+1. Write action profiles for everyone (the matrix)
+2. Calculate optimal mixed strategies for everyone in order to get Nash Equilibrum
+3. Calculate maxmin strategy and maxmin value (i.e. when the other guys do max harm to the i-th guy)
 
 ** games beyond 2x2 (See the 2-4 Hardness lecture):
    Linear Complementarity formulation
