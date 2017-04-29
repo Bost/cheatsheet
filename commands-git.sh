@@ -123,7 +123,13 @@ git push -u origin master
 .git/config: url = https://Bost@github.com/Bost/reponame.git
 
 # search entire commit history
-git log -S'textToSearch'
+git log -S "textToSearch"
+
+# search entire commit history; also in refs (see git help log)
+git log -S "textToSearch" --source --all
+
+# search for occurences of function foo
+git log -G "^(\s)*function foo[(][)](\s)*{$" --source --all
 
 # ignore line ending changes
 git config --global core.autocrlf true

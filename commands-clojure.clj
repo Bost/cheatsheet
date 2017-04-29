@@ -91,7 +91,7 @@ lein ancient upgrade :interactive :check-clojure :no-tests
 ;; Type Hints: http://clojure.org/reference/java_interop#typehints
 (defn hinted (^String []) (^Integer [a]) (^java.util.List [a & args])) ;; return vals
 
-;; backtick: ` apostrophe: ' tilda: ~ see http://stackoverflow.com/a/17810391
+;; macro: backtick: ` apostrophe: ' tilda: ~ see http://stackoverflow.com/a/17810391
 '(+ x x) => (+ x x) ;; symbol-name quoted exactly
 `(+ x x) = > (clojure.core/+ user/x user/x) ;; symbol-name quoted with namespace
 `(+ ~'x x) => (clojure.core/+ x user/x) ;; when using ~ inside ` then the form is unquoted
