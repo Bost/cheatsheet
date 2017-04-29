@@ -1,5 +1,3 @@
-- TODO: install scheme; see what Ambrose et. al have done
-- TODO use trace to analyse examples from "The Reasonable Schemer"
 - recursive calls - creates "triangle" on the stack
 - stack space constrains can be avoided by "registering" (functions params turned to registers)
 - meaning of call with continuations is important for type theory
@@ -151,7 +149,6 @@ Russells paradox - Barbiers dilema
     Individual monoids themselves give category
     Monoids with homomorphisms give category
 
-
 * Curry-Howard-Lambek correspondence: Logic <-> Type Theory <-> Category Theory:
   Function A -> B is a proof of logical implication A => B
   Direct relationship between computer programs and mathematical proofs; from 1940-ties
@@ -243,7 +240,6 @@ Difference Rule: P(B − A) = P(B) - P(A ∩ B)
 Inclusion-Exclusion: P(A ∪ B) = P(A) + P(B) − P(A ∩ B)
 Boole’s Inequality: P(A ∪ B) <= P(A) + P(B)
 Monotonicity: If A ⊆ B then P(A) <= P(B)
-
 ** Ordinary conditional probability P(A ∣ B) = P(A ∩ B) / P(B):
 
 | Objective Health | Objective Health | Test result  | Test result | Outcome probability | Event T ∩ H:                      |
@@ -330,14 +326,11 @@ Bodil Stokke
                    - aymetric: a ≤ b and b ≤ a then a = b
 ** TODO Pointed Set
 ** TODO Pointed Function
-
 ** TODO Top (Topological Space)
 ** eval, exponent in Category Theory
 ** Propositional Logic
 * TODO Definitions
-
 Simplices - analogs of triangles in higher dimensions
-
 * Homology - higher dimensional analogues for studying loops = (alternative to) Homotopy groups
 * Fundamental group π₂ - "loops of loops" (loops around sphere - captuers 2-dimensional hole in the sphere)
   πₙ(S-k-upper-index) Homotopy group exists even if n > k; measuring higher dimensional holes in k dimensional sphere
