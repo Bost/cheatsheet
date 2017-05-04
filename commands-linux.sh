@@ -822,7 +822,7 @@ https://forum.manjaro.org/t/cant-switch-windows-with-super-tab/2406/4
 # xfce: keyboard; shortcuts
 xfce4-keyboard-settings
 
-# xfce: keyboard; shortcuts
+# xfce: keyboard; shortcuts; http://docs.xfce.org/xfce/xfconf/xfconf-query
 xfconf-query -c xfce4-keyboard-shortcuts -lv
 
 # xfce: keyboard; changes in the xml don't work, use xfce4-settings-editor
