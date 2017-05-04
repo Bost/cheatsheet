@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# windows alternative to locate / which
+where telnet
+
 # net: windows: show or set host name
 hostname -i
 
