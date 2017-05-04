@@ -816,8 +816,17 @@ find . -name "*.jar" | xargs grep File.class
 # xfce: ubuntu: popup: message: desktop notification
 notify-send "Hello World"
 
-# xfce: keyboard
+# xfce: keyboard; shortcuts
+https://forum.manjaro.org/t/cant-switch-windows-with-super-tab/2406/4
+
+# xfce: keyboard; shortcuts
 xfce4-keyboard-settings
+
+# xfce: keyboard; shortcuts
+xfconf-query -c xfce4-keyboard-shortcuts -lv
+
+# xfce: keyboard; changes in the xml don't work, use xfce4-settings-editor
+locate xfce4-keyboard-shortcuts.xml
 
 # xfce: gnome: logout
 gnome-session-quit / xfce4-session-logout
