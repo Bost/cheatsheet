@@ -45,6 +45,9 @@ lein -o
 ;; upgrade prj dependencies in shell
 lein ancient upgrade :interactive :check-clojure :no-tests
 
+;; run multiple tasks
+lein do clean, repl
+
 ;; create lighttable plugin
 ;; cd $LIGHTTABLE/deploy/plugins/ && lein new lt-plugin my-plugin
 
