@@ -1,5 +1,8 @@
 (ns cheatsheet)
 
+;; destructure hashmap
+(let [{a :a b :b} m] ...)
+
 ;; Common Lisp Object System
 CLOS
 
