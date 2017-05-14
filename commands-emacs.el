@@ -333,7 +333,11 @@ M-x shell / eshell
 ;; sql: db2: execute script.sql
 M-x eshell; cmd; db2init; c46; \[f12\]
 
-;; dired: <a href="http://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf">http://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf</a>
+;; dired: Dired Refecene Card / Cheatsheet
+http://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf
+
+;; dired: zip: compress or uncompress (extract) file
+Z
 
 ;; dired: start dired and create newfile
 C-x C-f ENTER / <newfile>
