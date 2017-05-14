@@ -9,24 +9,10 @@
 
 ;; deatch = chaos and entropy (AI)
 
-;; painting with AI 
-
-
 ; concept of gravity
-; Music & Complexity (overtone)
-; celular automata - cell dyies or is born - play a tone
+; Music & Complexity (overtone) celular automata - cell dyies or is borns: play a tone
 
 ; data from satelite in Mexico
-
-; language words as a sound & tones
-
-; git branch on the bash prompt
-
-; model of musical creativity
-
-; allusion - Anspielung, Hinweis
-
-; Markov model
 
 ; learning inference of knowledge
 
@@ -35,5 +21,3 @@
 
 ; Machines are not conscius - an objection against machine creativity
 ; Eric Cohen
-
-; harmony and/vs. rythm

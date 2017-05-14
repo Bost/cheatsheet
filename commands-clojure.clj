@@ -146,3 +146,6 @@ lein repl :headless :host 0.0.0.0 :port <portNr>
 (clean-builds [id ..])     ; figwheel: deletes compiled cljs target files
 (print-config [id ...])    ; figwheel: prints out build configurations
 (fig-status)               ; figwheel: displays current state of system
+;; figwheel: <Exit: Control+C or :cljs/quit
+
+;; ➊ ➋ ➌ ➍ ➎ ➏ ➐ ➑ ➒

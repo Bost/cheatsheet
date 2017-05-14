@@ -1,11 +1,10 @@
 * Java & Clojure: clojure in emacs
 ** Clojure
-*** AI:  nuroko.com
+*** language words as a sound & tones; celular automata: cell dyies / is born: play a tone
+*** AI:  nuroko.com; painting
 *** recursion - Clojure Tail Call Optimizer https://github.com/cjfrisz/clojure-tco
 
 ** Java & JVM
-*** Lambdas
-*** How to read "instance of" (see the notes from training)
 *** Based on stack-based processor
 *** Statically typed instruction set
 *** http://www.root.cz/clanky/pohled-pod-kapotu-jvm-5-cast-popis-virtualniho-stroje-javy/
@@ -30,7 +29,7 @@ slime-connect
 * Math
 ** dependency tree
 ** game theory
-** Markov chain - Market transitions http://youtu.be/o-jdJxXL_W4?t=7m3s
+** Markov chain (model): Market transitions http://youtu.be/o-jdJxXL_W4?t=7m3s
 ** fractals
    http://blog.sciencevsmagic.net/science/fractal-machine/
 
@@ -41,10 +40,6 @@ slime-connect
 *** Backup on paper
 *** Curated resources https://github.com/McFrankline/Blockchain-stuff
 ** bootstrap-css
-** CoffeeKup
-   html ->
-     head ->
-       body ->
 
 * People
 ** Susanne
@@ -60,21 +55,8 @@ slime-connect
   - bicycle clickies - Thomas
 ** Michael::
   - http://www.ted.com/talks/matt_ridley_when_ideas_have_sex.html
-  - fluidui
-  - repondre a l'email avec PyMath
 
-* Youtube
-** TEDxDUBLIN - Josh Klein - Hacking Work:: http://www.youtube.com/watch?v=H07pbDhBgXg
-** Fake Science:: http://fakescience.tumblr.com/post/1292427190/high-fructose-corn-syrup
-** Good links:: http://www.youtube.com/watch?v=i8t53Ak_yrQ
-
-
-* Physics:
-** high school : http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html
-** http://www.sixtysymbols.com/
-** http://www.youtube.com/user/1veritasium
-
-** orgmode:
+* OrgMode:
 *** org mode - tagging                                                  :org:
 
 | col1    | col2          |
@@ -147,10 +129,11 @@ stuff
 ** macros
 
 * Rest
+** Syntax of log files changes (speach) sentence structure: subject comes at the end of line
+** Music: what is the relation between harmony and ryth; model of musical creativity
+** How represent speach context 
 ** time bank
 ** sync files across computers:
-** sugar sync, dropbox, ubuntu one (problem with .git)
-
 ** Peter Norvig / Stuart Russell: Artificial Intelligence: A Modern Approach
 ** dokaz identity bez udania mena
 ** /usr/bin/fish findFile - ecrire un alias pour un lettre
@@ -158,13 +141,9 @@ stuff
 ** stuff to datomic - ?git has no services? http://www.youtube.com/watch?v=ROor6_NGIWU 58:00
 ** watch apache.org
 
-leiningen: Retrieving from clojars
 * Lang
-Sentence structure changing - computer logs - subject at the end
 idioms, link sur FB, idioms - traduction + correcture
 spelling glyphs
-context representation
-comprehension - facile, s'exprimer - difficile
+Comprehension - facile, s'exprimer - difficile
 linguee.com - eu-texts
 le Svejk, l'Etrangeur - examples.
-AI
