@@ -71,7 +71,6 @@
 
 
 
-
 * Hierarchy:
 ** what is needed to understand X:
    a big tree and paths through this tree
