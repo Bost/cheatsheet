@@ -109,6 +109,9 @@ sudo update-alternatives --config gnome-www-browser
 # dpkg:
 sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update
 
+# dpkg:
+list_ppa.sh; sudo ppa-purge ppa:ethereum/ethereum-qt
+
 # java:
 sudo apt-get install openjdk-8-jdk / sudo apt-get install oracle-java8-set-default
 
