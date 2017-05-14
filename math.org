@@ -364,7 +364,7 @@ Simplices - analogs of triangles in higher dimensions
   (lambda x.Beta)Alpha = [Alpha/x]Beta
   (lambda x.f)x = f
 
-* Type Theory
+* Type Theory: Extention of lambda calculus with explicit types
 ** ITT Inentional Type Theory
 ** OTT Observational Type Theory
 Type of a Variable - a set(?) of possible values of that type
@@ -398,9 +398,8 @@ predicate = vyrok = tvrdenie
 |-------------+--------------------------------------+------------------------------------------|
 |             |                                      | ? Always terminates ?                    |
 
-* Modus pones: applications of a function to an argument
-Agda, Coq, Isabelle
-
+* Modus Pones: applications of a function to an argument: Agda, Coq, Isabelle
+** MP naturally generalizes to instationation of universal quantifiers
 * Goedel's Incompleteness Theorem:
  Every principle is either (A) too restrictive or (leaves out a good programm) or (B) not restrictive enough (allows some bad programs).
 * Full employment Theorem: take (A) and search for a new class to add in order to improve the language withouth allowing bad programs.

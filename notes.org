@@ -1,9 +1,10 @@
 * Java & Clojure: clojure in emacs
 ** Clojure
-*** language words as a sound & tones; celular automata: cell dyies / is born: play a tone
-*** AI:  nuroko.com; painting
-*** recursion - Clojure Tail Call Optimizer https://github.com/cjfrisz/clojure-tco
-
+*** recursion: Clojure Tail Call Optimizer https://github.com/cjfrisz/clojure-tco
+*** dashing: drawing with certain velocity
+*** cljart <3
+*** defrecord is a cartesian product
+*** GeoREPL
 ** Java & JVM
 *** Based on stack-based processor
 *** Statically typed instruction set
@@ -30,15 +31,14 @@ slime-connect
 ** dependency tree
 ** game theory
 ** Markov chain (model): Market transitions http://youtu.be/o-jdJxXL_W4?t=7m3s
+*** Dragan Djuric: Clojure on GPU
+
 ** fractals
    http://blog.sciencevsmagic.net/science/fractal-machine/
 
 * Technology
 ** http://www.zdrojak.cz/clanky/tvorba-moderniho-e-shopu-dokonceni-uzivatelske-casti/
 ** Sequence of QR Codes/ graphical elements (pyramide, cube, sphere, toroid, etc.)
-** BTC
-*** Backup on paper
-*** Curated resources https://github.com/McFrankline/Blockchain-stuff
 ** bootstrap-css
 
 * People
@@ -122,21 +122,9 @@ private int returnCountOfDifferentPixels(String pic1, String pic2) {
 stuff
 :END:
 
-** Create experience dbase
-** android app:: picture comparision
-** put together:: chess ** languages **
-** problemy tazke pre comp, lahke pre cloveka (arimaa - until 2020, etc.)
-** macros
-
 * Rest
-** Syntax of log files changes (speach) sentence structure: subject comes at the end of line
-** Music: what is the relation between harmony and ryth; model of musical creativity
-** How represent speach context 
 ** time bank
-** sync files across computers:
-** Peter Norvig / Stuart Russell: Artificial Intelligence: A Modern Approach
 ** dokaz identity bez udania mena
-** /usr/bin/fish findFile - ecrire un alias pour un lettre
 ** google lab tags http://www.chromeweblab.com/en-GB/lab-tag-explorer
 ** stuff to datomic - ?git has no services? http://www.youtube.com/watch?v=ROor6_NGIWU 58:00
 ** watch apache.org

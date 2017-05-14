@@ -30,5 +30,24 @@
 
 
 * Bayesian vs. Machine Learning
-
 td;dpa - too long; didn't pay attention
+
+* AI:  nuroko.com; painting
+
+* Peter Norvig / Stuart Russell: Artificial Intelligence: A Modern Approach
+
+* Syntax of log files changes (speach) sentence structure: subject comes at the end of line
+* Music: what is the relation between harmony and ryth; model of musical creativity
+* How represent speach context?
+* Create experience dbase
+* android app:: picture comparision
+* put together:: chess ** languages **
+* problemy tazke pre comp, lahke pre cloveka (arimaa - until 2020, etc.)
+* macros
+
+* Lang words as a sound: celular automata: cell dyies / is born: play a tone
+* Society by Niklas Luhmann: (People are) recursing, self referencing systems of communication
+** specialisations
+** mastery  vs. novelty (expensive)
+** dealing with complexity of options
+

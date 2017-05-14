@@ -1,3 +1,7 @@
+;; utf8
+;; ➊ ➋ ➌ ➍ ➎ ➏ ➐ ➑ ➒
+
+;; modeline:?
 ;; -*- mode: emacs-lisp -*-
 
 ;; spacemacs search

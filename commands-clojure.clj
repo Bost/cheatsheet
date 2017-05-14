@@ -148,4 +148,8 @@ lein repl :headless :host 0.0.0.0 :port <portNr>
 (fig-status)               ; figwheel: displays current state of system
 ;; figwheel: <Exit: Control+C or :cljs/quit
 
-;; ➊ ➋ ➌ ➍ ➎ ➏ ➐ ➑ ➒
+;; like lein but for node.js
+gulp
+
+;; map: can be well parallelized / reduce:  difficult to parallelize
+(map) / (reduce)
