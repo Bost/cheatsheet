@@ -28,10 +28,7 @@ slime-connect
   - abstractions; no bespoke protocols and formats
 
 * Math
-** dependency tree
 ** game theory
-** Markov chain (model): Market transitions http://youtu.be/o-jdJxXL_W4?t=7m3s
-*** Dragan Djuric: Clojure on GPU
 
 ** fractals
    http://blog.sciencevsmagic.net/science/fractal-machine/

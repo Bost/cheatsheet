@@ -84,6 +84,10 @@
 ** Nash Equilibrum (NE)
    Each player gives best response to the others
    Nobody has an incentive to deviate from their actions if an equilibrum is played
+*** Nash Equilibrum TODOs:
+**** 1. Write action profiles for everyone (the matrix)
+**** 2. Calculate optimal mixed strategies for everyone in order to get Nash Equilibrum
+**** 3. Calculate maxmin strategy and maxmin value (i.e. when the other guys do max harm to the i-th guy)
 ** Pareto Efficiency: whenever all agents agree on ordering of outcomes the social welfare function selects that ordering
 *** Independence of Irrelevant Alternatives
     if the selected ordering between two outcomes depends only on the relative
@@ -94,11 +98,12 @@
     any social welfare function that is pareto efficient and independent of
     irrelevant alternatives is dictatorial
 
-* TODO Nash Equilibrum
-1. Write action profiles for everyone (the matrix)
-2. Calculate optimal mixed strategies for everyone in order to get Nash Equilibrum
-3. Calculate maxmin strategy and maxmin value (i.e. when the other guys do max harm to the i-th guy)
-
+** Markov chain (model): Market transitions http://youtu.be/o-jdJxXL_W4?t=7m3s
+*** Dragan Djuric: Clojure on GPU
+*** Bayadera (Bayesian): very fast
+    Bayesian is hard to compute, multi model, many dimensional problem, complex hyperspace
+    Markov Chain Monte Carlo simulations (MCMC): difficult to parallelize
+*** JAGS/Stan (state-of-the-art bayesian C++ tools)
 ** games beyond 2x2 (See the 2-4 Hardness lecture):
    Linear Complementarity formulation
    Support Enumeration Method
@@ -335,14 +340,15 @@ Bodil Stokke
 ** TODO Top (Topological Space)
 ** eval, exponent in Category Theory
 ** Propositional Logic
-* TODO Definitions
-Simplices - analogs of triangles in higher dimensions
-* Homology - higher dimensional analogues for studying loops = (alternative to) Homotopy groups
-* Fundamental group π₂ - "loops of loops" (loops around sphere - captuers 2-dimensional hole in the sphere)
+
+* Homology: higher dimensional analogues for studying loops = (alternative to) Homotopy groups
+** Simplices: analogs of triangles in higher dimensions
+* Fundamental group π₂: "loops of loops"
+  Loops around sphere: captuers 2-dimensional hole in the sphere
   πₙ(S-k-upper-index) Homotopy group exists even if n > k; measuring higher dimensional holes in k dimensional sphere
   "Patri" - containment relation
 
-* Homotopy theory -  the indea of paths in a space
+* Homotopy theory: paths in a space
 
 * Localy Cartesian Closed Category CCC:
   for every object X sliced category is a CCC
@@ -352,7 +358,7 @@ Simplices - analogs of triangles in higher dimensions
    i.e. any one-element set (= singleton) is terminal
    DTTO for poset 1 is such an object that any other object is below it
 
-* Universal Mapping Property - UMP
+* Universal Mapping Property (UMP)
   Consists of Initial and Terminal mapping (morphism).
   The 'double' triangle of Product;
 
@@ -376,7 +382,7 @@ Depandent type theory is the master theory of all programming languages. If you 
 Maybe Type: A or B (e.g. A or Fail, A or AirMessage)
 
 * Linear Logic
-has the notion of Limited resources - has operations of Construction and Descruction
+  Deals with limited resources: has operations of Construction and Descruction
 * Axiom of Choice - see "Type Theory Foundations, Lecture 3-wJLTE8rnqH0.mp4"
 "the greatest intelectual achievement???"
 
@@ -409,10 +415,10 @@ predicate = vyrok = tvrdenie
 ** Use morphism from "complicated" Types (i.e. Products consisting of many Types. E.g. maps each having many keys) to subsets of (if possible natural) numbers.
    These subsets should be in fact monads
 
-inl(...) - injection to the left
-inr(...) - injection to the right
+   inl(...) - injection to the left
+   inr(...) - injection to the right
 
-(A * B) and (A + B) could be seen as a product (e.g. join) and coproduct (e.g. disjoint union) of A and B
+   (A * B) and (A + B) could be seen as a product (e.g. join) and coproduct (e.g. disjoint union) of A and B
 
 * Theory of Reflexive Domain
 1:21 Video 2
@@ -430,31 +436,30 @@ Intuitionistic (Constructive) Logic deals with endless resources and doesn't
 need any constructors/destructors
 
 * Impossibility of a perfect type-checker for a programming language
-It it’s impossible to have a procedure that figures out whether an arbitrary
-program halts, it’s easy to show that it’s impossible to have a procedure that
-is a perfect recognizer for any overall run time property.
+  It it’s impossible to have a procedure that figures out whether an arbitrary
+  program halts, it’s easy to show that it’s impossible to have a procedure that
+  is a perfect recognizer for any overall run time property.
 
-A program that type-checks is guaranteed not to cause a run-time type-error.
-But since it’s impossible to recognize perfectly when programs won’t cause
-type-errors, it follows that the type-checker must be rejecting programs that
-really wouldn’t cause a type-error. The conclusion is that no type-checker is
-perfect—you can always do better!
+  A program that type-checks is guaranteed not to cause a run-time type-error.
+  But since it’s impossible to recognize perfectly when programs won’t cause
+  type-errors, it follows that the type-checker must be rejecting programs that
+  really wouldn’t cause a type-error. The conclusion is that no type-checker is
+  perfect—you can always do better!
 * Krakatoa and Jessie: verification tools for Java and C programs
-Why3: platform for deductive program verification
-git clone https://scm.gforge.inria.fr/anonscm/git/why3/why3.git
-A user can write WhyML programs directly and get correct-by-construction OCaml programs through an automated extraction mechanism
+  Why3: platform for deductive program verification
+  git clone https://scm.gforge.inria.fr/anonscm/git/why3/why3.git
+  A user can write WhyML programs directly and get correct-by-construction OCaml programs through an automated extraction mechanism
 
 * Proof:
-- experiment, observation
-- sampling, counter examples
-- judge, jury, religion, boss, conviction "No bugs in my code!"
-- "I don't see why not": psycho (the oposing party must find argument)
+  Proof Theory: Proof of soundness, proof of completeness
 
-A mathematical proof is a verification of a proposition by a chain of logical deductions from a set of axioms
+  experiment, observation
+  sampling, counter examples
+  judge, jury, religion, boss, conviction "No bugs in my code!"
+  "I don't see why not": psycho (the oposing party must find argument)
 
-Proposition is a statement that can be true or false.
-Predicate is a proposition whose truth depends on the values of variable(s).
+  A mathematical proof is a verification of a proposition by a chain of logical deductions from a set of axioms
 
-** Proof Theory
-   Proof of soundness, proof of completeness
+  Proposition is a statement: can be true or false
+  Predicate is a proposition: truth depends on the values of variable(s)
 
