@@ -8,25 +8,25 @@
 ** Metropolis: will provide a full Mist Browser able to open any DApp (Ethereum Wallet will be one of them)
 
 * Terminology
-Debt
+  Debt
     Bond - Verzinsliches Wertpapier - Dlhopis
 
-Asset - Vermoegen
-Liability - Verbindlichkeit - Pasiva
+  Asset - Vermoegen
+  Liability - Verbindlichkeit - Pasiva
 
-Equity - Eigenkapital
+  Equity - Eigenkapital
     Stock
     Stock price = Share price (kurz cenneho papiera)
 
-Share - Aktie
+  Share - Aktie
     E / S = Share price
-Market cap(italization) - Marktkapitalisierung - Trzna hodnota
+    Market cap(italization) - Marktkapitalisierung - Trzna hodnota
 
-EPS - Earnings Per Share
-ROA - Return On Asset = PreTax / Asset
-ROE - Return on Equity = NetIncome / Equity
+  EPS - Earnings Per Share
+  ROA - Return On Asset = PreTax / Asset
+  ROE - Return on Equity = NetIncome / Equity
 
-Book Value per Share = ... / Equity
-Market Value per Share = ... / Equity
+  Book Value per Share = ... / Equity
+  Market Value per Share = ... / Equity
 
-P/E = Price / Earnings
+  P/E = Price / Earnings
