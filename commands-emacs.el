@@ -390,7 +390,7 @@ C-s / C-r
 ;; query-replace-regexp
 C-M-%
 
-;; execute command and read-in its output
+;; execute command and read-in (capture) its output
 C-u M-! command
 
 ;;
