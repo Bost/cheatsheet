@@ -43,7 +43,7 @@ https://opensource.google.com/projects/error-prone
 lein -o
 
 ;; upgrade prj dependencies in shell
-lein ancient upgrade :interactive :check-clojure :no-tests
+lein ancient upgrade :all :interactive :check-clojure :no-tests
 
 ;; run multiple tasks
 lein do clean, repl
