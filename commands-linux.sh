@@ -61,13 +61,13 @@ sudo nethogs wlan0
 # top: htop: explained
 https://peteris.rocks/blog/htop/
 
-# download and import gnu-keyring
+# gpg: sig: download and import gnu-keyring
 wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg && gpg --import gnu-keyring.gpg
 
 # wget:
 wget --limit-rate=20k http://www-ftp.lip6.fr/pub/linux/distributions/Ubuntu/releases/15.04/ubuntu-15.04-desktop-amd64.iso
 
-# verify file
+# gpg: sig: verify file
 gpg --verify file.sig file
 
 # fs: number of inodes; every file or directory requires 1 inode
@@ -232,11 +232,14 @@ sudo !!
 # real and effective user and group IDs
 id user
 
-# networking: DNS lookup: convert names <-> IP addresses
-host google.com
+# net: networking: DNS lookup: convert names <-> IP addresses
+host www.google.com
 
-# get ip address from domain
+# net: get ip address from domain
 nslookup www.google.com | tail -2 | head -1 | awk "{print $2}"
+
+# net: DNS lookup utility; domain information groper
+dig www.google.com
 
 # scripting: loc_variable - visible only within given code block
 local loc_variable=value

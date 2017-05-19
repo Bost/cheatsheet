@@ -33,7 +33,7 @@ msinfo32 /report msinfo32.txt
 # windows: batch: line continuation
 ^
 
-# windows: save system info
+# windows: OS version; save system info
 systeminfo /s srvmain /u maindom\hiropln /p p@ssW23 /fo table
 
 # windows: Windows Management Instrumentation Command-Line (WMIC)
