@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1
 
+# query an LDAP server from the command line with ldap-utils: ldapsearch, ldapadd, ldapmodify
+ldap-utils
+
 # finds bugs in shell scripts
 http://www.shellcheck.net/
 
