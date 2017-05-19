@@ -1,6 +1,12 @@
 #!/bin/bash
 exit 1
 
+# arp: Displays and modifies the IP-to-Physical address translation tables used by address resolution protocol (ARP).
+arp -a
+
+# arp: find the media access control address of a network neighbour for a given IPv4 Address
+arp
+
 # query an LDAP server from the command line with ldap-utils: ldapsearch, ldapadd, ldapmodify
 ldap-utils
 
