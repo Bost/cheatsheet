@@ -93,3 +93,7 @@ find . -name "*.jar" | xargs grep File.class
 
 # bash: find images
 find . -type f -exec file {} \; | grep -o -P '^.+: \w+ image'
+
+find ~/Pictures -type f -newer
+find ~/Pictures -type f -not -newer "oct 01 2008"
+
