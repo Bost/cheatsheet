@@ -48,6 +48,9 @@ lein ancient upgrade :all :interactive :check-clojure :no-tests
 ;; run multiple tasks
 lein do clean, repl
 
+;;
+lein cljsbuild test
+
 ;; create lighttable plugin
 ;; cd $LIGHTTABLE/deploy/plugins/ && lein new lt-plugin my-plugin
 
