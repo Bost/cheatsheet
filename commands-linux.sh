@@ -879,6 +879,9 @@ youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] URL
 # mounted filesystems - nice layout
 mount | column -t
 
+# align csv file
+cat data.csv | column -t -s ';'
+
 # xml: command line XML tool (formating)
 xmllint
 
