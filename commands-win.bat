@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Microsoft Management Console
+mmc
+
 # windows alternative to locate / which
 where telnet
 

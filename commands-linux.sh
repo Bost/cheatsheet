@@ -1134,6 +1134,14 @@ mvn package
 # SFTP / FTPS
 SSH File Transfer from the OpenSSH / FTP over SSL
 
+# HSTS: HTTP Strict Transport Security:
+"This web always encrypts. And it does so using trusted certificate"
+chrome://net-internals/#hsts
+
+# HPKP: HTTP Public Key Pinning; Similair to HSTS header
+Create your HPKP hash: https://report-uri.io/home/pkp_hash
+
+
 # * TODO add this:
 # git remote add --track develop upstream https://github.com/Lokaltog/powerline.git
 # * TODO add bash file tests to the list
