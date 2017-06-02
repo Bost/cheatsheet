@@ -125,6 +125,36 @@ Russells paradox - Barbiers dilema
 * Morphisms:
 * Lambda Calculus: formal calculus for manipulating functions
 * Category Theory: abstract algebra of abstract functions: "The Arrows Count"
+** Cartesian Closed Category CCC:
+*** has products A x B and exponentials B^A for any pair of objs A, B
+*** has terminal obj 1 (Exists unique map A → 1) (dual of 1 is the initial obj; Top and Bottom objs)
+   i.e. any one-element set (= singleton) is terminal
+   DTTO for poset 1 is such an object that any other obj is below it
+** Localy CCC: for every object X sliced category is a CCC
+** Universal Mapping Property (UMP)
+  Consists of Initial and Terminal mapping (morphism). The 'double' triangle of Product
+** Bartosz Milewsky:
+   Most important features of a category: Composability, Identity
+   Example in programming: Category of Types and Functions (set and functions between sets)
+*** Designing computer language:
+    Semantics must be provided; done by providing operational semantics
+    None of  the main prog. languages have (operational semantics) only partially provided;
+    Two ways of defining semantics:
+    - Operational: "How it executes"
+    - Denotational: mapping into mathematics
+
+*** Cartesian Product CP: set of all pairs
+    Relation: A subset of CP; doesn't have a directionality; n-to-n relation
+*** Functions: (Sets and functions between sets)
+    Pure: must be memoizable (lookup table)
+    Total: defined for all arguments
+    Partial: defined only for some arguments
+    Directionality (arrow from->to i.e. functions are not symetric); n-to-1 relation
+    - Inverse of function is not guaranteed to exist
+
+    Domain, Codomain, Image
+
+
 ** Category ℂ = (Obj, hom, ◦, id)
    Obj - Class of Objects: A, B, C, ... (Objs are in fact Types / Propositions)
    hom - Morphisms (arrows): f, g, h, ... (morphisms are Computation / Proofs)
@@ -216,7 +246,7 @@ Functor:
     Morphisms - functions 'less/greater or equal than'
 
 * Tensor: most general bilinear operation; Notation ⊗
-* Isomorphism (bijection of set):
+* Isomorphism (bijection when f is a function on set / sets):
   ∀ f: X → Y  there ∃ g: Y → X such that g ∘ f = idX and f ∘ g = idY; idX, idY are identity morphisms on X, Y
   (f is invertible and g is the inverse of f)
 
@@ -349,17 +379,6 @@ Bodil Stokke
 
 * Homotopy theory: paths in a space
 
-* Localy Cartesian Closed Category CCC:
-  for every object X sliced category is a CCC
-* Cartesian Closed Category CCC:
-** it has products  A x B and exponentials B^A for any pair of objects A, B
-** it has terminal object 1 (Exists unique map A → 1) (dual is initial object; Top and Bottom Objects)
-   i.e. any one-element set (= singleton) is terminal
-   DTTO for poset 1 is such an object that any other object is below it
-
-* Universal Mapping Property (UMP)
-  Consists of Initial and Terminal mapping (morphism).
-  The 'double' triangle of Product;
 
 * Beta β reduction (computational) / Eta η extentionality principle
   β reduction in computation: Simplify proofs by replacing formal params with terms.
@@ -380,8 +399,7 @@ Depandent type theory is the master theory of all programming languages. If you 
 
 Maybe Type: A or B (e.g. A or Fail, A or AirMessage)
 
-* Linear Logic
-  Deals with limited resources: has operations of Construction and Descruction
+* Linear Logic: Deals with limited resources: has Construction / Descruction operations
 * Axiom of Choice - see "Type Theory Foundations, Lecture 3-wJLTE8rnqH0.mp4"
 "the greatest intelectual achievement???"
 
@@ -461,4 +479,3 @@ need any constructors/destructors
 
   Proposition is a statement: can be true or false
   Predicate is a proposition: truth depends on the values of variable(s)
-
