@@ -154,6 +154,18 @@ Russells paradox - Barbiers dilema
 
     Domain, Codomain, Image
 
+    | Latin      | Greek                |
+    |------------+----------------------|
+    | injective  | monic / monomorphism |
+    | surjective | epic / epimorphism   |
+
+** Fibre: a buch of points mapped to the same value; invertibility of a function to a fibre
+** Abstraction: i.e. non-invertibility
+   - from all properties (i.e. all points of a fibre) I'm interested only in one
+   - e.g. I'm not interested in what was the exact input value of a function,
+     I'm interested only if it was an even or odd value
+
+** Modeling: mapping / injecting
 
 ** Category ℂ = (Obj, hom, ◦, id)
    Obj - Class of Objects: A, B, C, ... (Objs are in fact Types / Propositions)
