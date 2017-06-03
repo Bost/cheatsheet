@@ -159,6 +159,12 @@ Russells paradox - Barbiers dilema
     | injective  | monic / monomorphism |
     | surjective | epic / epimorphism   |
 
+
+
+  Sum (+) and Product (*) are algebraic data types (Algebra on Types):
+  List(a) = Nil | Const a (List a) ~ L(a) = 1 + a * L(a) => .. => L(a) = 1 / (1 - a) =
+  = 1 + a + a*a + a*a*a + ...
+
 ** Fibre: a buch of points mapped to the same value; invertibility of a function to a fibre
 ** Abstraction: i.e. non-invertibility
    - from all properties (i.e. all points of a fibre) I'm interested only in one
