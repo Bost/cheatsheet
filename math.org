@@ -143,7 +143,9 @@ Russells paradox - Barbiers dilema
 * Category Theory: abstract algebra of abstract functions: "The Arrows Count"
 ** Cartesian Closed Category CCC:
 *** has products A x B and exponentials B^A for any pair of objs A, B
-*** has terminal obj 1 (Exists unique map A → 1) (dual of 1 is the initial obj; Top and Bottom objs)
+*** has terminal obj 1 (for all objs there exists an unique map A → 1)
+   - multiplying by terminal obj 1 gives back the original obj
+   - dual to terminal obj 1 is the initial obj; Top and Bottom objs
    i.e. any one-element set (= singleton) is terminal
    DTTO for poset 1 is such an object that any other obj is below it
 ** Localy CCC: for every obj X sliced category is a CCC
