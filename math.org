@@ -154,11 +154,14 @@ Russells paradox - Barbiers dilema
 
     Domain, Codomain, Image
 
-    | Latin      | Greek                |
-    |------------+----------------------|
-    | injective  | monic / monomorphism |
-    | surjective | epic / epimorphism   |
+    | Latin      | Greek                | Meaning                  | Functor  |
+    |------------+----------------------+--------------------------+----------|
+    | injective  | monic / monomorphism | distinct Xs → distinc Ys | Faithful |
+    | surjective | epic / epimorphism   | every elem in Y is used  | Full     |
+    |            |                      |                          |          |
 
+
+    Constant functor - collapses every obj into 1 obj and every morphism into an identity
 
 
   Sum (+) and Product (*) are algebraic data types (Algebra on Types):
