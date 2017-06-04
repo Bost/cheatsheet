@@ -290,11 +290,11 @@ Functor:
 ** Strict:     Surjection from X to Y but no bijection from Y to X; |X| < |Y| (? double usage of some Ys ?, "strictly bigger")
 
 * Probability:
-** Probability rules:
-Difference Rule: P(B − A) = P(B) - P(A ∩ B)
-Inclusion-Exclusion: P(A ∪ B) = P(A) + P(B) − P(A ∩ B)
-Boole’s Inequality: P(A ∪ B) <= P(A) + P(B)
-Monotonicity: If A ⊆ B then P(A) <= P(B)
+** Rules:
+   Difference: P(B − A) = P(B) - P(A ∩ B)
+   Inclusion-Exclusion: P(A ∪ B) = P(A) + P(B) − P(A ∩ B)
+   Boole’s Inequality: P(A ∪ B) <= P(A) + P(B)
+   Monotonicity: If A ⊆ B then P(A) <= P(B)
 ** Ordinary conditional probability P(A ∣ B) = P(A ∩ B) / P(B):
 
 | Objective Health | Objective Health | Test result  | Test result | Outcome probability | Event T ∩ H:                      |
@@ -342,9 +342,8 @@ Monotonicity: If A ⊆ B then P(A) <= P(B)
 ** A posteriori conditional probability P(B ∣ A) = P(A ∩ B) / P(B):
    if event B precedes event A in time. Example: The probability it was cloudy this morning, given that it rained in the afternoon.
 
-
 #+BEGIN_SRC clojure
-(defn x[] (+ 1 2))
+(defn x [] (+ 1 2))
 (x)
 #+END_SRC
 
