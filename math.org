@@ -1,9 +1,12 @@
 * bric-à-brac
-- recursive calls - creates "triangle" on the stack
-- stack space constrains can be avoided by "registering" (functions params turned to registers)
-- meaning of call with continuations is important for type theory
-- complicated controll structure - implement at first with continuations and then traditionally
-- solution of a Differential Equations (DE) is a function, not value.
+  recursive calls - creates "triangle" on the stack
+  stack space constrains can be avoided by "registering" (functions params turned to registers)
+  meaning of call with continuations is important for type theory
+  complicated controll structure - implement at first with continuations and then traditionally
+  solution of a Differential Equations (DE) is a function, not value.
+** UTF chars:
+   For all / every ∀
+   Exists ∃
 * Statistics:
 ** Data:
         Nominal Data                Interval / Ratio Data
