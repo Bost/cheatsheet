@@ -1,10 +1,9 @@
+* bric-à-brac
 - recursive calls - creates "triangle" on the stack
 - stack space constrains can be avoided by "registering" (functions params turned to registers)
 - meaning of call with continuations is important for type theory
 - complicated controll structure - implement at first with continuations and then traditionally
-
 - solution of a Differential Equations (DE) is a function, not value.
-
 * Statistics:
 ** Data:
         Nominal Data                Interval / Ratio Data
@@ -68,8 +67,6 @@
  relationships ┃  | independence    |       |                         |  ┃  ┃  | means (paired)    | ┃
            ┃  +-----------------+       +-------------------------+  ┃  ┃  +-------------------+ ┃
         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━    ━━━━━━━━━━━━━━━━━━━━━━
-
-
 
 * Hierarchy:
 ** what is needed to understand X:
@@ -154,19 +151,19 @@ Russells paradox - Barbiers dilema
 
     Domain, Codomain, Image
 
-    | Latin      | Greek                | Meaning                  | Functor  |
-    |------------+----------------------+--------------------------+----------|
-    | injective  | monic / monomorphism | distinct Xs → distinc Ys | Faithful |
-    | surjective | epic / epimorphism   | every elem in Y is used  | Full     |
-    |            |                      |                          |          |
+    | Latin      | Greek                | Meaning                    | Functor  |
+    |------------+----------------------+----------------------------+----------|
+    | injective  | monic / monomorphism | distinct Xs -> distinct Ys | Faithful |
+    | surjective | epic / epimorphism   | all Ys are used            | Full     |
 
+*** Functor:
+    - homomorphism between 2 categories
+    - in programming: total mapping of types; (total = all objs from the source are mapped)
+    - Constant functor: collapses all objs into 1 obj and all morphisms into an identity
 
-    Constant functor - collapses every obj into 1 obj and every morphism into an identity
-
-
-  Sum (+) and Product (*) are algebraic data types (Algebra on Types):
-  List(a) = Nil | Const a (List a) ~ L(a) = 1 + a * L(a) => .. => L(a) = 1 / (1 - a) =
-  = 1 + a + a*a + a*a*a + ...
+    Sum (+) and Product (*) are algebraic data types (Algebra on Types):
+    List(a) = Nil | Const a (List a) ~ L(a) = 1 + a * L(a) => .. => L(a) = 1 / (1 - a) =
+    = 1 + a + a*a + a*a*a + ...
 
 ** Fibre: a buch of points mapped to the same value; invertibility of a function to a fibre
 ** Abstraction: i.e. non-invertibility
@@ -175,8 +172,7 @@ Russells paradox - Barbiers dilema
      I'm interested only if it was an even or odd value
 
 ** Modeling: mapping / injecting
-
-** Category ℂ = (Obj, hom, ◦, id)
+   * Category ℂ = (Obj, hom, ◦, id)
    Obj - Class of Objects: A, B, C, ... (Objs are in fact Types / Propositions)
    hom - Morphisms (arrows): f, g, h, ... (morphisms are Computation / Proofs)
    ◦ - function c for composing morphisms: associative
@@ -188,9 +184,8 @@ Russells paradox - Barbiers dilema
    Localy Small Category: ∀ A,B: Hom(A, B) is a set
    Sheaf (Garbe, Faisceau, zvazok)- tool for tracking locally defined data
    Presheaf: Functor F: ℂop → Set
-** Hom-Set(A, B):
-   Homℂ(A, B) = {f: A → B} - set of all morphisms A → B in category ℂ (Objects of ℂ don't need to be sets)
-
+** HomSet(A, B): set of all morphisms A → B in category C (Objs of C don't need to be sets)
+   HomC(A, B) = {f: A → B}
 ** Representable Functor F: ℂ → Set
    "Representing objects and morphisms of C as sets and functions in Set"
    fix object A ∈ ℂ there is Homℂ(A, -): Homℂ(A, X) → Homℂ(A, Y) where there is a morphism X → Y
@@ -198,14 +193,13 @@ Russells paradox - Barbiers dilema
    The forgetful functor Grp → Set on the category of groups (G, *, e) is represented by (Z, 1).
    The forgetful functor Ring → Set on the category of rings is represented by (Z[x], x), the polynomial ring in one variable with integer coefficients.
    The forgetful functor Vect → Set on the category of real vector spaces is represented by (R, 1).
-   The forgetful functor Top → Set on the category of topological spaces is represented by any singleton topological space with its unique element.
-
-** Naturality condition:
-    G f ∘ αa = αb ∘ F f
-
-*** Homomorphism f: structure-preserving mapping between 2 algebraic structures (e.g. groups, rings, vector spaces).
+   The forgetful functor Top → Set on the category of topological spaces is represented by any singleton topological space with its unique e
+** Naturality condition: Gf ∘ αa = αb ∘ Ff
+*** Homomorphism: structure-preserving mapping between 2 algebraic structures (e.g. groups, rings, vector spaces).
     f(m * n) = f(m) * f(n)
-    Functor: homomorphism between 2 categories
+*** Functor:
+    - homomorphism between 2 categories
+    - in programming: total mapping of types; (total = all objs from the source are mapped)
 
     Individual monoids themselves give category
     Monoids with homomorphisms give category
@@ -290,8 +284,8 @@ Functor:
    of mathematical truth.
 
 * Mappings: X → Y (Zobrazenia):
-** Surjection: every elem in Y is "used";                           |X| ≥ |Y| (onto; "at least as big")
-** Injective:  distinct Xs → distinc Ys;                           |X| ≤ |Y| (? one-to-one ?)
+** Surjection: all Ys are used;                                     |X| ≥ |Y| (onto; "at least as big")
+** Injective:  distinct Xs -> distinct Ys;                          |X| ≤ |Y| (? one-to-one ?)
 ** Bijection:  exact pairing between X, Y;                          |X| = |Y| (vzajomne jednoznacne zobrazenie, "same size")
 ** Strict:     Surjection from X to Y but no bijection from Y to X; |X| < |Y| (? double usage of some Ys ?, "strictly bigger")
 
@@ -399,7 +393,6 @@ Bodil Stokke
   "Patri" - containment relation
 
 * Homotopy theory: paths in a space
-
 
 * Beta β reduction (computational) / Eta η extentionality principle
   β reduction in computation: Simplify proofs by replacing formal params with terms.
