@@ -89,9 +89,11 @@ git --git-dir=gitDir add "src/**/*.txt"
 # commit to a repo located in gitDir under given Name
 git --git-dir=gitDir commit --author="Name <noreply@example.com>" -m "commitMsg"
 
-# clone a repo from gitDir to a bareRepoDir (empty) presumably located on a server
+# clone a repo from gitDir / origRepo to an (empty) bareRepoDir
 git clone --bare origRepo bareRepoDir
-git clone origRepo newRepoName
+
+# shallow clone with a history truncated to the specified number of commits
+git clone --depth=1 origRepo newRepoName
 
 # workLocation must not be a bare (empty) repo
 git add --work-tree=workLocation --git-dir=repoLocation
@@ -101,6 +103,8 @@ git shortlog -s -n
 
 # show settings
 git config --global / --local --list
+
+# show settings
 git config --global / --local --get ...
 
 # git:

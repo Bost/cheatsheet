@@ -277,6 +277,9 @@ $$ / $!
 # eval expression
 echo $[22 + 33]
 
+# eval expression
+expr 11 + 22
+
 # bash: args: last command without the last argument
 !:-
 

@@ -179,7 +179,7 @@ C-^ / C-6
 C-t / C-d
 
 " print (insert) 78 "-" chars at once
-78i-&lt;Esc&gt;
+78i-<Esc>;
 
 " visual: insert / append {string} to the visual block
 I{string}&lt;Esc&gt; / A{string}&lt;Esc&gt;
