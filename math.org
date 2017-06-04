@@ -14,7 +14,7 @@
    Category ℂ
    Composition ∘
    Arror →
-
+   Cartesian Product ×
 
 * Statistics:
 ** Data:
@@ -175,10 +175,19 @@ Russells paradox - Barbiers dilema
     | surjective | epic / epimorphism   | all Ys are used            | Full     |
 
 *** Functor:
+    - preserves structure!
     - homomorphism between 2 categories
     - in programming: total mapping of types; (total = all objs from the source are mapped)
     - Constant functor: collapses all objs into 1 obj and all morphisms into an identity
-    - Intuitive understanding: functor is a container - i.e. list contains values
+    - Intuitive understanding: (endo) functor is a container - i.e. list contains values
+    - function itself can be regarded as a container. E.g. identity function;
+      functions (when evaluated) return value i.e. data are represented as values
+      functions and data are the same
+      function type is an exponential which is a data type
+    - Endofunctor: A functor that maps a category to itself.
+
+*** Bifunctor: C × D → E
+
 **** List: List(α) = Nil | Const α (List α)
     - most intuitive example of a functor
     - type constructor: takes a type α and creates a list of α
@@ -186,6 +195,8 @@ Russells paradox - Barbiers dilema
     Sum (+) and Product (*) are algebraic data types (Algebra on Types):
     List(α) = Nil | Const α (List α) ~ L(α) = 1 + α * L(α) => .. => L(α) = 1 / (1 - α) =
     = 1 + α + α*α + α*α*α + ...
+
+    Is product a functor?
 
     Inlining and refactoring are the opposite.** Fibre: a buch of points mapped to the same value; invertibility of a function to a fibre
 

@@ -156,3 +156,6 @@ gulp
 
 ;; map: can be well parallelized / reduce:  difficult to parallelize
 (map) / (reduce)
+
+;; future
+A function which hasn't finished the evaluation
