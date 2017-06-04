@@ -205,8 +205,7 @@ Russells paradox - Barbiers dilema
    Localy Small Category: ∀ A,B: Hom(A, B) is a set
    Sheaf (Garbe, Faisceau, zvazok)- tool for tracking locally defined data
    Presheaf: Functor F: ℂop → Set
-** HomSet(A, B): set of all morphisms A → B in category C (Objs of C don't need to be sets)
-   HomC(A, B) = {f: A → B}
+** Homset: HomC(A,B) = {f: A → B} - set of all morphisms A → B in category C (Objs of C don't need to be sets)
 ** Representable Functor F: ℂ → Set
    "Representing objects and morphisms of C as sets and functions in Set"
    fix object A ∈ ℂ there is Homℂ(A, -): Homℂ(A, X) → Homℂ(A, Y) where there is a morphism X → Y
