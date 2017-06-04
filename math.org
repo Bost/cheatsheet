@@ -10,6 +10,12 @@
    Alfa / Alpha α
    Beta β
    Eta / Etha η
+   Elem of ∈ / Not an elem of ∉
+   Category ℂ
+   Composition ∘
+   Arror →
+
+
 * Statistics:
 ** Data:
    Nominal Data                Interval / Ratio Data
@@ -132,17 +138,16 @@
 
 Russells paradox - Barbiers dilema
 
-* Morphisms:
 * Lambda Calculus: formal calculus for manipulating functions
+  Currying: Partial function application; Fixing some function parameters
 * Category Theory: abstract algebra of abstract functions: "The Arrows Count"
 ** Cartesian Closed Category CCC:
 *** has products A x B and exponentials B^A for any pair of objs A, B
 *** has terminal obj 1 (Exists unique map A → 1) (dual of 1 is the initial obj; Top and Bottom objs)
    i.e. any one-element set (= singleton) is terminal
    DTTO for poset 1 is such an object that any other obj is below it
-** Localy CCC: for every object X sliced category is a CCC
-** Universal Mapping Property (UMP)
-  Consists of Initial and Terminal mapping (morphism). The 'double' triangle of Product
+** Localy CCC: for every obj X sliced category is a CCC
+** Universal Mapping Property (UMP): Consists of Initial and Terminal mapping (morphism). The 'double' triangle of Product
 ** Bartosz Milewsky:
    Most important features of a category: Composability, Identity
    Example in programming: Category of Types and Functions (set and functions between sets)
@@ -163,7 +168,7 @@ Russells paradox - Barbiers dilema
     - Inverse of function is not guaranteed to exist
 
     Domain, Codomain, Image
-
+*** Morphisms:
     | Latin      | Greek                | Meaning                    | Functor  |
     |------------+----------------------+----------------------------+----------|
     | injective  | monic / monomorphism | distinct Xs -> distinct Ys | Faithful |
@@ -173,10 +178,14 @@ Russells paradox - Barbiers dilema
     - homomorphism between 2 categories
     - in programming: total mapping of types; (total = all objs from the source are mapped)
     - Constant functor: collapses all objs into 1 obj and all morphisms into an identity
+    - Intuitive understanding: functor is a container - i.e. list contains values
+**** List: List(α) = Nil | Const α (List α)
+    - most intuitive example of a functor
+    - type constructor: takes a type α and creates a list of α
 
     Sum (+) and Product (*) are algebraic data types (Algebra on Types):
-    List(a) = Nil | Const a (List a) ~ L(a) = 1 + a * L(a) => .. => L(a) = 1 / (1 - a) =
-    = 1 + a + a*a + a*a*a + ...
+    List(α) = Nil | Const α (List α) ~ L(α) = 1 + α * L(α) => .. => L(α) = 1 / (1 - α) =
+    = 1 + α + α*α + α*α*α + ...
 
     Inlining and refactoring are the opposite.** Fibre: a buch of points mapped to the same value; invertibility of a function to a fibre
 
@@ -217,12 +226,12 @@ Russells paradox - Barbiers dilema
 ** Naturality condition: Gf ∘ αa = αb ∘ Ff
 *** Homomorphism: structure-preserving mapping between 2 algebraic structures (e.g. groups, rings, vector spaces).
     f(m * n) = f(m) * f(n)
-*** Functor:
-    - homomorphism between 2 categories
-    - in programming: total mapping of types; (total = all objs from the source are mapped)
 
     Individual monoids themselves give category
     Monoids with homomorphisms give category
+
+** Kleisli category: Monad
+   ??? a -> M a ???
 
 * Curry-Howard-Lambek correspondence: Logic <-> Type Theory <-> Category Theory:
   Function A -> B is a proof of logical implication A => B
