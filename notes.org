@@ -129,7 +129,7 @@ private int returnCountOfDifferentPixels(String pic1, String pic2) {
     }
 #+END_SRC
 *** Rest
-    what is: David Allen's GTD system
+    what is: David Allen's GTD (Getting Things Done) system
     cheatsheet as orgmode document
     formating with **/-/* etc.
 *** This is a headline
