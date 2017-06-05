@@ -66,42 +66,53 @@ slime-connect
 *** mastery  vs. novelty (expensive)
 *** dealing with complexity of options
 * OrgMode:
-*** org mode - tagging                                                  :org:
+*** org mode tagging                                                    :org:
 
 | col1    | col2          |
 |---------+---------------|
 | content | other content |
-|         |               |
+
+
+#+BEGIN_SRC emacs-lisp
+  (message "Yeah from emacs-lisp!")
+#+END_SRC
+
+#+RESULTS:
+: Yeah from emacs-lisp!
 
 #+BEGIN_SRC sh :exports both
-echo "Hello World" # C-c - evaluate code
+echo "Hello World from sh" # evaluate: C-c
 #+END_SRC
 
 #+RESULTS:
 : Hello World
 
-
-#+BEGIN_SRC python
-return "Hello from python"
-#+END_SRC
-
-#+RESULTS:
-: Hello from python
+#+begin_src clojure :results silent
+;; ":results silent" causes result to be displayed in the mini-buffer
+;; M-x cider-jack-in
+(+ 1 4)
+#+end_src
 
 #+BEGIN_SRC clojure
 (defproject my-project "0.1.0"
   :description "My great Clojure project"
-  :dependencies [[org.clojure/clojure "1.1.0-alpha-SNAPSHOT"]
-         [org.clojure/clojure-contrib "1.0-SNAPSHOT"]]
-  :dev-dependencies [[leiningen/lein-swank "1.0.0-SNAPSHOT"]])
-
+  :dependencies
+  [[org.clojure/clojure "1.8.0"]])
 (println "Hello from clojure")
 #+END_SRC
+
+#+BEGIN_SRC python
+# Result displayed under '#+RESULTS:'
+return "Hello from Python" # evaluate: C-c 
+#+END_SRC
+
+#+RESULTS:
+: Hello from Python
 
 #+RESULTS:
 : Hello from python
 
-*** compare 2 bitmaps
+*** Compare 2 bitmaps
 #+BEGIN_SRC
 // http://stackoverflow.com/questions/10487152/comparing-two-images-for-motion-detecting-purposes
 private int returnCountOfDifferentPixels(String pic1, String pic2) {
