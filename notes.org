@@ -27,9 +27,6 @@ slime-connect
   - use composable services
   - abstractions; no bespoke protocols and formats
 
-* Math
-** game theory
-   
 * Technology
 ** http://www.zdrojak.cz/clanky/tvorba-moderniho-e-shopu-dokonceni-uzivatelske-casti/
 ** Sequence of QR Codes/ graphical elements (pyramide, cube, sphere, toroid, etc.)
@@ -121,7 +118,6 @@ stuff
 ** dokaz identity bez udania mena
 ** google lab tags http://www.chromeweblab.com/en-GB/lab-tag-explorer
 ** stuff to datomic - ?git has no services? http://www.youtube.com/watch?v=ROor6_NGIWU 58:00
-** watch apache.org
 
 * Lang
 idioms, link sur FB, idioms - traduction + correcture
