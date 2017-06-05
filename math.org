@@ -4,18 +4,6 @@
   meaning of call with continuations is important for type theory
   complicated controll structure - implement at first with continuations and then traditionally
   solution of a Differential Equations (DE) is a function, not value.
-** UTF chars:
-   For all / every ∀
-   Exists ∃
-   Alfa / Alpha α
-   Beta β
-   Eta / Etha η
-   Elem of ∈ / Not an elem of ∉
-   Category ℂ
-   Composition ∘
-   Arror →
-   Cartesian Product ×
-
 * Statistics:
 ** Data:
    Nominal Data                Interval / Ratio Data
