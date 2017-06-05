@@ -29,10 +29,7 @@ slime-connect
 
 * Math
 ** game theory
-
-** fractals
-   http://blog.sciencevsmagic.net/science/fractal-machine/
-
+   
 * Technology
 ** http://www.zdrojak.cz/clanky/tvorba-moderniho-e-shopu-dokonceni-uzivatelske-casti/
 ** Sequence of QR Codes/ graphical elements (pyramide, cube, sphere, toroid, etc.)
