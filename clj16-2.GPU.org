@@ -1,4 +1,3 @@
-
 * Dragan Djuric: Clojure is Not Afraid of the GPU
 ** parallelization suitability
 *** map: can be well parallelized :-)
