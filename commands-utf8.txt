@@ -4,7 +4,7 @@ Category ℂ
 Composition ∘
 Numbers ➊ ➋ ➌ ➍ ➎ ➏ ➐ ➑ ➒
 Table ⊥ ⊢ ⊣ ⊤
-Thin arrows ← ↑ → ↓ ↔ ↕
+Thin arrows ← ↑ → ↓ ↔ ↕ ↖ ↗ ↘ ↙ 
 Open headed arrows ⇽ ⇾ ⇿
 Double arrows ⇐ ⇑ ⇒ ⇓ ⇔ ⇕
 Lines ⎛ ⎜ ⎝ ⎞ ⎟ ⎠ ⎡ ⎢ ⎣ ⎤ ⎥ ⎦ ⎧ ⎨ ⎩ ⎪ ⎫ ⎬ ⎭ ⎮ ⎯
