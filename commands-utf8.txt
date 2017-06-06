@@ -1,7 +1,7 @@
 For all / every ∀
 Exists ∃
 Category ℂ
-Composition ∘
+Composition / "after" ∘
 Numbers ➊ ➋ ➌ ➍ ➎ ➏ ➐ ➑ ➒
 Table ⊥ ⊢ ⊣ ⊤
 Thin arrows ← ↑ → ↓ ↔ ↕ ↖ ↗ ↘ ↙ 

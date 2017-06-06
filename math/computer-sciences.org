@@ -10,8 +10,24 @@
    DTTO for poset 1 is such an object that any other obj is below it
 ** Localy CCC: for every obj X sliced category is a CCC
 ** Universal Mapping Property (UMP): Consists of Initial and Terminal mapping (morphism). The 'double' triangle of Product
+   Universal Construction - 3 steps (? the triangle ?):
+   1. Define a pattern:
+
+     Z'  (Z' x A) ---+
+     |       | |      \
+   h |       | |id     \ g'
+     |       | |        \
+     v       v v         ↘
+     Z   ( Z x A) -------> B
+             A        g
+
+    g' = g ∘ (h x id)
+
+   2. Define ranking between matches
+   3. The best match is "our guy"
+
 ** Bartosz Milewsky:
-   Most important features of a category: Composability, Identity
+   Most important features of a category: ?, Composability, Identity
    Example in programming: Category of Types and Functions (set and functions between sets)
 *** Designing computer language:
     Semantics must be provided; done by providing operational semantics
@@ -45,11 +61,13 @@
     - function itself can be regarded as a container. E.g. identity function;
       functions (when evaluated) return value i.e. data are represented as values
       functions and data are the same
-      function type is an exponential which is a data type
+      function type is an exponential which is a data type; (Exponential is like an interated product)
     - Endofunctor: A functor that maps a category to itself.
 
 *** Bifunctor: C × D → E
-
+    Product is a bifunctor, i.e. it takes 2 objs and produces 3rd obj,
+    but it also takes two morphisms and produces 3rd morphism which is a product of these two
+    morphisms
 **** List: List(α) = Nil | Const α (List α)
     - most intuitive example of a functor
     - type constructor: takes a type α and creates a list of α
@@ -88,6 +106,8 @@
    Sheaf (Garbe, Faisceau, zvazok)- tool for tracking locally defined data
    Presheaf: Functor F: ℂop → Set
 ** Homset: HomC(A,B) = {f: A → B} - set of all morphisms A → B in category C (Objs of C don't need to be sets)
+   External vs. Internal Homset
+   
 ** Representable Functor F: ℂ → Set
    "Representing objects and morphisms of C as sets and functions in Set"
    fix object A ∈ ℂ there is Homℂ(A, -): Homℂ(A, X) → Homℂ(A, Y) where there is a morphism X → Y
