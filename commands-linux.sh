@@ -16,8 +16,12 @@ http://www.shellcheck.net/
 # concatenate and print files in reverse (reversed lines)
 tac file.txt > reversed.txt
 
+# print web page to pdf / screenshot
+google-chrome --headless --disable-gpu --print-to-pdf https://www.eff.or
+google-chrome --headless --screenshot --window-size=1280,169 https://www.eff.or
+
 # chrome extras
-chrome://flags | chrome://net-internals | chrome://quota-internals | chrome://network-error/-106
+chrome://version | chrome://flags | chrome://net-internals | chrome://quota-internals | chrome://network-error/-106
 
 # net: linux: ports listening for connection (i.e. opened ports)
 sudo nmap -sT -O localhost
