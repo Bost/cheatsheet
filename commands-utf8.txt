@@ -23,7 +23,7 @@ circled {plus, times, …} ⊕ ⊖ ⊗ ⊘ ⊙ ⊚ ⊛ ⊜ ⊝
 squared {plus, minus, times, …} ⊞ ⊟ ⊠ ⊡
 − ∕ ∗ ∘ ∙ ⋅ ⋆
 empty set ∅
-ℵ
+Aleph ℵ
 element of ∈ ∋ ∉ ∌ ⋶ ⋽ ⋲ ⋺ ⋳ ⋻
 misc ∊ ∍ ⋷ ⋾ ⋴ ⋼ ⋵ ⋸ ⋹ ⫙ ⟒
 binary relation of sets. {subset, superset, …} ⊂ ⊃ ⊆ ⊇ ⊈ ⊉ ⊊ ⊋ ⊄ ⊅ ⫅ ⫆ ⫋ ⫌ ⫃ ⫄ ⫇ ⫈ ⫉ ⫊ ⟃ ⟄ ⫏ ⫐ ⫑ ⫒ ⫓ ⫔ ⫕ ⫖ ⫗ ⫘ ⋐ ⋑ ⟈ ⟉
@@ -32,7 +32,6 @@ Intersection ∩ ⩀ ⩃ ⩄ ⩍ ⩎
 Binary operator on sets ∖ ⩆ ⩇ ⩈ ⩉ ⩊ ⩋ ⪽ ⪾ ⪿ ⫀ ⫁ ⫂ ⋒ ⋓
 N-nary operator on sets ⋂ ⋃ ⊌ ⊍ ⊎ ⨃ ⨄ ⨅ ⨆
 Joins ⨝ ⟕ ⟖ ⟗
-Order
 Precede and succeed ≺ ≻ ≼ ≽ ≾ ≿ ⊀ ⊁ ⋞ ⋟ ⋠ ⋡ ⋨ ⋩ ⪯ ⪰ ⪱ ⪲ ⪳ ⪴ ⪵ ⪶ ⪷ ⪸ ⪹ ⪺ ⪻ ⪼
 less and greater < > ≮ ≯ ≤ ≥ ≰ ≱ ⪇ ⪈ ≦ ≧ ≨ ≩
 less and greater 2 ⋜ ⋝ ⪙ ⪚ ≶ ≷ ≸ ≹ ⋚ ⋛ ⪋ ⪌ ⪑ ⪒ ⪓ ⪔
@@ -42,8 +41,7 @@ less and greater with similarity ⪝ ⪞ ⪟ ⪠ ⪍ ⪎ ⪏ ⪐
 less and greater slanted ⩽ ⩾ ⫹ ⫺ ⪕ ⪖ ⪛ ⪜
 less and greater misc ⪣ ⪤ ⪥ ⪦ ⪧ ⪨ ⪩ ⪪ ⪫ ⪬ ⪭ ⪡ ⪢ ⫷ ⫸ ⩹ ⩺ ⩻ ⩼ ≪ ≫ ⋘ ⋙ ≬
 Order relation with dot ⋖ ⋗ ⩿ ⪀ ⪗ ⪘ ⪁ ⪂ ⪃ ⪄
-Equality, Identity, Equivalence, Approx, Congruence
-equality ≝ ≞ ≟ ≠ ∹ ≎ ≏ ⪮ ≐ ≑ ≒ ≓ ≔ ≕ ≖ ≗ ≘ ≙ ≚ ≛ ≜ ⩬ ⩭ ⩮ ⩱ ⩲ ⩦ ⩴ ⩵ ⩶ ⩷
+Equality, Identity, Equivalence, Approx, Congruence equality ≝ ≞ ≟ ≠ ∹ ≎ ≏ ⪮ ≐ ≑ ≒ ≓ ≔ ≕ ≖ ≗ ≘ ≙ ≚ ≛ ≜ ⩬ ⩭ ⩮ ⩱ ⩲ ⩦ ⩴ ⩵ ⩶ ⩷
 Identity ≡ ≢ ⩧
 Equivalence ≍ ≭ ≣ ⩸
 Approx/almost/asymptotic equality ≁ ≂ ≃ ≄ ⋍ ≅ ≆ ≇ ≈ ≉ ≊ ≋ ≌ ⩯ ⩰
@@ -86,8 +84,7 @@ Unsorted ⦵ ⦶ ⦷ ⦸ ⦹ ⦺ ⦻ ⨴ ⨵ ⨶ ⨷ ⨸ ⦼
 Unsorted ⦽ ⧀ ⧁ ⧂ ⧃
 Unsorted ⧡ ⧣ ⧤ ⧥ ⧦ ⧧
 Unsorted ⧾ ⨞ ⧊ ⧋ ⧌ ⧍ ⨹ ⨺ ⨻
-Unsorted ⧎ ⧏ ⧐ ⩡ ⩨ ⩩ ⫝̸ ⫝ ⫦
-⫯ ⫰ ⫱
+Unsorted ⧎ ⧏ ⧐ ⩡ ⩨ ⩩ ⫝̸ ⫝ ⫦ ⫯ ⫰ ⫱
 Unsorted ∾ ⊺ ⋔ ⫚ ⟊ ⟔ ⟓ ⟡ ⟢ ⟣ ⟤ ⟥
 Unicode: Arrow Symbols ← → ↑ ↓
 Unicode: Brackets, Quotes «»「」【】《》
