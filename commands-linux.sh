@@ -1144,6 +1144,9 @@ chrome://net-internals/#hsts
 # HPKP: HTTP Public Key Pinning; Similair to HSTS header
 Create your HPKP hash: https://report-uri.io/home/pkp_hash
 
+# install nodejs
+curl --silent --location https://deb.nodesource.com/setup_8.x | sudo --preserve-env bash -
+sudo apt-get install -y nodejs
 
 # * TODO add this:
 # git remote add --track develop upstream https://github.com/Lokaltog/powerline.git
