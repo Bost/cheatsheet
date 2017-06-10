@@ -1,25 +1,32 @@
 * Lambda Calculus: formal calculus for manipulating functions
   Currying: Partial function application; Fixing some function parameters
 * Category Theory: abstract algebra of abstract functions: "The Arrows Count"
-** Cartesian Closed Category CCC:
-*** has products A x B and exponentials B^A for any pair of objs A, B
-*** has terminal obj 1 (for all objs there exists an unique map A → 1)
+** Cartesian Closed Category CCC: Usefull in programming
+*** cartesian: has product A x B (conjunction) for any pair of objs A, B
+*** closed: has exponential B^A (functions) for any pair of objs A, B
+*** 0-th power of an obj: has terminal obj 1 (for all objs there exists an unique map A → 1)
    - multiplying by terminal obj 1 gives back the original obj
    - dual to terminal obj 1 is the initial obj; Top and Bottom objs
    i.e. any one-element set (= singleton) is terminal
    DTTO for poset 1 is such an object that any other obj is below it
-** Localy CCC: for every obj X sliced category is a CCC
+
+   - ? monoindal structure on objs ?
+*** Localy CCC: for every obj X sliced category is a CCC
+** Bi Cartesian Closed Category BCCC: Algebra of Types can be made here
+*** has coproduct for every pair of objs
+*** has initial obj
+
 ** Universal Mapping Property (UMP): Consists of Initial and Terminal mapping (morphism). The 'double' triangle of Product
    Universal Construction - 3 steps (? the triangle ?):
    1. Define a pattern:
 
-     Z'  (Z' x A) ---+
-     |       | |      \
-   h |       | |id     \ g'
-     |       | |        \
-     v       v v         ↘
-     Z   ( Z x A) -------> B
-             A        g
+         Z'  (Z' x A) ---\
+         ⎢       ⎢        \
+       h ⎢       ⎢id       \ g'
+         ⎢       ⎢          \
+    a=>b ↓       ↓           ↘
+         Z   (Z x A) -------> B
+                 A      g
 
     g' = g ∘ (h x id)
 
@@ -87,6 +94,17 @@
            |     f     |
            a --------> b
 
+** Natural Transformation: a way of/for comparing functors
+   - maps morphism(s) to commuting diagram(s) (naturality squares).
+     i.e. comorphism: replacing a square of (complex) relations with a single morphism
+   - picks a morphish between two objs; Picking 1 morphishm from a homset
+   - Components of NaT
+   - Composing functor acting on an obj with a functor acting on a morphishm
+     Alpha b * F f 
+
+   - polymorphic function
+
+          
 ** Fibre: a buch of points mapped to the same value; invertibility of a function to a fibre
 ** Abstraction: i.e. non-invertibility
    - from all properties (i.e. all points of a fibre) I'm interested only in one
@@ -148,6 +166,29 @@
     | true       -> true                             | {.}      ->  {.} (identity function)                                 |                          |
     | true  (not ->) false (does not imply)          | {.} (not ->) {}                                                      |                          |
 
+
+** Correspondance of type habitation and proposition
+   inhabited - has elems / members
+   "Either a b" is inhabited if either a or b is inhabited (at least one of them is true / provable)
+
+   Curry: ((a,b) -> c) -> (a -> (b -> c))
+   Uncurry: (a -> (b -> c)) -> ((a,b) -> c)  
+
+   Eval: a function of two args / a pair
+   "((a => b), a) -> b" this is modus-ponens in logic "a => b ∧ a -> b"
+
+    | True proposition | False proposition | Conjunction a ∧ b         | Disjunction a ∨ b           | Implication a => b   |
+    | Unit-type        | Void-type         | Pair (a,b)                | Either a b                  | Function type a -> b |
+    | sinhabited       | not inhabited     |                           |                             |                      |
+    | Terminal obj     | Initial obj       | Categorical product a × b | Categorical coproduct a ⎥ b | Exponential obj b^a  |
+
+
+    0 - void type - ?
+    1 - unit type - 0th-power: terminal obj 
+    2 - bool type (two possible values): 1st-power: the obj itself
+    3 - int type - 2nd-power: product
+    4 - real type (if continuum hypothesis holds :-)
+    5 - ? type
 
 *** JavaScript & Category Theory
 **** Category ==  Contracts + Functions guarded by contracts
@@ -254,15 +295,14 @@ Functor:
 * Type Theory: Extention of lambda calculus with explicit types
 ** ITT Inentional Type Theory
 ** OTT Observational Type Theory
-Type of a Variable - a set(?) of possible values of that type
-From context Gamma a M can be derrived such that x:A.B
-Context Gamma, x:A, y:Bx (e.g. x be a number with property Bx, y is a variable for the proof of type Bx)
-What's the point of having a number? Well we can count up to that number.
-Depandent type theory is the master theory of all programming languages. If you understand dependent type theory then you understand everything (every programming language)
+   Type of a Variable - a set(?) of possible values of that type
+   From context Gamma a M can be derrived such that x:A.B
+   Context Gamma, x:A, y:Bx (e.g. x be a number with property Bx, y is a variable for the proof of type Bx)
+   What's the point of having a number? Well we can count up to that number.
+   Depandent type theory is the master theory of all programming languages. If you understand dependent type theory then you understand everything (every programming language)
+   
+   Maybe Type: A or B (e.g. A or Fail, A or AirMessage)
 
-Maybe Type: A or B (e.g. A or Fail, A or AirMessage)
-
-* Linear Logic: Deals with limited resources: has Construction / Descruction operations
 * Axiom of Choice - see "Type Theory Foundations, Lecture 3-wJLTE8rnqH0.mp4"
 "the greatest intelectual achievement???"
 
@@ -310,10 +350,10 @@ predicate = vyrok = tvrdenie
   | A is possible       | Monadic Lax Logic | Generic effects (monads, state, exception) |
   | A is valid          | Modal Logic       | Runtime code generation                    |
 
-  Intuitionistic (Constructive) Logic deals with endless resources and doesn't
-  need any constructors/destructors
-
-  Higher order logic
+** Linear Logic: limited resources: construction / descruction
+   ? Unique pointers in C++ ?, "Stuff moved from place to place and it cannot be used twice only once"
+** Intuitionistic (Constructive) Logic: endless resources, no need for construction / descruction
+** Higher order logic
 
 * Impossibility of a perfect type-checker for a programming language
   It it’s impossible to have a procedure that figures out whether an arbitrary

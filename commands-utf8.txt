@@ -6,7 +6,7 @@ Numbers ➊ ➋ ➌ ➍ ➎ ➏ ➐ ➑ ➒
 Table ⊥ ⊢ ⊣ ⊤
 Thin arrows ← ↑ → ↓ ↔ ↕ ↖ ↗ ↘ ↙ 
 Open headed arrows ⇽ ⇾ ⇿
-Double arrows ⇐ ⇑ ⇒ ⇓ ⇔ ⇕
+Double arrows (implication) ⇐ ⇑ ⇒ ⇓ ⇔ ⇕
 Lines ⎛ ⎜ ⎝ ⎞ ⎟ ⎠ ⎡ ⎢ ⎣ ⎤ ⎥ ⎦ ⎧ ⎨ ⎩ ⎪ ⎫ ⎬ ⎭ ⎮ ⎯
 Brackets ⟦ ⟧ ⟨ ⟩ ⟪ ⟫ ⟬ ⟭ ⟮ ⟯⦃ ⦄ ⦅ ⦆ ⦇ ⦈ ⦉ ⦊ ⦋ ⦌ ⦍ ⦎ ⦏⦐⦑⦒⦓⦔⦕ ⦖ ⦗ ⦘
 Commonly used greek letters α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ ς τ υ φ χ ψ ω
@@ -18,7 +18,7 @@ imaginary number ⅈ, ⅉ
 Euler's number, base of natural log ℯ, ⅇ
 EULER CONSTANT ℇ
 Infinity ∞ ⧜ ⧝ ⧞
-multiplication, division × ✕ ✖ ÷
+multiplication, division, product, coproduct × ✕ ✖ ÷
 circled {plus, times, …} ⊕ ⊖ ⊗ ⊘ ⊙ ⊚ ⊛ ⊜ ⊝
 squared {plus, minus, times, …} ⊞ ⊟ ⊠ ⊡
 − ∕ ∗ ∘ ∙ ⋅ ⋆
@@ -49,8 +49,8 @@ Misc equality ∻
 Misc relations ⊏ ⊐ ⊑ ⊒ ⊓ ⊔ ⋢ ⋣ ⋤ ⋥ ⫴ ⫵
 Normal subgroups ⊲ ⊳ ⊴ ⊵ ⋪ ⋫ ⋬ ⋭
 Logic ¬ ⫬ ⫭ ⊨ ⊭ ∀ ∁ ∃ ∄ ∴ ∵ ⊦ ⊬ ⊧ ⊩ ⊮ ⊫ ⊯ ⊪ ⊰ ⊱
-Logic binary ∧ ∨ ⊻ ⊼ ⊽ ⋎ ⋏ ⟑ ⟇ ⩑ ⩒ ⩓ ⩔ ⩕ ⩖ ⩗ ⩘ ⩙ ⩚ ⩛ ⩜ ⩝ ⩞ ⩟ ⩠ ⩢ ⩣ ⨇ ⨈
-Logic n-nary ⋀ ⋁
+Logic binary (conjunction, disjunction) ∧ ∨ ⊻ ⊼ ⊽ ⋎ ⋏ ⟑ ⟇ ⩑ ⩒ ⩓ ⩔ ⩕ ⩖ ⩗ ⩘ ⩙ ⩚ ⩛ ⩜ ⩝ ⩞ ⩟ ⩠ ⩢ ⩣ ⨇ ⨈
+Logic n-nary (conjunction, disjunction) ⋀ ⋁
 Geometry ∣ ∤ ⫮ ⌅ ⌆ ℓ ⫛
 Ratio, proportion ∝ ∶ ∷ ∺
 Parallel, perpendicular ∥ ∦ ⫲ ⫳ ⋕ ⟂ ⫡
