@@ -1,6 +1,9 @@
 #!/bin/bash
 exit 1
 
+# cpu: mem: hdd: hardware information in a GTK+ window
+hardinfo
+
 # arp: Displays and modifies the IP-to-Physical address translation tables used by address resolution protocol (ARP).
 arp -a
 
