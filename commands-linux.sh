@@ -431,6 +431,9 @@ ip neighbour
 # net: what is my IP
 curl ifconfig.me
 
+# exec disc usage command on a remote host and sort results
+ssh <HostAlias> du -h --max-depth=1 /path/to/dir | sort -h
+
 # recursively compare dirA with dirB; show only filenames: -q (quiet)
 diff -rq dirA dirB | sort
 
