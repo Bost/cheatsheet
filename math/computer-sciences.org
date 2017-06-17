@@ -127,6 +127,8 @@
 
 ** Representable Functor F: ℂ → Set
    "Representing objs and morphisms of ℂ as sets and functions in Set"
+   i.e. functions "tabulate", "index" can be created; mapping of function to a data-type
+
    fix obj A ∈ ℂ there is Homℂ(A,_): Homℂ(A, X) → Homℂ(A, Y) where there is a morphism X → Y
    e.g.:
    The forgetful functor Grp → Set on the category of groups (G, *, e) is represented by (Z, 1).
