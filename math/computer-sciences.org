@@ -103,6 +103,7 @@
 
    - polymorphic function
 
+   - Functor is a container, NaT repackages the container
 
 ** Fibre: a buch of points mapped to the same value; invertibility of a function to a fibre
 ** Abstraction: i.e. non-invertibility
