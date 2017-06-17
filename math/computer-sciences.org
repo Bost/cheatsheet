@@ -60,8 +60,7 @@
     | surjective | epic / epimorphism   | all Ys are used            | Full     |
 
 *** Functor:
-    - preserves structure!
-    - homomorphism between 2 categories
+    - preserves structure between 2 categories, i.e. is a homomorphism by definition
     - in programming: total mapping of types; (total = all objs from the source are mapped)
     - Constant functor: collapses all objs into 1 obj and all morphisms into an identity
     - Intuitive understanding: (endo) functor is a container - i.e. list contains values
@@ -100,11 +99,11 @@
    - picks a morphish between two objs; Picking 1 morphishm from a homset
    - Components of NaT
    - Composing functor acting on an obj with a functor acting on a morphishm
-     Alpha b * F f 
+     Alpha b * F f
 
    - polymorphic function
 
-          
+
 ** Fibre: a buch of points mapped to the same value; invertibility of a function to a fibre
 ** Abstraction: i.e. non-invertibility
    - from all properties (i.e. all points of a fibre) I'm interested only in one
@@ -123,19 +122,19 @@
    Localy Small Category: ∀ A,B: Hom(A, B) is a set
    Sheaf (Garbe, Faisceau, zvazok)- tool for tracking locally defined data
    Presheaf: Functor F: ℂop → Set
-** Homset: HomC(A,B) = {f: A → B} - set of all morphisms A → B in category C (Objs of C don't need to be sets)
+** Homset: Homℂ(A,B) = {f: A → B} - set of all morphisms A → B in category ℂ (Objs of ℂ don't need to be sets)
    External vs. Internal Homset
-   
+
 ** Representable Functor F: ℂ → Set
-   "Representing objects and morphisms of C as sets and functions in Set"
-   fix object A ∈ ℂ there is Homℂ(A, -): Homℂ(A, X) → Homℂ(A, Y) where there is a morphism X → Y
+   "Representing objs and morphisms of ℂ as sets and functions in Set"
+   fix obj A ∈ ℂ there is Homℂ(A,_): Homℂ(A, X) → Homℂ(A, Y) where there is a morphism X → Y
    e.g.:
    The forgetful functor Grp → Set on the category of groups (G, *, e) is represented by (Z, 1).
    The forgetful functor Ring → Set on the category of rings is represented by (Z[x], x), the polynomial ring in one variable with integer coefficients.
    The forgetful functor Vect → Set on the category of real vector spaces is represented by (R, 1).
    The forgetful functor Top → Set on the category of topological spaces is represented by any singleton topological space with its unique e
 ** Naturality condition: Gf ∘ αa = αb ∘ Ff
-*** Homomorphism: structure-preserving mapping between 2 algebraic structures (e.g. groups, rings, vector spaces).
+*** Homomorphism: structure-preserving mapping between 2 algebraic structures (e.g. monoids, groups, rings, vector spaces).
     f(m * n) = f(m) * f(n)
 
     Individual monoids themselves give category
@@ -172,7 +171,7 @@
    "Either a b" is inhabited if either a or b is inhabited (at least one of them is true / provable)
 
    Curry: ((a,b) -> c) -> (a -> (b -> c))
-   Uncurry: (a -> (b -> c)) -> ((a,b) -> c)  
+   Uncurry: (a -> (b -> c)) -> ((a,b) -> c)
 
    Eval: a function of two args / a pair
    "((a => b), a) -> b" this is modus-ponens in logic "a => b ∧ a -> b"
@@ -184,7 +183,7 @@
 
 
     0 - void type - ?
-    1 - unit type - 0th-power: terminal obj 
+    1 - unit type - 0th-power: terminal obj
     2 - bool type (two possible values): 1st-power: the obj itself
     3 - int type - 2nd-power: product
     4 - real type (if continuum hypothesis holds :-)
@@ -300,7 +299,7 @@ Functor:
    Context Gamma, x:A, y:Bx (e.g. x be a number with property Bx, y is a variable for the proof of type Bx)
    What's the point of having a number? Well we can count up to that number.
    Depandent type theory is the master theory of all programming languages. If you understand dependent type theory then you understand everything (every programming language)
-   
+
    Maybe Type: A or B (e.g. A or Fail, A or AirMessage)
 
 * Axiom of Choice - see "Type Theory Foundations, Lecture 3-wJLTE8rnqH0.mp4"
