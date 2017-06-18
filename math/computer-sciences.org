@@ -97,10 +97,33 @@
            |     f     |
            a --------> b
 
-*** Yoneda Lemma: [ℂ,Set](ℂ(a,-), F) ⋍ F a; F - some arbitrary functor
-    ⋍ means "naturally isomorphic"
+*** Yoneda Lemma: [ℂ,Set](ℂ(a,-), F) ⋍ F a; 
+    a - some arbitrary obj of ℂ
+    F - some arbitrary functor acting on a
+    ⋍ - "naturally isomorphic" (i.e. a NaT exists whose components are all invertible isomorphisms)
+
     Intuition: HomFunctors play some special role in the category of functors.
     They serve for the same purposes as Free Monoids
+
+    It's enough to define this NaT on one obj (i.e. set ℂ(a,a)) and moreover
+    it's enough to define it on one point in this set i.e. the identity on a.
+    The rest of the NaT is transported from this point.
+
+    (                     ) ⋍ F a
+              ⎜                ⎜
+              ⎜                +-- Container of a (a data structure)
+              +------------------- Polymorphic higher order function
+
+    (∀ x : (a -> x) -> F x) ⋍ F a
+              ⎜     ⎜   ⎜      ⎜
+              ⎜     ⎜   ⎜      +-- Container of a (a data structure)
+              ⎜     ⎜   +--------- Functor
+              ⎜     +------------- NaT i.e. Polymorphic higher order function
+              +------------------- ...
+
+    I.e. the NaT and the Container can replace each other
+
+
 
 ** Natural Transformation: a way of/for comparing functors
    - maps morphism(s) to commuting diagram(s) (naturality squares).
