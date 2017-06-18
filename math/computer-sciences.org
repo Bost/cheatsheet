@@ -70,6 +70,10 @@
       function type is an exponential which is a data type; (Exponential is like an interated product)
     - Endofunctor: A functor that maps a category to itself.
 
+  | Covariant Functor                       | Contravariant Functor                      |
+  | G f :: (a -> b) -> (G a -> G b)         | G f :: (a -> b) -> (G b -> G a)            |
+  | Same directions in src and dst Category | Reverse directions in src and dst Category |
+
 *** Bifunctor: C × D → E
     Product is a bifunctor, i.e. it takes 2 objs and produces 3rd obj,
     but it also takes two morphisms and produces 3rd morphism which is a product of these two
