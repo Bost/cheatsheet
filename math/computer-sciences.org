@@ -97,7 +97,8 @@
            |     f     |
            a --------> b
 
-*** Yoneda Lemma: [ℂ,Set](ℂ(a,-), F) ⋍ F a
+*** Yoneda Lemma: [ℂ,Set](ℂ(a,-), F) ⋍ F a; F - some arbitrary functor
+    ⋍ means "naturally isomorphic"
     Intuition: HomFunctors play some special role in the category of functors.
     They serve for the same purposes as Free Monoids
 
