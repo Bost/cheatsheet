@@ -245,6 +245,9 @@ sudo !!
 # real and effective user and group IDs
 id user
 
+# google domain / sice specific search
+keyword site:bartoszmilewski.com
+
 # net: networking: DNS lookup: convert names <-> IP addresses
 host www.google.com
 
