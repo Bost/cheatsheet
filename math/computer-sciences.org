@@ -97,6 +97,10 @@
            |     f     |
            a --------> b
 
+*** Yoneda Lemma: [ℂ,Set](ℂ(a,-), F) ⋍ F a
+    Intuition: HomFunctors play some special role in the category of functors.
+    They serve for the same purposes as Free Monoids
+
 ** Natural Transformation: a way of/for comparing functors
    - maps morphism(s) to commuting diagram(s) (naturality squares).
      i.e. comorphism: replacing a square of (complex) relations with a single morphism
@@ -127,11 +131,26 @@
    Localy Small Category: ∀ A,B: Hom(A, B) is a set
    Sheaf (Garbe, Faisceau, zvazok)- tool for tracking locally defined data
    Presheaf: Functor F: ℂop → Set
-** Homset: Homℂ(A,B) = {f: A → B} - set of all morphisms A → B in category ℂ (Objs of ℂ don't need to be sets)
+** HomSet: Homℂ(A,B) = {f: A → B} - set of all morphisms A → B in category ℂ (Objs of ℂ don't need to be sets)
    External vs. Internal Homset
 
+** Free Monoid: has an unique mapping to every other monoid
+** HomFunctor: Functor to category of Sets; has a NaT to every other functor; this NaT is not unique but limited
+   Reader functor in Haskell
+*** Covariant functor: Hom(A,–) : ℂ → Set;
+    G f :: (a -> b) -> (G a -> G b); Same directions in src and dst Category
+    Hom(A,–) maps each object X in C to the set of morphisms, Hom(A, X)
+    Hom(A,–) maps each morphism f : X → Y to the function
+    Hom(A, f) : Hom(A, X) → Hom(A, Y) given by
+
+*** Contravariant functor: Hom(–,B) : ℂ → Set
+    G f :: (a -> b) -> (G b -> G a); Reverse directions in src and dst Category
+    Hom(–,B) maps each object X in C to the set of morphisms, Hom(X, B)
+    Hom(–,B) maps each morphism h : X → Y to the function
+    Hom(h, B) : Hom(Y, B) → Hom(X, B) given by
+
 ** Representable Functor F: ℂ → Set
-   "Representing objs and morphisms of ℂ as sets and functions in Set"
+   Represents objs of ℂ as sets and functions of ℂ as morphisms between sets.
    i.e. functions "tabulate", "index" can be created; mapping of function to a data-type
 
    fix obj A ∈ ℂ there is Homℂ(A,_): Homℂ(A, X) → Homℂ(A, Y) where there is a morphism X → Y

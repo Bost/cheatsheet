@@ -45,6 +45,7 @@ Equality, Identity, Equivalence, Approx, Congruence equality ≝ ≞ ≟ ≠ ∹
 Identity ≡ ≢ ⩧
 Equivalence ≍ ≭ ≣ ⩸
 Approx/almost/asymptotic equality ≁ ≂ ≃ ≄ ⋍ ≅ ≆ ≇ ≈ ≉ ≊ ≋ ≌ ⩯ ⩰
+isomorphism ⋍
 Misc equality ∻
 Misc relations ⊏ ⊐ ⊑ ⊒ ⊓ ⊔ ⋢ ⋣ ⋤ ⋥ ⫴ ⫵
 Normal subgroups ⊲ ⊳ ⊴ ⊵ ⋪ ⋫ ⋬ ⋭
