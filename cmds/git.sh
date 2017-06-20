@@ -192,3 +192,9 @@ git bisect unfixed <some-old-sha1>
 
 # checkout as; older revision of a file under a new name
 git show HEAD^:main.cpp > old_main.cpp
+
+# prepare release
+git archive
+
+# generate build number: nearest tag + nr of commits on top + sha1
+git describe master
