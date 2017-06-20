@@ -125,6 +125,9 @@
 
 
 
+*** Adjunctions: weakening of "equality" of Categories
+    "inverse" is defined only for functions not functors
+
 ** Natural Transformation: a way of/for comparing functors
    - maps morphism(s) to commuting diagram(s) (naturality squares).
      i.e. comorphism: replacing a square of (complex) relations with a single morphism
