@@ -539,6 +539,9 @@ ssh user@destmachine
 touch ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys; # rm ~/.ssh/id_rsa.pub
 
+# eclipse: cvs:
+.metadata/.plugins/org.eclipse.team.cvs.ui/repositoriesView.xml
+
 # eclipse:
 METADA_CORE=.metadata/.plugins/org.eclipse.jdt.core;
 
