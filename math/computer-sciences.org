@@ -97,7 +97,7 @@
            |     f     |
            a --------> b
 
-*** Yoneda Lemma: [ℂ,Set](ℂ(a,-), F) ⋍ F a; 
+*** Yoneda Lemma: [ℂ,Set](ℂ(a,-), F) ⋍ F a
     a - some arbitrary obj of ℂ
     F - some arbitrary functor acting on a
     ⋍ - "naturally isomorphic" (i.e. a NaT exists whose components are all invertible isomorphisms)
@@ -123,6 +123,7 @@
 
     I.e. the NaT and the Container can replace each other
 
+    [ℂ,Set](ℂ(a,-), ℂ(b,-) ⋍ ℂ(b,a)
 
 
 *** Adjunctions: weakening of "equality" of Categories
