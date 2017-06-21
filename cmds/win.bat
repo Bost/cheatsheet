@@ -16,7 +16,7 @@ shutdown /l /f
 net use
 
 # windows: net: drive: drives: map \\sever\path under P:
-net use P: \\server\path
+net use P: \\server\path /persistent:{yes|no}
 
 # windows: net: drive: drives: unmap P:
 net use P: /delete
