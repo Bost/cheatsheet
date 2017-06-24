@@ -128,7 +128,13 @@
 
 *** Adjunctions: weakening of "equality" of Categories
     "inverse" is defined only for functions not functors
-
+*** Adjointness - constructing / generating principle
+*** Adjoin examples:
+    (-) x A (product) ⊣ (-)^A (exponential)
+    + (coproduct) ⊣ ∆ (pairing) ⊣ x (product)
+    induction, recursion, Natural Numbers (inductively defined), Lists, ...
+    conjunction, disjunction, True, False, Exponentiation
+    Quantifiers: For all, Exists; Sigma, Pie
 ** Natural Transformation: a way of/for comparing functors
    - maps morphism(s) to commuting diagram(s) (naturality squares).
      i.e. comorphism: replacing a square of (complex) relations with a single morphism
