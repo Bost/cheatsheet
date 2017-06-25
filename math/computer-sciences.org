@@ -1,6 +1,8 @@
 * Lambda Calculus: formal calculus for manipulating functions
   Currying: Partial function application; Fixing some function parameters
 * Category Theory: abstract algebra of abstract functions: "The Arrows Count"
+  Up to isomorphis = any such things are isomorphic (structurally the same)
+  i.e. working via analogy (i.e. X is just a renamed version of Y)
 ** Cartesian Closed Category CCC: Usefull in programming
 *** cartesian: has product A x B (conjunction) for any pair of objs A, B
 *** closed: has exponential B^A (functions) for any pair of objs A, B
