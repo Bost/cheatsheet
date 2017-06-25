@@ -66,6 +66,8 @@
     - in programming: total mapping of types; (total = all objs from the source are mapped)
     - Constant functor: collapses all objs into 1 obj and all morphisms into an identity
     - Intuitive understanding: (endo) functor is a container - i.e. list contains values
+      (Comonad is a container that already comes prefilled with many values and
+      with an access point to one particular value)
     - function itself can be regarded as a container. E.g. identity function;
       functions (when evaluated) return value i.e. data are represented as values
       functions and data are the same
@@ -127,16 +129,17 @@
 
     [ℂ,Set](ℂ(a,-), ℂ(b,-) ⋍ ℂ(b,a)
 
-
 *** Adjunctions: weakening of "equality" of Categories
     "inverse" is defined only for functions not functors
 *** Adjointness - constructing / generating principle
-*** Adjoin examples:
+    - Adjunctions/Adjoins are monads???
+    Adjoin examples:
     (-) x A (product) ⊣ (-)^A (exponential)
-    + (coproduct) ⊣ ∆ (pairing) ⊣ x (product)
+    '+' (coproduct) ⊣ '∆' (pairing) ⊣ 'x' (product)
     induction, recursion, Natural Numbers (inductively defined), Lists, ...
     conjunction, disjunction, True, False, Exponentiation
-    Quantifiers: For all, Exists; Sigma, Pie
+    Quantifiers: ∀ Every, ∃ Exists; Σ Sigma, Π Pi
+
 ** Natural Transformation: a way of/for comparing functors
    - maps morphism(s) to commuting diagram(s) (naturality squares).
      i.e. comorphism: replacing a square of (complex) relations with a single morphism
@@ -202,7 +205,13 @@
     Individual monoids themselves give category
     Monoids with homomorphisms give category
 
-** Kleisli category: Monad a -> (b, Bool)
+** Kleisli category:
+   Monad: a -> m a;
+     You can operate on IO Monad
+     You can't extract anything from IO Monad, it's lost)
+   Comonad: (w a -> b) -> (w b -> c) -> (w a -> c)
+     You can extract from IO Monad
+     You can't put anything to IO Monad
 
 * Curry-Howard-Lambek correspondence: Logic <-> Type Theory <-> Category Theory:
   Function A -> B is a proof of logical implication A => B
@@ -364,6 +373,7 @@ Functor:
 
    Maybe Type: A or B (e.g. A or Fail, A or AirMessage)
 
+** Homotopy Type Theory: ? Equivalence ?
 * Axiom of Choice - see "Type Theory Foundations, Lecture 3-wJLTE8rnqH0.mp4"
 "the greatest intelectual achievement???"
 
