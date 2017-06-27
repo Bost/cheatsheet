@@ -718,8 +718,11 @@ awk
 # sed: print file content between lines 10 and 20 / print 5th line
 sed -n "10,20p" file / sed -n 5p file
 
-# sed: replace 1 occurence of "foo" in file.old; must be done in 2 steps with the mv; otherwise the file.old is empty
-sed "s/foo/FOO/" <file.old >file.new; mv file.{old,new}
+# sed: replace 1 occurence
+sed --in-place "s/foo/FOO/"
+
+# sed: replace all occurences of "foo" (globally)
+sed --in-place "s/foo/FOO/g"
 
 # sed: ascii: ebcdic: fix new lines and empty chars; \x85 - hexadecimal char
 sed "s/\x85/\n/g" <log.txt >log.nl.txt; sed "s/\x85/\n/g" <log.nl.txt >log.nl.00.txt
