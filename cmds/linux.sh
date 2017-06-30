@@ -518,6 +518,9 @@ cvs status -v file.ext
 # debug and trace info
 cvs -d cvs -t -d :pserver:faizal@localhost:/myrepos ci -m "test" -l "src/foo/Foo.ext"
 
+#
+cvs add file.ext
+
 # linux: system information (kernel version etc.)
 uname -a
 
