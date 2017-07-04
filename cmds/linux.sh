@@ -62,6 +62,9 @@ service network-manager restart
 # net: ubuntu: (edit) and re-read proxy definition
 source /etc/environment
 
+# centos update
+su -c 'yum update'
+
 # apt: aptitute: proxy:
 /etc/apt/apt.conf
 
