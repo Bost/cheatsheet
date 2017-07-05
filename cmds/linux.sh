@@ -239,6 +239,12 @@ set -v / set -o verbose
 # bash: shell writes standard error a trace for each command
 set -x / set -o xtrace
 
+# simple python3 server
+python3 -m http.server 8000 --bind 127.0.0.1
+
+# simple python server
+python -m SimpleHTTPServer 8001
+
 # python: high-level file operations
 import shutil
 
