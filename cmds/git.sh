@@ -93,7 +93,7 @@ git --git-dir=gitDir commit --author="Name <noreply@example.com>" -m "commitMsg"
 git clone --bare origRepo bareRepoDir
 
 # shallow clone with a history truncated to the specified number of commits
-git clone --depth=1 origRepo newRepoName
+git clone --depth=1 -b <branch> origRepo newRepoName
 
 # workLocation must not be a bare (empty) repo
 git add --work-tree=workLocation --git-dir=repoLocation

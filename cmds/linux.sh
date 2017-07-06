@@ -1,6 +1,17 @@
 #!/bin/bash
 exit 1
 
+# centos compile git
+sudo yum clean all
+sudo vim /etc/yum.com; proxy=http://<ip:port>
+sudo yum update
+sudo yum groupinstall 'Development Tools'
+sudo yum install openssl-devel curl-devel expat-devel perl-devel asciidoc xmlto
+
+
+# centos compile emacs
+sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel
+
 # cpu: mem: hdd: hardware information in a GTK+ window
 hardinfo
 
@@ -472,6 +483,12 @@ gunzip -c / zcat
 
 # bash: mv: move content of a directory within another directory with the same folders
 rsync --archive --remove-source-files backup/ backupArchives/
+
+# svn checkout; also for http://<ip:port>/path; https://<ip:port>/path
+svn co --username <svn-login> svn://<ip:port>/path
+
+# svn last revision number
+svn info <url>
 
 # bash: cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
 rsync --archive --verbose --exclude=CVS src dst
