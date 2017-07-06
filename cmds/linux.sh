@@ -10,7 +10,7 @@ sudo yum install openssl-devel curl-devel expat-devel perl-devel asciidoc xmlto
 
 
 # centos compile emacs
-sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel libungif-devel
+sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel libungif-devel libjpeg-devel
 
 # cpu: mem: hdd: hardware information in a GTK+ window
 hardinfo
