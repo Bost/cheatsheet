@@ -1,5 +1,8 @@
+#!/usr/bin/env bash
+exit 1 # just in case ...
+
 # bash: find: redirect: separate / combine sdterr and stdout; does not work with the tee command
-./command.sh 1>str.out 2>str.err / ./command.sh &>combined.out
+./cmd.sh 1>str.out 2>str.err / ./cmd.sh &>combined.out
 
 # emacs find - exclude backup files
 find . -type f ! -name "*~" -exec grep -nH -e "String" {} +
@@ -16,7 +19,7 @@ find . -name *.properties -exec grep -lir ".*String.*" \'{}\' \; -print
 # quit search after finding 1st match
 find . ... -print -quit
 
-# find all files and dirs modified in the last 7 days
+# find all files and dirs modified in the last 7 days; between: older: newer:
 find . ... -mtime -7
 
 # bash: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file
@@ -91,9 +94,14 @@ zgrep "String" myfile.gz / zgrep 'GET /blog' access_log.gz
 # search for File.class in jar files
 find . -name "*.jar" | xargs grep File.class
 
-# bash: find images
+# find images
 find . -type f -exec file {} \; | grep -o -P '^.+: \w+ image'
 
+# between: older: newer:
 find ~/Pictures -type f -newer
-find ~/Pictures -type f -not -newer "oct 01 2008"
 
+# between: older: newer:
+find ~/Pictures -type f -not -newermt "2016-02-01"
+
+# find all files recursively newer than given time
+find /directory -newermt $(date +%Y-%m-%d -d '1 day ago') -type f -print

@@ -1,5 +1,5 @@
-#!/bin/bash
-exit 1
+#!/usr/bin/env bash
+exit 1 # just in case ...
 
 # centos compile git
 sudo yum clean all
