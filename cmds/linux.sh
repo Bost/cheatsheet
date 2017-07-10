@@ -486,6 +486,9 @@ gunzip -c / zcat
 # bash: mv: move content of a directory within another directory with the same folders
 rsync --archive --remove-source-files backup/ backupArchives/
 
+# commit log since ...
+svn log -r \{2017-01-01\}:HEAD <repo/module> > svn.log
+
 # svn checkout; also for http://<ip:port>/path; https://<ip:port>/path
 svn co --username <svn-login> svn://<ip:port>/path
 
