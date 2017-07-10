@@ -8,9 +8,11 @@ sudo yum update
 sudo yum groupinstall 'Development Tools'
 sudo yum install openssl-devel curl-devel expat-devel perl-devel asciidoc xmlto
 
-
 # centos compile emacs
-sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel libungif-devel libjpeg-devel
+sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel libungif-devel libjpeg-devel libXpm-devel ncurses-devel
+
+# centos compile guake
+sudo yum install gnome-common GConf2-devel pytgtk2-devel python-vte-devel gnome-python2-gconf python-keybinder pyxdg notify-python
 
 # cpu: mem: hdd: hardware information in a GTK+ window
 hardinfo
@@ -489,6 +491,9 @@ svn co --username <svn-login> svn://<ip:port>/path
 
 # svn last revision number
 svn info <url>
+
+# when: svnrdump: E000022: Couldn't get lock on destination repos after 10 attempts
+svn propdel --revprop -r0 svn:rdump-lock <url>
 
 # bash: cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
 rsync --archive --verbose --exclude=CVS src dst
