@@ -58,12 +58,6 @@ find . -name "*.jar" | xargs grep File.class
 # new line separator for each grep result sh script
 grep "pattern" /path/to/file | awk '{print $0,"\n"}'
 
-# emacs find - exclude backup files
-find . -type f ! -name "*~" -exec grep -nH -e "String" {} +
-
-#
-find . -name *.properties -exec grep -lir ".*String.*" \'{}\' \; -print
-
 # grep: colorize grep in less
 grep --color=always pattern file | less -R
 
@@ -79,28 +73,14 @@ grep -B 2 -A 4 "String" / grep --before-context=2 --after-context=4 "String"
 # grep: print only filenames of the files containing "String"
 grep "String" * | cut -f1 -d:
 
-# grep: find: recursive search for "String" in ... (with '.' at the end)
-grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{el,clj,cljs,cljc} ./
-
-# grep: find: grep-help: recursive search for "String" in ... (with '.' at the end)
-grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{log,propeties,cfg,txt} ./
-
-# grep: search for "String" in *.txt files (with spaces in filenames)
-find ./ -type f -name "*.txt" -print0 | xargs -0 grep --files-with-matches "String"
-
 # zgrep: search possibly compressed files for a regular expression
 zgrep "String" myfile.gz / zgrep 'GET /blog' access_log.gz
-
-# search for File.class in jar files
-find . -name "*.jar" | xargs grep File.class
 
 # find images
 find . -type f -exec file {} \; | grep -o -P '^.+: \w+ image'
 
 # between: older: newer:
 find ~/Pictures -type f -newer
-
-# between: older: newer:
 find ~/Pictures -type f -not -newermt "2016-02-01"
 
 # find all files recursively newer than given time
