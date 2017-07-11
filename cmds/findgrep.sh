@@ -85,3 +85,6 @@ find ~/Pictures -type f -not -newermt "2016-02-01"
 
 # find all files recursively newer than given time
 find /directory -newermt $(date +%Y-%m-%d -d '1 day ago') -type f -print
+
+# substitute / replace all occurences of ... with ...
+find ./ -type f -name "*.fish" -print0 | xargs -0 sed --in-place "s/apt-get/apt/g"
