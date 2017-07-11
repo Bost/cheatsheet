@@ -82,7 +82,7 @@ su -c 'yum update'
 /etc/apt/apt.conf
 
 # apt: aptitude: without proxy
-sudo apt-get --option Acquire::http::proxy=false ...
+sudo apt --option Acquire::http::proxy=false ...
 
 # net: grouping bandwidth per process; "net top"
 sudo nethogs wlan0
@@ -139,13 +139,13 @@ sudo update-alternatives --config gnome-www-browser
 /usr/bin/browse -> xdg-open
 
 # dpkg:
-sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update
+sudo add-apt-repository ppa:webupd8team/java && sudo apt update
 
 # dpkg:
 list_ppa.sh; sudo ppa-purge ppa:ethereum/ethereum-qt
 
 # java:
-sudo apt-get install openjdk-8-jdk / sudo apt-get install oracle-java8-set-default
+sudo apt install openjdk-8-jdk / sudo apt install oracle-java8-set-default
 
 # list only one column
 ls --format=single-column
@@ -715,13 +715,13 @@ lsb_release -a
 sudo update-grub
 
 # withouth "sudo", download source PACKAGE to current directory
-apt-get source PACKAGE
+apt source <package>
 
-# Advanced Package Tool
+# Advanced Package Tool; apt is a replacement for apt-get
 apt
 
 #
-sudo apt-get install --reinstall <PACKAGE>
+sudo apt install --reinstall <package>
 
 # linux: ubuntu: command line upgrade part 1. (CLI alternative to update-manager)
 # set Prompt
@@ -729,7 +729,6 @@ sudo apt-get install --reinstall <PACKAGE>
 Prompt=normal
 
 # linux: ubuntu: command line upgrade part 2.
-sudo apt-get update; and sudo apt-get upgrade
 sudo apt update; and sudo apt upgrade
 
 # update and upgrade the system by removing/installing/upgrading packages
@@ -747,7 +746,7 @@ sudo restart lightdm / gdm / kdm
 sudo touch /forcefsck
 
 # linux: remove old kernels
-sudo apt-get remove --purge $(dpkg -l 'linux-image-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')
+sudo apt remove --purge $(dpkg -l 'linux-image-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')
 
 # for tabular data
 awk
@@ -910,7 +909,7 @@ dpkg --list | grep ii | grep -i <regex>
 apt-cache show PACKAGE / aptitude show PACKAGE
 
 # dpkg: apt: fix the 'Hash sum mismatch error'
-sudo rm -rf /var/lib/apt/lists; sudo mkdir -p /var/lib/apt/lists/partial; sudo apt-get clean
+sudo rm -rf /var/lib/apt/lists; sudo mkdir -p /var/lib/apt/lists/partial; sudo apt clean
 
 # linux: ubuntu: apt: dpkg: mirror: distro: source:
 # Software Sources List editors; see y-ppa-manager, http://repogen.simplylinux.ch/
@@ -1105,7 +1104,7 @@ nmcli --ask general
 rpm -qa
 
 # android:
-sudo apt-get install android-tools-adb android-tools-fastboot
+sudo apt install android-tools-adb android-tools-fastboot
 
 # root login / root console / root prompt
 sudo -i
@@ -1137,8 +1136,8 @@ Create your HPKP hash: https://report-uri.io/home/pkp_hash
 # install latest nodejs behind proxy
 sudo apt-key adv --keyserver-options http-proxy="http://<proxy-ip>:<proxy-port>/" --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 68576280
 sudo apt-add-repository "deb https://deb.nodesource.com/node_7.x $(lsb_release -sc) main"
-sudo apt-get update
-sudo apt-get install nodejs
+sudo apt update
+sudo apt install nodejs
 
 # * TODO add this:
 # git remote add --track develop upstream https://github.com/Lokaltog/powerline.git
