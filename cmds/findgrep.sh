@@ -5,7 +5,7 @@ exit 1 # just in case ...
 ./cmd.sh 1>str.out 2>str.err / ./cmd.sh &>combined.out
 
 # emacs find - exclude backup files
-find . -type f ! -name "*~" -exec grep -nH -e "String" {} +
+find . -type f ! -name "*~" -exec grep -n --with-filename --regexp="String" {} +
 
 # find and delete empty files / dirs
 find . -empty -type f -delete / find . -empty -type d -delete
@@ -77,7 +77,7 @@ grep "String" * | cut -f1 -d:
 zgrep "String" myfile.gz / zgrep 'GET /blog' access_log.gz
 
 # find images
-find . -type f -exec file {} \; | grep -o -P '^.+: \w+ image'
+find . -type f -exec file {} \; | grep --only-matching --perl-regexp '^.+: \w+ image'
 
 # between: older: newer:
 find ~/Pictures -type f -newer
