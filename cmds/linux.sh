@@ -258,6 +258,9 @@ python3 -m http.server 8000 --bind 127.0.0.1
 # simple python server
 python -m SimpleHTTPServer 8001
 
+# cross-platform HTTP/2 web server with automatic HTTPS
+caddy -host example.com
+
 # python: high-level file operations
 import shutil
 
@@ -458,6 +461,7 @@ curl ifconfig.me
 
 # exec disc usage command on a remote host and sort results
 ssh <HostAlias> du -h --max-depth=1 /path/to/dir | sort -h
+climate ssh-mount / ssh-unmount
 
 # recursively compare dirA with dirB; show only filenames: -q (quiet)
 diff -rq dirA dirB | sort
@@ -978,6 +982,7 @@ crontab -e / crontab -l
 
 # linux: show everything (battery info etc); Advanced Configuration and Power Interface
 acpi -V
+climate battery
 
 # linux: set / increase / decrease display brightness
 xbacklight -set 10 / -inc 10 / -dec 10
