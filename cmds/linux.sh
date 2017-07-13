@@ -39,7 +39,7 @@ google-chrome --headless --screenshot --window-size=1280,169 https://www.eff.or
 # chrome extras
 chrome://version | chrome://flags | chrome://net-internals | chrome://quota-internals | chrome://network-error/-106
 
-# net: linux: ports listening for connection (i.e. opened ports)
+# net: ports listening for connection (i.e. opened ports)
 sudo nmap -sT -O localhost
 
 # connecting to mysql a.k.a. login
@@ -102,7 +102,7 @@ gpg --verify file.sig file
 # fs: number of inodes; every file or directory requires 1 inode
 df -i
 
-# net: linux: show host name
+# net: show host name
 hostname -i
 
 # mplayer: reset/+/- speed by 10% / toggle OSD states
@@ -559,7 +559,7 @@ cvs -d cvs -t -d :pserver:faizal@localhost:/myrepos ci -m "test" -l "src/foo/Foo
 #
 cvs add file.ext
 
-# linux: system information (kernel version etc.)
+# system information (kernel version etc.)
 uname -a
 
 # tail a (log)file over ssh
@@ -676,34 +676,34 @@ mysql show columns in tableName
 # oracle: execute script.sql
 @C:\path\to\script.sql
 
-# linux: Execute a command as another user
+# Execute a command as another user
 pkexec
 
-# linux: systemd: Control the systemd system and service manager
+# systemd: Control the systemd system and service manager
 systemctl
 
-# linux: systemd: Control the systemd login manager - logging data
+# systemd: Control the systemd login manager - logging data
 loginctl
 
-# linux: last logged-in users
+# last logged-in users
 last
 
-# linux: info about CPU architecture
+# info about CPU architecture
 lscpu
 
-# linux: CPU architecture 32/64 bit
+# CPU architecture 32/64 bit
 getconf LONG_BIT
 
 # find and delete *.jar and *.class when idling
 ionice -c3 find . -name "*.jar" -or -name "*.class" -delete
 
-# linux: change the priority of process 2222 to minimum (-19 max, +20 min prio)
+# change the priority of process 2222 to minimum (-19 max, +20 min prio)
 renice +20 2222
 
-# linux: ps: show statistics for a process nr. 7695
+# ps: show statistics for a process nr. 7695
 ps -o pid,user,command,nice -p 7695
 
-# linux: ps: process tree / user's processes ; ps -aux / ps aux - are different
+# ps: process tree / user's processes ; ps -aux / ps aux - are different
 ps f / ps fx / ps u
 
 # distro name and ver
@@ -712,10 +712,10 @@ cat /etc/*-release
 # distro name and ver
 cat /proc/version
 
-# linux: show (ubuntu) version
+# show (ubuntu) version
 lsb_release -a
 
-# linux: ubuntu: when "you may need to re-run your boot" appears
+# ubuntu: when "you may need to re-run your boot" appears
 sudo update-grub
 
 # withouth "sudo", download source PACKAGE to current directory
@@ -727,29 +727,29 @@ apt
 #
 sudo apt install --reinstall <package>
 
-# linux: ubuntu: command line upgrade part 1. (CLI alternative to update-manager)
+# ubuntu: command line upgrade part 1. (CLI alternative to update-manager)
 # set Prompt
 /etc/update-manager/release-upgrades
 Prompt=normal
 
-# linux: ubuntu: command line upgrade part 2.
+# ubuntu: command line upgrade part 2.
 sudo apt update; and sudo apt upgrade
 
 # update and upgrade the system by removing/installing/upgrading packages
 sudo apt update; and sudo apt full-upgrade
 
-# linux: ubuntu: command line upgrade part 3.
+# ubuntu: command line upgrade part 3.
 sudo do-release-upgrade
 
-# linux: ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade
+# ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade
 
-# linux: ubuntu: (ubuntu 11.10 or later), gnome or KDE
+# ubuntu: (ubuntu 11.10 or later), gnome or KDE
 sudo restart lightdm / gdm / kdm
 
-# linux: run fsck on next reboot
+# run fsck on next reboot
 sudo touch /forcefsck
 
-# linux: remove old kernels
+# remove old kernels
 sudo apt remove --purge $(dpkg -l 'linux-image-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')
 
 # for tabular data
@@ -881,13 +881,13 @@ cat data.csv | column -t -s ';'
 # xml: command line XML tool (formating)
 xmllint
 
-# linux: shared library dependencies
+# shared library dependencies
 ldd -v $(which vim)
 
-# linux: library: find out if libgconf is installed
+# library: find out if libgconf is installed
 ldconfig -p | grep libgconf
 
-# linux: info about ELF files
+# info about ELF files
 readelf -v $(which vim)
 
 # show installed packages
@@ -915,7 +915,7 @@ apt-cache show PACKAGE / aptitude show PACKAGE
 # dpkg: apt: fix the 'Hash sum mismatch error'
 sudo rm -rf /var/lib/apt/lists; sudo mkdir -p /var/lib/apt/lists/partial; sudo apt clean
 
-# linux: ubuntu: apt: dpkg: mirror: distro: source:
+# ubuntu: apt: dpkg: mirror: distro: source:
 # Software Sources List editors; see y-ppa-manager, http://repogen.simplylinux.ch/
 software-properties-gtk - see /etc/apt/sources.list
 
@@ -971,23 +971,20 @@ mtr --report www.google.com
 # bash: query wikipedia for keyword
 dig +short txt keyword.wp.dg.cx
 
-# net: listening ports and PIDs of associated processes. tcp (-t) udp (-u)
+# net: listening ports and PIDs of associated processes. tcp (-t) udp (-u); see also ss (socket statistics)
 ss -tulnp  # socket statistics replaces obsolete netstat
-
-# net: linux: socket statistics; netstat replacement
-ss -lp
 
 # crontab: edit / view entries
 crontab -e / crontab -l
 
-# linux: show everything (battery info etc); Advanced Configuration and Power Interface
+# show everything (battery info etc); Advanced Configuration and Power Interface
 acpi -V
 climate battery
 
-# linux: set / increase / decrease display brightness
+# set / increase / decrease display brightness
 xbacklight -set 10 / -inc 10 / -dec 10
 
-# linux: power consumption / management diagnosis tool
+# power consumption / management diagnosis tool
 sudo powertop
 
 # gps: convert kml to gps
@@ -1033,7 +1030,7 @@ test
 # tabs: convert spaces to tabs / tabs to spaces
 expand / unexpand file.txt
 
-# linux: simple GUIs
+# simple GUIs
 zenity, whiptail
 
 # monitor file and network activities of a PROCESS, max printed string size 10000
@@ -1045,7 +1042,7 @@ ptrace / ltrace
 #
 sudo service tomcat7 stop
 
-# net: linux: Simple Network Management Protocol
+# net: Simple Network Management Protocol
 snmp
 
 # net: packet analyser
