@@ -39,7 +39,7 @@ google-chrome --headless --screenshot --window-size=1280,169 https://www.eff.or
 # chrome extras
 chrome://version | chrome://flags | chrome://net-internals | chrome://quota-internals | chrome://network-error/-106
 
-# net: ports listening for connection (i.e. opened ports)
+# net: ports listening for connection (i.e. open ports)
 sudo nmap -sT -O localhost
 
 # connecting to mysql a.k.a. login
@@ -63,14 +63,14 @@ deb [arch=amd64] http://...
 # usb: drive: drives: disc: discs: list block devices
 lsblk
 
+# Dynamic device management
+udev
+
 # usb: drive:
 mount | grep gvfs; cd ...
 
 # pdf: view file.pdf
 evince file.pdf
-
-# net: systemd:
-service network-manager restart
 
 # net: ubuntu: (edit) and re-read proxy definition
 source /etc/environment
@@ -100,7 +100,7 @@ wget --limit-rate=20k http://www-ftp.lip6.fr/pub/linux/distributions/Ubuntu/rele
 gpg --verify file.sig file
 
 # fs: number of inodes; every file or directory requires 1 inode
-df -i
+df -i / --inodes
 
 # net: show host name
 hostname -i
@@ -213,7 +213,10 @@ set --erase myvar
 # run a cmd only when load average is below a certain threshold (default is 0.8)
 echo "rm -rf /unwanted-large/folder" | batch
 
-# show bash shortcuts (including Ctrl+L, Ctrl+R); \e - ESC, \C-y - Ctrl+y
+# fish: handle fish key bindings
+bind / help bind
+
+# bash: display shortcuts (including Ctrl+L, Ctrl+R); \e - ESC, \C-y - Ctrl+y
 bind -P / help bind
 
 # set mod of file1 according to file0
@@ -279,7 +282,7 @@ host www.google.com
 # net: get ip address from domain
 nslookup www.google.com | tail -2 | head -1 | awk "{print $2}"
 
-# net: DNS lookup utility; domain information groper
+# net: DNS lookup utility; domain information groper; interrogate DNS name servers
 dig www.google.com
 
 # scripting: loc_variable - visible only within given code block
@@ -679,8 +682,12 @@ mysql show columns in tableName
 # Execute a command as another user
 pkexec
 
+# net: service is replaced by systemctl
+systemctl status network-manager / service network-manager status
+sudo systemctl stop tomcat7 / sudo service tomcat7 stop
+
 # systemd: Control the systemd system and service manager
-systemctl
+systemctl status <service-name>
 
 # systemd: Control the systemd login manager - logging data
 loginctl
@@ -1039,9 +1046,6 @@ strace -f -e trace=file,network -s 10000 -o outfile.log PROCESS ARGS
 # trace process / library
 ptrace / ltrace
 
-#
-sudo service tomcat7 stop
-
 # net: Simple Network Management Protocol
 snmp
 
@@ -1118,8 +1122,20 @@ groups - check plugdev membership
 adb devices; dmesg; adb logcat; adb shell
 adb push src dst
 
-# packages; unsupported
+# packages; unsupported / obsolete
 ubuntu-support-status --show-unsupported
+
+# modify a user account
+usermod
+
+# add user to the "vboxsf" group
+sudo usermod -a -G vboxsf user
+
+# run a program in a new session
+setsid
+
+# monitor the progress of data through a pipe
+pv
 
 # maven:
 mvn package
