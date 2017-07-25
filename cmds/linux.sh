@@ -372,6 +372,9 @@ mv README.{text,txt} ; cp file{,.bak}
 # bash: redirect stderr (2) to stdout (1) and save it to command.log
 ./command.sh 2>&1 | tee command.log
 
+# suppress stderr messagess
+./script.sh 2> /dev/null
+
 # bash: fist / last 5 lines from file
 head -n 5 file / tail -n 5 file
 
@@ -555,6 +558,9 @@ cvs log file.ext
 
 # version and tags
 cvs status -v file.ext
+
+# list files associated with a tag; (no blank between -r and TAGNAME)
+cvs -q rlog -R -N -S -rTAGNAME MODULENAME
 
 # debug and trace info
 cvs -d cvs -t -d :pserver:faizal@localhost:/myrepos ci -m "test" -l "src/foo/Foo.ext"
