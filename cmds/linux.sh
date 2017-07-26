@@ -142,7 +142,7 @@ sudo update-alternatives --config gnome-www-browser
 sudo add-apt-repository ppa:webupd8team/java && sudo apt update
 
 # dpkg:
-list_ppa.sh; sudo ppa-purge ppa:ethereum/ethereum-qt
+cd ~/bin; git clone https://gist.github.com/66638cab114a6da691518598b6d13650.git; ./66638cab114a6da691518598b6d13650/list-ppa; sudo ppa-purge <ppa:user/ppa-name>
 
 # java:
 sudo apt install openjdk-8-jdk / sudo apt install oracle-java8-set-default
