@@ -159,3 +159,6 @@ gulp
 
 ;; future
 A function which hasn't finished the evaluation
+
+;; element in sequence
+(defn in? "true if seq contains elm" [seq elm] (boolean (some (fn [e] (= elm e)) seq)))
