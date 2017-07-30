@@ -105,11 +105,11 @@ df -i / --inodes
 # net: show host name
 hostname -i
 
-# mplayer: reset/+/- speed by 10% / toggle OSD states
-backspace / \] / \[ / o
+# mplayer: reset/+/- speed by 10% / toggle OSD states / volume +/-
+backspace / \] / \[ / o / * / "/"
 
-# mplayer: volume +/-
-* / "/"
+# youtube: +/- speed / captions / mute / 1 frame forward / 1 frame backward
+> / < / c / m / , / .
 
 # postscript to pdf conversion
 ps2pdf
@@ -130,10 +130,7 @@ javap file.class / javap -p -s file.class
 sudo update-alternatives --config java / javac
 
 # ubuntu: change default www-browser
-sudo update-alternatives --config x-www-browser
-
-# ubuntu: change default www-browser
-sudo update-alternatives --config gnome-www-browser
+sudo update-alternatives --config x-www-browser / gnome-www-browser
 
 # xfce: opens a file or URL in the user's preferred application
 /usr/bin/browse -> xdg-open
