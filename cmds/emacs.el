@@ -566,7 +566,7 @@ M-\
 ;; test yasnippet
 emacs -Q -L . -l yasnippet-tests.el -f ert &
 
-;; locate file
+;; helm-locate - see 'man locate'
 SPC f L
 
 ;; window transient mode - window management w/o using key binding - for layouts
