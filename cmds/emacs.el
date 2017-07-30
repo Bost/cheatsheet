@@ -580,8 +580,8 @@ SPC l <nr>
 ;; helm-persp-switch-project: create new layout
 SPC p l
 
-;; save / load layouts to/from a file
-SPC l s and SPC l L
+;; save / load layouts to / from a file
+SPC l s  and  SPC l L
 
 ;; M-s h l hilite lines e.g. log file evaluation; see:
 ;; https://www.masteringemacs.org/article/highlighting-by-word-line-regexp
