@@ -535,7 +535,7 @@ M-x profiler-start profiler-report profiler-stop
 :,$s/BEFORE/AFTER/gc
 :,$s/BEFORE/AFTER/gc|1,''-&&
 
-;; M-x ielm - an alternative to Lisp Interactive mode
+;; M-x ielm - alternative to Lisp Interactive mode; elisp REPL
 Inferior Emacs Lisp Mode
 
 ;; hyper - none of following works. See http://superuser.com/a/920967
@@ -586,6 +586,9 @@ SPC l s and SPC l L
 ;; M-s h l hilite lines e.g. log file evaluation; see:
 ;; https://www.masteringemacs.org/article/highlighting-by-word-line-regexp
 M-x highlight-lines-matching-regexp
+
+;; replace-all: recursive find & replace / substitute all occurences of a string
+M-x find-name-dired  then  't' (toggle mark) then  'Q' (Query replace in files)
 
 ;; Collapse every form of it when first opened - put the following block in the
 ;; bottom of init.el:
