@@ -514,7 +514,7 @@ s / c / r
 x (X)
 
 ;; info: manual:
-M-x info / info-emacs-manual / info-display-manual
+M-x info / info-apropos / info-emacs-manual / info-display-manual
 
 ;; 1. M-x kmacro-name-last-macro, 2. M-x insert-kbd-macro, 3. M-x kmacro-bind-to-key
 macros
