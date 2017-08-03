@@ -765,8 +765,11 @@ sudo apt remove --purge $(dpkg -l 'linux-image-*' | sed '/^ii/!d;/'"$(uname -r |
 # for tabular data
 awk
 
-# sed: print file content between lines 10 and 20 / print 5th line
-sed -n "10,20p" file / sed -n 5p file
+# cut huge file: content between lines 10 and 20 / print 5th line
+sed -n "10,20p" /path/to/file / sed -n 5p /path/to/file
+
+# cut huge file: content between lines 10 and 20; see https://unix.stackexchange.com/a/47423
+awk 'NR >= 10 && NR <= 20' /path/to/file > /path/to/cut-file
 
 # sed: replace 1 occurence
 sed --in-place "s/foo/FOO/"
