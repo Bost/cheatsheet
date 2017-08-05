@@ -1163,6 +1163,9 @@ sudo apt-add-repository "deb https://deb.nodesource.com/node_7.x $(lsb_release -
 sudo apt update
 sudo apt install nodejs
 
+# net: data transfered today / per month
+sudo vnstat -u -i wlan0; and vnstat
+
 # * TODO add this:
 # git remote add --track develop upstream https://github.com/Lokaltog/powerline.git
 # * TODO add bash file tests to the list
