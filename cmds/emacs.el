@@ -44,7 +44,7 @@ M-x paredit-wrap-square
 C-k
 
 ;; paredit: wrap brackets around sexp / raise sexp (replace entire parent with child) / remove everything before the current sexp
-;; M-( / M-r / M-<up>
+M-( / M-r / M-<up>
 
 ;; paredit-forward-slurp-sexp (vcucni) / paredit-forward-barf-sexp (vygrcaj)
 <M-s-right> / <M-s-left>
@@ -58,11 +58,8 @@ C-u -4 C-x TAB
 ;; regexp:
 https://www.emacswiki.org/emacs/RegularExpression#regexp
 
-;; regexp: increment the number found
-\\#
-
-;; regexp: whitespace
-\\s-
+;; regexp: increment the number found  /  whitespace
+\\#  /  \\s-
 
 ;; utf8; unicode: describe char at the point
 M-x describe-char
@@ -85,7 +82,7 @@ C-c M-j
 ;; winner-mode: jump between window config
 C-c 1 / C-c 2 / ...
 
-;; startup: skip ~/.emacs (if messed up); Do not load an init file
+;; startup: skip ~/.emacs (if messed up) / don't load the init file
 emacs -q / --no-init-file
 
 ;; open web browser
@@ -346,7 +343,7 @@ C-x C-f ENTER / <newfile>
 m / * / u (U) / t
 
 ;; dired: mark all: toggle marking / executables / files (with extention)
-* s / * * / * . <ext>
+* . <ext> / * s / * *
 
 ;; dired: mark & delete all files with extention
 * . <ext> D

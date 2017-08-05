@@ -42,8 +42,9 @@
     Semantics must be provided; done by providing operational semantics
     None of  the main prog. languages have (operational semantics) only partially provided;
     Two ways of defining semantics:
-    - Operational: "How it executes"
-    - Denotational: mapping into mathematics
+    - Operational: "How it executes"; reduction relation: e1 -> e2
+    - Denotational: mapping into mathematics; interpretation of terms: ⟦e⟧ = ?;
+      e.g.: ⟦ v : τ  ⊢  v : τ ⟧ = idτ - i.e. the meaning of is ⟦...⟧ is an identity on τ i.e. an access to variable v
 
 *** Cartesian Product CP: set of all pairs
     Relation: A subset of CP; doesn't have a directionality; n-to-n relation
@@ -67,7 +68,9 @@
     - Constant functor: collapses all objs into 1 obj and all morphisms into an identity
     - Intuitive understanding: (endo) functor is a container - i.e. list contains values
       (Comonad is a container that already comes prefilled with many values and
-      with an access point to one particular value)
+      with an access point to one particular value. E.g. hidden params (for
+      hidden param propagation it's better to use comonad than monad), history,
+      neighbourhood etc.)
     - function itself can be regarded as a container. E.g. identity function;
       functions (when evaluated) return value i.e. data are represented as values
       functions and data are the same
@@ -352,8 +355,8 @@ Functor:
 ** TODO Pointed Function
 ** TODO Top (Topological Space)
 ** eval, exponent in Category Theory
-** Propositional Logic
 
+* Tautology - "this is always true"
 * Beta β reduction (computational) / Eta η extentionality principle
   β reduction in computation: Simplify proofs by replacing formal params with terms.
 
@@ -377,7 +380,8 @@ Functor:
 * Axiom of Choice - see "Type Theory Foundations, Lecture 3-wJLTE8rnqH0.mp4"
 "the greatest intelectual achievement???"
 
-predicate = vyrok = tvrdenie
+Predicate = vyrok = tvrdenie
+Proposition = ???
 
 (Banach Tarsky Paradox: Slice up an object with a volume into parts with no volume, and by putting it together get 2 same objects - "create an object for free")
 
@@ -421,9 +425,14 @@ predicate = vyrok = tvrdenie
   | A is possible       | Monadic Lax Logic | Generic effects (monads, state, exception) |
   | A is valid          | Modal Logic       | Runtime code generation                    |
 
+  TODO difference between branches of logic
+
 ** Linear Logic: limited resources: construction / descruction
    ? Unique pointers in C++ ?, "Stuff moved from place to place and it cannot be used twice only once"
 ** Intuitionistic (Constructive) Logic: endless resources, no need for construction / descruction
+** Propositional Logic: AND, OR, NOT, IF-THEN, IS-EQUIVALENT-TO
+** Predicate Logic: dependence on free variables, has Universal quantifiers, variables, functions
+** Intuitionistic Logic
 ** Higher order logic
 
 * Impossibility of a perfect type-checker for a programming language
