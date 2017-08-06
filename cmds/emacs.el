@@ -584,6 +584,10 @@ M-x highlight-lines-matching-regexp
 ;; replace-all: recursive find & replace / substitute all occurences of a string
 M-x find-name-dired  then  't' (toggle mark) then  'Q' (Query replace in files)
 
+
+;; neotree
+SPC f T
+
 ;; Collapse every form of it when first opened - put the following block in the
 ;; bottom of init.el:
 ;; Local Variables:

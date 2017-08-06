@@ -86,6 +86,8 @@
    why to study Z and not W after understanding X1, X2 .. Xn in dependency of the field of some interest
 * Instaparse: parsers in clojure: context-free grammars as easy to use as regexs
 * Game Theory
+** Pure Strategy - set of decisions made with certitude
+** Mixed Strategy - distribution of probabilities over some set of pure strategies
 ** Nash Equilibrum (NE)
    Each player gives best response to the others
    Nobody has an incentive to deviate from their actions if an equilibrum is played
@@ -97,8 +99,7 @@
 *** Independence of Irrelevant Alternatives
     if the selected ordering between two outcomes depends only on the relative
     ordering they are given by the agents
-*** Dictator
-    single agent whose preferencies always determine the social ordering
+*** Dictator: single agent whose preferencies always determine the social ordering
 *** Arrows Theorem
     any social welfare function that is pareto efficient and independent of
     irrelevant alternatives is dictatorial

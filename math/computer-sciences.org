@@ -1,6 +1,7 @@
 * Lambda Calculus: formal calculus for manipulating functions
   Currying: Partial function application; Fixing some function parameters
 * Category Theory: abstract algebra of abstract functions: "The Arrows Count"
+  (TODO arrow weight = price of calculation; preference for compositions)
   Up to isomorphis = any such things are isomorphic (structurally the same)
   i.e. working via analogy (i.e. X is just a renamed version of Y)
 ** Cartesian Closed Category CCC: Usefull in programming
@@ -216,6 +217,7 @@
      You can extract from IO Monad
      You can't put anything to IO Monad
 
+** TODO Topos, Subobject Classifier etc.: see Bartosz's blog
 * Curry-Howard-Lambek correspondence: Logic <-> Type Theory <-> Category Theory:
   Function A -> B is a proof of logical implication A => B
   Direct relationship between computer programs and mathematical proofs; from 1940-ties
