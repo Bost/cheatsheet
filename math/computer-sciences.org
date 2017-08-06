@@ -218,7 +218,7 @@
      You can't put anything to IO Monad
 
 ** TODO Topos, Subobject Classifier etc.: see Bartosz's blog
-* Curry-Howard-Lambek correspondence: Logic <-> Type Theory <-> Category Theory:
+* Curry-Howard-Lambek correspondence: Intuitionistic Logic <-> Type Theory <-> Category Theory:
   Function A -> B is a proof of logical implication A => B
   Direct relationship between computer programs and mathematical proofs; from 1940-ties
   Link between Computation and Logic;
@@ -228,7 +228,7 @@
   Curry-Howard-Lambek correspondence might lead to unification between mathematical logic and foundational computer science;
   Popular approach: use monads to segregate provably terminating from potentially non-terminating code
 
-    | LOGIC (Howard)                                 | TYPE THEORY (Curry)                                                  | CATEGORY THEORY (Lambek) |
+    | INTUITIONISTIC LOGIC (Howard)                  | TYPE THEORY - Functional Programming (Curry)                         | CATEGORY THEORY (Lambek) |
     |------------------------------------------------+----------------------------------------------------------------------+--------------------------|
     | Proposition of some type - (something is true) | Type (contract - a set of values that passes the contract)           |                          |
     | Proof of some type                             | Term (A program - guarded fn)                                        |                          |
@@ -419,13 +419,15 @@ Proposition = ???
 
 * Theory of Reflexive Domain 1:21 Video 2
 * Logic examples:
-  | Logical Judgement   | Branch of Logic   | Computation phenomenon                     |
-  |---------------------+-------------------+--------------------------------------------|
-  | K knows A           | Epistemic Logic   | Distributed Computing                      |
-  | A is true at time t | Temporal Logic    | Reactive Programming (partial evaluation)  |
-  | A is a resource     | Linear Logic      | Concurrent Computation                     |
-  | A is possible       | Monadic Lax Logic | Generic effects (monads, state, exception) |
-  | A is valid          | Modal Logic       | Runtime code generation                    |
+  | Logical Judgement   | Branch of Logic   | Computation phenomenon                                      |
+  |---------------------+-------------------+-------------------------------------------------------------|
+  | K knows A           | Epistemic Logic   | Distributed Computing                                       |
+  | A is true at time t | Temporal Logic    | Reactive Programming (partial evaluation)                   |
+  | A is a resource     | Linear Logic      | Concurrent Computation (π calculus)                         |
+  | A is possible       | Monadic Lax Logic | Generic effects (monads, state, exception)                  |
+  | A is valid          | Modal Logic       | Runtime code generation, code & eval constructs in the lang |
+  |                     |                   | Different modes of truth                                    |
+
 
   TODO difference between branches of logic
 
@@ -452,6 +454,20 @@ Proposition = ???
   git clone https://scm.gforge.inria.fr/anonscm/git/why3/why3.git
   A user can write WhyML programs directly and get correct-by-construction OCaml programs through an automated extraction mechanism
 
+
+
+* Trinity
+** Logic & Proof Theory - Philosophy
+** Type Theory - Computer Science
+** Category Theory - Mathematics
+
+* PT 3 - Proof Search & Sequent Calculus
+* PT 1 - Judgements & Propositions 
+** judgement (obj of knowledge); judgemens are made about propositions
+   'A is true', 'A is false', M : A - M is a proof of A i.e. M is a program which has a type of A
+   'A' - proposition
+   'true' - judgement on a proposition
+
 * Proof Theory: Proof of soundness, proof of completeness
   experiment, observation
   sampling, counter examples
@@ -462,3 +478,12 @@ Proposition = ???
 
   Proposition is a statement: can be true or false
   Predicate is a proposition: truth depends on the values of variable(s)
+
+  Verificationist: The meaning of a connective is given by it's introduction rule(s)
+  'A and B' is true; A & B : true
+
+** Local soundness of the elimination rules: elim. rules are not too strong
+   - no information is gained by applying and eliminating a particular rule
+** Local completeness: elim. rules not too weak
+** LOcal expantion: witness for the completeness of the rules
+   47:21
