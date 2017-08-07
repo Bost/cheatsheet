@@ -1157,18 +1157,19 @@ chrome://net-internals/#hsts
 # HPKP: HTTP Public Key Pinning; Similair to HSTS header
 Create your HPKP hash: https://report-uri.io/home/pkp_hash
 
-# install latest nodejs behind proxy
+# install nodejs 8 behind proxy
 sudo apt-key adv --keyserver-options http-proxy="http://<proxy-ip>:<proxy-port>/" --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 68576280
-sudo apt-add-repository "deb https://deb.nodesource.com/node_7.x $(lsb_release -sc) main"
+sudo apt-add-repository "deb https://deb.nodesource.com/node_8.x $(lsb_release -sc) main"
+# w/o proxy: curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt update
 sudo apt install nodejs
+
+# nodejs: install electron package
+sudo npm install --global --unsafe-perm=true electron
 
 # net: data transfered today / per month
 sudo vnstat -u -i wlan0; and vnstat
 
-# * TODO add this:
-# git remote add --track develop upstream https://github.com/Lokaltog/powerline.git
-# * TODO add bash file tests to the list
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
 #        -c FILE:  FILE exists and it's character special
