@@ -28,8 +28,8 @@ SPC w p m
 ;;
 M-x narrow-to-defun (s-n) / M-x widen (s-N)
 
-;; open file and jump to line:column (jump to column doesn't work)
-emacs path/to/file +line:column
+;; open file and jump to line:column
+emacs +line:column path/to/file
 
 ;; unreachable repositories: use http instead of https
 emacs --insecure
@@ -43,14 +43,11 @@ M-x paredit-wrap-square
 ;; paredit: kill the rest in the sexp
 C-k
 
-;; paredit: wrap brackets around sexp / raise sexp (replace entire parent with child) / remove everything before the current sexp
-M-( / M-r / M-<up>
+;; paredit: insert-parentheses / move-past-close-and-reindent
+M-( / M-)
 
 ;; paredit-forward-slurp-sexp (vcucni) / paredit-forward-barf-sexp (vygrcaj)
 <M-s-right> / <M-s-left>
-
-;; paredit: replace parent with the child
-M-r
 
 ;; indent: move text left by four spaces (M-x indent-rigidly is C-x TAB)
 C-u -4 C-x TAB
