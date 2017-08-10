@@ -94,6 +94,9 @@
 
    Closing windows in order to make air conditioning working:
    - everybody just gives up without trying to convince others to close the window
+   Party organisation - follow the majority:
+   - majority joins, those skipping are penalized "missed something"
+   - majority skips, those joining are penalized "booring"
 *** Nash Equilibrum TODOs:
 **** 1. Write action profiles for everyone (the matrix)
 **** 2. Calculate optimal mixed strategies for everyone in order to get Nash Equilibrum
