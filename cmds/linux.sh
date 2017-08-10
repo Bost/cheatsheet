@@ -15,7 +15,7 @@ sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel libungif-devel li
 sudo yum install gnome-common GConf2-devel pytgtk2-devel python-vte-devel gnome-python2-gconf python-keybinder pyxdg notify-python
 
 # cpu: mem: hdd: hardware information in a GTK+ window
-hardinfo
+hardinfo / sudo dmidecode / sudo lshw
 
 # arp: Displays and modifies the IP-to-Physical address translation tables used by address resolution protocol (ARP).
 arp -a
