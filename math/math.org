@@ -91,6 +91,9 @@
 ** Nash Equilibrum (NE)
    Each player gives best response to the others
    Nobody has an incentive to deviate from their actions if an equilibrum is played
+
+   Closing windows in order to make air conditioning working:
+   - everybody just gives up without trying to convince others to close the window
 *** Nash Equilibrum TODOs:
 **** 1. Write action profiles for everyone (the matrix)
 **** 2. Calculate optimal mixed strategies for everyone in order to get Nash Equilibrum
@@ -103,7 +106,6 @@
 *** Arrows Theorem
     any social welfare function that is pareto efficient and independent of
     irrelevant alternatives is dictatorial
-
 ** Markov chain (model): Market transitions http://youtu.be/o-jdJxXL_W4?t=7m3s
 *** Dragan Djuric: Clojure on GPU
 *** Bayadera (Bayesian): very fast
