@@ -1161,14 +1161,16 @@ Create your HPKP hash: https://report-uri.io/home/pkp_hash
 sudo apt-key adv --keyserver-options http-proxy="http://<proxy-ip>:<proxy-port>/" --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 68576280
 sudo apt-add-repository "deb https://deb.nodesource.com/node_8.x $(lsb_release -sc) main"
 # install nodejs8 w/o proxy: curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt update
-sudo apt install nodejs
+sudo apt update; and sudo apt install nodejs
 
 # nodejs: install electron package
 sudo npm install --global --unsafe-perm=true electron
 
 # net: data transfered today / per month
 sudo vnstat -u -i wlan0; and vnstat
+
+# telegram: install from ppa
+sudo add-apt-repository ppa:atareao/telegram; sudo apt update; and sudo apt install telegram
 
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
