@@ -342,7 +342,7 @@ mmv \* \#1.rexx
 cal 2 2004 / cal -y 2004
 
 # bash: ? define function in bash ?
-d() { date; }
+foo() { date; }
 
 # bash: bash history, abort history
 C-r, C-g
@@ -474,7 +474,7 @@ climate ssh-mount / ssh-unmount
 # recursively compare dirA with dirB; show only filenames: -q (quiet)
 diff -rq dirA dirB | sort
 
-# bash: sort via 2nd key (?column?)
+# sort via 2nd key (?column?)
 sort -k2 file.csv
 
 # diff: outputs the files in two columns, side by side, separated by spaces
@@ -591,102 +591,6 @@ ssh user@destmachine
 touch ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys; # rm ~/.ssh/id_rsa.pub
 
-# eclipse: cvs:
-.metadata/.plugins/org.eclipse.team.cvs.ui/repositoriesView.xml
-
-# eclipse:
-METADA_CORE=.metadata/.plugins/org.eclipse.jdt.core;
-
-# eclipse: clean history
-rm -rf .metadata/.plugins/org.eclipse.core.resources/.history;
-
-# eclipse: clean metadata
-rm $METADA_CORE/*.index $METADA_CORE/savedIndexNames.txt;
-
-# eclipse: use this in find-replace dialogue to remove trailing whitespaces
-[\\t ]+$
-
-# eclipse: Type syso/sysout and ctrl + space for System.out.println()
-syso/sysout
-
-# eclipse: Jump to next error
-Ctrl-.
-
-# init environment
-db2cmd -i -w db2clpsetcp
-
-# db2: license info / add license
-db2licm -l / db2licm -a db2conpe.lic
-
-#
-db2 CONNECT TO database USER userID USING password
-
-#
-db2 get connection state
-
-#
-db2 CATALOG TCPIP NODE $node_name REMOTE $ip_addr SERVER $port
-
-#
-db2 CATALOG DATABASE $database_name AT NODE $node_name AUTHENTICATION server
-
-#
-db2 UNCATALOG NODE $node_name
-
-#
-db2 UNCATALOG DATABASE $database_name
-
-#
-db2 TERMINATE
-
-#
-db2 list db directory > db.txt | gvim db.txt
-
-#
-db2 list node directory > node.txt | gvim node.txt
-
-#
-db2 list tables
-
-# execute script.sql from normal / command line processor (=>) shell
-db2 -vf script.sql -t / !db2 -vf script.sql -t;
-
-#
-db2 -tvf script.sql -z file.log
-
-# execute script.sql from normal shell (Befehlsfenster)
-db2 -td; -v -f script.sql
-
-# in mysql: limit N
-db2 select * from DBASE.TABLE fetch first 2 rows only
-
-# error description for sqlcode=-302
-db2 ? sql302
-
-# db2 version
-db2 SELECT GETVARIABLE('SYSIBM.VERSION') FROM SYSIBM.SYSDUMMY1
-
-# db2cc version
-java -cp ./path/to/db2jcc.jar com.ibm.db2.jcc.DB2Jcc -version
-
-# execute script.sql as the root user
-mysql -u root -t < script.sql
-
-# in db2 fetch first N rows only
-mysql select * from mantis.state_mantis_id limit 10
-
-#
-mysql show tables in dbaseName
-
-# describe table
-mysql show columns in tableName
-
-# mysql: server start
-/usr/bin/mysqld_safe &
-
-# oracle: execute script.sql
-@C:\path\to\script.sql
-
 # Execute a command as another user
 pkexec
 
@@ -791,15 +695,6 @@ for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done
 # sha1: read SHA1 sums from the file.sha1 and check them
 sha1sum -c file.sha1
 
-# solaris: sha1 checksum
-/usr/bin/digest -a sha1
-
-# solaris: wget
-/usr/sfw/bin/wget
-
-# solaris: ps: full command line (needs: sudo rootsh -i -u ... )
-/usr/ucb/ps -auxww
-
 # ps: full command line; command is separated by the \0 byte
 tr '\0' ' ' < /proc/<pid>/cmdline
 
@@ -808,12 +703,6 @@ ls /proc/<pid>
 
 # ps: top: htop: currend working dir of <pid>
 cat /proc/<pid>/cwd
-
-# solaris: displays information about processors
-psrinfo
-
-# solaris: net: ipconfig
-/usr/sbin/ifconfig -a
 
 # jar: jarsigner: keytool: jnlp: javaws:
 jarsigner -storepass PASSW -keystore ~/.keystore FILE mykey
@@ -1140,11 +1029,11 @@ adb push src dst
 # packages; unsupported / obsolete
 ubuntu-support-status --show-unsupported
 
-# modify a user account
-usermod
+# modify / user account
+sudo usermod <login> / sudo userdel --remove <login>
 
 # add user to the "vboxsf" group
-sudo usermod -a -G vboxsf user
+sudo usermod -a -G vboxsf <login>
 
 # run a program in a new session
 setsid
