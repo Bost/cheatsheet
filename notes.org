@@ -5,6 +5,15 @@
 *** cljart <3
 *** defrecord is a cartesian product
 *** GeoREPL
+*** Cursive
+*** Chicago Clojure - 2017-06-21: Stuart Halloway on Repl Driven Development:
+**** Don't throw things away - save a file once in a month
+**** Visualisation - Desktop GUI: Seesaw - Live at REPL (as a custom inspector)
+**** Start java with a clojure.jar and hook up a REPL with custom prompt
+**** specs + graphvis: https://github.com/jebberjeb/specviz
+**** Lisp Continuations: would you like to replace this exception with some value and keep going?
+***** JVM doesn't have continuations so Clojure doesn't have them neither
+*** CJUG - 2017-06-20 - Stuart Halloway on Clojure in 10 Big Ideas: 18:43
 ** Java & JVM
 *** Based on stack-based processor
 *** Statically typed instruction set
