@@ -875,7 +875,11 @@ man -k topic / apropos -r topic
 # brief description of CMD / help for shell built ins
 whatis CMD / help
 
-# ssh: compare a remote file with a local file
+# net: ipv6:
+ssh -6 <ipv6-address> # responds with 'ssh: connect to host <ipv6-address> port 22: Invalid argument'
+ping6 -I wlan0 -c 4 <ipv6-address> # responds with 'ping: unknown iface wlan0'
+
+# compare a remote file with a local file
 ssh user@host cat ./path/to/remotefile | diff ./path/to/localfile -
 
 # ssh: copy ssh keys to user@host to enable password-less ssh logins
