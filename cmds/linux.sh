@@ -495,7 +495,7 @@ gzip -l ./path/to/file.gz
 # write output to stdout; zcat and gunzip -c are identical
 gunzip -c / zcat
 
-# bash: mv: move content of a directory within another directory with the same folders
+# mv: move content of a directory within another directory with the same folders
 rsync --archive --remove-source-files backup/ backupArchives/
 
 # commit log since ...
@@ -510,14 +510,14 @@ svn info <url>
 # when: svnrdump: E000022: Couldn't get lock on destination repos after 10 attempts
 svn propdel --revprop -r0 svn:rdump-lock <url>
 
-# bash: cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
-rsync --archive --verbose --exclude=CVS src dst
-
-# bash: cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
+# cvs: copy files from src to desc excluding everything in CVS directories
 rsync --archive --verbose --exclude='dir' --exclude='*.jpg' src dst
 
-# bash: cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
-rsync --progress --archive --verbose --exclude=CVS src dst
+# cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
+rsync --progress --archive --verbose --exclude='CVS' src dst
+
+# exclude hidden files and directories
+rsync --archive --verbose --exclude=".*" --exclude=".*/" src dst
 
 # restart cvs daemon
 sudo /etc/init.d/cvsd restart / start / stop / status
