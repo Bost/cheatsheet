@@ -1174,6 +1174,9 @@ sudo npm install --global --unsafe-perm=true electron
 # net: data transfered today / per month
 sudo vnstat -u -i wlan0; and vnstat
 
+# net: managing a netfilter firewall
+sudo ufw status
+
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
 #        -c FILE:  FILE exists and it's character special
