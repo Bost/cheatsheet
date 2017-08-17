@@ -29,6 +29,9 @@ ldap-utils
 # bugs in shell scripts
 http://www.shellcheck.net/
 
+# help text that matches each argument
+http://explainshell.com/
+
 # concatenate and print files in reverse (reversed lines)
 tac file.txt > reversed.txt
 
@@ -50,9 +53,6 @@ mysql --host=localhost --user=root --password=root employees
 
 # search for a file named exactly NAME (not *NAME*)
 locate -b '\NAME'
-
-# help text that matches each argument
-http://explainshell.com/
 
 # split a file into pieces (with '.' at the end)
 split --bytes 1M --numeric-suffixes --suffix-length=3 foo.txt foo.
@@ -135,14 +135,16 @@ sudo update-alternatives --config x-www-browser / gnome-www-browser
 # xfce: opens a file or URL in the user's preferred application
 /usr/bin/browse -> xdg-open
 
-# dpkg:
-sudo add-apt-repository ppa:webupd8team/java && sudo apt update
+# dpkg: add-apt-repository needs a single repo
+sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository ppa:jonathonf/python-3.6
+sudo add-apt-repository ppa:atareao/telegram
+sudo apt update
+sudo apt install telegram python-3.6 openjdk-8-jdk
+sudo apt install oracle-java8-set-default
 
 # dpkg:
-cd ~/bin; git clone https://gist.github.com/66638cab114a6da691518598b6d13650.git; ./66638cab114a6da691518598b6d13650/list-ppa; sudo ppa-purge <ppa:user/ppa-name>
-
-# java:
-sudo apt install openjdk-8-jdk / sudo apt install oracle-java8-set-default
+git clone https://gist.github.com/66638cab114a6da691518598b6d13650.git $HOME/bin/list-ppa; $HOME/bin/list-ppa/list-ppa; sudo ppa-purge <ppa:user/ppa-name>
 
 # list only one column
 ls --format=single-column
@@ -170,6 +172,9 @@ head -n 5 file / tail -n 5 file
 
 # available shells
 cat /etc/shells
+
+# current shell
+echo $SHELL
 
 # sequence from 0 to 10 (both included) increment by 2
 seq 0 2 10
@@ -1168,9 +1173,6 @@ sudo npm install --global --unsafe-perm=true electron
 
 # net: data transfered today / per month
 sudo vnstat -u -i wlan0; and vnstat
-
-# telegram: install from ppa
-sudo add-apt-repository ppa:atareao/telegram; sudo apt update; and sudo apt install telegram
 
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
