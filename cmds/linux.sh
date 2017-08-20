@@ -741,7 +741,11 @@ https://forum.manjaro.org/t/cant-switch-windows-with-super-tab/2406/4
 xfce4-keyboard-settings
 
 # xfce: keyboard; shortcuts; http://docs.xfce.org/xfce/xfconf/xfconf-query
-xfconf-query -c xfce4-keyboard-shortcuts -lv
+xfconf-query --channel xfce4-keyboard-shortcuts -lv
+xfconf-query --channel xfce4-keyboard-shortcuts --property "/xfwm4/custom/<Super>Tab" --reset
+xfconf-query --channel xfce4-keyboard-shortcuts --property "/xfwm4/default/<Super>Tab" --reset
+xfconf-query --channel xfce4-keyboard-shortcuts --property "/xfwm4/custom/<Super>Tab" --create --type string --set "empty"
+xfconf-query --channel xfce4-keyboard-shortcuts --property "/xfwm4/default/<Super>Tab" --create --type string --set "empty"
 
 # xfce: keyboard; changes in the xml don't work, use xfce4-settings-editor
 locate xfce4-keyboard-shortcuts.xml
