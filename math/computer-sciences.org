@@ -210,9 +210,9 @@
     Monoids with homomorphisms give category
 
 ** Kleisli category:
-   Monad: a -> m a;
+   Monad: return: a -> m a; bind: m a -> (a -> m b) -> m b
      You can operate on IO Monad
-     You can't extract anything from IO Monad, it's lost)
+     You can't extract anything from IO Monad (it's lost)
    Comonad: (w a -> b) -> (w b -> c) -> (w a -> c)
      You can extract from IO Monad
      You can't put anything to IO Monad
@@ -456,19 +456,14 @@ Proposition = ???
 
 
 
-* Trinity
-** Logic & Proof Theory - Philosophy
-** Type Theory - Computer Science
-** Category Theory - Mathematics
-
-* PT 3 - Proof Search & Sequent Calculus
+* Trinity 1. Logic & Proof Theory: Philosophy; 2. Type Theory: Computer Science; 3. Category Theory: Mathematics
+* Proof Theory: Proof of soundness, proof of completeness
 * PT 1 - Judgements & Propositions 
 ** judgement (obj of knowledge); judgemens are made about propositions
    'A is true', 'A is false', M : A - M is a proof of A i.e. M is a program which has a type of A
    'A' - proposition
    'true' - judgement on a proposition
 
-* Proof Theory: Proof of soundness, proof of completeness
   experiment, observation
   sampling, counter examples
   judge, jury, religion, boss, conviction "No bugs in my code!"
@@ -486,4 +481,16 @@ Proposition = ???
    - no information is gained by applying and eliminating a particular rule
 ** Local completeness: elim. rules not too weak
 ** LOcal expantion: witness for the completeness of the rules
-   47:21
+* PT 2 - Computational Interpretation: Curry Howard Isomorphism
+  - Capturing generic notion of effect: functional programming monad from logical point of view
+  - Computational interpretations of monad come out of logical considerations
+  - Quote & Eval (not presented in the lecture)
+
+  Lax proposition: 'there is something weaker then truth'; 'Possible truth'; It
+  may or may not be true (in case of non-terminating computation or it might
+  terminate with some other effects on the way)
+
+  ◯ A : true  A - proposition, ◯ - 'circle'; 'A is true in the lax sense'; Monad A
+  Monad - when interacting with real world a failure is always one of the eventualities
+        - monad laws are proof-equalities
+* PT 3 - Proof Search & Sequent Calculus

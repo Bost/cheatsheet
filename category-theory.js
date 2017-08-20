@@ -638,13 +638,13 @@ var addition = monoid (
 
 
 // monad: monoid object in a endofunctor category
-// a monad is a monoid in a category whos objects are functors and
-// whose morhisms are natural transformations (maps between functors)
+// a monad is a monoid in some category, where objects are functors and morhisms
+// are natural transformations (maps between functors)
 var monad = function(ftor,
                      times,
                      ident) {
     return function (t) {
-        func(t);
+        func(t);      // check if t is a function
         return prods({
             t: func,
             '*': hom(ftor(ftor(t)), ftor(t)), // tensor product
