@@ -170,11 +170,8 @@ trap "rm -f /tmp/xyz$$; exit" ERR EXIT
 # fist / last 5 lines from file
 head -n 5 file / tail -n 5 file
 
-# available shells
-cat /etc/shells
-
-# current shell
-echo $SHELL
+# available shells; current shell; change shell
+cat /etc/shells; echo $SHELL; chsh -s /usr/local/bin/fish
 
 # sequence from 0 to 10 (both included) increment by 2
 seq 0 2 10
