@@ -493,7 +493,8 @@ gzip -l ./path/to/file.gz
 gunzip -c / zcat
 
 # mv: move content of a directory within another directory with the same folders
-rsync --archive --remove-source-files backup/ backupArchives/
+rsync --dry-run          --archive --remove-source-files backup/ backupArchives/
+rsync --dry-run --delete --archive --remove-source-files backup/ backupArchives/ | grep deleting
 
 # commit log since ...
 svn log -r \{2017-01-01\}:HEAD <repo/module> > svn.log
@@ -508,13 +509,16 @@ svn info <url>
 svn propdel --revprop -r0 svn:rdump-lock <url>
 
 # cvs: copy files from src to desc excluding everything in CVS directories
-rsync --archive --verbose --exclude='dir' --exclude='*.jpg' src dst
+rsync --dry-run          --archive --verbose --exclude='dir' --exclude='*.jpg' src dst
+rsync --dry-run --delete --archive --verbose --exclude='dir' --exclude='*.jpg' src dst  | grep deleting
 
 # cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
-rsync --progress --archive --verbose --exclude='CVS' src dst
+rsync --dry-run --progress          --archive --verbose --exclude='CVS' src dst
+rsync --dry-run --progress --delete --archive --verbose --exclude='CVS' src dst | grep deleting
 
 # exclude hidden files and directories
-rsync --archive --verbose --exclude=".*" --exclude=".*/" src dst
+rsync --dry-run          --archive --verbose --exclude=".*" --exclude=".*/" src dst
+rsync --dry-run --delete --archive --verbose --exclude=".*" --exclude=".*/" src dst | grep deleting
 
 # restart cvs daemon
 sudo /etc/init.d/cvsd restart / start / stop / status
