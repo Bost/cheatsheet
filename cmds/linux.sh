@@ -1070,6 +1070,12 @@ sudo apt update; and sudo apt install nodejs
 sudo npm install --global --unsafe-perm=true electron
 npm search electron\*
 
+# nodejs: command line CLI update npm
+node
+
+# nodejs: install update npm
+sudo npm install -g <npm-package> / sudo npm update -g
+
 # net: data transfered today / per month
 sudo vnstat -u -i wlan0; and vnstat
 
