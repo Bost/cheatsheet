@@ -41,6 +41,9 @@ git diff master branch filepath / git diff --name-only master branch
 # show particular changed word / staged changes
 git diff --word-diff / --cached
 
+# no plus minus signs
+git diff --color <sha1> | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r
+
 # show files changed in last commit
 git show --name-only
 
