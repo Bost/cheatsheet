@@ -42,7 +42,7 @@ git diff master branch filepath / git diff --name-only master branch
 git diff --word-diff / --cached
 
 # no plus minus signs
-git diff --color <sha1> | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r
+git diff --color <sha1> <sha1> | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r
 
 # show files changed in last commit
 git show --name-only
