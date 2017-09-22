@@ -1074,7 +1074,7 @@ npm search electron\*
 node
 
 # nodejs: install update npm
-sudo npm install -g <npm-package> / sudo npm update -g
+sudo npm install --global <npm-package> / sudo npm update --global
 
 # net: data transfered today / per month
 sudo vnstat -u -i wlan0; and vnstat
