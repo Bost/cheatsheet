@@ -1076,6 +1076,17 @@ node
 # nodejs: install update npm
 sudo npm install --global <npm-package> / sudo npm update --global
 
+# nodejs: npm:
+npm install --verbose <package> / npm install -dd <package>
+npm config list
+npm config set color=false
+npm config set progress=false
+npm install --no-colors --verbose result-core
+npm cache verify / npm cache clean / npm cache clean --force
+npm config set registry https://registry.npmjs.org/ [or http://registry.npmjs.org/]
+npm config set proxy "http://<ip:port>/"
+npm config set https-proxy "https://<ip:port>/"
+
 # net: data transfered today / per month
 sudo vnstat -u -i wlan0; and vnstat
 
