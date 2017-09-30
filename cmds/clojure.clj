@@ -162,3 +162,9 @@ A function which hasn't finished the evaluation
 
 ;; element in sequence
 (defn in? "true if seq contains elm" [seq elm] (boolean (some (fn [e] (= elm e)) seq)))
+
+;; brackets, parens, parenthesis converion
+;; M-x clojure-convert-collection-to-vector / clojure-convert-collection-to-list
+
+;; brackets, parens, parenthesis converion; spacemacs clojure mode:
+;; , r c
