@@ -101,8 +101,8 @@ git clone --depth=1 -b <branch> origRepo newRepoName
 # workLocation must not be a bare (empty) repo
 git add --work-tree=workLocation --git-dir=repoLocation
 
-# list contibutors; -s, --summary, -n, --numbered
-git shortlog -s -n
+# list contibutors / committers ; -s, --summary, -n, --numbered
+git shortlog --summary --numbered
 
 # show settings
 git config --global / --local --list

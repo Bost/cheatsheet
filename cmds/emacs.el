@@ -207,7 +207,8 @@ message "Hello world" | cut -f 1 -d ' '
 
 ;; color-theme-calm-forest ? does not work?
 
-;; yasnippet - yet another snippets
+;; yasnippet - yet another snippets. Example
+;; `defn' `M-/' type in the defn-name, then `TAB' to complete ...
 
 ;; files: buffers: kill-buffer
 C-x k
