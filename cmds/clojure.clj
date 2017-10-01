@@ -168,3 +168,7 @@ A function which hasn't finished the evaluation
 
 ;; brackets, parens, parenthesis converion; spacemacs clojure mode:
 ;; , r c
+
+;; symbol: represents metaphorically objects (it's not a string); it's an atomic
+;; value; internally it is fast compace symbols
+'milkshake
