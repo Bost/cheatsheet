@@ -24,6 +24,7 @@ git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Bost'; GIT_AUTHOR_EMAIL='the
 git commit --amend --no-edit
 
 # change the author (name, email) in the last commit
+git commit --amend --author "Bost <thebost@gmail.com>"
 git commit --amend --reset-author
 
 # assigns the original repo to a remote repo called upstream
