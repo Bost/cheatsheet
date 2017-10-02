@@ -68,8 +68,8 @@ git checkout BRANCH -- /path/file.txt
 # revert
 git checkout path/to/file
 
-# --show --branch: show current branch and changes made since last commit
-git status -sb
+# show current branch and changes made since last commit; -s / --show, -b / --branch
+git status --show --branch
 
 # --patch: interactively choose hunks of patch; see --interactive
 git add -p
