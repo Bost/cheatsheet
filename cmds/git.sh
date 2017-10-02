@@ -20,6 +20,12 @@ git submodule foreach git pull --rebase origin master
 # change the name and email in all commits
 git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Bost'; GIT_AUTHOR_EMAIL='thebost@gmail.com'; GIT_COMMITTER_NAME='Bost'; GIT_COMMITTER_EMAIL='thebost@gmail.com';" HEAD
 
+# reuse commit message
+git commit --amend --no-edit
+
+# change the author (name, email) in the last commit
+git commit --amend --reset-author
+
 # assigns the original repo to a remote repo called upstream
 git remote add upstream https://github.com/octocat/Spoon-Knife.git
 
@@ -73,9 +79,6 @@ git status --show --branch
 
 # --patch: interactively choose hunks of patch; see --interactive
 git add -p
-
-# amend commit; reuse commit message
-git commit --amend --no-edit
 
 # a kind of git history
 git reflog
