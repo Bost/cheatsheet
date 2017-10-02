@@ -18,7 +18,7 @@ git diff --stat <commit-ish> <commit-ish>
 git submodule foreach git pull --rebase origin master
 
 # change the name and email in all commits
-git filter-branch -f --env-filter "GIT_AUTHOR_NAME=\'Bost\'; GIT_AUTHOR_EMAIL=\'thebost@gmail.com\'; GIT_COMMITTER_NAME=\'Bost\'; GIT_COMMITTER_EMAIL=\'thebost@gmail.com\';" HEAD
+git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Bost'; GIT_AUTHOR_EMAIL='thebost@gmail.com'; GIT_COMMITTER_NAME='Bost'; GIT_COMMITTER_EMAIL='thebost@gmail.com';" HEAD
 
 # assigns the original repo to a remote repo called upstream
 git remote add upstream https://github.com/octocat/Spoon-Knife.git
