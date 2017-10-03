@@ -327,12 +327,10 @@ expr 11 + 22
 > file.txt
 
 # bash: insert contents of file.txt into input of tr and output results to fileNew.txt
-tr \'[A-Z]\' \'[a-z]\' < file.txt > fileNew.txt
+tr '[A-Z]' '[a-z]' < file.txt > fileNew.txt
 
 # bash: mass move/copy/rename
 mmv \*.JPG \#1.jpc
-
-# bash: mass move/copy/rename
 mmv \* \#1.rexx
 
 # bash: visual calender for februar 2004 / whole year 2004
@@ -842,7 +840,7 @@ software-properties-gtk - see /etc/apt/sources.list
 dpkg --get-selections | grep -v deinstall
 
 # aptitude: list expressly installed packages (not just installed as dependencies)
-aptitude search \'~i!~M\'
+aptitude search '~i!~M'
 
 # cygwin: ps: show windows as well as cygwin processes (-W)
 ps --windows
