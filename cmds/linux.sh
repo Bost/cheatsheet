@@ -327,10 +327,12 @@ expr 11 + 22
 > file.txt
 
 # bash: insert contents of file.txt into input of tr and output results to fileNew.txt
-tr '[A-Z]' '[a-z]' < file.txt > fileNew.txt
+tr \'[A-Z]\' \'[a-z]\' < file.txt > fileNew.txt
 
 # bash: mass move/copy/rename
 mmv \*.JPG \#1.jpc
+
+# bash: mass move/copy/rename
 mmv \* \#1.rexx
 
 # bash: visual calender for februar 2004 / whole year 2004
@@ -783,6 +785,9 @@ sshfs name@server:/path/to/folder ./path/to/mount/point
 # virtualbox: mount shared folder
 sudo mount -t vboxsf share /home/username/share/
 
+# virtualbox: restart clipboard
+killall VBoxClient; and VBoxClient --clipboard & disown
+
 # youtube-dl: Requested formats are incompatible for merge and will be merged into mkv.
 youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] URL
 
@@ -840,7 +845,7 @@ software-properties-gtk - see /etc/apt/sources.list
 dpkg --get-selections | grep -v deinstall
 
 # aptitude: list expressly installed packages (not just installed as dependencies)
-aptitude search '~i!~M'
+aptitude search \'~i!~M\'
 
 # cygwin: ps: show windows as well as cygwin processes (-W)
 ps --windows
