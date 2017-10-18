@@ -946,6 +946,9 @@ nproc
 # check file types and compare values
 test
 
+# determine file type
+file
+
 # tabs: convert spaces to tabs / tabs to spaces
 expand / unexpand file.txt
 
