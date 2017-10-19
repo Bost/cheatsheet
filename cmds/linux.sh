@@ -657,6 +657,7 @@ sudo apt update; and sudo apt upgrade
 
 # update and upgrade the system by removing/installing/upgrading packages
 sudo apt update; and sudo apt full-upgrade
+sudo apt update; and sudo apt dist-upgrade # alternativelly
 
 # ubuntu: command line upgrade part 3.
 sudo do-release-upgrade
