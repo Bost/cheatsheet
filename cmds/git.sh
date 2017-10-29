@@ -18,14 +18,7 @@ git diff --stat <commit-ish> <commit-ish>
 git submodule foreach git pull --rebase origin master
 
 # change the name and email in all commits
-git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Bost'; GIT_AUTHOR_EMAIL='thebost@gmail.com'; GIT_COMMITTER_NAME='Bost'; GIT_COMMITTER_EMAIL='thebost@gmail.com';" HEAD
-
-# reuse commit message
-git commit --amend --no-edit
-
-# change the author (name, email) in the last commit
-git commit --amend --author "Bost <thebost@gmail.com>"
-git commit --amend --reset-author
+git filter-branch -f --env-filter "GIT_AUTHOR_NAME=\'Bost\'; GIT_AUTHOR_EMAIL=\'thebost@gmail.com\'; GIT_COMMITTER_NAME=\'Bost\'; GIT_COMMITTER_EMAIL=\'thebost@gmail.com\';" HEAD
 
 # assigns the original repo to a remote repo called upstream
 git remote add upstream https://github.com/octocat/Spoon-Knife.git
@@ -47,9 +40,6 @@ git diff master branch filepath / git diff --name-only master branch
 
 # show particular changed word / staged changes
 git diff --word-diff / --cached
-
-# no plus minus signs
-git diff --color <sha1> <sha1> | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r
 
 # show files changed in last commit
 git show --name-only
@@ -75,11 +65,14 @@ git checkout BRANCH -- /path/file.txt
 # revert
 git checkout path/to/file
 
-# show current branch and changes made since last commit; -s / --show, -b / --branch
-git status --show --branch
+# --show --branch: show current branch and changes made since last commit
+git status -sb
 
 # --patch: interactively choose hunks of patch; see --interactive
 git add -p
+
+# amend commit; reuse commit message
+git commit --amend --no-edit
 
 # a kind of git history
 git reflog
@@ -105,8 +98,8 @@ git clone --depth=1 -b <branch> origRepo newRepoName
 # workLocation must not be a bare (empty) repo
 git add --work-tree=workLocation --git-dir=repoLocation
 
-# list contibutors / committers ; -s, --summary, -n, --numbered
-git shortlog --summary --numbered
+# list contibutors; -s, --summary, -n, --numbered
+git shortlog -s -n
 
 # show settings
 git config --global / --local --list
@@ -181,7 +174,7 @@ git ls-files --cached / --deleted / --modified / --ignored / --stage
 # Remove untracked files and dirs from the working tree
 git clean -dxf
 
-# amend / split apart last commit: ... and edit the usual way
+# split apart most recent commit: ... and edit the usual way
 git reset HEAD~
 
 # show aliases

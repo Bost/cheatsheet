@@ -228,7 +228,7 @@
   Curry-Howard-Lambek correspondence might lead to unification between mathematical logic and foundational computer science;
   Popular approach: use monads to segregate provably terminating from potentially non-terminating code
 
-    | INTUITIONISTIC (Constructive) LOGIC (Howard)   | TYPE THEORY - Functional Programming (Curry)                         | CATEGORY THEORY (Lambek) |
+    | INTUITIONISTIC LOGIC (Howard)                  | TYPE THEORY - Functional Programming (Curry)                         | CATEGORY THEORY (Lambek) |
     |------------------------------------------------+----------------------------------------------------------------------+--------------------------|
     | Proposition of some type - (something is true) | Type (contract - a set of values that passes the contract)           |                          |
     | Proof of some type                             | Term (A program - guarded fn)                                        |                          |
@@ -493,4 +493,7 @@ Proposition = ???
   ◯ A : true  A - proposition, ◯ - 'circle'; 'A is true in the lax sense'; Monad A
   Monad - when interacting with real world a failure is always one of the eventualities
         - monad laws are proof-equalities
-* PT 3 - Proof Search & Sequent Calculus
+* PT 3 - Proof Search, Verifications & Sequent Calculus
+  Verifications are subsets of all possible proofs
+  A↑ - A has a verification
+  A↓ - A may be used

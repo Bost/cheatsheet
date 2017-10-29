@@ -22,11 +22,6 @@ syso/sysout
 # eclipse: Jump to next error
 Ctrl-.
 
-# load ixf file
-db2 drop table <schema>.<table>
-DB2 IMPORT FROM <file.ixf> OF IXF create into <schema>.<table>
-DB2 IMPORT FROM <file.ixf> OF IXF insert into <schema>.<table>
-
 # db2: init environment
 db2cmd -i -w db2clpsetcp
 

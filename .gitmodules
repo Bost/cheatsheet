@@ -1,3 +1,0 @@
-[submodule "dotfiles/vim-pathogen"]
-	path = dotfiles/vim-pathogen
-	url = https://github.com/Bost/vim-pathogen.git

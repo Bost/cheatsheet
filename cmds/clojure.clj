@@ -162,17 +162,3 @@ A function which hasn't finished the evaluation
 
 ;; element in sequence
 (defn in? "true if seq contains elm" [seq elm] (boolean (some (fn [e] (= elm e)) seq)))
-
-;; brackets, parens, parenthesis converion
-;; M-x clojure-convert-collection-to-vector / clojure-convert-collection-to-list
-
-;; brackets, parens, parenthesis converion; spacemacs clojure mode:
-;; , r c
-
-;; symbol: represents metaphorically objects (it's not a string); it's an atomic
-;; value; internally it is fast compace symbols
-'milkshake
-
-;; threading macros
-(= (conj {:a 2} {:a 1}) (->> {:a 1} (conj {:a 2})))
-(= (conj {:a 1} {:a 2}) (-> {:a 1} (conj {:a 2})))
