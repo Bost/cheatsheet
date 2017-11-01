@@ -162,3 +162,16 @@ A function which hasn't finished the evaluation
 
 ;; element in sequence
 (defn in? "true if seq contains elm" [seq elm] (boolean (some (fn [e] (= elm e)) seq)))
+
+clojure.core.async/<!! [port]
+;; takes a val from port. Will return nil if closed. Will block if nothing is
+;; available.
+
+clojure.core.async/<! [port]
+;; takes a val from port. Must be called inside a (go ...) block. Will return nil
+;; if closed. Will park if nothing is available.
+
+clojure.core.async/>![port val]
+;; puts a val into port. nil values are not allowed. Must be called inside a (go
+;; ...) block. Will park if no buffer space is available. Returns true unless
+;; port is already closed.
