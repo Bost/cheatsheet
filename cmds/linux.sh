@@ -330,12 +330,10 @@ expr 11 + 22
 > file.txt
 
 # bash: insert contents of file.txt into input of tr and output results to fileNew.txt
-tr \'[A-Z]\' \'[a-z]\' < file.txt > fileNew.txt
+tr '[A-Z]' '[a-z]' < file.txt > fileNew.txt
 
 # bash: mass move/copy/rename
 mmv \*.JPG \#1.jpc
-
-# bash: mass move/copy/rename
 mmv \* \#1.rexx
 
 # bash: visual calender for februar 2004 / whole year 2004
@@ -496,7 +494,8 @@ gzip -l ./path/to/file.gz
 gunzip -c / zcat
 
 # mv: move content of a directory within another directory with the same folders
-rsync --archive --remove-source-files backup/ backupArchives/
+rsync --dry-run          --archive --remove-source-files backup/ backupArchives/
+rsync --dry-run --delete --archive --remove-source-files backup/ backupArchives/ | grep deleting
 
 # commit log since ...
 svn log -r \{2017-01-01\}:HEAD <repo/module> > svn.log
@@ -511,13 +510,16 @@ svn info <url>
 svn propdel --revprop -r0 svn:rdump-lock <url>
 
 # cvs: copy files from src to desc excluding everything in CVS directories
-rsync --archive --verbose --exclude='dir' --exclude='*.jpg' src dst
+rsync --dry-run          --archive --verbose --exclude='dir' --exclude='*.jpg' src dst
+rsync --dry-run --delete --archive --verbose --exclude='dir' --exclude='*.jpg' src dst  | grep deleting
 
 # cvs: copy files from src to desc excluding everything in CVS directories (showing progress)
-rsync --progress --archive --verbose --exclude='CVS' src dst
+rsync --dry-run --progress          --archive --verbose --exclude='CVS' src dst
+rsync --dry-run --progress --delete --archive --verbose --exclude='CVS' src dst | grep deleting
 
 # exclude hidden files and directories
-rsync --archive --verbose --exclude=".*" --exclude=".*/" src dst
+rsync --dry-run          --archive --verbose --exclude=".*" --exclude=".*/" src dst
+rsync --dry-run --delete --archive --verbose --exclude=".*" --exclude=".*/" src dst | grep deleting
 
 # restart cvs daemon
 sudo /etc/init.d/cvsd restart / start / stop / status
@@ -656,6 +658,7 @@ sudo apt update; and sudo apt upgrade
 
 # update and upgrade the system by removing/installing/upgrading packages
 sudo apt update; and sudo apt full-upgrade
+sudo apt update; and sudo apt dist-upgrade # alternativelly
 
 # ubuntu: command line upgrade part 3.
 sudo do-release-upgrade
@@ -756,6 +759,9 @@ gnome-session-quit / xfce4-session-logout
 # restart xfce when the title bar dissapears from xfwm4; or rm -r ~/.cache/sessions
 pkill -KILL -u yourusername
 
+# virtualbox: restart clipboard
+killall VBoxClient; and VBoxClient --clipboard & disown
+
 # when emacs freezes or hangs
 killall -SIGUSR2 emacs
 
@@ -841,7 +847,7 @@ software-properties-gtk - see /etc/apt/sources.list
 dpkg --get-selections | grep -v deinstall
 
 # aptitude: list expressly installed packages (not just installed as dependencies)
-aptitude search \'~i!~M\'
+aptitude search '~i!~M'
 
 # cygwin: ps: show windows as well as cygwin processes (-W)
 ps --windows
@@ -941,6 +947,9 @@ nproc
 
 # check file types and compare values
 test
+
+# determine file type
+file
 
 # tabs: convert spaces to tabs / tabs to spaces
 expand / unexpand file.txt
@@ -1067,6 +1076,24 @@ sudo apt update; and sudo apt install nodejs
 
 # nodejs: install electron package
 sudo npm install --global --unsafe-perm=true electron
+npm search electron\*
+
+# nodejs: command line CLI update npm
+node
+
+# nodejs: install update npm
+sudo npm install --global <npm-package> / sudo npm update --global
+
+# nodejs: npm:
+npm install --verbose <package> / npm install -dd <package>
+npm config list
+npm config set color=false
+npm config set progress=false
+npm install --no-colors --verbose result-core
+npm cache verify / npm cache clean / npm cache clean --force
+npm config set registry https://registry.npmjs.org/ [or http://registry.npmjs.org/]
+npm config set proxy "http://<ip:port>/"
+npm config set https-proxy "https://<ip:port>/"
 
 # net: data transfered today / per month
 sudo vnstat -u -i wlan0; and vnstat
