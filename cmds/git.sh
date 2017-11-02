@@ -183,7 +183,7 @@ git ls-files --cached / --deleted / --modified / --ignored / --stage
 # Remove untracked files and dirs from the working tree
 git clean -dxf
 
-# amend / split apart most recent commit: ... and edit the usual way
+# amend (i.e. split) most recent (i.e. last) commit: ... and edit the usual way
 git reset HEAD~
 
 # show aliases
