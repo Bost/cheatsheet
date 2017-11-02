@@ -498,13 +498,13 @@ rsync --dry-run          --archive --remove-source-files backup/ backupArchives/
 rsync --dry-run --delete --archive --remove-source-files backup/ backupArchives/ | grep deleting
 
 # commit log since ...
-svn log -r \{2017-01-01\}:HEAD <repo/module> > svn.log
+svn log -r \{2017-01-01\}:HEAD <repo-URL/module> > svn.log
 
-# svn checkout; also for http://<ip:port>/path; https://<ip:port>/path
-svn co --username <svn-login> svn://<ip:port>/path
+# search in commit logs since ... and show changed / affected files (--verbose)
+svn log --revision \{2017-01-01\}:HEAD --no-auth-cache --non-interactive --verbose --username '...' --password '...' --search <String> <repo-URL/module>
 
-# svn last revision number
-svn info <url>
+# last revision number
+svn info <repo-URL/module>
 
 # when: svnrdump: E000022: Couldn't get lock on destination repos after 10 attempts
 svn propdel --revprop -r0 svn:rdump-lock <url>
