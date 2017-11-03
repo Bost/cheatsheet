@@ -170,11 +170,8 @@ trap "rm -f /tmp/xyz$$; exit" ERR EXIT
 # fist / last 5 lines from file
 head -n 5 file / tail -n 5 file
 
-# available shells
-cat /etc/shells
-
-# current shell
-echo $SHELL
+# available shells; current shell; change shell
+cat /etc/shells; echo $SHELL; chsh -s /usr/local/bin/fish
 
 # sequence from 0 to 10 (both included) increment by 2
 seq 0 2 10
@@ -762,9 +759,6 @@ gnome-session-quit / xfce4-session-logout
 # restart xfce when the title bar dissapears from xfwm4; or rm -r ~/.cache/sessions
 pkill -KILL -u yourusername
 
-# virtualbox: restart clipboard
-killall VBoxClient; and VBoxClient --clipboard & disown
-
 # when emacs freezes or hangs
 killall -SIGUSR2 emacs
 
@@ -792,6 +786,9 @@ sshfs name@server:/path/to/folder ./path/to/mount/point
 
 # virtualbox: mount shared folder
 sudo mount -t vboxsf share /home/username/share/
+
+# virtualbox: restart clipboard
+killall VBoxClient; and VBoxClient --clipboard & disown
 
 # youtube-dl: Requested formats are incompatible for merge and will be merged into mkv.
 youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] URL

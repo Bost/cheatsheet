@@ -228,7 +228,7 @@
   Curry-Howard-Lambek correspondence might lead to unification between mathematical logic and foundational computer science;
   Popular approach: use monads to segregate provably terminating from potentially non-terminating code
 
-    | INTUITIONISTIC LOGIC (Howard)                  | TYPE THEORY - Functional Programming (Curry)                         | CATEGORY THEORY (Lambek) |
+    | INTUITIONISTIC (Constructive) LOGIC (Howard)   | TYPE THEORY - Functional Programming (Curry)                         | CATEGORY THEORY (Lambek) |
     |------------------------------------------------+----------------------------------------------------------------------+--------------------------|
     | Proposition of some type - (something is true) | Type (contract - a set of values that passes the contract)           |                          |
     | Proof of some type                             | Term (A program - guarded fn)                                        |                          |

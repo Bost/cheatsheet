@@ -46,6 +46,9 @@ grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{el,clj,cljs,cljc} ./
 # grep: find: grep-help: recursive search for "String" in ... (with '.' at the end)
 grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{log,propeties,cfg,txt} ./
 
+# build and execute command lines from standard input
+xargs
+
 # grep: search for "String" in *.txt files (with spaces in filenames)
 find ./ -type f -name "*.txt" -print0 | xargs -0 grep --files-with-matches "String"
 

@@ -207,7 +207,8 @@ message "Hello world" | cut -f 1 -d ' '
 
 ;; color-theme-calm-forest ? does not work?
 
-;; yasnippet - yet another snippets
+;; yasnippet - yet another snippets. Example
+;; `defn' `M-/' type in the defn-name, then `TAB' to complete ...
 
 ;; files: buffers: kill-buffer
 C-x k
@@ -219,8 +220,8 @@ M-x kill-whole-line
 ;; delete 1 whole line
 C-S-Backspace
 
-;; M-x evilnc-comment-or-uncomment-lines / dabbrev-expand (code completition)
-M-x ; / M-/ /
+;; M-x shell-command / evilnc-comment-or-uncomment-lines / dabbrev-expand (code completition)
+M-! / M-x; / M-/ /
 
 ;; email / insert file / repeat
 C-x m / i / z
@@ -515,9 +516,6 @@ macros
 
 ;; launch emacs and eval string; does not work well with my bash function LaunchEmacs
 emacs --eval '(message "ufo")' / emacs -e configuration-layer/update-packages
-
-;; M-x shell-command; execute
-M-! / SPC !
 
 ;; M-x shell-command: top: capture top output from stdout
 M-! RET top -c -n -1 -b -w 200
