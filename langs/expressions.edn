@@ -1,19 +1,37 @@
 ;; TODO For #url have a look at https://cljs.github.io/api/syntax/tagged-literal
+;; Use (quot (System/currentTimeMillis) 1000) to get unique and short ids
 #{
-  {:fr "On ne peut plus attendre"}
-  {:fr "J'ai me fait porter pâle"}
+  {:id 1509749127
+   :fr "On ne peut plus attendre"
+   }
+  {:sk "práceneschopnosť / PN"
+   :en "sickness absence"
+   :de "Krankmeldung"
+   }
+  {:id 1509749129
+   :fr "J'ai me fait porter pâle"
+   :de "Ich werde mich krankmelden"
+   :sk #{
+         "Idem sa nahlásiť práce neschopným / PN"
+         "Nahlásim sa práce neschopným / PN"
+         }}
 
-  {:url "https://youtu.be/a4f6KM9Kvi0?t=3m20s"
+  {:id 1509749150
+   :url "https://youtu.be/a4f6KM9Kvi0?t=3m24s"
+   :desc
+   "A girl wants to pass through an opening in the stone wall firmly blocked by
+   tree trunks and realises: the decision not to take her machete was mistake."
+   :see-ids [1509749163]
    :fr "J'aurais dû prendre ma machete"
    :de "Ich hätte die Machete nehmen müssen"
    :sk "Mal som si vziať mačetu"
    :en "I could have taken my machete"}
 
-  {:url "https://youtu.be/a4f6KM9Kvi0?t=3m20s"
+  {:id 1509749163
+   :url "https://youtu.be/a4f6KM9Kvi0?t=3m24s"
+   :see-ids [1509749150]
    :fr "J'aurais pu prendre ma machete"
    :de "Ich hätte die Machete nehmen können"
    :sk "Mohol som si vziať mačetu"
    :en "I should have taken my machete"}
-
-  {:keyboard-layout
-   {:fr {:url "https://en.wikipedia.org/wiki/AZERTY#/media/File:KB_France.svg"}}}}
+  }
