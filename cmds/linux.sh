@@ -818,8 +818,8 @@ dpkg --get-selections
 dpkg -L packageName
 
 # install / remove package.deb
-dpkg --install package.deb
-dpkg --remove  package.deb
+sudo dpkg --install package.deb
+sudo dpkg --remove  package.deb
 
 # dpkg: apt: show description for packageName
 apt-cache search ^packageName$
