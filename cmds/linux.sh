@@ -501,7 +501,7 @@ rsync --dry-run --delete --archive --remove-source-files backup/ backupArchives/
 svn log -r \{2017-01-01\}:HEAD <repo-URL/module> > svn.log
 
 # search in commit logs since ... and show changed / affected files (--verbose)
-svn log --revision \{2017-01-01\}:HEAD --no-auth-cache --non-interactive --verbose --username '...' --password '...' --search <String> <repo-URL/module>
+svn log --revision \{2017-01-01\}:HEAD --no-auth-cache --non-interactive --verbose --username '...' --password '...' --search <str1> --search <str2> <repo-URL/module>
 
 # last revision number
 svn info <repo-URL/module>
