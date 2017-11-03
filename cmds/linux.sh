@@ -503,8 +503,11 @@ svn log -r \{2017-01-01\}:HEAD <repo-URL/module> > svn.log
 # search in commit logs since ... and show changed / affected files (--verbose)
 svn log --revision \{2017-01-01\}:HEAD --no-auth-cache --non-interactive --verbose --username '...' --password '...' --search <str1> --search <str2> <repo-URL/module>
 
-# last revision number
-svn info <repo-URL/module>
+# checkout; also for http://<ip:port>/path; https://<ip:port>/path
+svn co --username <svn-login> svn://<ip:port>/path
+
+# svn last revision number
+svn info <url>
 
 # when: svnrdump: E000022: Couldn't get lock on destination repos after 10 attempts
 svn propdel --revprop -r0 svn:rdump-lock <url>
