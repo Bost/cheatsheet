@@ -1,0 +1,19 @@
+;; TODO For #url have a look at https://cljs.github.io/api/syntax/tagged-literal
+#{
+  {:fr "On ne peut plus attendre"}
+  {:fr "J'ai me fait porter pâle"}
+
+  {:url "https://youtu.be/a4f6KM9Kvi0?t=3m20s"
+   :fr "J'aurais dû prendre ma machete"
+   :de "Ich hätte die Machete nehmen müssen"
+   :sk "Mal som si vziať mačetu"
+   :en "I could have taken my machete"}
+
+  {:url "https://youtu.be/a4f6KM9Kvi0?t=3m20s"
+   :fr "J'aurais pu prendre ma machete"
+   :de "Ich hätte die Machete nehmen können"
+   :sk "Mohol som si vziať mačetu"
+   :en "I should have taken my machete"}
+
+  {:keyboard-layout
+   {:fr {:url "https://en.wikipedia.org/wiki/AZERTY#/media/File:KB_France.svg"}}}}
