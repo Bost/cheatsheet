@@ -216,12 +216,15 @@ C-x k
 ;; files: buffers: M-x list-buffers / M-x ido-switch-buffer
 C-x C-b / C-x b
 
-M-x kill-whole-line
 ;; delete 1 whole line
+M-x kill-whole-line
 C-S-Backspace
 
-;; M-x shell-command / evilnc-comment-or-uncomment-lines / dabbrev-expand (code completition)
-M-! / M-x; / M-/ /
+;; M-x evilnc-comment-or-uncomment-lines
+M-;
+
+;; M-x dabbrev-expand (code completition)
+M-/
 
 ;; email / insert file / repeat
 C-x m / i / z
@@ -385,9 +388,9 @@ C-s / C-r
 ;; query-replace-regexp
 C-M-%
 
-;; execute command and read-in (capture) its output
-C-u M-! command
-
+;; execute shell command and read-in (capture) its output
+C-u M-! <cmd>
+C-u SPC ! <cmd>
 ;;
 M-x dbg / ediff / compile / man / erc
 
