@@ -6,49 +6,52 @@ mmc
 # windows alternative to locate / which
 where telnet
 
-# net: windows: show or set host name
+# show or set host name
 hostname -i
 
-# windows: command line: logoff and force
+# command line: logoff and force
 shutdown /l /f
 
-# windows: net: drive: drives: list mapped drives
+# list group members
+net group <groupName> /domain
+
+# drive: drives: list mapped drives
 net use
 
-# windows: net: drive: drives: map \\sever\path under P:
+# drive: drives: map \\sever\path under P:
 net use P: \\server\path /persistent:{yes|no}
 
-# windows: net: drive: drives: unmap P:
+# drive: drives: unmap P:
 net use P: /delete
 
-# windows: user account information
+# user account information
 net user <username> /domain
 
-# windows: open ports
+# open ports
 netstat -a | find "LISTENING"
 
-# windows: set system variable system-wide
+# set system variable system-wide
 setx NAME value /m
 
-# windows: save system info
+# save system info
 msinfo32 /report msinfo32.txt
 
-# windows: batch: line continuation
+# batch: line continuation
 ^
 
-# windows: OS version; save system info
+# OS version; save system info
 systeminfo /s srvmain /u maindom\hiropln /p p@ssW23 /fo table
 
-# windows: Windows Management Instrumentation Command-Line (WMIC)
+# Windows Management Instrumentation Command-Line (WMIC)
 wmic /?
 
 # db2: windows:
 echo %DB2CLP%
 
-# windows: checksum [HashAlgorithm] must be uppercased
+# checksum [HashAlgorithm] must be uppercased
 CertUtil -hashfile path\to\file SHA1
 
-# windows: checksum [HashAlgorithm] must be uppercased
+# checksum [HashAlgorithm] must be uppercased
 CertUtil -hashfile path\to\file [HashAlgorithm]
 
 # cygwin: ps: show windows as well as cygwin processes (-W)
