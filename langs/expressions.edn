@@ -8,8 +8,9 @@
   {:fr ["Une fois qu'il va découvrir notre plan, il reviendra, plus fort que jamais"]}
   {:fr ["Je sauvais que vous l'aviez en vous, John"]}
   {
-   :url "https://youtu.be/jDyra0RH-Xs?t=24m25s"
-   :en ["all bets are off"]
+   :desc ["The outcome of a situation is unpredictable. (Google Dictionary)"]
+   :en ["All bets are off https://youtu.be/jDyra0RH-Xs?t=24m25s"
+        "All bets are off; literal meaning from the Snatch movie: https://youtu.be/N9_tl_b-bFs?t=4s"]
    }
   {:id 1509749127
    :fr ["On ne peut plus attendre"]
@@ -21,9 +22,8 @@
   {:id 1509749129
    :fr ["J'ai me fait porter pâle"]
    :de ["Ich werde mich krankmelden"]
-   :sk [
-        "Idem sa nahlásiť práce neschopným / PN"]
-   "Nahlásim sa práce neschopným / PN"
+   :sk ["Idem sa nahlásiť práce neschopným / PN"
+        "Nahlásim sa práce neschopným / PN"]
    }
 
   {:id 1509749150
@@ -65,9 +65,9 @@
 
   {:sk ["Prácu obstaravajuce opatrenie"]
    :de ["Arbeitsbeschaffungsmaßnahme"]
-   :fr ["mesure de réinsertion des chômeurs"]}}
+   :fr ["mesure de réinsertion des chômeurs"]}
 
-{:sk ["vziat / zobrat nahradne volno"]
- :de ["Gleitzeit nehmen"]
- :en ["'to take a day off' probably means 'a day off' in general; not a replacement for a day already spent at work"]
- :fr ["récupération du temps de travail => RTT. Prendre (une journée de) RTT. (dans le cadre des 35h)"]}
+  {:sk ["vziat / zobrat nahradne volno"]
+   :de ["Gleitzeit nehmen"]
+   :en ["'to take a day off' probably means 'a day off' in general; not a replacement for a day already spent at work"]
+   :fr ["récupération du temps de travail => RTT. Prendre (une journée de) RTT. (dans le cadre des 35h)"]}}
