@@ -189,3 +189,9 @@ clojure.core.async/>! [port val]
 ;; [async/>!] puts a val into port. nil values are not allowed. Must be called
 ;; [async/>!] inside a (go ...) block. Will park if no buffer space is
 ;; [async/>!] available. Returns true unless port is already closed.
+
+;; [transducer] (comp filter map) replacement for a bunch of transformations and a
+;; [transducer] bunch of intermediate collections; (getting rid of intermediate
+;; [transducer] collections)
+
+;; [transducer] Fast, Reducible Collections: clojure.java.jdbc/reducible-query
