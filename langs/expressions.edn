@@ -1,20 +1,56 @@
 ;; TODO For #url have a look at https://cljs.github.io/api/syntax/tagged-literal
 ;; Use (quot (System/currentTimeMillis) 1000) to get unique and short ids
 #{
+  {:fr ["C'est sûr et certain"]
+   :de ["Das ist so sicher wie das Amen in der Kirche https://dict.leo.org/dict/addInfo.php?aiid=DELMcPNw3mf&lp=frde&lang=en" ]}
+
+  {:fr ["Jeter un oeil à qc"
+        "Jeter un coup d'oeil"
+        "Jeter un oeil là-dessus"]
+   :de ["Einen Blick werfen" "Einen Blick auf etwas werfen"]
+   :sk ["Mkrnúť sa na niečo / do niečoho"
+        "Hodiť očkom na niečo / do niečoho"]
+   }
+
+  {:en ["On the other hand"]
+   :fn ["D'autre part"]
+   :sk ["Naproti tomu" "Na druhej strane"]
+   :de []
+   }
+
+  {:fr ["Difficile à se décider"]
+   :sk ["Tažko sa rozhodnúť"]
+   :de ["(Ist) Schwer sich zu entscheiden"]}
+
+  {:fr ["Il faut justement"]
+   :en ["I just need to"]
+   :de ["Man muss nur" "Ich muss nur"]
+   :sk "Musím len"}
+
+  {:fr ["Ça prend toujours de temps"]
+   :de ["Das dauert immer lange"]
+   :en ["That always takes time"]}
+
   {:fr ["Qu'en dites vous?"]
    :en ["Was halten Sie davon?"]}
+
   {:fr ["Tout ce qu'il faut faire est de me faire confiance"]
    :en ["Everything you have to do is to trust me"]}
+
   {:fr ["Une fois qu'il va découvrir notre plan, il reviendra, plus fort que jamais"]}
+
   {:fr ["Je sauvais que vous l'aviez en vous, John"]}
+
   {
    :desc ["The outcome of a situation is unpredictable. (Google Dictionary)"]
    :en ["All bets are off https://youtu.be/jDyra0RH-Xs?t=24m25s"
         "All bets are off; literal meaning from the Snatch movie: https://youtu.be/N9_tl_b-bFs?t=4s"]
    }
+
   {:id 1509749127
    :fr ["On ne peut plus attendre"]
    }
+
   {:sk ["práceneschopnosť / PN"]
    :en ["sickness absence"]
    :de ["Krankmeldung"]
@@ -59,15 +95,17 @@
 
   {
    ;; TODO pendant le semaine dans les soirs ???
-   :sk ["po veceroch studujem"]
-   :fr ["le soir j'étudie" ]
+   :sk ["Po večeroch študujem"]
+   :fr ["Le soir j'étudie"]
+   :en ["In the evenings, I study"]
+   :de ["Abends studiere ich"]
    }
 
   {:sk ["Prácu obstaravajuce opatrenie"]
    :de ["Arbeitsbeschaffungsmaßnahme"]
    :fr ["mesure de réinsertion des chômeurs"]}
 
-  {:sk ["vziat / zobrat nahradne volno"]
+  {:sk ["Vziať / zobrať náhradné voľno"]
    :de ["Gleitzeit nehmen"]
-   :en ["'to take a day off' probably means 'a day off' in general; not a replacement for a day already spent at work"]
-   :fr ["récupération du temps de travail => RTT. Prendre (une journée de) RTT. (dans le cadre des 35h)"]}}
+   :en ["'To take a day off' probably means 'a day off' in general; not a replacement for a day already spent at work"]
+   :fr ["Récupération du temps de travail => RTT. Prendre (une journée de) RTT. (dans le cadre des 35h)"]}}
