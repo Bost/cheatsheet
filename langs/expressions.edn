@@ -1,6 +1,10 @@
 ;; TODO For #url have a look at https://cljs.github.io/api/syntax/tagged-literal
 ;; Use (quot (System/currentTimeMillis) 1000) to get unique and short ids
 #{
+  {:fr "Tout ce qu'il faut faire est de me faire confiance"
+   :en "Everything you have to do is to trust me"}
+  {:fr "Une fois qu'il va découvrir notre plan, il reviendra, plus fort que jamais"}
+  {:fr "Je sauvais que vous l'aviez en vous, John"}
   {
    :url "https://youtu.be/jDyra0RH-Xs?t=24m25s"
    :en "all bets are off"
