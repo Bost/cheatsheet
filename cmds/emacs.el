@@ -578,6 +578,9 @@ SPC l <nr>
 ;; helm-persp-switch-project: create new layout
 SPC p l
 
+;; helm-projectile-switch-project
+SPC p p
+
 ;; save / load layouts to / from a file
 SPC l s  and  SPC l L
 
