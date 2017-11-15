@@ -1102,6 +1102,14 @@ sudo vnstat -u -i wlan0; and vnstat
 # net: managing a netfilter firewall
 sudo ufw status
 
+# bash: synchronize sytem date behind proxy
+curDate="$(wget -S "http://www.google.com/" 2>&1 \
+    | grep -E '^[[:space:]]*[dD]ate:' \
+    | sed 's/^[[:space:]]*[dD]ate:[[:space:]]*//' \
+    | head -1l \
+    | awk '{print $1, $3, $2,  $5 ,"GMT", $4 }' \
+    | sed 's/,//')"
+sudo date -s "${curDate}"
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
 #        -c FILE:  FILE exists and it's character special
