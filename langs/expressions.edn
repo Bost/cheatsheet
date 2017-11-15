@@ -1,6 +1,22 @@
 ;; TODO For #url have a look at https://cljs.github.io/api/syntax/tagged-literal
 ;; Use (quot (System/currentTimeMillis) 1000) to get unique and short ids
 #{
+
+  {:fr [""]
+   :en [""]}
+
+  {:fr ["Ne le foirez pas" "Ne le foire pas"]
+   :en ["Don't screew it up"]}
+
+  {:fr ["Nous avonz passé du rhum en contrebande"]
+   :en ["We were smuggling rhum"]}
+
+  {:fr ["Je serai direct"]
+   :en ["I'll be straight"]}
+
+  {:fr ["C'est le moment d'agir"]
+   :en ["It's time to act"]}
+
   {:fr ["C'est sûr et certain"]
    :de ["Das ist so sicher wie das Amen in der Kirche https://dict.leo.org/dict/addInfo.php?aiid=DELMcPNw3mf&lp=frde&lang=en" ]}
 
