@@ -143,6 +143,10 @@ sudo apt update
 sudo apt install telegram python-3.6 openjdk-8-jdk
 sudo apt install oracle-java8-set-default
 
+# dpkg: add ppa behind proxy
+sudo visudo # open /etc/sudoers; then append:
+Defaults env_keep="https_proxy"
+
 # dpkg:
 git clone https://gist.github.com/66638cab114a6da691518598b6d13650.git $HOME/bin/list-ppa; $HOME/bin/list-ppa/list-ppa; sudo ppa-purge <ppa:user/ppa-name>
 
