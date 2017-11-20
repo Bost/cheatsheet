@@ -97,6 +97,9 @@ M-x quail-show-keyboar-layout
 ;; scroll left / right
 C-x < / C-x >
 
+;; show keybindings
+C-h b
+
 ;; evil: Edit the search string in the minibuffer. (isearch-edit-string)
 M-e
 
