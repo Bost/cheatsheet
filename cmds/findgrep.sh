@@ -13,6 +13,12 @@ find . -empty -type f -delete / find . -empty -type d -delete
 # search for *fileToSearch* in multiple directories
 find ./ foo/ bar/ -name "*fileToSearch*"
 
+# search for files bigger / larger than 1 MB
+find ./ -size +1M
+
+# search for files small / smaller than 1 MB
+find ./ -size -1M
+
 #
 find . -name *.properties -exec grep -lir ".*String.*" \'{}\' \; -print
 
