@@ -507,6 +507,9 @@ svn log --revision \{2017-01-01\}:HEAD --no-auth-cache --non-interactive --verbo
 # checkout; also for http://<ip:port>/path; https://<ip:port>/path
 svn co --username <svn-login> svn://<ip:port>/path
 
+# error: E120106: ra_serf: The server sent a truncated HTTP response body.
+svn cleanup; and svn update
+
 # svn last revision number
 svn info <url>
 
@@ -1105,6 +1108,9 @@ sudo vnstat -u -i wlan0; and vnstat
 
 # net: managing a netfilter firewall
 sudo ufw status
+
+# permanet delete
+shred --verbose --remove <path>
 
 # bash: synchronize sytem date behind proxy
 curDate="$(wget -S "http://www.google.com/" 2>&1 \
