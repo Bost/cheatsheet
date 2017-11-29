@@ -1109,8 +1109,11 @@ sudo vnstat -u -i wlan0; and vnstat
 # net: managing a netfilter firewall
 sudo ufw status
 
-# permanet delete
-shred --verbose --remove <path>
+# permanet delete - shred doesn't work on dirs
+shred --verbose --remove <path/to/file>
+
+# permanet delete - shred doesn't work on dirs
+find . -type f -print0 | xargs -0 shred --remove
 
 # bash: synchronize sytem date behind proxy
 curDate="$(wget -S "http://www.google.com/" 2>&1 \
