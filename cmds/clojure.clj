@@ -195,3 +195,6 @@ clojure.core.async/>! [port val]
 ;; [transducer] collections)
 
 ;; [transducer] Fast, Reducible Collections: clojure.java.jdbc/reducible-query
+
+;; Peter Norvig: "Design patterns are bug reports against your programming language."
+;; http://norvig.com/design-patterns/design-patterns.pdf
