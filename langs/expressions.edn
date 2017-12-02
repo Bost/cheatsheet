@@ -63,15 +63,12 @@
   {:fr ["Je sauvais que vous l'aviez en vous, John"]}
 
   {
-   :desc ["The outcome of a situation is unpredictable. (Google Dictionary)"]
-   :en ["All bets are off https://youtu.be/jDyra0RH-Xs?t=24m25s"
-        "All bets are off; literal meaning from the Snatch movie: https://youtu.be/N9_tl_b-bFs?t=4s"]
+   :url "https://youtu.be/jDyra0RH-Xs?t=24m25s"
+   :en "all bets are off"
    }
-
   {:id 1509749127
    :fr ["On ne peut plus attendre"]
    }
-
   {:sk ["práceneschopnosť / PN"]
    :en ["sickness absence"]
    :de ["Krankmeldung"]
@@ -79,8 +76,9 @@
   {:id 1509749129
    :fr ["J'ai me fait porter pâle"]
    :de ["Ich werde mich krankmelden"]
-   :sk ["Idem sa nahlásiť práce neschopným / PN"
-        "Nahlásim sa práce neschopným / PN"]
+   :sk [
+        "Idem sa nahlásiť práce neschopným / PN"]
+   "Nahlásim sa práce neschopným / PN"
    }
 
   {:id 1509749150
@@ -116,17 +114,15 @@
 
   {
    ;; TODO pendant le semaine dans les soirs ???
-   :sk ["Po večeroch študujem"]
-   :fr ["Le soir j'étudie"]
-   :en ["In the evenings, I study"]
-   :de ["Abends studiere ich"]
+   :sk ["po veceroch studujem"]
+   :fr ["le soir j'étudie" ]
    }
 
   {:sk ["Prácu obstaravajuce opatrenie"]
    :de ["Arbeitsbeschaffungsmaßnahme"]
-   :fr ["mesure de réinsertion des chômeurs"]}
+   :fr ["mesure de réinsertion des chômeurs"]}}
 
-  {:sk ["Vziať / zobrať náhradné voľno"]
-   :de ["Gleitzeit nehmen"]
-   :en ["'To take a day off' probably means 'a day off' in general; not a replacement for a day already spent at work"]
-   :fr ["Récupération du temps de travail => RTT. Prendre (une journée de) RTT. (dans le cadre des 35h)"]}}
+{:sk ["vziat / zobrat nahradne volno"]
+ :de ["Gleitzeit nehmen"]
+ :en ["'to take a day off' probably means 'a day off' in general; not a replacement for a day already spent at work"]
+ :fr ["récupération du temps de travail => RTT. Prendre (une journée de) RTT. (dans le cadre des 35h)"]}
