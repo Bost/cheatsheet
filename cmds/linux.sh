@@ -1115,6 +1115,9 @@ shred --verbose --remove <path/to/file>
 # permanet delete - shred doesn't work on dirs
 find . -type f -print0 | xargs -0 shred --remove
 
+# permanet delete: srm doesn't delete hardlinked files
+srm -r <path>
+
 # bash: synchronize sytem date behind proxy
 curDate="$(wget -S "http://www.google.com/" 2>&1 \
     | grep -E '^[[:space:]]*[dD]ate:' \
