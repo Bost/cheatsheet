@@ -124,7 +124,7 @@ java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0-alpha14/clojure-1.9.0-al
 (parser {:state (atom ufo.state/app-state)} '[(ufo.meth/'activate-rec! vms)])
 
 ;; read / write hmap to from / file
-(spit "/tmp/data.edn" (with-out-str (print hmap)))
+(spit "/tmp/data.edn" (->> hmap pr with-out-str))
 (read-string (slurp "/tmp/data.edn"))
 
 ;; create / open remotelly accessible repl (nrepl)
