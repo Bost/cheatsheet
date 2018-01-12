@@ -176,6 +176,7 @@ A function which hasn't finished the evaluation
 ;; threading macros
 (= (conj {:a 2} {:a 1}) (->> {:a 1} (conj {:a 2})))
 (= (conj {:a 1} {:a 2}) (-> {:a 1} (conj {:a 2})))
+(as-> [:foo :bar] v (map name v) (first v) (.substring v 1))
 
 clojure.core.async/<!! [port]
 ;; [async/<!!] takes a val from port. Will return nil if closed. Will block if
