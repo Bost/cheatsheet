@@ -1010,6 +1010,12 @@ dpigs
 # debian-goodies: check which processes need to be restarted after an upgrade
 sudo checkrestart
 
+# check if the /var/run/reboot-required exists
+ls /var/run/reboot-required
+
+# list of packages to reboot
+/var/run/reboot-required.pkgs
+
 # start COMMAND and kill it if it is running still after 5 sec
 timeout 5s COMMAND
 
