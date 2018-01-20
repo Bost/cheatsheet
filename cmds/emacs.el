@@ -223,11 +223,8 @@ C-x C-b / C-x b
 M-x kill-whole-line
 C-S-Backspace
 
-;; M-x evilnc-comment-or-uncomment-lines
-M-;
-
-;; M-x dabbrev-expand (code completition)
-M-/
+;; M-x shell-command / evilnc-comment-or-uncomment-lines / dabbrev-expand (code completition)
+M-! / M-x; / M-/ /
 
 ;; email / insert file / repeat
 C-x m / i / z
@@ -394,6 +391,7 @@ C-M-%
 ;; execute shell command and read-in (capture) its output
 C-u M-! <cmd>
 C-u SPC ! <cmd>
+
 ;;
 M-x dbg / ediff / compile / man / erc
 

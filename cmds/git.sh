@@ -110,6 +110,7 @@ git add --work-tree=workLocation --git-dir=repoLocation
 # list contibutors / committers
 git shortlog --summary --numbered
 git shortlog -sn
+
 # show settings
 git config --global / --local --list
 
@@ -183,7 +184,7 @@ git ls-files --cached / --deleted / --modified / --ignored / --stage
 # Remove untracked files and dirs from the working tree
 git clean -dxf
 
-# amend (i.e. split) most recent (i.e. last) commit: ... and edit as usual
+# amend / split apart last commit: ... and edit as usual
 git reset HEAD~
 
 # show aliases

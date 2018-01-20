@@ -112,6 +112,9 @@ java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0-alpha14/clojure-1.9.0-al
 #!/usr/bin/env boot
 (println "Hello world script via bash and boot!")
 
+;; put to build.boot:
+;; [boot-deps "0.1.9"] ;; boot -d boot-deps ancient
+
 ;; om-next: inspect app-state
 (in-ns 'ufo.client)
 (require '[cljs.pprint :as pp])
@@ -124,7 +127,7 @@ java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0-alpha14/clojure-1.9.0-al
 (parser {:state (atom ufo.state/app-state)} '[(ufo.meth/'activate-rec! vms)])
 
 ;; read / write hmap to from / file
-(spit "/tmp/data.edn" (->> hmap pr with-out-str))
+(spit "/tmp/data.edn" (->> hm print with-out-str))
 (read-string (slurp "/tmp/data.edn"))
 
 ;; create / open remotelly accessible repl (nrepl)

@@ -511,7 +511,7 @@ svn co --username <svn-login> svn://<ip:port>/path
 svn cleanup; and svn update
 
 # svn last revision number
-svn info <url>
+svn info <repo-url/module>
 
 # when: svnrdump: E000022: Couldn't get lock on destination repos after 10 attempts
 svn propdel --revprop -r0 svn:rdump-lock <url>
@@ -763,6 +763,9 @@ locate xfce4-keyboard-shortcuts.xml
 
 # xfce: gnome: logout
 gnome-session-quit / xfce4-session-logout
+
+# virtualbox: restart clipboard
+killall VBoxClient; and VBoxClient --clipboard & disown
 
 # restart xfce when the title bar dissapears from xfwm4; or rm -r ~/.cache/sessions
 pkill -KILL -u yourusername
