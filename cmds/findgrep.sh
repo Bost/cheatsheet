@@ -5,46 +5,40 @@ exit 1 # just in case ...
 ./cmd.sh 1>str.out 2>str.err / ./cmd.sh &>combined.out
 
 # emacs find - exclude backup files
-find ./ -type f ! -name "*~" -exec grep -n --with-filename --regexp="String" {} +
+find . -type f ! -name "*~" -exec grep -n --with-filename --regexp="String" {} +
 
 # find and delete empty files / dirs
-find ./ -empty -type f -delete / find ./ -empty -type d -delete
+find . -empty -type f -delete / find . -empty -type d -delete
 
 # search for *fileToSearch* in multiple directories
 find ./ foo/ bar/ -name "*fileToSearch*"
 
-# search for files bigger / larger than 1 MB
-find ./ -size +1M
-
-# search for files small / smaller than 1 MB
-find ./ -size -1M
-
 #
-find ./ -name *.properties -exec grep -lir ".*String.*" \'{}\' \; -print
+find . -name *.properties -exec grep -lir ".*String.*" \'{}\' \; -print
 
 # quit search after finding 1st match
-find ./ ... -print -quit
+find . ... -print -quit
 
 # find all files and dirs modified in the last 7 days; between: older: newer:
-find ./ ... -mtime -7
+find . ... -mtime -7
 
 # bash: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file
 find /src -iname \'*.xml\' -exec cp \\{\\} /dst/ \\;
 
 # bash: directories called dirname
-find ./ -type d -name "dirname"
+find . -type d -name "dirname"
 
 # skip / exclude hidden files and dirs
-find ./ -not -path "*/\.*"
+find . -not -path "*/\.*"
 
 # skip / do not search in "*path/to/exclude*"
-find ./ -not -path "*path/to/exclude*"
+find . -not -path "*path/to/exclude*"
 
 # files filtered by multiple extensions
-find ./ -type f -name "*.xml" -or -name "*.txt"
+find . -type f -name "*.xml" -or -name "*.txt"
 
 # find executable files
-find ./ -executable -type f
+find . -executable -type f
 
 # grep: find: recursive search for "String" in ... (with '.' at the end)
 grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{el,clj,cljs,cljc} ./
@@ -59,10 +53,10 @@ xargs
 find ./ -type f -name "*.txt" -print0 | xargs -0 grep --files-with-matches "String"
 
 # find and delete *.jar and *.class when idling
-ionice -c3 find ./ -name "*.jar" -or -name "*.class" -delete
+ionice -c3 find . -name "*.jar" -or -name "*.class" -delete
 
 # search for File.class in jar files
-find ./ -name "*.jar" | xargs grep File.class
+find . -name "*.jar" | xargs grep File.class
 
 # new line separator for each grep result sh script
 grep "pattern" /path/to/file | awk '{print $0,"\n"}'
@@ -86,7 +80,7 @@ grep "String" * | cut -f1 -d:
 zgrep "String" myfile.gz / zgrep 'GET /blog' access_log.gz
 
 # find images
-find ./ -type f -exec file {} \; | grep --only-matching --perl-regexp '^.+: \w+ image'
+find . -type f -exec file {} \; | grep --only-matching --perl-regexp '^.+: \w+ image'
 
 # between: older: newer:
 find ~/Pictures -type f -newer

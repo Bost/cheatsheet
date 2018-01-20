@@ -143,10 +143,6 @@ sudo apt update
 sudo apt install telegram python-3.6 openjdk-8-jdk
 sudo apt install oracle-java8-set-default
 
-# dpkg: add ppa behind proxy
-sudo visudo # open /etc/sudoers; then append:
-Defaults env_keep="https_proxy"
-
 # dpkg:
 git clone https://gist.github.com/66638cab114a6da691518598b6d13650.git $HOME/bin/list-ppa; $HOME/bin/list-ppa/list-ppa; sudo ppa-purge <ppa:user/ppa-name>
 
@@ -510,7 +506,7 @@ svn co --username <svn-login> svn://<ip:port>/path
 # error: E120106: ra_serf: The server sent a truncated HTTP response body.
 svn cleanup; and svn update
 
-# svn last revision number
+# last revision number
 svn info <repo-url/module>
 
 # when: svnrdump: E000022: Couldn't get lock on destination repos after 10 attempts
@@ -751,12 +747,7 @@ https://forum.manjaro.org/t/cant-switch-windows-with-super-tab/2406/4
 xfce4-keyboard-settings
 
 # xfce: keyboard; shortcuts; http://docs.xfce.org/xfce/xfconf/xfconf-query
-xfconf-query -c        xfce4-keyboard-shortcuts -lv
-xfconf-query --channel xfce4-keyboard-shortcuts -lv
-xfconf-query --channel xfce4-keyboard-shortcuts --property "/xfwm4/custom/<Super>Tab" --reset
-xfconf-query --channel xfce4-keyboard-shortcuts --property "/xfwm4/default/<Super>Tab" --reset
-xfconf-query --channel xfce4-keyboard-shortcuts --property "/xfwm4/custom/<Super>Tab" --create --type string --set "empty"
-xfconf-query --channel xfce4-keyboard-shortcuts --property "/xfwm4/default/<Super>Tab" --create --type string --set "empty"
+xfconf-query -c xfce4-keyboard-shortcuts -lv
 
 # xfce: keyboard; changes in the xml don't work, use xfce4-settings-editor
 locate xfce4-keyboard-shortcuts.xml
@@ -769,6 +760,9 @@ killall VBoxClient; and VBoxClient --clipboard & disown
 
 # restart xfce when the title bar dissapears from xfwm4; or rm -r ~/.cache/sessions
 pkill -KILL -u yourusername
+
+# virtualbox: restart clipboard
+killall VBoxClient; and VBoxClient --clipboard & disown
 
 # when emacs freezes or hangs
 killall -SIGUSR2 emacs
@@ -829,8 +823,8 @@ dpkg --get-selections
 dpkg -L packageName
 
 # install / remove package.deb
-sudo dpkg --install package.deb
-sudo dpkg --remove  package.deb
+dpkg --install package.deb
+dpkg --remove  package.deb
 
 # dpkg: apt: show description for packageName
 apt-cache search ^packageName$
@@ -1118,23 +1112,6 @@ sudo vnstat -u -i wlan0; and vnstat
 # net: managing a netfilter firewall
 sudo ufw status
 
-# permanet delete - shred doesn't work on dirs
-shred --verbose --remove <path/to/file>
-
-# permanet delete - shred doesn't work on dirs
-find . -type f -print0 | xargs -0 shred --remove
-
-# permanet delete: srm doesn't delete hardlinked files
-srm -r <path>
-
-# bash: synchronize sytem date behind proxy
-curDate="$(wget -S "http://www.google.com/" 2>&1 \
-    | grep -E '^[[:space:]]*[dD]ate:' \
-    | sed 's/^[[:space:]]*[dD]ate:[[:space:]]*//' \
-    | head -1l \
-    | awk '{print $1, $3, $2,  $5 ,"GMT", $4 }' \
-    | sed 's/,//')"
-sudo date -s "${curDate}"
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
 #        -c FILE:  FILE exists and it's character special

@@ -27,6 +27,13 @@ git commit --amend --no-edit
 git commit --amend --author "Bost <thebost@gmail.com>"
 git commit --amend --reset-author
 
+# reuse commit message
+git commit --amend --no-edit
+
+# change the author (name, email) in the last commit
+git commit --amend --author "Bost <thebost@gmail.com>"
+git commit --amend --reset-author
+
 # assigns the original repo to a remote repo called upstream
 git remote add upstream https://github.com/octocat/Spoon-Knife.git
 
@@ -75,9 +82,14 @@ git checkout BRANCH -- /path/file.txt
 # revert
 git checkout path/to/file
 
+<<<<<<< Updated upstream
 # show current branch and changes made since last commit
 git status --show --branch
 git status -sb
+=======
+# show current branch and changes made since last commit; -s / --show, -b / --branch
+git status --show --branch
+>>>>>>> Stashed changes
 
 # interactively choose hunks of patch; see --interactive
 git add --patch
@@ -184,7 +196,7 @@ git ls-files --cached / --deleted / --modified / --ignored / --stage
 # Remove untracked files and dirs from the working tree
 git clean -dxf
 
-# amend / split apart last commit: ... and edit as usual
+# amend / split apart last commit: ... and edit the usual way
 git reset HEAD~
 
 # show aliases

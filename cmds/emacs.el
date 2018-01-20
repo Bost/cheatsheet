@@ -97,9 +97,6 @@ M-x quail-show-keyboar-layout
 ;; scroll left / right
 C-x < / C-x >
 
-;; show keybindings
-C-h b
-
 ;; evil: Edit the search string in the minibuffer. (isearch-edit-string)
 M-e
 
@@ -219,8 +216,8 @@ C-x k
 ;; files: buffers: M-x list-buffers / M-x ido-switch-buffer
 C-x C-b / C-x b
 
-;; delete 1 whole line
 M-x kill-whole-line
+;; delete 1 whole line
 C-S-Backspace
 
 ;; M-x shell-command / evilnc-comment-or-uncomment-lines / dabbrev-expand (code completition)
@@ -579,9 +576,6 @@ SPC l <nr>
 ;; helm-persp-switch-project: create new layout
 SPC p l
 
-;; helm-projectile-switch-project
-SPC p p
-
 ;; save / load layouts to / from a file
 SPC l s  and  SPC l L
 
@@ -592,8 +586,6 @@ M-x highlight-lines-matching-regexp
 ;; replace-all: recursive find & replace / substitute all occurences of a string
 M-x find-name-dired  then  't' (toggle mark) then  'Q' (Query replace in files)
 
-;; describe font at point
-my/what-face
 
 ;; neotree
 SPC f T

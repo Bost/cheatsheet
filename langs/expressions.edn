@@ -43,7 +43,7 @@
   {:fr ["Il faut justement"]
    :en ["I just need to"]
    :de ["Man muss nur" "Ich muss nur"]
-   :sk "Musím len"}
+   :sk ["Musím len"]}
 
   {:fr ["Ça prend toujours de temps"]
    :de ["Das dauert immer lange"]
@@ -71,8 +71,7 @@
 
   {:sk ["práceneschopnosť / PN"]
    :en ["sickness absence"]
-   :de ["Krankmeldung"]
-   }
+   :de ["Krankmeldung"]}
 
   {:id 1509749129
    :fr ["J'ai me fait porter pâle"]
@@ -112,16 +111,17 @@
 
   {
    ;; TODO pendant le semaine dans les soirs ???
-   :sk ["po veceroch studujem"]
-   :fr ["le soir j'étudie" ]}
+   :sk ["Po večeroch študujem"]
+   :fr ["Le soir j'étudie"]
+   :en ["In the evenings, I study"]
+   :de ["Abends studiere ich"]}
 
   {:sk ["Prácu obstaravajuce opatrenie"]
    :de ["Arbeitsbeschaffungsmaßnahme"]
    :fr ["mesure de réinsertion des chômeurs"]}
 
-  {:sk ["vziat / zobrat nahradne volno"]
+  {:sk ["Vziať / zobrať náhradné voľno"]
    :de ["Gleitzeit nehmen"]
-   :en ["'to take a day off' probably means 'a day off' in general; not a replacement for a day already spent at work"]
-   :fr ["récupération du temps de travail => RTT. Prendre (une journée de) RTT. (dans le cadre des 35h)"]}
-
+   :en ["'To take a day off' probably means 'a day off' in general; not a replacement for a day already spent at work"]
+   :fr ["Récupération du temps de travail => RTT. Prendre (une journée de) RTT. (dans le cadre des 35h)"]}
   }

@@ -13,7 +13,7 @@ hostname -i
 shutdown /l /f
 
 # list group members
-net group /domain <groupName>
+net group <groupName> /domain
 
 # drive: drives: list mapped drives
 net use
