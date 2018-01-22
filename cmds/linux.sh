@@ -1112,6 +1112,24 @@ sudo vnstat -u -i wlan0; and vnstat
 # net: managing a netfilter firewall
 sudo ufw status
 
+# shred: permanet delete: shred doesn't work on dirs
+shred --verbose --remove <path/to/file>
+
+# shred: permanet delete: shred doesn't work on dirs
+find . -type f -print0 | xargs -0 shred --remove
+
+# sherd: permanet delete: srm doesn't delete hardlinked files
+srm -r <path>
+
+# bash: synchronize sytem date behind proxy
+curDate="$(wget -S "http://www.google.com/" 2>&1 \
+    | grep -E '^[[:space:]]*[dD]ate:' \
+    | sed 's/^[[:space:]]*[dD]ate:[[:space:]]*//' \
+    | head -1l \
+    | awk '{print $1, $3, $2,  $5 ,"GMT", $4 }' \
+    | sed 's/,//')"
+sudo date -s "${curDate}"
+
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
 #        -c FILE:  FILE exists and it's character special
