@@ -17,11 +17,26 @@ sudo yum install gnome-common GConf2-devel pytgtk2-devel python-vte-devel gnome-
 # cpu: mem: hdd: hardware information in a GTK+ window
 hardinfo / sudo dmidecode / sudo lshw
 
-# arp: Displays and modifies the IP-to-Physical address translation tables used by address resolution protocol (ARP).
+# net: arp: Displays and modifies the IP-to-Physical address translation tables used by address resolution protocol (ARP).
 arp -a
 
-# arp: find the media access control address of a network neighbour for a given IPv4 Address
+# net: arp: find the MAC media access control address of a network neighbour for a given IPv4 Address
 arp
+
+# net:
+arping
+
+# net: the arp scanner
+arp-scan
+
+# net: keep track of ethernet/ip address pairings
+arpwatch
+
+# nmap
+nmap
+
+# net: arp: Network security auditing tool
+hunt
 
 # query an LDAP server from the command line with ldap-utils: ldapsearch, ldapadd, ldapmodify
 ldap-utils
@@ -44,6 +59,11 @@ chrome://version | chrome://flags | chrome://net-internals | chrome://quota-inte
 
 # net: ports listening for connection (i.e. open ports)
 sudo nmap -sT -O localhost
+
+sudo nmap -sn 10.90.42.73/23
+
+# net: ipv4: CIDR notation
+192.168.100.14/24 represents the IPv4 address 192.168.100.14 and its associated routing prefix 192.168.100.0
 
 # connecting to mysql a.k.a. login
 mysql --host=localhost --user=<name> --password=<password> <dbname>
@@ -973,6 +993,9 @@ snmp
 
 # net: packet analyser
 wireshark
+
+# net: ftp: trivial file transfer program
+tftp
 
 # ftp: toggle bash / ftp
 ! / exit

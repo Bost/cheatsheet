@@ -65,3 +65,12 @@ apt-cyg --mirror http://ftp-stud.hs-esslingen.de/pub/Mirrors/sources.redhat.com/
 
 # cygwin: bash: print unix form of filename
 cygpath -u filename
+
+# net: protocol stats and current TCP/IP connections using NBT (NetBIOS over TCP/IP).
+nbtstat -A <ip address>
+
+# UNC path: Store current dir for the POPD
+pushd \\computer.domain\path\to\dir
+
+## UNC path: Change to the dir stored by the PUSHD
+popd
