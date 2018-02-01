@@ -1153,6 +1153,14 @@ curDate="$(wget -S "http://www.google.com/" 2>&1 \
     | sed 's/,//')"
 sudo date -s "${curDate}"
 
+# Add and remove modules from the Linux Kernel
+modprobe -a vboxguest vboxsf vboxvideo
+
+# vbox:
+sudo apt install virtualbox-guest-additions-iso
+sudo /etc/init.d/virtualbox restart
+sudo /etc/init.d/virtualbox-guest-utils start
+
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
 #        -c FILE:  FILE exists and it's character special
