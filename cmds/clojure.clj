@@ -209,4 +209,7 @@ cd ~/dec/clojure
 ./antsetup.sh
 ant local
 java -Dclojure.server.repl="{:port 5555 :accept clojure.core.server/repl}" -jar ~/dec/clojure/clojure.jar
+;; boot socket-server --port 5555 wait # requires boot 2.7.2
+yarn global add unravel-repl
+unravel localhost 5555
 
