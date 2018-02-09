@@ -213,3 +213,10 @@ java -Dclojure.server.repl="{:port 5555 :accept clojure.core.server/repl}" -jar 
 yarn global add unravel-repl
 unravel localhost 5555
 
+;; pwd: print working directory
+(System/getProperty "user.dir")
+(println "(System/getProperty \"user.dir\")" (System/getProperty "user.dir"))
+
+;; pwd: print working directory
+(-> (java.io.File. ".") .getAbsolutePath)
+(println "(-> (java.io.File. \".\") .getAbsolutePath)" (-> (java.io.File. ".") .getAbsolutePath))
