@@ -95,6 +95,9 @@ git status --show --branch
 git add --patch
 git add -p
 
+# amend commit; reuse commit message
+git commit --amend --no-edit
+
 # a kind of git history
 git reflog
 
@@ -121,6 +124,7 @@ git add --work-tree=workLocation --git-dir=repoLocation
 
 # list contibutors / committers
 git shortlog --summary --numbered
+git shortlog -s -n
 git shortlog -sn
 
 # show settings

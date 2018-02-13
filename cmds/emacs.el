@@ -220,8 +220,8 @@ M-x kill-whole-line
 ;; delete 1 whole line
 C-S-Backspace
 
-;; M-x shell-command / evilnc-comment-or-uncomment-lines / dabbrev-expand (code completition)
-M-! / M-x; / M-/ /
+;; M-x evilnc-comment-or-uncomment-lines / dabbrev-expand (code completition)
+M-x ; / M-/ /
 
 ;; email / insert file / repeat
 C-x m / i / z
@@ -385,10 +385,6 @@ C-s / C-r
 ;; query-replace-regexp
 C-M-%
 
-;; execute shell command and read-in (capture) its output
-C-u M-! <cmd>
-C-u SPC ! <cmd>
-
 ;;
 M-x dbg / ediff / compile / man / erc
 
@@ -517,6 +513,13 @@ macros
 
 ;; launch emacs and eval string; does not work well with my bash function LaunchEmacs
 emacs --eval '(message "ufo")' / emacs -e configuration-layer/update-packages
+
+;; M-x shell-command; execute
+M-! / SPC !
+
+;; execute shell command and read-in (capture) its output
+C-u M-! <cmd>
+C-u SPC ! <cmd>
 
 ;; M-x shell-command: top: capture top output from stdout
 M-! RET top -c -n -1 -b -w 200
