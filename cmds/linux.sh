@@ -1132,8 +1132,15 @@ npm config set https-proxy "https://<ip:port>/"
 # net: data transfered today / per month
 sudo vnstat -u -i wlan0; and vnstat
 
-# net: managing a netfilter firewall
-sudo ufw status
+# net: managing a netfilter firewall; ufw - uncomplicated firewall
+sudo ufw status numbered
+sudo ufw delete <rule-nr>
+sudo ufw allow <port>
+sudo ufw allow <port>/tcp
+
+# net: rdp: remote desktop
+rdesktop -u <login> -p - <computer>:3389 # -p -  ask for password
+rdesktop -f -u <login> -p - <computer>:3389 # -f  full screen, -p -  ask for password
 
 # shred: permanet delete: shred doesn't work on dirs
 shred --verbose --remove <path/to/file>
