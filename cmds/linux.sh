@@ -146,7 +146,12 @@ javaws start.jnlp
 # disassemble file.class (bytecode)
 javap file.class / javap -p -s file.class
 
-# ubuntu: change default java / javac environment
+# ubuntu: java: jdk: change default jdk / java / javac environment
+sudo add-apt-repository ppa:openjdk-r/ppa # alternativelly  ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+sudo apt-get install openjdk-8-source # this is optional, the jdk source code
+sudo apt install oracle-java8-set-default # may or may not be desired
 sudo update-alternatives --config java / javac
 
 # ubuntu: change default www-browser
@@ -156,12 +161,10 @@ sudo update-alternatives --config x-www-browser / gnome-www-browser
 /usr/bin/browse -> xdg-open
 
 # dpkg: add-apt-repository needs a single repo
-sudo add-apt-repository ppa:webupd8team/java
 sudo add-apt-repository ppa:jonathonf/python-3.6
 sudo add-apt-repository ppa:atareao/telegram
 sudo apt update
-sudo apt install telegram python-3.6 openjdk-8-jdk
-sudo apt install oracle-java8-set-default
+sudo apt install telegram python-3.6
 
 # dpkg:
 git clone https://gist.github.com/66638cab114a6da691518598b6d13650.git $HOME/bin/list-ppa; $HOME/bin/list-ppa/list-ppa; sudo ppa-purge <ppa:user/ppa-name>
