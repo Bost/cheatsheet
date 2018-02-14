@@ -465,6 +465,9 @@ curl ifconfig.me/ip/host/ua/port/
 # net: test connection with disabled proxy
 curl --noproxy "*" -X GET http://www.google.com
 
+# enforce using http_proxy instead of https_proxy in case of SSL23_GET_SERVER_HELLO
+curl -v --proxy $http_proxy https://www.google.com
+
 # show request/response headers
 curl -v URL
 
@@ -816,6 +819,9 @@ ssh-copy-id user@host
 
 # ssh: mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Mount a folder securely over a network
 sshfs name@server:/path/to/folder ./path/to/mount/point
+
+# mound windows shares under linux
+sudo mount.cifs //<windows-machine>/path/to/dir path/to/dir -o user=<windows-username>
 
 # virtualbox: mount shared folder
 sudo mount -t vboxsf share /home/username/share/
