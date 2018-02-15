@@ -1150,6 +1150,9 @@ sudo ufw allow <port>/tcp
 rdesktop -u <login> -p - <computer>:3389 # -p -  ask for password
 rdesktop -f -u <login> -p - <computer>:3389 # -f  full screen, -p -  ask for password
 
+# net: rdp: remote desktop
+sudo /etc/init.d/xrdp restart
+
 # shred: permanet delete: shred doesn't work on dirs
 shred --verbose --remove <path/to/file>
 
