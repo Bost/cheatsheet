@@ -220,3 +220,37 @@ unravel localhost 5555
 ;; pwd: print working directory
 (-> (java.io.File. ".") .getAbsolutePath)
 (println "(-> (java.io.File. \".\") .getAbsolutePath)" (-> (java.io.File. ".") .getAbsolutePath))
+
+;; Reference types
+;; Jméno             | Var                             | Ref          | Atom       | Agent
+;; Změna stavu       | synchronní                      | synchronní   | synchronní | asynchronní
+;; Typ změny         | lokální, v rámci jednoho vlákna | koordinovaná | nezávislá  | nezávislá
+;; Podpora transakcí | ne                              | ano          | ne         | ne
+
+
+;; REPL: java -jar clojure; TODO see the video "The most beautifull programm"
+user=> (loop [] (println (eval (read))) (recur))
+(+ 1 2)
+3
+(* 6 7)
+42
+(str "Hello world")
+Hello world
+^D
+user=>
+
+
+;; TODO test
+(dbg)
+(dbg (dbg))
+(dbg (dbg nil))
+
+
+;; interface              | list | vector | hash-map | hash-set
+;; java.util.Collection   | y    | y      | n        | y
+;; java.util.List         | y    | y      | n        | n
+;; java.util.Map          | n    | n      | y        | n
+;; java.util.Set          | n    | n      | n        | y
+;; java.util.RandomAccess | n    | y      | n        | n
+;; java.lang.Iterable     | y    | y      | y        | y
+;; java.lang.Comparable   | n    | y      | n        | n
