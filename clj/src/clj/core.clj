@@ -1,5 +1,6 @@
-(ns cheatsheet)
+(ns clj.core)
 
+(comment
 ;; destructure hashmap
 (let [{a :a b :b} m] ...)
 
@@ -7,7 +8,7 @@
 CLOS
 
 ;; bug detection tool for Java
-https://opensource.google.com/projects/error-prone
+;; https://opensource.google.com/projects/error-prone
 
 ;; clojure.spec - examples
 (clojure.spec/exercise [spec] [spec n] [spec n overrides])
@@ -229,16 +230,8 @@ unravel localhost 5555
 
 
 ;; REPL: java -jar clojure; TODO see the video "The most beautifull programm"
+user=> (->> (read) eval prn (while true))
 user=> (loop [] (println (eval (read))) (recur))
-(+ 1 2)
-3
-(* 6 7)
-42
-(str "Hello world")
-Hello world
-^D
-user=>
-
 
 ;; TODO test
 (dbg)
@@ -254,3 +247,4 @@ user=>
 ;; java.util.RandomAccess | n    | y      | n        | n
 ;; java.lang.Iterable     | y    | y      | y        | y
 ;; java.lang.Comparable   | n    | y      | n        | n
+)
