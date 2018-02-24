@@ -1,5 +1,21 @@
 * Lambda Calculus: formal calculus for manipulating functions
   Currying: Partial function application; Fixing some function parameters
+  e ::= x | λx.e | e e'
+        |    |      |
+        |    |      +---- application
+        |    +----------- function abstractions
+        +---------------- variable
+
+* Typed Lambda Calculus
+  e ::= x | λx.e : τ | e e' | c
+
+* Damas-Hindley-Milner Calculus 
+  e ::= x | λx.e | e e' | let x = e in e'
+  W Algorithm - for type inference: W(Γ,e) = (S,τ)
+  Γ - typing env
+  S - state
+  τ - type
+
 * Category Theory: abstract algebra of abstract functions: "The Arrows Count"
   (TODO arrow weight = price of calculation; preference for compositions)
   Up to isomorphis = any such things are isomorphic (structurally the same)
@@ -216,8 +232,10 @@
    Comonad: (w a -> b) -> (w b -> c) -> (w a -> c)
      You can extract from IO Monad
      You can't put anything to IO Monad
-
 ** TODO Topos, Subobject Classifier etc.: see Bartosz's blog
+** Indexed Monad: IxMonad: ibind: m i j a -> (a -> m j k b) -> m i k b
+   state composition
+   Session Types, Dependent Types, Dependent State Types
 * Curry-Howard-Lambek correspondence: Intuitionistic Logic <-> Type Theory <-> Category Theory:
   Function A -> B is a proof of logical implication A => B
   Direct relationship between computer programs and mathematical proofs; from 1940-ties

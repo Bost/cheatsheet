@@ -233,11 +233,12 @@ unravel localhost 5555
 user=> (->> (read) eval prn (while true))
 user=> (loop [] (println (eval (read))) (recur))
 
-;; TODO test
+;; TODO test; tel macro - inverse of let
 (dbg)
 (dbg (dbg))
 (dbg (dbg nil))
-
+(let [1 2])
+(tel [2 1])
 
 ;; interface              | list | vector | hash-map | hash-set
 ;; java.util.Collection   | y    | y      | n        | y
