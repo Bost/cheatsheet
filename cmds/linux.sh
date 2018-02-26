@@ -906,6 +906,9 @@ zip --recurse-paths --encrypt ./path/to/file.zip ./path/to/dir
 # zip: unzip:
 unzip ./path/to/file.zip -d ./path/to/extract-dir
 
+# unzip: untar: in one step / command
+tar -zxvf file.tar.gz
+
 # tar / untar
 tar czf ./path/to/tarfile.gz file0 file1
 tar xzf ./path/to/tarfile.gz
