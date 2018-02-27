@@ -107,7 +107,7 @@ lein cljsbuild test
 `(+ ~'x x) => (clojure.core/+ x user/x) ;; when using ~ inside ` then the form is unquoted
 
 ;; cli: script: repl from command line
-java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0-alpha14/clojure-1.9.0-alpha14.jar clojure.main
+java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0/clojure-1.9.0.jar:$HOME/.m2/repository/org/clojure/spec.alpha/0.1.143/spec.alpha-0.1.143.jar clojure.main
 
 ;; cli: run as a script: ./hello.clj
 #!/usr/bin/env boot
