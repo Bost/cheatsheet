@@ -71,6 +71,9 @@ mysql --host=localhost --user=<name> --password=<password> <dbname>
 # connecting to mysql a.k.a. login
 mysql --host=localhost --user=root --password=root employees
 
+# unblock mysql
+mysqladmin -u [username] -p flush-hosts
+
 # search for a file named exactly NAME (not *NAME*)
 locate -b '\NAME'
 
