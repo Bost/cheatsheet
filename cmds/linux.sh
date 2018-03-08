@@ -569,6 +569,9 @@ cvs update -P -C -r 1.11 ./path/to/file.ext
 # checkout module from branch or tag
 cvs checkout -r branchOrTag module
 
+# commit file with multi-line commit message
+cvs commit -m "fst-comment-line\nsnd-comment-line" path/to/file.ext
+
 # update file
 cvs log    -P -d ./path/to/file.ext
 
