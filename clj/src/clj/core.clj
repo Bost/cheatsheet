@@ -1,8 +1,11 @@
 (ns clj.core)
 
 (comment
+;; destructure hashmap; default function parameters
+(defn [{:keys [a b] :or {c "default-val-of-c"} :as prm}])
+
 ;; destructure hashmap
-(let [{a :a b :b} m] ...)
+(let [{a :a b :b} m])
 
 ;; Common Lisp Object System
 CLOS
