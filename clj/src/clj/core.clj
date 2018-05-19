@@ -252,3 +252,6 @@ user=> (loop [] (println (eval (read))) (recur))
 ;; java.lang.Iterable     | y    | y      | y        | y
 ;; java.lang.Comparable   | n    | y      | n        | n
 )
+
+;;
+.. js-obj clj->js js->clj
