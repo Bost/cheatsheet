@@ -719,11 +719,17 @@ sed -n "10,20p" /path/to/file / sed -n 5p /path/to/file
 # cut huge file: content between lines 10 and 20; see https://unix.stackexchange.com/a/47423
 awk 'NR >= 10 && NR <= 20' /path/to/file > /path/to/cut-file
 
-# sed: replace 1 occurence
-sed --in-place "s/foo/FOO/"
+# replace 1 occurence
+sed --in-place "s/foo/FOO/" /path/to/file
 
-# sed: replace all occurences of "foo" (globally)
-sed --in-place "s/foo/FOO/g"
+# replace all occurences of "foo" (globally)
+sed --in-place "s/foo/FOO/g" /path/to/file
+
+# remove empty lines (globally)
+sed --in-place '/^\s*$/d' /path/to/file
+
+# replace newlines with space
+sed ':a;N;$!ba;s/\n/ /g'
 
 # sed: ascii: ebcdic: fix new lines and empty chars; \x85 - hexadecimal char
 sed "s/\x85/\n/g" <log.txt >log.nl.txt; sed "s/\x85/\n/g" <log.nl.txt >log.nl.00.txt
@@ -1115,8 +1121,9 @@ pv
 mvn package
 # mvn install / mvn clean - mvn install seems not to be needed
 
-# SFTP / FTPS
-SSH File Transfer from the OpenSSH / FTP over SSL
+# SFTP / FTPS: SSH File Transfer from the OpenSSH / FTP over SSL
+# FTPS: FTP over SSL
+lftp
 
 # HSTS: HTTP Strict Transport Security:
 "This web always encrypts. And it does so using trusted certificate"

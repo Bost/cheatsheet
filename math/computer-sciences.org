@@ -284,7 +284,7 @@
     5 - ? type
 
 *** JavaScript & Category Theory
-**** Category ==  Contracts + Functions guarded by contracts
+**** Category == Contracts + Functions guarded by contracts
 
 **
 | Set theory                  | Category theory                                          | JavaScript                     |

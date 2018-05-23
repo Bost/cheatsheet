@@ -33,8 +33,10 @@ netstat -a | find "LISTENING"
 # set system variable system-wide
 setx NAME value /m
 
-# save system info
+# hardware: system info
 msinfo32 /report msinfo32.txt
+msinfo32 /nfo C:\TEMP\TEST.NFO | type C:\TEMP\TEST.NFO | grep <pattern>
+systeminfo
 
 # batch: line continuation
 ^
