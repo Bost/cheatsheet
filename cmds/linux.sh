@@ -15,7 +15,7 @@ sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel libungif-devel li
 sudo yum install gnome-common GConf2-devel pytgtk2-devel python-vte-devel gnome-python2-gconf python-keybinder pyxdg notify-python
 
 # cpu: mem: hdd: hardware information in a GTK+ window
-hardinfo / sudo dmidecode / sudo lshw
+hardinfo / sudo dmidecode / sudo lshw / cpu-x
 
 # net: arp: Displays and modifies the IP-to-Physical address translation tables used by address resolution protocol (ARP).
 arp -a
@@ -60,7 +60,7 @@ chrome://version | chrome://flags | chrome://net-internals | chrome://quota-inte
 # net: ports listening for connection (i.e. open ports)
 sudo nmap -sT -O localhost
 
-sudo nmap -sn 10.90.42.73/23
+sudo nmap -sn <ip-range>
 
 # net: ipv4: CIDR notation
 192.168.100.14/24 represents the IPv4 address 192.168.100.14 and its associated routing prefix 192.168.100.0
@@ -477,16 +477,16 @@ curl -v URL
 # in bash: (in fish it doesn't work)
 curl --request GET "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=test"
 
-# net: like ifconfig. state of network interfaces
+# iproute2: net: like ifconfig. state of network interfaces
 ip address
 
-# net: show / manipulate routing, devices, policy routing and tunnels
+# iproute2: net: show / manipulate routing, devices, policy routing and tunnels
 ip address show eth0
 
-# net: routing table
+# iproute2: net: routing table
 ip route
 
-# net: Address Resolution Protocol table
+# iproute2: net: Address Resolution Protocol table
 ip neighbour
 
 # net: what is my IP
@@ -946,7 +946,7 @@ mtr --report www.google.com
 # bash: query wikipedia for keyword
 dig +short txt keyword.wp.dg.cx
 
-# net: listening ports and PIDs of associated processes. tcp (-t) udp (-u); see also ss (socket statistics)
+# iproute2: net: listening ports and PIDs of associated processes. tcp (-t) udp (-u)
 ss -tulnp  # socket statistics replaces obsolete netstat
 
 # crontab: edit / view entries
