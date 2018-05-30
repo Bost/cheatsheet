@@ -17,6 +17,27 @@ sudo yum install gnome-common GConf2-devel pytgtk2-devel python-vte-devel gnome-
 # cpu: mem: hdd: hardware information in a GTK+ window
 hardinfo / sudo dmidecode / sudo lshw / cpu-x
 
+# net: troubleshooting and security testing
+sudo tcpdump
+
+# net: Extract HTTP User Agents
+sudo tcpdump -nn -A -s1500 -l | egrep -i 'User-Agent:|Host:'
+
+# net: Capture all the plaintext passwords
+sudo tcpdump port http or port ftp or port smtp or port imap or port pop3 or port telnet -l -A | egrep -i -B5 'pass=|pwd=|log=|login=|user=|username=|pw=|passw=|passwd=|password=|pass:|user:|username:|password:|login:|pass |user '
+
+# net: Extract HTTP Passwords in POST Requests
+sudo tcpdump -s 0 -A -n -l | egrep -i "POST /|pwd=|passwd=|password=|Host:"
+
+# net: Capture Cookies from Server and from Client
+sudo tcpdump -nn -A -s0 -l | egrep -i 'Set-Cookie|Host:|Cookie:'
+
+# net: Internet Control Message Protocol: send error messages and operational information
+ICMP
+
+# net: Dynamic Host Configuration Protocol: network management protocol used on TCP/IP networks
+DHCP
+
 # net: arp: Displays and modifies the IP-to-Physical address translation tables used by address resolution protocol (ARP).
 arp -a
 
