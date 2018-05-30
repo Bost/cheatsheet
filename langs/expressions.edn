@@ -120,6 +120,9 @@
    :de ["Arbeitsbeschaffungsmaßnahme"]
    :fr ["mesure de réinsertion des chômeurs"]}
 
+  {:fr ["Il n’en fallait pas plus pour déclencher une de ces petites tempêtes"]
+   :sk ["Nebolo treba viac na spustenie jednej z malych burok"]}
+
   {:sk ["Vziať / zobrať náhradné voľno"]
    :de ["Gleitzeit nehmen"]
    :en ["'To take a day off' probably means 'a day off' in general; not a replacement for a day already spent at work"]
