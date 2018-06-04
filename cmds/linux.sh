@@ -859,14 +859,17 @@ sudo mount.cifs //<windows-machine>/path/to/dir path/to/dir -o user=<windows-use
 # virtualbox: mount shared folder
 sudo mount -t vboxsf share /home/username/share/
 
+# readonly to readwrite
+sudo mount -o remount,rw /partition/identifier /mount/point
+
+# mounted filesystems - nice layout
+mount | column -t
+
 # virtualbox: restart clipboard
 killall VBoxClient; and VBoxClient --clipboard & disown
 
 # youtube-dl: Requested formats are incompatible for merge and will be merged into mkv.
 youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] URL
-
-# mounted filesystems - nice layout
-mount | column -t
 
 # align csv file
 cat data.csv | column -t -s ';'
@@ -1202,7 +1205,7 @@ shred --verbose --remove <path/to/file>
 # shred: permanet delete: shred doesn't work on dirs
 find . -type f -print0 | xargs -0 shred --remove
 
-# sherd: permanet delete: srm doesn't delete hardlinked files
+# shred: permanet delete: srm doesn't delete hardlinked files
 srm -r <path>
 
 # bash: synchronize sytem date behind proxy
