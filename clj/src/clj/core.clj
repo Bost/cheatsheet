@@ -180,7 +180,7 @@ A function which hasn't finished the evaluation
 ;; value; internally it is fast to compare symbols
 'milkshake
 
-;; threading macros
+;; threading macros create intermediate collections in every step - replace w/ transducers
 (= (conj {:a 2} {:a 1}) (->> {:a 1} (conj {:a 2})))
 (= (conj {:a 1} {:a 2}) (-> {:a 1} (conj {:a 2})))
 (as-> [:foo :bar] v (map name v) (first v) (.substring v 1))
@@ -216,14 +216,6 @@ java -Dclojure.server.repl="{:port 5555 :accept clojure.core.server/repl}" -jar 
 ;; boot socket-server --port 5555 wait # requires boot 2.7.2
 yarn global add unravel-repl
 unravel localhost 5555
-
-;; pwd: print working directory
-(System/getProperty "user.dir")
-(println "(System/getProperty \"user.dir\")" (System/getProperty "user.dir"))
-
-;; pwd: print working directory
-(-> (java.io.File. ".") .getAbsolutePath)
-(println "(-> (java.io.File. \".\") .getAbsolutePath)" (-> (java.io.File. ".") .getAbsolutePath))
 
 ;; Reference types
 ;; Jméno             | Var                             | Ref          | Atom       | Agent

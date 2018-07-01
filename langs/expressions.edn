@@ -86,9 +86,9 @@
    tree trunks and realises: the decision not to take her machete was mistake."]
    :see [1509749163]
    :fr ["J'aurais dû prendre ma machete"]
-   :de ["Ich hätte die Machete nehmen müssen"]
+   :de ["Ich hätte die Machete nehmen sollen"]
    :sk ["Mal som si vziať mačetu"]
-   :en ["I could have taken my machete"]}
+   :en ["I should have taken my machete"]}
 
   {:id 1509749163
    :url "https://youtu.be/a4f6KM9Kvi0?t=3m24s"
@@ -96,7 +96,7 @@
    :fr ["J'aurais pu prendre ma machete"]
    :de ["Ich hätte die Machete nehmen können"]
    :sk ["Mohol som si vziať mačetu"]
-   :en ["I should have taken my machete"]}
+   :en ["I could have taken my machete"]}
 
   {:id 1510422668
    :see [1510422783]
@@ -127,4 +127,10 @@
    :de ["Gleitzeit nehmen"]
    :en ["'To take a day off' probably means 'a day off' in general; not a replacement for a day already spent at work"]
    :fr ["Récupération du temps de travail => RTT. Prendre (une journée de) RTT. (dans le cadre des 35h)"]}
+
+  {:fr ["Prenez de quoi boire et manger on va s'amuser"]}
+
+  {:fr ["Mon premier obstacle à franchir"]
+   :sk ["Moja prvá prekážka na prekonanie"]}
+
   }
