@@ -219,3 +219,6 @@ git archive
 
 # generate build number: nearest tag + nr of commits on top + sha1
 git describe master
+
+# workaround for 'ssh error: port 22: no route to host'
+git remote set-url origin https://github.com/<user_name>/<repo_name>.git
