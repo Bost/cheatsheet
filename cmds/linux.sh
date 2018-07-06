@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 exit 1 # just in case ...
 
+# json formatting
+echo "{\"foo\":\"bar\"}" | jq .foo
+
+# json formatting
+curl 'http://stash.compciv.org/congress-twitter/json/joni-ernst.json' > ernst.json; and cat ernst.json | jq '.'
+
 # centos compile git
 sudo yum clean all
 sudo vim /etc/yum.com; proxy=http://<ip:port>
