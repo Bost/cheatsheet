@@ -170,7 +170,37 @@ xmodmap
 # xserver: print XKB keyboard description to file in ps-format
 xkbprint :0
 
-#
+# java: observe jvm
+jcmd / jinfo / jstat / jstack
+
+# java: jar: jarsigner: keytool: jnlp: javaws:
+jarsigner -storepass PASSW -keystore ~/.keystore FILE mykey
+
+# java: jar: jarsigner: keytool: jnlp: javaws:
+keytool -genkeypair / keytool -list
+
+# java: list files in file.jar
+jar tf file.jar
+
+# java: extract inside.txt from file.jar and show its content. inside.txt stays extracted
+jar xf file.jar ./path/inside.txt && cat ./path/inside.txt
+
+# java: jar: unzip: show content of a file inside a file.jar
+unzip -p file.jar ./path/inside.txt
+
+# java: jar: unzip: show content of META-INF/MANIFEST.MF
+unzip -p file.jar META-INF/MANIFEST.MF
+
+# java: list content of file
+unzip -lv file.jar
+
+# java: extract specific folder from a file to a given directory
+unzip file.jar 'folderToExtract/*' -d ./dst/dir
+
+# java: unzip: overwrite / don't overwrite
+unzip -o / -n file.jar
+
+# java web start
 javaws start.jnlp
 
 # disassemble file.class (bytecode)
@@ -782,33 +812,6 @@ ls /proc/<pid>
 
 # ps: top: htop: currend working dir of <pid>
 cat /proc/<pid>/cwd
-
-# jar: jarsigner: keytool: jnlp: javaws:
-jarsigner -storepass PASSW -keystore ~/.keystore FILE mykey
-
-# jar: jarsigner: keytool: jnlp: javaws:
-keytool -genkeypair / keytool -list
-
-# list files in file.jar
-jar tf file.jar
-
-# extract inside.txt from file.jar and show its content. inside.txt stays extracted
-jar xf file.jar ./path/inside.txt && cat ./path/inside.txt
-
-# jar: unzip: show content of a file inside a file.jar
-unzip -p file.jar ./path/inside.txt
-
-# jar: unzip: show content of META-INF/MANIFEST.MF
-unzip -p file.jar META-INF/MANIFEST.MF
-
-# list content of file.zip
-unzip -lv file.zip
-
-# unzip: extract specific folder from a zip file to a given directory
-unzip file.zip 'folderToExtract/*' -d ./dst/dir
-
-# unzip: overwrite / don't overwrite
-unzip -o / -n
 
 # xfce: ubuntu: popup: message: desktop notification
 notify-send "Hello World"

@@ -116,3 +116,7 @@ psrinfo
 
 # solaris: net: ipconfig
 /usr/sbin/ifconfig -a
+
+# battery
+powercfg /batteryreport # win10
+powercfg /energy # win7
