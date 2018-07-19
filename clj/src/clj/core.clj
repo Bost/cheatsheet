@@ -247,3 +247,6 @@ user=> (loop [] (println (eval (read))) (recur))
 
 ;;
 .. js-obj clj->js js->clj
+
+;; Alias foo already exists in namespace
+(ns-unalias *ns* 'foo)
