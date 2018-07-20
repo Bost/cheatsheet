@@ -144,7 +144,7 @@ lein repl :headless :host 0.0.0.0 :port <portNr>
 (.method (.-property (.-property object)))
 (.-property (.-property (.-property object)))
 
-;; reader conditionals - for different platforms
+;; cljc: reader conditionals - for different platforms
 #?(:clj Double/NaN :cljs js/NaN :default nil)
 
 (stop-autobuild)           ; figwheel: stops autobuilder
@@ -248,5 +248,5 @@ user=> (loop [] (println (eval (read))) (recur))
 ;;
 .. js-obj clj->js js->clj
 
-;; Alias foo already exists in namespace
+;; IllegalStateException: Alias foo already exists in namespace
 (ns-unalias *ns* 'foo)
