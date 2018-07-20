@@ -1241,6 +1241,9 @@ sudo apt install virtualbox-guest-additions-iso
 sudo /etc/init.d/virtualbox restart
 sudo /etc/init.d/virtualbox-guest-utils start
 
+# Delete all Atom environment state
+atom --clear-window-state
+
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
 #        -c FILE:  FILE exists and it's character special
