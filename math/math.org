@@ -205,3 +205,8 @@ Bodil Stokke
   Equivalence is equivalent to equality (For all types A,B):
   Π A,B : Type.(A ≃ B) ≃ (A = B)
 
+* Continuations:
+  call-cc:  call with current continuation
+  First-class continuations - in Scheme and Ruby
+** Continuation Passing Style (CPS) – CPS is just a style of coding and any
+   language supporting anonymous functions will allow this style
