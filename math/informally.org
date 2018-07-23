@@ -123,3 +123,26 @@ Khan Extentions
 * Generalisation of everything. They sub-sume everything else, like adjuctions at a higher level
 * Limits Colimits Monads Adjunctions can be redefined as Khan Extentions
 * Intuition of Khan Extention is ...
+
+* Leslie Lamport: Thinking Above the Code https://www.youtube.com/watch?v=-4Yp3j_jk8Q&t
+Usefull models:
+** functions: mapping input to output; set of ordered pairs; Operating Systems is not an in/out mapping; it runs forever (see sequence of states)
+** sequence of states: behavior;
+   state: assignment of values to variables
+   programm is modeled by a set of behaviors representing all possible executions
+*** Theorem: intersection of behaviors satisfying:
+**** liveness property L: a complete behavior is needed
+**** safety property S: e.g. partial correctness
+***** specification:
+****** a set of possible init states (described using math!): uprimed variables
+****** next state relation: describes all possible successor states using math(!): primed variables
+
+*** Nondeterminism: ~ multiple next states possible
+
+*** formal specification: needed only to apply tools: TLA+ (? Temporal Logic of Actions ?): Temporal Logic is for liveness
+*** Model checking of TLA+ specs
+
+* Informal spec: e.g. pretty-printing can't be exactly specified
+
+Set of rules/requiremens/axioms is usually a bad spec: consequesces of rules are hard to understand
+
