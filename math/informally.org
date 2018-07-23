@@ -7,18 +7,18 @@ Computer Science, Haskell, C++. PhD in Quantum Physics
   CT Looks nicer: no numbers, it's about ideas
 
 Programming - understanding the meaning i.e. semantics: what does it mean (+ 1 2)
-* operational: "if state === stateX then state = stateY":
+* Operational: "if state === stateX then state = stateY":
   for computers: local, progress oriented
   Mind machine: We keep on imagining the if-then-else steps.
   This is bad way - computers are much better at it.
-* denotational:
+* Denotational:
   programs can be translated to math - math is a better lang for humans
   "Programm has a meaning i.e. it's a piece of math: operation, declaration, definition"
 * Math: for humans by humans
 
 
 Functional Programming - mathematical semantics:
-* types and fns:
+* Types and fns:
 ** types: sets of vals; it's not about "how" - fn body, it's about "what" - fn declaration; abstraction
    For mathematicians Set Theory is a low level assembly lang of maths - recenty started to be avoided:
 *** HoTT
@@ -45,7 +45,7 @@ Mapping between CT and FP:
 Phenomenons of Introduction and Elimination
 
 Data types:
-* void (empty set): we don't know that it has no elems; describe/define the props
+* Void (empty set): we don't know that it has no elems; describe/define the props
   using arrows, i.e. saying something universal; universal property UP
   initial obj: Univ prop: unique(1.) arrow to every(2.) single other obj
   (corresponds to falsehood in logic)
@@ -53,18 +53,18 @@ Data types:
    ??? Identity fn on void ???
 ** elim: Void -> A (arrow from; polymorphic fn - works for any type)
 
-* unit (one-elem set): univ prop: terminal obj (opposite i.e. dual to init-obj); Duality - invert the arrows and you get something for free
+* Unit (one-elem set): univ prop: terminal obj (opposite i.e. dual to init-obj); Duality - invert the arrows and you get something for free
 ** intro: A -> Unit (fn: just ignore the fn input)
 ** elim: Unit -> A (fn: pick one elem of a type i.e. set; some sort of "cheating" - instead of an elem we pick a morphism)
 
-* cartesian product (set of pairs): UP (universal construction) - best product triangle: for all other types there's the unique arrow
+* Cartesian product (set of pairs): UP (universal construction) - best product triangle: for all other types there's the unique arrow
   projections: f: C -> A, g: C -> B
 - tuple (pair aka record) is better than tripple
 ??? loop-over-all-types: for each of all possible types: 38:20
 ** intro: A -> B -> (A,B) tupple
 ** elim: (A,B) -> A, (A,B) -> B
 
-* sum type (dual to product - coproduct)
+* Sum type (dual to product - coproduct)
 ** intro: A -> either A or B, B -> either A or B
 ** elim: case e of: left a -> f a, right b -> f b
 ** in FP tagged unions
@@ -98,6 +98,14 @@ A Cat with such pairing and adjunction is called cartesian closed (i.e. this Cat
 
 * Natural transformations: Polymorphic functions: mapping between ftors:
 see picture at https://youtu.be/JH_Ou17_zyU?t=1h6m23s
+Polymorphic function - a function for every single type i.e. multiplication (Product) of all obj in a category.
+(also the dual - the Sum)
+Categorical End and CoEnd - notation is the integral sign
+
+Monadic return-function is an universally polymorphic function - works for any type
+https://www.youtube.com/watch?v=CfoaY2Ybf8M&t=7m
+
+Yoneda Lema - a description how you can perform these integral if you have a Hom Functor
 
 * Ftor Category:
 ** pick two Cats C, D; ftors from C to D form a Ftor Cat [C, D]: Objs are ftors, arrows are Nat Transf
@@ -110,3 +118,8 @@ Endofunctors: functors from C to C: [C, C]
 
 *** Mapping from X to the set of arrows X->A, for every obj A I get a differecnt ftor from C to Set
 *** vary the A obj:
+
+Khan Extentions
+* Generalisation of everything. They sub-sume everything else, like adjuctions at a higher level
+* Limits Colimits Monads Adjunctions can be redefined as Khan Extentions
+* Intuition of Khan Extention is ...
