@@ -1159,7 +1159,10 @@ pv
 
 # maven:
 mvn package
-# mvn install / mvn clean - mvn install seems not to be needed
+mvn install / mvn clean - mvn install seems not to be needed
+
+# maven: mvn: proxy: see https://www.mkyong.com/maven/how-to-enable-proxy-setting-in-maven/
+{M2_HOME}/settings.xml
 
 # SFTP / FTPS: SSH File Transfer from the OpenSSH / FTP over SSL
 # FTPS: FTP over SSL
