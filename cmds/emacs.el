@@ -323,7 +323,10 @@ C-t / M-t / C-x C-t
 C-l / zz
 
 ;; start a bash command line
-M-x shell / eshell
+M-x shell / M-x term / eshell
+
+;; eshell: example
+egrep -r 'something' *
 
 ;; sql: db2: execute script.sql
 M-x eshell; cmd; db2init; c46; \[f12\]
