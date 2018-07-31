@@ -1,7 +1,24 @@
+TODO use MathML or LaTeX or MathJax (AsciiMath), see Apache Open Office, LibreOffice Math
+
 * Category Theory: abstract algebra of abstract functions: "The Arrows Count"
-  (TODO arrow weight = price of calculation; preference for compositions)
-  Up to isomorphis = any such things are isomorphic (structurally the same)
-  i.e. working via analogy (i.e. X is just a renamed version of Y)
+  Category C = (Obj, Hom, ◦, id)
+   - Obj: Class of Objects: A, B, C, ... e.g. Types / Propositions / Algebras / Logic Formulas
+   - Hom: Morphisms (arrows): f, g, h, ... e.g. Computation / Proofs / ??? / Implication between Log. Formulas
+   - ◦: associative function "(f ◦ g) ◦ h = f ◦ (g ◦ h)" for morphism composition
+        Hom(A, B) × Hom(B, C) → Hom(A, C): g ◦ f; it's a partialy binary operation on Mor(CAT::)
+   - id: identity morphism on object A: id(A)
+
+   A collection of arrows and morphism that can be composed if they are adjacent.
+   A structure packing structures of the same type (same category) and structure preserving mappings between them.
+   Small Category: all objs and morphisms are sets
+   Localy Small Category: ∀ A,B: Hom(A, B) is a set
+
+   (TODO arrow weight = price of calculation; preference for compositions)
+   "Up to isomorphis" - any such things are isomorphic (structurally the same)
+   i.e. working via analogy (i.e. X is just a renamed version of Y)
+
+   "Commuting diagrams / It (i.e. the diagram) commutes" - no matter which way you go around you get the same thing
+
 ** Cartesian Closed Category CCC: Usefull in programming
 *** cartesian: has product A x B (conjunction) for any pair of objs A, B
 *** closed: has exponential B^A (functions) for any pair of objs A, B
@@ -13,7 +30,7 @@
 
    - ? monoindal structure on objs ?
 *** Localy CCC: for every obj X sliced category is a CCC
-** Bi Cartesian Closed Category BCCC: Algebra of Types can be made here
+** Bi-Cartesian Closed Category BCCC: Algebra of Types can be made here
 *** has coproduct for every pair of objs
 *** has initial obj
 
@@ -64,7 +81,7 @@
     | surjective | epic / epimorphism   | all Ys are used            | Full     |
 
 *** Functor:
-    - preserves structure between 2 categories, i.e. is a homomorphism by definition
+    - preserves structure between 2 categories, i.e. a homomorphism by definition
     - in programming: total mapping of types; (total = all objs from the source are mapped)
     - Constant functor: collapses all objs into 1 obj and all morphisms into an identity
     - Intuitive understanding: (endo) functor is a container - i.e. list contains values
@@ -79,6 +96,7 @@
     - Endofunctor [C,C]: A ftor that maps a category to itself
 
   | Covariant Functor                       | Contravariant Functor                      |
+  |-----------------------------------------+--------------------------------------------|
   | G f :: (a -> b) -> (G a -> G b)         | G f :: (a -> b) -> (G b -> G a)            |
   | Same directions in src and dst Category | Reverse directions in src and dst Category |
 
@@ -119,12 +137,12 @@
    - Functor is a container, NaT repackages the container
 
 *** Yoneda Lemma: [C,Set](C(a,-), F) ⋍ F a   also: [C,Set](C(a,-), C(b,-)) ⋍ C(b,a)
-    - Intuition: NaT and Container can replace each other
+    - Intuition: NaT and Functor (i.e. Container) can replace each other
     - Description of integration over a special Ftor (i.e. Hom Functor)
 
     a - some arbitrary Obj of C
     F - some arbitrary Ftor acting on the Obj a
-    ⋍ - "naturally isomorphic" (i.e. a NaT exists whose components are all invertible isomorphisms)
+    ⋍ - "naturally isomorphic" (i.e. a NaT exists such that its components are all invertible isomorphisms)
 
     Hom functors - Intuition:
     - Play some special role in the Category of Ftors
@@ -175,18 +193,6 @@
    - e.g. I'm not interested in what was the exact input value of a function,
      I'm interested only if it was an even or odd value
 *** Modeling: mapping / injecting
-   * Category C = (Obj, hom, ◦, id)
-   Obj - Class of Objects: A, B, C, ... (Objs are in fact Types / Propositions)
-   hom - Morphisms (arrows): f, g, h, ... (morphisms are Computation / Proofs)
-   ◦ - function c for composing morphisms: associative
-   ◦ - morphism composition: hom(A, B) × hom(B, C) → hom(A, C): g ◦ f; it's a partialy binary operation on Mor(CAT::)
-   A collection of arrows and morphism that can be composed if they are adjacent.
-   A structure packing structures of the same type (same category) and structure preserving mappings between them.
-   id - identity morphism on object A: id(A)
-   Small Category: all objs and morphisms are sets
-   Localy Small Category: ∀ A,B: Hom(A, B) is a set
-   Sheaf (Garbe, Faisceau, zvazok)- tool for tracking locally defined data
-   Presheaf: Functor F: Cop → Set
 *** HomSet: HomC(A,B) = {f: A → B} - set of all morphisms A → B in category C (Objs of C don't need to be sets)
    External vs. Internal Homset
 
@@ -215,7 +221,7 @@
    The forgetful functor Ring → Set on the category of rings is represented by (Z[x], x), the polynomial ring in one variable with integer coefficients.
    The forgetful functor Vect → Set on the category of real vector spaces is represented by (R, 1).
    The forgetful functor Top → Set on the category of topological spaces is represented by any singleton topological space with its unique e
-*** Naturality condition: Gf ∘ αa = αb ∘ Ff
+*** Naturality condition: Gf ∘ αa = αb ∘ Ff i.e. the Naturality Square
 *** Homomorphism: structure-preserving mapping between 2 algebraic structures (e.g. monoids, groups, rings, vector spaces).
     f(m * n) = f(m) * f(n)
 
@@ -230,7 +236,11 @@
    Comonad: (w a -> b) -> (w b -> c) -> (w a -> c)
      You can extract from IO Monad
      You can't put anything to IO Monad
-*** TODO Topos, Subobject Classifier etc.: see Bartosz's blog
+*** TODO:
+   - Topos, Subobject Classifier etc.: see Bartosz's blog
+   - Sheaf (Garbe, Faisceau, zvazok)- tool for tracking locally defined data
+   - Presheaf: Functor F: Cop → Set
+
 *** Indexed Monad: IxMonad: ibind: m i j a -> (a -> m j k b) -> m i k b
    state composition
    Session Types, Dependent Types, Dependent State Types
@@ -341,8 +351,8 @@
     Strict:     Surjection from X to Y but no bijection from Y to X; |X| < |Y| (? double usage of some Ys ?, "strictly bigger")
 
 * Ultimatelly the human lang to talk about ideas is the lang of math.
-  Formullas, Multiplication, stupid mistakes in deriving, simplification etc.
-  CT Looks nicer: no numbers, it's about ideas
+  Formulas, Multiplication, stupid mistakes in deriving, simplification etc.
+  CT looks nicer: no numbers, it's about ideas
 
 Programming - understanding the meaning i.e. semantics: what does it mean (+ 1 2)
 * Operational: "if state === stateX then state = stateY":
@@ -364,13 +374,11 @@ Functional Programming - mathematical semantics:
 ** (pure) fns: mappings between sets
 
 
-* categorical view (simplification):
+* Categorical view (simplification):
 ** fns: arrows between objs
 ** types: objs whose props are defined by arrows
 *** composition(!) "this-fn after that-fn", associativity, identity
-
-- no deeper specification of fns and objs are
-
+- no deeper specification of the Fns and Objs are
 Mapping between CT and FP:
 * Views -> Change of perspective:
 ** Set-theoretical: props of sets defined by elems of sets
