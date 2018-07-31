@@ -236,8 +236,9 @@ TODO use MathML or LaTeX or MathJax (AsciiMath), see Apache Open Office, LibreOf
    Comonad: (w a -> b) -> (w b -> c) -> (w a -> c)
      You can extract from IO Monad
      You can't put anything to IO Monad
+*** Topos: a type of a Category being able to be a replacement for Set Theory; provides among other things a notion of a Subse
 *** TODO:
-   - Topos, Subobject Classifier etc.: see Bartosz's blog
+   - Subobject Classifier etc.: see Bartosz's blog
    - Sheaf (Garbe, Faisceau, zvazok)- tool for tracking locally defined data
    - Presheaf: Functor F: Cop → Set
 
