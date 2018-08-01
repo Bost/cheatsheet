@@ -81,12 +81,15 @@ tac file.txt > reversed.txt
 google-chrome --headless --disable-gpu --print-to-pdf https://www.eff.or
 google-chrome --headless --screenshot --window-size=1280,169 https://www.eff.or
 
-# chrome extras
+# google-chrome extras
 chrome://version | chrome://flags | chrome://net-internals | chrome://quota-internals | chrome://network-error/-106
+
+# google-chrome: HSTS: HTTP Strict Transport Security:
+"This web always encrypts. And it does so using trusted certificate"
+chrome://net-internals/#hsts
 
 # net: ports listening for connection (i.e. open ports)
 sudo nmap -sT -O localhost
-
 sudo nmap -sn <ip-range>
 
 # net: ipv4: CIDR notation
@@ -246,7 +249,7 @@ ls -lrt -d -1 $PWD/{*,.*}
 # line count, word count
 wc cheatsheet.html
 
-# list of current traps; shell function responding to HW / other signals
+# list current traps; shell function responding to HW / other signals
 trap
 
 # delete /tmp/xyz$$ on shell exit / shell error
@@ -303,8 +306,8 @@ bind / help bind
 # bash: display shortcuts (including Ctrl+L, Ctrl+R); \e - ESC, \C-y - Ctrl+y
 bind -P / help bind
 
-# set mod of file1 according to file0
-chmod --reference file0 file1
+# change file mode bits of file according to reference-file
+chmod --reference reference-file file
 
 # remove all files except survivor.txt
 rm -f !(survivor.txt)
@@ -1168,10 +1171,6 @@ mvn install / mvn clean - mvn install seems not to be needed
 # SFTP / FTPS: SSH File Transfer from the OpenSSH / FTP over SSL
 # FTPS: FTP over SSL
 lftp
-
-# HSTS: HTTP Strict Transport Security:
-"This web always encrypts. And it does so using trusted certificate"
-chrome://net-internals/#hsts
 
 # HPKP: HTTP Public Key Pinning; Similair to HSTS header
 Create your HPKP hash: https://report-uri.io/home/pkp_hash
