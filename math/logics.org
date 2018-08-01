@@ -4,7 +4,7 @@
   |                     | Intuitionistic Logic | Curry-Howard Correspondance                                 |
   | K knows A           | Epistemic Logic      | Distributed Computing                                       |
   | A is true at time t | Temporal Logic       | Reactive Programming (partial evaluation)                   |
-  | A is a resource     | Linear Logic         | Concurrent Computation (π calculus)                         |
+  | A is resource       | Linear Logic         | Concurrent Computation (π calculus)                         |
   | A is possible       | Monadic Lax Logic    | Generic effects (monads, state, exception)                  |
   | A is valid          | Modal Logic          | Runtime code generation, code & eval constructs in the lang |
   |                     |                      | Different modes of truth                                    |
@@ -42,6 +42,7 @@
   ? Unique pointers in C++ ?, "Stuff moved from place to place and it cannot be used twice only once"
 ** Grammar:
    A, B, C ::= X | A ⊸ B | A ⊗ B | A & B | A ⊕ B | !A
+
 ** Expressions:
   | Expression | Name                                                 | How to read it                                    |
   |------------+------------------------------------------------------+---------------------------------------------------|
@@ -58,7 +59,6 @@
   | A ⊕ B      |                                                      | either A or B; disjunction                        |
   | !A         |                                                      | of course A; bang / pling                         |
 
-
 * Embedding intuitionistic logic into linear logic
   A → B = !A ⊸ B
   A × B = A & B    alternativelly A × B = !A ⊗ !B
@@ -67,4 +67,27 @@
 * Propositional Logic: AND, OR, NOT, IF-THEN, IS-EQUIVALENT-TO
 * Predicate Logic: dependence on free variables, has Universal quantifiers, variables, functions
 * Higher order logic
+* Temporal Logic
+** Temporal Logic of Actions (developed by Leslie Lamport)
+   - Combines temporal logic with a logic of actions
+   - Describes behaviours of concurrent systems
+*** Thinking Above the Code https://www.youtube.com/watch?v=-4Yp3j_jk8Q&t
+*** The TLA+ Video Course http://lamport.azurewebsites.net/video/videos.html
+
+  Usefull models:
+*** functions: map input to output; set of ordered pairs; Operating System - not an in/out mapping; runs forever (see sequence of states)
+*** sequence of states == behavior
+   state: assignment of values to variables
+   programm is modeled by a set of behaviors representing all possible executions
+**** Theorem: intersection of behaviors satisfying properties:
+***** Liveness L: a complete behavior is needed
+***** Safety S: e.g. partial correctness
+****** Specification:
+******* a set of possible init states (described using math!): uprimed variables
+******* next state relation: describes all possible successor states using math(!): primed variables
+**** Nondeterminism: ~ multiple next states possible
+**** Formal specification: needed only to apply tools: TLA+ (? Temporal Logic of Actions ?): Temporal Logic is for liveness
+**** Model checking of TLA+ specs
+** Informal Specification: e.g. pretty-printing can't be exactly specified
+   Set of rules/requiremens/axioms is usually a bad spec: consequesces of rules are hard to understand
 
