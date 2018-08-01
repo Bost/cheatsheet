@@ -592,6 +592,10 @@ M-x highlight-lines-matching-regexp
 ;; replace-all: recursive find & replace / substitute all occurences of a string
 M-x find-name-dired  then  't' (toggle mark) then  'Q' (Query replace in files)
 
+;; edit as a root / super user
+M-x spacemacs/sudo-edit
+s-SPC f E
+SPC f E
 
 ;; neotree
 SPC f T
