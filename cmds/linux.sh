@@ -129,6 +129,7 @@ source /etc/environment
 su -c 'yum update'
 
 # apt: aptitute: proxy:
+/etc/apt/apt.conf.d/05proxy
 /etc/apt/apt.conf
 
 # apt: aptitude: without proxy
