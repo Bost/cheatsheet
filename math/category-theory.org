@@ -104,9 +104,9 @@ TODO use MathML or LaTeX or MathJax (AsciiMath), see Apache Open Office, LibreOf
   | Same directions in src and dst Category | Reverse directions in src and dst Category |
 
 *** Bifunctor: C × D → E
-    Product is a bifunctor, i.e. it takes 2 objs and produces 3rd obj,
-    but it also takes two morphisms and produces 3rd morphism which is a product of these two
-    morphisms
+    Product is a bifunctor, i.e. it takes 2 objs and produces 3rd obj, but it
+    also takes two morphisms and produces 3rd morphism which is a product of
+    these two morphisms
 **** List: List(α) = Nil | Const α (List α)
     - most intuitive example of a Ftor
     - type constructor: takes a type α and creates a list of α
@@ -117,7 +117,8 @@ TODO use MathML or LaTeX or MathJax (AsciiMath), see Apache Open Office, LibreOf
 
     Is Product a Ftor?
 
-    Inlining and refactoring are the opposite.** Fibre: a buch of points mapped to the same value; invertibility of a function to a fibre
+    Inlining and refactoring are the opposite.** Fibre: a buch of points mapped
+    to the same value; invertibility of a function to a fibre
 
     Lifting (= applying functor):
                 F f
@@ -127,14 +128,15 @@ TODO use MathML or LaTeX or MathJax (AsciiMath), see Apache Open Office, LibreOf
            a --------> b
 
 *** Natural Transformation: a way of/for comparing functors
-   - maps Morphism(s) to commuting diagram(s) (naturality squares).
-     i.e. comorphism: replacing a square of (complex) relations with a single morphism
+   - maps Morphism(s) to commuting diagram(s) (naturality squares). i.e.
+     comorphism: replacing a square of (complex) relations with a single morphism
    - picks a morphish between two Objs; Picking 1 morphishm from a homset
    - Components of NaT
    - Composing Ftor acting on an Obj with a Ftor acting on a Morphishm: α b * F f
 
    - Every polymorphic Fn is a NaT: it is defined for every single type
-     i.e. multiplication (Product) of all Objs in a Category. The same goes for the dual - the Sum.
+     i.e. multiplication (Product) of all Objs in a Category. The same goes for
+     the dual - the Sum.
    - Functor is a container, NaT repackages the container
 
 **** Compositons of Natural Transformations
@@ -191,7 +193,8 @@ TODO use MathML or LaTeX or MathJax (AsciiMath), see Apache Open Office, LibreOf
 
     a - some arbitrary Obj of C
     F - some arbitrary Ftor acting on the Obj a
-    ⋍ - "naturally isomorphic" (i.e. a NaT exists such that its components are all invertible isomorphisms)
+    ⋍ - "naturally isomorphic" (i.e. a NaT exists such that its components are
+        all invertible isomorphisms)
 
     Hom functors - Intuition:
     - Play some special role in the Category of Ftors
