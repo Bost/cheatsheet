@@ -194,6 +194,14 @@ A function which hasn't finished the evaluation
 (= (conj {:a 1} {:a 2}) (-> {:a 1} (conj {:a 2})))
 (as-> [:foo :bar] v (map name v) (first v) (.substring v 1))
 
+;; threading macros: "short-circuit out" of a series of steps; the nil case is
+;; handled only once, at the end.
+(some-> {:a 1} :b inc)
+(cond-> 1        ; we start with 1
+  true inc       ; the condition is true so (inc 1) => 2
+  false (* 42)   ; the condition is false so the operation is skipped
+  (= 2 2) (* 3)) ; (= 2 2) is true so (* 2 3) => 6
+
 clojure.core.async/<!! [port]
 ;; [async/<!!] takes a val from port. Will return nil if closed. Will block if
 ;; [async/<!!] nothing is available.
