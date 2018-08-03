@@ -28,7 +28,7 @@ CLOS
 ;; switch to full.namespace
 (in-ns 'full.namespace)
 
-;; Returns a sequence of all namespaces.
+;; returns a sequence of all namespaces.
 (all-ns)
 
 ;; objname documentation / M-x cider-doc (C-c C-d C-d) / M-x cider-javadoc
@@ -199,19 +199,17 @@ clojure.core.async/<!! [port]
 ;; [async/<!!] nothing is available.
 
 clojure.core.async/<! [port]
-;; [async/<!] takes a val from port. Must be called inside a (go ...) block.
-;; [async/<!] Will return nil if closed. Will park if nothing is available.
+;; takes a val from port. Must be called inside a (go ...) block. Will return
+;; nil if closed. Will park if nothing is available.
 
 clojure.core.async/>! [port val]
-;; [async/>!] puts a val into port. nil values are not allowed. Must be called
-;; [async/>!] inside a (go ...) block. Will park if no buffer space is
-;; [async/>!] available. Returns true unless port is already closed.
+;; puts a val into port. nil values are not allowed. Must be called
+;; inside a (go ...) block. Will park if no buffer space is
+;; available. Returns true unless port is already closed.
 
-;; [transducer] (comp filter map) replacement for a bunch of transformations and a
-;; [transducer] bunch of intermediate collections; (getting rid of intermediate
-;; [transducer] collections)
-
-;; [transducer] Fast, Reducible Collections: clojure.java.jdbc/reducible-query
+;; transducer: Fast, Reducible Collections: clojure.java.jdbc/reducible-query
+;; (comp filter map) replacement for a bunch of transformations and a bunch of
+;; intermediate collections; (getting rid of intermediate collections)
 
 ;; Peter Norvig: "Design patterns are bug reports against your programming language."
 ;; http://norvig.com/design-patterns/design-patterns.pdf
