@@ -4,7 +4,7 @@ TODO use MathML or LaTeX or MathJax (AsciiMath), see Apache Open Office, LibreOf
   Category C = (Obj, Hom, ◦, id)
    - Obj: Class of Objects: A, B, C, ... e.g. Types / Propositions / Algebras / Logic Formulas
    - Hom: Morphisms (arrows): f, g, h, ... e.g. Computation / Proofs / ??? / Implication between Log. Formulas
-   - Composition ◦: associative function "(f ◦ g) ◦ h = f ◦ (g ◦ h)" for morphism composition
+   - ◦: Morphism composition - associative function "(f ◦ g) ◦ h = f ◦ (g ◦ h)"
         Hom(A, B) × Hom(B, C) → Hom(A, C): g ◦ f; it's a partialy binary operation on Mor(CAT::)
         (g ◦ f)(x) = g(f(x))
    - id: identity morphism on object A: id(A)
@@ -35,7 +35,9 @@ TODO use MathML or LaTeX or MathJax (AsciiMath), see Apache Open Office, LibreOf
 *** has coproduct for every pair of objs
 *** has initial obj
 
-** Universal Mapping Property (UMP): Consists of Initial and Terminal mapping (morphism). The 'double' triangle of Product
+** Universal Mapping Property (UMP) - The 'double' triangle of Product
+   Consists of Initial and Terminal mapping (morphism)
+
    Universal Construction - 3 steps (? the triangle ?):
    1. Define a pattern:
 
