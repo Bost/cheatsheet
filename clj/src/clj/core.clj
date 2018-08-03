@@ -147,16 +147,25 @@ lein repl :headless :host 0.0.0.0 :port <portNr>
 ;; cljc: reader conditionals - for different platforms
 #?(:clj Double/NaN :cljs js/NaN :default nil)
 
-(stop-autobuild)           ; figwheel: stops autobuilder
-(start-autobuild [id ...]) ; figwheel: starts autobuilder focused on optional ids
-(switch-to-build id ...)   ; figwheel: switches autobuilder to different build
-(reset-autobuild)          ; figwheel: stops, cleans, and starts autobuilder
-(reload-config)            ; figwheel: reloads build config and resets autobuild
-(build-once [id ...])      ; figwheel: builds source one time
-(clean-builds [id ..])     ; figwheel: deletes compiled cljs target files
-(print-config [id ...])    ; figwheel: prints out build configurations
-(fig-status)               ; figwheel: displays current state of system
-;; figwheel: <Exit: Control+C or :cljs/quit
+;; Figwheel Controls:
+(stop-autobuild)                ;; stops Figwheel autobuilder
+(start-autobuild id ...)        ;; starts autobuilder focused on optional ids
+(switch-to-build id ...)        ;; switches autobuilder to different build
+(reset-autobuild)               ;; stops, cleans, and starts autobuilder
+(reload-config)                 ;; reloads build config and resets autobuild
+(build-once id ...)             ;; builds source one time
+(clean-builds id ..)            ;; deletes compiled cljs target files
+(print-config id ...)           ;; prints out build configurations
+(fig-status)                    ;; displays current state of system
+(figwheel.client/set-autoload false)    ;; will turn autoloading off
+(figwheel.client/set-repl-pprint false) ;; will turn pretty printing off
+;; Switch REPL build focus:
+:cljs/quit                      ;; allows you to switch REPL to another build
+;; Docs: (doc function-name-here)
+;; Exit: :cljs/quit
+;; Results: Stored in vars *1, *2, *3, *e holds last exception object
+;; Prompt will show when Figwheel connects to your application
+;; To quit, type: :cljs/quit
 
 ;; like lein but for node.js
 gulp
