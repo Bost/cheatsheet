@@ -20,8 +20,15 @@ sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel libungif-devel li
 # centos compile guake
 sudo yum install gnome-common GConf2-devel pytgtk2-devel python-vte-devel gnome-python2-gconf python-keybinder pyxdg notify-python
 
-# cpu: mem: hdd: hardware information in a GTK+ window
-hardinfo / sudo dmidecode / sudo lshw / cpu-x
+# cpu: mem: hdd: hardware: system information in a GTK+ window
+hardinfo
+sudo dmidecode
+sudo lshw
+cpu-x
+
+# cpu: mem: hdd: hardware: system information for console & IRC
+# -Fz filter out privacy sensitive info
+inxi -Fxz
 
 # net: troubleshooting and security testing
 sudo tcpdump
