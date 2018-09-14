@@ -56,6 +56,9 @@ CertUtil -hashfile path\to\file SHA1
 # checksum [HashAlgorithm] must be uppercased
 CertUtil -hashfile path\to\file [HashAlgorithm]
 
+# checksum
+FCIV.exe
+
 # cygwin: ps: show windows as well as cygwin processes (-W)
 ps --windows
 
@@ -76,3 +79,6 @@ pushd \\computer.domain\path\to\dir
 
 ## UNC path: Change to the dir stored by the PUSHD
 popd
+
+# Robust File Copy for Windows: mirror directory structure
+robocopy src dst /mir
