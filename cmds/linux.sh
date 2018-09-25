@@ -609,6 +609,9 @@ svn propdel --revprop -r0 svn:rdump-lock <url>
 # copy files from src to dst - typical example; add -n is for --dry-run
 rsync -avz src/ dst
 
+# copy only certain types of files using include option
+rsync -zarv --include="*/" --include="*.sh" --exclude="*" "$src" "$dst"
+
 # cvs: copy files from src to dst excluding everything in CVS directories (showing progress)
 rsync --dry-run --progress          --archive --verbose --exclude='CVS' src/ dst
 rsync --dry-run --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
@@ -1187,6 +1190,9 @@ sudo apt-key adv --keyserver-options http-proxy="http://<proxy-ip>:<proxy-port>/
 sudo apt-add-repository "deb https://deb.nodesource.com/node_8.x $(lsb_release -sc) main"
 # install nodejs8 w/o proxy: curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt update; and sudo apt install nodejs
+
+# update yarn
+curl -o- -L https://yarnpkg.com/install.sh | bash
 
 # nodejs: install electron package
 sudo npm install --global --unsafe-perm=true electron
