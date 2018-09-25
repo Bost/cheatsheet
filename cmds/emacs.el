@@ -216,8 +216,8 @@ C-x k
 ;; files: buffers: M-x list-buffers / M-x ido-switch-buffer
 C-x C-b / C-x b
 
-M-x kill-whole-line
 ;; delete 1 whole line
+M-x kill-whole-line
 C-S-Backspace
 
 ;; M-x evilnc-comment-or-uncomment-lines / dabbrev-expand (code completition)
