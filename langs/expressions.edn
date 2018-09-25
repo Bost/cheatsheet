@@ -1,6 +1,7 @@
 ;; TODO For #url have a look at https://cljs.github.io/api/syntax/tagged-literal
 ;; Use (quot (System/currentTimeMillis) 1000) to get unique and short ids
 #{
+
   {:fr [""]
    :en [""]}
 
@@ -29,12 +30,14 @@
         "Jeter un oeil là-dessus"]
    :de ["Einen Blick werfen" "Einen Blick auf etwas werfen"]
    :sk ["Mkrnúť sa na niečo / do niečoho"
-        "Hodiť očkom na niečo / do niečoho"]}
+        "Hodiť očkom na niečo / do niečoho"]
+   }
 
   {:en ["On the other hand"]
    :fn ["D'autre part"]
    :sk ["Naproti tomu" "Na druhej strane"]
-   :de []}
+   :de []
+   }
 
   {:fr ["Difficile à se décider"]
    :sk ["Tažko sa rozhodnúť"]
@@ -86,9 +89,14 @@
    tree trunks and realises: the decision not to take her machete was mistake."]
    :see [1509749163]
    :fr ["J'aurais dû prendre ma machete"]
-   :de ["Ich hätte die Machete nehmen sollen"]
+   :de ["Ich hätte die Machete nehmen sollen"
+        ;; TODO compare with "Ich hätte die Machete nehmen müssen"
+        ]
    :sk ["Mal som si vziať mačetu"]
-   :en ["I should have taken my machete"]}
+   :en ["I should have taken my machete"
+        ;; TODO compare with "I could have taken my machete"
+        ]
+   }
 
   {:id 1509749163
    :url "https://youtu.be/a4f6KM9Kvi0?t=3m24s"
@@ -107,14 +115,16 @@
    :fr ["le vendredi" {:desc "Dans le sense: repetitivement; chaque vendredi"}]
    :en ["Fridays" "on Fridays" "every Friday"]
    :de ["Freitags" "immer Freitags" "jeden Freitag"]
-   :sk ["piatky" "vzdy v piatky" "vzdy v piatok" "kazdy piatok"]}
+   :sk ["piatky" "vzdy v piatky" "vzdy v piatok" "kazdy piatok"]
+   }
 
   {
    ;; TODO pendant le semaine dans les soirs ???
    :sk ["Po večeroch študujem"]
    :fr ["Le soir j'étudie"]
    :en ["In the evenings, I study"]
-   :de ["Abends studiere ich"]}
+   :de ["Abends studiere ich"]
+   }
 
   {:sk ["Prácu obstaravajuce opatrenie"]
    :de ["Arbeitsbeschaffungsmaßnahme"]
