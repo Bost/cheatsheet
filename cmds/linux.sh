@@ -1273,6 +1273,17 @@ sudo /etc/init.d/virtualbox-guest-utils start
 # Delete all Atom environment state
 atom --clear-window-state
 
+# atom: list / backup installed packages to a file
+apm list --installed --bare > ~/dev/dotfiles/.atom/package.list
+
+# atom: install packages from a file
+apm install --packages-file ~/dev/dotfiles/.atom/package.list
+
+# atom: restore / synchronise atom settings
+rsync -zarv --include="*/" --include="*.cson" \
+      --exclude="*" ~/.atom/* ~/dev/dotfiles/.atom
+
+
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
 #        -c FILE:  FILE exists and it's character special
