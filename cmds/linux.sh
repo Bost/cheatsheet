@@ -5,7 +5,8 @@ exit 1 # just in case ...
 echo "{\"foo\":\"bar\"}" | jq .foo
 
 # json formatting
-curl 'http://stash.compciv.org/congress-twitter/json/joni-ernst.json' > ernst.json; and cat ernst.json | jq '.'
+curl 'http://stash.compciv.org/congress-twitter/json/joni-ernst.json' \
+  > ernst.json; and cat ernst.json | jq '.'
 
 # centos compile git
 sudo yum clean all
@@ -15,10 +16,12 @@ sudo yum groupinstall 'Development Tools'
 sudo yum install openssl-devel curl-devel expat-devel perl-devel asciidoc xmlto
 
 # centos compile emacs
-sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel libungif-devel libjpeg-devel libXpm-devel ncurses-devel
+sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel libungif-devel \
+  libjpeg-devel libXpm-devel ncurses-devel
 
 # centos compile guake
-sudo yum install gnome-common GConf2-devel pytgtk2-devel python-vte-devel gnome-python2-gconf python-keybinder pyxdg notify-python
+sudo yum install gnome-common GConf2-devel pytgtk2-devel python-vte-devel \
+  gnome-python2-gconf python-keybinder pyxdg notify-python
 
 # cpu: mem: hdd: hardware: system information in a GTK+ window
 hardinfo
@@ -37,7 +40,9 @@ sudo tcpdump
 sudo tcpdump -nn -A -s1500 -l | egrep -i 'User-Agent:|Host:'
 
 # net: Capture all the plaintext passwords
-sudo tcpdump port http or port ftp or port smtp or port imap or port pop3 or port telnet -l -A | egrep -i -B5 'pass=|pwd=|log=|login=|user=|username=|pw=|passw=|passwd=|password=|pass:|user:|username:|password:|login:|pass |user '
+sudo tcpdump port http or port ftp or port smtp or port imap or port pop3 or \
+  port telnet -l -A | egrep -i -B5 \
+  'pass=|pwd=|log=|login=|user=|username=|pw=|passw=|passwd=|password=|pass:|user:|username:|password:|login:|pass |user '
 
 # net: Extract HTTP Passwords in POST Requests
 sudo tcpdump -s 0 -A -n -l | egrep -i "POST /|pwd=|passwd=|password=|Host:"
@@ -89,7 +94,11 @@ google-chrome --headless --disable-gpu --print-to-pdf https://www.eff.or
 google-chrome --headless --screenshot --window-size=1280,169 https://www.eff.or
 
 # google-chrome extras
-chrome://version | chrome://flags | chrome://net-internals | chrome://quota-internals | chrome://network-error/-106
+chrome://version
+chrome://flags
+chrome://net-internals
+chrome://quota-internals
+chrome://network-error/-106
 
 # google-chrome: HSTS: HTTP Strict Transport Security:
 "This web always encrypts. And it does so using trusted certificate"
@@ -218,8 +227,9 @@ javaws start.jnlp
 javap file.class / javap -p -s file.class
 
 # ubuntu: java: jdk: change default jdk / java / javac environment
-sudo apt-key adv --keyserver-options http-proxy="http://<proxy>:<port>/" --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
-sudo add-apt-repository ppa:webupd8team/java # alternativelly  ppa:openjdk-r/ppa
+sudo apt-key adv --keyserver-options http-proxy="http://<proxy>:<port>/" \
+ --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+sudo add-apt-repository ppa:webupd8team/java # alternativelly ppa:openjdk-r/ppa
 sudo apt-get update
 sudo apt-get install openjdk-8-jdk
 sudo apt-get install openjdk-8-source # this is optional, the jdk source code
@@ -239,7 +249,10 @@ sudo apt update
 sudo apt install telegram python-3.6
 
 # dpkg:
-git clone https://gist.github.com/66638cab114a6da691518598b6d13650.git $HOME/bin/list-ppa; $HOME/bin/list-ppa/list-ppa; sudo ppa-purge <ppa:user/ppa-name>
+git clone https://gist.github.com/66638cab114a6da691518598b6d13650.git \
+  $HOME/bin/list-ppa; \
+eval $HOME/bin/list-ppa/list-ppa; \
+sudo ppa-purge <ppa:user/ppa-name>
 
 # list only one column
 ls --format=single-column
