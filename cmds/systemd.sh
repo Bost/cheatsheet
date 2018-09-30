@@ -1,20 +1,20 @@
 #!/bin/bash
 exit 1
 
-# Control the systemd system and service manager
+# systemd: Control the systemd system and service manager
 man systemctl
 
-# Unit configuration
+# systemd: Unit configuration
 man systemd.unit
 
 # Service unit configuration
 man systemd.service
 
-# list units
+# systemd: list units
 systemctl
 systemctl --all --type service
 
-# service status
+# systemd: service status
 systemctl status -l tomcat7.service
 systemctl start / stop / restart
 systemctl kill
