@@ -16,7 +16,10 @@ systemctl --all --type service
 
 # systemd: service status
 systemctl status -l tomcat7.service
-systemctl start / stop / restart
-systemctl kill
-systemctl enable / disable
+systemctl start <unit-name>
+systemctl stop <unit-name>
+systemctl restart <unit-name>
+systemctl kill <unit-name>
+systemctl enable <unit-name>
+systemctl disable <unit-name>
 systemctl daemon-reload

@@ -1284,6 +1284,37 @@ rsync -zarv --include="*/" --include="*.cson" \
       --exclude="*" ~/.atom/* ~/dev/dotfiles/.atom
 
 
+# bluetooth: bluez:
+systemctl status bluetooth
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
+bluetoothctl
+help # list of available commands of bluetoothctl
+
+# bluetooth: bluez: this actually works
+# send file to /storage/emulated/0/bluetooth
+bluetooth-sendto --device=XX:XX:XX:XX:XX:XX local-fname
+
+# bluetooth: bluez: see https://ubuntu-users.livejournal.com/439582.html
+# search for the appropriate channel for file transfers
+sdptool search FTP
+obexfs -bXX:XX:XX:XX:XX:XX -B<channel> ~
+sdptool browse XX:XX:XX:XX:XX:XX
+
+# bluetooth: bluez:
+# Browse your cellular's files. List the tree of directories.
+obexftp -b XX:XX:XX:XX:XX:XX -l /
+
+# bluetooth: bluez:
+# use the '@'
+ussp-push XX:XX:XX:XX:XX:XX@ local-fname remote-fname
+
+# bluetooth: bluez: upload / push
+obexftp -b XX:XX:XX:XX:XX:XX -c /Download -p local-fname
+
+# bluetooth: bluez: download
+obexftp -b XX:XX:XX:XX:XX:XX -c /Download -d remote-fname
+
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
 #        -c FILE:  FILE exists and it's character special
