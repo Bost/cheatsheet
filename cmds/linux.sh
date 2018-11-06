@@ -147,6 +147,10 @@ source /etc/environment
 # centos update
 su -c 'yum update'
 
+# apt: aptitute: apt-offline:
+sudo apt-offline install $HOME/offline-updates
+sudo apt-offline install --allow-unauthenticated $HOME/offline-updates
+
 # apt: aptitute: proxy:
 /etc/apt/apt.conf.d/05proxy
 /etc/apt/apt.conf
