@@ -1188,6 +1188,9 @@ setsid
 # monitor the progress of data through a pipe
 pv
 
+# Ultimate Plumber: Linux pipes with instant live preview
+https://github.com/akavel/up
+
 # maven:
 mvn package
 mvn install / mvn clean - mvn install seems not to be needed
