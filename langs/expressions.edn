@@ -1,14 +1,33 @@
 ;; TODO For #url have a look at https://cljs.github.io/api/syntax/tagged-literal
 ;; Use (quot (System/currentTimeMillis) 1000) to get unique and short ids
 #{
+  ;; ÁÄČĎÉÍĹĽŇÓÔŔŠŤÚÝŽ
+  ;; áäčďéíĺľňóôŕšťúýž
 
   {:fr [""]
    :en [""]}
 
+  {:fr ["L'arrêté de péril"]
+   :en [""]
+   :de [""]
+   :sk [""]}
+
+  {:fr ["Tout au long de la semaine"]
+   :en ["All week long" "Throughout the week"]
+   :de ["Die ganze Woche" "Während der ganzen Woche"]
+   :sk ["Počas celého týždňa"]}
+
+  {:fr ["On n’en a pas assez fait"]
+   :en [""]
+   :sk ["Neurobilo sa dosť"]}
+
+  {:fr ["Dès que possible"]
+   :en ["As soon as possible"]
+   :sk ["Tak skoro ako sa dá" "Čím skôr tým lepšie"]}
+
   {:fr [""]
    :en ["He had only 33 intact divisions at the moment, but 130,000 French and 110,000 British soldiers will have arrived by the end of December, and Allied shipping made sure that the coal"]
    :desc ["Events of past referencing to ? future past ? https://youtu.be/WZJTN3Hoj7w?t=5m42s"]}
-
 
   {:fr ["Ne le foirez pas" "Ne le foire pas"]
    :en ["Don't screew it up"]}
