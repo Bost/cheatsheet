@@ -1290,6 +1290,12 @@ apm install --packages-file ~/dev/dotfiles/.atom/package.list
 rsync -zarv --include="*/" --include="*.cson" \
       --exclude="*" ~/.atom/* ~/dev/dotfiles/.atom
 
+# rsync: options short / long versions
+-z, --compress
+-a, --archive
+-r, --recursive
+-v, --verbose
+-n, --dry-run
 
 # bluetooth: bluez:
 systemctl status bluetooth
