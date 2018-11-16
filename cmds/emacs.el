@@ -1,4 +1,4 @@
-;; utf8
+;; utf8.txt
 ;; ➊ ➋ ➌ ➍ ➎ ➏ ➐ ➑ ➒
 
 ;; modeline:?
@@ -69,6 +69,12 @@ M-x hs-minor-mode, C-c @ C-c
 
 ;; folding: toggle/close/close all/ , open, toggle current / all folds from cursor/ all folds
 za(A) / zc(C) / zm / zo(O) / zC zO zA / zR
+
+;; evil: move view 5 chars to the right
+5z<Right>
+
+;; evil-scroll-line-to-top
+z<Ret> / zt
 
 ;; files: file format
 C-x RET f
