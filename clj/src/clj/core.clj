@@ -1,6 +1,11 @@
 (ns clj.core)
 
 (comment
+;; namespace: underscore: minus: dash:
+;; Prefer filenames with underscores;
+;; lein new a-b produces src/clj/a_b.clj with
+(ns a-b.core)
+
 ;; destructure hashmap; default function parameters
 (defn [{:keys [a b] :or {c "default-val-of-c"} :as prm}])
 
