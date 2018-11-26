@@ -171,4 +171,8 @@
 
   {:fr ["On fait se battre des pauvres contre d’autres pauvres"]
    :de ["Mann lässt die Armen gegeneinander kämfen"]}
+
+  {:fr ["Salle annexe"]
+   :de ["Nebenraum"]
+   :sk ["Vedľajšia miestnosť"]}
   }
