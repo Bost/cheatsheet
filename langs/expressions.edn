@@ -168,4 +168,7 @@
 
   {:fr ["Ils ont l'impression de s'être fait avoir"]
    :sk ["Mali dojem že ich okašľali"]}
+
+  {:fr ["On fait se battre des pauvres contre d’autres pauvres"]
+   :de ["Mann lässt die Armen gegeneinander kämfen"]}
   }
