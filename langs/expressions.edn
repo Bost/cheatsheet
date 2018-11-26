@@ -162,4 +162,10 @@
   {:fr ["Mon premier obstacle à franchir"]
    :sk ["Moja prvá prekážka na prekonanie"]}
 
+  {:fr ["Se faire avoir"]
+   :de ["Reingelegt werden" "Sich betrügen lassen"]
+   :se ["Nechať sa okašľať"]}
+
+  {:fr ["Ils ont l'impression de s'être fait avoir"]
+   :sk ["Mali dojem že ich okašľali"]}
   }
