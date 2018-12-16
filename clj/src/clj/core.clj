@@ -275,8 +275,9 @@ user=> (loop [] (println (eval (read))) (recur))
 (require '[clojure.spec.alpha :as s])
 (s/def ::my-type (s/cat :p0 int? :p1 string?))
 (defmacro my-macro [& args]
-  (if (= (s/conform ::my-type args) :clojure.spec.alpha/invalid)
-    (s/explain-str ::my-type args)
-    `(do {:valid [~@args]})))
+  (let [ret (s/conform ::my-type args)]
+    (if (= ret :clojure.spec.alpha/invalid)
+      (s/explain-str ::my-type args)
+      `(do ~ret))))
 (def data (->> ::my-type s/gen clojure.test.check.generators/generate))
-(->> data (cons 'my-macro) eval) ;; => {:valid [172 "4GrFJF"]}
+(->> data (cons 'my-macro) eval) ;; => {:p0 -21, :p1 "96gJ"}
