@@ -163,7 +163,7 @@
    :sk ["Moja prvá prekážka na prekonanie"]}
 
   {:fr ["Se faire avoir"]
-   :de ["Reingelegt werden" "Sich betrügen lassen"]
+   :de ["Reingelegt werden" "Sich betrügen lassen" "Sich reinlegen lassen"]
    :se ["Nechať sa okašľať"]}
 
   {:fr ["Ils ont l'impression de s'être fait avoir"]
@@ -179,4 +179,7 @@
   {:fn ["J’ai agi dans l’euphorie du moment"]
    :sk ["Konal som v očarení okamihu" "Konal som v chvíľkovom očarení"]
    :de ["Ich habe im Rausch des Augenblicks gehandelt" "Ich habe in der Euphorie des Augenblicks gehandelt"]}
+
+  {:fr ["On aurait pas dû en arriver là"]
+   :sk ["Nemalo to zájsť tak daleko"]}
   }
