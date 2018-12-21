@@ -749,8 +749,11 @@ getconf LONG_BIT
 # find and delete *.jar and *.class when idling
 ionice -c3 find . -name "*.jar" -or -name "*.class" -delete
 
-# change the priority of process 2222 to minimum (-19 max, +20 min prio)
-renice +20 2222
+# change the priority of process 2222 to minimum (-19 max, +19 min prio)
+renice +19 2222
+
+# launch process with lowest priority
+nice -n +19 command
 
 # ps: show statistics for a process nr. 7695
 ps -o pid,user,command,nice -p 7695
@@ -909,7 +912,7 @@ sudo mount -t vboxsf share /home/username/share/
 # readonly to readwrite
 sudo mount -o remount,rw /partition/identifier /mount/point
 
-# mounted filesystems - nice layout
+# mounted filesystems - table layout
 mount | column -t
 
 # virtualbox: restart clipboard
