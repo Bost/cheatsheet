@@ -175,4 +175,8 @@
   {:fr ["Salle annexe"]
    :de ["Nebenraum"]
    :sk ["Vedľajšia miestnosť"]}
+
+  {:fn ["J’ai agi dans l’euphorie du moment"]
+   :sk ["Konal som v očarení okamihu" "Konal som v chvíľkovom očarení"]
+   :de ["Ich habe im Rausch des Augenblicks gehandelt" "Ich habe in der Euphorie des Augenblicks gehandelt"]}
   }
