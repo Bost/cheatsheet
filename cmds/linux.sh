@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 exit 1 # just in case ...
 
-# json formatting
+# jq - Command-line JSON processor; json formatting; sed for json
 echo "{\"foo\":\"bar\"}" | jq .foo
 
 # json formatting
@@ -466,11 +466,8 @@ bash -x script
 # bash: make block or character special files
 mknod
 
-# bash: create 4 directories at once
-mkdir -p ./path/dir.0{1,2,3}
-
-# bash: create directory tree
-mkdir -p work/{d1,d2}/{src,bin,bak}
+# bash: create directory tree with multiple subdirs
+mkdir -p ./path/{sub1,sub2}/{1..100}/{src,bin,bak}
 
 # bash: automatically create "./path" and do --preserve=mode,ownership,timestamps
 cp --parents -p ./path/src.ext ./path/dst.ext
@@ -1330,6 +1327,13 @@ obexftp -b XX:XX:XX:XX:XX:XX -c /Download -p local-fname
 
 # bluetooth: bluez: download
 obexftp -b XX:XX:XX:XX:XX:XX -c /Download -d remote-fname
+
+# super fast ram disk
+sudo mkdir -p /mnt/ram
+sudo mount -t tmpfs /mnt/ram -o size=8192M
+
+# intercept stdout to a log file
+cat file | tee -a file.log | cat /dev/null
 
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
