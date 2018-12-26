@@ -182,4 +182,16 @@
 
   {:fr ["On aurait pas dû en arriver là"]
    :sk ["Nemalo to zájsť tak daleko"]}
+
+  {:fr ["On a un petit peu débordé"]
+   :sk ["Trošku sme to prehnali" "Trošku sme sa rozšupli"]}
+
+  {:fr ["Ce soir-là, on a dérapé collectivement"]
+   :sk ["Toho večera sa nám to vyšmyklo z kontroly"]}
+
+  {:en ["by hook or by crook"]
+   :fr ["envers et contre tout(s)" "coûte que coûte"]
+   :de ["auf Biegen und Brechen" "Koste es, was es wolle" "auf Teufel komm raus"]
+   :sk ["stoj čo stoj" "za každú cenu"]}
   }
+
