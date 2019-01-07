@@ -1142,19 +1142,19 @@ timeout 5s COMMAND
 # net: retcode==1 - online; retcode!=1 offline
 nm-online --exit; echo "retcode: $?"
 
-# net: 1. connect
+# wifi: net: 1. connect
 nm-applet / man nmcli-examples
 
-# net: 1. wifi: general status and operations
+# wifi: net: 1. wifi: general status and operations
 nmcli --ask device wifi list
 
-# net: 2. connect
+# wifi: net: 2. connect
 nmcli --ask device wifi connect WIFIonICE
 
-# net: 3. disconnect
+# wifi: net: 3. disconnect
 nmcli --ask device disconnect wlan0
 
-# net: general status and operations
+# wifi: net: general status and operations
 nmcli --ask general
 
 # rpm: display installed packages
