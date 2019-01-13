@@ -258,6 +258,9 @@ git clone https://gist.github.com/66638cab114a6da691518598b6d13650.git \
 eval $HOME/bin/list-ppa/list-ppa; \
 sudo ppa-purge <ppa:user/ppa-name>
 
+# display file or file system status; alternative to ls
+stat -c "%y %s %n" *
+
 # list only one column
 ls --format=single-column
 
