@@ -60,9 +60,6 @@ lein do clean, repl
 ;;
 lein cljsbuild test
 
-;; create lighttable plugin
-;; cd $LIGHTTABLE/deploy/plugins/ && lein new lt-plugin my-plugin
-
 ;; try to put it to project.clj in case of 'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath'
 ;; [the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]
 
