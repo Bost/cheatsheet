@@ -263,7 +263,6 @@ user=> (loop [] (println (eval (read))) (recur))
 ;; java.util.RandomAccess | n    | y      | n        | n
 ;; java.lang.Iterable     | y    | y      | y        | y
 ;; java.lang.Comparable   | n    | y      | n        | n
-)
 
 ;;
 .. js-obj clj->js js->clj
@@ -281,3 +280,21 @@ user=> (loop [] (println (eval (read))) (recur))
       `(do ~ret))))
 (def data (->> ::my-type s/gen clojure.test.check.generators/generate))
 (->> data (cons 'my-macro) eval) ;; => {:p0 -21, :p1 "96gJ"}
+
+;; HelloWorld: compile and run class file then create jar file and run it
+set basedir ./javasrc
+set classdir org/domain
+;; specified in Main.java by: package org.domain;
+set package org.domain
+;; compile to Main.class
+javac -cp $basedir $basedir/$classdir/Main.java
+;; run Main.class
+java -cp $basedir $package.main
+;; create jar file
+jar -cfe Main.jar $classdir.Main -C $basedir $classdir/Main.class
+;; create jar file - an alternative
+jar -cfe Main.jar $package.Main -C $basedir $classdir/Main.class
+;; run Main.class from jar file
+java -jar Main.jar
+
+)
