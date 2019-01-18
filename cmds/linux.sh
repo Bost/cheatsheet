@@ -1039,6 +1039,10 @@ expand / unexpand file.txt
 # simple GUIs
 zenity, whiptail
 
+# metric: monitor:
+collectd # system statistics collection daemon
+telegraf # plugin-driven server agent for collecting & reporting metrics
+
 # monitor file and network activities of a PROCESS, max printed string size 10000
 strace -f -e trace=file,network -s 10000 -o outfile.log PROCESS ARGS
 
