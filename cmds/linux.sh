@@ -263,6 +263,10 @@ echo "test" | xclip / xclip -o > file.ext
 # remove a line from shell history (i.e. password); ~/.bash_history | ~/.config/fish/fish_history
 history -d
 
+# shell: bash: fish: see what the shell does with the various types of quoting
+# https://unix.stackexchange.com/a/417408
+printf '<%s>\n' G "G" 'G' \G "\G" '\G' \\G "\\G" '\\G'
+
 # bash: secure (password) prompt; doesn't work in fish
 read -s
 
