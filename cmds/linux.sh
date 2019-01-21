@@ -335,6 +335,10 @@ caddy -host example.com
 # python: high-level file operations
 import shutil
 
+# python: concatenate / merge / join two lists (not arrays)
+# https://www.pythoncentral.io/the-difference-between-a-list-and-an-array/
+[1, 2] + [4, 5]
+
 # args: run the last command as root
 sudo !!
 
