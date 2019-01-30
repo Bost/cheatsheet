@@ -120,3 +120,38 @@ psrinfo
 # battery
 powercfg /batteryreport # win10
 powercfg /energy # win7
+
+#####################################################################
+# Ripple: real-time gross settlement system (RTGS)
+# remittance - tx of money by foreigners; see SWIFT
+xrp
+SWIFT - cross border payments
+cardano + foundation
+cryptopia
+corda
+lightning network and nodes - scalable off-chain instant payments
+second layer
+sharding
+tangle
+token vs. crypto currency ~ value representation
+tokenomics - e.g. collectables; game currency
+SC - smart contracts
+DLT supply chain
+Proof of work - solution of the Byzantine Generals
+Proof of stake
+Proof of intention
+Open Source vs. Open Execution: OS until it is run as a service
+BIP - BTC Improvement Proposas
+SegWit - Segregation Witness
+RGB - BTC based non-BTC assets
+RSK - BTC + SC (Smart Contrats)
+Hyperledger
+ICO - initial coin offering
+BTC = Miners + Devs + Finance Guys
+twitter.com/polemitis
+Corda - Bank consortium
+IoV - Internet of value
+cointracking.info - Track portfolio & tax report
+ETF.com - exchange-traded funds
+IOTA
+SolarCoin - WTF?

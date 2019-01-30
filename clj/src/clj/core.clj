@@ -340,4 +340,9 @@ sudo apt-get install openjdk-8-source # this is optional, the jdk source code
 sudo apt install oracle-java8-set-default # may or may not be desired
 sudo update-alternatives --config java / javac
 
+# see /etc/profile.d/jdk.sh /etc/environment ~/.config/fish/config.fish
+# changes require logout and login
+set -x JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+set -x JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
+
 )

@@ -56,13 +56,11 @@ ICMP
 # net: Dynamic Host Configuration Protocol: network management protocol used on TCP/IP networks
 DHCP
 
-# net: arp: Displays and modifies the IP-to-Physical address translation tables used by address resolution protocol (ARP).
+# net: MAC address of a network neighbour for a given IPv4 Address; Address Resolution Protocol
+# net: display / modify the IP-to-Physical address translation tables for ARP.
 arp -a
 
-# net: arp: find the MAC address of a network neighbour for a given IPv4 Address
-arp
-
-# net:
+# net: send ARP REQUEST to a neighbour host
 arping
 
 # net: the arp scanner
@@ -71,8 +69,11 @@ arp-scan
 # net: keep track of ethernet/ip address pairings
 arpwatch
 
-# nmap
+# net: Network exploration tool and security / port scanner
 nmap
+
+# TCP proxies; shell-script based HTTP clients / servers; network daemon testing; a SOCKS or HTTP ProxyCommand for ssh
+netcat
 
 # net: arp: Network security auditing tool
 hunt
@@ -1303,6 +1304,11 @@ sudo mount -t tmpfs /mnt/ram -o size=8192M
 
 # intercept stdout to a log file
 cat file | tee -a file.log | cat /dev/null
+
+# sound
+sudo alsa force-reload
+speaker-test
+arecord / aplay
 
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
