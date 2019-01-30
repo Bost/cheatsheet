@@ -133,7 +133,7 @@ deb [arch=amd64] http://...
 # usb: drive: drives: disc: discs: list block devices
 lsblk
 
-# Dynamic device management
+# dynamic device management - the /dev directory
 udev
 
 # usb: drive:
