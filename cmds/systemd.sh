@@ -1,5 +1,5 @@
-#!/bin/bash
-exit 1
+#!/usr/bin/env fish
+return # just in case ...
 
 # systemd: Control the systemd system and service manager
 man systemctl
@@ -7,19 +7,32 @@ man systemctl
 # systemd: Unit configuration
 man systemd.unit
 
-# Service unit configuration
+# systemd: service unit configuration
 man systemd.service
 
 # systemd: list units
 systemctl
 systemctl --all --type service
 
+# systemd: list units in failed state
+systemctl --failed / --state=failed
+
 # systemd: service status
-systemctl status -l tomcat7.service
-systemctl start <unit-name>
-systemctl stop <unit-name>
-systemctl restart <unit-name>
-systemctl kill <unit-name>
-systemctl enable <unit-name>
-systemctl disable <unit-name>
+systemctl status --full  tomcat7.service
+systemctl status --full  <unit>
+systemctl start          <unit>
+systemctl stop           <unit>
+systemctl restart        <unit>
+systemctl kill           <unit>
+systemctl enable         <unit>
+systemctl disable        <unit>
+
+# systemd: reload the systemd manager configuration
 systemctl daemon-reload
+
+# systemd: remove all units from the systemctl --failed list
+# see also: service obliteration https://superuser.com/a/936976
+systemctl reset-failed
+
+# systemd: remove unit from the systemctl --failed list
+systemctl reset-failed <unit>
