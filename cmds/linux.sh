@@ -283,8 +283,14 @@ functions -c foo bar / functions -e bar
 # fish: unset shell variable
 set --erase myvar
 
+# fish: test string equality
+test (string escape -- $argv) = "--switch"
+
 # run a cmd only when load average is below a certain threshold (default is 0.8)
 echo "rm -rf /unwanted-large/folder" | batch
+
+# calculate: fish: examples https://nicolas-van.github.io/programming-with-fish-shell
+math "1 + 2"
 
 # fish: handle fish key bindings
 bind / help bind
