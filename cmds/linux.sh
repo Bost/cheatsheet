@@ -896,6 +896,10 @@ cat data.csv | column -t -s ';'
 # xml: command line XML tool (formating)
 xmllint
 
+# fish: bash: locate command
+command -v <command>  # fish buildin
+which      <command>  # debian
+
 # shared library dependencies
 ldd -v $(which vim)
 
