@@ -277,6 +277,9 @@ read -s
 # fish: retval: retcode: return code: exit code: (in bash $?)
 $status
 
+# indicate how a command would be interpreted
+type --all <cmd> # all of possible definitions of <cmd>
+
 # fish: show content of foo fn / list fns
 type foo / functions foo / functions -n
 
