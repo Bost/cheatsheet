@@ -68,7 +68,8 @@ lein do clean, repl
 ;;
 lein cljsbuild test
 
-;; try to put it to project.clj in case of 'Could not locate clojure/instant__init.class or clojure/instant.clj on classpath'
+;; try to put it to project.clj in case of:
+;; 'Could not locate clojure/instant__init.class or ... on classpath'
 ;; [the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]
 
 ;; M-x cljr-rename-symbol refactoring:
@@ -109,18 +110,24 @@ lein cljsbuild test
 
 ;; Type Hints: http://clojure.org/reference/java_interop#typehints
 (set! *warn-on-reflection* true)
-(defn foo [^String s] (.charAt s 1)) ;; w/o "^String": call to charAt can't be resolved.
+;; w/o "^String": call to charAt can't be resolved.
+(defn foo [^String s] (.charAt s 1))
+;; return vals
+(defn hinted (^String []) (^Integer [a]) (^java.util.List [a & args]))
 
-;; Type Hints: http://clojure.org/reference/java_interop#typehints
-(defn hinted (^String []) (^Integer [a]) (^java.util.List [a & args])) ;; return vals
-
-;; macro: backtick: ` apostrophe: ' tilda: ~ see http://stackoverflow.com/a/17810391
+;; macro: backtick: ` apostrophe: ' tilda: ~
+;; see http://stackoverflow.com/a/17810391
 '(+ x x) => (+ x x) ;; symbol-name quoted exactly
 `(+ x x) = > (clojure.core/+ user/x user/x) ;; symbol-name quoted with namespace
-`(+ ~'x x) => (clojure.core/+ x user/x) ;; when using ~ inside ` then the form is unquoted
+;; when using ~ inside ` then the form is unquoted
+`(+ ~'x x) => (clojure.core/+ x user/x)
 
 ;; cli: script: repl from command line
-java -cp $HOME/.m2/repository/org/clojure/clojure/1.9.0/clojure-1.9.0.jar:$HOME/.m2/repository/org/clojure/spec.alpha/0.1.143/spec.alpha-0.1.143.jar clojure.main
+rlwrap \
+java -cp \
+$HOME/.m2/repository/org/clojure/clojure/1.10.0/clojure-1.10.0.jar:\
+$HOME/.m2/repository/org/clojure/spec.alpha/0.2.176/spec.alpha-0.2.176.jar \
+clojure.main
 
 ;; cli: run as a script: ./hello.clj
 #!/usr/bin/env boot
@@ -187,7 +194,8 @@ gulp
 A function which hasn't finished the evaluation
 
 ;; element in sequence
-(defn in? "true if seq contains elm" [seq elm] (boolean (some (fn [e] (= elm e)) seq)))
+(defn in? "true if seq contains elm"
+[seq elm] (boolean (some (fn [e] (= elm e)) seq)))
 
 ;; brackets, parens, parenthesis conversion
 ;; M-x clojure-convert-collection-to-vector / clojure-convert-collection-to-list
@@ -199,7 +207,8 @@ A function which hasn't finished the evaluation
 ;; value; internally it is fast to compare symbols
 'milkshake
 
-;; threading macros create intermediate collections in every step - replace w/ transducers
+;; threading macros create intermediate collections in every step.
+;; replace them w/ transducers
 (= (conj {:a 2} {:a 1}) (->> {:a 1} (conj {:a 2})))
 (= (conj {:a 1} {:a 2}) (-> {:a 1} (conj {:a 2})))
 (as-> [:foo :bar] v (map name v) (first v) (.substring v 1))
@@ -229,7 +238,7 @@ clojure.core.async/>! [port val]
 ;; (comp filter map) replacement for a bunch of transformations and a bunch of
 ;; intermediate collections; (getting rid of intermediate collections)
 
-;; Peter Norvig: "Design patterns are bug reports against your programming language."
+;; Peter Norvig: "Design patterns are bug reports against your prog language"
 ;; http://norvig.com/design-patterns/design-patterns.pdf
 
 ;; install
@@ -237,16 +246,17 @@ git clone https://github.com/clojure/clojure.git ~/dec
 cd ~/dec/clojure
 ./antsetup.sh
 ant local
-java -Dclojure.server.repl="{:port 5555 :accept clojure.core.server/repl}" -jar ~/dec/clojure/clojure.jar
+java -Dclojure.server.repl="{:port 5555 :accept clojure.core.server/repl}" \
+ -jar ~/dec/clojure/clojure.jar
 ;; boot socket-server --port 5555 wait # requires boot 2.7.2
 yarn global add unravel-repl
 unravel localhost 5555
 
 ;; Reference types
-;; Jméno             | Var                             | Ref          | Atom       | Agent
-;; Změna stavu       | synchronní                      | synchronní   | synchronní | asynchronní
-;; Typ změny         | lokální, v rámci jednoho vlákna | koordinovaná | nezávislá  | nezávislá
-;; Podpora transakcí | ne                              | ano          | ne         | ne
+;; Jméno       | Var                   | Ref          | Atom      | Agent
+;; Změna stavu | synchronní            | synchronní   | sync      | async
+;; Typ změny   | local within 1 thread | koordinovaná | nezávislá | nezávislá
+;; Tx support  | no                    | yes          | no        | no
 
 
 ;; REPL: java -jar clojure; TODO see the video "The most beautifull programm"
@@ -259,6 +269,9 @@ user=> (loop [] (println (eval (read))) (recur))
 (dbg (dbg nil))
 (let [1 2])
 (tel [2 1])
+
+;; [org.clojure/tools.logging "0.4.1"]
+
 
 ;; interface              | list | vector | hash-map | hash-set
 ;; java.util.Collection   | y    | y      | n        | y
@@ -314,7 +327,7 @@ keytool -genkeypair / keytool -list
 ;; java: list files in file.jar
 jar tf file.jar
 
-;; java: extract inside.txt from file.jar and show its content. inside.txt stays extracted
+;; java: extract inside.txt from file.jar + show content. File stays extracted
 jar xf file.jar ./path/inside.txt && cat ./path/inside.txt
 
 ;; java: jar: unzip: show content of a file inside a file.jar
