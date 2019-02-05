@@ -611,3 +611,8 @@ SPC f T
 ;; Local Variables:
 ;; eval: (hs-hide-all)
 ;; End:
+
+;; vertical line indicating too long lines; spacemacs-light / -dark themes
+don't show contrasting background - use the default theme
+;; M-x fill-column-indicator / SPC t f
+;; M-x whitespace-toggle-options
