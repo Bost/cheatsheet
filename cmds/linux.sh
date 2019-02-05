@@ -90,6 +90,9 @@ http://explainshell.com/
 # concatenate and print files in reverse (reversed lines)
 tac file.txt > reversed.txt
 
+# prepend text or line to a file
+echo "1st-line" | cat - file.txt
+
 # print web page to pdf / screenshot
 google-chrome --headless --disable-gpu --print-to-pdf https://www.eff.or
 google-chrome --headless --screenshot --window-size=1280,169 https://www.eff.or
