@@ -36,8 +36,16 @@ CLOS
 ;; returns a sequence of all namespaces.
 (all-ns)
 
-;; objname documentation / M-x cider-doc (C-c C-d C-d) / M-x cider-javadoc
+;; M-x cider-doc (C-c C-d C-d) / M-x cider-javadoc
+(require '[clojure.repl :refer :all])
+;; all public defs in all currently-loaded nss matching str-or-pattern
+(doc apropos)
+(doc doc)
 (clojure.repl/doc full.namespace/objname)
+(apropos "doc") ;; Unsure about name - find fns matching str-or-regex
+(find-doc "")
+(dir clojure.repl)
+(source doc)
 
 ;; sexp / block comment; the block comments sexp returns nil
 #_(foo 1 2)/ (comment foo 1 2)
