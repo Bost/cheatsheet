@@ -123,15 +123,13 @@ git shortlog -s -n
 git shortlog -sn
 
 # show settings
-git config --global / --local --list
+git config --global --list
+git config --local  --list
+git config --global --list --get <setting>
+git config --local  --list --get <setting>
 
-# show settings
-git config --global / --local --get ...
-
-# git:
+# set user.name and user.mail
 git config --global user.name "Bost"
-
-# git:
 git config --global user.email thebost@gmail.com
 
 # help with typos like git comit
@@ -190,7 +188,11 @@ git config core.fileMode false
 git ls-tree branchName path/to/file
 
 # show info about files in the index and the working tree
-git ls-files --cached / --deleted / --modified / --ignored / --stage
+git ls-files --cached
+git ls-files --deleted
+git ls-files --modified
+git ls-files --ignored
+git ls-files --stage
 
 # Remove untracked files and dirs from the working tree
 git clean -dxf
