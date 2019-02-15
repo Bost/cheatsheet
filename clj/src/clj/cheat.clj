@@ -130,10 +130,10 @@ lein cljsbuild test
 
 ;; cli: script: repl from command line
 rlwrap \
-java -cp \
-$HOME/.m2/repository/org/clojure/clojure/1.10.0/clojure-1.10.0.jar:\
-$HOME/.m2/repository/org/clojure/spec.alpha/0.2.176/spec.alpha-0.2.176.jar \
-clojure.main
+    java -cp \
+    $HOME/.m2/repository/org/clojure/clojure/1.10.0/clojure-1.10.0.jar:\
+    $HOME/.m2/repository/org/clojure/spec.alpha/0.2.176/spec.alpha-0.2.176.jar \
+    clojure.main
 
 ;; cli: run as a script: ./hello.clj
 #!/usr/bin/env boot

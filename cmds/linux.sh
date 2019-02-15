@@ -6,7 +6,7 @@ echo "{\"foo\":\"bar\"}" | jq .foo
 
 # json formatting
 curl 'http://stash.compciv.org/congress-twitter/json/joni-ernst.json' \
-> ernst.json; and cat ernst.json | jq '.'
+     > ernst.json; and cat ernst.json | jq '.'
 
 # centos compile git
 sudo yum clean all
@@ -17,11 +17,11 @@ sudo yum install openssl-devel curl-devel expat-devel perl-devel asciidoc xmlto
 
 # centos compile emacs
 sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel libungif-devel \
-libjpeg-devel libXpm-devel ncurses-devel
+     libjpeg-devel libXpm-devel ncurses-devel
 
 # centos compile guake
 sudo yum install gnome-common GConf2-devel pytgtk2-devel python-vte-devel \
-gnome-python2-gconf python-keybinder pyxdg notify-python
+     gnome-python2-gconf python-keybinder pyxdg notify-python
 
 # cpu: mem: hdd: hardware: system information in a GTK+ window
 hardinfo
@@ -41,8 +41,8 @@ sudo tcpdump -nn -A -s1500 -l | egrep -i 'User-Agent:|Host:'
 
 # net: Capture all the plaintext passwords
 sudo tcpdump port http or port ftp or port smtp or port imap or port pop3 or \
-port telnet -l -A | egrep -i -B5 \
-'pass=|pwd=|log=|login=|user=|username=|pw=|passw=|passwd=|password=|pass:|user:|username:|password:|login:|pass |user '
+     port telnet -l -A | egrep -i -B5 \
+     'pass=|pwd=|log=|login=|user=|username=|pw=|passw=|passwd=|password=|pass:|user:|username:|password:|login:|pass |user '
 
 # net: Extract HTTP Passwords in POST Requests
 sudo tcpdump -s 0 -A -n -l | egrep -i "POST /|pwd=|passwd=|password=|Host:"
@@ -212,9 +212,9 @@ sudo apt install telegram python-3.6
 
 # dpkg:
 git clone https://gist.github.com/66638cab114a6da691518598b6d13650.git \
-$HOME/bin/list-ppa; \
-eval $HOME/bin/list-ppa/list-ppa; \
-sudo ppa-purge <ppa:user/ppa-name>
+    $HOME/bin/list-ppa; \
+    eval $HOME/bin/list-ppa/list-ppa; \
+    sudo ppa-purge <ppa:user/ppa-name>
 
 # display file or file system status; alternative to ls
 stat -c "%y %s %n" *
@@ -1248,11 +1248,11 @@ srm -r <path>
 
 # bash: synchronize sytem date behind proxy
 curDate="$(wget -S "http://www.google.com/" 2>&1 \
-| grep -E '^[[:space:]]*[dD]ate:' \
-| sed 's/^[[:space:]]*[dD]ate:[[:space:]]*//' \
-| head -1l \
-| awk '{print $1, $3, $2,  $5 ,"GMT", $4 }' \
-| sed 's/,//')"
+    | grep -E '^[[:space:]]*[dD]ate:' \
+    | sed 's/^[[:space:]]*[dD]ate:[[:space:]]*//' \
+    | head -1l \
+    | awk '{print $1, $3, $2,  $5 ,"GMT", $4 }' \
+    | sed 's/,//')"
 sudo date -s "${curDate}"
 
 # Add and remove modules from the Linux Kernel
@@ -1274,7 +1274,7 @@ apm install --packages-file ~/dev/dotfiles/.atom/package.list
 
 # atom: restore / synchronise atom settings
 rsync -zarv --include="*/" --include="*.cson" \
---exclude="*" ~/.atom/* ~/dev/dotfiles/.atom
+      --exclude="*" ~/.atom/* ~/dev/dotfiles/.atom
 
 # rsync: options short / long versions
 -z, --compress
