@@ -1,4 +1,4 @@
-(ns clj.core)
+(ns clj.cheat)
 
 (comment
 ;; namespace: underscore: minus: dash:
@@ -24,8 +24,10 @@ CLOS
 ;; show objects in the namespace
 (sort (keys (ns-publics 'ws.core)))
 
-;; should clean the repl; use cider-refresh
+;; clean the whole namespace from REPL; see also cider-ns-refresh
 (map #(ns-unmap *ns* %) (keys (ns-interns *ns*)))
+;; undefine just one thing
+(ns-unmap *ns* some-old-definiton)
 
 ;; read and eval swc/ws/core.clj
 (load-file "src/ws/core.clj")
@@ -46,6 +48,10 @@ CLOS
 (find-doc "")
 (dir clojure.repl)
 (source doc)
+
+;; , r t l   /  M-x clojure-thread-last-all then try
+;; , r u a   /  M-x clojure-unwind-all
+(apply + (filter odd? (map inc (range 5))))
 
 ;; sexp / block comment; the block comments sexp returns nil
 #_(foo 1 2)/ (comment foo 1 2)
@@ -190,8 +196,11 @@ gulp
 ;; map: can be well parallelized / reduce:  difficult to parallelize
 (map) / (reduce)
 
-;; future
-A function which hasn't finished the evaluation
+;; future; A function which hasn't finished the evaluation
+;; see also: promise (more complex than future), delay
+(def f-slow (future (Thread/sleep 3000) (println "f-slow done") 100))
+;; when dereferenced, it blocks until the result is available
+@f-slow
 
 ;; element in sequence
 (defn in? "true if seq contains elm"
@@ -211,11 +220,15 @@ A function which hasn't finished the evaluation
 ;; replace them w/ transducers
 (= (conj {:a 2} {:a 1}) (->> {:a 1} (conj {:a 2})))
 (= (conj {:a 1} {:a 2}) (-> {:a 1} (conj {:a 2})))
-(as-> [:foo :bar] v (map name v) (first v) (.substring v 1))
+(as-> [:foo :bar] $ (map name $) (first $) (.substring $ 1))
 
 ;; threading macros: "short-circuit out" of a series of steps; the nil case is
-;; handled only once, at the end.
+;; handled only once, at the end. See also `some->>` and `cond->>`
+(-> {:a 1} :b inc)
+;; => NPE ;; i.e. Null Pointer Exception
 (some-> {:a 1} :b inc)
+;; => nil
+;; use CIDER debugger to investigate
 (cond-> 1        ; we start with 1
   true inc       ; the condition is true so (inc 1) => 2
   false (* 42)   ; the condition is false so the operation is skipped
@@ -234,7 +247,8 @@ clojure.core.async/>! [port val]
 ;; inside a (go ...) block. Will park if no buffer space is
 ;; available. Returns true unless port is already closed.
 
-;; transducer: Fast, Reducible Collections: clojure.java.jdbc/reducible-query
+;; transducer fast reducible colls / composable algorithmic transformations
+;; clojure.java.jdbc/reducible-query
 ;; (comp filter map) replacement for a bunch of transformations and a bunch of
 ;; intermediate collections; (getting rid of intermediate collections)
 
@@ -242,12 +256,10 @@ clojure.core.async/>! [port val]
 ;; http://norvig.com/design-patterns/design-patterns.pdf
 
 ;; install
-git clone https://github.com/clojure/clojure.git ~/dec
-cd ~/dec/clojure
-./antsetup.sh
-ant local
-java -Dclojure.server.repl="{:port 5555 :accept clojure.core.server/repl}" \
- -jar ~/dec/clojure/clojure.jar
+set clj_home $dec/clojure.org/clojure
+cd $clj_home; and ./antsetup.sh; and ant local
+set repl "{:port 5555 :accept clojure.core.server/repl}"
+java -Dclojure.server.repl=$repl -jar $clj_home/clojure.jar
 ;; boot socket-server --port 5555 wait # requires boot 2.7.2
 yarn global add unravel-repl
 unravel localhost 5555
@@ -271,6 +283,8 @@ user=> (loop [] (println (eval (read))) (recur))
 (tel [2 1])
 
 ;; [org.clojure/tools.logging "0.4.1"]
+;; A Clojure(Script); debug single- and multi-threaded apps
+;; [spyscope "0.1.6"]
 
 
 ;; interface              | list | vector | hash-map | hash-set
@@ -365,5 +379,8 @@ sudo update-alternatives --config java / javac
 # changes require logout and login
 set -x JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 set -x JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
+
+;; map look up w/ default value
+(:c {:a "a" :b "b"} "default")
 
 )

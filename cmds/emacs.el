@@ -64,10 +64,11 @@ M-x describe-char
 ;; utf8; unicode: insert unicode char upper-case sigma U+2211 ∑
 M-x ucs-insert RET 2211
 
-;; folding: enable folding, fold / unfold
+;; hide: show: folding: enable folding, fold / unfold
 M-x hs-minor-mode, C-c @ C-c
 
-;; folding: toggle/close/close all/ , open, toggle current / all folds from cursor/ all folds
+;; hide: show: folding:
+;; toggle/close/close all/ open, toggle current / all folds from cursor/ all folds
 za(A) / zc(C) / zm / zo(O) / zC zO zA / zR
 
 ;; evil: move view 5 chars to the right
