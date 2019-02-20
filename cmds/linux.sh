@@ -1326,6 +1326,9 @@ sudo alsa force-reload
 speaker-test
 arecord / aplay
 
+# find 20 biggest files
+du -a ~ 2>/dev/null | sort -n -r | head -n 20
+
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
 #        -c FILE:  FILE exists and it's character special
