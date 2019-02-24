@@ -111,6 +111,15 @@ lein cljsbuild test
 ;; memoization
 (clojure.core.memoize/memo-clear! f args)
 
+;; Clojure Jython interop http://clojars.org/clojure-python
+;; TODO it doesn't work
+(require '[midje.sweet :refer :all])
+(require '[clojure-python.core :as base])
+(with-test-interp
+  (base/py-import-lib example)
+  (base/import-fn example hello)
+  (hello "world"))
+
 ;; Type Hints: http://clojure.org/reference/java_interop#typehints
 (defn len2 [^String x] (.length x))
 
@@ -220,6 +229,8 @@ gulp
 (= (conj {:a 2} {:a 1}) (->> {:a 1} (conj {:a 2})))
 (= (conj {:a 1} {:a 2}) (-> {:a 1} (conj {:a 2})))
 (as-> [:foo :bar] $ (map name $) (first $) (.substring $ 1))
+;; swiss-arrows: diamond wand; see also harpoons
+(-<> 2 (* <> 5) (vector 1 2 <> 3 4)) ;; => [1 2 10 3 4]
 
 ;; threading macros: "short-circuit out" of a series of steps; the nil case is
 ;; handled only once, at the end. See also `some->>` and `cond->>`
