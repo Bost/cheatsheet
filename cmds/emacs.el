@@ -1,6 +1,3 @@
-;; utf8.txt
-;; ➊ ➋ ➌ ➍ ➎ ➏ ➐ ➑ ➒
-
 ;; modeline:?
 ;; -*- mode: emacs-lisp -*-
 
@@ -67,8 +64,7 @@ M-x ucs-insert RET 2211
 ;; hide: show: folding: enable folding, fold / unfold
 M-x hs-minor-mode, C-c @ C-c
 
-;; hide: show: folding:
-;; toggle/close/close all/ open, toggle current / all folds from cursor/ all folds
+;; hide: show: folding: folds
 za(A) / zc(C) / zm / zo(O) / zC zO zA / zR
 
 ;; evil: move view 5 chars to the right
@@ -122,7 +118,8 @@ C-h k / C-h f / C-h v / C-h b
 ;; dynamic vs. lexical binding: https://www.emacswiki.org/emacs/LexicalBinding
 (setq lexical-binding t)
 
-;; dynamic vs. lexical binding: https://www.emacswiki.org/emacs/DynamicBindingVsLexicalBinding
+;; dynamic vs. lexical binding:
+;; https://www.emacswiki.org/emacs/DynamicBindingVsLexicalBinding
 ;; lexical binding is for closures
 ;; -*- lexical-binding: t -*-
 
@@ -180,8 +177,11 @@ C-x r RET
 ;; files: find file / find alternate file (reload / refresh file)
 C-x C-f / C-x C-v
 
-;; remote file editing: Transparent Remote (file) Access, Multiple Protocol (TRAMP); method can be: ssh
-;; if anything doesn't work: 1. delete ~/.bashrc 2. emacs -q --eval "(setq tramp-verbose 10)" &
+;; remote file editing:
+;; Transparent Remote (file) Access, Multiple Protocol (TRAMP)
+;; method can be: ssh if anything doesn't work:
+;; 1. delete ~/.bashrc
+;; 2. emacs -q --eval "(setq tramp-verbose 10)" &
 C-x C-f /method:user@remotehost:filename
 
 ;; files: find-file-other window / switch-to-buffer-other-window
@@ -198,16 +198,19 @@ C-x s
 ;; cli: batch: noninteractive run
 emacs --batch --eval '(message "Hello world")'
 
-;; cli: batch: run emacs lisp file from command line: chmod +x ./hello.el; ./hello.el
+;; cli: batch: run emacs lisp file from command line:
+;; chmod +x ./hello.el; ./hello.el
 #!/bin/sh
-":"; exec emacs --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-
+":"; exec emacs --script "$0" "$@"
+;; # -*- mode: emacs-lisp; lexical-binding: t; -*-
 (message "Hello world")
 
 ;; cli: batch: noninteractive run
 #!/usr/bin/emacs --script
 (message "Hello world")
 
-;; eshell: combing elisp functions (message) with OS programs (/usr/bin/cut) in eshell']
+;; eshell: combing elisp functions (message) with OS programs
+;; (/usr/bin/cut) in eshell
 message "Hello world" | cut -f 1 -d ' '
 
 ;; cssh ? ssh shell ? (somehow strange)
@@ -236,7 +239,8 @@ C-x m / i / z
 ;; M-x eval-last-sexp. See M-x eval-current-buffer
 C-x C-e
 
-;; jump forward / backward to matching brace; cursor may need to be behind closing ')'
+;; jump forward / backward to matching brace
+;; cursor may need to be behind closing ')'
 C-M-f / C-M-b
 
 ;; immediate eval
@@ -365,8 +369,9 @@ m / * / u (U) / t
 ;; dired: M-x dired-create-directory / M-x dired-do-rename
 + / R
 
-;; dired: dir listing details M-x dired-details-toggle M-x dired-hide-details-mode
-;; )(
+;; dired: dir listing details: `)'
+M-x dired-details-toggle
+M-x dired-hide-details-mode
 
 ;; dired: writable - perform operations by editing dired buffer
 M-x dired-toggle-read-only (C-x C-q) / M-x wdired-finish-edit
@@ -398,8 +403,11 @@ C-M-%
 ;;
 M-x dbg / ediff / compile / man / erc
 
-;; read news, email, rss / grep / speedbar / Superior Lisp Interaction Mode for Emacs
-M-x gnus / grep / speedbar / slime
+;; read news, email, rss / grep / speedbar /
+;; Superior Lisp Interaction Mode for Emacs
+M-x gnus
+M-x grep
+M-x speedbar
 
 ;; line numbers: relative / absolute
 M-x linum-relative-toggle / global-linum-mode
@@ -452,8 +460,8 @@ M-x byte-recompile-directory
 ;; helm: minibuffer: minibuffer-force-complete
 C-M-i
 
-;; M-x vertical helm-toggle-resplit-and-swap-windows: toggle horizontal / vertical
-C-t
+;; Helm: toggle horizontal / vertical listing 
+M-x C-t
 
 ;; M-x helm-toggle-visible-mark / M-x helm-copy-to-buffer
 C-SPC / C-c C-i
@@ -476,25 +484,27 @@ M-x evil-show-registers
 ;; locate:
 M-x locate
 
-;; helm: <a href="http://tuhdo.github.io/helm-intro.html">http://tuhdo.github.io/helm-intro.html</a>
-;;
-
 ;; highlighting
 M-x hi-lock-mode / highlight-regexp
 
 ;; magit: http://magit.github.io/master/magit.html
+;; M-x magit-commit
+C-c C-c
 
+;; magit: cancel (abandon) commit
+M-x with-editor-cancel / C-c C-k / C-x k
 
-;; M-x magit-commit; end of git commit message / with-editor-cancel / with-editor-cancel
-C-c C-c / C-c C-k / C-x k
-
-;; M-x magit-status; inc / dec / reset hunk size / split hunk / add to .gitignore / add to .git/info/exclude
+;; M-x magit-status;
+;; inc / dec / reset hunk size / split hunk / add to .gitignore /
+;; add to .git/info/exclude
 + / - / 0 / select hunk / i / I
 
-;; M-x magit-status; remoting / log / branching / bisecting / diff / fetch / merge / rewrite
+;; M-x magit-status; remoting / log / branching / bisecting / diff / fetch /
+;; merge / rewrite
 M / l / b / B / d / f / m / r
 
-;; M-x magit-log; show commit details and stay in log / jump to details / put sha1 to clipboard / reset HEAD to given commit
+;; M-x magit-log; show commit details and stay in log / jump to details /
+;; put sha1 to clipboard / reset HEAD to given commit
 SPC / RET / C-w / x
 
 ;; M-x magit-status: section visibility
@@ -512,16 +522,19 @@ R / E
 ;; M-x magit-ineractive-rebase: squash / pick / reword
 s / c / r
 
-;; M-x magit-status: reset (discard all uncommited) changes - working tree unchanged
+;; M-x magit-status: reset (discard all uncommited) changes
+;; working tree unchanged
 x (X)
 
 ;; info: manual:
 M-x info / info-apropos / info-emacs-manual / info-display-manual
 
-;; 1. M-x kmacro-name-last-macro, 2. M-x insert-kbd-macro, 3. M-x kmacro-bind-to-key
-macros
+;; macros
+M-x kmacro-name-last-macro  ;; 1.
+M-x insert-kbd-macro        ;; 2.
+M-x kmacro-bind-to-key      ;; 3.
 
-;; launch emacs and eval string; does not work well with my bash function LaunchEmacs
+;; launch emacs and eval string
 emacs --eval '(message "ufo")' / emacs -e configuration-layer/update-packages
 
 ;; M-x shell-command; execute
@@ -535,7 +548,8 @@ C-u SPC ! <cmd>
 M-! RET top -c -n -1 -b -w 200
 
 ;; M-x git-timemachine git:
-p prev / n next / w Copy abbreviated hash / W Copy full hash / g Goto nth rev / q Exit
+p prev / n next / w Copy abbreviated hash / W Copy full hash / g Goto nth rev /
+q Exit
 
 ;; profiler
 M-x profiler-start profiler-report profiler-stop
@@ -551,13 +565,15 @@ Inferior Emacs Lisp Mode
 ;; https://github.com/trishume/dotfiles/blob/master/emacs%2B/spacemacs.symlink
 ;; C-x @ h 9 means H-9
 ;; (setq mac-option-modifier 'hyper) ; sets the Option key as Hyper
-(define-key local-function-key-map (kbd "<rwindow>") 'event-apply-super-modifier)
-(define-key local-function-key-map (kbd "<rwindow>") 'event-apply-hyper-modifier)
+(define-key local-function-key-map (kbd "<rwindow>")
+  'event-apply-super-modifier)
+(define-key local-function-key-map (kbd "<rwindow>")
+  'event-apply-hyper-modifier)
 
 (defun enable-hyper-super-modifiers-linux-x ()
   ;; on nowadays linux, <windows> key is usually configured to Super
 
-  ;; menu key as hyper (Note: for H-s, you need to release <menu> key before pressing 's')
+  ;; menu key as hyper (for H-s release <menu> key before pressing 's')
   (define-key key-translation-map [menu] 'event-apply-hyper-modifier) ;H-
   (define-key key-translation-map [apps] 'event-apply-hyper-modifier)
 
@@ -566,7 +582,8 @@ Inferior Emacs Lisp Mode
   (global-set-key (kbd "<H-menu>") 'execute-extended-command)
   )
 ;; (global-set-key [(hyper 9)] (lambda () (message "[(hyper 9)]")))
-;; (global-set-key (kbd "<rwindow>-9") (lambda () (message "(kbd context-menu-9)")))
+;; (global-set-key (kbd "<rwindow>-9")
+;;                 (lambda () (message "(kbd context-menu-9)")))
 ;; (global-set-key [(hyper 9)] (lambda () (message "[(hyper 9)]")))
 
 ;; M-x delete-horizontal-space - delete whitespaces around point
@@ -614,6 +631,7 @@ SPC f T
 ;; End:
 
 ;; vertical line indicating too long lines; spacemacs-light / -dark themes
-don't show contrasting background - use the default theme
-;; M-x fill-column-indicator / SPC t f
-;; M-x whitespace-toggle-options
+;; don't show contrasting background - use the default theme
+M-x fill-column-indicator / SPC t f
+M-x whitespace-toggle-options
+

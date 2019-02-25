@@ -200,6 +200,7 @@ xkbprint :0
 
 # ubuntu: change default www-browser
 sudo update-alternatives --config x-www-browser / gnome-www-browser
+update-alternatives --list python3
 
 # xfce: opens a file or URL in the user's preferred application
 /usr/bin/browse -> xdg-open
@@ -210,11 +211,8 @@ sudo add-apt-repository ppa:atareao/telegram
 sudo apt update
 sudo apt install telegram python-3.6
 
-# dpkg:
-git clone https://gist.github.com/66638cab114a6da691518598b6d13650.git \
-    $HOME/bin/list-ppa; \
-    eval $HOME/bin/list-ppa/list-ppa; \
-    sudo ppa-purge <ppa:user/ppa-name>
+# dpkg: install list-ppa https://gist.github.com/66638cab114a6da691518598b6d13650.git
+sudo ppa-purge <ppa:user/ppa-name>
 
 # display file or file system status; alternative to ls
 stat -c "%y %s %n" *
