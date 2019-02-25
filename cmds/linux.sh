@@ -169,10 +169,11 @@ sudo nethogs wlan0
 https://peteris.rocks/blog/htop/
 
 # gpg: sig: download and import gnu-keyring
-wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg && gpg --import gnu-keyring.gpg
+wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg; and \
+         gpg --import gnu-keyring.gpg
 
-# wget:
-wget --limit-rate=20k http://www-ftp.lip6.fr/pub/linux/distributions/Ubuntu/releases/15.04/ubuntu-15.04-desktop-amd64.iso
+# wget: Limit the download speed to amount bytes per second
+wget --limit-rate=20k <url>
 
 # gpg: sig: verify file
 gpg --verify file.sig file
@@ -211,7 +212,8 @@ sudo add-apt-repository ppa:atareao/telegram
 sudo apt update
 sudo apt install telegram python-3.6
 
-# dpkg: install list-ppa https://gist.github.com/66638cab114a6da691518598b6d13650.git
+# dpkg:
+# install list-ppa https://gist.github.com/66638cab114a6da691518598b6d13650.git
 sudo ppa-purge <ppa:user/ppa-name>
 
 # display file or file system status; alternative to ls
@@ -256,13 +258,15 @@ xsel --clipboard
 # clipboard: pipe to / from clipboard
 cat file > /dev/clip / cat /dev/clip
 
-# clipboard: wait for 10 pastings of the content file.ext to x-clipboard and quit
+# clipboard
+# wait for 10 pastings of the content file.ext to x-clipboard and quit
 xclip -loops 10 -verbose file.ext
 
 # clipboard: put "test" to x-clipboard / put x-clipboard content to file.ext
 echo "test" | xclip / xclip -o > file.ext
 
-# remove a line from shell history (i.e. password); ~/.bash_history | ~/.config/fish/fish_history
+# remove a line from shell history (i.e. password)
+# ~/.bash_history | ~/.config/fish/fish_history
 history -d
 
 # shell: bash: fish: see what the shell does with the various types of quoting
@@ -293,7 +297,8 @@ test (string escape -- $argv) = "--switch"
 # run a cmd only when load average is below a certain threshold (default is 0.8)
 echo "rm -rf /unwanted-large/folder" | batch
 
-# calculate: fish: examples https://nicolas-van.github.io/programming-with-fish-shell
+# calculate: fish:
+# examples https://nicolas-van.github.io/programming-with-fish-shell
 math "1 + 2"
 
 # fish: handle fish key bindings
@@ -369,7 +374,8 @@ host www.google.com
 # net: get ip address from domain
 nslookup www.google.com | tail -2 | head -1 | awk "{print $2}"
 
-# net: DNS lookup utility; domain information groper; interrogate DNS name servers
+# net: DNS lookup utility; domain information groper
+# interrogate DNS name servers
 dig www.google.com
 
 # scripting: loc_variable - visible only within given code block
@@ -381,13 +387,15 @@ $*
 # args: all arguments / all arguments of the last command / count of arguments
 $@ / !* / $$
 
-# exit code (return value / retcode) of the last command (0: success) e.g. adduser joe; echo $?
+# exit code (return value / retcode) of the last command (0: success)
+# e.g. adduser joe; echo $?
 $?
 
 # build-in commands
 $-
 
-# last argument of the previous command. At the shell startup, it gives the absolute filename of the shell script being executed
+# last argument of the previous command. At the shell startup, it gives the
+# absolute filename of the shell script being executed
 $_
 
 # args: last argument of the last command
@@ -414,7 +422,8 @@ expr 11 + 22
 # bash: empty file.txt
 > file.txt
 
-# bash: insert contents of file.txt into input of tr and output results to fileNew.txt
+# bash: insert contents of file.txt into input of tr and output results to
+# fileNew.txt
 tr '[A-Z]' '[a-z]' < file.txt > fileNew.txt
 
 # bash: mass move/copy/rename
@@ -445,7 +454,7 @@ mknod
 # bash: create directory tree with multiple subdirs
 mkdir -p ./path/{sub1,sub2}/{1..100}/{src,bin,bak}
 
-# bash: automatically create "./path" and do --preserve=mode,ownership,timestamps
+# bash: auto-create "./path" and do --preserve=mode,ownership,timestamps
 cp --parents -p ./path/src.ext ./path/dst.ext
 
 # bash: mv README.text README.txt ; cp file file.bak
@@ -460,7 +469,8 @@ mv README.{text,txt} ; cp file{,.bak}
 # bash: fist / last 5 lines from file
 head -n 5 file / tail -n 5 file
 
-# bash: find: redirect: separate / combine sdterr and stdout; does not work with the tee command
+# bash: find: redirect: separate / combine sdterr and stdout; doesn't work with
+# the tee command
 ./command.sh 1>str.out 2>str.err / ./command.sh &>combined.out
 
 # bash: redirect: type in stuff and wait unit EOF gets typed
@@ -493,10 +503,12 @@ du -s dir / du -sh dir
 # jump to ./path/to/dir execute command and jump back
 (cd ./path/to/dir && ls)
 
-# stop-watch; ctrl-d to stop; measure execution time; or try to install stopwatch
+# stop-watch; ctrl-d to stop; measure execution time; or try to install
+# stopwatch
 time read
 
-# type partial cmd, kill this cmd, check something you forgot, yank the cmd, resume typing
+# type partial cmd, kill this cmd, check something you forgot, yank the cmd,
+# resume typing
 Ctrl-u ... Ctrl-y
 
 # avoid backticks
@@ -526,14 +538,16 @@ curl ifconfig.me/ip/host/ua/port/
 # net: test connection with disabled proxy
 curl --noproxy "*" -X GET http://www.google.com
 
-# enforce using http_proxy instead of https_proxy in case of SSL23_GET_SERVER_HELLO
+# enforce using http_proxy instead of https_proxy in case of
+# SSL23_GET_SERVER_HELLO
 curl -v --proxy $http_proxy https://www.google.com
 
 # show request/response headers
 curl -v URL
 
 # in bash: (in fish it doesn't work)
-curl --request GET "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=test"
+curl --request GET \
+ "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=test"
 
 # iproute2: net: like ifconfig. state of network interfaces
 ip address
@@ -564,7 +578,8 @@ sort -k2 file.csv
 sdiff file1 file0
 
 # output line-numbers
-diff --unchanged-line-format="" --old-line-format="" --new-line-format=":%dn: %L" fold fnew
+diff --unchanged-line-format="" --old-line-format="" \
+     --new-line-format=":%dn: %L" fold fnew
 
 # new line separator for each grep result sh script
 grep "pattern" /path/to/file | awk '{print $0,"\n"}'
@@ -582,7 +597,9 @@ gunzip -c / zcat
 svn log -r \{2017-01-01\}:HEAD <repo-URL/module> > svn.log
 
 # search in commit logs since ... and show changed / affected files (--verbose)
-svn log --revision \{2017-01-01\}:HEAD --no-auth-cache --non-interactive --verbose --username '...' --password '...' --search <str1> --search <str2> <repo-URL/module>
+svn log --revision \{2017-01-01\}:HEAD --no-auth-cache --non-interactive \
+    --verbose --username '...' --password '...' \
+    --search <str1> --search <str2> <repo-URL/module>
 
 # checkout; also for http://<ip:port>/path; https://<ip:port>/path
 svn co --username <svn-login> svn://<ip:port>/path
@@ -593,7 +610,8 @@ svn cleanup; and svn update
 # last revision number
 svn info <repo-url/module>
 
-# when: svnrdump: E000022: Couldn't get lock on destination repos after 10 attempts
+# when: svnrdump: E000022: Couldn't get lock on destination repos after 10
+# attempts
 svn propdel --revprop -r0 svn:rdump-lock <url>
 
 # copy files from src to dst - typical example; add -n is for --dry-run
@@ -602,7 +620,8 @@ rsync -avz src/ dst
 # copy only certain types of files using include option
 rsync -zarv --include="*/" --include="*.sh" --exclude="*" "$src" "$dst"
 
-# cvs: copy files from src to dst excluding everything in CVS directories (showing progress)
+# cvs: copy files from src to dst excluding everything in CVS directories
+# (showing progress)
 rsync --dry-run --progress          --archive --verbose --exclude='CVS' src/ dst
 rsync --dry-run --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
 
@@ -671,7 +690,8 @@ cvs status -v file.ext
 cvs -q rlog -R -N -S -rTAGNAME MODULENAME
 
 # debug and trace info
-cvs -d cvs -t -d :pserver:faizal@localhost:/myrepos ci -m "test" -l "src/foo/Foo.ext"
+cvs -d cvs -t -d :pserver:faizal@localhost:/myrepos \
+    ci -m "test" -l "src/foo/Foo.ext"
 
 #
 cvs add file.ext
@@ -680,15 +700,18 @@ cvs add file.ext
 uname -a
 
 # tail a (log)file over ssh
-ssh -t user@hostname "tail -f /path/to/file"   # -t force pseudo-terminal allocation
+# -t force pseudo-terminal allocation
+ssh -t user@hostname "tail -f /path/to/file"
 
 # tail a (log)file over ssh
-ssh -n user@hostname "tail -f /path/to/file" & # -n redirects stdin from /dev/null
+# -n redirects stdin from /dev/null
+ssh -n user@hostname "tail -f /path/to/file" &
 
 # github: ssh:
 ssh-keygen
 
-# github: now copy-paste the ~/.ssh/id_rsa.pub to github under "Account settings / SSH keys / Add another public key"
+# github: now copy-paste the ~/.ssh/id_rsa.pub to github under
+# "Account settings / SSH keys / Add another public key"
 cat ~/.ssh/id_rsa.pub
 
 # log in to remote systems using public key
@@ -770,7 +793,8 @@ sudo apt update; and sudo apt dist-upgrade # alternativelly
 # ubuntu: command line upgrade part 3.
 sudo do-release-upgrade
 
-# ubuntu: see /usr/share/update-notifier/notify-reboot-required after update / upgrade
+# ubuntu: after update / upgrade see
+/usr/share/update-notifier/notify-reboot-required
 
 # ubuntu: (ubuntu 11.10 or later), gnome or KDE
 sudo restart lightdm / gdm / kdm
@@ -787,7 +811,8 @@ awk
 # cut huge file: content between lines 10 and 20 / print 5th line
 sed -n "10,20p" /path/to/file / sed -n 5p /path/to/file
 
-# cut huge file: content between lines 10 and 20; see https://unix.stackexchange.com/a/47423
+# cut huge file: content between lines 10 and 20
+# see https://unix.stackexchange.com/a/47423
 awk 'NR >= 10 && NR <= 20' /path/to/file > /path/to/cut-file
 
 # replace 1 occurence
@@ -803,7 +828,8 @@ sed --in-place '/^\s*$/d' /path/to/file
 sed ':a;N;$!ba;s/\n/ /g'
 
 # sed: ascii: ebcdic: fix new lines and empty chars; \x85 - hexadecimal char
-sed "s/\x85/\n/g" <log.txt >log.nl.txt; sed "s/\x85/\n/g" <log.nl.txt >log.nl.00.txt
+sed "s/\x85/\n/g" <log.txt >log.nl.txt; \
+    sed "s/\x85/\n/g" <log.nl.txt >log.nl.00.txt
 
 # Show numerical values for each of the 256 colors in ndbash
 for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done
@@ -845,7 +871,8 @@ gnome-session-quit / xfce4-session-logout
 # virtualbox: restart clipboard
 killall VBoxClient; and VBoxClient --clipboard & disown
 
-# restart xfce when the title bar dissapears from xfwm4; or rm -r ~/.cache/sessions
+# restart xfce when the title bar dissapears from xfwm4; or rm -r
+# ~/.cache/sessions
 pkill -KILL -u yourusername
 
 # virtualbox: restart clipboard
@@ -854,7 +881,8 @@ killall VBoxClient; and VBoxClient --clipboard & disown
 # when emacs freezes or hangs
 killall -SIGUSR2 emacs
 
-# xfce: launcher: emacs uses bash variables; -i interactive shell, -c read following command
+# xfce: launcher: emacs uses bash variables; -i interactive shell, -c read
+# following command
 bash -i -c ./path/to/emacs
 
 # search man pages for "topic"
@@ -864,7 +892,8 @@ man -k topic / apropos -r topic
 whatis CMD / help
 
 # net: ipv6:
-ssh -6 <ipv6-address> # responds with 'ssh: connect to host <ipv6-address> port 22: Invalid argument'
+# responds with 'ssh: connect to host <ipv6-address> port 22: Invalid argument'
+ssh -6 <ipv6-address>
 ping6 -I wlan0 -c 4 <ipv6-address> # responds with 'ping: unknown iface wlan0'
 
 # compare a remote file with a local file
@@ -873,11 +902,13 @@ ssh user@host cat ./path/to/remotefile | diff ./path/to/localfile -
 # ssh: copy ssh keys to user@host to enable password-less ssh logins
 ssh-copy-id user@host
 
-# ssh: mount folder/filesystem through SSH. Install SSHFS from http://fuse.sourceforge.net/sshfs.html. Mount a folder securely over a network
+# ssh: mount folder/filesystem through SSH. Install SSHFS from
+# http://fuse.sourceforge.net/sshfs.html. Mount a folder securely over a network
 sshfs name@server:/path/to/folder ./path/to/mount/point
 
 # mound windows shares under linux
-sudo mount.cifs //<windows-machine>/path/to/dir path/to/dir -o user=<windows-username>
+sudo mount.cifs //<windows-machine>/path/to/dir path/to/dir \
+     -o user=<windows-username>
 
 # virtualbox: mount shared folder
 sudo mount -t vboxsf share /home/username/share/
@@ -891,7 +922,8 @@ mount | column -t
 # virtualbox: restart clipboard
 killall VBoxClient; and VBoxClient --clipboard & disown
 
-# youtube-dl: Requested formats are incompatible for merge and will be merged into mkv.
+# youtube-dl:
+# Requested formats are incompatible for merge and will be merged into mkv.
 youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] URL
 
 # align csv file
@@ -936,19 +968,23 @@ dpkg --list | grep ii | grep -i <regex>
 apt-cache show PACKAGE / aptitude show PACKAGE
 
 # dpkg: apt: fix the 'Hash sum mismatch error'
-sudo rm -rf /var/lib/apt/lists; sudo mkdir -p /var/lib/apt/lists/partial; sudo apt clean
+sudo rm -rf /var/lib/apt/lists
+sudo mkdir -p /var/lib/apt/lists/partial
+sudo apt clean
 
-# ubuntu: apt: dpkg: mirror: distro: source:
-# Software Sources List editors; see y-ppa-manager, http://repogen.simplylinux.ch/
+# ubuntu: apt: dpkg: mirror: distro: source: Software Sources List editors
+# see y-ppa-manager, http://repogen.simplylinux.ch/
 software-properties-gtk - see /etc/apt/sources.list
 
 # apt: dpkg: list of sources
 /etc/apt/sources.list.d
 
-# list installed packages; no sudo needed; TODO see --clear-selection --set-selection
+# list installed packages; no sudo needed
+# TODO see --clear-selection --set-selection
 dpkg --get-selections | grep -v deinstall
 
-# aptitude: list expressly installed packages (not just installed as dependencies)
+# aptitude: list expressly installed packages (not just installed as
+# dependencies)
 aptitude search '~i!~M'
 
 # cygwin: ps: show windows as well as cygwin processes (-W)
@@ -958,7 +994,8 @@ ps --windows
 cygpath -w filename
 
 # cygwin: command-line installer
-apt-cyg --mirror http://ftp-stud.hs-esslingen.de/pub/Mirrors/sources.redhat.com/cygwin/x86
+apt-cyg --mirror \
+    http://ftp-stud.hs-esslingen.de/pub/Mirrors/sources.redhat.com/cygwin/x86
 
 # cygwin: bash: print unix form of filename
 cygpath -u filename
@@ -997,7 +1034,8 @@ mtr --report www.google.com
 # bash: query wikipedia for keyword
 dig +short txt keyword.wp.dg.cx
 
-# iproute2: net: listening ports and PIDs of associated processes. tcp (-t) udp (-u)
+# iproute2: net: listening ports and PIDs of associated processes.
+# tcp (-t) udp (-u)
 ss -tulnp  # socket statistics replaces obsolete netstat
 
 # crontab: edit / view entries
@@ -1066,7 +1104,8 @@ zenity, whiptail
 collectd # system statistics collection daemon
 telegraf # plugin-driven server agent for collecting & reporting metrics
 
-# monitor file and network activities of a PROCESS, max printed string size 10000
+# monitor file and network activities of a PROCESS
+# max printed string size 10000
 strace -f -e trace=file,network -s 10000 -o outfile.log PROCESS ARGS
 
 # trace process / library
@@ -1179,7 +1218,8 @@ https://github.com/akavel/up
 mvn package
 mvn install / mvn clean - mvn install seems not to be needed
 
-# maven: mvn: proxy: see https://www.mkyong.com/maven/how-to-enable-proxy-setting-in-maven/
+# maven: mvn: proxy:
+# see https://www.mkyong.com/maven/how-to-enable-proxy-setting-in-maven/
 {M2_HOME}/settings.xml
 
 # SFTP / FTPS: SSH File Transfer from the OpenSSH / FTP over SSL
@@ -1190,9 +1230,13 @@ lftp
 Create your HPKP hash: https://report-uri.io/home/pkp_hash
 
 # install nodejs8 behind proxy
-sudo apt-key adv --keyserver-options http-proxy="http://<proxy-ip>:<proxy-port>/" --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 68576280
-sudo apt-add-repository "deb https://deb.nodesource.com/node_8.x $(lsb_release -sc) main"
-# install nodejs8 w/o proxy: curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-key adv --keyserver-options \
+     http-proxy="http://<proxy-ip>:<proxy-port>/" \
+     --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 68576280
+sudo apt-add-repository \
+     "deb https://deb.nodesource.com/node_8.x $(lsb_release -sc) main"
+# install nodejs8 w/o proxy:
+# curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt update; and sudo apt install nodejs
 
 # update yarn
@@ -1217,7 +1261,7 @@ npm config set color=false
 npm config set progress=false
 npm install --no-colors --verbose result-core
 npm cache verify / npm cache clean / npm cache clean --force
-npm config set registry https://registry.npmjs.org/ [or http://registry.npmjs.org/]
+npm config set registry https://registry.npmjs.org/ [or http]
 npm config set proxy "http://<ip:port>/"
 npm config set https-proxy "https://<ip:port>/"
 
@@ -1231,8 +1275,10 @@ sudo ufw allow <port>
 sudo ufw allow <port>/tcp
 
 # net: rdp: remote desktop
-rdesktop -u <login> -p - <computer>:3389 # -p -  ask for password
-rdesktop -f -u <login> -p - <computer>:3389 # -f  full screen, -p -  ask for password
+# -p -  ask for password
+rdesktop -u <login> -p - <computer>:3389
+# -f  full screen, -p -  ask for password
+rdesktop -f -u <login> -p - <computer>:3389
 
 # net: rdp: remote desktop
 sudo /etc/init.d/xrdp restart
