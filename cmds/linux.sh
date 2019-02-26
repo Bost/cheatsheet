@@ -742,16 +742,19 @@ lscpu
 # CPU architecture 32/64 bit
 getconf LONG_BIT
 
-# find and delete *.jar and *.class when idling
+# nice: cpulimit: find and delete *.jar and *.class when idling
 ionice -c3 find . -name "*.jar" -or -name "*.class" -delete
 
-# change the priority of process 2222 to minimum (-19 max, +19 min prio)
+# nice: cpulimit: change the priority of process 2222 to minimum (-19 max, +19 min prio)
 renice +19 2222
 
-# launch process with lowest priority
+# nice: cpulimit: launch process with lowest priority
 nice -n +19 command
 
-# ps: show statistics for a process nr. 7695
+# nice: cpulimit: limits the CPU usage of a process to max 10%
+cpulimit --limit 5 <cmd>
+
+# nice: cpulimit: ps: show statistics for a process nr. 7695
 ps -o pid,user,command,nice -p 7695
 
 # ps: process tree / user's processes ; ps -aux / ps aux - are different
