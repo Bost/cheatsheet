@@ -129,11 +129,10 @@ lein cljsbuild test
 `(+ ~'x x) => (clojure.core/+ x user/x)
 
 ;; cli: script: repl from command line
-rlwrap \
-    java -cp \
-    $HOME/.m2/repository/org/clojure/clojure/1.10.0/clojure-1.10.0.jar:\
-    $HOME/.m2/repository/org/clojure/spec.alpha/0.2.176/spec.alpha-0.2.176.jar \
-    clojure.main
+;; see config.fish
+;; set cljjar ~/.m2/repository/org/clojure/clojure/1.10.0/clojure-1.10.0.jar
+;; set cljsjar ~/.m2/repository/org/clojure/spec.alpha/0.2.176/spec.alpha-0.2.176.jar
+rlwrap java -cp $cljjar:$cljsjar clojure.main
 
 ;; cli: run as a script: ./hello.clj
 #!/usr/bin/env boot
