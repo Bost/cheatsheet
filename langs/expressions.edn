@@ -197,5 +197,10 @@
   {:fr ["mise en garde"]
    :de ["Warnung" "Vorwarnung" "Warnhinweis"]
    :en ["caution" "admonition" "warning"]}
+
+  {:fr ["Cuir épais"]
+   :en ["Thick leather"]
+   :de [""]
+   :sk [""]}
   }
 
