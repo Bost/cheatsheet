@@ -116,11 +116,6 @@ psrinfo
 
 # solaris: net: ipconfig
 /usr/sbin/ifconfig -a
-
-# battery
-powercfg /batteryreport # win10
-powercfg /energy # win7
-
 #####################################################################
 # Ripple: real-time gross settlement system (RTGS)
 # remittance - tx of money by foreigners; see SWIFT

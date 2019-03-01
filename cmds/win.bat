@@ -82,3 +82,7 @@ popd
 
 # Robust File Copy for Windows: mirror directory structure
 robocopy src dst /mir
+
+# battery
+powercfg /batteryreport # win10
+powercfg /energy # win7
