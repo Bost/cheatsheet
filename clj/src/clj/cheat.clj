@@ -6,6 +6,12 @@
 ;; lein new a-b produces src/clj/a_b.clj with
 (ns a-b.core)
 
+;; clojure.core/atom
+(def cnt (atom 0))
+(swap! cnt inc)              ;; => 1
+(swap! cnt (fn [n] (+ n 3))) ;; => 4
+(reset! cnt 0)
+
 ;; destructure hashmap; default function parameters
 (defn [{:keys [a b] :or {c "default-val-of-c"} :as prm}])
 
