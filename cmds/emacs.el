@@ -635,3 +635,5 @@ SPC f T
 M-x fill-column-indicator / SPC t f
 M-x whitespace-toggle-options
 
+;; emacs current directory
+(setq default-directory "~/.emacs.d/")
