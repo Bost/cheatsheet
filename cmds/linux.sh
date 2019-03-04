@@ -497,8 +497,13 @@ join
 # size of ./path/to/dir with subdirs, exclude files matching pattern
 du -h --exclude=pattern ./path/to/dir
 
-# total / summarize size of dir
-du -s dir / du -sh dir
+# total / summarize size of dir; estimate file space usage
+du -s dir
+du -sh dir
+du -sh --exclude={.git,.atom} dir
+du -sh --exclude={.git,.atom} ./ | sort --human-numeric-sort
+du --separate-dirs --human-readable --exclude={.git,.atom} ./ \
+    | sort --human-numeric-sort
 
 # jump to ./path/to/dir execute command and jump back
 (cd ./path/to/dir && ls)
