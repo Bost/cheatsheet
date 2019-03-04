@@ -501,8 +501,8 @@ du -h --exclude=pattern ./path/to/dir
 du -s dir
 du -sh dir
 du -sh --exclude={.git,.atom} dir
-du -sh --exclude={.git,.atom} ./ | sort --human-numeric-sort
-du --separate-dirs --human-readable --exclude={.git,.atom} ./ \
+du -csh --exclude={.git,.atom} ./ | sort --human-numeric-sort
+du --total --separate-dirs --human-readable --exclude={.git,.atom} ./ \
     | sort --human-numeric-sort
 
 # jump to ./path/to/dir execute command and jump back
