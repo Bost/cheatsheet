@@ -467,7 +467,8 @@ mv README.{text,txt} ; cp file{,.bak}
 ./script.sh 2> /dev/null
 
 # bash: fist / last 5 lines from file
-head -n 5 file / tail -n 5 file
+head -n 5 file
+tail -n 5 file
 
 # bash: find: redirect: separate / combine sdterr and stdout; doesn't work with
 # the tee command
@@ -485,22 +486,20 @@ free -h
 # file or filesystem status
 stat <fileName>
 
+# enable / disable devices and files for paging and swapping
+swapon
+swapoff
 # summary about used swap devices
 swapon --show
 
-# enable / disable devices and files for paging and swapping
-swapon / swapoff
-
 # join lines of two files on a common field
 join
-
-# size of ./path/to/dir with subdirs, exclude files matching pattern
-du -h --exclude=pattern ./path/to/dir
 
 # total / summarize size of dir; estimate file space usage
 du -s dir
 du -sh dir
 du -sh --exclude={.git,.atom} dir
+# size of ./path/to/dir with subdirs, exclude files matching pattern
 du -csh --exclude={.git,.atom} ./ | sort --human-numeric-sort
 du --total --separate-dirs --human-readable --exclude={.git,.atom} ./ \
     | sort --human-numeric-sort
