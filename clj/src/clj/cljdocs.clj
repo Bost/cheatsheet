@@ -1,5 +1,6 @@
 (ns cljdocs)
 
+(comment
 ;; VARS IN CLOJURE.CORE;  *^%
 ;; Returns the product of nums. (*) returns 1. Does not auto-promote longs, will throw on overflow. See also: *'
 *
@@ -1998,3 +1999,4 @@ zero?
 
 ;; Returns a map with the keys mapped to the corresponding vals.
 zipmap
+)

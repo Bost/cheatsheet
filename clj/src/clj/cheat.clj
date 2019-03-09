@@ -286,7 +286,11 @@ unravel localhost 5555
 ;; Typ změny   | local within 1 thread | koordinovaná | nezávislá | nezávislá
 ;; Tx support  | no                    | yes          | no        | no
 
-
+;;; recursion: Clojure Tail Call Optimizer https://github.com/cjfrisz/clojure-tco
+;; Society by Niklas Luhmann: (People are) recursing, self referencing systems of communication
+;;; specialisations
+;;; mastery vs. novelty (expensive)
+;;; dealing with complexity of options
 ;; REPL: java -jar clojure; TODO see the video "The most beautifull programm"
 user=> (->> (read) eval prn (while true))
 user=> (loop [] (println (eval (read))) (recur))
@@ -399,4 +403,77 @@ set -x JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ;; map look up w/ default value
 (:c {:a "a" :b "b"} "default")
 
+;;; dashing: drawing with certain velocity
+;;; cljart <3
+
+;;; defrecord is a cartesian product
+;;; GeoREPL
+;;; Cursive
+;;; Chicago Clojure - 2017-06-21: Stuart Halloway on Repl Driven Development:
+;;;; TODO Don't throw things away - save a file once in a month
+;;;; Visualisation - Desktop GUI: Seesaw - Live at REPL (as a custom inspector)
+;;;; Start java with a clojure.jar and hook up a REPL with custom prompt
+;;;; specs + graphvis: https://github.com/jebberjeb/specviz
+;;; CJUG - 2017-06-20 - Stuart Halloway on Clojure in 10 Big Ideas: 18:43
+
+;; java https://www.root.cz/serialy/programovaci-jazyk-java-a-jvm/
+;; Based on stack-based processor
+;; Statically typed instruction set
+
+;; scala
+;; xml - first class support
+;; default get/set methods & constructor
+;; function & imperative
+;; staticaly typed
+;; traits (multiple inheritance)
+
+;;; clojuredocs - graphic representation of example
+
+;; Rick Hickey - TBD (To Better Do)
+;; - User interfaces on top of programatic interfaces
+;; - use composable services
+;; - abstractions; no bespoke protocols and formats
+
+;; Clojure AI
+;; Eric Weinstein: Machine learning with Clojure and Apache Stark
+;;; Apache Spark:
+;;;; Supervised learning, Generalization
+;;;; Classification or regression, generalizing from labeled to unlabeled data
+;;;; cluster computing framework - ideal for large data sets
+;;;;; RDD Resilient Distrib Dataset
+;;;;; Datase: RDD + Spark SQL execution engine
+;;;;; DataFrame: dataset ordanized into named columns
+
+;; Los Angeles police stop data, 600.000 http://bit.ly/2f9jVwn
+;; Decision Trees (binary classifier) robust in noise; good for binary
+;; No universal approach
+;; Racist data leads to racist machines - bias problem
+
+;; What's Deep learning
+;;; neural networks - computational architecture modeled after brain
+;;;; many layers
+;;;; vanishing/exploding gradient problem
+;;; Vanishing && Exploding Gradients
+;;; Convolutional networks; stacks of feature maps
+;;; Max Pooling / Downsampling
+;;; Alternating Layers
+
+;; Tale of two DSLs: Flambo vs. Sparkling
+;;; 1. Flambo
+;;; 2. Sparkling
+;;; DL4J - Deep Learning 4 Java
+;; nuroko.com - Nuroko Toolkit: Advanced machine learning (painting)
+;; Peter Norvig / Stuart Russell: Artificial Intelligence: A Modern Approach
+;; Syntax of log files changes (speach) sentence structure: subject comes at the end of line
+;; Music: what is the relation between harmony and ryth; model of musical creativity
+;; How represent speach context? - history of lisp - ClojureD
+;; Create experience dbase
+;; Android App: picture comparision
+;; put together: chess ;; languages ;;
+;; Problemy tazke pre comp, lahke pre cloveka (arimaa - until 2020, etc.)
+;; Lang words as a sound: celular automata: cell dyies / is born: play a tone
+
+;; Code as a Lego Block:
+;; http://www.ted.com/talks/ayah_bdeir_building_blocks_that_blink_beep_and_teach.html
+;; https://polylith.gitbook.io/polylith/
 )
