@@ -20,14 +20,27 @@ tokenomics - e.g. collectables; game currency
 SC - smart contracts
 DLT supply chain
 
-PoW (Proof of Work)
-- the consensus algorithm used by Bitcoin
-- solution of the Byzantine Generals
-- The cost of registration, investing a scarce resource - electricity used to solve a math (arbitrary) puzzle creates trust
-- election of a leader - randomized, one CPU = one vote
-mining pools - decrease randomisation, unwanted centralisation
+Byzantine Fault Tolerances / Consensus methods:
+https://link.medium.com/V2dglrC5UU
+- distributed systems with imperfect information if a component failed
+Proof of Work - used by Bitcoin
+Proof of Stake
+Proof of activity
+Proof of burn
+Proof of capacity
 
-A generalised solution to distributed consensus
+BGP - The Byzantine Generals Problem:
+A groupf generals have to come to a common agreement on whether to attack or
+retreat, but can communicate only by sending messengers who might never arrive.
+Some of whom may be traitors, who have to reach a common decision.
+
+PoW (Proof of Work)
+- Consensus algorithm used by Bitcoin i.e. a solution of the BGP
+- Cost of registration, investing a scarce resource - electricity used to solve a math (arbitrary) puzzle creates trust
+- election of a leader - randomized, one CPU = one vote
+- mining pools - decrease randomisation, unwanted centralisation
+
+A generalised solution to distributed consensus:
 https://blog.acolyer.org/2019/03/08/a-generalised-solution-to-distributed-consensus/
 https://en.wikipedia.org/wiki/Consensus_(computer_science)
 https://news.ycombinator.com/item?id=19343398
