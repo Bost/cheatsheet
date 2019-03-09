@@ -20,10 +20,17 @@ tokenomics - e.g. collectables; game currency
 SC - smart contracts
 DLT supply chain
 
-PoW (Proof of Work): solution of the Byzantine Generals
-PoW: The cost of registration, investing a scarce resource - electricity used to solve a math (arbitrary) puzzle creates trust
-PoW: election of a leader - randomized, one CPU = one vote
+PoW (Proof of Work)
+- the consensus algorithm used by Bitcoin
+- solution of the Byzantine Generals
+- The cost of registration, investing a scarce resource - electricity used to solve a math (arbitrary) puzzle creates trust
+- election of a leader - randomized, one CPU = one vote
 mining pools - decrease randomisation, unwanted centralisation
+
+A generalised solution to distributed consensus
+https://blog.acolyer.org/2019/03/08/a-generalised-solution-to-distributed-consensus/
+https://en.wikipedia.org/wiki/Consensus_(computer_science)
+https://news.ycombinator.com/item?id=19343398
 
 https://www.youtube.com/watch?v=12nQ4oMhIpQ
 PoS (Proof of Stake) - cardano
