@@ -1400,6 +1400,11 @@ arecord / aplay
 # find 20 biggest files
 du -a ~ 2>/dev/null | sort -n -r | head -n 20
 
+# ETL (Extract Transform Load)
+# https://tech.grammarly.com/blog/building-etl-pipelines-with-clojure
+# Stich ETL service https://www.stitchdata.com/
+# https://clojure.org/stories/stitch
+
 # FILE1 -ot FILE2: FILE1 is older than FILE2
 #        -b FILE:  FILE exists and it's block special
 #        -c FILE:  FILE exists and it's character special
