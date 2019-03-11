@@ -243,6 +243,11 @@ trap "rm -f /tmp/xyz$$; exit" ERR EXIT
 # fist / last 5 lines from file
 head -n 5 file / tail -n 5 file
 
+# fish: reload config
+source ~/.config/fish/config.fish
+# fish: reload function
+type myfunc
+
 # available shells; current shell; change shell
 cat /etc/shells; echo $SHELL; chsh -s /usr/local/bin/fish
 
