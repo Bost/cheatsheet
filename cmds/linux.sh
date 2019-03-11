@@ -288,11 +288,24 @@ type foo / functions foo / functions -n
 # fish: copy 'foo' fn to a new fn 'bar' / erase the 'bar'
 functions -c foo bar / functions -e bar
 
-# fish: unset shell variable
+# fish variables: unset shell variable
 set --erase myvar
+set -e      myvar
+# variable scope is local to the current block
+set --local myvar 1
+set -l      myvar 1
+# export variable to child processes (make it an 'environment variable')
+set -x        myvar 1
+set --export  myvar 1
+set -u        myvar
+set -unexport myvar
 
-# fish: test string equality
-test (string escape -- $argv) = "--switch"
+# fish: all function arguments from 3rd to the last
+$argv[3..-1]
+
+# fish:
+test (string escape -- $argv) = "--switch" # string equality
+test -e file.txt                           # file existance
 
 # run a cmd only when load average is below a certain threshold (default is 0.8)
 echo "rm -rf /unwanted-large/folder" | batch

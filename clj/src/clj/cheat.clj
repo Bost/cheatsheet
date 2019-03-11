@@ -400,8 +400,18 @@ sudo update-alternatives --config java / javac
 set -x JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 set -x JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
-;; map look up w/ default value
+;; map look up with default value
 (:c {:a "a" :b "b"} "default")
+
+;; HotSpot - old JIT (Just-In-Time) Compiler; in C++
+;; GraalVM: JVM Compiler Interface: Plugin own JIT Compiler into VM
+;; Graal - a compiler written in java, replacement for HotSpot
+;; When JVM starts Graal begins to compile itself
+;; JVMCI protocol: between JMV and Graal -> {Truffle, TruffleRuby}
+;; Truffle language framework
+;; spec-provider - creates clojure spec from examples
+;; zprint - pretty printer for clojure
+;; Substrate VM - GraalVM native image generation
 
 ;;; dashing: drawing with certain velocity
 ;;; cljart <3
