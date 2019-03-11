@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 exit 1 # just in case ...
 
-# bash: find: redirect: separate / combine sdterr and stdout; does not work with the tee command
+
+# bash: find: redirect: separate / combine sdterr and stdout; does not work with
+# the tee command
 ./cmd.sh 1>str.out 2>str.err / ./cmd.sh &>combined.out
 
 # emacs find - exclude backup files
@@ -13,8 +15,12 @@ find . -empty -type f -delete / find . -empty -type d -delete
 # search for *fileToSearch* in multiple directories
 find ./ foo/ bar/ -name "*fileToSearch*"
 
-#
-find . -name *.properties -exec grep -lir ".*String.*" \'{}\' \; -print
+# TODO what does the `-print` switch?
+find . -name '*.properties' -exec grep -lir ".*String.*" '{}' \; -print
+
+# find only filenames matching '*.clj' containing 'project'
+find . -name '*.clj' -exec grep -il 'project' '{}' \;
+find . -name '*.clj' | xargs grep -l 'project'
 
 # quit search after finding 1st match
 find . ... -print -quit
@@ -22,8 +28,9 @@ find . ... -print -quit
 # find all files and dirs modified in the last 7 days; between: older: newer:
 find . ... -mtime -7
 
-# bash: flatteb xml-files from src-subdirs to dst, forks off a new cp-process for every file
-find /src -iname \'*.xml\' -exec cp \\{\\} /dst/ \\;
+# bash: flatteb all xml files from all src subdirs to dst, fork off a new copy
+# process for every file; TODO test it!
+find ./src -iname '*.xml' -exec cp \\{\\} ./dst \\;
 
 # bash: directories called dirname
 find . -type d -name "dirname"
@@ -40,16 +47,16 @@ find . -type f -name "*.xml" -or -name "*.txt"
 # find executable files
 find . -executable -type f
 
-# grep: find: recursive search for "String" in ... (with '.' at the end)
+# find: recursive search for "String" in ... (with '.' at the end)
 grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{el,clj,cljs,cljc} ./
 
-# grep: find: grep-help: recursive search for "String" in ... (with '.' at the end)
+# find: grep-help: recursive search for "String" in ... (with '.' at the end)
 grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{log,propeties,cfg,txt} ./
 
 # build and execute command lines from standard input
 xargs
 
-# grep: search for "String" in *.txt files (with spaces in filenames)
+# search for "String" in *.txt files (with spaces in filenames)
 find ./ -type f -name "*.txt" -print0 | xargs -0 grep --files-with-matches "String"
 
 # find and delete *.jar and *.class when idling
