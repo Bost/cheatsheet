@@ -529,6 +529,17 @@ du --total --separate-dirs --human-readable --exclude={.git,.atom} ./ \
 # stopwatch
 time read
 
+# time measurement of a fish function
+# https://github.com/fish-shell/fish-shell/issues/117
+/usr/bin/time --portability fish --command <fn> <prm1> <prm2> ...
+# TODO try out
+function time --description 'Wrapper for time'
+    /usr/bin/time --portability /usr/bin/fish --command $argv
+end
+# see also:
+<fn> <prm1> <prm2> ...
+echo $CMD_DURATION
+
 # type partial cmd, kill this cmd, check something you forgot, yank the cmd,
 # resume typing
 Ctrl-u ... Ctrl-y
