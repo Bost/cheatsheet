@@ -1345,16 +1345,15 @@ sudo apt install virtualbox-guest-additions-iso
 sudo /etc/init.d/virtualbox restart
 sudo /etc/init.d/virtualbox-guest-utils start
 
-# Delete all Atom environment state
+# atom: delete all environment states
 atom --clear-window-state
-
-# atom: list / backup installed packages to a file
+# list / backup installed packages to a file
 apm list --installed --bare > ~/dev/dotfiles/.atom/package.list
-
-# atom: install packages from a file
+# install packages from a file
 apm install --packages-file ~/dev/dotfiles/.atom/package.list
-
-# atom: restore / synchronise atom settings
+# update all packages
+apm update
+# restore / synchronise settings
 rsync -zarv --include="*/" --include="*.cson" \
       --exclude="*" ~/.atom/* ~/dev/dotfiles/.atom
 
