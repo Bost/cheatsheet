@@ -187,8 +187,10 @@ hostname -i
 # mplayer: reset/+/- speed by 10% / toggle OSD states / volume +/-
 backspace / \] / \[ / o / * / "/"
 
-# youtube: +/- speed / captions / mute / 1 frame forward / 1 frame backward
-> / < / c / m / , / .
+# youtube
+> / < # speed: 25% faster / slower
+c / m # toggle captions / mute
+, / . # move 1 frame forward / backward
 
 # postscript to pdf conversion
 ps2pdf
@@ -958,7 +960,6 @@ mount | column -t
 # virtualbox: restart clipboard
 killall VBoxClient; and VBoxClient --clipboard & disown
 
-# youtube-dl:
 # Requested formats are incompatible for merge and will be merged into mkv.
 youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] URL
 
