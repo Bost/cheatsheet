@@ -1,10 +1,19 @@
 (ns clj.cheat)
 
 (comment
-;; namespace: underscore: minus: dash:
-;; Prefer filenames with underscores;
-;; lein new a-b produces src/clj/a_b.clj with
-(ns a-b.core)
+  (ns {:doc "
+- Namespace as a Type: ns contains fns returning values of the same type. I.e.
+  it is a set of proofs of a given proposition (i.e. of a given type).
+- Use morphism from \"complicated\" Types (i.e. Products consisting of many
+  Types. E.g. maps each having many keys) to subsets of (if possible natural)
+  numbers. These subsets should be in fact monads
+- namespace underscore minus dash; prefer filenames with underscores:
+ `lein new a-b produces src/clj/a_b.clj with`
+"}
+      a-b.core)
+
+;; (A * B) could be seen as a product (e.g. join)
+;; (A + B) coproduct (e.g. disjoint union) of A and B
 
 ;; clojure.core/atom
 (def cnt (atom 0))
