@@ -205,9 +205,13 @@
 
 
   {:fr [""]
-   :en ["Seeing her picture in the paper pulled me up short."]
+   :en ["Seeing her picture in the newspaper pulled me up short."]
    :de [""]
    :sk [""]
    :explanation "to surprise someone, often so that that person stops what they are doing:"}
+
+  {:de ["Seine Haut zu Markte tragen"]
+   :sk ["S kožou na trh chodiť" "Nosiť kožu na trh"]
+   :fr ["Jouer sa peau" "Risquer sa peau"]}
   }
 
