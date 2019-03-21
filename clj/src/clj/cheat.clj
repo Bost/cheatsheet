@@ -495,4 +495,12 @@ set -x JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ;; Code as a Lego Block:
 ;; http://www.ted.com/talks/ayah_bdeir_building_blocks_that_blink_beep_and_teach.html
 ;; https://polylith.gitbook.io/polylith/
+
+;; clojure trending repositories
+;; https://github.com/trending/clojure
+
+;; JavaFX - SW platform to build GUI apps & Rich Internet applications (RIAs)
+;; standard GUI library for Java SE; Swing replacement
+
+;; Instaparse: parsers in clojure: context-free grammars as easy to use as regexs
 )

@@ -982,29 +982,25 @@ ldconfig -p | grep libgconf
 # info about ELF files
 readelf -v $(which vim)
 
+## dpkg apt aptitude
 # show installed packages
 dpkg --get-selections
-
 # list of installed files from a packageName (dpkg-query -L works too)
 dpkg -L packageName
-
-# install / remove package.deb
-sudo dpkg --install package.deb
-sudo dpkg --remove  package.deb
-
-# dpkg: apt: show description for packageName
+# show description for packageName
 apt-cache search ^packageName$
-
-# dpkg: apt: print names of all packages know to APT
+# print names of all packages know to APT
 apt-cache pkgnames <packagePrefix>
-
-# dpkg: apt: list all installed packages matching regex
+dpkg --status <package>
+dpkg -s <package>
+sudo dpkg --install <package.deb>
+sudo dpkg --remove  <package.deb>
+# list all installed packages matching regex
 dpkg --list | grep ii | grep -i <regex>
-
-# dpkg: apt: description of PACKAGE
-apt-cache show PACKAGE / aptitude show PACKAGE
-
-# dpkg: apt: fix the 'Hash sum mismatch error'
+# package description
+apt-cache show <package>
+aptitude show <package>
+# fix the 'Hash sum mismatch error'
 sudo rm -rf /var/lib/apt/lists
 sudo mkdir -p /var/lib/apt/lists/partial
 sudo apt clean
@@ -1013,7 +1009,7 @@ sudo apt clean
 # see y-ppa-manager, http://repogen.simplylinux.ch/
 software-properties-gtk - see /etc/apt/sources.list
 
-# apt: dpkg: list of sources
+# list of sources
 /etc/apt/sources.list.d
 
 # list installed packages; no sudo needed
