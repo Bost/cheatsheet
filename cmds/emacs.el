@@ -637,3 +637,7 @@ M-x whitespace-toggle-options
 
 ;; emacs current directory
 (setq default-directory "~/.emacs.d/")
+
+;; truncate / fold long lines (wrapping long lines creates new lines)
+M-x toggle-truncate-lines
+
