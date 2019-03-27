@@ -11,9 +11,6 @@ git reset --hard <tag/branch/commit id (sha1)>
 git pull --rebase origin master
 git pull --rebase upstream master
 
-# number of lines changed between two commits
-git diff --stat <commit-ish> <commit-ish>
-
 # pull and rebase latest of all submodules
 git submodule foreach git pull --rebase origin master
 
@@ -27,42 +24,36 @@ git commit --amend --no-edit
 git commit --amend --author "Bost <thebost@gmail.com>"
 git commit --amend --reset-author
 
-# reuse commit message
-git commit --amend --no-edit
-
-# change the author (name, email) in the last commit
-git commit --amend --author "Bost <thebost@gmail.com>"
-git commit --amend --reset-author
-
 # assigns the original repo to a remote repo called upstream
 git remote add upstream https://github.com/octocat/Spoon-Knife.git
 
 # show upstream branches and other info
 git remote show upstream
+git fetch upstream <branch1> <branch2>
 
-# git:
-git fetch upstream branch1 branch2
-
-# delete a remote-tracking branch from local repository; -r --remotes, -d --delete
+# delete a remote-tracking branch from local repository
+git branch --remotes --delete public/whatever
 git branch -rd public/whatever
-
 # delete a remote branch
-git push origin --delete branchName
+git push origin --delete <branch>
 
-# file changes against remote branch / between two branches
-git diff master branch filepath / git diff --name-only master branch
-
+# file changes against remote branch
+git diff <branch1> <branch2> filepath
 # show particular changed word / staged changes
 git diff --word-diff / --cached
-
 # no plus minus signs
 git diff --color <sha1> <sha1> | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r
+# number of lines changed between two commits
+git diff --stat <commit-ish> <commit-ish>
 
-# show files changed in last commit
-git show --name-only
+# files changed ...
+git diff --name-only HEAD~1              # ... in last commit
+git diff --name-only <branch1> <branch2> # ... between two branches
+git diff --name-only <branch>            # ... between <branch> and the HEAD
+git diff --name-only 5890e37..ebbf4c0    # ... between 2 commits
 
-# count of files changed since ...
-git whatchanged -1 --format=oneline -p 25.0.90.2.. | wc -l
+# count of files changed in the since the <tag>
+git log --format=oneline --patch <tag>..HEAD | wc -l
 
 # search through the gitlog
 git show :/query
@@ -70,17 +61,20 @@ git show :/query
 # show content of file.txt in commit ff0011
 git show ff0011:file.txt
 
-# show content of file in stage area (index) / common ancestor / target on the current branch where I am / the one I am bringing in
-git show :0:file / :1:file / :2:file / :3:file
+# show content of file in the ...
+git show :0:file    # ... stage area (i.e. index)
+git show :1:file    # ... common ancestor
+git show :2:file    # ... target on the current branch where I am
+git show :3:file    # ... the one I am bringing in
 
 # show older version of a file
 git show REVISION:path/to/file
 
-# copy file from a BRANCH to /path/file.txt
-git checkout BRANCH -- /path/file.txt
+# copy file from a BRANCH to /path/to/file
+git checkout BRANCH -- /path/to/file
 
-# revert
-git checkout path/to/file
+# revert uncommited changes in <path/to/file>
+git checkout <path/to/file>
 
 # show current branch and changes made since last commit
 git status --show --branch
@@ -99,27 +93,27 @@ git reflog
 # add all *.txt files under given path; must not be a bare repo
 git ls-files [path] | grep \'\.txt$\' | xargs git add
 
-# create bare (empty) repo in the gitDir
-git init gitDir
+# create bare (empty) repo in the...
+git init <dir>
+git init       # ...current dir
 
-# recursivelly add all *.txt files from src/ to a repo located in gitDir
-git --git-dir=gitDir add "src/**/*.txt"
+# recursivelly add all *.txt files from src/ to a repo located in <dir>
+git --git-dir=<dir> add "src/**/*.txt"
 
 # commit to a repo located in gitDir under given Name
-git --git-dir=gitDir commit --author="Name <noreply@example.com>" -m "commitMsg"
+git --git-dir=<dir> commit --author="Name <noreply@example.com>" -m "commitMsg"
 
-# clone a repo from gitDir / origRepo to an (empty) bareRepoDir
-git clone --bare origRepo bareRepoDir
+# clone a repo from <origRepo> to an (empty) <bareRepoDir>
+git clone --bare <origRepo> <bareRepoDir>
 
 # shallow clone with a history truncated to the specified number of commits
-git clone --depth=1 -b <branch> origRepo newRepoName
+git clone --depth=1 -b <branch> <origRepo> <newRepoName>
 
 # workLocation must not be a bare (empty) repo
-git add --work-tree=workLocation --git-dir=repoLocation
+git add --work-tree=workLocation --git-dir=<dir>
 
 # list contibutors / committers
 git shortlog --summary --numbered
-git shortlog -s -n
 git shortlog -sn
 
 # show settings
