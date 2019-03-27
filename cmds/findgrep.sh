@@ -98,3 +98,6 @@ find /directory -newermt $(date +%Y-%m-%d -d '1 day ago') -type f -print
 
 # substitute / replace all occurences of ... with ...
 find ./ -type f -name "*.fish" -print0 | xargs -0 sed --in-place "s/apt-get/apt/g"
+
+# skip `Permission denied` errors
+find ./ -name file.ext 2>&1 | grep -v "Permission denied"
