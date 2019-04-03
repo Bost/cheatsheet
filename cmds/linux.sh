@@ -651,27 +651,21 @@ svn propdel --revprop -r0 svn:rdump-lock <url>
 
 # copy files from src to dst - typical example; add -n is for --dry-run
 rsync -avz src/ dst
-
 # copy only certain types of files using include option
 rsync -zarv --include="*/" --include="*.sh" --exclude="*" "$src" "$dst"
-
 # cvs: copy files from src to dst excluding everything in CVS directories
 # (showing progress)
 rsync --dry-run --progress          --archive --verbose --exclude='CVS' src/ dst
 rsync --dry-run --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
-
 # cvs: copy files from src to dst excluding everything in CVS directories
 rsync --dry-run          --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst
 rsync --dry-run --delete --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst  | grep deleting
-
 # cvs: copy files from src to dst excluding everything in CVS directories (showing progress)
 rsync --dry-run --progress          --archive --verbose --exclude='CVS' src/ dst
 rsync --dry-run --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
-
 # exclude hidden files and directories
 rsync --dry-run          --archive --verbose --exclude=".*" --exclude=".*/" src/ dst
 rsync --dry-run --delete --archive --verbose --exclude=".*" --exclude=".*/" src/ dst | grep deleting
-
 # mv: move content of a directory within another directory with the same folders
 rsync --dry-run          --archive --remove-source-files backup/ backupArchives
 rsync --dry-run --delete --archive --remove-source-files backup/ backupArchives | grep deleting
@@ -1351,8 +1345,7 @@ apm install --packages-file ~/dev/dotfiles/.atom/package.list
 # update all packages
 apm update
 # restore / synchronise settings
-rsync -zarv --include="*/" --include="*.cson" \
-      --exclude="*" ~/.atom/* ~/dev/dotfiles/.atom
+rsync -zarv --include="*/" --include="*.cson" --exclude="*" ~/.atom/* ~/dev/dotfiles/.atom
 
 # rsync: options short / long versions
 -z, --compress
