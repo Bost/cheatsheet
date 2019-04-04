@@ -1269,17 +1269,21 @@ sudo apt update; and sudo apt install nodejs
 # update yarn
 curl -o- -L https://yarnpkg.com/install.sh | bash
 
-# nodejs: install electron package
-npm install --global --unsafe-perm=true electron
-npm search electron\*
+# npm
+yarn add                  # add package to use in your current package
+yarn global add <package>
+yarn init                 # initialize development of a package
+yarn install              # install all dependecies defined in package.json
+yarn publish              # publish package to a package manager
+yarn remove               # remove unused package from your current package
 
-# nodejs: command line CLI update npm
-node
-
-# nodejs: install update npm
-npm install --global <npm-package>
+# nodejs - alias to the node command
+npm install --global <package>
 npm outdated
 npm update --global
+# install the electron package
+npm install --global --unsafe-perm=true electron
+npm search electron\*
 
 # nodejs: npm:
 npm install --verbose <package> / npm install -dd <package>
