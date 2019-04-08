@@ -641,3 +641,6 @@ M-x whitespace-toggle-options
 ;; truncate / fold long lines (wrapping long lines creates new lines)
 M-x toggle-truncate-lines
 
+;; movement
+C-M-a / M-x beginning-of-defun
+C-M-e / M-x end-of-defun
