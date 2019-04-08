@@ -1305,14 +1305,51 @@ sudo ufw delete <rule-nr>
 sudo ufw allow <port>
 sudo ufw allow <port>/tcp
 
-# net: rdp: remote desktop
-# -p -  ask for password
+# net: rdp: remote desktop; `-p` ask for password, `-f` full screen
 rdesktop -u <login> -p - <computer>:3389
-# -f  full screen, -p -  ask for password
 rdesktop -f -u <login> -p - <computer>:3389
-
 # net: rdp: remote desktop
 sudo /etc/init.d/xrdp restart
+
+# desktop sharing
+# Remote Desktop Client: remmina
+sudo apt install remmina
+# VNC Server in Xubuntu https://link.medium.com/mIfJg0hpIV
+sudo apt install vino
+# Display all the preferences
+gsettings list-recursively org.gnome.Vino
+# [x] Allow other users to view your desktop
+#     NOTE: This setting was removed
+gsettings set org.gnome.Vino enabled true
+# [x] Allow other users to control your desktop
+#     NOTE: Reverse Boolean
+gsettings set org.gnome.Vino view-only false
+# [ ] You must confirm each access to this machine
+gsettings set org.gnome.Vino prompt-enabled false
+# [ ] Require the user to enter this password
+gsettings set org.gnome.Vino authentication-methods "['none']"
+gsettings set org.gnome.Vino vnc-password keyring
+# [x] Require the user to enter this password
+# Step 1. Ask for password (NOTE: Only tested with `bash` and `zsh`)
+bash
+echo -n "VNC Password: " && read -s password < /dev/tty && echo ""
+# Step 2. Set the preferences
+gsettings set org.gnome.Vino authentication-methods "['vnc']"
+gsettings set org.gnome.Vino vnc-password "$(echo $password | base64)"
+# Step 3. Clear the `$password` variable
+unset password
+# [ ] Automatically configure UPnP router to open and forward ports
+gsettings set org.gnome.Vino use-upnp false
+# Show Notification Area Icon
+# ( ) always  // Always
+# (o) client  // Only when someone is connected
+# ( ) never   // Never
+gsettings set org.gnome.Vino icon-visibility client
+# Disable encryption (optional)
+# gsettings set org.gnome.Vino require-encryption false
+# open firewall port 5900
+# RUN!!!
+/usr/lib/vino/vino-server --sm-disable
 
 # shred: permanet delete: shred doesn't work on dirs
 shred --verbose --remove <path/to/file>
