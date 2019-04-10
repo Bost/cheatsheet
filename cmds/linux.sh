@@ -999,11 +999,10 @@ sudo rm -rf /var/lib/apt/lists
 sudo mkdir -p /var/lib/apt/lists/partial
 sudo apt clean
 
-# ubuntu: apt: dpkg: mirror: distro: source: Software Sources List editors
+# ubuntu: apt: dpkg: mirror: distro: Software Sources List
 # see y-ppa-manager, http://repogen.simplylinux.ch/
-software-properties-gtk - see /etc/apt/sources.list
-
-# list of sources
+software-properties-gtk
+# ... or edit the list of sources
 /etc/apt/sources.list.d
 
 # list installed packages; no sudo needed
