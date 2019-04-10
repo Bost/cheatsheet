@@ -46,11 +46,13 @@ git diff --color <sha1> <sha1> | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r
 # number of lines changed between two commits
 git diff --stat <commit-ish> <commit-ish>
 
-# files changed ...
-git diff --name-only HEAD~1              # ... in last commit
-git diff --name-only <branch1> <branch2> # ... between two branches
-git diff --name-only <branch>            # ... between <branch> and the HEAD
-git diff --name-only 5890e37..ebbf4c0    # ... between 2 commits
+# files changed
+git diff --name-only HEAD~1                # in last commit
+git diff --name-only <branch1> <branch2>   # between two branches
+git diff --name-only <branch1>..<branch2>  # between two branches
+git diff --name-only <branch>              # between <branch> and the HEAD
+git diff --name-only 5890e37..ebbf4c0      # between 2 commits
+git diff --name-status <branch1> <branch2> # show status D - deleted, M-modified etc
 
 # count of files changed in the since the <tag>
 git log --format=oneline --patch <tag>..HEAD | wc -l
