@@ -116,3 +116,7 @@ psrinfo
 
 # solaris: net: ipconfig
 /usr/sbin/ifconfig -a
+
+# postgres connect
+psql DBNAME USERNAME
+SELECT * FROM pg_catalog.pg_tables;
