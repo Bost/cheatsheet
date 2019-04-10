@@ -177,12 +177,12 @@ C-x r RET
 ;; files: find file / find alternate file (reload / refresh file)
 C-x C-f / C-x C-v
 
-;; remote file editing:
-;; Transparent Remote (file) Access, Multiple Protocol (TRAMP)
+;; Transparent Remote (file) Access / Editing, Multiple Protocol (TRAMP)
 ;; method can be: ssh if anything doesn't work:
 ;; 1. delete ~/.bashrc
 ;; 2. emacs -q --eval "(setq tramp-verbose 10)" &
-C-x C-f /method:user@remotehost:filename
+C-x C-f /method:user@remotehost#port:filename
+C-x C-f /ssh:test@host#2222:/tmp
 
 ;; files: find-file-other window / switch-to-buffer-other-window
 C-x 4 f / C-x 4 b
