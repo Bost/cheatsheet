@@ -101,3 +101,6 @@ find ./ -type f -name "*.fish" -print0 | xargs -0 sed --in-place "s/apt-get/apt/
 
 # skip `Permission denied` errors
 find ./ -name file.ext 2>&1 | grep -v "Permission denied"
+
+#  recursively count LOC (lines of code) in all source files (python & sql)
+find ./ -name "*.py" -or -name "*.sql" | xargs wc -l
