@@ -650,25 +650,27 @@ svn info <repo-url/module>
 svn propdel --revprop -r0 svn:rdump-lock <url>
 
 # copy files from src to dst - typical example; add -n is for --dry-run
-rsync -avz src/ dst
+rsync -havz src/ dst
+rsync --human-readable --archive --verbose --compress src/ dst
 # copy only certain types of files using include option
-rsync -zarv --include="*/" --include="*.sh" --exclude="*" "$src" "$dst"
+rsync -havzr --include="*/" --include="*.sh" --exclude="*" "$src" "$dst"
+rsync --human-readable --archive --verbose --compress --recursive --include="*/" --include="*.sh" --exclude="*" "$src" "$dst"
 # cvs: copy files from src to dst excluding everything in CVS directories
 # (showing progress)
-rsync --dry-run --progress          --archive --verbose --exclude='CVS' src/ dst
-rsync --dry-run --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
+rsync --dry-run --human-readable --progress          --archive --verbose --exclude='CVS' src/ dst
+rsync --dry-run --human-readable --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
 # cvs: copy files from src to dst excluding everything in CVS directories
-rsync --dry-run          --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst
-rsync --dry-run --delete --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst  | grep deleting
+rsync --dry-run --human-readable          --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst
+rsync --dry-run --human-readable --delete --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst  | grep deleting
 # cvs: copy files from src to dst excluding everything in CVS directories (showing progress)
-rsync --dry-run --progress          --archive --verbose --exclude='CVS' src/ dst
-rsync --dry-run --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
+rsync --dry-run --human-readable --progress          --archive --verbose --exclude='CVS' src/ dst
+rsync --dry-run --human-readable --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
 # exclude hidden files and directories
-rsync --dry-run          --archive --verbose --exclude=".*" --exclude=".*/" src/ dst
-rsync --dry-run --delete --archive --verbose --exclude=".*" --exclude=".*/" src/ dst | grep deleting
+rsync --dry-run --human-readable          --archive --verbose --exclude=".*" --exclude=".*/" src/ dst
+rsync --dry-run --human-readable --delete --archive --verbose --exclude=".*" --exclude=".*/" src/ dst | grep deleting
 # mv: move content of a directory within another directory with the same folders
-rsync --dry-run          --archive --remove-source-files backup/ backupArchives
-rsync --dry-run --delete --archive --remove-source-files backup/ backupArchives | grep deleting
+rsync --dry-run --human-readable          --archive --remove-source-files backup/ backupArchives
+rsync --dry-run --human-readable --delete --archive --remove-source-files backup/ backupArchives | grep deleting
 
 # restart cvs daemon
 sudo /etc/init.d/cvsd restart / start / stop / status
@@ -786,8 +788,12 @@ cpulimit --limit 5 <cmd>
 # nice: cpulimit: ps: show statistics for a process nr. 7695
 ps -o pid,user,command,nice -p 7695
 
-# ps: process tree / user's processes ; ps -aux / ps aux - are different
-ps f / ps fx / ps u
+# process tree
+ps f
+
+# user's processes ; ps -aux / ps aux - are different
+ps fx
+ps u
 
 # distro name and ver
 cat /etc/*-release
@@ -1388,10 +1394,11 @@ apm update
 rsync -zarv --include="*/" --include="*.cson" --exclude="*" ~/.atom/* ~/dev/dotfiles/.atom
 
 # rsync: options short / long versions
--z, --compress
+-h, --human-readable
 -a, --archive
--r, --recursive
 -v, --verbose
+-z, --compress
+-r, --recursive
 -n, --dry-run
 
 # bluetooth: bluez:
