@@ -424,6 +424,10 @@ C-u C-n
 ;; increase / decrease font size
 C-x C-+ / C-x C--
 
+;; problem: emacs does not uses fonts from /usr/share/fonts
+sudo apt install --yes libgtk2.0-dev
+./configure --with-x-toolkit=gtk
+
 ;; slime: reprint last command to the REPL
 M-p
 
