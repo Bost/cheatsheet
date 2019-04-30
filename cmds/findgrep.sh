@@ -47,11 +47,15 @@ find . -type f -name "*.xml" -or -name "*.txt"
 # find executable files
 find . -executable -type f
 
-# find: recursive search for "String" in ... (with '.' at the end)
-grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{el,clj,cljs,cljc} ./
+# grep from a string
+txt ="Some text where the search is done"                    # bash
+grep --only-matching -e "[-+]\?[0-9]*\.\?[0-9]\+" <<< ${cmd} # bash
 
-# find: grep-help: recursive search for "String" in ... (with '.' at the end)
-grep -nir "String" --exclude-dir={.git,CVS} --include=\*.{log,propeties,cfg,txt} ./
+# find: recursive search for "SearchPattern" in ... (with '.' at the end)
+grep -nir "SearchPattern" --exclude-dir={.git,CVS} --include=\*.{el,clj,cljs,cljc} ./
+
+# find: grep-help: recursive search for "SearchPattern" in ... (with '.' at the end)
+grep -nir "SearchPattern" --exclude-dir={.git,CVS} --include=\*.{log,propeties,cfg,txt} ./
 
 # build and execute command lines from standard input
 xargs
