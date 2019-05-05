@@ -112,6 +112,9 @@ chrome://net-internals/#hsts
 sudo nmap -sT -O localhost
 sudo nmap -sn <ip-range>
 
+# show open ports
+nmap www.google.com | grep -i open
+
 # net: ipv4: CIDR notation
 192.168.100.14/24 represents the IPv4 address 192.168.100.14 and its associated routing prefix 192.168.100.0
 
