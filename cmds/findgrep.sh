@@ -108,3 +108,6 @@ find ./ -name file.ext 2>&1 | grep -v "Permission denied"
 
 #  recursively count LOC (lines of code) in all source files (python & sql)
 find ./ -name "*.py" -or -name "*.sql" | xargs wc -l
+
+# search for ipv4 addresses
+grep -nir -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" --exclude-dir={.git} --include=\*.{el,clj,cljs,cljc,py,md} ./
