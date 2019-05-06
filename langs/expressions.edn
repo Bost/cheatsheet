@@ -213,5 +213,14 @@
   {:de ["Seine Haut zu Markte tragen"]
    :sk ["S kožou na trh chodiť" "Nosiť kožu na trh"]
    :fr ["Jouer sa peau" "Risquer sa peau"]}
+
+  {:fr ["Les discussions vont pouvoir reprendre"]
+   :sk ["Diskusie budú môct byť obnovené"] }
+
+  {:fr ["Même si elles n’ont jamais été totalement rompues"]
+   :sk ["Hoci aj keď nikdy neboli úplne prerušené"]}
+
+  {:fr ["Chacun ayant bien en tête que les mois à venir vont être denses"]
+   :sk ["Každý dobre pamätajúc na to že prichádzajúce mesiace budú nabité"]}
   }
 
