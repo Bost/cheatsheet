@@ -1450,6 +1450,9 @@ arecord / aplay
 # find 20 biggest files
 du -a ~ 2>/dev/null | sort -n -r | head -n 20
 
+# bash eval string
+eval "${cmd}"
+
 # ETL (Extract Transform Load)
 # https://tech.grammarly.com/blog/building-etl-pipelines-with-clojure
 # Stich ETL service https://www.stitchdata.com/
