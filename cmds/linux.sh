@@ -893,6 +893,26 @@ locate xfce4-keyboard-shortcuts.xml
 # xfce: gnome: logout
 gnome-session-quit / xfce4-session-logout
 
+# difference between nohup, disown and & https://unix.stackexchange.com/a/148698
+# - puts the job in the background, that is, makes it block on attempting to read
+# input, and makes the shell not wait for its completion.
+&
+# - removes the process from the shell's job control, but it still leaves
+# it connected to the terminal. One of the results is that the shell won't send it
+# a SIGHUP. Obviously, it can only be applied to background jobs, because you
+# cannot enter it when a foreground job is running.
+disown
+# - disconnects the process from the terminal, redirects its output to nohup.out
+# and shields it from SIGHUP. One of the effects (the naming one) is that the
+# process won't receive any sent SIGHUP. It is completely independent from job
+# control and could in principle be used also for foreground jobs (although
+# that's not very useful).
+nohup
+
+# doesn't create nohup.out
+nohup command >/dev/null 2>&1
+nohup command >/dev/null 2>&1 & disown
+
 # virtualbox: restart clipboard
 killall VBoxClient; and VBoxClient --clipboard & disown
 
