@@ -120,9 +120,7 @@ nmap www.google.com | grep -i open
 
 # connecting to mysql a.k.a. login
 mysql --host=localhost --user=<name> --password=<password> <dbname>
-
-# connecting to mysql a.k.a. login
-mysql --host=localhost --user=root --password=root employees
+mysql --host=localhost --user=root   --password=root employees
 
 # unblock mysql
 mysqladmin -u [username] -p flush-hosts
@@ -662,18 +660,15 @@ rsync --human-readable --archive --verbose --compress --recursive --include="*/"
 # (showing progress)
 rsync --dry-run --human-readable --progress          --archive --verbose --exclude='CVS' src/ dst
 rsync --dry-run --human-readable --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
-# cvs: copy files from src to dst excluding everything in CVS directories
-rsync --dry-run --human-readable          --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst
-rsync --dry-run --human-readable --delete --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst  | grep deleting
+rsync --dry-run --human-readable                     --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst
+rsync --dry-run --human-readable            --delete --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst | grep deleting
 # cvs: copy files from src to dst excluding everything in CVS directories (showing progress)
-rsync --dry-run --human-readable --progress          --archive --verbose --exclude='CVS' src/ dst
-rsync --dry-run --human-readable --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
 # exclude hidden files and directories
-rsync --dry-run --human-readable          --archive --verbose --exclude=".*" --exclude=".*/" src/ dst
-rsync --dry-run --human-readable --delete --archive --verbose --exclude=".*" --exclude=".*/" src/ dst | grep deleting
+rsync --dry-run --human-readable                     --archive --verbose --exclude=".*" --exclude=".*/" src/ dst
+rsync --dry-run --human-readable            --delete --archive --verbose --exclude=".*" --exclude=".*/" src/ dst | grep deleting
 # mv: move content of a directory within another directory with the same folders
-rsync --dry-run --human-readable          --archive --remove-source-files backup/ backupArchives
-rsync --dry-run --human-readable --delete --archive --remove-source-files backup/ backupArchives | grep deleting
+rsync --dry-run --human-readable                     --archive --remove-source-files backup/ backupArchives
+rsync --dry-run --human-readable            --delete --archive --remove-source-files backup/ backupArchives | grep deleting
 
 # restart cvs daemon
 sudo /etc/init.d/cvsd restart / start / stop / status
@@ -716,8 +711,6 @@ cvs tag    -F -r 1.63 NormalTag ./path/to/file.ext
 
 # version and tags
 cvs log file.ext
-
-# version and tags
 cvs status -v file.ext
 
 # list files associated with a tag; (no blank between -r and TAGNAME)
@@ -736,8 +729,6 @@ uname -a
 # tail a (log)file over ssh
 # -t force pseudo-terminal allocation
 ssh -t user@hostname "tail -f /path/to/file"
-
-# tail a (log)file over ssh
 # -n redirects stdin from /dev/null
 ssh -n user@hostname "tail -f /path/to/file" &
 
@@ -800,8 +791,6 @@ ps u
 
 # distro name and ver
 cat /etc/*-release
-
-# distro name and ver
 cat /proc/version
 
 # show (ubuntu) version
@@ -814,9 +803,6 @@ sudo update-grub
 apt source <package>
 
 # Advanced Package Tool; apt is a replacement for apt-get
-apt
-
-#
 sudo apt install --reinstall <package>
 
 # ubuntu: command line upgrade part 1. (CLI alternative to update-manager)
@@ -891,10 +877,8 @@ cat /proc/<pid>/cwd
 notify-send "Hello World"
 
 # xfce: keyboard; shortcuts
-https://forum.manjaro.org/t/cant-switch-windows-with-super-tab/2406/4
-
-# xfce: keyboard; shortcuts
 xfce4-keyboard-settings
+https://forum.manjaro.org/t/cant-switch-windows-with-super-tab/2406/4
 
 # xfce: keyboard; shortcuts; http://docs.xfce.org/xfce/xfconf/xfconf-query
 xfconf-query --channel xfce4-keyboard-shortcuts -lv
@@ -916,10 +900,7 @@ killall VBoxClient; and VBoxClient --clipboard & disown
 # ~/.cache/sessions
 pkill -KILL -u yourusername
 
-# virtualbox: restart clipboard
-killall VBoxClient; and VBoxClient --clipboard & disown
-
-# when emacs freezes or hangs
+# anti-freeze / WD40
 killall -SIGUSR2 emacs
 
 # xfce: launcher: emacs uses bash variables; -i interactive shell, -c read
@@ -959,10 +940,6 @@ sudo mount -o remount,rw /partition/identifier /mount/point
 
 # mounted filesystems - table layout
 mount | column -t
-
-# virtualbox: restart clipboard
-killall VBoxClient; and VBoxClient --clipboard & disown
-
 # Requested formats are incompatible for merge and will be merged into mkv.
 youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] URL
 
@@ -1090,19 +1067,14 @@ sudo powertop
 gpsbabel -i kml -f in.kml -o gpx -F out.gpx
 
 # IBM USS OS/390: ebcdic / ascii conversion
-iconv -f IBM-1047 -t ISO8859-1 ebcdic.file > ascii.file
-
-# IBM USS OS/390: ebcdic / ascii conversion
-iconv -f ISO8859-1 -t IBM-1047 ascii.file > ebcdic.file
+iconv -f IBM-1047  -t ISO8859-1 ebcdic.file > ascii.file
+iconv -f ISO8859-1 -t IBM-1047  ascii.file  > ebcdic.file
 
 # IBM USS OS/390: ebcdic / ascii conversion: list all code pages
 iconv -l
 
 # number of processors
 cat /proc/cpuinfo | grep processor | wc -l
-
-# display information on CPU architecture
-lscpu
 
 # show first/last 100 bytes
 tail -c 100 fileName
@@ -1420,12 +1392,8 @@ bluetooth-sendto --device=XX:XX:XX:XX:XX:XX local-fname
 sdptool search FTP
 obexfs -bXX:XX:XX:XX:XX:XX -B<channel> ~
 sdptool browse XX:XX:XX:XX:XX:XX
-
-# bluetooth: bluez:
 # Browse your cellular's files. List the tree of directories.
 obexftp -b XX:XX:XX:XX:XX:XX -l /
-
-# bluetooth: bluez:
 # use the '@'
 ussp-push XX:XX:XX:XX:XX:XX@ local-fname remote-fname
 
