@@ -1448,6 +1448,9 @@ grep --color -H 'PATH=' ~/.bashrc ~/.profile ~/.bash_profile ~/bash.login \
      ~/.bash_aliases /etc/bash.bashrc /etc/profile \
      /etc/profile.d/* /etc/environment 2> /dev/null
 
+# -h, --no-dereference   affect symbolic links instead of any referenced file
+chown -h myuser:mygroup mysymbolic
+
 # ETL (Extract Transform Load)
 # https://tech.grammarly.com/blog/building-etl-pipelines-with-clojure
 # Stich ETL service https://www.stitchdata.com/
