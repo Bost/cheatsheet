@@ -228,8 +228,8 @@ ls --format=single-column
 # list only directories, 1 entry per line
 ls -d1 */
 
-# count of files in ./path/to/dir
-ls -1 ./path/to/dir | wc -l
+# count of files in ./pth/to/dir
+ls -1 ./pth/to/dir | wc -l
 
 # show full paths (alias lff)
 ls -lrt -d -1 $PWD/{*,.*}
@@ -475,10 +475,10 @@ bash -x script
 mknod
 
 # bash: create directory tree with multiple subdirs
-mkdir -p ./path/{sub1,sub2}/{1..100}/{src,bin,bak}
+mkdir -p ./pth/{sub1,sub2}/{1..100}/{src,bin,bak}
 
-# bash: auto-create "./path" and do --preserve=mode,ownership,timestamps
-cp --parents -p ./path/src.ext ./path/dst.ext
+# bash: auto-create "./pth" and do --preserve=mode,ownership,timestamps
+cp --parents -p ./pth/src.ext ./pth/dst.ext
 
 # bash: mv README.text README.txt ; cp file file.bak
 mv README.{text,txt} ; cp file{,.bak}
@@ -522,13 +522,13 @@ join
 du -s dir
 du -sh dir
 du -sh --exclude={.git,.atom} dir
-# size of ./path/to/dir with subdirs, exclude files matching pattern
+# size of ./pth/to/dir with subdirs, exclude files matching pattern
 du -csh --exclude={.git,.atom} ./ | sort --human-numeric-sort
 du --total --separate-dirs --human-readable --exclude={.git,.atom} ./ \
     | sort --human-numeric-sort
 
-# jump to ./path/to/dir execute command and jump back
-(cd ./path/to/dir && ls)
+# jump to ./pth/to/dir execute command and jump back
+(cd ./pth/to/dir && ls)
 
 # stop-watch; ctrl-d to stop; measure execution time; or try to install
 # stopwatch
@@ -565,10 +565,10 @@ kill $(pidof processName)
 Ctrl-\] Enter quit Enter
 
 # download fileX.txt and save it under different location / name
-wget http://server/fileX.ext -O ./path/to/fileY.ext
+wget http://server/fileX.ext -O ./pth/to/fileY.ext
 
 # download fileX.txt and save it under different location / name
-curl -O http://server/fileX.txt > ./path/to/fileY.txt
+curl -O http://server/fileX.txt > ./pth/to/fileY.txt
 
 # net: ask http://ifconfig.me about myself (ua: User Agent)
 curl ifconfig.me/ip/host/ua/port/
@@ -603,7 +603,7 @@ ip neighbour
 curl ifconfig.me
 
 # exec disc usage command on a remote host and sort results
-ssh <HostAlias> du -h --max-depth=1 /path/to/dir | sort -h
+ssh <HostAlias> du -h --max-depth=1 /pth/to/dir | sort -h
 climate ssh-mount / ssh-unmount
 
 # recursively compare dirA with dirB; show only filenames: -q (quiet)
@@ -620,13 +620,13 @@ diff --unchanged-line-format="" --old-line-format="" \
      --new-line-format=":%dn: %L" fold fnew
 
 # new line separator for each grep result sh script
-grep "pattern" /path/to/file | awk '{print $0,"\n"}'
+grep "pattern" /pth/to/file | awk '{print $0,"\n"}'
 
 # find files and open them in gvim
 gvim $(find . -name "*fileToSearch*")
 
 # gzip: list compressed, uncompressed size, compression ratio etc.
-gzip -l ./path/to/file.gz
+gzip -l ./pth/to/file.gz
 
 # write output to stdout; zcat and gunzip -c are identical
 gunzip -c / zcat
@@ -639,8 +639,8 @@ svn log --revision \{2017-01-01\}:HEAD --no-auth-cache --non-interactive \
     --verbose --username '...' --password '...' \
     --search <str1> --search <str2> <repo-URL/module>
 
-# checkout; also for http://<ip:port>/path; https://<ip:port>/path
-svn co --username <svn-login> svn://<ip:port>/path
+# checkout; also for http://<ip:port>/pth; https://<ip:port>/pth
+svn co --username <svn-login> svn://<ip:port>/pth
 
 # error: E120106: ra_serf: The server sent a truncated HTTP response body.
 svn cleanup; and svn update
@@ -679,37 +679,37 @@ sudo /etc/init.d/cvsd restart / start / stop / status
 cvs diff -r tagX -r tagY
 
 # get clean copy
-cvs update -C ./path/to/file.ext
+cvs update -C ./pth/to/file.ext
 
 # cvs: get revision 1.11
-cvs update -P -C -r 1.11 ./path/to/file.ext
+cvs update -P -C -r 1.11 ./pth/to/file.ext
 
 # checkout module from branch or tag
 cvs checkout -r branchOrTag module
 
 # commit file with multi-line commit message
-cvs commit -m "fst-comment-line\nsnd-comment-line" path/to/file.ext
+cvs commit -m "fst-comment-line\nsnd-comment-line" pth/to/file.ext
 
 # update file
-cvs log    -P -d ./path/to/file.ext
+cvs log    -P -d ./pth/to/file.ext
 
 # reminder to leave in 15 minutes / at 13:55
 leave +15 / leave 1355
 
 # delete NormalTag from file.ext in version 1.17
-cvs tag    -d -r 1.17 NormalTag ./path/to/file.ext
+cvs tag    -d -r 1.17 NormalTag ./pth/to/file.ext
 
 # delete BranchTag from file.ext in version 1.17
-cvs tag -B -d -r 1.17 BranchTag ./path/to/file.ext
+cvs tag -B -d -r 1.17 BranchTag ./pth/to/file.ext
 
 # move   BranchTag to   file.ext in version 1.19
-cvs tag -B -F -r 1.19 BranchTag ./path/to/file.ext
+cvs tag -B -F -r 1.19 BranchTag ./pth/to/file.ext
 
 # create BranchTag on   file.ext in version 1.19
-cvs tag -b    -r 1.19 BranchTag ./path/to/file.ext
+cvs tag -b    -r 1.19 BranchTag ./pth/to/file.ext
 
 # move   NormalTag to   file.ext in version 1.63
-cvs tag    -F -r 1.63 NormalTag ./path/to/file.ext
+cvs tag    -F -r 1.63 NormalTag ./pth/to/file.ext
 
 # version and tags
 cvs log file.ext
@@ -730,9 +730,9 @@ uname -a
 
 # tail a (log)file over ssh
 # -t force pseudo-terminal allocation
-ssh -t user@hostname "tail -f /path/to/file"
+ssh -t user@hostname "tail -f /pth/to/file"
 # -n redirects stdin from /dev/null
-ssh -n user@hostname "tail -f /path/to/file" &
+ssh -n user@hostname "tail -f /pth/to/file" &
 
 # github: ssh:
 ssh-keygen
@@ -838,20 +838,20 @@ sudo apt remove --purge $(dpkg -l 'linux-image-*' | sed '/^ii/!d;/'"$(uname -r |
 awk
 
 # cut huge file: content between lines 10 and 20 / print 5th line
-sed -n "10,20p" /path/to/file / sed -n 5p /path/to/file
+sed -n "10,20p" /pth/to/file / sed -n 5p /pth/to/file
 
 # cut huge file: content between lines 10 and 20
 # see https://unix.stackexchange.com/a/47423
-awk 'NR >= 10 && NR <= 20' /path/to/file > /path/to/cut-file
+awk 'NR >= 10 && NR <= 20' /pth/to/file > /pth/to/cut-file
 
 # replace 1 occurence
-sed --in-place "s/foo/FOO/" /path/to/file
+sed --in-place "s/foo/FOO/" /pth/to/file
 
 # replace all occurences of "foo" (globally)
-sed --in-place "s/foo/FOO/g" /path/to/file
+sed --in-place "s/foo/FOO/g" /pth/to/file
 
 # remove empty lines (globally)
-sed --in-place '/^\s*$/d' /path/to/file
+sed --in-place '/^\s*$/d' /pth/to/file
 
 # replace newlines with space
 sed ':a;N;$!ba;s/\n/ /g'
@@ -927,7 +927,7 @@ killall -SIGUSR2 emacs
 
 # xfce: launcher: emacs uses bash variables; -i interactive shell, -c read
 # following command
-bash -i -c ./path/to/emacs
+bash -i -c ./pth/to/emacs
 
 # search man pages for "topic"
 man -k topic / apropos -r topic
@@ -941,17 +941,17 @@ ssh -6 <ipv6-address>
 ping6 -I wlan0 -c 4 <ipv6-address> # responds with 'ping: unknown iface wlan0'
 
 # compare a remote file with a local file
-ssh user@host cat ./path/to/remotefile | diff ./path/to/localfile -
+ssh user@host cat ./pth/to/remotefile | diff ./pth/to/localfile -
 
 # ssh: copy ssh keys to user@host to enable password-less ssh logins
 ssh-copy-id user@host
 
 # ssh: mount folder/filesystem through SSH. Install SSHFS from
 # http://fuse.sourceforge.net/sshfs.html. Mount a folder securely over a network
-sshfs name@server:/path/to/folder ./path/to/mount/point
+sshfs name@server:/pth/to/folder ./pth/to/mount/point
 
 # mound windows shares under linux
-sudo mount.cifs //<windows-machine>/path/to/dir path/to/dir \
+sudo mount.cifs //<windows-machine>/pth/to/dir pth/to/dir \
      -o user=<windows-username>
 
 # virtualbox: mount shared folder
@@ -1034,21 +1034,21 @@ apt-cyg --mirror \
 # cygwin: bash: print unix form of filename
 cygpath -u filename
 
-# zip: zip content of ./path/to/dir to ./path/to/file.zip; --recurse-paths is -r
-zip --recurse-paths --encrypt ./path/to/file.zip ./path/to/dir
+# zip: zip content of ./pth/to/dir to ./pth/to/file.zip; --recurse-paths is -r
+zip --recurse-paths --encrypt ./pth/to/file.zip ./pth/to/dir
 
 # zip: unzip:
-unzip ./path/to/file.zip -d ./path/to/extract-dir
+unzip ./pth/to/file.zip -d ./pth/to/extract-dir
 
 # unzip: untar: in one step / command
 tar -zxvf file.tar.gz
 
 # tar / untar
-tar czf ./path/to/tarfile.gz file0 file1
-tar xzf ./path/to/tarfile.gz
+tar czf ./pth/to/tarfile.gz file0 file1
+tar xzf ./pth/to/tarfile.gz
 
 # Remove all files previously extracted from a tar(.gz) file
-tar -tf ./path/to/file.tar.gz | xargs rm -r
+tar -tf ./pth/to/file.tar.gz | xargs rm -r
 
 # bash: report or omit repeated lines
 uniq
@@ -1354,13 +1354,13 @@ gsettings set org.gnome.Vino icon-visibility client
 /usr/lib/vino/vino-server --sm-disable
 
 # shred: permanet delete: shred doesn't work on dirs
-shred --verbose --remove <path/to/file>
+shred --verbose --remove <pth/to/file>
 
 # shred: permanet delete: shred doesn't work on dirs
 find . -type f -print0 | xargs -0 shred --remove
 
 # shred: permanet delete: srm doesn't delete hardlinked files
-srm -r <path>
+srm -r <pth>
 
 # bash: synchronize sytem date behind proxy
 curDate="$(wget -S "http://www.google.com/" 2>&1 \
