@@ -248,6 +248,8 @@ head -n 5 file / tail -n 5 file
 
 # fish: reload config
 source ~/.config/fish/config.fish
+# webconfig.py
+fish_config
 # fish: reload function
 type myfunc
 
