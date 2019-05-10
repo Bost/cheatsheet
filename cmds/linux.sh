@@ -146,9 +146,6 @@ mount | grep gvfs; cd ...
 # pdf: view file.pdf
 evince file.pdf
 
-# net: ubuntu: (edit) and re-read proxy definition
-source /etc/environment
-
 # centos update
 su -c 'yum update'
 
@@ -246,12 +243,19 @@ trap "rm -f /tmp/xyz$$; exit" ERR EXIT
 # fist / last 5 lines from file
 head -n 5 file / tail -n 5 file
 
-# fish: reload config
+# reload config
 source ~/.config/fish/config.fish
+source ~/.bashrc
+# net: ubuntu: (edit) and re-read proxy definition
+source /etc/environment
 # webconfig.py
 fish_config
 # fish: reload function
 type myfunc
+# Where is PATH variable set? https://askubuntu.com/a/706069/401596
+grep --color -H 'PATH=' ~/.bashrc ~/.profile ~/.bash_profile ~/bash.login \
+     ~/.bash_aliases /etc/bash.bashrc /etc/profile \
+     /etc/profile.d/* /etc/environment 2> /dev/null
 
 # available shells; current shell; change shell
 cat /etc/shells; echo $SHELL; chsh -s /usr/local/bin/fish
@@ -1442,11 +1446,6 @@ du -a ~ 2>/dev/null | sort -n -r | head -n 20
 
 # bash eval string
 eval "${cmd}"
-
-# Where is PATH variable set? https://askubuntu.com/a/706069/401596
-grep --color -H 'PATH=' ~/.bashrc ~/.profile ~/.bash_profile ~/bash.login \
-     ~/.bash_aliases /etc/bash.bashrc /etc/profile \
-     /etc/profile.d/* /etc/environment 2> /dev/null
 
 # -h, --no-dereference   affect symbolic links instead of any referenced file
 chown -h myuser:mygroup mysymbolic
