@@ -1443,6 +1443,11 @@ du -a ~ 2>/dev/null | sort -n -r | head -n 20
 # bash eval string
 eval "${cmd}"
 
+# Where is PATH variable set? https://askubuntu.com/a/706069/401596
+grep --color -H 'PATH=' ~/.bashrc ~/.profile ~/.bash_profile ~/bash.login \
+     ~/.bash_aliases /etc/bash.bashrc /etc/profile \
+     /etc/profile.d/* /etc/environment 2> /dev/null
+
 # ETL (Extract Transform Load)
 # https://tech.grammarly.com/blog/building-etl-pipelines-with-clojure
 # Stich ETL service https://www.stitchdata.com/
