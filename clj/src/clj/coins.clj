@@ -5,8 +5,10 @@
 ;; blockchains and tools that anyone can use to create their own distributed
 ;; ledgers.
 
-Ripple: real-time gross settlement system (RTGS)
-remittance - transaction of money by foreigners; see SWIFT
+https://developers.ripple.com/xrp-ledger-overview.html
+Ripple XRP: real-time gross settlement system (RTGS)
+remittance
+- transaction of money by foreigners; see SWIFT
 xrp
 SWIFT - cross border payments
 cryptopia
