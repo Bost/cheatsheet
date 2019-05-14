@@ -282,7 +282,7 @@ clojure.core.async/>! [port val]
 ;; Peter Norvig: "Design patterns are bug reports against your prog language"
 ;; http://norvig.com/design-patterns/design-patterns.pdf
 
-;; install
+;; start REPL:
 set clj_home $dec/clojure.org/clojure
 cd $clj_home; and ./antsetup.sh; and ant local
 set repl "{:port 5555 :accept clojure.core.server/repl}"
