@@ -74,8 +74,10 @@ CLOS
 ;; print stack trace: (/ 1 0) (pst)
 (pst)
 
-;; show leiningen dependency tree / classpath
-;; lein deps :tree / lein classpath
+;; leiningen dependency tree
+lein deps :tree
+;; classpath
+lein classpath | sed 's/:/\n/g'
 
 ;; leiningen : Run a task offline
 lein -o
