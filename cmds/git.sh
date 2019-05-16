@@ -225,3 +225,4 @@ git tag --points-at HEAD
 
 # workaround for 'ssh error: port 22: no route to host'
 git remote set-url origin https://github.com/<user_name>/<repo_name>.git
+git remote add origin ssh://user@host:1234/srv/git/example
