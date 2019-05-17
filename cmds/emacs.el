@@ -64,14 +64,20 @@ M-x ucs-insert RET 2211
 ;; hide: show: folding: enable folding, fold / unfold
 M-x hs-minor-mode, C-c @ C-c
 
-;; hide: show: folding: folds
-za(A) / zc(C) / zm / zo(O) / zC zO zA / zR
+;; hide: show: folding:
+z o ;; evil open fold
+z z ;; evil close fold
+z a ;; evil toggle fold
+z r ;; evil open (all) folds
+z m ;; evil close (all) folds
+
+z t ;; evil-scroll-line-to-top
+z b ;; evil-scroll-line-to-bottom
+
+z RET ;; evil keyboard macro ???
 
 ;; evil: move view 5 chars to the right
 5z<Right>
-
-;; evil-scroll-line-to-top
-z<Ret> / zt
 
 ;; files: file format
 C-x RET f
