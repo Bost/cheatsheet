@@ -7,7 +7,12 @@
   {:fr [""]
    :en [""]}
 
+  {:fr ["Je ne peux juste pas me souvenir"]
+   :en ["I just can't remember"]
+   :sk ["Len si neviem spomenúť"]}
+
   {:fr ["L'arrêté de péril"]
+   :desc ["Lorsque la solidité d'un immeuble est compromise et de nature à mettre en danger les locataires, le maire prend un arrêté de péril"]
    :en [""]
    :de [""]
    :sk [""]}
