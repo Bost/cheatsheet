@@ -29,10 +29,6 @@ sudo dmidecode
 sudo lshw
 cpu-x
 
-# cpu: mem: hdd: hardware: system information for console & IRC
-# -Fz filter out privacy sensitive info
-inxi -Fxz
-
 # net: troubleshooting and security testing
 sudo tcpdump
 
@@ -767,11 +763,16 @@ loginctl
 # last logged-in users
 last
 
-# info about CPU architecture
+# processsor: cpu: architecture: core: cores: 32 (i686) /64 (x86_64) bit
 lscpu
-
-# CPU architecture 32/64 bit
 getconf LONG_BIT
+# number of processors / available processing units
+cat /proc/cpuinfo | grep processor | wc -l
+nproc
+# cpu: mem: hdd: hardware: system information for console & IRC
+# -Fz filter out privacy sensitive info
+inxi -Fxz
+inxi --full --extra 1 --filter
 
 # nice: cpulimit: find and delete *.jar and *.class when idling
 ionice -c3 find . -name "*.jar" -or -name "*.class" -delete
@@ -1099,9 +1100,6 @@ iconv -f ISO8859-1 -t IBM-1047  ascii.file  > ebcdic.file
 # IBM USS OS/390: ebcdic / ascii conversion: list all code pages
 iconv -l
 
-# number of processors
-cat /proc/cpuinfo | grep processor | wc -l
-
 # show first/last 100 bytes
 tail -c 100 fileName
 head -c 100 fileName
@@ -1117,9 +1115,6 @@ lsof
 
 # list open files whose inet address matches ADDR; -t: terse output
 lsof -i:[ADDR] -t
-
-# processsor: cpu: core: cores: print the number of processing units available
-nproc
 
 # check file types and compare values
 test
