@@ -215,8 +215,8 @@ git bisect unfixed <some-old-sha1>
 # checkout as; older revision of a file under a new name
 git show HEAD^:main.cpp > old_main.cpp
 
-# prepare release
-git archive
+# prepare release; create an archive of files from a named tree
+git archive --format zip --output "output.zip" master
 
 # generate build number: nearest tag + nr of commits on top + sha1
 git describe master
