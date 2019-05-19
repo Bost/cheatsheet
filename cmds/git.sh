@@ -5,7 +5,10 @@ exit 1 # avoid execution
 git hash-object path/to/file.ext
 
 # reset current branch to particular state
-git reset --hard <tag/branch/commit id (sha1)>
+# <startpoint> is (probably) <tag/branch/commit id (sha1)>
+git reset --hard <startpoint>
+# reset <branch> to <startpoint>, even if <branchname> exists already
+git branch --force <branch> <startpoint>
 
 # in case of: Your branch is behind 'origin/master' by .. commits, and can be fast-forwarded.
 git pull --rebase origin master
