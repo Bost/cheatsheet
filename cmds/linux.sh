@@ -56,7 +56,7 @@ DHCP
 
 # :net :Address-Resolution-Protocol
 # MAC address of a network neighbour for a given IPv4 Address
-# :net display / modify the IP-to-Physical address translation tables for ARP.
+# :net display / modify the IP-to-Physical address translation tables for ARP
 arp -a
 
 # :net - send ARP REQUEST to a neighbour host
@@ -71,20 +71,16 @@ arpwatch
 # :net - Network exploration tool and security / port scanner
 nmap
 
-# TCP proxies; shell-script based HTTP clients / servers; network daemon testing; a SOCKS or HTTP ProxyCommand for ssh
+# TCP proxies; shell-script based HTTP clients / servers;
+# network daemon testing; a SOCKS or HTTP ProxyCommand for ssh
 netcat
 
 # :net :arp - Network security auditing tool
 hunt
 
-# query an LDAP server from the command line with ldap-utils - ldapsearch ldapadd ldapmodify
+# query an LDAP server from the command line with ldap-utils
+# ldapsearch ldapadd ldapmodify
 ldap-utils
-
-# :bash :fish - bugs in shell scripts
-http://www.shellcheck.net/
-
-# :bash :fish - help text that matches each argument
-http://explainshell.com/
 
 # concatenate and print files in reverse (reversed lines)
 tac file.txt > reversed.txt
@@ -115,7 +111,8 @@ sudo nmap -sn <ip-range>
 nmap www.google.com | grep -i open
 
 # :net :ipv4 - CIDR notation
-192.168.100.14/24 represents the IPv4 address 192.168.100.14 and its associated routing prefix 192.168.100.0
+# 192.168.100.14/24 represents the IPv4 address 192.168.100.14 and its
+# associated routing prefix 192.168.100.0
 
 # connecting to mysql a.k.a. login
 mysql --host=localhost --user=<name> --password=<password> <dbname>
@@ -242,32 +239,8 @@ trap "rm -f /tmp/xyz$$; exit" ERR EXIT
 # fist / last 5 lines from file
 head -n 5 file / tail -n 5 file
 
-# include other script; also in bash
-source /pth/to/script
-
-# reload config
-source ~/.config/fish/config.fish
-source ~/.bashrc
-
 # :net :ubuntu - (edit) and re-read proxy definition
 source /etc/environment
-
-# webconfig.py
-fish_config
-
-# :fish - reload function / alias
-type myfunc
-
-# Where is PATH variable set? https://askubuntu.com/a/706069/401596
-grep --color -H 'PATH=' ~/.bashrc ~/.profile ~/.bash_profile ~/bash.login \
-     ~/.bash_aliases /etc/bash.bashrc /etc/profile \
-     /etc/profile.d/* /etc/environment 2> /dev/null
-
-# available shells; current shell; change shell
-cat /etc/shells; echo $SHELL; chsh -s /usr/local/bin/fish
-
-# sequence from 0 to 10 (both included) increment by 2
-seq 0 2 10
 
 # duplicate files in a given set of directories
 fdupes -r .
@@ -286,62 +259,8 @@ xclip -loops 10 -verbose file.ext
 # put "test" to x-clipboard / put x-clipboard content to file.ext
 echo "test" | xclip / xclip -o > file.ext
 
-# remove a line from shell history (i.e. password)
-# ~/.bash_history | ~/.config/fish/fish_history
-history -d
-
-# :shell :bash :fish - see what the shell does with the various types of quoting
-# https://unix.stackexchange.com/a/417408
-printf '<%s>\n' G "G" 'G' \G "\G" '\G' \\G "\\G" '\\G'
-
-# :bash - secure (password) prompt; doesn't work in fish
-read -s
-
-# :fish :retval :retcode :return code :exit-code (in bash $?)
-$status
-
-# indicate how a command would be interpreted
-type --all <cmd> # all of possible definitions of <cmd>
-
-# :fish - show content of foo fn / list fns
-type foo / functions foo / functions -n
-
-# :fish - copy 'foo' fn to a new fn 'bar' / erase the 'bar'
-functions -c foo bar / functions -e bar
-
-# fish variables - unset shell variable
-set --erase myvar
-set -e      myvar
-
-# fish variables - scope is local to the current block
-set --local myvar 1
-set -l      myvar 1
-
-# fish export variable to child processes (make it an 'environment variable')
-set -x        myvar 1
-set --export  myvar 1
-set -u        myvar
-set -unexport myvar
-
-# :fish - all function arguments from 3rd to the last
-$argv[3..-1]
-
-# fish:
-test (string escape -- $argv) = "--switch" # string equality
-test -e file.txt                           # file existance
-
 # run a cmd only when load average is below a certain threshold (default is 0.8)
 echo "rm -rf /unwanted-large/folder" | batch
-
-# :calculate fish:
-# examples https://nicolas-van.github.io/programming-with-fish-shell
-math "1 + 2"
-
-# :fish - handle fish key bindings
-bind / help bind
-
-# :bash - display shortcuts (including Ctrl+L, Ctrl+R); \e - ESC, \C-y - Ctrl+y
-bind -P / help bind
 
 # change file mode bits of file according to reference-file
 chmod --reference reference-file file
@@ -352,12 +271,6 @@ rm -f !(survivor.txt)
 # insert autocompletition result (use together with other progs)
 Esc *
 
-# :alias escape command aliases
-\\\[command\]
-
-# get the argument of the last command. see bind -P
-Alt-. / Esc-.
-
 # :at :batch - execute a command at a given time
 echo "ls -l" | at midnight
 
@@ -366,21 +279,6 @@ printf "Line: %05d %15.3f Result: %+15d\n" 1071 3,14156295 32589
 
 # :at :batch run script.sh 1 hour / 30 minutes from now
 at -f script.sh now + 1 hour / 30 min
-
-# set vi bindings
-set -o vi
-
-# :bash disable pathname expansion - globbing
-set -f
-set -o noglob
-
-# :bash shell writes its input to standard error as it is read
-set -v
-set -o verbose
-
-# :bash shell writes standard error a trace for each command
-set -x
-set -o xtrace
 
 # simple python3 server
 python3 -m http.server 8000 --bind 127.0.0.1
@@ -417,106 +315,23 @@ nslookup www.google.com | tail -2 | head -1 | awk "{print $2}"
 # interrogate DNS name servers
 dig www.google.com
 
-# :scripting loc_variable - visible only within given code block
-local loc_variable=value
-
-# args: function arguments
-$*
-
-# args: all arguments / all arguments of the last command / count of arguments
-$@ / !* / $$
-
-# exit code (return value / retcode) of the last command (0: success)
-# e.g. adduser joe; echo $?
-$?
-
-# build-in commands
-$-
-
-# last argument of the previous command. At the shell startup, it gives the
-# absolute filename of the shell script being executed
-$_
-
-# args: last argument of the last command
-!$
-
-# process ID of the: shell / most recently executed background process
-$$ / $!
-
-# the cmd takes x and y as if they were pressed during its execution
-(echo x; echo y) | cmd
-
-# eval expression
-echo $[22 + 33]
-
-# eval expression
-expr 11 + 22
-
-# bash: args: last command without the last argument
-!:-
-
-#bash: if; no-op, nope, empty operation
-:
-
-# bash: empty file.txt
-> file.txt
-
-# bash: insert contents of file.txt into input of tr and output results to
-# fileNew.txt
-tr '[A-Z]' '[a-z]' < file.txt > fileNew.txt
-
-# bash: mass move/copy/rename
-mmv \*.JPG \#1.jpc
-mmv \* \#1.rexx
-
-# bash: visual calender for februar 2004 / whole year 2004
-cal 2 2004 / cal -y 2004
-
-# bash: ? define function in bash ?
-foo() { date; }
-
-# bash: bash history, abort history
-C-r, C-g
-
-# bash: shebang: stop the script after any error
-#!/bin/bash -e
-
-# bash: shebang: debugging: set -x; stop on error: set -e
-#!/usr/bin/env bash
-
-# bash: debug script
-bash -x script
-
-# bash: make block or character special files
+# make block or character special files
 mknod
 
-# bash: create directory tree with multiple subdirs
+# create directory tree with multiple subdirs
 mkdir -p ./pth/{sub1,sub2}/{1..100}/{src,bin,bak}
 
-# bash: auto-create "./pth" and do --preserve=mode,ownership,timestamps
+# auto-create "./pth" and do --preserve=mode,ownership,timestamps
 cp --parents -p ./pth/src.ext ./pth/dst.ext
 
-# bash: mv README.text README.txt ; cp file file.bak
+# mv README.text README.txt ; cp file file.bak
 mv README.{text,txt} ; cp file{,.bak}
 
-# bash: redirect stderr (2) to stdout (1) and save it to command.log
-./command.sh 2>&1 | tee command.log
-
-# suppress stderr messagess
-./script.sh 2> /dev/null
-
-# bash: fist / last 5 lines from file
+# fist / last 5 lines from file
 head -n 5 file
 tail -n 5 file
 
-# bash: find: redirect: separate / combine sdterr and stdout; doesn't work with
-# the tee command
-./command.sh 1>str.out 2>str.err / ./command.sh &>combined.out
-
-# bash: redirect: type in stuff and wait unit EOF gets typed
-cat >>EOF
-
-# bash: get date (timestamp) in a given format
+# get date (timestamp) in a given format
 date +"%Y-%m-%d_%H-%M-%S"
 
 # free and used memory in the system
@@ -544,33 +359,12 @@ du -csh --exclude={.git,.atom} ./ | sort --human-numeric-sort
 du --total --separate-dirs --human-readable --exclude={.git,.atom} ./ \
     | sort --human-numeric-sort
 
-# jump to ./pth/to/dir execute command and jump back
+# jump to ./pth/to/dir, execute command and jump back
 (cd ./pth/to/dir && ls)
 
 # stop-watch; ctrl-d to stop; measure execution time; or try to install
 # stopwatch
 time read
-
-# time measurement of a fish function
-# https://github.com/fish-shell/fish-shell/issues/117
-/usr/bin/time --portability fish --command <fn> <prm1> <prm2> ...
-# TODO try out
-function time --description 'Wrapper for time'
-    /usr/bin/time --portability /usr/bin/fish --command $argv
-end
-# see also:
-<fn> <prm1> <prm2> ...
-echo $CMD_DURATION
-
-# type partial cmd, kill this cmd, check something you forgot, yank the cmd,
-# resume typing
-Ctrl-u ... Ctrl-y
-
-# avoid backticks
-echo "Date is: $(date +%D)"
-
-# create a script from last executed cmd
-echo "!!" > foo.sh
 
 # process ID of a running program
 pidof process-name
@@ -859,8 +653,7 @@ sudo restart lightdm / gdm / kdm
 # run fsck on next reboot
 sudo touch /forcefsck
 
-# remove old kernels
-sudo apt remove --purge $(dpkg -l 'linux-image-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')
+# remove old kernels - see dotfiles/bin/remove-old-kernels
 
 # for tabular data
 awk
@@ -888,13 +681,10 @@ sed ':a;N;$!ba;s/\n/ /g'
 sed "s/\x85/\n/g" <log.txt >log.nl.txt; \
     sed "s/\x85/\n/g" <log.nl.txt >log.nl.00.txt
 
-# Show numerical values for each of the 256 colors in ndbash
-for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done
-
-# sha1: read SHA1 sums from the file.sha1 and check them
+# read SHA1 sums from the file.sha1 and check them
 sha1sum -c file.sha1
 
-# ps: full command line; command is separated by the \0 byte
+# :ps full command line; command is separated by the \0 byte
 tr '\0' ' ' < /proc/<pid>/cmdline
 
 # ps: top: htop: all info related to a process
@@ -953,10 +743,6 @@ pkill -KILL -u yourusername
 # anti-freeze / WD40
 killall -SIGUSR2 emacs
 
-# xfce: launcher: emacs uses bash variables; -i interactive shell, -c read
-# following command
-bash -i -c ./pth/to/emacs
-
 # search man pages for "topic"
 man -k topic / apropos -r topic
 
@@ -999,10 +785,6 @@ cat data.csv | column -t -s ';'
 
 # xml: command line XML tool (formating)
 xmllint
-
-# fish: bash: locate command
-command -v <command>  # fish buildin
-which      <command>  # debian
 
 # shared library dependencies
 ldd -v $(which vim)
@@ -1057,14 +839,11 @@ aptitude search '~i!~M'
 # cygwin: ps: show windows as well as cygwin processes (-W)
 ps --windows
 
-# cygwin: bash: print windows form of filename
-cygpath -w filename
-
 # cygwin: command-line installer
 apt-cyg --mirror \
     http://ftp-stud.hs-esslingen.de/pub/Mirrors/sources.redhat.com/cygwin/x86
 
-# cygwin: bash: print unix form of filename
+# cygwin: print unix form of filename
 cygpath -u filename
 
 # zip: zip content of ./pth/to/dir to ./pth/to/file.zip; --recurse-paths is -r
@@ -1083,10 +862,9 @@ tar xzf ./pth/to/tarfile.gz
 # Remove all files previously extracted from a tar(.gz) file
 tar -tf ./pth/to/file.tar.gz | xargs rm -r
 
-# bash: report or omit repeated lines
+# report or omit repeated lines
 uniq
-
-# bash: sort and remove duplicate lines
+# sort and remove duplicate lines
 sort myfile.txt | uniq
 
 # net: ping: traceroute: - check connection
@@ -1098,7 +876,7 @@ ip link show
 # net: ping: traceroute: check connection
 mtr --report www.google.com
 
-# bash: query wikipedia for keyword
+# query wikipedia for keyword
 dig +short txt keyword.wp.dg.cx
 
 # iproute2: net: listening ports and PIDs of associated processes.
@@ -1340,46 +1118,6 @@ rdesktop -f -u <login> -p - <computer>:3389
 # net: rdp: remote desktop
 sudo /etc/init.d/xrdp restart
 
-# desktop sharing
-# Remote Desktop Client: remmina
-sudo apt install remmina
-# VNC Server in Xubuntu https://link.medium.com/mIfJg0hpIV
-sudo apt install vino
-# Display all the preferences
-gsettings list-recursively org.gnome.Vino
-# [x] Allow other users to view your desktop
-#     NOTE: This setting was removed
-gsettings set org.gnome.Vino enabled true
-# [x] Allow other users to control your desktop
-#     NOTE: Reverse Boolean
-gsettings set org.gnome.Vino view-only false
-# [ ] You must confirm each access to this machine
-gsettings set org.gnome.Vino prompt-enabled false
-# [ ] Require the user to enter this password
-gsettings set org.gnome.Vino authentication-methods "['none']"
-gsettings set org.gnome.Vino vnc-password keyring
-# [x] Require the user to enter this password
-# Step 1. Ask for password (NOTE: Only tested with `bash` and `zsh`)
-bash
-echo -n "VNC Password: " && read -s password < /dev/tty && echo ""
-# Step 2. Set the preferences
-gsettings set org.gnome.Vino authentication-methods "['vnc']"
-gsettings set org.gnome.Vino vnc-password "$(echo $password | base64)"
-# Step 3. Clear the `$password` variable
-unset password
-# [ ] Automatically configure UPnP router to open and forward ports
-gsettings set org.gnome.Vino use-upnp false
-# Show Notification Area Icon
-# ( ) always  // Always
-# (o) client  // Only when someone is connected
-# ( ) never   // Never
-gsettings set org.gnome.Vino icon-visibility client
-# Disable encryption (optional)
-# gsettings set org.gnome.Vino require-encryption false
-# open firewall port 5900
-# RUN!!!
-/usr/lib/vino/vino-server --sm-disable
-
 # shred: permanet delete: shred doesn't work on dirs
 shred --verbose --remove <pth/to/file>
 
@@ -1389,7 +1127,7 @@ find . -type f -print0 | xargs -0 shred --remove
 # shred: permanet delete: srm doesn't delete hardlinked files
 srm -r <pth>
 
-# bash: synchronize sytem date behind proxy
+# synchronize sytem date behind proxy
 curDate="$(wget -S "http://www.google.com/" 2>&1 \
     | grep -E '^[[:space:]]*[dD]ate:' \
     | sed 's/^[[:space:]]*[dD]ate:[[:space:]]*//' \
@@ -1467,9 +1205,6 @@ arecord / aplay
 # find 20 biggest files
 du -a ~ 2>/dev/null | sort -n -r | head -n 20
 
-# bash eval string
-eval "${cmd}"
-
 # -h, --no-dereference   affect symbolic links instead of any referenced file
 chown -h myuser:mygroup mysymbolic
 
@@ -1478,23 +1213,3 @@ chown -h myuser:mygroup mysymbolic
 # Stich ETL service https://www.stitchdata.com/
 # https://clojure.org/stories/stitch
 
-# FILE1 -ot FILE2: FILE1 is older than FILE2
-#        -b FILE:  FILE exists and it's block special
-#        -c FILE:  FILE exists and it's character special
-#        -d FILE:  FILE exists and it's a directory
-#        -e FILE:  FILE exists
-#        -f FILE:  FILE exists and it's a regular file
-#        -g FILE:  FILE exists and it's set-group-ID
-#        -G FILE:  FILE exists and it's owned by the effective group ID
-#        -h FILE:  FILE exists and it's a symbolic link (same as -L)
-#        -k FILE:  FILE exists and has its sticky bit set
-#        -L FILE:  FILE exists and it's a symbolic link (same as -h)
-#        -O FILE:  FILE exists and it's owned by the effective user ID
-#        -p FILE:  FILE exists and it's a named pipe
-#        -r FILE:  FILE exists and read permission is granted
-#        -s FILE:  FILE exists and has a size greater than zero
-#        -S FILE:  FILE exists and it's a socket
-#        -t FD:    file descriptor FD is opened on a terminal
-#        -u FILE:  FILE exists and its set-user-ID bit is set
-#        -w FILE:  FILE exists and write permission is granted
-#        -x FILE:  FILE exists and execute (or search) permission is granted
