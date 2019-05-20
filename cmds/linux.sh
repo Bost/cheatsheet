@@ -23,64 +23,67 @@ sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel libungif-devel \
 sudo yum install gnome-common GConf2-devel pytgtk2-devel python-vte-devel \
      gnome-python2-gconf python-keybinder pyxdg notify-python
 
-# cpu: mem: hdd: hardware: system information in a GTK+ window
+# :cpu :mem :hdd :hardware - system information in a GTK+ window
 hardinfo
 sudo dmidecode
 sudo lshw
 cpu-x
 
-# net: troubleshooting and security testing
+# :net - troubleshooting and security testing
 sudo tcpdump
 
-# net: Extract HTTP User Agents
+# :net - Extract HTTP User Agents
 sudo tcpdump -nn -A -s1500 -l | egrep -i 'User-Agent:|Host:'
 
-# net: Capture all the plaintext passwords
+# :net - Capture all the plaintext passwords
 sudo tcpdump port http or port ftp or port smtp or port imap or port pop3 or \
      port telnet -l -A | egrep -i -B5 \
      'pass=|pwd=|log=|login=|user=|username=|pw=|passw=|passwd=|password=|pass:|user:|username:|password:|login:|pass |user '
 
-# net: Extract HTTP Passwords in POST Requests
+# :net - Extract HTTP Passwords in POST Requests
 sudo tcpdump -s 0 -A -n -l | egrep -i "POST /|pwd=|passwd=|password=|Host:"
 
-# net: Capture Cookies from Server and from Client
+# :net - Capture Cookies from Server and from Client
 sudo tcpdump -nn -A -s0 -l | egrep -i 'Set-Cookie|Host:|Cookie:'
 
-# net: Internet Control Message Protocol: send error messages and operational information
+# :net :Internet-Control-Message-Protocol
+# send error messages & operational information
 ICMP
 
-# net: Dynamic Host Configuration Protocol: network management protocol used on TCP/IP networks
+# :net :Dynamic-Host-Configuration-Protocol
+# network management protocol used on TCP/IP networks
 DHCP
 
-# net: MAC address of a network neighbour for a given IPv4 Address; Address Resolution Protocol
-# net: display / modify the IP-to-Physical address translation tables for ARP.
+# :net :Address-Resolution-Protocol
+# MAC address of a network neighbour for a given IPv4 Address
+# :net display / modify the IP-to-Physical address translation tables for ARP.
 arp -a
 
-# net: send ARP REQUEST to a neighbour host
+# :net - send ARP REQUEST to a neighbour host
 arping
 
-# net: the arp scanner
+# :net - the arp scanner
 arp-scan
 
-# net: keep track of ethernet/ip address pairings
+# :net - keep track of ethernet/ip address pairings
 arpwatch
 
-# net: Network exploration tool and security / port scanner
+# :net - Network exploration tool and security / port scanner
 nmap
 
 # TCP proxies; shell-script based HTTP clients / servers; network daemon testing; a SOCKS or HTTP ProxyCommand for ssh
 netcat
 
-# net: arp: Network security auditing tool
+# :net :arp - Network security auditing tool
 hunt
 
-# query an LDAP server from the command line with ldap-utils: ldapsearch, ldapadd, ldapmodify
+# query an LDAP server from the command line with ldap-utils - ldapsearch ldapadd ldapmodify
 ldap-utils
 
-# bugs in shell scripts
+# :bash :fish - bugs in shell scripts
 http://www.shellcheck.net/
 
-# help text that matches each argument
+# :bash :fish - help text that matches each argument
 http://explainshell.com/
 
 # concatenate and print files in reverse (reversed lines)
@@ -100,18 +103,18 @@ chrome://net-internals
 chrome://quota-internals
 chrome://network-error/-106
 
-# google-chrome: HSTS: HTTP Strict Transport Security:
+# :google-chrome :HSTS :HTTP-Strict-Transport-Security
 "This web always encrypts. And it does so using trusted certificate"
 chrome://net-internals/#hsts
 
-# net: ports listening for connection (i.e. open ports)
+# :net - ports listening for connection (i.e. open ports)
 sudo nmap -sT -O localhost
 sudo nmap -sn <ip-range>
 
 # show open ports
 nmap www.google.com | grep -i open
 
-# net: ipv4: CIDR notation
+# :net :ipv4 - CIDR notation
 192.168.100.14/24 represents the IPv4 address 192.168.100.14 and its associated routing prefix 192.168.100.0
 
 # connecting to mysql a.k.a. login
@@ -127,89 +130,89 @@ locate -b '\NAME'
 # split a file into pieces (with '.' at the end)
 split --bytes 1M --numeric-suffixes --suffix-length=3 foo.txt foo.
 
-# deb: apt: ppa: only 64bit packages
+# :deb :apt :ppa - only 64bit packages
 deb [arch=amd64] http://...
 
-# usb: drive: drives: disc: discs: list block devices
+# :usb :drive :drives :disc :discs - list block devices
 lsblk
 
 # dynamic device management - the /dev directory
 udev
 
-# usb: drive:
+# :usb :drive
 mount | grep gvfs; cd ...
 
-# pdf: view file.pdf
+# view file.pdf
 evince file.pdf
 
 # centos update
 su -c 'yum update'
 
-# apt: aptitute: apt-offline:
+# :apt :aptitute :apt-offline
 sudo apt-offline install $HOME/offline-updates
 sudo apt-offline install --allow-unauthenticated $HOME/offline-updates
 
-# apt: aptitute: proxy:
+# :aptitute
 /etc/apt/apt.conf.d/05proxy
 /etc/apt/apt.conf
 
-# apt: aptitude: without proxy
+# :apt :aptitude - without proxy
 sudo apt --option Acquire::http::proxy=false ...
 
-# net: grouping bandwidth per process; "net top"
+# :net - grouping bandwidth per process; "net top"
 sudo nethogs wlan0
 
-# top: htop: explained
+# top and htop explained
 https://peteris.rocks/blog/htop/
 
-# gpg: sig: download and import gnu-keyring
+# :gpg :sig - download and import gnu-keyring
 wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg; and \
          gpg --import gnu-keyring.gpg
 
-# wget: Limit the download speed to amount bytes per second
+# :wget - limit the download speed to amount bytes per second
 wget --limit-rate=20k <url>
 
-# gpg: sig: verify file
+# :gpg :sig - verify file
 gpg --verify file.sig file
 
-# fs: number of inodes; every file or directory requires 1 inode
-df -i / --inodes
+# :fs - number of inodes; every file or directory requires 1 inode
+df -i
+df --inodes
 
-# net: show host name
+# :net - show host name
 hostname -i
 
-# mplayer: reset/+/- speed by 10% / toggle OSD states / volume +/-
+# :mplayer reset/+/- speed by 10% / toggle OSD states / volume +/-
 backspace / \] / \[ / o / * / "/"
 
 # youtube
-> / < # speed: 25% faster / slower
+> / < # :speed 25% faster / slower
 c / m # toggle captions / mute
 , / . # move 1 frame forward / backward
 
 # postscript to pdf conversion
 ps2pdf
 
-# xserver: modifying keymaps and pointer button mappings in X
+# :xserver - modifying keymaps and pointer button mappings in X
 xmodmap
 
-# xserver: print XKB keyboard description to file in ps-format
+# :xserver - print XKB keyboard description to file in ps-format
 xkbprint :0
 
-# ubuntu: change default www-browser
+# :ubuntu - change default www-browser
 sudo update-alternatives --config x-www-browser / gnome-www-browser
 update-alternatives --list python3
 
-# xfce: opens a file or URL in the user's preferred application
+# :xfce - opens a file or URL in the user's preferred application
 /usr/bin/browse -> xdg-open
 
-# dpkg: add-apt-repository needs a single repo
+# :dpkg - add-apt-repository needs a single repo
 sudo add-apt-repository ppa:jonathonf/python-3.6
 sudo add-apt-repository ppa:atareao/telegram
 sudo apt update
 sudo apt install telegram python-3.6
 
-# dpkg:
-# install list-ppa https://gist.github.com/66638cab114a6da691518598b6d13650.git
+# :dpkg list-ppa:
 sudo ppa-purge <ppa:user/ppa-name>
 
 # display file or file system status; alternative to ls
@@ -239,15 +242,22 @@ trap "rm -f /tmp/xyz$$; exit" ERR EXIT
 # fist / last 5 lines from file
 head -n 5 file / tail -n 5 file
 
+# include other script; also in bash
+source /pth/to/script
+
 # reload config
 source ~/.config/fish/config.fish
 source ~/.bashrc
-# net: ubuntu: (edit) and re-read proxy definition
+
+# :net :ubuntu - (edit) and re-read proxy definition
 source /etc/environment
+
 # webconfig.py
 fish_config
-# fish: reload function
+
+# :fish - reload function / alias
 type myfunc
+
 # Where is PATH variable set? https://askubuntu.com/a/706069/401596
 grep --color -H 'PATH=' ~/.bashrc ~/.profile ~/.bash_profile ~/bash.login \
      ~/.bash_aliases /etc/bash.bashrc /etc/profile \
@@ -262,55 +272,58 @@ seq 0 2 10
 # duplicate files in a given set of directories
 fdupes -r .
 
-# clipboard: show normal clipboard content
+# :clipboard - show normal clipboard content
 xsel --clipboard
 
-# clipboard: pipe to / from clipboard
-cat file > /dev/clip / cat /dev/clip
+# pipe to clipboard
+cat file > /dev/clip
+# pipe from clipboard
+cat /dev/clip
 
-# clipboard
 # wait for 10 pastings of the content file.ext to x-clipboard and quit
 xclip -loops 10 -verbose file.ext
 
-# clipboard: put "test" to x-clipboard / put x-clipboard content to file.ext
+# put "test" to x-clipboard / put x-clipboard content to file.ext
 echo "test" | xclip / xclip -o > file.ext
 
 # remove a line from shell history (i.e. password)
 # ~/.bash_history | ~/.config/fish/fish_history
 history -d
 
-# shell: bash: fish: see what the shell does with the various types of quoting
+# :shell :bash :fish - see what the shell does with the various types of quoting
 # https://unix.stackexchange.com/a/417408
 printf '<%s>\n' G "G" 'G' \G "\G" '\G' \\G "\\G" '\\G'
 
-# bash: secure (password) prompt; doesn't work in fish
+# :bash - secure (password) prompt; doesn't work in fish
 read -s
 
-# fish: retval: retcode: return code: exit code: (in bash $?)
+# :fish :retval :retcode :return code :exit-code (in bash $?)
 $status
 
 # indicate how a command would be interpreted
 type --all <cmd> # all of possible definitions of <cmd>
 
-# fish: show content of foo fn / list fns
+# :fish - show content of foo fn / list fns
 type foo / functions foo / functions -n
 
-# fish: copy 'foo' fn to a new fn 'bar' / erase the 'bar'
+# :fish - copy 'foo' fn to a new fn 'bar' / erase the 'bar'
 functions -c foo bar / functions -e bar
 
-# fish variables: unset shell variable
+# fish variables - unset shell variable
 set --erase myvar
 set -e      myvar
-# variable scope is local to the current block
+
+# fish variables - scope is local to the current block
 set --local myvar 1
 set -l      myvar 1
-# export variable to child processes (make it an 'environment variable')
+
+# fish export variable to child processes (make it an 'environment variable')
 set -x        myvar 1
 set --export  myvar 1
 set -u        myvar
 set -unexport myvar
 
-# fish: all function arguments from 3rd to the last
+# :fish - all function arguments from 3rd to the last
 $argv[3..-1]
 
 # fish:
@@ -320,14 +333,14 @@ test -e file.txt                           # file existance
 # run a cmd only when load average is below a certain threshold (default is 0.8)
 echo "rm -rf /unwanted-large/folder" | batch
 
-# calculate: fish:
+# :calculate fish:
 # examples https://nicolas-van.github.io/programming-with-fish-shell
 math "1 + 2"
 
-# fish: handle fish key bindings
+# :fish - handle fish key bindings
 bind / help bind
 
-# bash: display shortcuts (including Ctrl+L, Ctrl+R); \e - ESC, \C-y - Ctrl+y
+# :bash - display shortcuts (including Ctrl+L, Ctrl+R); \e - ESC, \C-y - Ctrl+y
 bind -P / help bind
 
 # change file mode bits of file according to reference-file
@@ -339,32 +352,35 @@ rm -f !(survivor.txt)
 # insert autocompletition result (use together with other progs)
 Esc *
 
-# alias: escape command aliases
+# :alias escape command aliases
 \\\[command\]
 
-# get the argument of the last command. see: bind -P
+# get the argument of the last command. see bind -P
 Alt-. / Esc-.
 
-# at: batch: execute a command at a given time
+# :at :batch - execute a command at a given time
 echo "ls -l" | at midnight
 
 # echo with formating
 printf "Line: %05d %15.3f Result: %+15d\n" 1071 3,14156295 32589
 
-# at: batch: run script.sh 1 hour / 30 minutes from now
+# :at :batch run script.sh 1 hour / 30 minutes from now
 at -f script.sh now + 1 hour / 30 min
 
 # set vi bindings
 set -o vi
 
-# bash: disable pathname expansion - globbing
-set -f / set -o noglob
+# :bash disable pathname expansion - globbing
+set -f
+set -o noglob
 
-# bash: shell writes its input to standard error as it is read
-set -v / set -o verbose
+# :bash shell writes its input to standard error as it is read
+set -v
+set -o verbose
 
-# bash: shell writes standard error a trace for each command
-set -x / set -o xtrace
+# :bash shell writes standard error a trace for each command
+set -x
+set -o xtrace
 
 # simple python3 server
 python3 -m http.server 8000 --bind 127.0.0.1
@@ -375,14 +391,14 @@ python -m SimpleHTTPServer 8001
 # cross-platform HTTP/2 web server with automatic HTTPS
 caddy -host example.com
 
-# python: high-level file operations
+# :python high-level file operations
 import shutil
 
-# python: concatenate / merge / join two lists (not arrays)
+# :python concatenate / merge / join two lists (not arrays)
 # https://www.pythoncentral.io/the-difference-between-a-list-and-an-array/
 [1, 2] + [4, 5]
 
-# args: run the last command as root
+# :args run the last command as root
 sudo !!
 
 # real and effective user and group IDs
@@ -391,17 +407,17 @@ id user
 # google domain / sice specific search
 keyword site:bartoszmilewski.com
 
-# net: networking: DNS lookup: convert names <-> IP addresses
+# :net :networking :DNS-lookup convert names <-> IP addresses
 host www.google.com
 
-# net: get ip address from domain
+# :net get ip address from domain
 nslookup www.google.com | tail -2 | head -1 | awk "{print $2}"
 
-# net: DNS lookup utility; domain information groper
+# :net DNS lookup utility; domain information groper
 # interrogate DNS name servers
 dig www.google.com
 
-# scripting: loc_variable - visible only within given code block
+# :scripting loc_variable - visible only within given code block
 local loc_variable=value
 
 # args: function arguments
@@ -522,6 +538,7 @@ join
 du -s dir
 du -sh dir
 du -sh --exclude={.git,.atom} dir
+
 # size of ./pth/to/dir with subdirs, exclude files matching pattern
 du -csh --exclude={.git,.atom} ./ | sort --human-numeric-sort
 du --total --separate-dirs --human-readable --exclude={.git,.atom} ./ \
@@ -604,7 +621,7 @@ curl ifconfig.me
 
 # exec disc usage command on a remote host and sort results
 ssh <HostAlias> du -h --max-depth=1 /pth/to/dir | sort -h
-climate ssh-mount / ssh-unmount
+climate ssh-mount / ssh-unmount # climate - command line tools for Linux
 
 # recursively compare dirA with dirB; show only filenames: -q (quiet)
 diff -rq dirA dirB | sort
@@ -655,19 +672,23 @@ svn propdel --revprop -r0 svn:rdump-lock <url>
 # copy files from src to dst - typical example; add -n is for --dry-run
 rsync -havz src/ dst
 rsync --human-readable --archive --verbose --compress src/ dst
+
 # copy only certain types of files using include option
 rsync -havzr --include="*/" --include="*.sh" --exclude="*" "$src" "$dst"
 rsync --human-readable --archive --verbose --compress --recursive --include="*/" --include="*.sh" --exclude="*" "$src" "$dst"
+
 # cvs: copy files from src to dst excluding everything in CVS directories
 # (showing progress)
 rsync --dry-run --human-readable --progress          --archive --verbose --exclude='CVS' src/ dst
 rsync --dry-run --human-readable --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
 rsync --dry-run --human-readable                     --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst
 rsync --dry-run --human-readable            --delete --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst | grep deleting
+
 # cvs: copy files from src to dst excluding everything in CVS directories (showing progress)
 # exclude hidden files and directories
 rsync --dry-run --human-readable                     --archive --verbose --exclude=".*" --exclude=".*/" src/ dst
 rsync --dry-run --human-readable            --delete --archive --verbose --exclude=".*" --exclude=".*/" src/ dst | grep deleting
+
 # mv: move content of a directory within another directory with the same folders
 rsync --dry-run --human-readable                     --archive --remove-source-files backup/ backupArchives
 rsync --dry-run --human-readable            --delete --archive --remove-source-files backup/ backupArchives | grep deleting
@@ -766,10 +787,12 @@ last
 # processsor: cpu: architecture: core: cores: 32 (i686) /64 (x86_64) bit
 lscpu
 getconf LONG_BIT
+
 # number of processors / available processing units
 cat /proc/cpuinfo | grep processor | wc -l
 nproc
-# cpu: mem: hdd: hardware: system information for console & IRC
+
+# processor: cpu: mem: hdd: hardware: system information for console & IRC
 # -Fz filter out privacy sensitive info
 inxi -Fxz
 inxi --full --extra 1 --filter
@@ -967,7 +990,8 @@ sudo mount -o remount,rw /partition/identifier /mount/point
 
 # mounted filesystems - table layout
 mount | column -t
-# Requested formats are incompatible for merge and will be merged into mkv.
+
+# error: Requested formats are incompatible for merge and will be merged into mkv.
 youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] URL
 
 # align csv file
@@ -989,19 +1013,23 @@ ldconfig -p | grep libgconf
 # info about ELF files
 readelf -v $(which vim)
 
-## dpkg apt aptitude
-# show installed packages
+# apt: aptitude: show installed packages
 dpkg --get-selections
-# list of installed files from a packageName (dpkg-query -L works too)
+
+# :apt :aptitude list of installed files from a packageName (dpkg-query -L works too)
 dpkg -L packageName
+
 # show description for packageName
 apt-cache search ^packageName$
+
 # print names of all packages know to APT
 apt-cache pkgnames <packagePrefix>
 dpkg --status <package>
 dpkg -s <package>
+
 sudo dpkg --install <package.deb>
 sudo dpkg --remove  <package.deb>
+
 # list all installed packages matching regex
 dpkg --list | grep ii | grep -i <regex>
 # package description
