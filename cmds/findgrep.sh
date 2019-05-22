@@ -111,3 +111,6 @@ find ./ -name "*.py" -or -name "*.sql" | xargs wc -l
 
 # search for ipv4 addresses
 grep -nir -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" --exclude-dir={.git} --include=\*.{el,clj,cljs,cljc,py,md} ./
+
+# match integer / floating point number
+echo "aaa 123 0.0 bbb" | grep --only-matching '\([[:digit:]]*\.[[:digit:]]*\|[[:digit:]]*\)'
