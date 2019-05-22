@@ -159,8 +159,25 @@ sudo apt --option Acquire::http::proxy=false ...
 # :net - grouping bandwidth per process; "net top"
 sudo nethogs wlan0
 
-# top and htop explained
+# top and htop explained; see also: atop iotop
 https://peteris.rocks/blog/htop/
+
+# monitor disk I/O usage
+sudo iotop -oPa
+
+# :HDD :SSD - disk information
+sudo hdparm -I <filesystem> # see: df -h
+sudo hdparm -I /dev/sda1
+
+# top report / output to stdout: -b batch mode; -n <nr> nr of iterations
+top -b -n 1
+
+# process queuing: load-average > nr-of-processors * cores-per-processor
+uptime            # load average from /proc/uptime
+top -b -n 1 | grep load
+cat /proc/loadavg # columns: 4th: processes running/total; 5th: last used pid
+# load average explained
+curl -s https://raw.githubusercontent.com/torvalds/linux/v5.1/kernel/sched/loadavg.c | head -n 8
 
 # :gpg :sig - download and import gnu-keyring
 wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg; and \
@@ -586,6 +603,12 @@ getconf LONG_BIT
 cat /proc/cpuinfo | grep processor | wc -l
 nproc
 
+# Report processors related statistics
+mpstat
+mpstat -P ALL
+# Display five reports of statistics for all processors at two second intervals
+mpstat -P ALL 2 5
+
 # processor: cpu: mem: hdd: hardware: system information for console & IRC
 # -Fz filter out privacy sensitive info
 inxi -Fxz
@@ -910,7 +933,7 @@ iconv -l
 tail -c 100 fileName
 head -c 100 fileName
 
-# net: apps currently using inet
+# net: what is currently using inet
 lsof -P -i -n | cut --fields=1 --delimiter=" " | uniq | tail --lines=+2
 
 # remove sections from each line of files
@@ -921,6 +944,9 @@ lsof
 
 # list open files whose inet address matches ADDR; -t: terse output
 lsof -i:[ADDR] -t
+
+# files opened by / when running a command
+strace <cmd> 2>&1 | grep openat
 
 # check file types and compare values
 test
