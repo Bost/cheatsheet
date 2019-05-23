@@ -263,7 +263,8 @@ M-%
 M-u / M-l / M-c
 
 ;; check a small region
-M-x ispell-region / ispell-buffer
+M-x ispell-region
+M-x ispell-buffer
 
 ;; macro: start / stop / execute (e - execute again)
 C-x ( / C-x ) / C-x e
@@ -456,8 +457,8 @@ C-SPC
 ;; region: kill selected region
 C-x r k
 
-;; region: check a small region
-M-x ispell-region
+;; save region to a file
+M-x write-region
 
 ;; splits: close / only one buffer / horizontal / vertical
 C-x 0 / C-x 1 / C-x 2 / C-x 3
