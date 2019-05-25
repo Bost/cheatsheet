@@ -91,6 +91,10 @@ lein do clean, repl
 ;;
 lein cljsbuild test
 
+;;
+lein install
+lein deploy clojars
+
 ;; try to put it to project.clj in case of:
 ;; 'Could not locate clojure/instant__init.class or ... on classpath'
 ;; [the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]
