@@ -18,14 +18,14 @@ systemctl --all --type service
 systemctl --failed / --state=failed
 
 # systemd: service status
-systemctl status --full  tomcat7.service
-systemctl status --full  <unit>
-systemctl start          <unit>
-systemctl stop           <unit>
-systemctl restart        <unit>
-systemctl kill           <unit>
-systemctl enable         <unit>
-systemctl disable        <unit>
+systemctl --user status --full  tomcat7.service
+systemctl --user status --full  <unit>
+systemctl --user start          <unit>
+systemctl --user stop           <unit>
+systemctl --user restart        <unit>
+systemctl --user kill           <unit>
+systemctl --user enable         <unit>
+systemctl --user disable        <unit>
 
 # systemd: reload the systemd manager configuration
 systemctl daemon-reload
@@ -36,3 +36,6 @@ systemctl reset-failed
 
 # systemd: remove unit from the systemctl --failed list
 systemctl reset-failed <unit>
+
+# default.target
+man 7 systemd.special

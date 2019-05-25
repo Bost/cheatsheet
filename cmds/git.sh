@@ -17,8 +17,14 @@ git pull --rebase upstream master
 # pull and rebase latest of all submodules
 git submodule foreach git pull --rebase origin master
 
+# Initialize all submodules for which "git submodule init" has not been called
+# so far before updating
+git submodule update --init
+
 # change the name and email in all commits
-git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Bost'; GIT_AUTHOR_EMAIL='thebost@gmail.com'; GIT_COMMITTER_NAME='Bost'; GIT_COMMITTER_EMAIL='thebost@gmail.com';" HEAD
+git filter-branch -f --env-filter \
+    "GIT_AUTHOR_NAME='Bost'; GIT_AUTHOR_EMAIL='thebost@gmail.com'; GIT_COMMITTER_NAME='Bost'; GIT_COMMITTER_EMAIL='thebost@gmail.com';" \
+    HEAD
 
 # reuse commit message
 git commit --amend --no-edit
@@ -113,6 +119,15 @@ git clone --bare <origRepo> <bareRepoDir>
 
 # shallow clone with a history truncated to the specified number of commits
 git clone --depth=1 -b <branch> <origRepo> <newRepoName>
+
+# After the clone is created, initialize all submodules within, using their
+# default settings. Equivalent to running
+# 'git submodule update --init --recursive'
+# immediately after the clone is finished. This option is ignored if the cloned
+# repository does not have a worktree/checkout (i.e. if any of --no-checkout/-n,
+# --bare, or --mirror is given)
+git clone --recursive
+git clone --recurse-submodules
 
 # workLocation must not be a bare (empty) repo
 git add --work-tree=workLocation --git-dir=<dir>

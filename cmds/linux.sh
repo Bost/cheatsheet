@@ -756,6 +756,10 @@ nohup
 nohup command >/dev/null 2>&1
 nohup command >/dev/null 2>&1 & disown
 
+# :kill :killall :signals
+man 7 signal
+man signal
+
 # virtualbox: restart clipboard
 killall VBoxClient; and VBoxClient --clipboard & disown
 
@@ -765,6 +769,7 @@ pkill -KILL -u yourusername
 
 # anti-freeze / WD40
 killall -SIGUSR2 emacs
+killall -HUP emacs
 
 # search man pages for "topic"
 man -k topic / apropos -r topic
