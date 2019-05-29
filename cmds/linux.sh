@@ -890,10 +890,11 @@ tar xzf ./pth/to/tarfile.gz
 # Remove all files previously extracted from a tar(.gz) file
 tar -tf ./pth/to/file.tar.gz | xargs rm -r
 
-# report or omit repeated lines
+# report or omit repeated lines; works only on adjacent duplicate lines
 uniq
-# sort and remove duplicate lines
-sort myfile.txt | uniq
+# deduplicate
+sort file.txt | uniq
+awk '!visited[$0]++' file.txt > deduplicated-file.txt
 
 # net: ping: traceroute: - check connection
 mtr google.com
@@ -911,8 +912,10 @@ dig +short txt keyword.wp.dg.cx
 # tcp (-t) udp (-u)
 ss -tulnp  # socket statistics replaces obsolete netstat
 
-# crontab: edit / view entries
-crontab -e / crontab -l
+# edit entries
+crontab -e
+# view / list entries
+crontab -l
 
 # show everything (battery info etc); Advanced Configuration and Power Interface
 acpi -V
