@@ -1,3 +1,4 @@
+;; a spaceholder - one-liners don't get matched
 (ns clj.cheat)
 
 (comment
@@ -417,6 +418,7 @@ set -x JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
 ;; map look up with default value
 (:c {:a "a" :b "b"} "default")
+)
 
 ;; HotSpot - old JIT (Just-In-Time) Compiler; in C++
 ;; GraalVM: JVM Compiler Interface: Plugin own JIT Compiler into VM
@@ -509,4 +511,46 @@ set -x JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ;; standard GUI library for Java SE; Swing replacement
 
 ;; Instaparse: parsers in clojure: context-free grammars as easy to use as regexs
-)
+;;
+
+;; CRDT - Conflict-free Replicated Data Type
+;; synchronize state across uncoordinates nodes in an eventually consistent way
+
+;;
+;; lein boot deps.end
+
+;;
+;; nrep unrepl socket repl
+
+;; deeply nested data structure: truncate the output
+(set! *print-level* 3)
+user=> {:a {:b [{:c {:d {:e 42}}}]}}
+{:a {:b [#]}}
+
+;; data structure with long collections: limit the number of displayed items
+(set! *print-length* 3)
+user=> (repeat 100 (vec (range 100)))
+([0 1 2 ...] [0 1 2 ...] [0 1 2 ...] ...)
+
+;; keep / save result for longer than 3 evaluations
+(def <some-name> *1)
+
+;; :stacktrace :exception
+(pst *e)
+
+;; GUI-based data visualizations
+(require '[clojure.inspector :as insp])
+(insp/inspect-table (mapv number-summary [2 5 6 28 42]))
+(insp/inspect-tree {:a {:b 1} :c [1 2 3]})
+
+;; require a library
+(require '[mylib.ns1])
+(require '[myproject.welcome] :verbose)
+
+;; system-viz graphviz
+;; visualize a system
+
+;; micro dependency injection framework.
+;; https://github.com/stuartsierra/component
+;; https://github.com/tolitius/mount
+;; https://github.com/danielsz/system - PostgreSQL included
