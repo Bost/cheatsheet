@@ -40,10 +40,13 @@ CLOS
 ;; show objects in the namespace
 (sort (keys (ns-publics 'ws.core)))
 
-;; clean the whole namespace from REPL; see also cider-ns-refresh
+;; undefine / clean the whole namespace from REPL;
+;; cider-ns-refresh doesn't work as expected
 (map #(ns-unmap *ns* %) (keys (ns-interns *ns*)))
-;; undefine just one thing
-(ns-unmap *ns* some-old-definiton)
+
+;; undefine / clean just one thing
+(ns-unmap *ns* 'old-definiton)
+(ns-unmap 'current-namespace 'local-alias)
 
 ;; read and eval swc/ws/core.clj
 (load-file "src/ws/core.clj")
