@@ -22,11 +22,11 @@
 (swap! cnt (fn [n] (+ n 3))) ;; => 4
 (reset! cnt 0)
 
-;; destructure hashmap; default function parameters
-(defn [{:keys [a b] :or {c "default-val-of-c"} :as prm}])
+;; destructure hashmap; default function prms / params / parameters
+(defn foo [{:keys [a b c] :or {c "c-default"} :as prm}] [a b c])
 
 ;; destructure hashmap
-(let [{a :a b :b} m])
+(let [hm {:a 1 :b 2 :c 3} {a :a b :b} hm] [a b])
 
 ;; Common Lisp Object System
 CLOS
