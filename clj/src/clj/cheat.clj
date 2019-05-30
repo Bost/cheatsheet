@@ -557,3 +557,13 @@ user=> (repeat 100 (vec (range 100)))
 ;; https://github.com/stuartsierra/component
 ;; https://github.com/tolitius/mount
 ;; https://github.com/danielsz/system - PostgreSQL included
+
+(type (array-map :a 10))
+;; => clojure.lang.PersistentArrayMap
+
+;;
+(try
+  (/ 1 0)
+  (catch ArithmeticException e (str "caught exception: " (.getMessage e)))
+  (catch Exception e (prn "This is the error" (ex-data e)))
+  (finally (prn "final exception.")))
