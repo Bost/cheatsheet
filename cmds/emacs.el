@@ -669,3 +669,5 @@ xmodmap -pm
 ;; mod4        Super_L (0x85),  Super_R (0x86),  Super_L (0xce),  Hyper_L (0xcf)
 ;; mod5        ISO_Level3_Shift (0x5c),  Mode_switch (0xcb)
 
+;; quit / delete multiple cursors
+M-x evil-mc-undo-all-cursors
