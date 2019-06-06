@@ -166,7 +166,8 @@ git log -S "textToSearch"
 git log -S "textToSearch" --source --all
 
 # search for occurences of function foo
-git log -G "^(\s)*function foo[(][)](\s)*{$" --source --all
+git log -G "^(\s)*function foo[(][)](\s)*\{$" --source --all    # bash
+git log -G "^(\s)*function foo[(][)](\s)*\{\$" --source --all   # fish
 
 # ignore line ending changes
 git config --global core.autocrlf true
