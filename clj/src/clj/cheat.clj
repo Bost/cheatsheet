@@ -567,3 +567,21 @@ user=> (repeat 100 (vec (range 100)))
   (catch ArithmeticException e (str "caught exception: " (.getMessage e)))
   (catch Exception e (prn "This is the error" (ex-data e)))
   (finally (prn "final exception.")))
+
+;; cider debugger https://cider.readthedocs.io/en/latest/debugging/#keys
+;; https://cambium.consulting/articles/2018/2/8/the-power-of-clojure-debugging
+;; n Next step
+;; i Step in to a function
+;; o Step out of the current sexp (like up-list)
+;; O Force-step out of the current sexp
+;; h Skip all sexps up to “here” (current position). Move the cursor before
+;;   doing this.
+;; H Force-step to “here”
+;; c Continue without stopping
+;; e Eval code in current context
+;; p Inspect a value
+;; l Inspect local variables
+;; j Inject a value into running code
+;; s Show the current stack
+;; t Trace. Continue, printing expressions and their values.
+;; q Quit execution
