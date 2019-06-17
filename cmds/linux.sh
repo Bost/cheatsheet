@@ -1247,3 +1247,20 @@ chown -h myuser:mygroup mysymbolic
 # Stich ETL service https://www.stitchdata.com/
 # https://clojure.org/stories/stitch
 
+# cgroups - control groups in the linux kernel
+sudo docker tag friendlyhello gordon/get-started:part2
+sudo docker run -p 4000:80 friendlyhell
+sudo docker image ls
+sudo docker save gordon/get-started:part2 > get-started.tar
+sudo docker load --image get-started.tar
+sudo docker info
+sudo docker container ls
+sudo docker container inspect <container>
+sudo docker kill --signal=SIGHUP <container>
+sudo docker stop <container>
+sudo docker restart <container>
+sudo systemctl restart docker
+sudo docker ps -a
+sudo killall docker-containerd
+sudo killall dockerd
+sudo docker-compose down
