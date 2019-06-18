@@ -118,5 +118,7 @@ psrinfo
 /usr/sbin/ifconfig -a
 
 # postgres connect
-psql DBNAME USERNAME
-SELECT * FROM pg_catalog.pg_tables;
+# psql DBNAME USERNAME - this probably doesn't work
+psql -h localhost -p 5432 -U postgres -W   # empty password - press Enter
+# test content
+SELECT count(*) FROM pg_catalog.pg_tables;
