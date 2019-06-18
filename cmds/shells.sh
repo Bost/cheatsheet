@@ -25,9 +25,12 @@ cat /etc/shells; echo $SHELL; chsh -s /usr/local/bin/fish
 # :bash :fish - sequence from 0 to 10 (both included) increment by 2
 seq 0 2 10
 
-# remove a line from shell history (i.e. password)
-# ~/.bash_history | ~/.config/fish/fish_history
+# :bash remove a line from shell history (i.e. password) see also ~/.bash_history
 history -d
+
+# :fish see also ~/.config/fish/fish_history
+history delete --contains <substring>
+history delete --contains delete
 
 # :shell :bash :fish - see what the shell does with the various types of quoting
 # https://unix.stackexchange.com/a/417408
