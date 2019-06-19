@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 exit 1 # just in case ...
 
+# web server, reverse proxy, load balancer, mail proxy, HTTP cache
+nginx
+
 # jq - Command-line JSON processor; json formatting; sed for json
 echo "{\"foo\":\"bar\"}" | jq .foo
 
