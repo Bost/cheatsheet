@@ -1252,9 +1252,11 @@ chown -h myuser:mygroup mysymbolic
 
 # cgroups - control groups in the linux kernel; limits an application to a
 # specific set of resources
+# container are created from images: I -> C
+# https://hub.docker.com/  also see: PWD (Play With Docker)
 # control groups allow Docker Engine to share available hardware resources to
-# containers and optionally enforce limits and constraints. For example, you can
-# limit the memory available to a specific container.
+# containers and optionally enforce limits and constraints. E.g. limit the
+# memory available to a specific container.
 sudo docker run -p 4000:80 friendlyhell
 sudo docker tag friendlyhello gordon/get-started:part2
 sudo docker run -p 4000:80 gordon/get-started:part2
@@ -1272,6 +1274,8 @@ sudo service docker status
 sudo docker ps -a
 sudo killall docker-containerd
 sudo killall dockerd
+
+# docker-compose.yml - define & running multi-container Docker apps
 sudo docker-compose down
 
 # services
@@ -1316,3 +1320,28 @@ docker container ls -q                                      # List container IDs
 docker stack rm <appname>                             # Tear down an application
 docker swarm leave --force      # Take down a single node swarm from the manager
 
+docker system prune
+docker system prune --volumes
+docker image prune
+docker image prune -a
+docker image ls -la
+docker volume ls
+docker volume prune
+
+# :bash - add your user to docker group and re-login
+sudo usermod --append --groups docker $(whoami)`
+sudo usermod -aG docker $(whoami)`
+
+# https://hub.docker.com/_python
+# Section: Create a Dockerfile in your Python app project
+touch requirements.txt
+echo "print(\"Hello, World!\")" > your-daemon-or-script.py
+sudo docker build -t my-python-app .
+sudo docker run -it --rm --name my-running-app my-python-app
+
+# https://hub.docker.com/_/postgres
+sudo docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+sudo docker container ls
+sudo docker exec -it some-postgres bash
+psql -h localhost -p 5432 -U postgres -W   # empty password - press Enter
+SELECT count(*) FROM pg_catalog.pg_tables;
