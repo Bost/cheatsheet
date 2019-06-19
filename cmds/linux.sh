@@ -883,6 +883,9 @@ unzip ./pth/to/file.zip -d ./pth/to/extract-dir
 # unzip: untar: in one step / command
 tar -zxvf file.tar.gz
 
+# list content of a zip file
+unzip -l file.zip
+
 # tar / untar
 tar czf ./pth/to/tarfile.gz file0 file1
 tar xzf ./pth/to/tarfile.gz
