@@ -366,7 +366,7 @@ jar -cfe Main.jar $classdir.Main -C $basedir $classdir/Main.class
 ;; create jar file - an alternative
 jar -cfe Main.jar $package.Main -C $basedir $classdir/Main.class
 ;; run Main.class from jar file
-java -jar Main.jar
+java -jar Main.jar arg0 arg1
 
 ;; java: observe jvm
 jcmd / jinfo / jstat / jstack
