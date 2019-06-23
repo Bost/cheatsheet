@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 exit 1 # just in case ...
 
+# automatic installation of security (and other) upgrades
+sudo unattended-upgrade -d --dry-run  # -d debug
+sudo unattended-upgrade -d            # -d debug
+sudo unattended-upgrade
+
 # web server, reverse proxy, load balancer, mail proxy, HTTP cache
 nginx
 
