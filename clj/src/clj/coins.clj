@@ -108,3 +108,50 @@ Quadratic Sharding - ???
 
 Side chaing pegging into BTC blockchain - 2nd layer of operability
 Proof of Stake side chaned into BTC blockchain to create another DAPP
+
+PC Payment channel(s) - lightning network
+SC Side channel
+AS Atomic Swap
+Coin Join
+Nible Wimble - only unspent Tx UTXO
+
+Lightning Network
+1st layer is interchangeable (austauschbar)
+- coins on different channels
+gRPC
+Macaroon authentication key
+LND - lightning network daemon
+CND -
+
+Monero XMR
+Blue Wallet
+
+Corda Blockchain
+ABCP Asset Backed Commercial Paper
+
+PC on Ethereum - Payment Channel on Ethereum
+General State Channel
+
+Raid Network
+Payment Routing
+
+Conterfactual
+Celer Network - Layer 2; for Games
+Rained Network - for ???
+Multihop Payments
+Landmark M - Routing
+Stellar Network
+Stellar Consensus Protocol
+Stellar -> XRP (Ripple); supports arbitrage
+Lumen Currency - remittance
+Federated Byzantine Agreement
+Quorum - subgroup sufficient for consensus
+Starlight
+Cross assets Dollar -> Eur -> ...
+Virtual State Channels
+Pederson commitment r*G + v*H
+Quantun Resistance
+NTRU - latice bases cryptography ; not elliptic curves
+Post Quantum Commitment Schemes
+Schnorr signature
+EdDSA - Edwards-Curve Digital Signature Algorithm
