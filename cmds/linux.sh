@@ -141,6 +141,18 @@ deb [arch=amd64] http://...
 # :usb :drive :drives :disc :discs - list block devices
 lsblk
 
+# Format disk / usb drive
+# 1. erase everything on the device
+# convert and copy a file; bs=BYTES  read & write up to BYTES at a time
+sudo dd status=progress if=/dev/zero of=/dev/sdd1 bs=4k && sync
+# 2. make a new partition on the device
+sudo fdisk /dev/sdd1
+sudo mkfs.ext4 /dev/sdd1
+sudo eject /dev/sdd1
+
+# flush file system buffers
+sync
+
 # dynamic device management - the /dev directory
 udev
 
