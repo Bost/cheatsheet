@@ -92,8 +92,9 @@ C-c 1 / C-c 2 / ...
 emacs --no-init-file     ;; also: emacs -q
 emacs --no-window-system ;; also: emacs -nw
 
-;; open web browser
-M-x browse-url-at-point
+;; web
+M-x browse-url-at-point   ;; open web browser of the OS
+M-x eww                   ;; emacs web browser
 
 ;; byte-compile an *.el file
 M-x byte-compile-file
