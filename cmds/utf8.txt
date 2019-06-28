@@ -95,7 +95,7 @@ Order relation with dot ⋖ ⋗ ⩿ ⪀ ⪗ ⪘ ⪁ ⪂ ⪃ ⪄
 Equality, Identity, Equivalence, Approx, Congruence equality ≝ ≞ ≟ ≠ ∹ ≎ ≏ ⪮ ≐ ≑ ≒ ≓ ≔ ≕ ≖ ≗ ≘ ≙ ≚ ≛ ≜ ⩬ ⩭ ⩮ ⩱ ⩲ ⩦ ⩴ ⩵ ⩶ ⩷
 Identity ≡ ≢ ⩧
 Equivalence ≍ ≭ ≣ ⩸
-Approx/almost/asymptotic equality ≁ ≂ ≃ ≄ ⋍ ≅ ≆ ≇ ≈ ≉ ≊ ≋ ≌ ⩯ ⩰
+Approx/almost/asymptotic equality / equivalence ≁ ≂ ≃ ≄ ⋍ ≅ ≆ ≇ ≈ ≉ ≊ ≋ ≌ ⩯ ⩰
 isomorphism ⋍
 Misc equality ∻
 Misc relations ⊏ ⊐ ⊑ ⊒ ⊓ ⊔ ⋢ ⋣ ⋤ ⋥ ⫴ ⫵
