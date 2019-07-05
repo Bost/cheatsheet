@@ -230,7 +230,19 @@
 
   {:fr ["Je suis complètement paumé(e)"]
    :de ["Ich bin völlig aufgeschmissen"]
-   :sk ["Mám v tom hokej"]
+   :sk ["Mám v tom hokej" "Som mimo" "Som nepripravený"]
    }
+
+  {:fr ["Étant donné ... et ... on peut aisement constuire ..."]
+   :de ["Gegeben ist ... und ... man kann leicht ... konstruiren"]
+   }
+
+  {:fr ["faire table rase"]
+   :de ["aufräumen" "reinen Tisch machen"]}
+
+  {:fr ["dès à présent"]
+   :sk ["od tej doby doteraz"]
+   :de ["ab sofort" "bereits jetzt" "schon jetzt" "ab jetzt" "von jetzt an"
+        "bereits jetzt für absofort" ]}
   }
 

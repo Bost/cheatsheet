@@ -1,8 +1,7 @@
 sk diacritics á ä č ď é í ĺ ľ ň ó ô ŕ š ť ú ý ž  Á Ä Č Ď É Í Ĺ Ľ Ň Ó Ô Ŕ Š Ť Ú Ý Ž
 fr diacritics à â ä æ ç è é ê ë î ï ô œ ù û ü    À Â Ä Æ Ç È É Ê Ë Î Ï Ô Œ Ù Û Ü Œ
 de diacritics ü ö ä  Ä Ü Ö ß
-For all / every ∀
-Exists ∃
+Exists / forall / for-all / for all / every ∀ ∃
 Category ℂ
 Composition / "after" ∘
 Numbers ➊ ➋ ➌ ➍ ➎ ➏ ➐ ➑ ➒
@@ -92,10 +91,8 @@ less and greater with similarity ⪝ ⪞ ⪟ ⪠ ⪍ ⪎ ⪏ ⪐
 less and greater slanted ⩽ ⩾ ⫹ ⫺ ⪕ ⪖ ⪛ ⪜
 less and greater misc ⪣ ⪤ ⪥ ⪦ ⪧ ⪨ ⪩ ⪪ ⪫ ⪬ ⪭ ⪡ ⪢ ⫷ ⫸ ⩹ ⩺ ⩻ ⩼ ≪ ≫ ⋘ ⋙ ≬
 Order relation with dot ⋖ ⋗ ⩿ ⪀ ⪗ ⪘ ⪁ ⪂ ⪃ ⪄
-Equality, Identity, Equivalence, Approx, Congruence equality ≝ ≞ ≟ ≠ ∹ ≎ ≏ ⪮ ≐ ≑ ≒ ≓ ≔ ≕ ≖ ≗ ≘ ≙ ≚ ≛ ≜ ⩬ ⩭ ⩮ ⩱ ⩲ ⩦ ⩴ ⩵ ⩶ ⩷
-Identity ≡ ≢ ⩧
-Equivalence ≍ ≭ ≣ ⩸
-Approx/almost/asymptotic equality / equivalence ≁ ≂ ≃ ≄ ⋍ ≅ ≆ ≇ ≈ ≉ ≊ ≋ ≌ ⩯ ⩰
+Equality, Identity, Equivalence, Approx, Congruence equality ≍ ≭ ≣ ⩸ ≡ ≢ ⩧ ≝ ≞ ≟ ≠ ∹ ≎ ≏ ⪮ ≐ ≑ ≒ ≓ ≔ ≕ ≖ ≗ ≘ ≙ ≚ ≛ ≜ ⩬ ⩭ ⩮ ⩱ ⩲ ⩦ ⩴ ⩵ ⩶ ⩷
+Approx / almost / asymptotic equality / equivalence ≁ ≂ ≃ ≄ ⋍ ≅ ≆ ≇ ≈ ≉ ≊ ≋ ≌ ⩯ ⩰
 isomorphism ⋍
 Misc equality ∻
 Misc relations ⊏ ⊐ ⊑ ⊒ ⊓ ⊔ ⋢ ⋣ ⋤ ⋥ ⫴ ⫵
