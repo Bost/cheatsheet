@@ -227,5 +227,10 @@
 
   {:fr ["Chacun ayant bien en tête que les mois à venir vont être denses"]
    :sk ["Každý dobre pamätajúc na to že prichádzajúce mesiace budú nabité"]}
+
+  {:fr ["Je suis complètement paumé(e)"]
+   :de ["Ich bin völlig aufgeschmissen"]
+   :sk ["Mám v tom hokej"]
+   }
   }
 
