@@ -1130,16 +1130,15 @@ sudo apt-add-repository \
 # curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt update; and sudo apt install nodejs
 
-# update yarn
-curl -o- -L https://yarnpkg.com/install.sh | bash
-
-# npm
+# npm: dependency management
+curl -o- -L https://yarnpkg.com/install.sh | bash  # also update
 yarn add                  # add package to use in your current package
 yarn global add <package>
 yarn init                 # initialize development of a package
 yarn install              # install all dependecies defined in package.json
 yarn publish              # publish package to a package manager
 yarn remove               # remove unused package from your current package
+yarn upgrade
 
 # nodejs - alias to the node command
 npm install --global <package>
