@@ -244,5 +244,9 @@
    :sk ["od tej doby doteraz"]
    :de ["ab sofort" "bereits jetzt" "schon jetzt" "ab jetzt" "von jetzt an"
         "bereits jetzt für absofort" ]}
+
+  {:fr ["de l'autre côté" "d'autre part"]}
+
+  {:fr ["ça ne convient à personne"]}
   }
 
