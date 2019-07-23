@@ -12,7 +12,6 @@ remittance
 xrp
 SWIFT - cross border payments
 cryptopia
-corda
 lightning network and nodes - scalable off-chain instant payments
 second layer
 sharding
@@ -87,6 +86,14 @@ permission-less: Sybil attack "You can register 10000 times"
 
 twitter.com/polemitis
 Corda - Bank consortium
+Corda Blockchain
+ABCP Asset Backed Commercial Paper
+authenticated network
+certs
+notary notes
+network map nodes - like DNS
+
+
 IoV - Internet of value
 cointracking.info - Track portfolio & tax report
 ETF.com - exchange-traded funds
@@ -125,9 +132,6 @@ CND -
 
 Monero XMR
 Blue Wallet
-
-Corda Blockchain
-ABCP Asset Backed Commercial Paper
 
 PC on Ethereum - Payment Channel on Ethereum
 General State Channel
