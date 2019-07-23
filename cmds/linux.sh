@@ -252,17 +252,24 @@ sudo ppa-purge <ppa:user/ppa-name>
 # display file or file system status; alternative to ls
 stat -c "%y %s %n" *
 
-# list only one column
+# listing: sort by size; -l     use a long listing format
+ls --sort=size -l
+ls --sort=size -l --reverse
+
+# listing: only one column
 ls --format=single-column
 
-# list only directories, 1 entry per line
+# listing: only directories, 1 entry per line
 ls -d1 */
 
-# count of files in ./pth/to/dir
+# listing: count of files in ./pth/to/dir
 ls -1 ./pth/to/dir | wc -l
 
-# show full paths (alias lff)
+# listing: show full paths (alias lff)
 ls -lrt -d -1 $PWD/{*,.*}
+
+# listing: file extention in current directory
+find ./ -type f | perl -ne 'print $1 if m/\.([^.\/]+)$/' | sort -u
 
 # line count, word count
 wc cheatsheet.html
@@ -903,7 +910,15 @@ unzip ./pth/to/file.zip -d ./pth/to/extract-dir
 # unzip: untar: in one step / command
 tar -zxvf file.tar.gz
 
-# list content of a zip file
+# listing: compression: list file content
+tar --list --file <file.tar.xz>
+tar --list --file <file.tar.gz>
+tar --list --file <file.tar.bz2>
+tar --list --file <file.tbz2>
+tar --list --file <file.tgz>
+tar --list --file <file.7z>
+
+# listing: content of a zip file
 unzip -l file.zip
 
 # tar / untar
