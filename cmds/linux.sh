@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 exit 1 # just in case ...
 
-# automatic installation of security (and other) upgrades
-sudo unattended-upgrade -d --dry-run  # -d debug
-sudo unattended-upgrade -d            # -d debug
-sudo unattended-upgrade
-
 # web server, reverse proxy, load balancer, mail proxy, HTTP cache
 nginx
 
@@ -15,21 +10,6 @@ echo "{\"foo\":\"bar\"}" | jq .foo
 # json formatting
 curl 'http://stash.compciv.org/congress-twitter/json/joni-ernst.json' \
      > ernst.json; and cat ernst.json | jq '.'
-
-# centos compile git
-sudo yum clean all
-sudo vim /etc/yum.com; proxy=http://<ip:port>
-sudo yum update
-sudo yum groupinstall 'Development Tools'
-sudo yum install openssl-devel curl-devel expat-devel perl-devel asciidoc xmlto
-
-# centos compile emacs
-sudo yum install texinfo gtk2-devel gnutls-devel libtiff-devel libungif-devel \
-     libjpeg-devel libXpm-devel ncurses-devel
-
-# centos compile guake
-sudo yum install gnome-common GConf2-devel pytgtk2-devel python-vte-devel \
-     gnome-python2-gconf python-keybinder pyxdg notify-python
 
 # :cpu :mem :hdd :hardware - system information in a GTK+ window
 hardinfo
@@ -135,9 +115,6 @@ locate -b '\NAME'
 # split a file into pieces (with '.' at the end)
 split --bytes 1M --numeric-suffixes --suffix-length=3 foo.txt foo.
 
-# :deb :apt :ppa - only 64bit packages
-deb [arch=amd64] http://...
-
 # :usb :drive :drives :disc :discs - list block devices
 lsblk
 
@@ -165,21 +142,10 @@ evince file.pdf
 # centos update
 su -c 'yum update'
 
-# :apt :aptitute :apt-offline
-sudo apt-offline install $HOME/offline-updates
-sudo apt-offline install --allow-unauthenticated $HOME/offline-updates
-
-# :aptitute
-/etc/apt/apt.conf.d/05proxy
-/etc/apt/apt.conf
-
-# :apt :aptitude - without proxy
-sudo apt --option Acquire::http::proxy=false ...
-
 # :net - grouping bandwidth per process; "net top"
 sudo nethogs wlan0
 
-# top and htop explained; see also: atop iotop
+# top and htop explained; see also atop iotop
 https://peteris.rocks/blog/htop/
 
 # monitor disk I/O usage
@@ -219,11 +185,6 @@ hostname -i
 # :mplayer reset/+/- speed by 10% / toggle OSD states / volume +/-
 backspace / \] / \[ / o / * / "/"
 
-# youtube
-> / < # :speed 25% faster / slower
-c / m # toggle captions / mute
-, / . # move 1 frame forward / backward
-
 # postscript to pdf conversion
 ps2pdf
 
@@ -240,35 +201,26 @@ update-alternatives --list python3
 # :xfce - opens a file or URL in the user's preferred application
 /usr/bin/browse -> xdg-open
 
-# :dpkg - add-apt-repository needs a single repo
-sudo add-apt-repository ppa:jonathonf/python-3.6
-sudo add-apt-repository ppa:atareao/telegram
-sudo apt update
-sudo apt install telegram python-3.6
-
-# :dpkg list-ppa:
-sudo ppa-purge <ppa:user/ppa-name>
-
 # display file or file system status; alternative to ls
 stat -c "%y %s %n" *
 
-# listing: sort by size; -l     use a long listing format
+# :listing sort by size; -l     use a long listing format
 ls --sort=size -l
 ls --sort=size -l --reverse
 
-# listing: only one column
+# :listing only one column
 ls --format=single-column
 
-# listing: only directories, 1 entry per line
+# :listing only directories, 1 entry per line
 ls -d1 */
 
-# listing: count of files in ./pth/to/dir
+# :listing count of files in ./pth/to/dir
 ls -1 ./pth/to/dir | wc -l
 
-# listing: show full paths (alias lff)
+# :listing show full paths (alias lff)
 ls -lrt -d -1 $PWD/{*,.*}
 
-# listing: file extention in current directory
+# :listing file extention in current directory
 find ./ -type f | perl -ne 'print $1 if m/\.([^.\/]+)$/' | sort -u
 
 # line count, word count
@@ -416,7 +368,7 @@ pidof process-name
 # find and kill processIDs belonging processName
 kill $(pidof processName)
 
-# telnet: terminate session
+# :telnet terminate session
 Ctrl-\] Enter quit Enter
 
 # download fileX.txt and save it under different location / name
@@ -425,10 +377,10 @@ wget http://server/fileX.ext -O ./pth/to/fileY.ext
 # download fileX.txt and save it under different location / name
 curl -O http://server/fileX.txt > ./pth/to/fileY.txt
 
-# net: ask http://ifconfig.me about myself (ua: User Agent)
+# :net ask http://ifconfig.me about myself (ua: User Agent)
 curl ifconfig.me/ip/host/ua/port/
 
-# net: test connection with disabled proxy
+# :net test connection with disabled proxy
 curl --noproxy "*" -X GET http://www.google.com
 
 # enforce using http_proxy instead of https_proxy in case of
@@ -442,19 +394,19 @@ curl -v URL
 curl --request GET \
  "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=test"
 
-# iproute2: net: like ifconfig. state of network interfaces
+# :iproute2 :net like ifconfig. state of network interfaces
 ip address
 
-# iproute2: net: show / manipulate routing, devices, policy routing and tunnels
+# :iproute2 :net show / manipulate routing, devices, policy routing and tunnels
 ip address show eth0
 
-# iproute2: net: routing table
+# :iproute2 :net routing table
 ip route
 
-# iproute2: net: Address Resolution Protocol table
+# :iproute2 :net Address Resolution Protocol table
 ip neighbour
 
-# net: what is my IP
+# :net what is my IP
 curl ifconfig.me
 
 # exec disc usage command on a remote host and sort results
@@ -467,7 +419,7 @@ diff -rq dirA dirB | sort
 # sort via 2nd key (?column?)
 sort -k2 file.csv
 
-# diff: outputs the files in two columns, side by side, separated by spaces
+# :diff outputs the files in two columns, side by side, separated by spaces
 sdiff file1 file0
 
 # output line-numbers
@@ -480,7 +432,7 @@ grep "pattern" /pth/to/file | awk '{print $0,"\n"}'
 # find files and open them in gvim
 gvim $(find . -name "*fileToSearch*")
 
-# gzip: list compressed, uncompressed size, compression ratio etc.
+# :gzip list compressed, uncompressed size, compression ratio etc.
 gzip -l ./pth/to/file.gz
 
 # write output to stdout; zcat and gunzip -c are identical
@@ -515,19 +467,19 @@ rsync --human-readable --archive --verbose --compress src/ dst
 rsync -havzr --include="*/" --include="*.sh" --exclude="*" "$src" "$dst"
 rsync --human-readable --archive --verbose --compress --recursive --include="*/" --include="*.sh" --exclude="*" "$src" "$dst"
 
-# cvs: copy files from src to dst excluding everything in CVS directories
+# :cvs copy files from src to dst excluding everything in CVS directories
 # (showing progress)
 rsync --dry-run --human-readable --progress          --archive --verbose --exclude='CVS' src/ dst
 rsync --dry-run --human-readable --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
 rsync --dry-run --human-readable                     --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst
 rsync --dry-run --human-readable            --delete --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst | grep deleting
 
-# cvs: copy files from src to dst excluding everything in CVS directories (showing progress)
+# :cvs copy files from src to dst excluding everything in CVS directories (showing progress)
 # exclude hidden files and directories
 rsync --dry-run --human-readable                     --archive --verbose --exclude=".*" --exclude=".*/" src/ dst
 rsync --dry-run --human-readable            --delete --archive --verbose --exclude=".*" --exclude=".*/" src/ dst | grep deleting
 
-# mv: move content of a directory within another directory with the same folders
+# :mv move content of a directory within another directory with the same folders
 rsync --dry-run --human-readable                     --archive --remove-source-files backup/ backupArchives
 rsync --dry-run --human-readable            --delete --archive --remove-source-files backup/ backupArchives | grep deleting
 
@@ -540,7 +492,7 @@ cvs diff -r tagX -r tagY
 # get clean copy
 cvs update -C ./pth/to/file.ext
 
-# cvs: get revision 1.11
+# :cvs get revision 1.11
 cvs update -P -C -r 1.11 ./pth/to/file.ext
 
 # checkout module from branch or tag
@@ -593,10 +545,10 @@ ssh -t user@hostname "tail -f /pth/to/file"
 # -n redirects stdin from /dev/null
 ssh -n user@hostname "tail -f /pth/to/file" &
 
-# github: ssh:
+# :github :ssh
 ssh-keygen
 
-# github: now copy-paste the ~/.ssh/id_rsa.pub to github under
+# :github now copy-paste the ~/.ssh/id_rsa.pub to github under
 # "Account settings / SSH keys / Add another public key"
 cat ~/.ssh/id_rsa.pub
 
@@ -609,20 +561,20 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys; # rm ~/.ssh/id_rsa.pub
 # Execute a command as another user
 pkexec
 
-# net: service is replaced by systemctl
+# :net service is replaced by systemctl
 systemctl status network-manager / service network-manager status
 sudo systemctl stop tomcat7 / sudo service tomcat7 stop
 
-# systemd: Control the systemd system and service manager
+# :systemd Control the systemd system and service manager
 systemctl status <service-name>
 
-# systemd: Control the systemd login manager - logging data
+# :systemd Control the systemd login manager - logging data
 loginctl
 
 # last logged-in users
 last
 
-# processsor: cpu: architecture: core: cores: 32 (i686) /64 (x86_64) bit
+# :processsor :cpu :architecture :cores 32 (i686) /64 (x86_64) bit
 lscpu
 getconf LONG_BIT
 
@@ -636,24 +588,24 @@ mpstat -P ALL
 # Display five reports of statistics for all processors at two second intervals
 mpstat -P ALL 2 5
 
-# processor: cpu: mem: hdd: hardware: system information for console & IRC
+# :processor :cpu :mem :hdd :hardware system information for console & IRC
 # -Fz filter out privacy sensitive info
 inxi -Fxz
 inxi --full --extra 1 --filter
 
-# nice: cpulimit: find and delete *.jar and *.class when idling
+# :nice :cpulimit find and delete *.jar and *.class when idling
 ionice -c3 find . -name "*.jar" -or -name "*.class" -delete
 
-# nice: cpulimit: change the priority of process 2222 to minimum (-19 max, +19 min prio)
+# :nice :cpulimit change the priority of process 2222 to minimum (-19 max, +19 min prio)
 renice +19 2222
 
-# nice: cpulimit: launch process with lowest priority
+# :nice :cpulimit launch process with lowest priority
 nice -n +19 command
 
-# nice: cpulimit: limits the CPU usage of a process to max 10%
+# :nice :cpulimit limits the CPU usage of a process to max 10%
 cpulimit --limit 5 <cmd>
 
-# nice: cpulimit: ps: show statistics for a process nr. 7695
+# :nice :cpulimit :ps show statistics for a process nr. 7695
 ps -o pid,user,command,nice -p 7695
 
 # process tree
@@ -667,37 +619,16 @@ ps u
 cat /etc/*-release
 cat /proc/version
 
-# show (ubuntu) version
+# :ubuntu show OS version
 lsb_release -a
 
-# ubuntu: when "you may need to re-run your boot" appears
+# :ubuntu when "you may need to re-run your boot" appears
 sudo update-grub
 
-# withouth "sudo", download source PACKAGE to current directory
-apt source <package>
-
-# Advanced Package Tool; apt is a replacement for apt-get
-sudo apt install --reinstall <package>
-
-# ubuntu: command line upgrade part 1. (CLI alternative to update-manager)
-# set Prompt
-/etc/update-manager/release-upgrades
-Prompt=normal
-
-# ubuntu: command line upgrade part 2.
-sudo apt update; and sudo apt upgrade
-
-# update and upgrade the system by removing/installing/upgrading packages
-sudo apt update; and sudo apt full-upgrade
-sudo apt update; and sudo apt dist-upgrade # alternativelly
-
-# ubuntu: command line upgrade part 3.
-sudo do-release-upgrade
-
-# ubuntu: after update / upgrade see
+# :ubuntu after update / upgrade see
 /usr/share/update-notifier/notify-reboot-required
 
-# ubuntu: (ubuntu 11.10 or later), gnome or KDE
+# :ubuntu (ubuntu 11.10 or later), gnome or KDE
 sudo restart lightdm / gdm / kdm
 
 # run fsck on next reboot
@@ -727,7 +658,7 @@ sed --in-place '/^\s*$/d' /pth/to/file
 # replace newlines with space
 sed ':a;N;$!ba;s/\n/ /g'
 
-# sed: ascii: ebcdic: fix new lines and empty chars; \x85 - hexadecimal char
+# :sed :ascii :ebcdic fix new lines and empty chars; \x85 - hexadecimal char
 sed "s/\x85/\n/g" <log.txt >log.nl.txt; \
     sed "s/\x85/\n/g" <log.nl.txt >log.nl.00.txt
 
@@ -737,30 +668,30 @@ sha1sum -c file.sha1
 # :ps full command line; command is separated by the \0 byte
 tr '\0' ' ' < /proc/<pid>/cmdline
 
-# ps: top: htop: all info related to a process
+# ::ps :top :htop all info related to a process
 ls /proc/<pid>
 
-# ps: top: htop: currend working dir of <pid>
+# ::ps :top :htop currend working dir of <pid>
 cat /proc/<pid>/cwd
 
-# xfce: ubuntu: popup: message: desktop notification
+# :xfce :ubuntu :popup :message desktop notification
 notify-send "Hello World"
 
-# xfce: keyboard; shortcuts
+# :shortcuts
 xfce4-keyboard-settings
 https://forum.manjaro.org/t/cant-switch-windows-with-super-tab/2406/4
 
-# xfce: keyboard; shortcuts; http://docs.xfce.org/xfce/xfconf/xfconf-query
+# :shortcuts http://docs.xfce.org/xfce/xfconf/xfconf-query
 xfconf-query --channel xfce4-keyboard-shortcuts -lv
 xfconf-query --channel xfce4-keyboard-shortcuts --property "/xfwm4/custom/<Super>Tab" --reset
 xfconf-query --channel xfce4-keyboard-shortcuts --property "/xfwm4/default/<Super>Tab" --reset
 xfconf-query --channel xfce4-keyboard-shortcuts --property "/xfwm4/custom/<Super>Tab" --create --type string --set "empty"
 xfconf-query --channel xfce4-keyboard-shortcuts --property "/xfwm4/default/<Super>Tab" --create --type string --set "empty"
 
-# xfce: keyboard; changes in the xml don't work, use xfce4-settings-editor
+# changes in the xml don't work, use xfce4-settings-editor
 locate xfce4-keyboard-shortcuts.xml
 
-# xfce: gnome: logout
+# :xfce :gnome :logout
 gnome-session-quit / xfce4-session-logout
 
 # difference between nohup, disown and & https://unix.stackexchange.com/a/148698
@@ -787,7 +718,7 @@ nohup command >/dev/null 2>&1 & disown
 man 7 signal
 man signal
 
-# virtualbox: restart clipboard
+# :virtualbox restart clipboard
 killall VBoxClient; and VBoxClient --clipboard & disown
 
 # restart xfce when the title bar dissapears from xfwm4; or rm -r
@@ -804,7 +735,7 @@ man -k topic / apropos -r topic
 # brief description of CMD / help for shell built ins
 whatis CMD / help
 
-# net: ipv6:
+# :net ipv6:
 # responds with 'ssh: connect to host <ipv6-address> port 22: Invalid argument'
 ssh -6 <ipv6-address>
 ping6 -I wlan0 -c 4 <ipv6-address> # responds with 'ping: unknown iface wlan0'
@@ -812,10 +743,10 @@ ping6 -I wlan0 -c 4 <ipv6-address> # responds with 'ping: unknown iface wlan0'
 # compare a remote file with a local file
 ssh user@host cat ./pth/to/remotefile | diff ./pth/to/localfile -
 
-# ssh: copy ssh keys to user@host to enable password-less ssh logins
+# :ssh copy ssh keys to user@host to enable password-less ssh logins
 ssh-copy-id user@host
 
-# ssh: mount folder/filesystem through SSH. Install SSHFS from
+# :ssh mount folder/filesystem through SSH. Install SSHFS from
 # http://fuse.sourceforge.net/sshfs.html. Mount a folder securely over a network
 sshfs name@server:/pth/to/folder ./pth/to/mount/point
 
@@ -823,7 +754,7 @@ sshfs name@server:/pth/to/folder ./pth/to/mount/point
 sudo mount.cifs //<windows-machine>/pth/to/dir pth/to/dir \
      -o user=<windows-username>
 
-# virtualbox: mount shared folder
+# :virtualbox mount shared folder
 sudo mount -t vboxsf share /home/username/share/
 
 # readonly to readwrite
@@ -838,79 +769,38 @@ youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] URL
 # align csv file
 cat data.csv | column -t -s ';'
 
-# xml: command line XML tool (formating)
+# :xml command line XML tool (formating)
 xmllint
 
 # shared library dependencies
 ldd -v $(which vim)
 
-# library: find out if libgconf is installed
+# :library find out if libgconf is installed
 ldconfig -p | grep libgconf
 
 # info about ELF files
 readelf -v $(which vim)
 
-# apt: aptitude: show installed packages
-dpkg --get-selections
-
-# :apt :aptitude list of installed files from a packageName (dpkg-query -L works too)
-dpkg -L packageName
-
-# show description for packageName
-apt-cache search ^packageName$
-
-# print names of all packages know to APT
-apt-cache pkgnames <packagePrefix>
-dpkg --status <package>
-dpkg -s <package>
-
-sudo dpkg --install <package.deb>
-sudo dpkg --remove  <package.deb>
-
-# list all installed packages matching regex
-dpkg --list | grep ii | grep -i <regex>
-# package description
-apt-cache show <package>
-aptitude show <package>
-# fix the 'Hash sum mismatch error'
-sudo rm -rf /var/lib/apt/lists
-sudo mkdir -p /var/lib/apt/lists/partial
-sudo apt clean
-
-# ubuntu: apt: dpkg: mirror: distro: Software Sources List
-# see y-ppa-manager, http://repogen.simplylinux.ch/
-software-properties-gtk
-# ... or edit the list of sources
-/etc/apt/sources.list.d
-
-# list installed packages; no sudo needed
-# TODO see --clear-selection --set-selection
-dpkg --get-selections | grep -v deinstall
-
-# aptitude: list expressly installed packages (not just installed as
-# dependencies)
-aptitude search '~i!~M'
-
-# cygwin: ps: show windows as well as cygwin processes (-W)
+# :cygwin :ps show windows as well as cygwin processes (-W)
 ps --windows
 
-# cygwin: command-line installer
+# :cygwin command-line installer
 apt-cyg --mirror \
     http://ftp-stud.hs-esslingen.de/pub/Mirrors/sources.redhat.com/cygwin/x86
 
-# cygwin: print unix form of filename
+# :cygwin print unix form of filename
 cygpath -u filename
 
-# zip: zip content of ./pth/to/dir to ./pth/to/file.zip; --recurse-paths is -r
+# :zip zip content of ./pth/to/dir to ./pth/to/file.zip; --recurse-paths is -r
 zip --recurse-paths --encrypt ./pth/to/file.zip ./pth/to/dir
 
-# zip: unzip:
+# :zip :unzip
 unzip ./pth/to/file.zip -d ./pth/to/extract-dir
 
-# unzip: untar: in one step / command
+# :unzip :untar in one step / command
 tar -zxvf file.tar.gz
 
-# listing: compression: list file content
+# :listing :compression list file content
 tar --list --file <file.tar.xz>
 tar --list --file <file.tar.gz>
 tar --list --file <file.tar.bz2>
@@ -918,7 +808,7 @@ tar --list --file <file.tbz2>
 tar --list --file <file.tgz>
 tar --list --file <file.7z>
 
-# listing: content of a zip file
+# :listing content of a zip file
 unzip -l file.zip
 
 # tar / untar
@@ -934,19 +824,19 @@ uniq
 sort file.txt | uniq
 awk '!visited[$0]++' file.txt > deduplicated-file.txt
 
-# net: ping: traceroute: - check connection
+# :net :ping :traceroute - check connection
 mtr google.com
 ethtool eth0
 ip neigh show | grep REACHABLE
 ip link show
 
-# net: ping: traceroute: check connection
+# :net :ping :traceroute check connection
 mtr --report www.google.com
 
 # query wikipedia for keyword
 dig +short txt keyword.wp.dg.cx
 
-# iproute2: net: listening ports and PIDs of associated processes.
+# :iproute2 :net listening ports and PIDs of associated processes.
 # tcp (-t) udp (-u)
 ss -tulnp  # socket statistics replaces obsolete netstat
 
@@ -965,7 +855,7 @@ xbacklight -set 10 / -inc 10 / -dec 10
 # power consumption / management diagnosis tool
 sudo powertop
 
-# gps: convert kml to gps
+# :gps convert kml to gps
 gpsbabel -i kml -f in.kml -o gpx -F out.gpx
 
 # IBM USS OS/390: ebcdic / ascii conversion
@@ -979,7 +869,7 @@ iconv -l
 tail -c 100 fileName
 head -c 100 fileName
 
-# net: what is currently using inet
+# :net what is currently using inet
 lsof -P -i -n | cut --fields=1 --delimiter=" " | uniq | tail --lines=+2
 
 # remove sections from each line of files
@@ -1000,13 +890,13 @@ test
 # determine file type
 file
 
-# tabs: convert spaces to tabs / tabs to spaces
+# :tabs convert spaces to tabs / tabs to spaces
 expand / unexpand file.txt
 
 # simple GUIs
 zenity, whiptail
 
-# metric: monitor:
+# :metric :monitor
 collectd # system statistics collection daemon
 telegraf # plugin-driven server agent for collecting & reporting metrics
 
@@ -1017,31 +907,31 @@ strace -f -e trace=file,network -s 10000 -o outfile.log PROCESS ARGS
 # trace process / library
 ptrace / ltrace
 
-# net: Simple Network Management Protocol
+# :net Simple Network Management Protocol
 snmp
 
-# net: packet analyser
+# :net packet analyser
 wireshark
 
-# net: ftp: trivial file transfer program
+# :net :ftp trivial file transfer program
 tftp
 
-# ftp: toggle bash / ftp
+# :ftp toggle bash / ftp
 ! / exit
 
-# ftp: connect to ipaddress and login with username
+# :ftp connect to ipaddress and login with username
 open ipaddress ENTER user username
 
-# ftp: get file from remote computer
+# :ftp get file from remote computer
 get file / mget file
 
-# ftp: sends site specific commands to remote server
+# :ftp sends site specific commands to remote server
 site
 
 # System Information Extraction Program:
 sysinfo
 
-# fs: get extended attributes of filesystem objects (inst attr)
+# :fs get extended attributes of filesystem objects (inst attr)
 getfattr
 
 # extended attributes on XFS filesystem objects
@@ -1053,10 +943,10 @@ HMAC
 # enterprise cryptographic filesystem for Linu
 ecryptfs
 
-# debian-goodies: show installed packages occupying the most space
+# :debian-goodies show installed packages occupying the most space
 dpigs
 
-# debian-goodies: check which processes need to be restarted after an upgrade
+# :debian-goodies check which processes need to be restarted after an upgrade
 sudo checkrestart
 
 # check if the /var/run/reboot-required exists
@@ -1068,29 +958,29 @@ ls /var/run/reboot-required
 # start COMMAND and kill it if it is running still after 5 sec
 timeout 5s COMMAND
 
-# net: retcode==1 - online; retcode!=1 offline
+# :net retcode==1 - online; retcode!=1 offline
 nm-online --exit; echo "retcode: $?"
 
-# wifi: net: 1. connect
+# :wifi :net 1. connect
 nm-applet / man nmcli-examples
 
-# wifi: net: 1. wifi: general status and operations
+# :wifi :net 1. wifi: general status and operations
 nmcli --ask device wifi list
 
-# wifi: net: 2. connect
+# :wifi :net 2. connect
 nmcli --ask device wifi connect WIFIonICE
 
-# wifi: net: 3. disconnect
+# :wifi :net 3. disconnect
 nmcli --ask device disconnect wlan0
 
-# wifi: net: general status and operations
+# :wifi :net general status and operations
 nmcli --ask general
 
-# rpm: display installed packages
+# :rpm display installed packages
 rpm -qa
 
 # android:
-sudo apt install android-tools-adb android-tools-fastboot
+sudo aptitude install android-tools-adb android-tools-fastboot
 
 # root login / root console / root prompt
 sudo -i
@@ -1124,15 +1014,15 @@ https://github.com/akavel/up
 mvn package
 mvn install / mvn clean - mvn install seems not to be needed
 
-# maven: mvn: proxy:
+# :maven :mvn proxy:
 # see https://www.mkyong.com/maven/how-to-enable-proxy-setting-in-maven/
 {M2_HOME}/settings.xml
 
-# SFTP / FTPS: SSH File Transfer from the OpenSSH / FTP over SSL
-# FTPS: FTP over SSL
+# :sftp / :ftp - SSH File Transfer from the OpenSSH / FTP over SSL
+# FTPS - FTP over SSL
 lftp
 
-# HPKP: HTTP Public Key Pinning; Similair to HSTS header
+# :HPKP HTTP Public Key Pinning; Similair to HSTS header
 Create your HPKP hash: https://report-uri.io/home/pkp_hash
 
 # install nodejs8 behind proxy
@@ -1145,7 +1035,7 @@ sudo apt-add-repository \
 # curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt update; and sudo apt install nodejs
 
-# npm: dependency management
+# :npm dependency management
 curl -o- -L https://yarnpkg.com/install.sh | bash  # also update
 yarn add                  # add package to use in your current package
 yarn global add <package>
@@ -1155,7 +1045,7 @@ yarn publish              # publish package to a package manager
 yarn remove               # remove unused package from your current package
 yarn upgrade
 
-# nodejs - alias to the node command
+# :nodejs - alias to the node command
 npm install --global <package>
 npm outdated
 npm update --global
@@ -1163,7 +1053,7 @@ npm update --global
 npm install --global --unsafe-perm=true electron
 npm search electron\*
 
-# nodejs: npm:
+# :nodej :npm
 npm install --verbose <package> / npm install -dd <package>
 npm config list
 npm config set color=false
@@ -1174,28 +1064,28 @@ npm config set registry https://registry.npmjs.org/ [or http]
 npm config set proxy "http://<ip:port>/"
 npm config set https-proxy "https://<ip:port>/"
 
-# net: data transfered today / per month
+# :net data transfered today / per month
 sudo vnstat -u -i wlan0; and vnstat
 
-# net: managing a netfilter firewall; ufw - uncomplicated firewall
+# :net managing a netfilter firewall; ufw - uncomplicated firewall
 sudo ufw status numbered
 sudo ufw delete <rule-nr>
 sudo ufw allow <port>
 sudo ufw allow <port>/tcp
 
-# net: rdp: remote desktop; `-p` ask for password, `-f` full screen
+# :net :rdp remote desktop; `-p` ask for password, `-f` full screen
 rdesktop -u <login> -p - <computer>:3389
 rdesktop -f -u <login> -p - <computer>:3389
-# net: rdp: remote desktop
+# :net :rdp remote desktop
 sudo /etc/init.d/xrdp restart
 
-# shred: permanet delete: shred doesn't work on dirs
+# :shred permanet delete: shred doesn't work on dirs
 shred --verbose --remove <pth/to/file>
 
-# shred: permanet delete: shred doesn't work on dirs
+# :shred permanet delete: shred doesn't work on dirs
 find . -type f -print0 | xargs -0 shred --remove
 
-# shred: permanet delete: srm doesn't delete hardlinked files
+# :shred permanet delete: srm doesn't delete hardlinked files
 srm -r <pth>
 
 # synchronize sytem date behind proxy
@@ -1210,12 +1100,12 @@ sudo date -s "${curDate}"
 # Add and remove modules from the Linux Kernel
 modprobe -a vboxguest vboxsf vboxvideo
 
-# vbox:
-sudo apt install virtualbox-guest-additions-iso
+# :vbox
+sudo aptitude install virtualbox-guest-additions-iso
 sudo /etc/init.d/virtualbox restart
 sudo /etc/init.d/virtualbox-guest-utils start
 
-# atom: delete all environment states
+# :atom delete all environment states
 atom --clear-window-state
 # list / backup installed packages to a file
 apm list --installed --bare > ~/dev/dotfiles/.atom/package.list
@@ -1226,7 +1116,7 @@ apm update
 # restore / synchronise settings
 rsync -zarv --include="*/" --include="*.cson" --exclude="*" ~/.atom/* ~/dev/dotfiles/.atom
 
-# rsync: options short / long versions
+# :rsync options short / long versions
 -h, --human-readable
 -a, --archive
 -v, --verbose
@@ -1234,18 +1124,18 @@ rsync -zarv --include="*/" --include="*.cson" --exclude="*" ~/.atom/* ~/dev/dotf
 -r, --recursive
 -n, --dry-run
 
-# bluetooth: bluez:
+# :bluetooth bluez:
 systemctl status bluetooth
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 bluetoothctl
 help # list of available commands of bluetoothctl
 
-# bluetooth: bluez: this actually works
+# :bluetooth :bluez this actually works
 # send file to /storage/emulated/0/bluetooth
 bluetooth-sendto --device=XX:XX:XX:XX:XX:XX local-fname
 
-# bluetooth: bluez: see https://ubuntu-users.livejournal.com/439582.html
+# :bluetooth :bluez see https://ubuntu-users.livejournal.com/439582.html
 # search for the appropriate channel for file transfers
 sdptool search FTP
 obexfs -bXX:XX:XX:XX:XX:XX -B<channel> ~
@@ -1255,10 +1145,10 @@ obexftp -b XX:XX:XX:XX:XX:XX -l /
 # use the '@'
 ussp-push XX:XX:XX:XX:XX:XX@ local-fname remote-fname
 
-# bluetooth: bluez: upload / push
+# :bluetooth :bluez upload / push
 obexftp -b XX:XX:XX:XX:XX:XX -c /Download -p local-fname
 
-# bluetooth: bluez: download
+# :bluetooth :bluez download
 obexftp -b XX:XX:XX:XX:XX:XX -c /Download -d remote-fname
 
 # super fast ram disk
@@ -1279,103 +1169,3 @@ du -a ~ 2>/dev/null | sort -n -r | head -n 20
 # -h, --no-dereference   affect symbolic links instead of any referenced file
 chown -h myuser:mygroup mysymbolic
 
-# ETL (Extract Transform Load)
-# https://tech.grammarly.com/blog/building-etl-pipelines-with-clojure
-# Stich ETL service https://www.stitchdata.com/
-# https://clojure.org/stories/stitch
-
-# cgroups - control groups in the linux kernel; limits an application to a
-# specific set of resources
-# container are created from images: I -> C
-# https://hub.docker.com/  also see: PWD (Play With Docker)
-# control groups allow Docker Engine to share available hardware resources to
-# containers and optionally enforce limits and constraints. E.g. limit the
-# memory available to a specific container.
-sudo docker run -p 4000:80 friendlyhell
-sudo docker tag friendlyhello gordon/get-started:part2
-sudo docker run -p 4000:80 gordon/get-started:part2
-sudo docker image ls
-sudo docker save gordon/get-started:part2 > get-started.tar
-sudo docker load --image get-started.tar
-sudo docker info
-sudo docker container ls
-sudo docker container inspect <container>
-sudo docker kill --signal=SIGHUP <container>
-sudo docker stop <container>
-sudo docker restart <container>
-sudo systemctl restart docker
-sudo service docker status
-sudo docker ps -a
-sudo killall docker-containerd
-sudo killall dockerd
-
-# docker-compose.yml - define & running multi-container Docker apps
-sudo docker-compose down
-
-# services
-sudo docker swarm init
-sudo docker stack deploy -c docker-compose.yml getstartedlab
-sudo docker service ls
-sudo docker stack ls
-sudo docker stack services getstartedlab
-sudo docker service ps getstartedlab_web
-sudo docker container ls -q
-
-# https://docs.docker.com/get-started/part2/
-docker build -t friendlyhello .  # Create image using this directory's Dockerfile
-docker run -p 4000:80 friendlyhello  # Run "friendlyhello" mapping port 4000 to 80
-docker run -d -p 4000:80 friendlyhello         # Same thing, but in detached mode
-docker container ls                                # List all running containers
-docker container ls -a             # List all containers, even those not running
-docker container stop <hash>           # Gracefully stop the specified container
-docker container kill <hash>         # Force shutdown of the specified container
-docker container rm <hash>        # Remove specified container from this machine
-docker container rm $(docker container ls -a -q)         # Remove all containers
-docker image ls -a                             # List all images on this machine
-docker image rm <image id>            # Remove specified image from this machine
-docker image rm $(docker image ls -a -q)   # Remove all images from this machine
-docker login             # Log in this CLI session using your Docker credentials
-docker tag <image> username/repository:tag  # Tag <image> for upload to registry
-docker push username/repository:tag            # Upload tagged image to registry
-docker run username/repository:tag                   # Run image from a registry
-
-# scale the app by changing the replicas value in docker-compose.yml
-docker stack deploy -c docker-compose.yml getstartedlab
-sudo docker stack rm getstartedlab
-sudo docker swarm leave --force
-
-# https://docs.docker.com/get-started/part3/
-docker stack ls                                            # List stacks or apps
-docker stack deploy -c <composefile> <appname>  # Run the specified Compose file
-docker service ls                 # List running services associated with an app
-docker service ps <service>                  # List tasks associated with an app
-docker inspect <task or container>                   # Inspect task or container
-docker container ls -q                                      # List container IDs
-docker stack rm <appname>                             # Tear down an application
-docker swarm leave --force      # Take down a single node swarm from the manager
-
-docker system prune
-docker system prune --volumes
-docker image prune
-docker image prune -a
-docker image ls -la
-docker volume ls
-docker volume prune
-
-# :bash - add your user to docker group and re-login
-sudo usermod --append --groups docker $(whoami)`
-sudo usermod -aG docker $(whoami)`
-
-# https://hub.docker.com/_python
-# Section: Create a Dockerfile in your Python app project
-touch requirements.txt
-echo "print(\"Hello, World!\")" > your-daemon-or-script.py
-sudo docker build -t my-python-app .
-sudo docker run -it --rm --name my-running-app my-python-app
-
-# https://hub.docker.com/_/postgres
-sudo docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
-sudo docker container ls
-sudo docker exec -it some-postgres bash
-psql -h localhost -p 5432 -U postgres -W   # empty password - press Enter
-SELECT count(*) FROM pg_catalog.pg_tables;

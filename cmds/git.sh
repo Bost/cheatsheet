@@ -84,8 +84,13 @@ git show REVISION:path/to/file
 # copy file from a BRANCH to /path/to/file
 git checkout BRANCH -- /path/to/file
 
-# revert uncommited changes in <path/to/file>
-git checkout <path/to/file>
+# :restore :revert - revert uncommited changes in path/to/file
+git checkout path/to/file
+
+# :reset :revert - restore file from a specific revision
+git checkout <revision> -- file1/to/restore file2/to/restore
+# :reset :revert - restore file from before a specific revision
+git checkout <revision>~1 -- file1/to/restore file2/to/restore
 
 # show current branch and changes made since last commit
 git status --show --branch

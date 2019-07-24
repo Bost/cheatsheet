@@ -122,3 +122,9 @@ psrinfo
 psql -h localhost -p 5432 -U postgres -W   # empty password - press Enter
 # test content
 SELECT count(*) FROM pg_catalog.pg_tables;
+
+# youtube
+> / < # :speed 25% faster / slower
+c / m # toggle captions / mute
+, / . # move 1 frame forward / backward
+
