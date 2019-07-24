@@ -159,6 +159,10 @@ sudo add-apt-repository ppa:atareao/telegram
 sudo apt update
 sudo apt install telegram python-3.6
 
+# python setup.py uninstall
+sudo python setup.py install --record files.txt
+sudo xargs rm -rf < files.txt
+
 # :dpkg :list-ppa
 sudo ppa-purge <ppa:user/ppa-name>
 
