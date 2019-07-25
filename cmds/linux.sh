@@ -220,7 +220,7 @@ ls -1 ./pth/to/dir | wc -l
 # :listing show full paths (alias lff)
 ls -lrt -d -1 $PWD/{*,.*}
 
-# :listing file extention in current directory
+# :listing file all extentions / filetypes in current directory
 find ./ -type f | perl -ne 'print $1 if m/\.([^.\/]+)$/' | sort -u
 
 # line count, word count
@@ -234,6 +234,9 @@ trap "rm -f /tmp/xyz$$; exit" ERR EXIT
 
 # fist / last 5 lines from file
 head -n 5 file / tail -n 5 file
+
+# :listing process environment variables (separated by null-chars)
+cat /proc/<pid>/environ | tr '\0' '\n'
 
 # :net :ubuntu - (edit) and re-read proxy definition
 source /etc/environment
