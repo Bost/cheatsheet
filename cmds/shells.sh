@@ -51,15 +51,15 @@ type foo / functions foo / functions -n
 # :fish - copy 'foo' fn to a new fn 'bar' / erase the 'bar'
 functions -c foo bar / functions -e bar
 
-# fish variables - unset shell variable
+# :fish :variables - unset shell variable
 set --erase myvar
 set -e      myvar
 
-# fish variables - scope is local to the current block
+# :fish :variables - scope is local to the current block
 set --local myvar 1
 set -l      myvar 1
 
-# fish export variable to child processes (make it an 'environment variable')
+# :fish export variable to child processes (make it an 'environment variable')
 set -x        myvar 1
 set --export  myvar 1
 set -u        myvar
@@ -68,9 +68,14 @@ set -unexport myvar
 # :fish - all function arguments from 3rd to the last
 $argv[3..-1]
 
-# fish:
+# :fish
 test (string escape -- $argv) = "--switch" # string equality
 test -e file.txt                           # file existance
+# true if the length of $myvar is non-zero i.e. non-empty string
+# https://stackoverflow.com/a/47743269; always use "" around the myvar
+test -n "$myvar"; and echo true; or echo false
+# true if the length of $myvar is zero i.e. empty string
+test -z "$myvar"; and echo true; or echo false
 
 # :calculate :fish
 # examples https://nicolas-van.github.io/programming-with-fish-shell
