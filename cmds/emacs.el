@@ -324,6 +324,9 @@ M-w
 ;; copy-paste: cycle back through previous entries in the kill ring
 M-y
 
+;; magit: spin-off / spinoff
+git branch --track <new-branch-name>
+
 ;; check word
 M-$ spell
 
