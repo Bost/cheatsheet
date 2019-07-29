@@ -158,12 +158,16 @@ sudo hdparm -I /dev/sda1
 # top report / output to stdout: -b batch mode; -n <nr> nr of iterations
 top -b -n 1
 
-# process queuing: load-average > nr-of-processors * cores-per-processor
-uptime            # load average from /proc/uptime
-top -b -n 1 | grep load
-cat /proc/loadavg # columns: 4th: processes running/total; 5th: last used pid
 # load average explained
 curl -s https://raw.githubusercontent.com/torvalds/linux/v5.1/kernel/sched/loadavg.c | head -n 8
+# process queuing: load-average > nr-of-processors * cores-per-processor
+uptime               # load average from /proc/uptime
+top -b -n 1 | grep load
+cat /proc/loadavg    # columns: 4th: processes running/total; 5th: last used pid
+# :nr-of-processors
+lscpu | grep "^CPU"
+# :cores-per-processor
+cat /proc/cpuinfo | grep cores
 
 # :gpg :sig - download and import gnu-keyring
 wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg; and \
