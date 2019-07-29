@@ -568,6 +568,9 @@ user=> (repeat 100 (vec (range 100)))
   (catch Exception e (prn "This is the error" (ex-data e)))
   (finally (prn "final exception.")))
 
+;; https://clojuredocs.org/clojure.core/if-let
+(if-let [x 42] (do (inc x)) (do :x-undefined))
+
 ;; cider debugger https://cider.readthedocs.io/en/latest/debugging/#keys
 ;; https://cambium.consulting/articles/2018/2/8/the-power-of-clojure-debugging
 ;; n Next step
