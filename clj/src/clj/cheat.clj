@@ -127,8 +127,13 @@ lein deploy clojars
 ;; C-M-x cider-eval-defun-at-point
 ;; C-u C-M-x cider-debug
 
-;; Transpose matrix
-(apply map vector [[1 2] [3 4]]) ;;=> ([1 3] [2 4])
+;; Transpose anything / matrix:
+(= (apply mapv vector [[:a :b :c] [0 1 2]])
+   (map vector [:a :b :c] [0 1 2])
+   [[:a 0] [:b 1] [:c 2]])
+;; 'map' and 'vector' "slip inside" the argument list ( '[[:a :b] [:c :d]]' ) to
+;; give '[map vector [:a :b] [:c :d]]' which then becomes the executable form
+;; '(map vector [:a :b] [:c :d])'
 
 ;; clojure.core.typed
 (t/check-ns)
