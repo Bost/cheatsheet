@@ -593,3 +593,10 @@ user=> (repeat 100 (vec (range 100)))
 ;; s Show the current stack
 ;; t Trace. Continue, printing expressions and their values.
 ;; q Quit execution
+
+(defn greet
+  "Multi-arity - 3 possible forms; & - variadic i.e. infinite arity"
+  ([] (greet "you"))
+  ([name] (printf "Hi %s\n" name))
+  ([name & others] (printf "Hi %s, %s\n" name
+                           (reduce str (interpose " & " others)))))
