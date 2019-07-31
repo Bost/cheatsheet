@@ -41,7 +41,7 @@ M-x paredit-wrap-square
 C-k
 
 ;; paredit: insert-parentheses / move-past-close-and-reindent
-M-( / M-)
+M-(   /   M-)
 
 ;; paredit-forward-slurp-sexp (vcucni) / paredit-forward-barf-sexp (vygrcaj)
 <M-s-right> / <M-s-left>
@@ -388,17 +388,16 @@ M-x dired-hide-details-mode
 ;; dired: writable - perform operations by editing dired buffer
 M-x dired-toggle-read-only (C-x C-q) / M-x wdired-finish-edit
 
-;; rewrap the line in auto-fill-mode
-M-q
+;; fill / reflow text - see also auto-fill-mode
+;; spacemacs/toggle-auto-fill-mode SPC t F
+M-x fill-paragraph (M-q)
+M-x fill-region ;; reflow all the paragraphs in the area
 
 ;; parameter key
 C-u
 
 ;; sets the line wrap to 40 characters, M-q # activate the wrap
 C-u 40 C-x f
-
-;; reflow all the paragraphs in the area
-M-x fill-region
 
 ;; center for given line width
 M-o M-s
