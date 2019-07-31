@@ -51,19 +51,21 @@ type foo / functions foo / functions -n
 # :fish - copy 'foo' fn to a new fn 'bar' / erase the 'bar'
 functions -c foo bar / functions -e bar
 
-# :fish :variables - unset shell variable
-set --erase myvar
-set -e      myvar
-
-# :fish :variables - scope is local to the current block
-set --local myvar 1
-set -l      myvar 1
-
-# :fish export variable to child processes (make it an 'environment variable')
-set -x        myvar 1
-set --export  myvar 1
-set -u        myvar
-set -unexport myvar
+# :fish :variables
+# unset a shell var
+set --erase myvar        # set -e  myvar
+# var scope is local to the current block
+set --local myvar 1      # set -l myvar 1
+# var exported to all child processes (environmetal var)
+set --export  myvar 1    # set -x myvar 1
+set -unexport myvar      # set -u myvar
+# var shared between all current user's fish instances on the current computer
+# preserved across restarts of the shell
+set --universal myvar 1  # set -U myvar 1
+# show info about a var
+set --show myvar         # set -S myvar
+# show info about all vars
+set --show               # set -S
 
 # :fish - all function arguments from 3rd to the last
 $argv[3..-1]
