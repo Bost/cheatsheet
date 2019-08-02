@@ -600,3 +600,8 @@ user=> (repeat 100 (vec (range 100)))
   ([name] (printf "Hi %s\n" name))
   ([name & others] (printf "Hi %s, %s\n" name
                            (reduce str (interpose " & " others)))))
+
+(condp = value
+  1 "one"
+  2 "two"
+  (str "unexpected value:" value))
