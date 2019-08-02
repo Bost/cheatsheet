@@ -73,9 +73,9 @@ test (string escape -- $argv) = "--switch" # string equality
 test -e file.txt                           # file existance
 # true if the length of $myvar is non-zero i.e. non-empty string
 # https://stackoverflow.com/a/47743269; always use "" around the myvar
-test -n "$myvar"; and echo true; or echo false
+test -n "$myvar"; and echo "true == defined;" or echo "false == undefined"
 # true if the length of $myvar is zero i.e. empty string
-test -z "$myvar"; and echo true; or echo false
+test -z "$myvar"; and echo "true == undefined"; or echo "false == defined"
 
 # :calculate :fish
 # examples https://nicolas-van.github.io/programming-with-fish-shell
