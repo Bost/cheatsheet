@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 exit 1 # just in case ...
 
 # include other script; also in bash
@@ -174,7 +174,7 @@ C-r, C-g
 #!/bin/bash -e
 
 # bash: shebang: debugging: set -x; stop on error: set -e
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
 # bash: debug script
 bash -x script

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 exit 1 # just in case ...
 
 # :snap    https//snapcraft.io/

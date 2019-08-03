@@ -470,7 +470,8 @@ C-x 0 / C-x 1 / C-x 2 / C-x 3
 ;; does not work
 M-x clean-buffer-list
 
-;; agains "newer than byte-compiled file" / cd $dev/emacs/lisp && make autoloads
+;; remedy against "newer than byte-compiled file" try also:
+;; cd $dev/emacs/lisp; and make autoloads
 M-x byte-recompile-directory
 
 ;; helm: minibuffer: minibuffer-force-complete

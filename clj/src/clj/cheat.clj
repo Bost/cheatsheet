@@ -386,7 +386,7 @@ keytool -genkeypair / keytool -list
 jar tf file.jar
 
 ;; java: extract inside.txt from file.jar + show content. File stays extracted
-jar xf file.jar ./path/inside.txt && cat ./path/inside.txt
+jar xf file.jar ./path/inside.txt; and cat ./path/inside.txt
 
 ;; java: jar: unzip: show content of a file inside a file.jar
 unzip -p file.jar ./path/inside.txt
@@ -488,7 +488,7 @@ set -x JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ;;; neural networks - computational architecture modeled after brain
 ;;;; many layers
 ;;;; vanishing/exploding gradient problem
-;;; Vanishing && Exploding Gradients
+;;; Vanishing & Exploding Gradients
 ;;; Convolutional networks; stacks of feature maps
 ;;; Max Pooling / Downsampling
 ;;; Alternating Layers

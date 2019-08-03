@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 exit 1 # just in case ...
 
 # web server, reverse proxy, load balancer, mail proxy, HTTP cache
@@ -121,7 +121,7 @@ lsblk
 # Format disk / usb drive
 # 1. erase everything on the device
 # convert and copy a file; bs=BYTES  read & write up to BYTES at a time
-sudo dd status=progress if=/dev/zero of=/dev/sdd1 bs=4k && sync
+sudo dd status=progress if=/dev/zero of=/dev/sdd1 bs=4k; and sync
 # 2. make a new partition on the device
 sudo fdisk /dev/sdd1
 sudo mkfs.ext4 /dev/sdd1
@@ -363,7 +363,7 @@ du --total --separate-dirs --human-readable --exclude={.git,.atom} ./ \
     | sort --human-numeric-sort
 
 # jump to ./pth/to/dir, execute command and jump back
-(cd ./pth/to/dir && ls)
+(cd ./pth/to/dir && ls) # works only in bash
 
 # stop-watch; ctrl-d to stop; measure execution time; or try to install
 # stopwatch
