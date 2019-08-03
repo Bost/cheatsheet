@@ -193,7 +193,7 @@ git log --follow --name-only --format='%H' -- path/to/file
 git --git-dir=path/to/.git --work-tree=path/to/ ...
 
 # ignore previously tracked path/to/file
-git rm --cached path/to/file; and echo "path/to/file" > .gitignore
+git rm --cached path/to/file; and echo "path/to/file" >> .gitignore
 
 # Use it in case of "You asked me to pull without telling me which branch ..."
 git config branch.master.remote origin
