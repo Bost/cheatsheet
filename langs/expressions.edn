@@ -1,10 +1,11 @@
 ;; TODO For #url have a look at https://cljs.github.io/api/syntax/tagged-literal
 ;; Use (quot (System/currentTimeMillis) 1000) to get unique and short ids
 #{
-  ;; ÁÄČĎÉÍĹĽŇÓÔŔŠŤÚÝŽ
-  ;; áäčďéíĺľňóôŕšťúýž
+  ;; ÁÄ ČĎ ÉÍ ĹĽ Ň ÓÔ ŔŠŤ ÚÝ Ž
+  ;; áä čď éí ĺľ ň óô ŕšť úý ž
+  ;; äÄ öÖ üÜ ß Ææ Œœ Çç Àà Ââ Éé Èè Êê Ëë Î î Î ï Ôô Ûû Ùù Ÿÿ
 
-  {:fr [""]
+  #_{:fr [""]
    :en [""]}
 
   {:fr ["Je ne peux juste pas me souvenir"]
@@ -12,10 +13,8 @@
    :sk ["Len si neviem spomenúť"]}
 
   {:fr ["L'arrêté de péril"]
-   :desc ["Lorsque la solidité d'un immeuble est compromise et de nature à mettre en danger les locataires, le maire prend un arrêté de péril"]
-   :en [""]
-   :de [""]
-   :sk [""]}
+   :desc ["Lorsque la solidité d'un immeuble est compromise et de nature à
+   mettre en danger les locataires, le maire prend un arrêté de péril"]}
 
   {:fr ["Tout au long de la semaine"]
    :en ["All week long" "Throughout the week"]
@@ -23,16 +22,17 @@
    :sk ["Počas celého týždňa"]}
 
   {:fr ["On n’en a pas assez fait"]
-   :en [""]
    :sk ["Neurobilo sa dosť"]}
 
   {:fr ["Dès que possible"]
    :en ["As soon as possible"]
    :sk ["Tak skoro ako sa dá" "Čím skôr tým lepšie"]}
 
-  {:fr [""]
-   :en ["He had only 33 intact divisions at the moment, but 130,000 French and 110,000 British soldiers will have arrived by the end of December, and Allied shipping made sure that the coal"]
-   :desc ["Events of past referencing to ? future past ? https://youtu.be/WZJTN3Hoj7w?t=5m42s"]}
+  {:en ["He had only 33 intact divisions at the moment, but 130,000 French and
+  110,000 British soldiers will have arrived by the end of December, and Allied
+  shipping made sure that the coal"]
+   :explanation ["Events of past referencing to ? future past ?
+   https://youtu.be/WZJTN3Hoj7w?t=5m42s"]}
 
   {:fr ["Ne le foirez pas" "Ne le foire pas"]
    :en ["Don't screew it up"]}
@@ -47,15 +47,15 @@
    :en ["It's time to act"]}
 
   {:fr ["C'est sûr et certain"]
-   :de ["Das ist so sicher wie das Amen in der Kirche https://dict.leo.org/dict/addInfo.php?aiid=DELMcPNw3mf&lp=frde&lang=en" ]}
+   :de ["Das ist so sicher wie das Amen in der Kirche
+   https://dict.leo.org/dict/addInfo.php?aiid=DELMcPNw3mf&lp=frde&lang=en" ]}
 
   {:fr ["Jeter un oeil à qc"
         "Jeter un coup d'oeil"
         "Jeter un oeil là-dessus"]
    :de ["Einen Blick werfen" "Einen Blick auf etwas werfen"]
    :sk ["Mkrnúť sa na niečo / do niečoho"
-        "Hodiť očkom na niečo / do niečoho"]
-   }
+        "Hodiť očkom na niečo / do niečoho"]}
 
   {:en ["On the other hand"]
    :fn ["D'autre part"]
@@ -90,14 +90,14 @@
    :url "https://youtu.be/jDyra0RH-Xs?t=24m25s"
    :desc ["The outcome of a situation is unpredictable. (Google Dictionary)"]
    :en ["All bets are off https://youtu.be/jDyra0RH-Xs?t=24m25s"
-        "All bets are off; literal meaning from the Snatch movie: https://youtu.be/N9_tl_b-bFs?t=4s"]
-   }
+        "All bets are off; literal meaning from the Snatch movie:
+   https://youtu.be/N9_tl_b-bFs?t=4s"] }
 
   {:id 1509749127
    :fr ["On ne peut plus attendre"]}
 
-  {:sk ["práceneschopnosť / PN"]
-   :en ["sickness absence"]
+  {:sk ["Práceneschopnosť / PN"]
+   :en ["Sickness absence" "Sick leave"]
    :de ["Krankmeldung"]}
 
   {:id 1509749129
@@ -136,10 +136,10 @@
 
   {:id 1510422783
    :see [1510422668]
-   :fr ["le vendredi" {:desc "Dans le sense: repetitivement; chaque vendredi"}]
-   :en ["Fridays" "on Fridays" "every Friday"]
-   :de ["Freitags" "immer Freitags" "jeden Freitag"]
-   :sk ["piatky" "vzdy v piatky" "vzdy v piatok" "kazdy piatok"]
+   :fr ["Le vendredi" {:desc "Dans le sense: repetitivement; chaque vendredi"}]
+   :en ["Fridays" "on Fridays" "Every Friday"]
+   :de ["Freitags" "Immer Freitags" "Jeden Freitag"]
+   :sk ["Piatky" "Vždy v piatky" "Vždy v piatok" "Každý piatok"]
    }
 
   {
@@ -159,8 +159,10 @@
 
   {:sk ["Vziať / zobrať náhradné voľno"]
    :de ["Gleitzeit nehmen"]
-   :en ["'To take a day off' probably means 'a day off' in general; not a replacement for a day already spent at work"]
-   :fr ["Récupération du temps de travail => RTT. Prendre (une journée de) RTT. (dans le cadre des 35h)"]}
+   :en ["'To take a day off' probably means 'a day off' in general; not a
+   replacement for a day already spent at work"]
+   :fr ["Récupération du temps de travail => RTT. Prendre (une journée de)
+   RTT. (dans le cadre des 35h)"]}
 
   {:fr ["Prenez de quoi boire et manger on va s'amuser"]}
 
@@ -183,7 +185,8 @@
 
   {:fn ["J’ai agi dans l’euphorie du moment"]
    :sk ["Konal som v očarení okamihu" "Konal som v chvíľkovom očarení"]
-   :de ["Ich habe im Rausch des Augenblicks gehandelt" "Ich habe in der Euphorie des Augenblicks gehandelt"]}
+   :de ["Ich habe im Rausch des Augenblicks gehandelt" "Ich habe in der Euphorie
+   des Augenblicks gehandelt"]}
 
   {:fr ["On aurait pas dû en arriver là"]
    :sk ["Nemalo to zájsť tak daleko"]}
@@ -192,28 +195,25 @@
    :sk ["Trošku sme to prehnali" "Trošku sme sa rozšupli"]}
 
   {:fr ["Ce soir-là, on a dérapé collectivement"]
-   :sk ["Toho večera sa nám to vyšmyklo z kontroly"]}
+   :sk ["Toho večera sa nám to vyšmyklo z kontroly"
+        "V ten večer sa to vymklo z kontroly"]}
 
-  {:en ["by hook or by crook"]
-   :fr ["envers et contre tout(s)" "coûte que coûte"]
-   :de ["auf Biegen und Brechen" "Koste es, was es wolle" "auf Teufel komm raus"]
-   :sk ["stoj čo stoj" "za každú cenu"]}
+  {:en ["By hook or by crook"]
+   :fr ["Envers et contre tout(s)" "Coûte que coûte"]
+   :de ["Auf Biegen und Brechen" "Koste es, was es wolle"
+        "Auf Teufel komm raus"]
+   :sk ["Stoj čo stoj" "Za každú cenu"]}
 
-  {:fr ["mise en garde"]
+  {:fr ["Mise en garde"]
    :de ["Warnung" "Vorwarnung" "Warnhinweis"]
-   :en ["caution" "admonition" "warning"]}
+   :en ["Caution" "Admonition" "Warning"]}
 
   {:fr ["Cuir épais"]
-   :en ["Thick leather"]
-   :de [""]
-   :sk [""]}
+   :en ["Thick leather"]}
 
-
-  {:fr [""]
-   :en ["Seeing her picture in the newspaper pulled me up short."]
-   :de [""]
-   :sk [""]
-   :explanation "to surprise someone, often so that that person stops what they are doing:"}
+  {:en ["Seeing her picture in the newspaper pulled me up short."]
+   :explanation ["To surprise someone, often so that that person stops what they
+   are doing:"]}
 
   {:de ["Seine Haut zu Markte tragen"]
    :sk ["S kožou na trh chodiť" "Nosiť kožu na trh"]
@@ -230,20 +230,18 @@
 
   {:fr ["Je suis complètement paumé(e)"]
    :de ["Ich bin völlig aufgeschmissen"]
-   :sk ["Mám v tom hokej" "Som mimo" "Som nepripravený"]
-   }
+   :sk ["Mám v tom hokej" "Som mimo" "Som nepripravený"]}
 
   {:fr ["Étant donné ... et ... on peut aisement constuire ..."]
-   :de ["Gegeben ist ... und ... man kann leicht ... konstruiren"]
-   }
+   :de ["Gegeben ist ... und ... man kann leicht ... konstruiren"]}
 
-  {:fr ["faire table rase"]
-   :de ["aufräumen" "reinen Tisch machen"]}
+  {:fr ["Faire table rase"]
+   :de ["Aufräumen" "Reinen Tisch machen"]}
 
-  {:fr ["dès à présent"]
-   :sk ["od tej doby doteraz"]
-   :de ["ab sofort" "bereits jetzt" "schon jetzt" "ab jetzt" "von jetzt an"
-        "bereits jetzt für absofort" ]}
+  {:fr ["Dès à présent"]
+   :sk ["Od tej doby doteraz"]
+   :de ["Ab sofort" "Bereits jetzt" "Schon jetzt" "Ab jetzt" "Von jetzt an"
+        "Bereits jetzt für absofort" ]}
 
   {:fr ["De l'autre côté" "D'autre part"]
    :sk ["Na druhú stranu" "Na druhej strane"]}
@@ -253,14 +251,15 @@
 
   {:fr ["Ça risque d'être compliqué"]
    :en ["That may be complicated"]
-   :explanation ["Likely the least confrontational way of saying that a request is unlikely to be granted"]
-   }
+   :explanation ["Likely the least confrontational way of saying that a request
+   is unlikely to be granted"] }
 
   {:fr ["Ç'est hors de question"]
    :sk ["To je vylúčné"]
    :de ["Es ist ausgeschlossen"]
    :en ["It’s out of the question"]
-   :explanation ["Perhaps the most definitive version, cutting off any hopes of arguing one’s case"]}
+   :explanation ["Perhaps the most definitive version, cutting off any hopes of
+   arguing one’s case"]}
 
   }
 
