@@ -245,8 +245,22 @@
    :de ["ab sofort" "bereits jetzt" "schon jetzt" "ab jetzt" "von jetzt an"
         "bereits jetzt für absofort" ]}
 
-  {:fr ["de l'autre côté" "d'autre part"]}
+  {:fr ["De l'autre côté" "D'autre part"]
+   :sk ["Na druhú stranu" "Na druhej strane"]}
 
-  {:fr ["ça ne convient à personne"]}
+  {:fr ["Ça ne convient à personne"]
+   :sk ["To nevyhovuje nikomu"]}
+
+  {:fr ["Ça risque d'être compliqué"]
+   :en ["That may be complicated"]
+   :explanation ["Likely the least confrontational way of saying that a request is unlikely to be granted"]
+   }
+
+  {:fr ["Ç'est hors de question"]
+   :sk ["To je vylúčné"]
+   :de ["Es ist ausgeschlossen"]
+   :en ["It’s out of the question"]
+   :explanation ["Perhaps the most definitive version, cutting off any hopes of arguing one’s case"]}
+
   }
 
