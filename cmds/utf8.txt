@@ -63,7 +63,7 @@ GREEK CAPITAL LETTER OMEGA	Ω	&‌#937;	&‌#x03A9	&‌Omega;
 superscript ⁰ ¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ⁺ ⁻ ⁼ ⁽ ⁾ ⁿ ⁱ
 subscript ₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ ₊ ₋ ₌ ₍ ₎ ₐ ₑ ₕ ᵢ ⱼ ₖ ₗ ₘ ₙ ₒ ₚ ᵣ ₛ ₜ ᵤ ᵥ ₓ ₔ
 Roots √ ∛ ∜
-Natural Numbers ℕ, Integers ℤ, Rational Numbers ℚ, Real Numbers ℝ, Complex Numbers ℂ
+Numbers: Natural ℕ, Integer ℤ, Rational ℚ, Real ℝ, Complex ℂ, Quaternion ℍ
 imaginary number ⅈ, ⅉ
 Euler's number, base of natural log ℯ, ⅇ
 EULER CONSTANT ℇ

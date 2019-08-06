@@ -140,3 +140,7 @@ c / m # toggle captions / mute
 # \usepackage[utf8x]{inputenc}
 # inputenc allows to input accented characters directly from the keyboard;
 # fontenc output oriented, that is, what fonts to use for printing characters.
+
+# numeric tower - numbers:
+# Natural ℕ ⊆ Integer ℤ ⊆ Rational ℚ ⊆ Real ℝ ⊆ Complex ℂ ⊆ Quaternion ℍ
+
