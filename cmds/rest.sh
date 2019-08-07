@@ -127,20 +127,3 @@ SELECT count(*) FROM pg_catalog.pg_tables;
 > / < # :speed 25% faster / slower
 c / m # toggle captions / mute
 , / . # move 1 frame forward / backward
-
-# :tex :latex :document-processing
-# TeX processes layout. LaTeX processes content. LaTeX has a collection of TeX
-# macros and a program to process LaTeX documents, and because the plain TeX
-# formatting commands are elementary, it provides ready-made commands for
-# formatting and layout requirements e.g. chapter headings, footnotes,
-# cross-references, bibliographies.
-
-# :tex :latex
-# \usepackage[T1]{fontenc}
-# \usepackage[utf8x]{inputenc}
-# inputenc allows to input accented characters directly from the keyboard;
-# fontenc output oriented, that is, what fonts to use for printing characters.
-
-# numeric tower - numbers:
-# Natural ℕ ⊆ Integer ℤ ⊆ Rational ℚ ⊆ Real ℝ ⊆ Complex ℂ ⊆ Quaternion ℍ
-
