@@ -481,7 +481,8 @@ zg / zG
 " :orgmode insert active / inactive date
 \\sa / \\si
 
-" Update spacevim
+" Spacevim update / upgrade
+" https://spacevim.org/documentation/#update-and-rollback
 :SPUpdate
 
 " SpaceVim: Updating failed, The plugin dir is dirty
