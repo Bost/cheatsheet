@@ -49,11 +49,11 @@ M-(   /   M-)
 ;; indent: move text left by four spaces (M-x indent-rigidly is C-x TAB)
 C-u -4 C-x TAB
 
-;; regexp:
-https://www.emacswiki.org/emacs/RegularExpression#regexp
-
-;; regexp: increment the number found  /  whitespace
+;; :regexp https://www.emacswiki.org/emacs/RegularExpression#regexp
+;; increment the number found  /  whitespace
 \\#  /  \\s-
+;; substiture / find exactly 2 occurences
+%s/\(.\{2\}\)/aa/g
 
 ;; utf8; unicode: describe char at the point
 M-x describe-char
