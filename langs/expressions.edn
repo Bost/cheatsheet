@@ -261,8 +261,21 @@
    :explanation ["Perhaps the most definitive version, cutting off any hopes of
    arguing one’s case"]}
 
-{:fr ["L'enjeu est d'être prêt pour la rentrée scolaire"]
+  {:fr ["L'enjeu est d'être prêt pour la rentrée scolaire"]
    :sk ["Ide o to byť pripravený na opätovný začiatok školského roku"
-"Cieľom je byť hotoví do začiatku školského roku"]}
+        "Cieľom je byť hotoví do začiatku školského roku"]}
+
+  {:fr ["Pied de nez"]
+   :en ["Cook a snook" "Cocking a snook"]
+   :de ["Lange Nase" "Lange Nase zeigen"]
+   :sk ["Dlhý nos" "Ukázať dlhý nos"]}
+
+  ;; ÁÄ ČĎ ÉÍ ĹĽ Ň ÓÔ ŔŠŤ ÚÝ Ž
+  ;; áä čď éí ĺľ ň óô ŕšť úý ž
+  ;; äÄ öÖ üÜ ß Ææ Œœ Çç Àà Ââ Éé Èè Êê Ëë Î î Î ï Ôô Ûû Ùù Ÿÿ
+
+  #_{:fr [""]
+     :en [""]}
+
   }
 
