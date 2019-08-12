@@ -62,7 +62,7 @@ git diff --name-only <branch1> <branch2>   # between two branches
 git diff --name-only <branch1>..<branch2>  # between two branches
 git diff --name-only <branch>              # between <branch> and the HEAD
 git diff --name-only 5890e37..ebbf4c0      # between 2 commits
-git diff --name-status <branch1> <branch2> # show status D - deleted, M-modified etc
+git diff --name-status <branch1> <branch2> # show status D-deleted M-modified
 
 # count of files changed in the since the <tag>
 git log --format=oneline --patch <tag>..HEAD | wc -l
@@ -155,7 +155,8 @@ git config --global user.email thebost@gmail.com
 # help with typos like git comit
 git config --global help.autocorrect 1
 
-# rebase: remember actions on a particular commit - in case of repeating conflicts when rebasing; long running branches
+# rebase: remember actions on a particular commit - in case of repeating
+# conflicts when rebasing; long running branches
 git config --global rerere.enabled 1
 
 # github add new repository: create a new repo on www.github.com, then:
