@@ -199,11 +199,12 @@ xmodmap
 xkbprint :0
 
 # :ubuntu - change default www-browser
-sudo update-alternatives --config x-www-browser / gnome-www-browser
-update-alternatives --list python3
-
-# :xfce - opens a file or URL in the user's preferred application
-/usr/bin/browse -> xdg-open
+sudo update-alternatives --config x-www-browser
+sudo update-alternatives --config gnome-www-browser
+# xfce4-settings-manager -> Preferred Applications
+# see ~/.local/share/xfce4/helpers
+# test by opening file / URL in the user's preferred / default application
+xdg-open www.wikipedia.org # /usr/bin/browse is symlinked to xdg-open
 
 # display file or file system status; alternative to ls
 stat -c "%y %s %n" *
