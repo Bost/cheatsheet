@@ -375,8 +375,8 @@ m / * / u (U) / t
 ;; dired: change all marks
 * c
 
-;; dired: markup: all backup / auto-save files // refresh
-~ / # // g
+;; dired: markup: all backup / auto-save files / refresh buffer
+~ / # / g
 
 ;; dired: M-x dired-create-directory / M-x dired-do-rename
 + / R
