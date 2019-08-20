@@ -1032,7 +1032,7 @@ mvn install / mvn clean - mvn install seems not to be needed
 lftp
 
 # :HPKP HTTP Public Key Pinning; Similair to HSTS header
-Create your HPKP hash: https://report-uri.io/home/pkp_hash
+# Create your HPKP hash: https://report-uri.io/home/pkp_hash
 
 # install nodejs8 behind proxy
 sudo apt-key adv --keyserver-options \
