@@ -39,3 +39,8 @@ systemctl reset-failed <unit>
 
 # default.target
 man 7 systemd.special
+
+# switch off bluetooth
+systemctl status bluetooth
+sudo systemctl disable bluetooth
+sudo systemctl stop bluetooth
