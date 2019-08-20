@@ -731,7 +731,7 @@ killall VBoxClient; and VBoxClient --clipboard & disown
 
 # restart xfce when the title bar dissapears from xfwm4; or rm -r
 # ~/.cache/sessions
-pkill -KILL -u yourusername
+pkill -KILL -u $USER
 
 # anti-freeze / WD40
 killall -SIGUSR2 emacs
@@ -1003,11 +1003,12 @@ adb push src dst
 # packages; unsupported / obsolete
 ubuntu-support-status --show-unsupported
 
-# modify / user account
-sudo usermod <login> / sudo userdel --remove <login>
-
-# add user to the "vboxsf" group
-sudo usermod -a -G vboxsf <login>
+# user management
+sudo adduser <user>
+sudo deluser --remove-home <user>             # userdel is a low level utility
+sudo usermod --append --groups vboxsf <user>  # modify account
+# euid - effective user id: number or id; see whoami
+sudo pkill -KILL --euid <user>                # logout / logoff different user
 
 # run a program in a new session
 setsid
