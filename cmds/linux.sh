@@ -133,7 +133,7 @@ sync
 # dynamic device management - the /dev directory
 udev
 
-# :usb :drive
+# :usb :drive gnome userspace virtual fs
 mount | grep gvfs; cd ...
 
 # view file.pdf
