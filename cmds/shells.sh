@@ -16,7 +16,7 @@ type myfunc
 
 # Where is PATH variable set? https://askubuntu.com/a/706069/401596
 grep --color -H 'PATH=' ~/.bashrc ~/.profile ~/.bash_profile ~/bash.login \
-     ~/.bash_aliases /etc/bash.bashrc /etc/profile \
+     ~/.bash_aliases /etc/bash.bashrc /etc/profile /etc/skel/* \
      /etc/profile.d/* /etc/environment 2> /dev/null
 
 # available shells; current shell; change shell

@@ -22,7 +22,7 @@ find . -name '*.properties' -exec grep -lir ".*String.*" '{}' \; -print
 find . -name '*.clj' -exec grep -il 'project' '{}' \;
 find . -name '*.clj' | xargs grep -l 'project'
 
-# quit search after finding 1st match
+# quit / stop search after finding 1st match
 find . ... -print -quit
 
 # find all files and dirs modified in the last 7 days; between: older: newer:
