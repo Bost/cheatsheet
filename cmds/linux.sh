@@ -1034,15 +1034,16 @@ lftp
 # :HPKP HTTP Public Key Pinning; Similair to HSTS header
 # Create your HPKP hash: https://report-uri.io/home/pkp_hash
 
-# install nodejs8 behind proxy
+# install nodejs behind proxy
+set nodeJsVer 12
 sudo apt-key adv --keyserver-options \
      http-proxy="http://<proxy-ip>:<proxy-port>/" \
      --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 68576280
 sudo apt-add-repository \
-     "deb https://deb.nodesource.com/node_8.x $(lsb_release -sc) main"
-# install nodejs8 w/o proxy:
-# curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt update; and sudo apt install nodejs
+     "deb https://deb.nodesource.com/node_$nodeJsVer.x $(lsb_release -sc) main"
+# install nodejs w/o proxy:
+curl -sL https://deb.nodesource.com/setup_$nodeJsVer.x | sudo -E bash -
+sudo apt-get install --yes nodejs
 
 # :npm dependency management
 curl -o- -L https://yarnpkg.com/install.sh | bash  # also update
