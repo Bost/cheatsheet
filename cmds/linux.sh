@@ -1044,6 +1044,12 @@ sudo apt-add-repository \
 # install nodejs w/o proxy:
 curl -sL https://deb.nodesource.com/setup_$nodeJsVer.x | sudo -E bash -
 sudo apt-get install --yes nodejs
+# complete uninstall; see also https://stackoverflow.com/a/11178106/5151982
+sudo rm -rf \
+  /usr/local/lib/node_modules/npm \
+  /usr/local/bin/npm \
+  /usr/local/bin/node \
+  /usr/local/share/man/man1/node.1
 
 # :npm dependency management
 curl -o- -L https://yarnpkg.com/install.sh | bash  # also update
