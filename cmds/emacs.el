@@ -556,7 +556,8 @@ emacs --eval '(message "ufo")' / emacs -e configuration-layer/update-packages
 ;; M-x shell-command; execute
 M-! / SPC !
 
-;; execute shell command and read-in (capture) its output
+;; execute shell command and read-in / capture its output (in the current buffer
+;; if in evil-insert mode)
 C-u M-! <cmd>
 C-u SPC ! <cmd>
 
