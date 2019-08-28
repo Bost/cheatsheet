@@ -615,13 +615,12 @@ cpulimit --limit 5 <cmd>
 
 # :nice :cpulimit :ps show statistics for a process nr. 7695
 ps -o pid,user,command,nice -p 7695
-
-# process tree
-ps f
-
-# user's processes ; ps -aux / ps aux - are different
-ps fx
-ps u
+ps f         # process tree
+ps fx        # process tree of all processes
+ps u         # user's processes ; ps -aux / ps aux - are different
+ps -e        # every process on the system: standard syntax
+ps ax        # every process on the system: BSD syntax
+ps --windows # show windows as well as cygwin processes (-W)
 
 # distro name and ver
 cat /etc/*-release
@@ -788,9 +787,6 @@ ldconfig -p | grep libgconf
 
 # info about ELF files
 readelf -v $(which vim)
-
-# :cygwin :ps show windows as well as cygwin processes (-W)
-ps --windows
 
 # :cygwin command-line installer
 apt-cyg --mirror \
