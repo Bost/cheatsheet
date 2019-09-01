@@ -6,7 +6,12 @@
   ;; äÄ öÖ üÜ ß Ææ Œœ Çç Àà Ââ Éé Èè Êê Ëë Î î Î ï Ôô Ûû Ùù Ÿÿ
 
   #_{:fr [""]
-   :en [""]}
+     :en [""]}
+
+  {:fr ["Le président brésilien Jair Bolsonaro a décidé d’envoyer Emmanuel
+  Macron bouler."]
+   :sk ["Brazílsky prezident Jair Bolsonare sa rozhodol poslať Emmanuela Macrona
+   na párky." "... poslať do čerta / na petang"]}
 
   {:fr ["Il est si confiant qu'il déclare: Des canons, j'en ai plus qu'il ne
   m'en faut"]
