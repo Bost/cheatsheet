@@ -8,6 +8,10 @@
   #_{:fr [""]
    :en [""]}
 
+  {:fr ["Il est si confiant qu'il déclare: Des canons, j'en ai plus qu'il ne
+  m'en faut"]
+   :en ["He is so confident that he declares: Canons, I have more than I need"]}
+
   {:fr ["Je ne peux juste pas me souvenir"]
    :en ["I just can't remember"]
    :sk ["Len si neviem spomenúť"]}
