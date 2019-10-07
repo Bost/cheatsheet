@@ -7,7 +7,7 @@ exit 1 # just in case ...
 ./cmd.sh 1>str.out 2>str.err / ./cmd.sh &>combined.out
 
 # emacs find - exclude backup files
-find . -type f ! -name "*~" -exec grep -n --with-filename --regexp="String" {} +
+find . -type f ! -name "*~" -exec grep -n --with-filename --regexp="Pattern" {} +
 
 # find and delete empty files / dirs
 find . -empty -type f -delete / find . -empty -type d -delete
@@ -16,7 +16,7 @@ find . -empty -type f -delete / find . -empty -type d -delete
 find ./ foo/ bar/ -name "*fileToSearch*"
 
 # TODO what does the `-print` switch?
-find . -name '*.properties' -exec grep -lir ".*String.*" '{}' \; -print
+find . -name '*.properties' -exec grep -lir ".*Pattern.*" '{}' \; -print
 
 # find only filenames matching '*.clj' containing 'project'
 find . -name '*.clj' -exec grep -il 'project' '{}' \;
@@ -28,40 +28,34 @@ find . ... -print -quit
 # find all files and dirs modified in the last 7 days; between: older: newer:
 find . ... -mtime -7
 
-# bash: flatteb all xml files from all src subdirs to dst, fork off a new copy
+# flatteb all xml files from all src subdirs to dst, fork off a new copy
 # process for every file; TODO test it!
 find ./src -iname '*.xml' -exec cp \\{\\} ./dst \\;
 
-# bash: directories called dirname
-find . -type d -name "dirname"
-
-# skip / exclude hidden files and dirs
-find . -not -path "*/\.*"
-
-# skip / do not search in "*path/to/exclude*"
+# skip / exclude / do not search
+find . -not -path "*/\.*"  # hidden files and dirs
 find . -not -path "*path/to/exclude*"
 
 # files filtered by multiple extensions
 find . -type f -name "*.xml" -or -name "*.txt"
-
-# find executable files
 find . -executable -type f
+find . -type d -name "dirname" # directories called dirname
 
 # grep from a string
 txt ="Some text where the search is done"                    # bash
 grep --only-matching -e "[-+]\?[0-9]*\.\?[0-9]\+" <<< ${cmd} # bash
 
-# find: recursive search for "SearchPattern" in ... (with '.' at the end)
-grep -nir "SearchPattern" --exclude-dir={.git,CVS} --include=\*.{el,clj,cljs,cljc} ./
+# find: recursive search for "Pattern" in ... (with '.' at the end)
+grep -nir "Pattern" --exclude-dir={.git,CVS} --include=\*.{el,clj,cljs,cljc} ./
 
-# find: grep-help: recursive search for "SearchPattern" in ... (with '.' at the end)
-grep -nir "SearchPattern" --exclude-dir={.git,CVS} --include=\*.{log,propeties,cfg,txt} ./
+# find: grep-help: recursive search for "Pattern" in ... (with '.' at the end)
+grep -nir "Pattern" --exclude-dir={.git,CVS} --include=\*.{log,propeties,cfg,txt} ./
 
 # build and execute command lines from standard input
 xargs
 
-# search for "String" in *.txt files (with spaces in filenames)
-find ./ -type f -name "*.txt" -print0 | xargs -0 grep --files-with-matches "String"
+# search in *.txt files (with spaces in filenames)
+find ./ -type f -name "*.txt" -print0 | xargs -0 grep --files-with-matches "Pattern"
 
 # find and delete *.jar and *.class when idling
 ionice -c3 find . -name "*.jar" -or -name "*.class" -delete
@@ -81,14 +75,15 @@ grep "[[:upper:]]" file
 # grep: intersection between two files
 grep -Fx -f file1 file2
 
-# grep: search for "String" and print 2/4 lines before/after matching line
-grep -B 2 -A 4 "String" / grep --before-context=2 --after-context=4 "String"
+# grep: search for "Pattern" and print 2/4 lines before/after matching line
+grep -B 2 -A 4 "Pattern"
+grep --before-context=2 --after-context=4 "Pattern"
 
-# grep: print only filenames of the files containing "String"
-grep "String" * | cut -f1 -d:
+# grep: print only filenames of the files containing "Pattern"
+grep "Pattern" * | cut -f1 -d:
 
 # zgrep: search possibly compressed files for a regular expression
-zgrep "String" myfile.gz / zgrep 'GET /blog' access_log.gz
+zgrep "Pattern" myfile.gz / zgrep 'GET /blog' access_log.gz
 
 # find images
 find . -type f -exec file {} \; | grep --only-matching --perl-regexp '^.+: \w+ image'
