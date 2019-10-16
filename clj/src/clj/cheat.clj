@@ -605,3 +605,18 @@ user=> (repeat 100 (vec (range 100)))
   1 "one"
   2 "two"
   (str "unexpected value:" value))
+
+;; defprotocol (protocol ~ Java Interface)
+;; Defines a named set of named methods & signatures.
+;;
+;; deftype
+;; Defines named type. Directly supports protocols
+;;
+;; defrecord
+;; Defines named type. Directly supports protocols
+;;
+;; reify
+;; Defines both an anonymous type and creates an instance of that type
+;; reify use case:
+;; One-off implementation of protocol(s) or interface(s) and usage of the local
+;; context. Usage similar to proxy, or anonymous inner classes in Java.
