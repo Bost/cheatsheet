@@ -1,7 +1,6 @@
 #!/usr/bin/env fish
 exit 1 # just in case ...
 
-
 # bash: find: redirect: separate / combine sdterr and stdout; does not work with
 # the tee command
 ./cmd.sh 1>str.out 2>str.err / ./cmd.sh &>combined.out

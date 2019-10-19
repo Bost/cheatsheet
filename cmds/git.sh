@@ -41,10 +41,10 @@ git remote add upstream https://github.com/octocat/Spoon-Knife.git
 git remote show upstream
 git fetch upstream <branch1> <branch2>
 
-# delete a remote-tracking branch from local repository
+# remove / delete a remote-tracking branch from local repository
 git branch --remotes --delete public/whatever
 git branch -rd public/whatever
-# delete a remote branch
+# remove / delete a remote branch
 git push origin --delete <branch>
 
 # file changes against remote branch
