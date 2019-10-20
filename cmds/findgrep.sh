@@ -5,7 +5,8 @@ exit 1 # just in case ...
 # the tee command
 ./cmd.sh 1>str.out 2>str.err / ./cmd.sh &>combined.out
 
-# emacs find - exclude backup files
+# emacs find - exclude backup files; '+' in the '--exec ... +' - the command is
+# built by appending each selected file name at the end
 find . -type f ! -name "*~" -exec grep -n --with-filename --regexp="Pattern" {} +
 
 # find and delete empty files / dirs
