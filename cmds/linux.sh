@@ -865,9 +865,10 @@ gpsbabel -i kml -f in.kml -o gpx -F out.gpx
 # IBM USS OS/390: ebcdic / ascii conversion
 iconv -f IBM-1047  -t ISO8859-1 ebcdic.file > ascii.file
 iconv -f ISO8859-1 -t IBM-1047  ascii.file  > ebcdic.file
-
-# IBM USS OS/390: ebcdic / ascii conversion: list all code pages
+# list all code pages
 iconv -l
+# show mime type strings rather than the more traditional human readable ones
+file --mime fileName
 
 # show first/last 100 bytes
 tail -c 100 fileName
@@ -879,20 +880,19 @@ lsof -P -i -n | cut --fields=1 --delimiter=" " | uniq | tail --lines=+2
 # remove sections from each line of files
 cut
 
-# list open files
+# list open files / what is currently using file
 lsof
-
-# list open files whose inet address matches ADDR; -t: terse output
+# open files whose inet address matches ADDR; -t: terse output
 lsof -i:[ADDR] -t
 
-# files opened by / when running a command
+# what is currently using file / files opened by a running command
 strace <cmd> 2>&1 | grep openat
 
 # check file types and compare values
 test
-
-# determine file type
+# determine file type / mime type
 file
+file --mime
 
 # :tabs convert spaces to tabs / tabs to spaces
 expand / unexpand file.txt
