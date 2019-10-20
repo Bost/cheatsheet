@@ -176,14 +176,11 @@ sudo apt install --reinstall <package>
 # set Prompt
 /etc/update-manager/release-upgrades
 Prompt=normal
-
 # ubuntu: command line upgrade part 2.
 sudo apt update; and sudo apt upgrade
-
 # update and upgrade the system by removing/installing/upgrading packages
 sudo apt update; and sudo apt full-upgrade
 sudo apt update; and sudo apt dist-upgrade # alternativelly
-
 # ubuntu: command line upgrade part 3.
 sudo do-release-upgrade
 
@@ -228,3 +225,23 @@ dpkg --get-selections | grep -v deinstall
 # dependencies)
 aptitude search '~i!~M'
 
+# Fix 'Could not get lock / Unable to lock the administration directory'
+# https://dmorgan.info/posts/linux-lock-files/
+# First method:
+ps aux | grep -i apt
+# if anything found then
+sudo killall apt apt-get
+# Second method:
+# 1. get the process ID of the process holding the lock files:
+lsof /var/lib/dpkg/lock
+lsof /var/lib/apt/lists/lock
+lsof /var/cache/apt/archives/lock
+lsof /var/lib/dpkg/lock-frontend
+# 2. kill any the processes returned by the lsof's above:
+sudo kill -9 <PID>
+# 3. safely remove the lock files:
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
+# 3. reconfigure the packages:
+sudo dpkg --configure -a
