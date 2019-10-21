@@ -175,7 +175,11 @@ rlwrap java -cp $cljjar:$cljsjar clojure.main
 
 ;; cli: run as a script: ./hello.clj
 #!/usr/bin/env boot
-(println "Hello world script via bash and boot!")
+(println "Hello world script via bash and boot - this is slow!")
+;; cli: run as a script: clojure ./hello.clj
+(println "Hello world script: clj script.clj aaa bbb")
+(doseq [arg *command-line-args*]
+  (printf "arg='%s'\n" arg))
 
 ;; put to build.boot:
 ;; [boot-deps "0.1.9"] ;; boot -d boot-deps ancient
