@@ -42,8 +42,8 @@ git remote show upstream
 git fetch upstream <branch1> <branch2>
 
 # remove / delete a remote-tracking branch from local repository
-git branch --remotes --delete public/whatever
-git branch -rd public/whatever
+git branch --remotes --delete <origin/branch>
+git branch -rd <origin/branch>
 # remove / delete a remote branch
 git push origin --delete <branch>
 

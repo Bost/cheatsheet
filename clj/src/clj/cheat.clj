@@ -624,3 +624,5 @@ user=> (repeat 100 (vec (range 100)))
 ;; reify use case:
 ;; One-off implementation of protocol(s) or interface(s) and usage of the local
 ;; context. Usage similar to proxy, or anonymous inner classes in Java.
+
+;; TODO derive multi
