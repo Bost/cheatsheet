@@ -245,3 +245,8 @@ sudo rm /var/cache/apt/archives/lock
 sudo rm /var/lib/dpkg/lock
 # 3. reconfigure the packages:
 sudo dpkg --configure -a
+
+# select fastest / best ubuntu mirror
+sudo pip3 install apt-select
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup; and \
+sudo mv sources.list /etc/apt/
