@@ -9,7 +9,6 @@
 " substitute (replace) pattern from current line
 :.,$s/pattern/replacement/gc
 
-
 " go to next / previous buffer
 :bnext (:bn) / :bprev (:bp)
 
@@ -481,3 +480,10 @@ zg / zG
 
 " :orgmode insert active / inactive date
 \\sa / \\si
+
+" Update spacevim
+:SPUpdate
+
+" SpaceVim: Updating failed, The plugin dir is dirty
+" a branch must by checked-out. "Detached HEAD" won't work
+cd ~/.SpaceVim; and git status
