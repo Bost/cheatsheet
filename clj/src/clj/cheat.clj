@@ -308,6 +308,11 @@ java -Dclojure.server.repl=$repl -jar $clj_home/clojure.jar
 yarn global add unravel-repl
 unravel localhost 5555
 
+;; start a server
+boot socket-server --port 5555 --accept clojure.core.server/io-prepl wait &; disown
+;; execute (+ 1 2) and quit
+echo -e "(clojure.core/+ 1 2)\n:repl/quit" | nc localhost 5555
+
 ;; Reference types
 ;; Jméno       | Var                   | Ref          | Atom      | Agent
 ;; Změna stavu | synchronní            | synchronní   | sync      | async
