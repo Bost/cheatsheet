@@ -279,6 +279,12 @@
    :de ["Lange Nase" "Lange Nase zeigen"]
    :sk ["Dlhý nos" "Ukázať dlhý nos"]}
 
+  {:fr ["À l'epoque à laquelle la stupidité semble grandir à travers le monde, ..."
+        "À une époque où la stupidité semble grandir à travers le monde, ..."]
+   :de ["In einer Zeit, in der die Dummheit weltweit auf dem Vormarsch zu sein scheint, ..."]
+   :sk ["V dobe, ktorej na celom svete zdanlivo dominuje výťazný postup hlúposti, ..."]
+   :explanation ["https://spon.de/afz6Q"]}
+
   ;; ÁÄ ČĎ ÉÍ ĹĽ Ň ÓÔ ŔŠŤ ÚÝ Ž
   ;; áä čď éí ĺľ ň óô ŕšť úý ž
   ;; äÄ öÖ üÜ ß Ææ Œœ Çç Àà Ââ Éé Èè Êê Ëë Î î Î ï Ôô Ûû Ùù Ÿÿ
