@@ -1036,7 +1036,7 @@ sudo apt-key adv --keyserver-options \
      http-proxy="http://<proxy-ip>:<proxy-port>/" \
      --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 68576280
 sudo apt-add-repository \
-     "deb https://deb.nodesource.com/node_$nodeJsVer.x $(lsb_release -sc) main"
+     "deb https://deb.nodesource.com/node_$nodeJsVer.x "$(lsb_release -sc)" main"
 # install nodejs w/o proxy:
 curl -sL https://deb.nodesource.com/setup_$nodeJsVer.x | sudo -E bash -
 sudo apt-get install --yes nodejs
