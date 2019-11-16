@@ -1065,7 +1065,10 @@ npm update --global
 npm install --global --unsafe-perm=true electron
 npm search electron\*
 
-# :nodej :npm
+# security: don't execute postinstall hooks https://youtu.be/24tQRwIRP_w?t=952
+npm config set ignore-scripts true
+
+# :nodej
 npm install --verbose <package> / npm install -dd <package>
 npm config list
 npm config set color=false
