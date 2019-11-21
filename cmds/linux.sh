@@ -398,20 +398,19 @@ curl -v --proxy $http_proxy https://www.google.com
 # show request/response headers
 curl -v URL
 
-# in bash: (in fish it doesn't work)
+# in bash: (doesn't work in fish)
 curl --request GET \
  "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=test"
 
-# :iproute2 :net like ifconfig. state of network interfaces
+# :iproute2 :net - like ifconfig. State of network interfaces
 ip address
-
-# :iproute2 :net show / manipulate routing, devices, policy routing and tunnels
+# show / manipulate routing, devices, policy routing and tunnels
 ip address show eth0
-
-# :iproute2 :net routing table
+# routing table
 ip route
-
-# :iproute2 :net Address Resolution Protocol table
+# list routes with pretty output format
+routel     # just a wrapper arount `ip route` ?
+# Address Resolution Protocol table
 ip neighbour
 
 # :net what is my IP

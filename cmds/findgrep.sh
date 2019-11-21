@@ -112,3 +112,23 @@ echo "aaa 123 0.0 bbb" | grep --only-matching '\([[:digit:]]*\.[[:digit:]]*\|[[:
 
 # grep
 # \Z  matches the EOF end-of-file
+
+# https://www.putorius.net/linux-find-command.html
+# Listing Matched Files with Find Command
+find . -type f -iname "my*" -ls
+
+# Save output to a file
+find ~/test/ -type f -fprint output.txt
+
+# Execute any command on each matched file from the find command.
+# e.g. find all regular files in the ~/test/ and copy them into the /var/tmp/
+# {} - placeholder where the results of the find command are put
+# \; - denotes the end of command
+find ~/test/ -type f -exec cp -v {} /var/tmp/ \;
+
+# -execdir runs the command from the subdirectory of the matched file.
+find ~/test/ -maxdepth 1 -type f -execdir cp -v {} mydir/ \;
+
+# Prompt for Approval Before Executing Commands
+find ~/test/ -type f -ok rm -v {} \;
+
