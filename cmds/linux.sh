@@ -117,6 +117,7 @@ split --bytes 1M --numeric-suffixes --suffix-length=3 foo.txt foo.
 
 # :usb :drive :drives :disc :discs - list block devices
 lsblk
+lsblk --nodeps
 
 # Format disk / usb drive
 # 1. erase everything on the device
