@@ -1191,3 +1191,17 @@ du -a ~ 2>/dev/null | sort -n -r | head -n 20
 # -h, --no-dereference   affect symbolic links instead of any referenced file
 chown -h myuser:mygroup mysymbolic
 
+# SMBIOS - System Management BIOS
+# DMI table - Desktop Management Interface
+dmidecode
+sudo dmidecode --type bios
+sudo dmidecode --type baseboard
+# see also: system chassis processor memory cache connector slot
+
+# Setup Wake on LAN https://tek.io/37ZXhPs
+sudo ethtool -s <interface> wol g  # list of interfaces: ip addr
+# test:
+#    sudo systemctl suspend   # or: sudo poweroff
+# then
+wakeonlan <MAC-address>
+# TODO add powernap
