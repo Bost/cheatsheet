@@ -627,6 +627,7 @@ cat /proc/version
 
 # :ubuntu show OS version
 lsb_release -a
+cat /etc/issue
 
 # :ubuntu when "you may need to re-run your boot" appears
 sudo update-grub
