@@ -588,13 +588,6 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys; # rm ~/.ssh/id_rsa.pub
 # Execute a command as another user
 pkexec
 
-# :net service is replaced by systemctl
-systemctl status network-manager / service network-manager status
-sudo systemctl stop tomcat7 / sudo service tomcat7 stop
-
-# :systemd Control the systemd system and service manager
-systemctl status <service-name>
-
 # :systemd Control the systemd login manager - logging data
 loginctl
 
@@ -654,9 +647,6 @@ sudo update-grub
 
 # :ubuntu after update / upgrade see
 /usr/share/update-notifier/notify-reboot-required
-
-# :ubuntu (ubuntu 11.10 or later), gnome or KDE
-sudo restart lightdm / gdm / kdm
 
 # run fsck on next reboot
 sudo touch /forcefsck
@@ -1160,9 +1150,9 @@ rsync -zarv --include="*/" --include="*.cson" --exclude="*" ~/.atom/* ~/dev/dotf
 -n, --dry-run
 
 # :bluetooth bluez:
-systemctl status bluetooth
+systemctl      status bluetooth
 sudo systemctl enable bluetooth
-sudo systemctl start bluetooth
+sudo systemctl start  bluetooth
 bluetoothctl
 help # list of available commands of bluetoothctl
 
