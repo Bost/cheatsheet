@@ -128,6 +128,25 @@ sudo fdisk /dev/sdd1
 sudo mkfs.ext4 /dev/sdd1
 sudo eject /dev/sdd1
 
+# partition manipulation: resize / create / delete partitions
+parted
+# e.g. resize 3rd partition and use all free / available space
+parted /dev/sda resize 3 100%
+# manipulate (given) partition
+fdisk
+
+# New installations of Ubuntu 18.04 use a swap file instead of swap partition
+# 8 * 1024 * 1048576 MB = 8 * 1073741824 B = 8589934592 B = 8GB
+sudo dd status=progress if=/dev/zero of=/sdb1/swap.img count=8388608 bs=1024
+sync   # synchronize cached writes to persistent storage
+# sudo chmod 600 /sdb1/swap.img  # should not be needed
+# make sure we have: -rw------- 1 root root 8,0G
+ls -la /sdb1/swap.img
+sudo mkswap /sdb1/swap.img
+sudo swapon /sdb1/swap.img
+swapon --summary
+# see also: swapspace
+
 # flush file system buffers
 sync
 
