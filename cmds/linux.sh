@@ -583,12 +583,6 @@ ssh-keygen
 # "Account settings / SSH keys / Add another public key"
 cat ~/.ssh/id_rsa.pub
 
-# log in to remote systems using public key
-scp ~/.ssh/id_rsa.pub user@destmachine:/home/user/.ssh/
-ssh user@destmachine
-touch ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys
-cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys; # rm ~/.ssh/id_rsa.pub
-
 # Execute a command as another user
 pkexec
 
@@ -765,6 +759,7 @@ ping6 -I wlan0 -c 4 <ipv6-address> # responds with 'ping: unknown iface wlan0'
 ssh user@host cat ./pth/to/remotefile | diff ./pth/to/localfile -
 
 # :ssh copy ssh keys to user@host to enable password-less ssh logins
+# i.e. login to remote host using authorized public key
 ssh-copy-id user@host
 
 # :ssh mount folder/filesystem through SSH. Install SSHFS from
