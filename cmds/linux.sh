@@ -130,6 +130,7 @@ sudo eject /dev/sdd1
 
 # partition manipulation: resize / create / delete partitions
 parted
+# TODO see partprobe: https://opensource.com/article/18/9/swap-space-linux-systems
 # e.g. resize 3rd partition and use all free / available space
 parted /dev/sda resize 3 100%
 # manipulate (given) partition
@@ -137,6 +138,9 @@ fdisk
 
 # New installations of Ubuntu 18.04 use a swap file instead of swap partition
 # 8 * 1024 * 1048576 MB = 8 * 1073741824 B = 8589934592 B = 8GB
+# TODO fallocate: see https://www.tecmint.com/add-swap-space-on-ubuntu/
+# /proc/sys/vm/swappiness
+# /proc/sys/vm/vfs_cache_pressure
 sudo dd status=progress if=/dev/zero of=/sdb1/swap.img count=8388608 bs=1024
 sync   # synchronize cached writes to persistent storage
 # sudo chmod 600 /sdb1/swap.img  # should not be needed
