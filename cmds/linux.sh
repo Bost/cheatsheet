@@ -503,29 +503,31 @@ svn info <repo-url/module>
 # attempts
 svn propdel --revprop -r0 svn:rdump-lock <url>
 
-# copy files from src to dst - typical example; add -n is for --dry-run
-rsync -havz src/ dst
-rsync --human-readable --archive --verbose --compress src/ dst
+# recursive copy `dotfiles` and `cheat` to server:~/dev/
+# i.e. create `server:~/dev/dotfiles/` and `server:~/dev/cheat/`
+rsync -ravz dotfiles cheat server:~/dev/
+# recursive copy of only the content of `dotfiles` and `cheat`.
+# i.e. create only the `server:~/dev/`
+rsync -ravz dotfiles/ cheat/ server:~/dev
 
 # copy only certain types of files using include option
 rsync -havzr --include="*/" --include="*.sh" --exclude="*" "$src" "$dst"
-rsync --human-readable --archive --verbose --compress --recursive --include="*/" --include="*.sh" --exclude="*" "$src" "$dst"
 
 # :cvs copy files from src to dst excluding everything in CVS directories
-# (showing progress)
-rsync --dry-run --human-readable --progress          --archive --verbose --exclude='CVS' src/ dst
-rsync --dry-run --human-readable --progress --delete --archive --verbose --exclude='CVS' src/ dst | grep deleting
-rsync --dry-run --human-readable                     --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst
-rsync --dry-run --human-readable            --delete --archive --verbose --exclude='dir' --exclude='*.jpg' src/ dst | grep deleting
+# -n --dry-run
+rsync -nhavz          --exclude='CVS'                   src/ dst
+rsync -nhavz --delete --exclude='CVS'                   src/ dst | grep deleting
+rsync -nhavz          --exclude='dir' --exclude='*.jpg' src/ dst
+rsync -nhavz --delete --exclude='dir' --exclude='*.jpg' src/ dst | grep deleting
 
 # :cvs copy files from src to dst excluding everything in CVS directories (showing progress)
 # exclude hidden files and directories
-rsync --dry-run --human-readable                     --archive --verbose --exclude=".*" --exclude=".*/" src/ dst
-rsync --dry-run --human-readable            --delete --archive --verbose --exclude=".*" --exclude=".*/" src/ dst | grep deleting
+rsync -nhav          --exclude=".*" --exclude=".*/" src/ dst
+rsync -nhav --delete --exclude=".*" --exclude=".*/" src/ dst | grep deleting
 
 # :mv move content of a directory within another directory with the same folders
-rsync --dry-run --human-readable                     --archive --remove-source-files backup/ backupArchives
-rsync --dry-run --human-readable            --delete --archive --remove-source-files backup/ backupArchives | grep deleting
+rsync -nha          --remove-source-files backup/ backupArchives
+rsync -nha --delete --remove-source-files backup/ backupArchives | grep deleting
 
 # restart cvs daemon
 sudo /etc/init.d/cvsd restart / start / stop / status
