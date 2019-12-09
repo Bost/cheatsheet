@@ -200,6 +200,19 @@ wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg; and \
 # :wget - limit the download speed to amount bytes per second
 wget --limit-rate=20k <url>
 
+# download & verify / check bitcoin core wallet
+set btcVer  0.19.0.1
+set url     https://bitcoin.org/bin/bitcoin-core-$btcVer
+set shaFile SHA256SUMS.asc
+set shaUrl  $url/$shafile
+set tgzUrl  $url/bitcoin-$btcVer-x86_64-linux-gnu.tar.gz
+sha256sum --check $shaFile | grep OK
+
+# download and print file / url only to stdout / standard output
+set file https://bitcoin.org/bin/bitcoin-core-0.19.0.1/SHA256SUMS.asc
+wget -O                - $file
+wget --output-document - $file
+
 # :gpg :sig - verify file
 gpg --verify file.sig file
 
@@ -677,8 +690,9 @@ sed ':a;N;$!ba;s/\n/ /g'
 sed "s/\x85/\n/g" <log.txt >log.nl.txt; \
     sed "s/\x85/\n/g" <log.nl.txt >log.nl.00.txt
 
-# read SHA1 sums from the file.sha1 and check them
-sha1sum -c file.sha1
+# read SHA sums from the SHA256SUMS.asc file and check / verify them
+sha256sum -c      SHA256SUMS.asc | grep OK
+sha256sum --check SHA256SUMS.asc | grep OK
 
 # :ps full command line; command is separated by the \0 byte
 tr '\0' ' ' < /proc/<pid>/cmdline
