@@ -703,10 +703,10 @@ sha256sum --check SHA256SUMS.asc | grep OK
 # :ps full command line; command is separated by the \0 byte
 tr '\0' ' ' < /proc/<pid>/cmdline
 
-# ::ps :top :htop all info related to a process
+# :ps :top :htop all info related to a process
 ls /proc/<pid>
 
-# ::ps :top :htop currend working dir of <pid>
+# :ps :top :htop currend working dir of <pid>
 cat /proc/<pid>/cwd
 
 # :xfce :ubuntu :popup :message desktop notification
