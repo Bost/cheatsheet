@@ -647,6 +647,10 @@ ps -e        # every process on the system: standard syntax
 ps ax        # every process on the system: BSD syntax
 ps --windows # show windows as well as cygwin processes (-W)
 
+# find zombie process
+# https://vitux.com/how-to-create-a-dummy-zombie-process-in-ubuntu/
+ps axo stat,ppid,pid,comm | grep -w defunct
+
 # distro name and ver
 cat /etc/*-release
 cat /proc/version
