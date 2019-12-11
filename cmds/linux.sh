@@ -1233,3 +1233,9 @@ sudo ethtool -s <interface> wol g  # list of interfaces: ip addr
 # then
 wakeonlan <MAC-address>
 # TODO add powernap
+
+# fully resolve the link; report errors; see also: realpath
+readlink --canonicalize --verbose <linkname>
+# fix broken link
+ln -sfn                                <target> <linkname>
+ln --force --symbolic --no-dereference <target> <linkname>
