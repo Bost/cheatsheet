@@ -1,6 +1,9 @@
 #!/usr/bin/env fish
 exit 1 # just in case ...
 
+# compare shells
+# https://htmlpreview.github.io/?https://raw.githubusercontent.com/michaelmacinnis/oh/master/doc/comparison.html
+
 # web server, reverse proxy, load balancer, mail proxy, HTTP cache
 nginx
 
@@ -1239,3 +1242,7 @@ readlink --canonicalize --verbose <linkname>
 # fix broken link
 ln -sfn                                <target> <linkname>
 ln --force --symbolic --no-dereference <target> <linkname>
+
+# create bootable usb drive
+set --local isoFile /path/to/file.iso
+sudo dd bs=4M if=$isoFile of=/dev/sdh3 status=progress oflag=sync
