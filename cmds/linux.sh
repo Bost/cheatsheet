@@ -1246,3 +1246,6 @@ ln --force --symbolic --no-dereference <target> <linkname>
 # create bootable usb drive
 set --local isoFile /path/to/file.iso
 sudo dd bs=4M if=$isoFile of=/dev/sdh3 status=progress oflag=sync
+
+# printer
+http://localhost:631/help/options.html

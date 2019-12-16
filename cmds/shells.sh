@@ -14,13 +14,31 @@ fish_config
 # :fish - reload function / alias
 type myfunc
 
+# shell types; see
+# https://unix.stackexchange.com/a/50667
+# https://unix.stackexchange.com/a/46856
+#
+# Interactive: commands are run with user-interaction from keyboard.
+# E.g. the shell can prompt the user to enter input.
+#
+# Non-interactive: the shell is probably run from an automated process so it
+# can't assume if can request input or that someone will see the output. E.g
+# Maybe it is best to write output to a log-file.
+#
+# Login: shell is run as part of the login of the user to the system. Typically
+# used to do any configuration that a user needs/wants to establish his
+# work-environment.
+#
+# Non-login: Any other shell run by the user after logging on, or which is run
+# by any automated process which is not coupled to a logged in user.
+
 # Where is PATH variable set? https://askubuntu.com/a/706069/401596
 grep --color -H 'PATH=' ~/.bashrc ~/.profile ~/.bash_profile ~/bash.login \
      ~/.bash_aliases /etc/bash.bashrc /etc/profile /etc/skel/* \
      /etc/profile.d/* /etc/environment 2> /dev/null
 
 # available shells; current shell; change shell
-cat /etc/shells; echo $SHELL; chsh -s /usr/local/bin/fish
+cat /etc/shells; echo $SHELL; chsh --shell /usr/bin/fish
 
 # :bash :fish - sequence from 0 to 10 (both included) increment by 2
 seq 0 2 10
