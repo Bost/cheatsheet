@@ -315,14 +315,14 @@ rm -f !(survivor.txt)
 # insert autocompletition result (use together with other progs)
 Esc *
 
-# :at :batch - execute a command at a given time
-echo "ls -l" | at midnight
+# :batch - run / execute a command at:
+echo "ls -l" | at midnight    # a given time
+at -f script.sh now + 1 hour  # 1 hour from now
+at -f script.sh now + 30 min  # 30 minutes from now
+watch date                    # periodically / repeatedly every 2 seconds
 
 # echo with formating
 printf "Line: %05d %15.3f Result: %+15d\n" 1071 3,14156295 32589
-
-# :at :batch run script.sh 1 hour / 30 minutes from now
-at -f script.sh now + 1 hour / 30 min
 
 # simple python3 server
 python3 -m http.server 8000 --bind 127.0.0.1
