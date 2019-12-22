@@ -218,8 +218,9 @@ git ls-files --stage
 
 # Remove untracked files and dirs from the working tree
 git clean -dxf
+git clean --force -dx
 
-# amend / split apart last commit: ... and edit the usual way
+# undoing: amend / split apart last commit: ... and edit the usual way
 git reset HEAD~
 
 # show aliases
