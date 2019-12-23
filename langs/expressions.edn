@@ -289,6 +289,9 @@
   ;; áä čď éí ĺľ ň óô ŕšť úý ž
   ;; äÄ öÖ üÜ ß Ææ Œœ Çç Àà Ââ Éé Èè Êê Ëë Î î Î ï Ôô Ûû Ùù Ÿÿ
 
+  {:en ["Knick knack"]
+   :explanation ["Colloquial English: a selection of items of modest value, often sold in street markets and charity shops."]}
+
   #_{:fr [""]
      :en [""]}
 
