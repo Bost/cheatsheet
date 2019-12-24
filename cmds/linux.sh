@@ -1,6 +1,10 @@
 #!/usr/bin/env fish
 exit 1 # just in case ...
 
+# see also:
+# https://github.com/tldr-pages/tldr
+# https://github.com/cheat/cheat
+
 # compare shells
 # https://htmlpreview.github.io/?https://raw.githubusercontent.com/michaelmacinnis/oh/master/doc/comparison.html
 
