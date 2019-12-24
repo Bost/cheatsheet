@@ -995,8 +995,7 @@ dpigs
 sudo dgrep "text" vim
 
 # :debian-goodies - check which processes need to be restarted after an upgrade
-sudo checkrestart
-sudo needrestart   # inspired by checkrestart
+sudo needrestart   # replaces & inspired by checkrestart
 # check if the /var/run/reboot-required exists
 ls /var/run/reboot-required
 # list of packages to reboot
