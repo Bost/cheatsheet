@@ -269,7 +269,7 @@ ls -lrt -d -1 $PWD/{*,.*}
 find ./ -type f | perl -ne 'print $1 if m/\.([^.\/]+)$/' | sort -u
 
 # line count, word count
-wc cheatsheet.html
+wc /usr/share/common-licenses/GPL-2
 
 # list current traps; shell function responding to HW / other signals
 trap
@@ -976,18 +976,25 @@ attr
 # hash message authentication code
 HMAC
 
-# enterprise cryptographic filesystem for Linu
+# enterprise cryptographic filesystem for Linux
 ecryptfs
 
-# :debian-goodies show installed packages occupying the most space
+# :debian-goodies
+# display all the dependencies of the given package and when each dependency was
+# installed
+which-pkg-broke vim
+# list the enhancements for all installed packages
+check-enhancements --installed-packages
+# show installed packages occupying the most space
 dpigs
+# search all files in specified packages
+sudo dgrep "text" vim
 
-# :debian-goodies check which processes need to be restarted after an upgrade
+# :debian-goodies - check which processes need to be restarted after an upgrade
 sudo checkrestart
-
+sudo needrestart   # inspired by checkrestart
 # check if the /var/run/reboot-required exists
 ls /var/run/reboot-required
-
 # list of packages to reboot
 /var/run/reboot-required.pkgs
 
@@ -997,38 +1004,30 @@ timeout 5s COMMAND
 # :net retcode==1 - online; retcode!=1 offline
 nm-online --exit; echo "retcode: $?"
 
-# :wifi :net 1. connect
-nm-applet / man nmcli-examples
-
-# :wifi :net 1. wifi: general status and operations
-nmcli --ask device wifi list
-
-# :wifi :net 2. connect
-nmcli --ask device wifi connect WIFIonICE
-
-# :wifi :net 3. disconnect
-nmcli --ask device disconnect wlan0
-
-# :wifi :net general status and operations
+# :wifi :net
+nm-applet
+man nmcli-examples
+# general status and operations
 nmcli --ask general
+
+nmcli --ask device wifi list               # 1. list
+nmcli --ask device wifi connect WIFIonICE  # 2. connect
+nmcli --ask device disconnect wlan0        # 3. disconnect
 
 # :rpm display installed packages
 rpm -qa
 
-# android:
-sudo aptitude install android-tools-adb android-tools-fastboot
-
-# root login / root console / root prompt
+# root login / console / prompt
 sudo -i
 
-# android:
-groups - check plugdev membership
-
-# android:
+# :android
+sudo aptitude install android-tools-adb android-tools-fastboot
+# check plugdev membership
+groups
 adb devices; dmesg; adb logcat; adb shell
 adb push src dst
 
-# packages; unsupported / obsolete
+# unsupported / obsolete packages
 ubuntu-support-status --show-unsupported
 
 # user management
@@ -1047,12 +1046,10 @@ pv
 # Ultimate Plumber: Linux pipes with instant live preview
 https://github.com/akavel/up
 
-# maven:
+# :maven :mvn :proxy
 mvn package
-mvn install / mvn clean - mvn install seems not to be needed
-
-# :maven :mvn proxy:
-# see https://www.mkyong.com/maven/how-to-enable-proxy-setting-in-maven/
+mvn install / mvn clean # mvn install seems not to be needed
+# https://www.mkyong.com/maven/how-to-enable-proxy-setting-in-maven/
 {M2_HOME}/settings.xml
 
 # :sftp / :ftp - SSH File Transfer from the OpenSSH / FTP over SSL
@@ -1097,7 +1094,7 @@ npm update --global
 npm install --global --unsafe-perm=true electron
 npm search electron\*
 
-# security: don't execute postinstall hooks https://youtu.be/24tQRwIRP_w?t=952
+# :security - don't execute postinstall hooks https://youtu.be/24tQRwIRP_w?t=952
 npm config set ignore-scripts true
 
 # :nodej
@@ -1111,28 +1108,28 @@ npm config set registry https://registry.npmjs.org/ [or http]
 npm config set proxy "http://<ip:port>/"
 npm config set https-proxy "https://<ip:port>/"
 
-# :net data transfered today / per month
+# :net - data transfered today / per month
 sudo vnstat -u -i wlan0; and vnstat
 
-# :net managing a netfilter firewall; ufw - uncomplicated firewall
+# :net - managing a netfilter firewall; ufw - uncomplicated firewall
 sudo ufw status numbered
 sudo ufw delete <rule-nr>
 sudo ufw allow <port>
 sudo ufw allow <port>/tcp
 
-# :net :rdp remote desktop; `-p` ask for password, `-f` full screen
+# :net :rdp :remote-desktop - `-p` ask for password, `-f` full screen
 rdesktop -u <login> -p - <computer>:3389
 rdesktop -f -u <login> -p - <computer>:3389
 # :net :rdp remote desktop
 sudo /etc/init.d/xrdp restart
 
-# :shred permanet delete: shred doesn't work on dirs
+# :shred :permanet-delete - shred doesn't work on dirs
 shred --verbose --remove <pth/to/file>
 
 # :shred permanet delete: shred doesn't work on dirs
 find . -type f -print0 | xargs -0 shred --remove
 
-# :shred permanet delete: srm doesn't delete hardlinked files
+# :shred :permanet-delete - srm doesn't delete hardlinked files
 srm -r <pth>
 
 # synchronize sytem date behind proxy
@@ -1152,7 +1149,7 @@ sudo aptitude install virtualbox-guest-additions-iso
 sudo /etc/init.d/virtualbox restart
 sudo /etc/init.d/virtualbox-guest-utils start
 
-# :atom delete all environment states
+# :atom - delete all environment states
 atom --clear-window-state
 # list / backup installed packages to a file
 apm list --installed --bare > ~/dev/dotfiles/.atom/package.list
@@ -1163,7 +1160,7 @@ apm update
 # restore / synchronise settings
 rsync -zarv --include="*/" --include="*.cson" --exclude="*" ~/.atom/* ~/dev/dotfiles/.atom
 
-# :rsync options short / long versions
+# :rsync - options short / long versions
 -h, --human-readable
 -a, --archive
 -v, --verbose
@@ -1178,7 +1175,7 @@ sudo systemctl start  bluetooth
 bluetoothctl
 help # list of available commands of bluetoothctl
 
-# :bluetooth :bluez this actually works
+# :bluetooth :bluez - this actually works
 # send file to /storage/emulated/0/bluetooth
 bluetooth-sendto --device=XX:XX:XX:XX:XX:XX local-fname
 
