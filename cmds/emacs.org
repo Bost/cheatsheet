@@ -38,8 +38,10 @@
   ~C-u -4 C-x TAB~
 
   ;; :regexp https://www.emacswiki.org/emacs/RegularExpression#regexp
-  ;; increment the number found  /  whitespace / blank
-  \\#
+  \\#                   ;; increment the number found
+  \\s-                  ;; increment the whitespace
+  %s#\(.\{2\}\)#aa#g    ;; substitute / find exactly 2 occurences
+  \(.*?\)               ;; lazy match
 
   ;; :regexp whitespace character, as defined by the syntax table, typically
   ;; [\t\r\n\v\f]
