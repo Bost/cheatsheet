@@ -183,7 +183,7 @@ git config --global core.autocrlf true
 git log --pretty=format:'%h %s'
 
 # a kind of 'gitk --all'
-git log --oneline --graph
+git log --oneline --graph --all --decorate=short
 
 # show commit messages matching <pattern>
 git log --oneline --grep="<pattern>"
