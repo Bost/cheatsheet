@@ -104,7 +104,7 @@ git add -p
 # amend commit; reuse commit message
 git commit --amend --no-edit
 
-# a kind of git history
+# a kind of git history / restore deleted branch
 git reflog
 
 # add all *.txt files under given path; must not be a bare repo
