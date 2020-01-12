@@ -1165,11 +1165,12 @@ rsync -zarv --include="*/" --include="*.cson" --exclude="*" ~/.atom/* ~/dev/dotf
 
 # :rsync - options short / long versions
 -h, --human-readable
--a, --archive
+-a, --archive             # archive mode; equals -rlptgoD (no -H,-A,-X)
 -v, --verbose
 -z, --compress
 -r, --recursive
 -n, --dry-run
+-p, --perms                # preserve permissions
 
 # :bluetooth bluez:
 systemctl      status bluetooth
