@@ -10,7 +10,9 @@ exit 1 # just in case ...
 find . -type f ! -name "*~" -exec grep -n --with-filename --regexp="Pattern" {} +
 
 # find and delete empty files / dirs
-find . -empty -type f -delete / find . -empty -type d -delete
+find . -empty -type f -delete
+find . -empty -tspe d -delete
+find  /path/to/dest -type f -empty -user vivek
 
 # search for *fileToSearch* in multiple directories
 find ./ foo/ bar/ -name "*fileToSearch*"
