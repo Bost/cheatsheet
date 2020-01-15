@@ -1203,11 +1203,20 @@ obexftp -b XX:XX:XX:XX:XX:XX -c /Download -d remote-fname
 sudo mkdir -p /mnt/ram
 sudo mount -t tmpfs /mnt/ram -o size=8192M
 
-# mount disk ; see also udev / udevadm
+# mount / umount (usb) disk without 'root' as the mount command.
+# udisksctl uses udiskds binary launched by udisks2.service.
+# see also udev / udevadm
 # test if /dev/sdc1 is mounted
 udisksctl info    --block-device /dev/sdc1 | rg MountPoints: | rg /
 udisksctl mount   --block-device=/dev/sdc1
 udisksctl unmount --block-device=/dev/sdc1
+# make file accessible as a block-device
+udisksctl loop-setup  -f disk.img
+udisksctl unmount     -b /dev/loop8
+udisksctl loop-delete -b /dev/loop8
+
+# Change the label on an ext2/ext3/ext4 filesystem
+e2label
 
 # intercept stdout to a log file
 cat file | tee -a file.log | cat /dev/null
