@@ -127,3 +127,6 @@ SELECT count(*) FROM pg_catalog.pg_tables;
 > / < # :speed 25% faster / slower
 c / m # toggle captions / mute
 , / . # move 1 frame forward / backward
+
+# latex to odt (OpenDocument Text / LibreOffice) conversion
+pandoc -s document.tex -o document.odt
