@@ -676,3 +676,9 @@ xmodmap -pm
 
 ;; quit / delete multiple cursors
 M-x evil-mc-undo-all-cursors
+
+;; Toggle preview of the LaTeX fragment at point.
+M-x org-latex-preview
+C-c C-x C-l
+
+;; TODO latex-preview-pane
