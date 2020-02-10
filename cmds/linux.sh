@@ -1259,3 +1259,7 @@ sudo dd bs=4M if=$isoFile of=/dev/sdh3 status=progress oflag=sync
 
 # printer
 http://localhost:631/help/options.html
+
+# YAML: YAML Ain't Markup Language
+# human-readable data-serialization language. Python style indentation
+# [] lists, {} maps

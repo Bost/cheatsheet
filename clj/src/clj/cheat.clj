@@ -631,3 +631,5 @@ user=> (repeat 100 (vec (range 100)))
 ;; context. Usage similar to proxy, or anonymous inner classes in Java.
 
 ;; TODO derive multi
+
+;; TODO lisp1 / lisp-1 etc.

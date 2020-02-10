@@ -86,3 +86,5 @@ robocopy src dst /mir
 # battery
 powercfg /batteryreport # win10
 powercfg /energy # win7
+
+# WinRM: Windows Remote Management protocol

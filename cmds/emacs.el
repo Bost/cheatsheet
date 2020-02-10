@@ -620,11 +620,13 @@ SPC w .
 ;; layouts - 2., 3., ... layouts contain only selected buffers
 SPC l <nr>
 
-;; helm-persp-switch-project: create new layout
-SPC p l
+;; create new layout
+SPC l 0..9
 
-;; save / load layouts to / from a file
-SPC l s  and  SPC l L
+;; save layout to a file
+SPC l s
+;; load layout from a file
+SPC l L
 
 ;; M-s h l hilite lines e.g. log file evaluation; see:
 ;; https://www.masteringemacs.org/article/highlighting-by-word-line-regexp

@@ -130,3 +130,11 @@ c / m # toggle captions / mute
 
 # latex to odt (OpenDocument Text / LibreOffice) conversion
 pandoc -s document.tex -o document.odt
+
+# guile
+# mit-scheme
+# racket general-purpose, multi-paradigm programming language based on the Scheme dialect of Lisp.
+
+# LaTeX is a set of macros built on top of TeX.
+TeX is not just a typesetter, it is a typesetter with an embedded scripting language, whose commands configure and control the behaviour of the typesetter. LaTeX and Plain TeX are two different customised typesetting environments, with their own commands and conventions, based on TeX (TeX is a "formatting system")
+The LaTeX macro package written by Leslie Lamport
