@@ -114,13 +114,19 @@ math "1 + 2"
 bind / help bind
 
 # :bash - display shortcuts (including Ctrl+L, Ctrl+R); \e - ESC, \C-y - Ctrl+y
-bind -P / help bind
+# see fzf
+bind -P
+help bind
+
+# bash history / abort history
+C-r / C-g
 
 # :alias escape command aliases
 \\\[command\]
 
 # get the parameter / argument of the last command. see bind -P
-Alt-. / Esc-.
+Alt-.
+Esc-.
 
 # set vi bindings
 set -o vi
@@ -137,50 +143,31 @@ set -o verbose
 set -x
 set -o xtrace
 
-
 # :scripting loc_variable - visible only within given code block
 local loc_variable=value
 
-# args: function arguments
-$*
-
-# args: all arguments / all arguments of the last command / count of arguments
-$@ / !* / $$
-
-# exit code (return value / retcode) of the last command (0: success)
-# e.g. adduser joe; echo $?
-$?
-
-# build-in commands
-$-
-
+# :bash args
+$*   # function arguments
+$@   # all arguments
+!*   # all arguments of the last command
+$$   # TODO check: process ID of the shell / count of arguments
+$!   # process ID of the most recently executed background process
+!$   # last argument of the last command
+$?   # last cmd exit / return code / retcode (0: success); adduser joe; echo $?
+!:-  # last command without the last argument
+:    # if; no-op, nope, empty operation
+> file.txt  # empty file.txt
+$-   # use(?) build-in commands
 # last argument of the previous command. At the shell startup, it gives the
 # absolute filename of the shell script being executed
 $_
-
-# args: last argument of the last command
-!$
-
-# process ID of the: shell / most recently executed background process
-$$ / $!
 
 # the cmd takes x and y as if they were pressed during its execution
 (echo x; echo y) | cmd
 
 # eval expression
 echo $[22 + 33]
-
-# eval expression
 expr 11 + 22
-
-# bash: args: last command without the last argument
-!:-
-
-#bash: if; no-op, nope, empty operation
-:
-
-# bash: empty file.txt
-> file.txt
 
 # bash: insert contents of file.txt into input of tr and output results to
 # fileNew.txt
@@ -190,14 +177,12 @@ tr '[A-Z]' '[a-z]' < file.txt > fileNew.txt
 mmv \*.JPG \#1.jpc
 mmv \* \#1.rexx
 
-# bash: visual calender for februar 2004 / whole year 2004
-cal 2 2004 / cal -y 2004
+# bash: visual calender for...
+cal 2 2004   # ... februar 2004
+cal -y 2004  # ... the whole year 2004
 
 # bash: ? define function in bash ?
 foo() { date; }
-
-# bash history, abort history
-C-r, C-g
 
 # bash: shebang: stop the script after any error
 #!/bin/bash -e
@@ -237,7 +222,7 @@ echo "!!" > foo.sh
 /usr/bin/time --portability fish --command <fn> <prm1> <prm2> ...
 # TODO try out
 function time --description 'Wrapper for time'
-/usr/bin/time --portability /usr/bin/fish --command $argv
+    /usr/bin/time --portability /usr/bin/fish --command $argv
 end
 # see also:
 <fn> <prm1> <prm2> ...
@@ -257,8 +242,8 @@ cygpath -w filename
 # bash eval string
 eval "${cmd}"
 
-# :bash :fish - bugs in shell scripts
-http://www.shellcheck.net/
+# :bash - bugs in bash/sh scripts http://www.shellcheck.net/
+sudo apt install shellcheck
 
 # :bash :fish - help text that matches each argument
 http://explainshell.com/

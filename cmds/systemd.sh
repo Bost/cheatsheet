@@ -46,3 +46,10 @@ sudo systemctl stop    bluetooth
 
 # see also: xfce4-session-logout --suspend
 sudo systemctl suspend
+
+# system logs
+logger "Enter messages into the system log: Hello Logs"
+journalctl --since "1m ago" | grep Hello
+
+# access kernel logs
+dmesg
