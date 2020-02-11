@@ -488,3 +488,6 @@ zg / zG
 " SpaceVim: Updating failed, The plugin dir is dirty
 " a branch must by checked-out. "Detached HEAD" won't work
 cd ~/.SpaceVim; and git status
+
+" page up / down: forward / backward
+C-b / C-f
