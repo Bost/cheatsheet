@@ -97,9 +97,10 @@ set --show               # set -S
 # :fish - all function arguments from 3rd to the last
 $argv[3..-1]
 
-# :fish
+# :fish :existence-tests
 test (string escape -- $argv) = "--switch" # string equality
-test -e file.txt                           # file existance
+test -e /path/to/file.txt                 # file exists
+test -d /path/to/dir                       # directory exists
 # true if the length of $myvar is non-zero i.e. non-empty string
 # https://stackoverflow.com/a/47743269; always use "" around the myvar
 test -n "$myvar"; and echo "true == defined;" or echo "false == undefined"
