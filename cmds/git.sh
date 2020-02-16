@@ -15,6 +15,9 @@ git branch --force <branch> <startpoint>
 git pull --rebase origin master
 git pull --rebase upstream master
 
+# add
+git submodule add <repo-url> ./path/to/submoduleDir
+
 # pull and rebase latest of all submodules
 git submodule foreach git pull --rebase origin master
 
