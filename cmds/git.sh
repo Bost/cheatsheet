@@ -25,11 +25,12 @@ git submodule foreach git pull --rebase origin master
 # so far before updating
 git submodule update --init
 
-# remove / delete
-git submodule deinit <path_to_submodule>
-git rm <path_to_submodule>
-git commit-m "Removed submodule "
-rm -rf .git/modules/<path_to_submodule>
+# remove / delete / uninstall
+set subMod relative/path/to/submodule
+git submodule deinit $subMod; and \
+git rm $subMod; and \
+git commit -m "Removed submodule" $subMod; and \
+rm -rf .git/modules/$subMod
 
 # change the name and email in all commits
 git filter-branch -f --env-filter \
