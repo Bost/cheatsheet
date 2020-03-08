@@ -54,8 +54,8 @@ git fetch upstream <branch1> <branch2>
 # remove / delete a remote-tracking branch from local repository
 git branch --remotes --delete <origin/branch>
 git branch -rd <origin/branch>
-# remove / delete a remote branch
-git push origin --delete <branch>
+# remove / delete a remote branch or tag
+git push --delete origin <branch-or-tag>
 
 # file changes against remote branch
 git diff <branch1> <branch2> filepath
@@ -267,3 +267,6 @@ git remote add origin ssh://user@host:1234/srv/git/example
 # Run as if started in <path> instead of the current working directory. See `man
 # git` when multiple -C given.
 git -C ~/.SpaceVim pull    # update SpaceVim
+
+# this pushes only tags not the code
+git push --tags origin
