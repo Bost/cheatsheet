@@ -603,6 +603,9 @@ user=> (repeat 100 (vec (range 100)))
 ;; t Trace. Continue, printing expressions and their values.
 ;; q Quit execution
 
+;; A debugger for Clojure
+;; https://github.com/clojure-emacs/sayid
+
 (defn greet
   "Multi-arity - 3 possible forms; & - variadic i.e. infinite arity"
   ([] (greet "you"))
