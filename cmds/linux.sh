@@ -920,6 +920,8 @@ cut
 lsof
 # open files whose inet address matches ADDR; -t: terse output
 lsof -i:[ADDR] -t
+# fish: process listening on the <portNr>
+ps (lsof -i:<portNr> -t)
 
 # what is currently using file / files opened by a running command
 strace <cmd> 2>&1 | grep openat
