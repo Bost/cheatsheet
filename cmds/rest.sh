@@ -117,11 +117,21 @@ psrinfo
 # solaris: net: ipconfig
 /usr/sbin/ifconfig -a
 
-# postgres connect
-# psql DBNAME USERNAME - this probably doesn't work
+# postgres connect to localhost
+psql <dbname> <username>
+# postgres connect to remote host
 psql -h localhost -p 5432 -U postgres -W   # empty password - press Enter
 # test content
 SELECT count(*) FROM pg_catalog.pg_tables;
+
+# postgres CLI commands
+# \?         psql commands
+# \h         SQL commands
+# \d         list tables, views, sequences (also relations ?)
+# \conninfo  current database connection
+# \dt        list tables and owners
+# \z         list all tables, views, and sequences
+# \q         exit
 
 # youtube
 > / < # :speed 25% faster / slower
