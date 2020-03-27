@@ -301,7 +301,9 @@ clojure.core.async/>! [port val]
 
 ;; start REPL:
 set clj_home $dec/clojure.org/clojure
-cd $clj_home; and ./antsetup.sh; and ant local
+cd $clj_home
+./antsetup.sh
+ant local
 set repl "{:port 5555 :accept clojure.core.server/repl}"
 java -Dclojure.server.repl=$repl -jar $clj_home/clojure.jar
 ;; boot socket-server --port 5555 wait # requires boot 2.7.2
@@ -636,3 +638,6 @@ user=> (repeat 100 (vec (range 100)))
 ;; TODO derive multi
 
 ;; TODO lisp1 / lisp-1 etc.
+
+;; reverse / inverse / swap hashmap
+(clojure.set/map-invert {:a 1})
