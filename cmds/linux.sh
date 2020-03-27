@@ -876,9 +876,9 @@ mtr --report www.google.com
 # query wikipedia for keyword
 dig +short txt keyword.wp.dg.cx
 
-# :iproute2 :net listening ports and PIDs of associated processes.
+# :iproute2 :net open / listening ports and PIDs of associated processes.
 # tcp (-t) udp (-u)
-ss -tulnp  # socket statistics replaces obsolete netstat
+ss -tulpn  # ss - socket statistics replaces obsolete netstat
 
 # edit entries
 crontab -e
