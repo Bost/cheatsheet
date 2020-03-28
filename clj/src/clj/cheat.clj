@@ -649,3 +649,6 @@ user=> (repeat 100 (vec (range 100)))
 
 ;; reverse / inverse / swap hashmap
 (clojure.set/map-invert {:a 1})
+
+;; Discussions on solving the 4Clojure Code challenges
+;; https://github.com/practicalli/four-clojure/tree/master/src/four_clojure
