@@ -168,6 +168,14 @@ lein deploy clojars
 `(+ ~'x x) => (clojure.core/+ x user/x)
 
 ;; cli: script: repl from command line
+;; A Clojure babushka for the grey areas of Bash
+;; see https://github.com/borkdude/babashka
+
+;; cli: script: repl from command line
+;; Bash-like shell based on Clojure
+;; https://github.com/dundalek/closh
+
+;; cli: script: repl from command line
 ;; see config.fish
 ;; set cljjar ~/.m2/repository/org/clojure/clojure/1.10.0/clojure-1.10.0.jar
 ;; set cljsjar ~/.m2/repository/org/clojure/spec.alpha/0.2.176/spec.alpha-0.2.176.jar
