@@ -296,10 +296,13 @@ fdupes -r .
 # :clipboard - show normal clipboard content
 xsel --clipboard
 
-# pipe to clipboard
-cat file > /dev/clip
+# pipe to clipboard - doesn't work
+# cat file > /dev/clip
 # pipe from clipboard
-cat /dev/clip
+# cat /dev/clip
+
+# copy file content to clipboard
+cat file.ext | xclip -i -selection clipboard
 
 # wait for 10 pastings of the content file.ext to x-clipboard and quit
 xclip -loops 10 -verbose file.ext
