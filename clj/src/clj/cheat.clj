@@ -1,8 +1,10 @@
 ;; a spaceholder - one-liners don't get matched
-(ns clj.cheat)
+(ns clj.cheat
+  "The docstring")
+(meta *ns*) ;; => "The docstring"
 
 (comment
-  (ns {:doc "
+  (ns ^{:doc "
 - Namespace as a Type: ns contains fns returning values of the same type. I.e.
   it is a set of proofs of a given proposition (i.e. of a given type).
 - Use morphism from \"complicated\" Types (i.e. Products consisting of many
@@ -10,8 +12,10 @@
   numbers. These subsets should be in fact monads
 - namespace underscore minus dash; prefer filenames with underscores:
  `lein new a-b produces src/clj/a_b.clj with`
-"}
+"
+        :author "<Author's name>" :last-update "<the-date>"}
       a-b.core)
+;; (meta *ns*) ; should print the whole metadata hash-map
 
 ;; (A * B) could be seen as a product (e.g. join)
 ;; (A + B) coproduct (e.g. disjoint union) of A and B
