@@ -26,10 +26,10 @@
 (swap! cnt (fn [n] (+ n 3))) ;; => 4
 (reset! cnt 0)
 
-;; destructure hashmap; default function prms / params / parameters
+;; destructure hash-map; default function prms / params / parameters
 (defn foo [{:keys [a b c] :or {c "c-default"} :as prm}] [a b c])
 
-;; destructure hashmap
+;; destructure hash-map
 (let [hm {:a 1 :b 2 :c 3} {a :a b :b} hm] [a b])
 
 ;; Common Lisp Object System
@@ -44,15 +44,15 @@ CLOS
 ;; show objects in the namespace
 (sort (keys (ns-publics 'ws.core)))
 
-;; undefine / clean the whole namespace from REPL;
-;; cider-ns-refresh doesn't work as expected
+;; undefine / clean the whole namespace from the REPL;
+;; `cider-ns-refresh` doesn't work as expected
 (map #(ns-unmap *ns* %) (keys (ns-interns *ns*)))
 
 ;; undefine / clean just one thing
 (ns-unmap *ns* 'old-definiton)
 (ns-unmap 'current-namespace 'local-alias)
 
-;; read and eval swc/ws/core.clj
+;; read and evaluate src/ws/core.clj
 (load-file "src/ws/core.clj")
 
 ;; switch to full.namespace
@@ -82,26 +82,19 @@ CLOS
 ;; print stack trace: (/ 1 0) (pst)
 (pst)
 
-;; leiningen dependency tree
-lein deps :tree
-;; classpath
-lein classpath | sed 's/:/\n/g'
-
-;; leiningen : Run a task offline
-lein -o
-
-;; upgrade prj dependencies in shell
+;; leiningen:
+lein deps :tree                  ;; dependency tree
+lein classpath | sed 's/:/\n/g'  ;; classpath
+lein -o                          ;; run a task offline
+;; upgrade project dependencies in shell
 lein ancient upgrade :all :interactive :check-clojure :no-tests
-
-;; run multiple tasks
-lein do clean, repl
-
-;;
+lein do clean, repl               ;; run multiple tasks
 lein cljsbuild test
-
 ;;
 lein install
 lein deploy clojars
+;; create / open remotelly accessible repl (nrepl)
+lein repl :headless :host 0.0.0.0 :port <portNr>
 
 ;; try to put it to project.clj in case of:
 ;; 'Could not locate clojure/instant__init.class or ... on classpath'
@@ -156,10 +149,8 @@ lein deploy clojars
 
 ;; Type Hints: http://clojure.org/reference/java_interop#typehints
 (defn len2 [^String x] (.length x))
-
-;; Type Hints: http://clojure.org/reference/java_interop#typehints
 (set! *warn-on-reflection* true)
-;; w/o "^String": call to charAt can't be resolved.
+;; without "^String": call to charAt can't be resolved.
 (defn foo [^String s] (.charAt s 1))
 ;; return vals
 (defn hinted (^String []) (^Integer [a]) (^java.util.List [a & args]))
@@ -207,12 +198,13 @@ rlwrap java -cp $cljjar:$cljsjar clojure.main
 (parser {:state (atom ufo.state/app-state)} '[:list/rec])
 (parser {:state (atom ufo.state/app-state)} '[(ufo.meth/'activate-rec! vms)])
 
-;; read / write hmap to from / file
-(spit "/tmp/data.edn" (->> hm print with-out-str))
-(read-string (slurp "/tmp/data.edn"))
-
-;; create / open remotelly accessible repl (nrepl)
-lein repl :headless :host 0.0.0.0 :port <portNr>
+;; write hash-map to a file
+(->> {:a 1 :b 2}
+     (print)
+     (with-out-str)
+     (spit "/tmp/data.edn"))
+;; read hash-map from a file
+(->> "/tmp/data.edn" (slurp) (read-string))
 
 ;; two dots: clojurescript interop
 (.. object -property -property method)
@@ -257,8 +249,9 @@ gulp
 @f-slow
 
 ;; element in sequence
-(defn in? "true if seq contains elm"
-[seq elm] (boolean (some (fn [e] (= elm e)) seq)))
+(defn in?
+  "true if seq contains elm"
+  [seq elm] (boolean (some (fn [e] (= elm e)) seq)))
 
 ;; brackets, parens, parenthesis conversion
 ;; M-x clojure-convert-collection-to-vector / clojure-convert-collection-to-list
@@ -271,7 +264,7 @@ gulp
 'milkshake
 
 ;; threading macros create intermediate collections in every step.
-;; replace them w/ transducers
+;; replace them with transducers
 (= (conj {:a 2} {:a 1}) (->> {:a 1} (conj {:a 2})))
 (= (conj {:a 1} {:a 2}) (-> {:a 1} (conj {:a 2})))
 (as-> [:foo :bar] $ (map name $) (first $) (.substring $ 1))
@@ -447,7 +440,7 @@ sudo update-alternatives --config java / javac
 set -x JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 set -x JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
-;; map look up with default value
+;; hash-map look-up with default value
 (:c {:a "a" :b "b"} "default")
 )
 
@@ -651,8 +644,12 @@ user=> (repeat 100 (vec (range 100)))
 
 ;; TODO lisp1 / lisp-1 etc.
 
-;; reverse / inverse / swap hashmap
+;; reverse / inverse / swap hash-map
 (clojure.set/map-invert {:a 1})
 
 ;; Discussions on solving the 4Clojure Code challenges
 ;; https://github.com/practicalli/four-clojure/tree/master/src/four_clojure
+
+;; `keep` tells you which number to keep
+(keep odd? (range 10))
+;; => (false true false true false true false true false true)
