@@ -428,7 +428,7 @@ javap file.class / javap -p -s file.class
 ;; ubuntu: java: jdk: change default jdk / java / javac environment
 sudo apt-key adv --keyserver-options http-proxy="http://<proxy>:<port>/" \
  --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
-sudo add-apt-repository ppa:webupd8team/java # alternativelly ppa:openjdk-r/ppa
+sudo add-apt-repository ppa:webupd8team/java # alternatively ppa:openjdk-r/ppa
 sudo apt-get update
 sudo apt-get install openjdk-8-jdk
 sudo apt-get install openjdk-8-source # this is optional, the jdk source code

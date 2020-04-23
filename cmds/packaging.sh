@@ -194,10 +194,13 @@ dpkg --get-selections
 # :apt :aptitude list of installed files from a packageName (dpkg-query -L works too)
 dpkg -L packageName
 
-# show description for packageName
+# search the package list for a regex pattern
+# :bash
 apt-cache search ^packageName$
+# :fish
+apt-cache search "^.*google.*\$"
 
-# print names of all packages know to APT
+# list the names of all packages in the system
 apt-cache pkgnames <packagePrefix>
 dpkg --status <package>
 dpkg -s <package>
