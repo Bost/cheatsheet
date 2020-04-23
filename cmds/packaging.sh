@@ -172,17 +172,21 @@ apt source <package>
 # Advanced Package Tool; apt is a replacement for apt-get
 sudo apt install --reinstall <package>
 
-# ubuntu: command line upgrade part 1. (CLI alternative to update-manager)
-# set Prompt
+# :ubuntu CLI OS upgrade (GUI upgrade - see `update-manager`)
+# 1. set `Prompt=normal`
 /etc/update-manager/release-upgrades
 Prompt=normal
-# ubuntu: command line upgrade part 2.
+#
+# 2. `download package information`; and `install available upgrades`.
+# See also full-upgrade / dist-upgrade
 sudo apt update; and sudo apt upgrade
-# update and upgrade the system by removing/installing/upgrading packages
-sudo apt update; and sudo apt full-upgrade
-sudo apt update; and sudo apt dist-upgrade # alternativelly
-# ubuntu: command line upgrade part 3.
-sudo do-release-upgrade
+#
+# 3. remove / install / upgrade of packages updates and upgrades the OS
+sudo do-release-upgrade # may require: `--devel-release` - see
+                        # https://wiki.ubuntu.com/FocalFossa/ReleaseNotes WTF?
+#
+# 4. check for unsupported packages
+ubuntu-support-status --show-unsupported
 
 # :apt :aptitude show installed packages
 dpkg --get-selections
