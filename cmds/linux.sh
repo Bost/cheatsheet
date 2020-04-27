@@ -208,7 +208,7 @@ wget http://ftp.heanet.ie/mirrors/gnu/gnu-keyring.gpg; and \
 wget --limit-rate=20k <url>
 
 # download & verify / check bitcoin core wallet
-set btcVer  0.19.0.1
+set btcVer  0.19.1
 set url     https://bitcoin.org/bin/bitcoin-core-$btcVer
 set shaFile SHA256SUMS.asc
 set shaUrl  $url/$shafile
