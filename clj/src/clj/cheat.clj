@@ -259,8 +259,10 @@ gulp
 ;; brackets, parens, parenthesis converion; spacemacs clojure mode:
 ;; , r c
 
-;; symbol: represents metaphorically objects (it's not a string); it's an atomic
-;; value; internally it is fast to compare symbols
+;; symbol:
+;; - represents metaphorically objects (it's not a string)
+;; - atomic value with fast equality check and fast hashing
+;; - suitable for enumeration values
 'milkshake
 
 ;; threading macros create intermediate collections in every step.
@@ -312,6 +314,8 @@ ant local
 set repl "{:port 5555 :accept clojure.core.server/repl}"
 java -Dclojure.server.repl=$repl -jar $clj_home/clojure.jar
 ;; boot socket-server --port 5555 wait # requires boot 2.7.2
+;; bb --nrepl-server 5555              # requires babashka v0.0.89
+
 yarn global add unravel-repl
 unravel localhost 5555
 
@@ -653,3 +657,34 @@ user=> (repeat 100 (vec (range 100)))
 ;; `keep` tells you which number to keep
 (keep odd? (range 10))
 ;; => (false true false true false true false true false true)
+
+(defn string-to-string
+  "By using `is` we get expected / actual values in the output.
+  Thanks to https://stackoverflow.com/a/24836592/5151982; see also
+  https://clojureverse.org/t/why-are-pre-and-post-conditions-not-used-more-often/2238/3"
+  [s1]
+  {:pre  [(clojure.test/is (string? s1))]
+   :post [(clojure.test/is (string? %))]}
+  s1)
+
+;; arguably better :pre / :post
+(defn wrap-fn
+  "Thanks to https://stackoverflow.com/a/10778647/5151982"
+  [{:keys [function pre post]}]
+  (fn [& args]
+    (apply pre args)
+    (let [result (apply function args)]
+      (apply post (cons result args)))))
+;;
+(def my-fn
+  "my-fn in a container"
+  (let [tbeg (te/tnow)
+        log-fmt "[%s%s%s %s /%s] %s\n"]
+    (wrap-fn
+     {:function (fn my-fn [a b c] {:a a :b b :c c :x 1})
+      :pre (fn [& args]
+             (printf "%s: Call function with args: %s\n" tbeg args))
+      :post (fn [& args]
+              (let [[fn-result fn-args] args]
+                (printf "%s: Return result: %s\n" tbeg fn-result)
+                fn-result))})))

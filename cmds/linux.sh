@@ -1015,12 +1015,11 @@ nm-online --exit; echo "retcode: $?"
 # :wifi :net
 nm-applet
 man nmcli-examples
-# general status and operations
-nmcli --ask general
-
 nmcli --ask device wifi list               # 1. list
 nmcli --ask device wifi connect WIFIonICE  # 2. connect
 nmcli --ask device disconnect wlan0        # 3. disconnect
+# general status and operations
+nmcli --ask general
 
 # :rpm display installed packages
 rpm -qa
@@ -1067,16 +1066,19 @@ lftp
 # :HPKP HTTP Public Key Pinning; Similair to HSTS header
 # Create your HPKP hash: https://report-uri.io/home/pkp_hash
 
-# install nodejs behind proxy
-set nodeJsVer 12
+# install nodejs with (behind) or without proxy:
+# 1.
+set nodeJsVer 13
+# 2.1 without proxy
+curl -sL https://deb.nodesource.com/setup_$nodeJsVer.x | sudo -E bash -
+sudo apt install --yes nodejs
+# 2.2 behind proxy
 sudo apt-key adv --keyserver-options \
      http-proxy="http://<proxy-ip>:<proxy-port>/" \
      --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 68576280
 sudo apt-add-repository \
-     "deb https://deb.nodesource.com/node_$nodeJsVer.x "$(lsb_release -sc)" main"
-# install nodejs w/o proxy:
-curl -sL https://deb.nodesource.com/setup_$nodeJsVer.x | sudo -E bash -
-sudo apt-get install --yes nodejs
+    "deb https://deb.nodesource.com/node_$nodeJsVer.x "(lsb_release -sc)" main"
+# list repositories: see list-ppa
 # complete uninstall; see also https://stackoverflow.com/a/11178106/5151982
 sudo rm -rf \
   /usr/local/lib/node_modules/npm \
