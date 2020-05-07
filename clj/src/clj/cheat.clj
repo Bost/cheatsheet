@@ -27,7 +27,16 @@
 (reset! cnt 0)
 
 ;; destructure hash-map; default function prms / params / parameters
-(defn foo [{:keys [a b c] :or {c "c-default"} :as prm}] [a b c])
+(defn f
+  "Values of the prm accessible under sames names as the keys"
+  [{:keys [a b c] :or {c "c-default"} :as prm}] [a b c])
+(f {:b "b" :a "a"})
+;; => ["a" "b" "c-default"]
+(defn f
+  "Values of the prm accessible under different names as the keys"
+  [{a-val :a b-val :b :as prm}]
+  [a-val b-val prm])
+;; => ["a" "b" {:b "b", :a "a", :c "c"}]
 
 ;; destructure hash-map
 (let [hm {:a 1 :b 2 :c 3} {a :a b :b} hm] [a b])
