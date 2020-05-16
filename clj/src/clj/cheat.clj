@@ -697,3 +697,13 @@ user=> (repeat 100 (vec (range 100)))
               (let [[fn-result fn-args] args]
                 (printf "%s: Return result: %s\n" tbeg fn-result)
                 fn-result))})))
+
+;; lexical / static vs. dynamic binding
+;; value of x is ... only during the execution of foo, not during it's compile
+;; time.
+;; TODO create a macro (or a continuation if applicable or a parallel function
+;; mapping) capturing this compile-time vs. run-time difference.
+(def ^:dynamic x 0)
+(defn foo [] (inc x))
+(defn bar [] x)
+
