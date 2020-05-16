@@ -324,6 +324,11 @@
    :en ["The more you wait, the less expect."]
    :sk ["O čo viac čakáš, o to menej očakávaj."]}
 
+  {:fr ["Après nous le déluge"]
+   :en ["After us, the flood" "After us, let the deluge come"]
+   :sk ["Po nás potopa"]
+   :de ["Nach uns die Sinnflut"]}
+
   #_{:fr [""]
      :en [""]
      :sk [""]
