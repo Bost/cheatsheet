@@ -684,3 +684,7 @@ M-x org-latex-preview
 C-c C-x C-l
 
 ;; TODO latex-preview-pane
+
+;; https://stackoverflow.com/a/29461536
+;; increment numbers in visual vertical block selection in emacs evil:
+;; select e.g. 3 lines of visual block `C-v 3' then `C-x r N'
