@@ -63,6 +63,11 @@ CLOS
 
 ;; read and evaluate src/ws/core.clj
 (load-file "src/ws/core.clj")
+;; load libs / libraries - undocumented keywords:
+;; https://clojuredocs.org/clojure.core/use#example-57dc37b1e4b0709b524f04fb
+(use '[ws.core] :reload)
+(use '[ws.core] :reload-all)
+(use '[ws.core] :verbose)
 
 ;; switch to full.namespace
 (in-ns 'full.namespace)
