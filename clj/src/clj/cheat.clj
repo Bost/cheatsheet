@@ -632,11 +632,20 @@ user=> (repeat 100 (vec (range 100)))
 ;; https://github.com/clojure-emacs/sayid
 
 (defn greet
-  "Multi-arity - 3 possible forms; & - variadic i.e. infinite arity"
+  "Multi-arity - 3 possible forms; & - variadic i.e. infinite arity. E.g.:
+  (greet \"Jim\" \"Joe\" \"Jack\")"
   ([] (greet "you"))
   ([name] (printf "Hi %s\n" name))
   ([name & others] (printf "Hi %s, %s\n" name
                            (reduce str (interpose " & " others)))))
+;; invoke from another function
+(defn foo
+  "E.g.:
+  (greet \"Jim\" \"Joe\" \"Jack\")"
+  [name & others]
+  (apply greet name others))
+;;
+(foo "Jim" "Joe" "Jack")
 
 (condp = value
   1 "one"
