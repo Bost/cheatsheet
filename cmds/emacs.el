@@ -195,11 +195,9 @@ C-x C-f /ssh:test@host#2222:/tmp
 ;; files: find-file-other window / switch-to-buffer-other-window
 C-x 4 f / C-x 4 b
 
-;; files: save file / save all /save as
-C-x C-s / C-x s / C-x C-w
-
-;; files: save-some-buffers
-C-x s
+C-x C-s  ; save file
+C-x s    ; save all files
+C-x C-w  ; save as
 
 ;; eshell: ifconfig > #<buffer interfaces>
 
@@ -356,6 +354,9 @@ M-x eshell; cmd; db2init; c46; \[f12\]
 
 ;; dired: Dired Refecene Card / Cheatsheet
 http://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf
+
+;; dired: symlink
+S
 
 ;; dired: zip: compress or uncompress (extract) file
 Z
@@ -615,18 +616,12 @@ SPC f L
 ;; window transient mode - window management w/o using key binding - for layouts
 SPC w .
 
-;; workspaces a.k.a layouts
-;; layouts - 1. layout contains all buffers;
-;; layouts - 2., 3., ... layouts contain only selected buffers
-SPC l <nr>
-
-;; create new layout
-SPC l 0..9
-
-;; save layout to a file
-SPC l s
-;; load layout from a file
-SPC l L
+;; workspaces and layouts
+;; layout 1. contains all buffers;
+;; layouts 2., 3., ... contain only selected buffers
+SPC l 0..9 ; create new layout
+SPC l s    ; save layout to a file
+SPC l L    ; load layout from a file
 
 ;; M-s h l hilite lines e.g. log file evaluation; see:
 ;; https://www.masteringemacs.org/article/highlighting-by-word-line-regexp

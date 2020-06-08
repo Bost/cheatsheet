@@ -145,6 +145,45 @@ pandoc -s document.tex -o document.odt
 # mit-scheme
 # racket general-purpose, multi-paradigm programming language based on the Scheme dialect of Lisp.
 
-# LaTeX is a set of macros built on top of TeX.
-TeX is not just a typesetter, it is a typesetter with an embedded scripting language, whose commands configure and control the behaviour of the typesetter. LaTeX and Plain TeX are two different customised typesetting environments, with their own commands and conventions, based on TeX (TeX is a "formatting system")
-The LaTeX macro package written by Leslie Lamport
+# LaTeX is a document preparation system, a package containing a set of macros,
+# written by Leslie Lamport, built on top of TeX.
+
+# TeX is not just a typesetter, it is a typesetter with an embedded scripting
+# language, whose commands configure and control the behaviour of the
+# typesetter. LaTeX and Plain TeX are two different customised typesetting
+# environments, with their own commands and conventions, based on TeX (TeX is a
+# "formatting system")
+
+# AUCTeX - an extensible package for writing and formatting TeX files in Emacs
+
+# install own latex package system-wide
+sudo cp <package>.sty /usr/share/texmf-texlive/tex/latex/base/
+sudo mktexlsr
+
+# 1. install latex: disk space requirements:
+sudo apt install texlive-base              # 136 MB
+sudo apt install texlive-latex-recommended # 177 MB
+sudo apt install texlive                   # 240 MB
+sudo apt install texlive-latex-extra       # 404 MB
+sudo apt install texlive-full              # 4714 MB
+
+# 2. create example document
+echo "\
+\documentclass{article}
+\usepackage{hyperref}
+\begin{document}
+Hello world \LaTeX
+\url{https://linuxconfig.org}
+\end{document}
+" > hello-world.tex
+
+# 3. compile to pdf and view
+pdflatex hello-world.tex; and evince hello-world.pdf
+
+# install own latex package (sty-file) locally
+mkdir -p ~/texmf/tex/latex/<package>
+texhash ~/texmf
+
+# latex macros https://youtu.be/j--6zhiWDJ8
+
+# TODO M-q fill-paragraph

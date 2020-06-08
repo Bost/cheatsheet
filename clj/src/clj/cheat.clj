@@ -721,3 +721,5 @@ user=> (repeat 100 (vec (range 100)))
 (defn foo [] (inc x))
 (defn bar [] x)
 
+(clojure.set/rename-keys {:a 1, :b 2} {:a :new-a, :b :new-b})
+;; => {:new-a 1, :new-b 2}
