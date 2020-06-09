@@ -266,6 +266,8 @@ gulp
 (defn in?
   "true if seq contains elm"
   [seq elm] (boolean (some (fn [e] (= elm e)) seq)))
+;; for hash maps just `contains?` may be used; TODO extend `utils.core/in?`
+(contains? {:a 1} :a) ; => true
 
 ;; brackets, parens, parenthesis conversion
 ;; M-x clojure-convert-collection-to-vector / clojure-convert-collection-to-list
