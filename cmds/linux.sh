@@ -1086,7 +1086,7 @@ sudo rm -rf \
   /usr/local/bin/node \
   /usr/local/share/man/man1/node.1
 
-# :npm dependency management
+# :npm :nodejs :javascript dependency management
 curl -o- -L https://yarnpkg.com/install.sh | bash  # also update
 yarn add                  # add package to use in your current package
 yarn global add <package>
