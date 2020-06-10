@@ -557,6 +557,12 @@ set -x JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ;; Instaparse: parsers in clojure: context-free grammars as easy to use as regexs
 ;;
 
+;; regex syntax
+(apply = (map str [#"^ foo $"
+                   ;; create regex
+                   (re-pattern (format "%s %s %s" "^" "foo" "$"))]))
+;; => true
+
 ;; CRDT - Conflict-free Replicated Data Type
 ;; synchronize state across uncoordinates nodes in an eventually consistent way
 
