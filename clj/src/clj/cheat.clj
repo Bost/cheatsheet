@@ -56,6 +56,7 @@ CLOS
 ;; undefine / clean the whole namespace from the REPL;
 ;; `cider-ns-refresh` doesn't work as expected
 (map #(ns-unmap *ns* %) (keys (ns-interns *ns*)))
+(map #(ns-unmap 'my.data %) (keys (ns-interns 'my.data)))
 
 ;; undefine / clean just one thing
 (ns-unmap *ns* 'old-definiton)
@@ -300,6 +301,11 @@ gulp
   true inc       ; the condition is true so (inc 1) => 2
   false (* 42)   ; the condition is false so the operation is skipped
   (= 2 2) (* 3)) ; (= 2 2) is true so (* 2 3) => 6
+
+(cond
+  (< n 0) "negative"
+  (> n 0) "positive"
+  :else "zero"))
 
 clojure.core.async/<!! [port]
 ;; [async/<!!] takes a val from port. Will return nil if closed. Will block if
