@@ -1228,10 +1228,21 @@ e2label
 # intercept stdout to a log file
 cat file | tee -a file.log | cat /dev/null
 
-# sound
+# sound audio music jack jackd supercollider overtone
 sudo alsa force-reload
 speaker-test
 arecord / aplay
+# 1. verify iterface in:
+qjackctl
+# then A) "pause" pulseaudio while qjackctl runs and "respawn" pulseaudio when
+# qjackctl is terminated.
+pasuspender qjackctl
+# or alternatively to A):
+# B) kill the existing pulseaudio process, start the jack_control process and
+# re-start the pulseaudio process.
+pulseaudio --kill
+jack_control start; and jack_control exit
+pulseaudio --start
 
 # find 20 biggest files
 du -a ~ 2>/dev/null | sort -n -r | head -n 20
