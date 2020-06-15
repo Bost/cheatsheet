@@ -1243,6 +1243,9 @@ pasuspender qjackctl
 pulseaudio --kill
 jack_control start; and jack_control exit
 pulseaudio --start
+# see also jack active ports & some extra info
+jack_lsp
+jack_lsp --connections  # list connections to/from each port
 
 # find 20 biggest files
 du -a ~ 2>/dev/null | sort -n -r | head -n 20
