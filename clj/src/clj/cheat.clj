@@ -50,17 +50,23 @@ CLOS
 ;; clojure.spec - examples
 (clojure.spec/exercise [spec] [spec n] [spec n overrides])
 
-;; show objects in the namespace
-(sort (keys (ns-publics 'ws.core)))
+;; https://clojure.org/reference/namespaces
+;; show objects in the namespace; show what is defined
+(let [the-ns *ns* #_'my.data]
+  (ns-interns the-ns)
+  ;; alternatively
+  #_(sort (keys (ns-publics the-ns))))
 
 ;; undefine / clean the whole namespace from the REPL;
 ;; `cider-ns-refresh` doesn't work as expected
-(map #(ns-unmap *ns* %) (keys (ns-interns *ns*)))
-(map #(ns-unmap 'my.data %) (keys (ns-interns 'my.data)))
+(let [the-ns *ns* #_'my.data]
+  (map (fn [k] (ns-unmap the-ns k)) (keys (ns-interns the-ns))))
 
 ;; undefine / clean just one thing
-(ns-unmap *ns* 'old-definiton)
-(ns-unmap 'current-namespace 'local-alias)
+(let [the-ns *ns* #_'my.data]
+  (ns-unmap the-ns 'old-definiton)
+  ;; see namespace aliasing
+  (ns-unmap 'current-namespace 'local-alias))
 
 ;; read and evaluate src/ws/core.clj
 (load-file "src/ws/core.clj")
@@ -70,11 +76,8 @@ CLOS
 (use '[ws.core] :reload-all)
 (use '[ws.core] :verbose)
 
-;; switch to full.namespace
-(in-ns 'full.namespace)
-
-;; returns a sequence of all namespaces.
-(all-ns)
+(in-ns 'full.namespace) ;; switch to full.namespace
+(all-ns)                ;; returns a sequence of all namespaces
 
 ;; M-x cider-doc (C-c C-d C-d) / M-x cider-javadoc
 (require '[clojure.repl :refer :all])
