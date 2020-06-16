@@ -144,8 +144,15 @@ lein repl :headless :host 0.0.0.0 :port <portNr>
 
 ;; Transpose anything / matrix:
 (= (apply mapv vector [[:a :b :c] [0 1 2]])
-   (map vector [:a :b :c] [0 1 2])
+   (mapv vector [:a :b :c] [0 1 2])
    [[:a 0] [:b 1] [:c 2]])
+;; also - matrix transposition is an isomorphism
+(let [v [[:a :b :c] [0 1 2]]]
+  (= v
+     (->> v
+          (apply mapv vector)
+          (apply mapv vector))))
+
 ;; 'map' and 'vector' "slip inside" the argument list ( '[[:a :b] [:c :d]]' ) to
 ;; give '[map vector [:a :b] [:c :d]]' which then becomes the executable form
 ;; '(map vector [:a :b] [:c :d])'
