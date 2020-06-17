@@ -164,6 +164,12 @@ sync
 # dynamic device management - the /dev directory
 udev
 
+# usb mtp android
+# mtp - Media Transfer Protocol
+cd /run/user/$UID/gvfs         # bash
+cd "/run/user/"(id -u)"/gvfs"  # fish
+jmtpfs --listDevices
+
 # :usb :drive gnome userspace virtual fs
 mount | grep gvfs; cd ...
 
