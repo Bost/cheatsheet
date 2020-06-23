@@ -169,6 +169,8 @@ udev
 cd /run/user/$UID/gvfs         # bash
 cd "/run/user/"(id -u)"/gvfs"  # fish
 jmtpfs --listDevices
+# SP Flash Tool
+# Smart Phone Flash Tool
 
 # :usb :drive gnome userspace virtual fs
 mount | grep gvfs; cd ...
