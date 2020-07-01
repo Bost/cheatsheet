@@ -315,7 +315,7 @@ gulp
 (cond
   (< n 0) "negative"
   (> n 0) "positive"
-  :else "zero"))
+  :else "zero")
 
 clojure.core.async/<!! [port]
 ;; [async/<!!] takes a val from port. Will return nil if closed. Will block if
@@ -748,3 +748,7 @@ user=> (repeat 100 (vec (range 100)))
 
 (clojure.set/rename-keys {:a 1, :b 2} {:a :new-a, :b :new-b})
 ;; => {:new-a 1, :new-b 2}
+
+;; pwd; print current / working directory
+(System/getProperty "user.dir")
+(.getCanonicalPath (clojure.java.io/file "."))
