@@ -10,7 +10,7 @@
 ;;
 M-x narrow-to-defun ~s-n~ / M-x widen ~s-N~
 
-;; open file and jump to line:column
+;; open file and jump to / start on a line:column
 emacs +line:column path/to/file
 
 ;; unreachable repositories: use http instead of https

@@ -694,7 +694,10 @@ user=> (repeat 100 (vec (range 100)))
 
 ;; TODO derive multi
 
-;; TODO lisp1 / lisp-1 etc.
+;; lisp-1 vs. lisp-2: lisp-2: allows the same name for both function and
+;; variable
+;; lisp-1: single-value-name languages: Scheme, Clojure, etc.
+;; lisp-2: multi-value-name languages: Emacs Lisp, Common Lisp
 
 ;; reverse / inverse / swap hash-map
 (clojure.set/map-invert {:a 1})
