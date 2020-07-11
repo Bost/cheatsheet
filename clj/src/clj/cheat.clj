@@ -47,9 +47,6 @@ CLOS
 ;; bug detection tool for Java
 ;; https://opensource.google.com/projects/error-prone
 
-;; clojure.spec - examples
-(clojure.spec/exercise [spec] [spec n] [spec n overrides])
-
 ;; https://clojure.org/reference/namespaces
 ;; show objects in the namespace; show what is defined
 (let [the-ns *ns* #_'my.data]
@@ -398,6 +395,20 @@ user=> (loop [] (println (eval (read))) (recur))
 ;; IllegalStateException: Alias foo already exists in namespace
 (ns-unalias *ns* 'foo)
 
+;; clojure.spec - examples
+(clojure.spec/exercise [spec] [spec n] [spec n overrides])
+
+;; spec alternatives:
+;; declarative data description and validation
+;; https://github.com/plumatic/schema
+;;
+;; Plain data Schemas for Clojure/Script.
+;; https://github.com/metosin/malli
+;;
+;; Inline clojure.spec with semi-automatic generative testing and side effect
+;; detection
+;; https://github.com/gnl/ghostwheel
+
 ;; test macro with clojure.spec
 (require '[clojure.spec.alpha :as s])
 (s/def ::my-type (s/cat :p0 int? :p1 string?))
@@ -653,8 +664,12 @@ user=> (repeat 100 (vec (range 100)))
 ;; t Trace. Continue, printing expressions and their values.
 ;; q Quit execution
 
-;; A debugger for Clojure
+;; debugging:
 ;; https://github.com/clojure-emacs/sayid
+;; https://github.com/AppsFlyer/mate-clj
+;; https://github.com/dgrnbrg/spyscope
+;; https://blog.michielborkent.nl/blog/2017/05/25/inline-def-debugging/
+;; https://github.com/vvvvalvalval/scope-capture
 
 (defn greet
   "Multi-arity - 3 possible forms; & - variadic i.e. infinite arity. E.g.:
