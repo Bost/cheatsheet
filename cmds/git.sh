@@ -270,3 +270,8 @@ git -C ~/.SpaceVim pull    # update SpaceVim
 
 # this pushes only tags not the code
 git push --tags origin
+
+# create lightweight tag - it won't be pushed by `git push ...`
+git tag <tagname>
+# annotated, signed tag or tags with a message will be pushed by `git push ...`
+git tag --annotate <tagname>
