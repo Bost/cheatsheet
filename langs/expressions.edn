@@ -334,6 +334,45 @@
      :sk [""]
      :de [""]}
 
+  ;; M-x eww
+  {:fr "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Clavier-Azerty.svg/640px-Clavier-Azerty.svg.png"
+   :en ""
+   :sk
+   #_"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Qwertz_sk.svg/640px-Qwertz_sk.svg.png"
+   "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Qwertz_sk.svg/1280px-Qwertz_sk.svg.png"
+   :de ""}
+
+  {:fr ["Qu'est-ce vous feriez si vous gagnez au Loto?"]
+   :en [""]
+   :sk ["Čo budete robiť ak vyhráte v Športke?"]
+   :de [""]}
+
+  {:fr ["Si vous faites un grand voyage, où est-ce que vous allez?"]
+   :en [""]
+   :sk [""]
+   :de [""]}
+
+  {:fr [""]
+     :en [""]
+     :sk [""]
+     :de [""]}
+  #_{:fr [""]
+     :en [""]
+     :sk [""]
+     :de [""]}
+  #_{:fr [""]
+     :en [""]
+     :sk [""]
+     :de [""]}
+  #_{:fr [""]
+     :en [""]
+     :sk [""]
+     :de [""]}
+  #_{:fr [""]
+     :en [""]
+     :sk [""]
+     :de [""]}
+
   ;; ÁÄ ČĎ ÉÍ ĹĽ Ň ÓÔ ŔŠŤ ÚÝ Ž
   ;; áä čď éí ĺľ ň óô ŕšť úý ž
   ;; äÄ öÖ üÜ ß Ææ Œœ Çç Àà Ââ Éé Èè Êê Ëë Î î Î ï Ôô Ûû Ùù Ÿÿ
