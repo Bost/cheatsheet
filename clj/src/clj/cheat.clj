@@ -314,6 +314,11 @@ gulp
   (> n 0) "positive"
   :else "zero")
 
+(case n
+  0 "zero"
+  1 "one"
+  "other")
+
 clojure.core.async/<!! [port]
 ;; [async/<!!] takes a val from port. Will return nil if closed. Will block if
 ;; [async/<!!] nothing is available.
