@@ -648,7 +648,7 @@ user=> (repeat 100 (vec (range 100)))
   (finally (prn "final exception.")))
 
 ;; https://clojuredocs.org/clojure.core/if-let
-(if-let [x 0]   [(inc x) :is-bool-true] :is-bool-false) ;; => 1
+(if-let [x 0]   [(inc x) :is-bool-true] :is-bool-false) ;; => [1 :is-bool-true]
 (if-let [x nil] [(inc x) :is-bool-true] :is-bool-false) ;; => :is-bool-false
 
 ;; cider debugger https://cider.readthedocs.io/en/latest/debugging/#keys
