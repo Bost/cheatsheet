@@ -148,9 +148,9 @@ git clone --recurse-submodules
 # workLocation must not be a bare (empty) repo
 git add --work-tree=workLocation --git-dir=<dir>
 
-# list contibutors / committers
-git shortlog --summary --numbered
-git shortlog -sn
+# list contributors / committers
+git shortlog --summary --numbered --email
+git shortlog -sne
 
 # show settings
 git config --global --list
