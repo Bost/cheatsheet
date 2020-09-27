@@ -5,9 +5,18 @@
 
 " substitute (replace) pattern and save changes in all buffers
 :bufdo %s/pattern/replacement/ge | update
-
 " substitute (replace) pattern from current line
 :.,$s/pattern/replacement/gc
+" confirm, ignore case, case sensitive, number of matches; print lines
+:[range]s/bacon/lettuce/[ciInp] [count]
+" substitute (replace) only next 10 lines; https://vim.fandom.com/wiki/Ranges
+:.,.+9s/foo/bar/g
+" substitute (replace) - use previous search pattern
+:[range]s//baz/...
+" substitute (replace) last replacement string
+:%s/~/qux/igc
+" substitute (replace) char / line / to the end of line
+s / S (or cc) / C
 
 " go to next / previous buffer
 :bnext (:bn) / :bprev (:bp)
@@ -235,23 +244,8 @@ c-f
 " hightlight and search for parts of a word
 g* / g"
 
-" confirm, ignore case, case sensitive, number of matches; print lines
-:[range]s/bacon/lettuce/[ciInp] [count]
-
-" replace only next 10 lines
-:s/foo/bar/g10
-
-" use previous search pattern
-:[range]s//baz/...
-
-" substitute last replacement string
-:%s/~/qux/igc
-
 " :changelist go forth / back in the insert mode change list
 :changes / g; / g,
-
-" substitute char / line / to the end of line
-s / S (or cc) / C
 
 " edit /path/to/file / refresh the file
 :e /path/to/file / :e
