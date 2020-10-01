@@ -352,10 +352,10 @@
    :sk [""]
    :de [""]}
 
-  {:fr [""]
-     :en [""]
-     :sk [""]
-     :de [""]}
+  {:fr ["Ils font moins les malins."]
+   :en ["Not so clever."]
+   :sk [""]
+   :de ["Nicht so schlau." "Nicht besonders klug"]}
   #_{:fr [""]
      :en [""]
      :sk [""]
