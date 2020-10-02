@@ -775,3 +775,80 @@ user=> (repeat 100 (vec (range 100)))
 ;; pwd; print current / working directory
 (System/getProperty "user.dir")
 (.getCanonicalPath (clojure.java.io/file "."))
+
+(def ^:const foo "FOO")
+;; => #'user/foo
+(meta #'foo)
+;; => {:const true, :line 1, :column 1, :file "/tmp/form-init12571418764575000652.clj", :name foo, :ns #namespace[user]}
+(def ^:const bar ["BAR"])
+;; => #'user/bar
+(meta #'bar)
+;; => {:const true, :line 1, :column 1, :file "/tmp/form-init12571418764575000652.clj", :name bar, :ns #namespace[user]}
+(def baz ^:const ["BAZ"])
+;; => #'user/baz
+(meta #'baz)
+;; => {:line 1, :column 1, :file "/tmp/form-init12571418764575000652.clj", :name baz, :ns #namespace[user]}
+(def qux ^:const "QUX")
+;; => Syntax error reading source at (REPL:1:23).
+;; => Metadata can only be applied to IMetas
+
+(defmacro def-stuff
+  "Define stuff with metadata. E.g.:
+  (def-stuff \"FOO\")
+  ;; => #'user/foo
+
+  (meta #'foo)
+  ;; => {:const true,
+  ;; =>  :tag java.lang.String,
+  ;; =>  :line 1,
+  ;; =>  :column 1,
+  ;; =>  :file \"NO_SOURCE_PATH\",
+  ;; =>  :name foo,
+  ;; =>  :ns #object[clojure.lang.Namespace 0x55ea2d70 \"user\"]}
+  "
+  [c]
+  `(let [c# ~c]
+     #_{
+      ;; "(clojure.core/pr c#)" (clojure.core/pr c#) ;; returns nil but prints the value of c# on *out*
+      ;; "c" c ;; => error: No such var
+      "c#" c#
+      "~c" ~c
+      "'~c" '~c
+      "'c#" 'c#
+      "`c" `c
+      "`~c" `~c
+      "`c#" `c#
+      "'c" 'c
+      "''c" ''c
+      "(read-string c)" (read-string c)
+      "(quote c)" (quote c)
+      "(quote 'c)" (quote 'c)
+      "(quote (quote c))" (quote (quote c))
+      "(quote c#)" (quote c#) "(quote ~c)" (quote ~c) "(quote '~c)" (quote '~c) "(quote 'c#)" (quote 'c#)
+      "(symbol c#)" (symbol c#) "(symbol ~c)" (symbol ~c) "(symbol '~c)" (symbol '~c) "(symbol 'c#)" (symbol 'c#)
+
+      ;; "(symbol ~c#)" (symbol ~c#)   ;; => error: c# undefined
+      ;; "(symbol '~c#)" (symbol '~c#) ;; => error: c# undefined
+      "(type (symbol 'c#))" (type (symbol 'c#))
+
+      ;; "(clojure.core/pr c)" (clojure.core/pr c) ;; => error: No such var
+      }
+     ;; (def (symbol ~c) c#)  ;; => error: First argument to def must be a Symbol
+     ;; (def (symbol c#) c#)  ;; => error: First argument to def must be a Symbol
+     ;; (def (symbol '~c) c#) ;; => error: First argument to def must be a Symbol
+     ;; (def ~c c#)           ;; => error: First argument to def must be a Symbol
+     ;; (def c# c#)           ;; => #'corona.country-codes/c__82086__auto__
+     ;; (def (eval c#) c#)    ;; => error: First argument to def must be a Symbol
+     ;; (def (clojure.core/pr c#) c#) ;; => error: First argument to def must be a Symbol
+
+     ;; (list 'def '^:const (symbol (clojure.string/lower-case c#)) c#)
+     ;; => (def (clojure.core/symbol (clojure.string/lower-case c__82982__auto__)) "A")
+
+     ;; (eval (list 'def '^:const (symbol (clojure.string/lower-case c#)) c#))
+     ;; => error: First argument to def must be a Symbol
+
+     ;; (list 'def (symbol (clojure.string/lower-case c#)) c#)
+     ;; (def ~(vary-meta c {:const true}) c#)
+
+     (def ~(vary-meta (read-string (clojure.string/lower-case c))
+                      assoc :const true :tag `String) ~c)))
