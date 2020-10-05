@@ -328,6 +328,10 @@ M-x eshell; cmd; db2init; c46; \[f12\]
 ;; dired: Dired Refecene Card / Cheatsheet
 http://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf
 
+;; TODO have a look at dired sorting
+https://www.emacswiki.org/emacs/DiredSortBySizeAndExtension
+https://github.com/jojojames/dired-sidebar
+http://ergoemacs.org/emacs/dired_sort.html
 
 | ~S~ | dired: symlink                                    |
 | ~Z~ | dired: zip: compress or uncompress (extract) file |
