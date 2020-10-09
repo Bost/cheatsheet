@@ -11,10 +11,9 @@
   Types. E.g. maps each having many keys) to subsets of (if possible natural)
   numbers. These subsets should be in fact monads
 - namespace underscore minus dash; prefer filenames with underscores:
- `lein new a-b produces src/clj/a_b.clj with`
-"
+ `lein new foo-bar` produces src/clj/foo_bar.clj with `(ns foo-bar.core)`"
         :author "<Author's name>" :last-update "<the-date>"}
-      a-b.core)
+      foo-bar.core)
 ;; (meta *ns*) ; should print the whole metadata hash-map
 
 ;; (A * B) could be seen as a product (e.g. join)
