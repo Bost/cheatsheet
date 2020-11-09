@@ -788,6 +788,9 @@ man -k topic / apropos -r topic
 # brief description of CMD / help for shell built ins
 whatis CMD / help
 
+# remote login using different / specific shell
+ssh -t <user>@<server> "bash -l"
+
 # :net ipv6:
 # responds with 'ssh: connect to host <ipv6-address> port 22: Invalid argument'
 ssh -6 <ipv6-address>
