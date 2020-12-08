@@ -1,6 +1,9 @@
 #!/usr/bin/env fish
 exit 1 # just in case ...
 
+# install additional ubuntu software
+gnome-software
+
 # :snap    https//snapcraft.io/
 # :flatpak https//flatpak.org/
 # :nix     https//nixos.org/
