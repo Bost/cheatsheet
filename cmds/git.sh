@@ -58,11 +58,14 @@ git branch -rd <origin/branch>
 git push --delete origin <branch-or-tag>
 
 # file changes against remote branch
-git diff <branch1> <branch2> filepath
+git diff <branch1> <branch2> <filepath>
+
 # show particular changed word / staged changes
 git diff --word-diff / --cached
+
 # no plus minus signs
 git diff --color <sha1> <sha1> | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r
+
 # number of lines changed between two commits
 git diff --stat <commit-ish> <commit-ish>
 
@@ -73,6 +76,10 @@ git diff --name-only <branch1>..<branch2>  # between two branches
 git diff --name-only <branch>              # between <branch> and the HEAD
 git diff --name-only 5890e37..ebbf4c0      # between 2 commits
 git diff --name-status <branch1> <branch2> # show status D-deleted M-modified
+
+# find commit containing last change of a file - as in gitk
+git log   --perl-regexp <filepath>
+git lg-20 --perl-regexp <filepath>
 
 # count of files changed in the since the <tag>
 git log --format=oneline --patch <tag>..HEAD | wc -l
