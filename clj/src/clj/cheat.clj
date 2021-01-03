@@ -794,6 +794,11 @@ user=> (repeat 100 (vec (range 100)))
 ;; => Syntax error reading source at (REPL:1:23).
 ;; => Metadata can only be applied to IMetas
 
+(select-keys {:a 1 :b 2 :c 3} [:a :b])
+;; => {:a 1, :b 2}
+(map {:a 1 :b 2 :c 3} [:a :b]) ;; select-vals
+;; => (1 2)
+
 (defmacro def-stuff
   "Define stuff with metadata. E.g.:
   (def-stuff \"FOO\")
