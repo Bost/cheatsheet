@@ -110,6 +110,9 @@ lein deploy clojars
 ;; create / open remotelly accessible repl (nrepl)
 lein repl :headless :host 0.0.0.0 :port <portNr>
 
+;; deps.edn ~ lein ancient
+clojure -M:project/outdated
+
 ;; try to put it to project.clj in case of:
 ;; 'Could not locate clojure/instant__init.class or ... on classpath'
 ;; [the-dependency "X.Y.Z" :exclusions [org.clojure/clojure]]
