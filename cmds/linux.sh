@@ -324,6 +324,10 @@ echo "rm -rf /unwanted-large/folder" | batch
 # change file mode bits of file according to reference-file
 chmod --reference reference-file file
 
+# change file mode bits - verbose example(s)
+chmod --recursive u=rwx,g=rwx,o=rwx /path/to/dir
+chmod -R u=rwx,g=rwx,o=rwx /path/to/dir
+
 # remove all files except survivor.txt
 rm -f !(survivor.txt)
 
