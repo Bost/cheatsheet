@@ -109,13 +109,6 @@ nmap www.google.com | grep -i open
 # 192.168.100.14/24 represents the IPv4 address 192.168.100.14 and its
 # associated routing prefix 192.168.100.0
 
-# connecting to mysql a.k.a. login
-mysql --host=localhost --user=<name> --password=<password> <dbname>
-mysql --host=localhost --user=root   --password=root employees
-
-# unblock mysql
-mysqladmin -u [username] -p flush-hosts
-
 # search for a file named exactly NAME (not *NAME*)
 locate -b '\NAME'
 

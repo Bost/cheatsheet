@@ -1,0 +1,121 @@
+* MySQL
+
+** Installation on Ubuntu
+  ```bash
+  sudo apt install mysql-server mysql-client
+
+  # configure dbase after installation
+  sudo mysql_secure_installation
+
+  #
+  sudo mysql
+  ```
+
+  ```mysql
+  CREATE DATABASE Test;
+  CREATE USER '<username>'@'localhost' IDENTIFIED BY '<password>';
+  GRANT ALL PRIVILEGES ON *.* TO '<username>'@'localhost' WITH GRANT OPTION;
+  ```
+
+  ``` bash
+  # import script
+  mysql -u <username> -p database_name < file.sql
+  ```
+
+  # connect / login to mysql
+  mysql --host=localhost --user=<username> --password=<password> <dbname>
+  mysql --host=localhost --user=root       --password=root employees
+
+  # connect / login: prompts for password
+  mysql -u <username> -p
+
+  # connect / login: empty password
+  mysql -u$USER
+
+  # unblock mysql
+  mysqladmin -u [username] -p flush-hosts
+
+  # mysql: execute script.sql as the root user
+  mysql -u root -t < script.sql
+
+  # mysql: in db2 fetch first N rows only
+  mysql select * from mantis.state_mantis_id limit 10
+
+  # mysql:
+  mysql show databases
+  mysql show tables in <dbaseName>
+
+  # mysql: describe table
+  mysql show columns in <tableName>
+
+  # mysql: server start
+  /usr/bin/mysqld_safe &
+  ```
+
+* DB2
+  ```
+  # ???
+  db2init
+
+  # load ixf file
+  db2 drop table <schema>.<table>
+  DB2 IMPORT FROM <file.ixf> OF IXF create into <schema>.<table>
+  DB2 IMPORT FROM <file.ixf> OF IXF insert into <schema>.<table>
+
+  # db2: init environment
+  db2cmd -i -w db2clpsetcp
+
+  # db2: license info / add license
+  db2licm -l / db2licm -a db2conpe.lic
+
+  # db2:
+  db2 CONNECT TO database USER userID USING password
+
+  # db2:
+  db2 get connection state
+
+  # db2:
+  db2 CATALOG TCPIP NODE $node_name REMOTE $ip_addr SERVER $port
+
+  # db2:
+  db2 CATALOG DATABASE $database_name AT NODE $node_name AUTHENTICATION server
+
+  # db2:
+  db2 UNCATALOG NODE $node_name
+
+  # db2:
+  db2 UNCATALOG DATABASE $database_name
+
+  # db2:
+  db2 TERMINATE
+
+  # db2:
+  db2 list db directory > db.txt | gvim db.txt
+
+  # db2:
+  db2 list node directory > node.txt | gvim node.txt
+
+  # db2:
+  db2 list tables
+
+  # db2: execute script.sql from normal / command line processor (=>) shell
+  db2 -vf script.sql -t / !db2 -vf script.sql -t;
+
+  # db2:
+  db2 -tvf script.sql -z file.log
+
+  # db2: execute script.sql from normal shell (Befehlsfenster)
+  db2 -td; -v -f script.sql
+
+  # db2: in mysql: limit N
+  db2 select * from DBASE.TABLE fetch first 2 rows only
+
+  # db2: error description for sqlcode=-302
+  db2 ? sql302
+
+  # db2 version
+  db2 SELECT GETVARIABLE('SYSIBM.VERSION') FROM SYSIBM.SYSDUMMY1
+
+  # db2: db2cc version
+  java -cp ./path/to/db2jcc.jar com.ibm.db2.jcc.DB2Jcc -version
+  ```
