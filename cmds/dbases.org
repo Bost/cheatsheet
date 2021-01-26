@@ -1,7 +1,6 @@
 * MySQL
-
 ** Installation on Ubuntu
-  ```bash
+#+BEGIN_SRC bash
   sudo apt install mysql-server mysql-client
 
   # configure dbase after installation
@@ -9,18 +8,17 @@
 
   #
   sudo mysql
-  ```
+#+END_SRC
 
-  ```mysql
+#+BEGIN_SRC mysql
   CREATE DATABASE Test;
   CREATE USER '<username>'@'localhost' IDENTIFIED BY '<password>';
   GRANT ALL PRIVILEGES ON *.* TO '<username>'@'localhost' WITH GRANT OPTION;
-  ```
+#+END_SRC
 
-  ``` bash
+#+BEGIN_SRC bash
   # import script
   mysql -u <username> -p database_name < file.sql
-  ```
 
   # connect / login to mysql
   mysql --host=localhost --user=<username> --password=<password> <dbname>
@@ -50,10 +48,10 @@
 
   # mysql: server start
   /usr/bin/mysqld_safe &
-  ```
+#+END_SRC
 
 * DB2
-  ```
+#+BEGIN_SRC bash
   # ???
   db2init
 
@@ -118,4 +116,4 @@
 
   # db2: db2cc version
   java -cp ./path/to/db2jcc.jar com.ibm.db2.jcc.DB2Jcc -version
-  ```
+#+END_SRC
