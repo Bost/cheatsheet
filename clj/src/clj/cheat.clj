@@ -21,9 +21,16 @@
 
 ;; clojure.core/atom
 (def cnt (atom 0))
-(swap! cnt inc)              ;; => 1
+(swap! cnt inc)             ;; => 1
 (swap! cnt (fn [n] (+ n 3))) ;; => 4
 (reset! cnt 0)
+
+;; update an atom and return the change
+(def state-hash-map (atom {:a 1}))
+(swap! state-hash-map update-in [:a] inc) ;; => {:a 2}
+
+(def state (atom {:a {:aa 2 :ab 3} :b 4}))
+(swap! state update-in [:a] dissoc :aa) ;; => {:a {:ab 3}, :b 4}
 
 ;; destructure hash-map; default function prms / params / parameters
 (defn f
@@ -94,7 +101,11 @@ CLOS
 #_(foo 1 2)/ (comment foo 1 2)
 
 ;; print stack trace: (/ 1 0) (pst)
-(pst)
+(clojure.stacktrace/print-stack-trace (Exception.))
+(clojure.stacktrace/print-stack-trace (Exception. "foo"))
+
+;; :stacktrace last :exception
+(clojure.stacktrace/print-stack-trace *e)
 
 ;; leiningen:
 lein deps :tree                  ;; dependency tree
@@ -618,9 +629,6 @@ user=> (repeat 100 (vec (range 100)))
 
 ;; keep / save result for longer than 3 evaluations
 (def <some-name> *1)
-
-;; :stacktrace :exception
-(pst *e)
 
 ;; GUI-based data visualizations
 (require '[clojure.inspector :as insp])
