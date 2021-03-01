@@ -1,0 +1,16 @@
+* Racket
+  #+BEGIN_SRC shell
+    # install package
+    raco package install <package>
+
+    # 'Hello World' from the command line
+    racket -e    '(printf "Hello World\n")'
+    racket -eval '(printf "Hello World\n")'
+  #+END_SRC
+
+  #+BEGIN_SRC racket
+    ;; pwd; print working directory
+    (current-directory)
+  #+END_SRC
+
+
