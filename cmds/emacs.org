@@ -518,6 +518,10 @@
   ;; M-x magit-status: rebase / ineractive-rebase
   R / E
 
+  ;; M-x magit-reset-quickly - press:
+  o
+  ;; then type: "HEAD~"
+
   ;; M-x magit-ineractive-rebase: squash / pick / reword
   s / c / r
 
