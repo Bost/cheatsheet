@@ -1,5 +1,7 @@
 * Git
-  #+BEGIN_SRC bash
+  #+BEGIN_SRC shell
+    exit 1 # just in case ...
+
     # compute sha1 for any file
     git hash-object path/to/file.ext
 

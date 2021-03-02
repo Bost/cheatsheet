@@ -1,14 +1,16 @@
 * MySQL
 ** Installation on Ubuntu
-#+BEGIN_SRC bash
-  sudo apt install mysql-server mysql-client
+   #+BEGIN_SRC shell
+     exit 1 # just in case ...
 
-  # configure dbase after installation
-  sudo mysql_secure_installation
+     sudo apt install mysql-server mysql-client
 
-  #
-  sudo mysql
-#+END_SRC
+     # configure dbase after installation
+     sudo mysql_secure_installation
+
+     #
+     sudo mysql
+   #+END_SRC
 
 #+BEGIN_SRC mysql
   CREATE DATABASE Test;
@@ -16,7 +18,9 @@
   GRANT ALL PRIVILEGES ON *.* TO '<username>'@'localhost' WITH GRANT OPTION;
 #+END_SRC
 
-#+BEGIN_SRC bash
+#+BEGIN_SRC shell
+  exit 1 # just in case ...
+
   # import script
   mysql -u <username> -p database_name < file.sql
 
@@ -51,69 +55,71 @@
 #+END_SRC
 
 * DB2
-#+BEGIN_SRC bash
-  # ???
-  db2init
+  #+BEGIN_SRC shell
+    exit 1 # just in case ...
 
-  # load ixf file
-  db2 drop table <schema>.<table>
-  DB2 IMPORT FROM <file.ixf> OF IXF create into <schema>.<table>
-  DB2 IMPORT FROM <file.ixf> OF IXF insert into <schema>.<table>
+    # ???
+    db2init
 
-  # db2: init environment
-  db2cmd -i -w db2clpsetcp
+    # load ixf file
+    db2 drop table <schema>.<table>
+    DB2 IMPORT FROM <file.ixf> OF IXF create into <schema>.<table>
+    DB2 IMPORT FROM <file.ixf> OF IXF insert into <schema>.<table>
 
-  # db2: license info / add license
-  db2licm -l / db2licm -a db2conpe.lic
+    # db2: init environment
+    db2cmd -i -w db2clpsetcp
 
-  # db2:
-  db2 CONNECT TO database USER userID USING password
+    # db2: license info / add license
+    db2licm -l / db2licm -a db2conpe.lic
 
-  # db2:
-  db2 get connection state
+    # db2:
+    db2 CONNECT TO database USER userID USING password
 
-  # db2:
-  db2 CATALOG TCPIP NODE $node_name REMOTE $ip_addr SERVER $port
+    # db2:
+    db2 get connection state
 
-  # db2:
-  db2 CATALOG DATABASE $database_name AT NODE $node_name AUTHENTICATION server
+    # db2:
+    db2 CATALOG TCPIP NODE $node_name REMOTE $ip_addr SERVER $port
 
-  # db2:
-  db2 UNCATALOG NODE $node_name
+    # db2:
+    db2 CATALOG DATABASE $database_name AT NODE $node_name AUTHENTICATION server
 
-  # db2:
-  db2 UNCATALOG DATABASE $database_name
+    # db2:
+    db2 UNCATALOG NODE $node_name
 
-  # db2:
-  db2 TERMINATE
+    # db2:
+    db2 UNCATALOG DATABASE $database_name
 
-  # db2:
-  db2 list db directory > db.txt | gvim db.txt
+    # db2:
+    db2 TERMINATE
 
-  # db2:
-  db2 list node directory > node.txt | gvim node.txt
+    # db2:
+    db2 list db directory > db.txt | gvim db.txt
 
-  # db2:
-  db2 list tables
+    # db2:
+    db2 list node directory > node.txt | gvim node.txt
 
-  # db2: execute script.sql from normal / command line processor (=>) shell
-  db2 -vf script.sql -t / !db2 -vf script.sql -t;
+    # db2:
+    db2 list tables
 
-  # db2:
-  db2 -tvf script.sql -z file.log
+    # db2: execute script.sql from normal / command line processor (=>) shell
+    db2 -vf script.sql -t / !db2 -vf script.sql -t;
 
-  # db2: execute script.sql from normal shell (Befehlsfenster)
-  db2 -td; -v -f script.sql
+    # db2:
+    db2 -tvf script.sql -z file.log
 
-  # db2: in mysql: limit N
-  db2 select * from DBASE.TABLE fetch first 2 rows only
+    # db2: execute script.sql from normal shell (Befehlsfenster)
+    db2 -td; -v -f script.sql
 
-  # db2: error description for sqlcode=-302
-  db2 ? sql302
+    # db2: in mysql: limit N
+    db2 select * from DBASE.TABLE fetch first 2 rows only
 
-  # db2 version
-  db2 SELECT GETVARIABLE('SYSIBM.VERSION') FROM SYSIBM.SYSDUMMY1
+    # db2: error description for sqlcode=-302
+    db2 ? sql302
 
-  # db2: db2cc version
-  java -cp ./path/to/db2jcc.jar com.ibm.db2.jcc.DB2Jcc -version
+    # db2 version
+    db2 SELECT GETVARIABLE('SYSIBM.VERSION') FROM SYSIBM.SYSDUMMY1
+
+    # db2: db2cc version
+    java -cp ./path/to/db2jcc.jar com.ibm.db2.jcc.DB2Jcc -version
 #+END_SRC

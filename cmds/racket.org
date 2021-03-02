@@ -1,5 +1,6 @@
 * Racket
   #+BEGIN_SRC shell
+    exit 1 # just in case ...
     # install package
     raco package install <package>
 
