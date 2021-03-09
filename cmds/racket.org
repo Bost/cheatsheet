@@ -12,6 +12,16 @@
   #+BEGIN_SRC racket
     ;; pwd; print working directory
     (current-directory)
+
+    ;; structures definition
+    (struct structName (item0
+                        item1
+                        ; ...
+                        item-n)
+      #:transparent)
+    ;; instantiation
+    (define s (structName 'a 'b 'c))
+    ;; accessing fields of the structure instance via the dash '-'
+    ;; structName-item1 is the structure accessor
+    (structName-item1 s) ;; => 'b
   #+END_SRC
-
-
