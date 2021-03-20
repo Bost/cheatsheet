@@ -190,12 +190,40 @@ clojure -M:project/outdated
 ;; return vals
 (defn hinted (^String []) (^Integer [a]) (^java.util.List [a & args]))
 
-;; macro: backtick: ` apostrophe: ' tilda: ~
+;; macro:
+;; ` backtick - syntax-quote
+;; ' apostrophe - quote
+;; ~ tilda - unquote within a syntax-quote block
 ;; see http://stackoverflow.com/a/17810391
-'(+ x x) => (+ x x) ;; symbol-name quoted exactly
+'(+ x x) => (+ x x)                         ;; symbol-name quoted exactly
 `(+ x x) = > (clojure.core/+ user/x user/x) ;; symbol-name quoted with namespace
-;; when using ~ inside ` then the form is unquoted
+;; when using tilda inside syntax-quoted block then the ~form is unquoted
 `(+ ~'x x) => (clojure.core/+ x user/x)
+`(+ ~x x)  => Unable to resolve symbol: x in this context
+;;                                ;;
+(defmacro x [] (+ 1 2))         ;; => 3
+(defmacro x [] '(+ 1 2))        ;; => 3
+(defmacro x [] `(+ 1 2))        ;; => 3
+;;
+(defmacro x [] `('+ 1 2))       ;; => 2
+(defmacro x [] '(`+ 1 2))       ;; => 2
+(defmacro x [] `(`+ 1 2))       ;; => 2
+(defmacro x [] '('+ 1 2))       ;; => 2
+;;
+(defmacro x [] `'(~'+ 1 2))     ;; => (+ 1 2)
+(defmacro x [] `(~'+ 1 2))      ;; => 3
+(defmacro x [] `'(~'+ 1 2))     ;; => (+ 1 2)
+(defmacro x [] `'('+ 1 2))      ;; => ('clojure.core/+ 1 2)
+(defmacro x [] `'(+ 1 2))       ;; => (clojure.core/+ 1 2)
+(defmacro x [a b] (+ a b))      ;; (x 1 2) => 3
+(defmacro x [a b] `(+ a b))     ;; (x 1 2) => No such var: goog.numbers-test/a
+(defmacro x [a b] `(+ ~a ~b))   ;; (x 1 2) => 3
+(defmacro x [a b] `(+ ~'a ~'b)) ;; (x 1 2) => Unable to resolve symbol: a in this context
+(defmacro x [a b] `(+ '~a '~b)) ;; (x 1 2) => 3
+;;
+(defmacro x [a b] '(+ a b))     ;; (x 1 2) => Unable to resolve symbol: a in this context
+(defmacro x [a b] '(+ ~a ~b))   ;; (x 1 2) => Unable to resolve symbol: a in this context
+
 
 ;; cli: script: repl from command line
 ;; A Clojure babushka for the grey areas of Bash
