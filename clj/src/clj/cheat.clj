@@ -895,3 +895,34 @@ user=> (repeat 100 (vec (range 100)))
 
      (def ~(vary-meta (read-string (clojure.string/lower-case c))
                       assoc :const true :tag `String) ~c)))
+
+;; Symbols constructed on the fly are not interned
+(= 'foo 'foo)          ;; => true
+(identical? 'foo 'foo) ;; => false
+;;
+;; Keywords are interned and fulfill most "symbolic programming" use cases:
+(= :foo :foo)          ;; => true
+(identical? :foo :foo) ;; => true
+
+
+;; Integers are not automatically promoted to bignums like in most Lisps that
+;; support bignums. Use special-purpose operators like +' and -':
+(* (bit-shift-left 1 62) 2)  ;; => ArithmeticException; integer overflow
+(*' (bit-shift-left 1 62) 2) ;; => 9223372036854775808N
+;;
+(* (bit-shift-left 1 62) 2N) ; regular * supports BigInt inputs, though
+;; => 9223372036854775808N
+(* 1N 1) ; but small BigInts aren't normalized to Java Longs
+;; => 1N
+
+
+;; https://www.more-magic.net/posts/thoughts-on-clojure.html
+
+;; https://lispcast.com/nil-punning/
+;; when you look up something in a map that doesn't exist, nil is returned. In Clojure, many operations (like first or rest) on nil just return nil instead of raising an error. So, when you think you are looking up something in a map, but the "map" is actually nil, it will not give an error, but it will return nil.
+
+;; Now like I said, sometimes you may get an error on nil. It's a bit unclear which operations are nil-punning and which will give a proper error. So when you finally get a nil error, you will have a hell of a time trying to trace back where this nil got generated, as that may have been several function calls ago. This is an example where I really like the strictness of Scheme as compared to some other Lisps, as nil-punning is traditionally a dynamic Lisp thing; it's not unique to Clojure.
+
+;; Compared to the insane amount of customizability that e.g. CLOS offers you, the design restraint shown in Clojure multimethods was nice to see, but then I realised this simplicity can be completely defeated by building hierarchies. That is, Clojure allows you to define a *hierarchy* on *keywords*. This was a huge wtf for me, because to me, keywords are just static entities that are unrelated to each other.
+;; When you realise how Clojure keywords can be namespaced, it makes slightly more sense: this gives them some separation.
+
