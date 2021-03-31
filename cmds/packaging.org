@@ -13,7 +13,11 @@
     https://www.slant.co/versus/1145/5880/~gnu-guix_vs_docker
     https://www.slant.co/versus/1143/1145/~nix_vs_gnu-guix
 
-    # ETL (Extract Transform Load)
+    # ETL - 1. Extract 2. Transform 3. Load:
+    # 1. grab the data in one place
+    # 2. modify it,
+    # 3. and put it in another place.
+    #
     # https://tech.grammarly.com/blog/building-etl-pipelines-with-clojure
     # Stich ETL service https://www.stitchdata.com/
     # https://clojure.org/stories/stitch
