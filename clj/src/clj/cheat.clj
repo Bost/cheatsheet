@@ -835,6 +835,8 @@ user=> (repeat 100 (vec (range 100)))
 (map {:a 1 :b 2 :c 3} [:a :b]) ;; select-vals
 ;; => (1 2)
 
+(map-indexed (fn [idx elem] [idx elem]) [:a :b :c]) ;; => ([0 :a] [1 :b] [2 :c])
+
 (defmacro def-stuff
   "Define stuff with metadata. E.g.:
   (def-stuff \"FOO\")
