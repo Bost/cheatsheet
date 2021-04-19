@@ -114,20 +114,30 @@
     # :fish - handle fish key bindings
     bind / help bind
 
-    # :bash - display shortcuts (including Ctrl+L, Ctrl+R); \e - ESC, \C-y - Ctrl+y
+    # :bash display shortcuts including Ctrl+L, Ctrl+R; \e - ESC, \C-y - Ctrl+y
     # see fzf
     bind -P
     help bind
 
-    # bash history / abort history
-    C-r / C-g
+    # :bash undo & yank
+    # type partial cmd, kill this cmd, check something you forgot, yank the cmd,
+    # resume typing
+    C-u ... C-y / Ctrl-u ... Ctrl-y
+
+    # :bash history
+    C-r / Ctrl-g
+    # :bash abort history
+    C-g / Ctrl-g
+
+    # get the parameter / argument of the last command. see bind -P
+    M-. / Alt-.
+    Esc-.
+
+    # :bash swap words
+    M-t / Alt-t
 
     # :alias escape command aliases
     \\\[command\]
-
-    # get the parameter / argument of the last command. see bind -P
-    Alt-.
-    Esc-.
 
     # set vi bindings
     set -o vi
@@ -211,10 +221,6 @@
 
   # bash: redirect: type in stuff and wait unit EOF gets typed
   cat >>EOF
-
-  # type partial cmd, kill this cmd, check something you forgot, yank the cmd,
-  # resume typing
-  Ctrl-u ... Ctrl-y
 
   # avoid backticks
   echo "Date is: $(date +%D)"
