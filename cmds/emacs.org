@@ -7,6 +7,9 @@
   | ~SPC f e v~         | spacemacs: version                      |
   | ~SPC w p m~         | spacemacs: popup \*Messages\*           |
 
+  ;; Shift-Tab
+  <s-tab> / <backtab>
+
   ;;
   M-x narrow-to-defun ~s-n~ / M-x widen ~s-N~
 
