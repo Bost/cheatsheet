@@ -44,9 +44,16 @@
     # postgres connect to localhost
     psql <dbname> <username>
     # postgres connect to remote host
-    psql -h localhost -p 5432 -U postgres -W   # empty password - press Enter
+    psql -h localhost -p 5432 -U postgres -W   # for no password - press Enter
     # test content
     SELECT count(*) FROM pg_catalog.pg_tables;
+    # show password requirements
+    # 'usename' without 'r' is correct!
+    SELECT usename, passwd IS null FROM pg_shadow;
+    # remove password
+    ALTER ROLE <username> PASSWORD null;
+    # set password to: foo
+    ALTER ROLE <username> PASSWORD 'foo';
 
     # postgres CLI commands
     # \?         psql commands
