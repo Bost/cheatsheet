@@ -19,6 +19,10 @@
 ;; (A * B) could be seen as a product (e.g. join)
 ;; (A + B) coproduct (e.g. disjoint union) of A and B
 
+;; see https://github.com/clojure/data.priority-map
+;; sorted map   - entries sorted by key
+;; priority map - entries sorted by value; see conj, peek, pop
+
 ;; clojure.core/atom
 (def cnt (atom 0))
 (swap! cnt inc)             ;; => 1
@@ -261,13 +265,11 @@ rlwrap java -cp $cljjar:$cljsjar clojure.main
 (parser {:state (atom ufo.state/app-state)} '[:list/rec])
 (parser {:state (atom ufo.state/app-state)} '[(ufo.meth/'activate-rec! vms)])
 
-;; write hash-map to a file
-(->> {:a 1 :b 2}
-     (print)
-     (with-out-str)
-     (spit "/tmp/data.edn"))
-;; read hash-map from a file
-(->> "/tmp/data.edn" (slurp) (read-string))
+;; write hash-map to an eden file; `print` writes String as clojure.lang.Symbol
+;; `comp` also prints to REPL - may cause a freeze for large expression
+(->> {:a 1 :b 2} (pr) (with-out-str) (spit "/tmp/data.edn"))
+;; read hash-map from an eden file
+((comp read-string slurp) "/tmp/data.edn")
 
 ;; two dots: clojurescript interop
 (.. object -property -property method)
