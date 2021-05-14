@@ -351,13 +351,21 @@ gulp
   true inc       ; the condition is true so (inc 1) => 2
   false (* 42)   ; the condition is false so the operation is skipped
   (= 2 2) (* 3)) ; (= 2 2) is true so (* 2 3) => 6
-
+;;
 (cond
   (< n 0) "negative"
   (> n 0) "positive"
   :else "zero")
-
+;;
+(condp = value
+  ;; (= test-expr expr) are evaluated
+  1 "one"
+  2 "two"
+  (str "unexpected value:" value))
+;;
 (case n
+  ;; The test-constants (i.e. 0, 1) are not evaluated. They must be compile-time
+  ;; literals, and need not be quoted
   0 "zero"
   1 "one"
   "other")
@@ -731,11 +739,6 @@ user=> (repeat 100 (vec (range 100)))
   (apply greet name others))
 ;;
 (foo "Jim" "Joe" "Jack")
-
-(condp = value
-  1 "one"
-  2 "two"
-  (str "unexpected value:" value))
 
 ;; defprotocol (protocol ~ Java Interface)
 ;; Defines a named set of named methods & signatures.
