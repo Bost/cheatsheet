@@ -1,4 +1,4 @@
-* Bash & Fish-shell
+* Shells: Bash & Fish-shell
   #+BEGIN_SRC fish
     exit 1 # just in case ...
     # check if a file contains only binary zeros
@@ -110,9 +110,17 @@
     # :calculate :fish
     # examples https://nicolas-van.github.io/programming-with-fish-shell
     math "1 + 2"
+  #+END_SRC
 
-    # :fish - handle fish key bindings
-    bind / help bind
+* Key bindings
+  #+BEGIN_SRC shell
+    exit 1 # just in case ...
+    # show fish key bindings in the console
+    bind
+    # show fish key bindings in a web browser
+    help bind
+    # list of available shell commands
+    /etc/inputrc
 
     # :bash display shortcuts including Ctrl+L, Ctrl+R; \e - ESC, \C-y - Ctrl+y
     # see fzf
@@ -138,10 +146,11 @@
 
     # :alias escape command aliases
     \\\[command\]
+  #+END_SRC
 
-    # set vi bindings
+  #+BEGIN_SRC shell
+    # :bash set vi bindings
     set -o vi
-
     # :bash disable pathname expansion - globbing
     set -f
     set -o noglob
@@ -194,98 +203,100 @@
 
     # bash: ? define function in bash ?
     foo() { date; }
-    #+END_SRC
+  #+END_SRC
 
 * Shebang
   https://rosettacode.org/wiki/Native_shebang
   https://rosettacode.org/wiki/Multiline_shebang
   #+BEGIN_SRC shell
-  # bash: shebang: stop the script after any error
-  #!/bin/bash -e
+    # bash: shebang: stop the script after any error
+    #!/bin/bash -e
 
-  # bash: shebang: debugging: set -x; stop on error: set -e
-  #!/usr/bin/env fish
+    # bash: shebang: debugging: set -x; stop on error: set -e
+    #!/usr/bin/env fish
+  #+END_SRC
 
-  # bash: debug script
-  bash -x script
+  #+BEGIN_SRC shell
+    # bash: debug script
+    bash -x script
 
-  # bash: redirect stderr (2) to stdout (1) and save it to command.log
-  ./command.sh 2>&1 | tee command.log
+    # bash: redirect stderr (2) to stdout (1) and save it to command.log
+    ./command.sh 2>&1 | tee command.log
 
-  # suppress stderr messagess
-  ./script.sh 2> /dev/null
+    # suppress stderr messagess
+    ./script.sh 2> /dev/null
 
-  # bash: find: redirect: separate / combine sdterr and stdout; doesn't work with
-  # the tee command
-  ./command.sh 1>str.out 2>str.err / ./command.sh &>combined.out
+    # bash: find: redirect: separate / combine sdterr and stdout; doesn't work with
+    # the tee command
+    ./command.sh 1>str.out 2>str.err / ./command.sh &>combined.out
 
-  # bash: redirect: type in stuff and wait unit EOF gets typed
-  cat >>EOF
+    # bash: redirect: type in stuff and wait unit EOF gets typed
+    cat >>EOF
 
-  # avoid backticks
-  echo "Date is: $(date +%D)"
+    # avoid backticks
+    echo "Date is: $(date +%D)"
 
-  # create a script from last executed cmd
-  echo "!!" > foo.sh
+    # create a script from last executed cmd
+    echo "!!" > foo.sh
 
-  # time measurement of a fish function
-  # https://github.com/fish-shell/fish-shell/issues/117
-  /usr/bin/time --portability fish --command <fn> <prm1> <prm2> ...
-  # TODO try out
-  function time --description 'Wrapper for time'
-  /usr/bin/time --portability /usr/bin/fish --command $argv
-  end
-  # see also:
-  <fn> <prm1> <prm2> ...
-  echo $CMD_DURATION
+    # time measurement of a fish function
+    # https://github.com/fish-shell/fish-shell/issues/117
+    /usr/bin/time --portability fish --command <fn> <prm1> <prm2> ...
+    # TODO try out
+    function time --description 'Wrapper for time'
+    /usr/bin/time --portability /usr/bin/fish --command $argv
+    end
+    # see also:
+    <fn> <prm1> <prm2> ...
+    echo $CMD_DURATION
 
-  # xfce: launcher: emacs uses bash variables; -i interactive shell, -c read
-  # following command
-  bash -i -c ./pth/to/emacs
+    # xfce: launcher: emacs uses bash variables; -i interactive shell, -c read
+    # following command
+    bash -i -c ./pth/to/emacs
 
-  # fish: bash: locate command
-  command -v <command>  # fish buildin
-  which      <command>  # debian
+    # fish: bash: locate command
+    command -v <command>  # fish buildin
+    which      <command>  # debian
 
-  # cygwin: bash: print windows form of filename
-  cygpath -w filename
+    # cygwin: bash: print windows form of filename
+    cygpath -w filename
 
-  # bash eval string
-  eval "${cmd}"
+    # bash eval string
+    eval "${cmd}"
 
-  # :bash - bugs in bash/sh scripts http://www.shellcheck.net/
-  sudo apt install shellcheck
+    # :bash - bugs in bash/sh scripts http://www.shellcheck.net/
+    sudo apt install shellcheck
 
-  # :bash :fish - help text that matches each argument
-  http://explainshell.com/
+    # :bash :fish - help text that matches each argument
+    http://explainshell.com/
 
-  # Show numerical values for each of the 256 colors in bash
-  for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done
+    # Show numerical values for each of the 256 colors in bash
+    for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done
 
-  # syntax - single / double brackets; variables
-  https://unix.stackexchange.com/a/416716
-  https://www.thegeekstuff.com/2010/06/bash-conditional-expression/
-  https://www.cyberciti.biz/faq/unix-linux-bash-script-check-if-variable-is-empty/
-  https://www.cyberciti.biz/faq/linux-unix-howto-check-if-bash-variable-defined-not/
+    # syntax - single / double brackets; variables
+    https://unix.stackexchange.com/a/416716
+    https://www.thegeekstuff.com/2010/06/bash-conditional-expression/
+    https://www.cyberciti.biz/faq/unix-linux-bash-script-check-if-variable-is-empty/
+    https://www.cyberciti.biz/faq/linux-unix-howto-check-if-bash-variable-defined-not/
 
-  # FILE1 -ot FILE2: FILE1 is older than FILE2
-  #        -b FILE:  FILE exists and it's block special
-  #        -c FILE:  FILE exists and it's character special
-  #        -d FILE:  FILE exists and it's a directory
-  #        -e FILE:  FILE exists
-  #        -f FILE:  FILE exists and it's a regular file
-  #        -g FILE:  FILE exists and it's set-group-ID
-  #        -G FILE:  FILE exists and it's owned by the effective group ID
-  #        -h FILE:  FILE exists and it's a symbolic link (same as -L)
-  #        -k FILE:  FILE exists and has its sticky bit set
-  #        -L FILE:  FILE exists and it's a symbolic link (same as -h)
-  #        -O FILE:  FILE exists and it's owned by the effective user ID
-  #        -p FILE:  FILE exists and it's a named pipe
-  #        -r FILE:  FILE exists and read permission is granted
-  #        -s FILE:  FILE exists and has a size greater than zero
-  #        -S FILE:  FILE exists and it's a socket
-  #        -t FD:    file descriptor FD is opened on a terminal
-  #        -u FILE:  FILE exists and its set-user-ID bit is set
-  #        -w FILE:  FILE exists and write permission is granted
-  #        -x FILE:  FILE exists and execute (or search) permission is granted
+    # FILE1 -ot FILE2: FILE1 is older than FILE2
+    #        -b FILE:  FILE exists and it's block special
+    #        -c FILE:  FILE exists and it's character special
+    #        -d FILE:  FILE exists and it's a directory
+    #        -e FILE:  FILE exists
+    #        -f FILE:  FILE exists and it's a regular file
+    #        -g FILE:  FILE exists and it's set-group-ID
+    #        -G FILE:  FILE exists and it's owned by the effective group ID
+    #        -h FILE:  FILE exists and it's a symbolic link (same as -L)
+    #        -k FILE:  FILE exists and has its sticky bit set
+    #        -L FILE:  FILE exists and it's a symbolic link (same as -h)
+    #        -O FILE:  FILE exists and it's owned by the effective user ID
+    #        -p FILE:  FILE exists and it's a named pipe
+    #        -r FILE:  FILE exists and read permission is granted
+    #        -s FILE:  FILE exists and has a size greater than zero
+    #        -S FILE:  FILE exists and it's a socket
+    #        -t FD:    file descriptor FD is opened on a terminal
+    #        -u FILE:  FILE exists and its set-user-ID bit is set
+    #        -w FILE:  FILE exists and write permission is granted
+    #        -x FILE:  FILE exists and execute (or search) permission is granted
   #+END_SRC

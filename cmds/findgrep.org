@@ -134,4 +134,8 @@
 
     # Prompt for Approval Before Executing Commands
     find ~/test/ -type f -ok rm -v {} \;
+
+    # find files with extension; fdfind is aliased to `f`
+    fdfind -e rkt
+    find -name "*.rkt"
   #+END_SRC

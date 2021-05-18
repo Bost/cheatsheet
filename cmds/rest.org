@@ -1,4 +1,17 @@
-* Rest
+* Web service communication protocols
+  imply SW architectural style for distributed environments
+  REST (Representational State Transfer) accesses data
+  SOAP (Simple Object Access Protocol) performs operations
+** RESTful API services
+  | HTTP method | CRUD equivalent |
+  |-------------+-----------------|
+  | GET         | Read            |
+  | POST        | Create          |
+  | PUT         | Update          |
+  | DELETE      | Delete          |
+
+
+* Bric a brac
 Five rating emojis / icons
 https://youtu.be/hZJnlxM0c0I?t=162
 
