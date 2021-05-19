@@ -101,6 +101,13 @@ CLOS
 ;; , r u a   /  M-x clojure-unwind-all
 (apply + (filter odd? (map inc (range 5))))
 
+;; `reduce` can be faster than `apply`...
+(time (reduce + (range 1e8))) ;; 631.935896 msecs
+(time (apply + (range 1e8)))  ;; 852.320386 msecs
+;; ... but not always:
+(time (reduce + (filter odd? (map inc (range 1e8))))) ;; 2421.542711 msecs
+(time (apply + (filter odd? (map inc (range 1e8)))))  ;; 2418.872182 msecs
+
 ;; sexp / block comment; the block comments sexp returns nil
 #_(foo 1 2)/ (comment foo 1 2)
 
