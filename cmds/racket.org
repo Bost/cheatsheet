@@ -51,5 +51,28 @@
     ;; C-c d / M-x racket-doc
     ;; C-c . / M-x racket-describe
 
-    ;; sexp comment #;
+    ;; sexp comment #;single-sexp
+    ;; block comment #| sexp-1 sexp-2 ... |#
+
+    ;; rhs - right hand side
+
+    ;; https://stackoverflow.com/a/5406423
+    ;; difference between `define` and `let` is in the scope:
+    ;; correct:
+    (define (f x)
+      (let ((a 1))
+        (+ a x)))
+    ;; wrong:
+    (define (f x)
+      (let ((a 1)))
+      (+ a x))
+    ;; correct:
+    (define (g x)
+      (define a 1)
+      (+ a x))
+
+    ;; namespace alias
+    (require (prefix-in my: "file.rkt")) ;; see also `rename-in`
+    ;; usage
+    (my:function)
   #+END_SRC
