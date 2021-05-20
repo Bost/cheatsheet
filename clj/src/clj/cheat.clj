@@ -101,12 +101,41 @@ CLOS
 ;; , r u a   /  M-x clojure-unwind-all
 (apply + (filter odd? (map inc (range 5))))
 
+;; https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html
 ;; `reduce` can be faster than `apply`...
-(time (reduce + (range 1e8))) ;; 631.935896 msecs
-(time (apply + (range 1e8)))  ;; 852.320386 msecs
+(time (reduce + (range 1e9))) ;; 6824.592024 msecs
+(time (apply + (range 1e9)))  ;; 8740.237518 msecs
 ;; ... but not always:
 (time (reduce + (filter odd? (map inc (range 1e8))))) ;; 2421.542711 msecs
 (time (apply + (filter odd? (map inc (range 1e8)))))  ;; 2418.872182 msecs
+;; also:
+;; #lang racket
+;; (require racket/sequence)
+;; (let* [(beg (current-inexact-milliseconds))
+;;        ;; 1e9 is a float 1000000000.0; see 'exact' / 'inexact'
+;;        (expr-val (sequence-fold + 0 (in-range #e1e9)))
+;;        (end (current-inexact-milliseconds))]
+;;   (printf "Elapsed time: ~a msecs\n~a\n" (- end beg) expr-val))
+;; Elapsed time: 11946.357177734375 msecs
+
+;; python
+;; import numpy
+;; import timeit
+;;
+;; def sum_range():
+;;     return sum(range(int(1e9)))
+;;
+;; timeit.timeit(sum_range, number=1)
+;; ;; # 6.388910356999986 # seconds
+;; ;;
+;; def sum_numpy():
+;;     return numpy.sum(numpy.arange(int(1e9)))
+;;
+;; timeit.timeit(sum_numpy, number=1)
+;; # 1.7422158059998765 # seconds
+;;
+;; And the winner is
+;; https://en.wikipedia.org/wiki/1_%2B_2_%2B_3_%2B_4_%2B_%E2%8B%AF
 
 ;; sexp / block comment; the block comments sexp returns nil
 #_(foo 1 2)/ (comment foo 1 2)
