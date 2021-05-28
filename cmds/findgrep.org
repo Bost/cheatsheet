@@ -138,4 +138,7 @@
     # find files with extension; fdfind is aliased to `f`
     fdfind -e rkt
     find -name "*.rkt"
+
+    # ripgrep
+    rg -t clojure --word-regexp <searchText>
   #+END_SRC

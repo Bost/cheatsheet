@@ -576,6 +576,9 @@
   'event-apply-super-modifier)
   (define-key local-function-key-map (kbd "<rwindow>")
   'event-apply-hyper-modifier)
+  ;;
+  ;; local keymaps
+  ;; Major modes customize Emacs by providing their own key bindings in local keymaps
 
   (defun enable-hyper-super-modifiers-linux-x ()
   ;; on nowadays linux, <windows> key is usually configured to Super
