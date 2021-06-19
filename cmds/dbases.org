@@ -1,3 +1,33 @@
+* PostgreSQL
+#+BEGIN_SRC shell
+  exit 1 # just in case ...
+  # connect to localhost
+  psql <dbname>
+  psql <dbname> <username>
+  # connect to remote host
+  psql -h localhost -p 5432 -U postgres -W   # for no password - press Enter
+  # test content
+  SELECT count(*) FROM pg_catalog.pg_tables;
+  # show password requirements
+  # 'usename' without 'r' is correct!
+  SELECT usename, passwd IS null FROM pg_shadow;
+  # remove password
+  ALTER ROLE <username> PASSWORD null;
+  # set password to: foo
+  ALTER ROLE <username> PASSWORD 'foo';
+  #
+  # CLI commands
+  # \?         psql commands
+  # \h         SQL commands
+  # \d         list tables, views, sequences (also relations ?)
+  # \conninfo  current database connection
+  # \dt        list tables and owners
+  # \z         list all tables, views, and sequences
+  # \q         exit
+
+#+END_SRC
+
+
 * MySQL
 ** Installation on Ubuntu
    #+BEGIN_SRC shell
@@ -13,6 +43,7 @@
    #+END_SRC
 
 #+BEGIN_SRC mysql
+  -- DROP USER IF EXISTS '<username>'
   CREATE DATABASE Test;
   CREATE USER '<username>'@'localhost' IDENTIFIED BY '<password>';
   GRANT ALL PRIVILEGES ON *.* TO '<username>'@'localhost' WITH GRANT OPTION;
@@ -21,8 +52,32 @@
 #+BEGIN_SRC shell
   exit 1 # just in case ...
 
-  # import script
+  # reset password on 8.0.25
+  sudo systemctl stop mysql.service
+  # verify with
+  # 1. sudo systemctl status mysql.service
+  # 2. pgrep --full mysql
+  sudo mkdir -p /var/run/mysqld
+  sudo chown mysql:mysql /var/run/mysqld
+  sudo mysqld_safe --skip-grant-tables &
+  sudo mysql -uroot
+  # see https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html
+  update user set authentication_string='<ENCRYPTED-PASSWORD>' where user.User='root';
+  flush privileges;
+  quit
+  sudo systemctl restart mysql.service
+
+  # view users
+  SELECT user,authentication_string,plugin,host FROM mysql.user;
+
+  # login
+  mysql -uroot -p
+
+  # import script from OS shell command line
   mysql -u <username> -p database_name < file.sql
+  # import script from MySQL command line
+  use db_name;
+  source file.sql;
 
   # connect / login to mysql
   mysql --host=localhost --user=<username> --password=<password> <dbname>
@@ -46,6 +101,7 @@
   # mysql:
   mysql show databases
   mysql show tables in <dbaseName>
+  mysql show users # `mysql desc mysql.user` does probably the same
 
   # mysql: describe table
   mysql show columns in <tableName>
