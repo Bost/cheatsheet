@@ -141,4 +141,5 @@
 
     # ripgrep
     rg -t clojure --word-regexp <searchText>
+    # See also: ripgrep, ack, pt, grep, sift, ag (The Silver Searcher)
   #+END_SRC
