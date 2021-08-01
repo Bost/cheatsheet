@@ -471,6 +471,7 @@
     du -s dir
     du -sh dir
     du -sh --exclude={.git,.atom} dir
+    # see also ncdu
 
     # size of ./pth/to/dir with subdirs, exclude files matching pattern
     du -csh --exclude={.git,.atom} ./ | sort --human-numeric-sort
