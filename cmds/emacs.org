@@ -315,6 +315,9 @@
   ;; ? check all document ?
   M-x flyspell-mode
 
+  ;; Error enabling Flyspell mode: No word lists can be found for the language "en_US"
+  ;; sudo apt install --yes aspell-en
+
   | ~M-<~ | beginning of buffer |
   | ~M->~ | end of buffer |
 
