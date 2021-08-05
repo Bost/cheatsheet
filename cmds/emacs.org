@@ -25,23 +25,21 @@
   ;; paredit: wrap square brackets around sexp
   M-x paredit-wrap-square
 
-  ;; paredit: kill the rest in the sexp
-  ~C-k~
-
-  | ~M-(~ | paredit: insert-parentheses |
-  | ~M-)~ | paredit: move-past-close-and-reindent |
-
-  ;; paredit-forward-slurp-sexp (vcucni) / paredit-forward-barf-sexp (vygrcaj)
-  ~M-s-right~ / ~M-s-left~
+  ;; paredid
+  | ~C-k~       | kill the rest in the sexp           |
+  | ~M-(~       | insert-parentheses                  |
+  | ~M-)~       | move-past-close-and-reindent        |
+  | ~M-s-right~ | paredit-forward-slurp-sexp (vcucni) |
+  | ~M-s-left~  | paredit-forward-barf-sexp (vygrcaj) |
 
   ;; indent: move text left by four spaces (M-x indent-rigidly ~C-x TAB~)
   ~C-u -4 C-x TAB~
 
   ;; :regexp https://www.emacswiki.org/emacs/RegularExpression#regexp
-  \\#                   ;; increment the number found
-  \\s-                  ;; increment the whitespace
-  %s#\(.\{2\}\)#aa#g    ;; substitute / find exactly 2 occurences
-  \(.*?\)               ;; lazy match
+  | \\#                | increment the number found             |
+  | \\s-               | increment the whitespace               |
+  | %s#\(.\{2\}\)#aa#g | substitute / find exactly 2 occurences |
+  | \(.*?\)            | lazy match                             |
 
   ;; :regexp whitespace character, as defined by the syntax table, typically
   ;; [\t\r\n\v\f]
@@ -63,7 +61,7 @@
   hide: show: folding: enable folding M-x hs-minor-mode
   | ~C-c @ C-c~ | toggle hiding: fold / unfold |
 
-  ;; hide: show: folding:
+  ;; hide: show: folding: (also see origami folding in .spacemacs)
   | ~z o~ | evil open fold             |
   | ~z z~ | evil close fold            |
   | ~z a~ | evil toggle fold           |
@@ -87,9 +85,8 @@
   emacs --no-init-file     ;; also: emacs -q
   emacs --no-window-system ;; also: emacs -nw
 
-  ;; web
-  M-x browse-url-at-point   ;; open web browser of the OS
-  M-x eww                   ;; emacs web browser
+  | M-x browse-url-at-point | open web browser of the OS |
+  | M-x eww                 | emacs web browser          |
 
   ;; byte-compile an *.el file
   M-x byte-compile-file
@@ -186,12 +183,15 @@
   ~C-x C-f~ /method:user@remotehost#port:filename
   ~C-x C-f~ /ssh:test@host#2222:/tmp
 
-  ;; files: find-file-other window / switch-to-buffer-other-window
-  C-x 4 f / C-x 4 b
-
-  | ~C-x C-s~ | M-x save-buffer       | save file      |
-  | ~C-x s~   | M-x save-some-buffers | save all files |
-  | ~C-x C-w~ | M-x write-file        | save as        |
+  ;; files / buffers
+  | ~C-x k~   | M-x kill-buffer               |                |
+  | ~C-x C-b~ | M-x list-buffers              |                |
+  | ~C-x b~   | M-x ido-switch-buffer         |                |
+  | ~C-x 4 f~ | find-file-other window        | ctl-x-4-prefix |
+  | ~C-x 4 b~ | switch-to-buffer-other-window | ctl-x-4-prefix |
+  | ~C-x C-s~ | M-x save-buffer               | save file      |
+  | ~C-x s~   | M-x save-some-buffers         | save all files |
+  | ~C-x C-w~ | M-x write-file                | save as        |
 
   ;; eshell: ifconfig > #<buffer interfaces>
 
@@ -221,11 +221,6 @@
   ;; `defn' `M-/' type in the defn-name, then `TAB' to complete ...
   ;; hippie-expand (dabbrev-expand?) (code completition)
   M-/
-
-  ;; files / buffers
-  | ~C-x k~   | M-x kill-buffer       |
-  | ~C-x C-b~ | M-x list-buffers      |
-  | ~C-x b~   | M-x ido-switch-buffer |
 
   ;; delete 1 whole line
   M-x kill-whole-line
@@ -315,7 +310,7 @@
   git branch --track <new-branch-name>
 
   ;; check word
-  M-$ spell
+  M-x spell
 
   ;; ? check all document ?
   M-x flyspell-mode
