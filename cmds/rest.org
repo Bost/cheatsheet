@@ -19,7 +19,7 @@ https://youtu.be/hZJnlxM0c0I?t=162
    small, elegant, and successful systems to be succeeded by over-engineered,
    bloated systems, due to inflated expectations and overconfidence.
 
-#+BEGIN_SRC shell
+#+BEGIN_SRC sh
   exit 1 # just in case ...
   # oracle: execute script.sql
   @C:\path\to\script.sql
@@ -60,7 +60,7 @@ their own commands and conventions, based on TeX (TeX is a "formatting system")
 AUCTeX - an extensible package for writing and formatting TeX files in Emacs
 
 ** Examples
-#+BEGIN_SRC shell
+#+BEGIN_SRC sh
   exit 1 # just in case ...
   # LaTeX to ODT (OpenDocument Text / LibreOffice) conversion
   pandoc -s document.tex -o document.odt
@@ -97,7 +97,7 @@ AUCTeX - an extensible package for writing and formatting TeX files in Emacs
 #+END_SRC
 
 * Eclipse
-#+BEGIN_SRC shell
+#+BEGIN_SRC sh
   exit 1 # just in case ...
   .metadata/.plugins/org.eclipse.team.cvs.ui/repositoriesView.xml
   #
@@ -113,3 +113,10 @@ AUCTeX - an extensible package for writing and formatting TeX files in Emacs
   # Jump to next error
   Ctrl-.
 #+END_SRC
+
+
+* Xen
+  Type-1 hypervisor
+
+  Provides services that allow multiple computer operating systems to execute on
+  the same computer hardware concurrently.

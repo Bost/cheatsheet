@@ -1,5 +1,5 @@
 * PostgreSQL
-#+BEGIN_SRC shell
+#+BEGIN_SRC sh
   exit 1 # just in case ...
   # connect to localhost
   psql <dbname>
@@ -32,7 +32,7 @@
 ** Installation on Ubuntu
    Error log: /var/log/mysql/error.log
 
-   #+BEGIN_SRC shell
+   #+BEGIN_SRC sh
      exit 1 # just in case ...
 
      sudo apt install mysql-server mysql-client
@@ -51,7 +51,7 @@
   GRANT ALL PRIVILEGES ON *.* TO '<username>'@'localhost' WITH GRANT OPTION;
 #+END_SRC
 
-#+BEGIN_SRC shell
+#+BEGIN_SRC sh
   exit 1 # just in case ...
 
   # Finally!!!
@@ -112,7 +112,7 @@
 #+END_SRC
 
 * DB2
-  #+BEGIN_SRC shell
+  #+BEGIN_SRC sh
     exit 1 # just in case ...
 
     # ???

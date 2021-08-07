@@ -1,17 +1,9 @@
 * Packaging
-  #+BEGIN_SRC shell
+  #+BEGIN_SRC sh
     exit 1 # just in case ...
 
     # install additional ubuntu software
     gnome-software
-
-    # :snap    https//snapcraft.io/
-    # :flatpak https//flatpak.org/
-    # :nix     https//nixos.org/
-    # :guix    https//guix.gnu.org/
-    # comparisons
-    https://www.slant.co/versus/1145/5880/~gnu-guix_vs_docker
-    https://www.slant.co/versus/1143/1145/~nix_vs_gnu-guix
 
     # ETL - 1. Extract 2. Transform 3. Load:
     # 1. grab the data in one place
@@ -117,15 +109,6 @@
     sudo docker exec -it some-postgres bash
     psql -h localhost -p 5432 -U postgres -W   # empty password - press Enter
     SELECT count(*) FROM pg_catalog.pg_tables;
-
-    # GNU guix
-    guix package --list-generations
-    guix package --list-installed
-    guix package --install hello
-    guix package --install guile
-    guix package --rollback
-    guix package --remove python --install guile
-    guix package --search=hello
 
     # automatic installation of security (and other) upgrades
     sudo unattended-upgrade -d --dry-run  # -d debug

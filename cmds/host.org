@@ -1,5 +1,5 @@
 * Mainframe / Host
-  #+BEGIN_SRC shell
+  #+BEGIN_SRC sh
     exit 1
 
     # ? Automated testing ?

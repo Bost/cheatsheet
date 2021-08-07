@@ -1,6 +1,6 @@
 * systemd
   [[https://systemd.io/][systemd]]
-  #+BEGIN_SRC shell
+  #+BEGIN_SRC sh
     exit 1 # just in case ...
 
     # systemd:

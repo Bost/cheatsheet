@@ -1,7 +1,7 @@
 * Node.js
  nvm - Node Version Manager https://github.com/nvm-sh/nvm
 
-  #+BEGIN_SRC shell
+  #+BEGIN_SRC sh
     exit 1 # just in case ...
 
     ## install nodejs with (behind) or without proxy:
@@ -60,7 +60,7 @@
   #+END_SRC
 
 * Linux
-  #+BEGIN_SRC shell
+  #+BEGIN_SRC sh
     exit 1 # just in case ...
 
     # see also:

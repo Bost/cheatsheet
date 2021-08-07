@@ -1,5 +1,5 @@
 * Find and grep
-  #+BEGIN_SRC shell
+  #+BEGIN_SRC sh
     exit 1 # just in case ...
 
     # bash: find: redirect: separate / combine sdterr and stdout; does not work with
