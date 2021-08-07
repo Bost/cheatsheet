@@ -335,44 +335,40 @@
   ;; eshell: example
   egrep -r 'something' *
 
-  ;; dired: Dired Refecene Card / Cheatsheet
+  ;; Dired Refecene Card / Cheatsheet
   http://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf
-
   ;; TODO have a look at dired sorting
   https://www.emacswiki.org/emacs/DiredSortBySizeAndExtension
   https://github.com/jojojames/dired-sidebar
   http://ergoemacs.org/emacs/dired_sort.html
 
-  | ~S~ | dired: symlink                                    |
-  | ~Z~ | dired: zip: compress or uncompress (extract) file |
+  ;; dired:
+  | ~S~           | symlink                                    |
+  | ~Z~           | zip: compress or uncompress (extract) file |
+  | ~* . <ext>~   | mark all: toggle marking                   |
+  | ~* s~         | mark all: executables                      |
+  | ~* *~         | mark all: files (with extention)           |
+  | ~* . <ext> D~ | mark & delete all files with extention     |
+  | ~* c~         | change all marks                           |
+  | ~\~~          | markup: all backup files                   |
+  | ~#~           | markup: auto-save files                    |
+  | ~g~           | refresh buffer                             |
+  | ~+~           | M-x dired-create-directory                 |
+  | ~R~           | M-x dired-do-rename                        |
+  | ~(~           | toggle listing details                     |
+  | ~(~           | M-x dired-hide-details-mode                |
+  | ~C-x C-q~     | perform operations by editing dired buffer |
+  | ~C-x C-q~     | M-x dired-toggle-read-only                 |
+  |               | M-x wdired-finish-edit                     |
+  ;; start dired and create newfile
+  ~C-x C-f <ENTER>~ / <newfile>
 
-  ;; dired: start dired and create newfile
-  C-x C-f ENTER / <newfile>
-
-  ;; TODO check this
-  | ~m~ | dired: mark / unmark / toggle marking         |
-  | ~*~ | dired: mark / unmark / toggle marking         |
-  | ~u~ | dired: mark / unmark / toggle marking         |
-  | ~U~ | dired: mark all / unmark all / toggle marking |
-  | ~t~ | dired: mark / unmark (all) / toggle marking   |
-
-  | ~* . <ext>~   | dired: mark all: toggle marking               |
-  | ~* s~         | dired: mark all: executables                  |
-  | ~* *~         | dired: mark all: files (with extention)       |
-  | ~* . <ext> D~ | dired: mark & delete all files with extention |
-  | ~* c~         | dired: change all marks                       |
-  | ~\~~          | dired: markup: all backup files               |
-  | ~#~           | dired: markup: auto-save files                |
-  | ~g~           | dired: refresh buffer                         |
-  | ~+~           | M-x dired-create-directory                    |
-  | ~R~           | M-x dired-do-rename                           |
-
-  ;; dired: dir listing details: `)'
-  M-x dired-details-toggle
-  M-x dired-hide-details-mode
-
-  ;; dired: writable - perform operations by editing dired buffer
-  M-x dired-toggle-read-only (C-x C-q) / M-x wdired-finish-edit
+  ;; dired: TODO check this
+  | ~m~ | mark / unmark / toggle marking         |
+  | ~*~ | mark / unmark / toggle marking         |
+  | ~u~ | mark / unmark / toggle marking         |
+  | ~U~ | mark all / unmark all / toggle marking |
+  | ~t~ | mark / unmark (all) / toggle marking   |
 
   ;; fill / reflow text - see also auto-fill-mode
   ;; spacemacs/toggle-auto-fill-mode SPC t F
