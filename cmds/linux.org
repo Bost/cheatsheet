@@ -177,21 +177,23 @@
     # split a file into pieces (with '.' at the end)
     split --bytes 1M --numeric-suffixes --suffix-length=3 foo.txt foo.
 
-    # :usb :drive :drives :disc :discs - list block devices
+    # :usb :drive :drives :disk - list block devices
     lsblk
     lsblk --nodeps
 
     # Format disk / usb drive
     # 1. erase everything on the device
     # convert and copy a file; bs=BYTES  read & write up to BYTES at a time
-    sudo dd status=progress if=/dev/zero of=/dev/sdd1 bs=4k; and sync
+    set --local deviceFile /dev/sd<?>    # see lsblk
+    sudo dd status=progress if=/dev/zero of=$deviceFile bs=4k; and sync
     # 2. make a new partition on the device
-    sudo fdisk /dev/sdd1
-    sudo mkfs.ext4 /dev/sdd1
-    sudo eject /dev/sdd1
+    sudo fdisk     $deviceFile
+    sudo mkfs.ext4 $deviceFile
+    sudo eject     $deviceFile
 
     # partition manipulation: resize / create / delete partitions
-    parted
+    parted                 # from the command line
+    sudo gparted & disown  # GUI
     # TODO see partprobe: https://opensource.com/article/18/9/swap-space-linux-systems
     # e.g. resize 3rd partition and use all free / available space
     parted /dev/sda resize 3 100%
@@ -1293,14 +1295,34 @@
     ln -sfn                                <target> <linkname>
     ln --force --symbolic --no-dereference <target> <linkname>
 
-    # create bootable usb drive
-    set --local isoFile /path/to/file.iso
-    sudo dd bs=4M if=$isoFile of=/dev/sdh3 status=progress oflag=sync
+    # Create bootable usb drive https://askubuntu.com/q/372607
+    set --local isoFile     /path/to/file.iso
+    # TODO blockDevice with or without the last <?>
+    set --local blockDevice /dev/sd<?><?> # see lsblk
+    set --local usbDevice   /dev/sd<?>    # see lsblk, as above
+    udisksctl unmount --block-device=$blockDevice
+    sudo dd bs=4M if=$isoFile of=$usbDevice status=progress oflag=sync && sync
+    # or try:
+    sudo dd bs=4M if=$isoFile of=$usbDevice status=progress conv=fdatasync && sync
 
-    # printer
+    # printer: Command-Line Printing and Options
     http://localhost:631/help/options.html
 
     # YAML: YAML Ain't Markup Language
     # human-readable data-serialization language. Python style indentation
     # [] lists, {} maps
+
+    # ubuntu: bash:
+    # Which version of GTK+ is installed?
+    # https://stackoverflow.com/a/126193/5151982
+    dpkg -l libgtk* | grep -e '^i' | grep -e 'libgtk-*[0-9]'
+    # or even better
+    pkg-config --modversion gtk+-3.0
+    pkg-config --modversion gtk+-2.0
+    # Which version of Qt is installed?
+    # https://stackoverflow.com/a/39901086/5151982
+    # https://stackoverflow.com/a/40112592/5151982
+    qmake-qt5 --version
+    qmake --version
+    qtdiag
   #+END_SRC
