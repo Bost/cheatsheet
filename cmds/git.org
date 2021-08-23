@@ -215,6 +215,10 @@
     # ignore previously tracked path/to/file
     git rm --cached path/to/file; and echo "path/to/file" >> .gitignore
 
+    # ignore all hidden files and directories
+    # https://stackoverflow.com/a/8021453
+    echo -e ".*\n!/.gitignore" >> .gitignore
+
     # Use it in case of "You asked me to pull without telling me which branch ..."
     git config branch.master.remote origin
 
