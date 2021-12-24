@@ -356,6 +356,12 @@
    :en ["Not so clever."]
    :sk [""]
    :de ["Nicht so schlau." "Nicht besonders klug"]}
+
+  {:fr [""]
+   :en ["nettle-some"]
+   :sk ["pŕhlivý"]
+   :de ["ärgerlich" "reizvoll"]}
+
   #_{:fr [""]
      :en [""]
      :sk [""]
