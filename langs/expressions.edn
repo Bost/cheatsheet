@@ -10,6 +10,155 @@
      :sk [""]
      :de [""]}
 
+  ;; https://germanwithlaura.com/adjective-endings/
+  {:de
+   [
+    ;; kalt - adjective
+    "nominative: kalte Milch"
+    "accusative: kalte Milch"
+    "dative: kalter Milch"
+    "genitive: kalter Milch"
+
+    [
+     [
+      "nominative: dieser große Hund"
+      "accusative: diesen großen Hund"
+      "dative: diesem großen Hund"
+      "genitive: dieses großen Hundes"
+      ]
+
+     [
+      "nominative: diese große Katze"
+      "nominative: Eine große schwarze Katze spaziert auf der Straße."
+
+      "accusative: diese große Katze"
+      "accusative: Es gibt eine große schwarze Katze."
+      "accusative: Ich sehe eine große schwarze Katze."
+
+      "dative: dieser großen Katze"
+      "genitive: dieser großen Katze"
+      ]
+     [
+      "nominative: dieses große Schwein"
+      "accusative: dieses große Schwein"
+      "dative: diesem großen Schwein"
+      "genitive: dieses großen Schweines"
+      ]
+     ]
+
+    "dative: In einer großen schwarzen Leere schweben" ;; die Leere
+    "accusative: Einen großen schwarzen Punkt sehen" ;; der Punkt
+
+    "nominative: Das Ergebnis is ein enormer schwarzer Kasten" ;; der Kasten
+
+    ;; der Berner Sennenhund; der Bär
+    "Ich hatter mir einen Berner Sennenhund gewünscht, einen dieser großen schwarzen Bären"
+
+    [
+     [
+      "nominative: ein großes Schwein"
+      "nominative: Ein großes neues Haus errichtet."
+      "accusative: ein großes Schwein"
+      "accusative: Ich hatte ein großes dickes Schwein."
+      "dative: einem großen Schwein"
+      "genitive: eines großen Schweines"
+      ]
+
+     [
+      "nominative: diese großen Hunde"
+      "accusative: diese großen Hunde"
+      "dative: diesen großen Hunden"
+      "genitive: dieser großen Hunde"
+      ]
+
+     [
+      "nominative: diese großen Katzen"
+      "accusative: diese großen Katzen"
+      "dative: diesen großen Katzen"
+      "genitive: dieser großen Katzen"
+      ]
+
+     [
+      "nominative: diese großen Schweine"
+      "accusative: diese großen Schweine"
+      "dative: diesen großen Schweinen"
+      "genitive: dieser großen Schweine"
+      ]
+     ]
+
+    ;; Plural
+    [
+     "nominative: viele große Hunde"
+     "accusative: viele große Hunde"
+     "dative: vielen großen Hunden"
+     "genitive: vieler großer Hunde"
+
+     "nominative: viele große Katzen"
+     "accusative: viele große Katzen"
+     "dative: vielen großen Katzen"
+     "genitive: vieler großer Katzen"
+
+     ;; der Sänger
+     "Er ist einer dieser großen Sänger"
+
+     ;; der Sack
+     "Im Magen fand sich einer dieser großen schwarzen Plastiksäcke"
+     ;; der Teufel
+     "genitive: Es war einer dieser großen schwarzen Teufel"
+
+     "genitive: Er ist einer dieser großen schwarzen Männer"
+     "genitive: Er ist einer dieser großen schwarzen Hunde"
+
+     ;; https://books.google.de/books?id=rUJrEAAAQBAJ&pg=PT238&lpg=PT238&dq=%22einer+dieser+gro%C3%9Fen+schwarzen%22&source=bl&ots=i7ql6xzDYu&sig=ACfU3U1LcjaIqNrBsMTO7XM_aujiLFAr-A&hl=en&sa=X&ved=2ahUKEwie-f-4lcr8AhXghf0HHWJxASsQ6AF6BAgjEAM
+     "Es sollte eine denkwürdige Börse werden, einer dieser großen schwarzen Tage, einer der seltenen [...] verursachten Börsenkrachs legendären Angedenkens."
+
+     ;; die Brille  Pl.: die Brillen
+     ;; https://www.stuttgarter-nachrichten.de/inhalt.hausbesuch-bei-tori-amos-innenansichten-einer-einsiedlerin.44100927-ab39-41b7-955a-e6f390c31afd.html
+     "Tori (= eine Sängerin) trägt inzwischen auch einer dieser großen schwarzen Nerd-Brillen"
+
+     ;; der Van / die Van??? , die Vans
+     ;; https://www.wattpad.com/8909208-to-love-a-bad-boy-zayn-malik-fanfic-deutsch-11
+     "Wir saßen in einer dieser großen schwarzen Vans"
+     ;; die Limousine
+     "Er saß in einer dieser großen schwarzen Limousinen"
+
+     ;; der Pott, die Pötte (ein altes Schiff)
+     "Auf der anderen Seite ankert einer dieser großen schwarzen Pötte."
+     ;; das Zelt
+     "In einem dieser grossen schwarzen Zelte schlafen."
+     ;; das Kissen - vankúš
+     "In einem dieser großen schwarzen Kissen liegen."
+     ;; das Auto
+     "In einem dieser großen schwarzen Autos fahren."
+
+     "nominative: viele große Schweine"
+     "accusative: viele große Schweine"
+     "dative: vielen großen Schweinen"
+     "genitive: vieler großer Schweine"
+     ]
+
+    ;; Adjektiv: laut, grün, aufmerksam. Eigenschaft.
+    ;; Adverb: gestern, dort. Umstand.
+    ;; Bestimmter Artikel: der, die, das. Geschlecht.
+    ;; Unbestimmter Artikel: ein, eine. Geschlecht.
+    ;; Pronomen: dieser, niemand. Begleitet oder ersetzt Substantiv. Fürwort.
+    ;; Verb: schenken, gehen. Tätigkeit.
+
+    "Es gibt viele Probleme"
+    "Es gibt viele weitere solche Bilder"
+    "Es gibt viele schöne Dinge"
+    "Es gibt viele verschiedene Gründe"   ;; verschieden - adjective, schön - adjective,
+
+    "Der nette Mann gibt dem traurigen Hund einen großen Knochen" ;; singular der Knochen, plural die Knochen
+    "Dem traurigen Hund gibt der nette Mann einen großen Knochen"
+    "Den großen Knochen gibt der nette Mann dem traurigen Hund"
+
+    "Es gibt keine schönen Erinnerungen"
+    "Es gibt keine schönen und hässlichen Menschen"
+    "Es gibt keine schönen Männer"
+    "Es gibt keine schönen Röhrenverstärkergehäuse"
+    "Es gibt keine schönen Einsätze"]}
+
   {:fr ["Le président brésilien Jair Bolsonaro a décidé d’envoyer Emmanuel
   Macron bouler."]
    :sk ["Brazílsky prezident Jair Bolsonare sa rozhodol poslať Emmanuela Macrona
@@ -384,4 +533,3 @@
   ;; äÄ öÖ üÜ ß Ææ Œœ Çç Àà Ââ Éé Èè Êê Ëë Î î Î ï Ôô Ûû Ùù Ÿÿ
 
   }
-
