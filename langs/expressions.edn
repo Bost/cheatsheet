@@ -10,7 +10,7 @@
    :en [""]
    :sk [""]
    :de [""]}
-  
+
   {:fr ["en amont de ..."]
    :en ["upstream of ..."]
    :sk ["proti prúdu ..."]
@@ -189,7 +189,7 @@
    :de ["Die ganze Woche" "Während der ganzen Woche"]
    :sk ["Počas celého týždňa"]}
 
-  {:fr ["On n’en a pas assez fait"]
+  {:fr ["On n'en a pas assez fait"]
    :sk ["Neurobilo sa dosť"]}
 
   {:fr ["Dès que possible"]
@@ -215,8 +215,8 @@
    :en ["It's time to act"]}
 
   {:fr ["C'est sûr et certain"]
-   :de ["Das ist so sicher wie das Amen in der Kirche
-   https://dict.leo.org/dict/addInfo.php?aiid=DELMcPNw3mf&lp=frde&lang=en" ]}
+   :de ["Das ist so sicher wie das Amen in der Kirche"]
+   :desc "https://dict.leo.org/dict/addInfo.php?aiid=DELMcPNw3mf&lp=frde&lang=en"}
 
   {:fr ["Jeter un oeil à qc"
         "Jeter un coup d'oeil"
