@@ -519,6 +519,22 @@
    :sk ["pŕhlivý"]
    :de ["ärgerlich" "reizvoll"]}
 
+  {:fr ["Hypothétiquement aujourd'hui au présent: si je connaissais la grammaire je parlerais bien."]
+   :en ["Hypothetically today in the present: if I knew the grammar I would speak well."]
+   :de ["Hypothetisch heute in der Gegenwart: Wenn ich die Grammatik kennen würde, würde ich gut sprechen."]
+   :sk ["Hypoteticky dnes v prítomnosti: ak by som poznal gramatiku, hovoril by som dobre."]
+   }
+
+  {:fr ["Hypothétiquement demain dans la future: si je connais la grammaire je parlerai encore mieux."]
+   :en ["Hypothetically, tomorrow in the future: if I know the grammar, I will speak even better."]
+   :de ["Hypothetisch morgen in der Zukunft: Wenn ich die Grammatik kenne, werde ich noch besser sprechen."]
+   :sk ["Hypoteticky zajtra v budúcnosti: ak budem poznať gramatiku, budem hovoriť ešte lepšie."]}
+
+  {:fr ["Hypothétiquement hier dans le passé: si j'avais connu la grammaire j'aurais parlé mieux."]
+   :en ["Hypothetically yesterday in the past: if I had known the grammar, I would have spoken better."]
+   :de ["Hypothetisch gestern in der Vergangenheit: Wenn ich die Grammatik gekannt hätte, hätte ich besser gesprochen."]
+   :sk ["Hypoteticky včera v minulosti: keby som poznal gramatiku, hovoril by som lepšie."]}
+
   #_{:fr [""]
      :en [""]
      :sk [""]
