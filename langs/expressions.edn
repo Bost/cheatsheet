@@ -11,7 +11,12 @@
    :sk [""]
    :de [""]}
 
-  {:fr ["en amont de ..."]
+  {:fr ["le taille-crayon"]
+   :en ["pencil sharpener"]
+   :sk ["Strúhatko na ceruzky"]
+   :de ["der Bleistiftspitzer"]}
+
+  {:fr [en" amont de ..."]
    :en ["upstream of ..."]
    :sk ["proti prúdu ..."]
    :de ["stromaufwärts von ..."
@@ -157,7 +162,8 @@
     "Es gibt viele schöne Dinge"
     "Es gibt viele verschiedene Gründe"   ;; verschieden - adjective, schön - adjective,
 
-    "Der nette Mann gibt dem traurigen Hund einen großen Knochen" ;; singular der Knochen, plural die Knochen
+    ;; singular der Knochen, plural die Knochen
+    "Der nette Mann gibt dem traurigen Hund einen großen Knochen"
     "Dem traurigen Hund gibt der nette Mann einen großen Knochen"
     "Den großen Knochen gibt der nette Mann dem traurigen Hund"
 
@@ -181,8 +187,9 @@
    :sk ["Len si neviem spomenúť"]}
 
   {:fr ["L'arrêté de péril"]
-   :desc ["Lorsque la solidité d'un immeuble est compromise et de nature à
-   mettre en danger les locataires, le maire prend un arrêté de péril"]}
+   :desc ["Lorsque la solidité d'un immeuble est compromise et de
+  nature à mettre en danger les locataires, le maire prend un arrêté
+  de péril"]}
 
   {:fr ["Tout au long de la semaine"]
    :en ["All week long" "Throughout the week"]
@@ -200,7 +207,7 @@
   110,000 British soldiers will have arrived by the end of December, and Allied
   shipping made sure that the coal"]
    :explanation ["Events of past referencing to ? future past ?
-   https://youtu.be/WZJTN3Hoj7w?t=5m42s"]}
+  https://youtu.be/WZJTN3Hoj7w?t=5m42s"]}
 
   {:fr ["Ne le foirez pas" "Ne le foire pas"]
    :en ["Don't screew it up"]}
@@ -250,7 +257,8 @@
   {:fr ["Tout ce qu'il faut faire est de me faire confiance"]
    :en ["Everything you have to do is to trust me"]}
 
-  {:fr ["Une fois qu'il va découvrir notre plan, il reviendra, plus fort que jamais"]}
+  {:fr ["Une fois qu'il va découvrir notre plan, il reviendra, plus
+  fort que jamais"]}
 
   {:fr ["Je sauvais que vous l'aviez en vous, John"]}
 
@@ -259,7 +267,7 @@
    :desc ["The outcome of a situation is unpredictable. (Google Dictionary)"]
    :en ["All bets are off https://youtu.be/jDyra0RH-Xs?t=24m25s"
         "All bets are off; literal meaning from the Snatch movie:
-   https://youtu.be/N9_tl_b-bFs?t=4s"] }
+  https://youtu.be/N9_tl_b-bFs?t=4s"] }
 
   {:id 1509749127
    :fr ["On ne peut plus attendre"]}
@@ -277,8 +285,9 @@
   {:id 1509749150
    :url "https://youtu.be/a4f6KM9Kvi0?t=3m24s"
    :desc
-   ["A girl wants to pass through an opening in the stone wall firmly blocked by
-   tree trunks and realises: the decision not to take her machete was mistake."]
+   ["A girl wants to pass through an opening in the stone wall firmly
+  blocked by tree trunks and realises: the decision not to take her
+  machete was mistake."]
    :see [1509749163]
    :fr ["J'aurais dû prendre ma machete"]
    :de ["Ich hätte die Machete nehmen sollen"
@@ -519,17 +528,24 @@
    :sk ["pŕhlivý"]
    :de ["ärgerlich" "reizvoll"]}
 
+  ;; Hypothèse sur le présent:
+  ;; Si + imparfait, le conditionnel présent
   {:fr ["Hypothétiquement aujourd'hui au présent: si je connaissais la grammaire je parlerais bien."]
    :en ["Hypothetically today in the present: if I knew the grammar I would speak well."]
    :de ["Hypothetisch heute in der Gegenwart: Wenn ich die Grammatik kennen würde, würde ich gut sprechen."]
    :sk ["Hypoteticky dnes v prítomnosti: ak by som poznal gramatiku, hovoril by som dobre."]
    }
 
+  ;; Hypothèse sur la futur:
+  ;; Si + présent de l'indicatif, futur simple (pour une action future probable)
+  ;; Si + présent de l'indicatif, présent (pour une action immédiate ou habituelle)
   {:fr ["Hypothétiquement demain dans la future: si je connais la grammaire je parlerai encore mieux."]
    :en ["Hypothetically, tomorrow in the future: if I know the grammar, I will speak even better."]
    :de ["Hypothetisch morgen in der Zukunft: Wenn ich die Grammatik kenne, werde ich noch besser sprechen."]
    :sk ["Hypoteticky zajtra v budúcnosti: ak budem poznať gramatiku, budem hovoriť ešte lepšie."]}
 
+  ;; Hypothèse sur le passé:
+  ;; Si + plus-que-parfait, conditionnel passé
   {:fr ["Hypothétiquement hier dans le passé: si j'avais connu la grammaire j'aurais parlé mieux."]
    :en ["Hypothetically yesterday in the past: if I had known the grammar, I would have spoken better."]
    :de ["Hypothetisch gestern in der Vergangenheit: Wenn ich die Grammatik gekannt hätte, hätte ich besser gesprochen."]
