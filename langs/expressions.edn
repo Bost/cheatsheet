@@ -11,6 +11,11 @@
    :sk [""]
    :de [""]}
 
+  {:fr ["facture"]
+   :en ["invoice"]
+   :sk ["Faktúra"]
+   :de ["Rechnung"]}
+
   {:fr ["le taille-crayon"]
    :en ["pencil sharpener"]
    :sk ["Strúhatko na ceruzky"]
